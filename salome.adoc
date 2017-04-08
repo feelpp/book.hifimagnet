@@ -1,0 +1,153 @@
+= The HiFiMagnet Salome Plugin
+Christophe Trophime <https://github.com/trophime[@Trophime]>
+v1.0, 2017/02/20
+:page-layout!: default
+:page-permalink: /salome/
+:page-root: /
+:title: The HiFiMagnet Salome Plugin
+:description: This guide describes The HiFiMagnet Salome Plugin installation, its features and provides some references
+:keywords: HiFiMagnet, Salome, CAD, Mesh
+:doctype: book
+:docinfo: shared
+:sectanchors:
+:sectlinks:
+:sectnums:
+:linkattrs:
+:icons: font
+:stem: latexmath
+:toc: left
+:toclevels: 2
+:y: icon:check[role="green"]
+:n: icon:times[role="red"]
+:c: icon:file-text-o[role="blue"]
+:source-highlighter: pygments
+:imagesdir: images/
+ifdef::env-site[]
+:imagesdir:
+endif::[]
+:sources: ../../
+:uri-github: https://github.com/
+:branch: develop
+:uri-org: https://github.com/feelpp
+:uri-repo: {uri-org}/hifimagnet
+:uri-feelpp-issues: https://github.com/feelpp/hifimagnet/issues
+:uri-source: https://raw.githubusercontent.com/feelpp/hifimagnet/{hifimagnet}
+:uri-issues: {uri-repo}/issues
+:uri-contributors: {uri-repo}/graphs/contributors
+:uri-rel-file-base: link:
+:uri-rel-tree-base: link:
+ifdef::env-site[]
+:uri-rel-file-base: {uri-repo}/blob/{branch}/
+:uri-rel-tree-base: {uri-repo}/tree/{branch}/
+endif::[]
+:uri-project: http://book.hifimagnet.org
+ifdef::env-site[:uri-project: link:]
+:uri-docs: {uri-project}/docs
+:uri-news: {uri-project}/news
+:uri-manpage: {uri-project}/man/asciidoctor
+:hifimagnet: HiFiMagnet
+:feelpp: Feel++
+:cpp: C++
+
+[NOTE]
+.This document is under active development and discussion!
+====
+If you find errors or omissions in this document, please don’t hesitate to
+link:https://github.com/feelpp/hifimagnet/issues[submit an issue or open a pull
+request] with a fix. We also encourage you to ask questions and discuss any
+aspects of the project on the link:http://gitter.im/feelpp/hifimagnet[{hifimagnet}
+Gitter forum]. New contributors are always welcome!
+====
+
+
+include::preface.adoc[]
+
+= What is {hifimagnet} Salome Plugin?
+
+
+
+= Quick Starts
+
+== Installation Quick Start
+
+
+== Usage Start
+
+Start the Docker container `feelpp/hifimagnet` or `feelpp/salome` as follows
+
+[source,sh]
+----
+> run -ti --rm -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix \
+>       -v $HOME/.Xauthority:/home/feelpp/.Xauthority \
+>       --net=host --pid=host --ipc=host \
+>       -v $HOME/feel:/feel feelpp/hifimagnet [salome]
+----
+
+NOTE: these steps are explained in the chapter on <<02-docker/hifimagnet-containers.adoc#hifimagnet-containers,{hifimagnet} containers>>.
+
+
+
+Then simply launch salome from command line.
+
+[[lap-seq]]
+[source,sh]
+.Quickstart Generation of an Helix in TUI mode
+----
+> salome -m GEOM,SMESH,HIFIMAGNET -t \
+>   ~/SALOME-8.2.0-DB9.0_64/INSTALL/HIFIMAGNET/bin/salome/HIFIMAGNET_Cmd.py \
+>   args:--helix=HL-31_H1.yaml,--mesh
+----
+
+The resulting CAD and mesh files are stored in the current directory.
+Note that the mesh is in med format.
+
+[cols="^,^"]
+|======
+|image:{imagesdir}/HL-31/cad_H1.png[]|image:{imagesdir}/HL-31/mesh_H1.png[]
+|CAD | Mesh
+|======
+
+[[lap-par]]
+[source,sh]
+.Quickstart Generation of an Insert in TUI mode
+----
+> salome -m GEOM,SMESH,HIFIMAGNET -t \
+>   ~/SALOME-8.2.0-DB9.0_64/INSTALL/HIFIMAGNET/bin/salome/HIFIMAGNET_Cmd.py \
+>   args:--insert=HL-31.yaml,--mesh
+----
+
+[cols="^,^"]
+|======
+|image:{imagesdir}/HL-31/cad_HL-31.png[]|image:{imagesdir}/HL-31/mesh_HL_31.png[]
+|CAD | Mesh
+|======
+
+[TIP]
+====
+link:http://www.salome-platform.org/[Salome]:: is an open-source software that provides a generic platform for Pre- and Post-Processing for numerical simulation.
+link:http://www.meshgems.com/[MeshGems]:: is a Commercial Suite of Reliable Meshing Software Components
+#med-fichier
+====
+
+= Installing {hifimagnet} Salome Plugin
+
+include::01-installation/salome.adoc[leveloffset=+1]
+include::01-installation/salome_hifimagnet.adoc[leveloffset=+1]
+
+include::02-docker/salome-containers.adoc[leveloffset=+1]
+include::02-docker/hifimagnet-containers.adoc[leveloffset=+1]
+
+= Creating an PolyHelix Insert from scrath
+
+= Quick Reference
+
+include::07-quickref/README.adoc[leveloffset=+1]
+
+
+include::resources.adoc[leveloffset=+1]
+
+[glossary]
+= Glossary
+include::GLOSSARY.adoc[]
+
+

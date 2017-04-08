@@ -1,0 +1,76 @@
+= {hifimagnet}: High Field Magnet Modeling: A Feelpp application
+Christophe Trophime <https://github.com/trophime[@Trophime]>
+v1.0, 2017/04/06
+:hifimagnet: HiFiMagnet
+:feelpp: Feel++
+:cpp: C++
+
+The LNCMI is a French large scale facility cite:[LNCMI2013] enabling researchers 
+to perform experiments in the highest possible magnetic field. DC magnetic fields up to 36 T are provided at the Grenoble site 
+and pulsed fields up to 90 T at Toulouse. The technology used for DC magnets relies on the so-called polyhelix inserts for 
+the most stressed parts of the magnets cite:[LNCMI_DCMAGNETS2012]. Their design relies on non-linear 3D multi-physic models. 
+
+{hifimagnet} is a research project carried out by the Laboratoire National de Champs
+MAgn\'etiques Intenses (LNCMI) in collaboration with
+Institut de Recherche Math\'ematique Avanc\'ee (IRMA).
+
+The goals are twofold:
+. to build a hierarchy of numerical models ranging from 2D axi to
+  3D, and including more and more physics. The idea here is to
+  reconsider the hypothesis that are needed to derive  the
+  semi-analytical approximations upon which our standard design and
+  optimization procedures are based and ultimately to quantify the
+  hypotheses effects;
+. to complement our standard design by performing sensitivity
+  analysis and uncertainty quantification  on material properties,
+  operational parameters and geometric
+  clearances. It allows e.g. to identify the important parameters, to
+  perform quantile estimation, to compute probability of failure and
+  ultimately to provide safety operational controls.
+
+Models have been implemented with the finite element library {Feel++}.
+
+== Help and Support
+
+We're always happy to help out with {hifimagnet} or any other questions you might
+have. You can ask a question or signal an issue at the Gitter {hifimagnet} salon.
+
+https://gitter.im/feelpp/hifimagnet?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge[
+image:https://badges.gitter.im/Join%20Chat.svg[Join the chat at https://gitter.im/feelpp/hifimagnet]]
+
+
+== Contribute to this documentation
+
+You can contribute to improve this documentation on
+https://github.com/feelpp/hifimagnet[GitHub] and follow the
+https://gitter.im/feelpp/hifimagnet-book[Gitter {hifimagnet} Book] forum.
+
+
+== Compiling the book
+
+install `ruby` and  `bundle`
+
+----
+# on MacOSX
+brew install ruby
+gem install bundle
+
+# on debian/ubuntu
+apt-get install ruby-bundler
+----
+
+then run `bundle` in the top level directory of the book
+----
+bundle
+----
+
+it will install all the requirements
+
+then type
+
+----
+bundle exec jekyll serve
+----
+
+it will start a link:http://127.0.0.1:4000/[local web server] on the
+port 4000 where you can see the book.
