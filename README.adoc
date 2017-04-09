@@ -5,30 +5,31 @@ v1.0, 2017/04/06
 :feelpp: Feel++
 :cpp: C++
 
-The LNCMI is a French large scale facility enabling researchers 
+The Laboratoire National de Champs
+MAgnétiques Intenses (LNCMI) is a French large scale facility enabling researchers 
 to perform experiments in the highest possible magnetic field. DC magnetic fields up to 36 T are provided at the Grenoble site 
 and pulsed fields up to 90 T at Toulouse. The technology used for DC magnets relies on the so-called polyhelix inserts for 
 the most stressed parts of the magnets. Their design relies on non-linear 3D multi-physic models. 
 
-{hifimagnet} is a research project carried out by the Laboratoire National de Champs
-MAgn\'etiques Intenses (LNCMI) in collaboration with
-Institut de Recherche Math\'ematique Avanc\'ee (IRMA) and Cemosis.
+{hifimagnet} is a research project carried out by the LNCMI in collaboration with
+Institut de Recherche Mathématique Avanc\'ee (IRMA) and Cemosis.
 
 The goals are twofold:
-. to build a hierarchy of numerical models ranging from 2D axi to
+
+* to build a hierarchy of numerical models ranging from 2D axi to
   3D, and including more and more physics. The idea here is to
   reconsider the hypothesis that are needed to derive  the
   semi-analytical approximations upon which our standard design and
   optimization procedures are based and ultimately to quantify the
   hypotheses effects;
-. to complement our standard design by performing sensitivity
+* to complement our standard design by performing sensitivity
   analysis and uncertainty quantification  on material properties,
   operational parameters and geometric
   clearances. It allows e.g. to identify the important parameters, to
   perform quantile estimation, to compute probability of failure and
   ultimately to provide safety operational controls.
 
-Models have been implemented with the finite element library hppts://https://github.com/feelpp/feelpp[Feel++].
+Models have been implemented with the finite element library https://github.com/feelpp/feelpp[Feel++].
 
 == Help and Support
 
