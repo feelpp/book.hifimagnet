@@ -18,11 +18,11 @@ This book is  part of {hifimagnet} and is licensed under image:http://creativeco
 {feelpp} is actively developed by
 link:{uri-github}prudhomm[Christophe Prud'homme],
 link:{uri-github}vincentchabannes[Vincent Chabannes],
-link:{uri-github}trophime[Christophe Trophime],
+link:{uri-github}Trophime[Christophe Trophime],
 link:{uri-github}cdaversin[Cécile Daversin],
 link:{uri-github}romainhild[Romain Hild],
-link:{uri-github}lsala[Spephane Veys],
-and link:{uri-github}lantzt[Gabriel Mayaffre].
+link:{uri-github}veys[Spephane Veys],
+and link:{uri-github}MayaffreG[Gabriel Mayaffre].
 
 There are many link:https://github.com/feelpp/hifimagnet/graphs/contributors[other contributors].
 
@@ -38,7 +38,7 @@ image:logos/logo_anr.png[caption="ANR",width=100]
 image:logos/logo_irmia.png[width=100,caption="IRMIA"]
 image:logos/logo_prace.png[width="100",link="http://www.prace-ri.eu"]
 
-===  Current funding 
+===  Current funding
 
 EU E-INFRA H2020::
  - link:http://www.cemosis.fr/projects/mso4sc[MSO4SC] (2016-2018)
@@ -47,14 +47,11 @@ ANR projects::
  - CHORUS (MN call - 2013-2017)
  - link:http://labex-irmia.u-strasbg.fr/[LABEX IRMIA]
 
-PlasticOmnium::
- - Contract (2016-2017)
-
 IRMIA::
  - Hifimagnet (2012-2018)
  - 4fastsim (2016-2017)
- 
-=== Past funding 
+
+=== Past funding
 
 
 ANR::
@@ -66,7 +63,7 @@ FRAE::
  - RB4FASTSIM - 2010-2014
 
  PRACE projects::
- - HP-FEEL++ 2015-2016 
+ - HP-FEEL++ 2015-2016
  - HP-FEEL++ 2013-2014
  - HP-PDE{1,2} 2012-2014
 
@@ -78,4 +75,4 @@ FRAE::
 image:logos/logo_cemosis.png[width="100",link="http://www.cemosis.fr/",align="center"]
 image:logos/logo-uga.png[width="100"nlink="http://www.univ-grenoble-alpes.fr/",align="center"]
 image:logos/logo_cnrs.png[width="100",link="http://www.cnrs.fr",align="center"]
-image:logos/logo_uds.png[width="100",link="http://www.unistra.fr/",align="center"] 
+image:logos/logo_uds.png[width="100",link="http://www.unistra.fr/",align="center"]

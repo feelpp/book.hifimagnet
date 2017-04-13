@@ -1,0 +1,1 @@
+== Building {hifimagnet} from scratch

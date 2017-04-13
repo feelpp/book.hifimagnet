@@ -1,0 +1,1 @@
+== Building {hifimagnet} Salome Plugin from scratch

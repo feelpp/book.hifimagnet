@@ -26,13 +26,13 @@ endif::[]
 :hifimagnet: HiFiMagnet
 
 The http://www.lncmi.cnrs.fr/[Laboratoire National de Champs
-Magn\'etiques Intenses] (LNCMI) is a French large scale facility cite:[LNCMI2013] enabling researchers 
-to perform experiments in the highest possible magnetic field. DC magnetic fields up to 36 T are provided at the http://www.grenoble.lncmi.cnrs.fr/[Grenoble site] 
-and pulsed fields up to 90 T at http://www.toulouse.lncmi.cnrs.fr/[Toulouse]. The technology used for DC magnets relies on the so-called polyhelix inserts for 
-the most stressed parts of the magnets cite:[LNCMI_DCMAGNETS2012]. Their design relies on non-linear 3D multi-physic models. 
+Magnétiques Intenses] (LNCMI) is a French large scale facility cite:[LNCMI2013] enabling researchers
+to perform experiments in the highest possible magnetic field. DC magnetic fields up to 36 T are provided at the http://www.grenoble.lncmi.cnrs.fr/[Grenoble site]
+and pulsed fields up to 90 T at http://www.toulouse.lncmi.cnrs.fr/[Toulouse]. The technology used for DC magnets relies on the so-called polyhelix inserts for
+the most stressed parts of the magnets cite:[LNCMI_DCMAGNETS2012]. Their design relies on non-linear 3D multi-physic models.
 
 {hifimagnet} is a research project carried out by the  (LNCMI) in collaboration with
-http://irma.math.unistra.fr/[Institut de Recherche Math\'ematique Avanc\'ee] (IRMA) and
+http://irma.math.unistra.fr/[Institut de Recherche Mathématique Avancée] (IRMA) and
 http://www.cemosis.fr/[Cemosis].
 
 The goals are twofold:
