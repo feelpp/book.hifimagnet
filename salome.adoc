@@ -83,7 +83,7 @@ Start the Docker container `feelpp/hifimagnet` or `feelpp/salome` as follows
 >       -v $HOME/feel:/feel feelpp/hifimagnet [salome]
 ----
 
-NOTE: these steps are explained in the chapter on <<02-docker/hifimagnet-containers.adoc#hifimagnet-containers,{hifimagnet} containers>>.
+NOTE: these steps are explained in the chapter on <<02-docker/hifimagnet-containers.adoc,{hifimagnet} containers>>.
 
 
 
@@ -131,23 +131,14 @@ link:http://www.meshgems.com/[MeshGems]:: is a Commercial Suite of Reliable Mesh
 
 = Installing {hifimagnet} Salome Plugin
 
-include::01-installation/salome.adoc[leveloffset=+1]
-include::01-installation/salome_hifimagnet.adoc[leveloffset=+1]
-
 include::02-docker/salome-containers.adoc[leveloffset=+1]
 include::02-docker/hifimagnet-containers.adoc[leveloffset=+1]
+
+include::01-installation/salome.adoc[leveloffset=+1]
+include::01-installation/salome_hifimagnet.adoc[leveloffset=+1]
 
 = Creating an PolyHelix Insert from scrath
 
 = Quick Reference
 
 include::07-quickref/README.adoc[leveloffset=+1]
-
-
-include::resources.adoc[leveloffset=+1]
-
-[glossary]
-= Glossary
-include::GLOSSARY.adoc[]
-
-

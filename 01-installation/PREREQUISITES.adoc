@@ -1,0 +1,7 @@
+== PREREQUISITES
+
+MagnetTools:
+* popt, gsl, freesteam, spherepack, expokit, sundials, yamlcpp, json-spirit
+* nag
+
+Salome
