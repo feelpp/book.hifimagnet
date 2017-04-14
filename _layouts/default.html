@@ -12,10 +12,12 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <link rel="stylesheet" href="{{page.root}}css/custom.css">
-    <link rel="stylesheet" href="{{page.root}}css/foundation.css">
+    <link rel="stylesheet" href="{{page.root}}css/foundation.min.css">
     <link rel="stylesheet" href="{{page.root}}css/font-awesome.css">
     <link rel="stylesheet" href="{{page.root}}css/coderay.css">
     <link rel="stylesheet" href="{{page.root}}css/asciidoctor.css">
+    <script src="{{page.root}}js/jquery-3.2.1.min.js"></script>
+    <script src="{{page.root}}js/cover.js"></script>
     <script src="{{page.root}}js/vendor/modernizr.js"></script>
     <script src="{{page.root}}js/toc.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
@@ -24,25 +26,15 @@
 
 
 <!-- Nav Bar -->
-<div class="sticky">
-<nav class="top-bar" data-topbar>
-    <ul class="title-area">
-        <!-- Title Area -->
-        <li class="name">
-            <h1>
-                <a href="{{page.root}}">{{site.title}}</a>
-            </h1>
-        </li>
-        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-    </ul>
-</nav>
-</div>
+{% include topbar.html %}
 <!-- End Nav -->
 
     <section class="page-header">
-      <h1 class="project-name">{{ site.title | default: site.github.repository_name }}</h1>
+      <h1 class="project-name" style="color:#ffffff;">{{ site.title | default: site.github.repository_name }}</h1>
       <!--<h2 class="project-tagline">{{ site.description | default: site.github.project_tagline }}</h2>-->
-      <h2 class="project-name">{{ page.title }}</h2>
+      {% unless site.title == page.title %}
+      <h2 class="project-name" style="color:#ffffff">{{ page.title }}</h2>
+      {% endunless %}
       {% if site.github.is_project_page %}
         <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
       {% endif %}
@@ -50,12 +42,12 @@
         <a href="{{ site.github.zip_url }}" class="btn">Download .zip</a>
         <a href="{{ site.github.tar_url }}" class="btn">Download .tar.gz</a>
         {% endif %}
-        <a href="http://www.feelpp.org/" class="btn">Feel++ web site </a>
+        <a href="http://www.cemosis.fr/projects/hifimagnet/" class="btn">HiFiMagnet web site </a>
     </section>
 
 <!-- Main Page Content and Sidebar -->
 
-<div class="row">
+<div class="expanded row">
 
       <!-- Sidebar -->
 
@@ -116,7 +108,7 @@
 </footer>
 
 <script src="{{page.root}}js/vendor/jquery.js"></script>
-<script src="{{page.root}}js/foundation.min.js"></script>
+<script src="{{page.root}}js/vendor/foundation.min.js"></script>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   messageStyle: "none",

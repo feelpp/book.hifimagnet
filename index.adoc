@@ -24,6 +24,7 @@ endif::[]
 :uri-license: {uri-rel-file-base}LICENSE.adoc
 :docinfo: shared
 :hifimagnet: HiFiMagnet
+:feelpp: Feel++
 
 The http://www.lncmi.cnrs.fr/[Laboratoire National de Champs
 Magnétiques Intenses] (LNCMI) is a French large scale facility cite:[LNCMI2013] enabling researchers
@@ -52,9 +53,8 @@ The goals are twofold:
 
 Models have been implemented with the https://www.feelpp.org/[finite Element Feel++ library]
 
-.Key documentation
-[.compact]
---
+== Key documentation
+
 link:/salome/[Geometry Modeling]::
 Geometrical Modeling High Field PolyHelix Magnets with http://www.salome-platform.org/[Salome]
 
@@ -66,7 +66,6 @@ The A to Z guide to {hifimagnet}.
 
 link:/quickref[Quick Reference]::
 Quick reference cards for {hifimagnet}.
---
 
 == Getting Help
 
@@ -103,3 +102,16 @@ The project was initiated in 2012 by https://github.com/Trophime[Christophe Trop
 {hifimagnet} and has received contributions from {uri-contributors}[many other individuals].
 
 The project relies on the https://www.feelpp.org/[Feel++ library].
+
+++++
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/feelpp/book.hifimagnet">HiFiMagnet Book</a> is open-sourced by <a href="https://github.com/feelpp">Feel++ Consortium </a>.</span>
+
+      </footer>
+
+    </section>
+
+
+  </body>
+</html>
+++++
