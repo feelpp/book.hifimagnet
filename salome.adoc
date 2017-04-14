@@ -1,3 +1,4 @@
+// -*- mode: adoc -*-
 = The HiFiMagnet Salome Plugin
 Christophe Trophime <https://github.com/trophime[@Trophime]>
 v1.0, 2017/02/20
@@ -22,32 +23,18 @@ v1.0, 2017/02/20
 :c: icon:file-text-o[role="blue"]
 :source-highlighter: pygments
 :imagesdir: images/
-ifdef::env-site[]
-:imagesdir:
-endif::[]
 :sources: ../../
-:uri-github: https://github.com/
-:branch: develop
-:uri-org: https://github.com/feelpp
-:uri-repo: {uri-org}/hifimagnet
-:uri-feelpp-issues: https://github.com/feelpp/hifimagnet/issues
-:uri-source: https://raw.githubusercontent.com/feelpp/hifimagnet/{hifimagnet}
-:uri-issues: {uri-repo}/issues
-:uri-contributors: {uri-repo}/graphs/contributors
-:uri-rel-file-base: link:
-:uri-rel-tree-base: link:
-ifdef::env-site[]
-:uri-rel-file-base: {uri-repo}/blob/{branch}/
-:uri-rel-tree-base: {uri-repo}/tree/{branch}/
-endif::[]
-:uri-project: http://book.hifimagnet.org
-ifdef::env-site[:uri-project: link:]
-:uri-docs: {uri-project}/docs
-:uri-news: {uri-project}/news
-:uri-manpage: {uri-project}/man/asciidoctor
+//:uri-github: https://github.com/
+//:branch: Salome_8.2.0
+//:uri-org: https://github.com/feelpp
+//:uri-repo: {uri-org}/hifimagnet
+//:uri-feelpp-issues: https://github.com/feelpp/hifimagnet/issues
+//:uri-source: https://raw.githubusercontent.com/feelpp/hifimagnet/{branch}
+//:uri-issues: {uri-repo}/issues
 :hifimagnet: HiFiMagnet
 :feelpp: Feel++
 :cpp: C++
+
 
 [NOTE]
 .This document is under active development and discussion!
@@ -60,20 +47,25 @@ Gitter forum]. New contributors are always welcome!
 ====
 
 
-include::preface.adoc[]
 
-= What is {hifimagnet} Salome Plugin?
+= {hifimagnet} Salome Plugin
 
+== blalafafam
 
+eryeyht
 
 = Quick Starts
 
+blalafafam
+
 == Installation Quick Start
 
+blabla
 
 == Usage Start
 
 Start the Docker container `feelpp/hifimagnet` or `feelpp/salome` as follows
+
 
 [source,sh]
 ----
@@ -83,19 +75,15 @@ Start the Docker container `feelpp/hifimagnet` or `feelpp/salome` as follows
 >       -v $HOME/feel:/feel feelpp/hifimagnet [salome]
 ----
 
-NOTE: these steps are explained in the chapter on <<02-docker/hifimagnet-containers.adoc,{hifimagnet} containers>>.
-
-
-
 Then simply launch salome from command line.
 
-[[lap-seq]]
+[[helix-cad]]
 [source,sh]
-.Quickstart Generation of an Helix in TUI mode
+.Quickstart Generation and Meshing of an Helix in TUI mode
 ----
 > salome -m GEOM,SMESH,HIFIMAGNET -t \
 >   ~/SALOME-8.2.0-DB9.0_64/INSTALL/HIFIMAGNET/bin/salome/HIFIMAGNET_Cmd.py \
->   args:--helix=HL-31_H1.yaml,--mesh
+>   args:--helix=HR-21_H1.yaml,--mesh
 ----
 
 The resulting CAD and mesh files are stored in the current directory.
@@ -103,31 +91,33 @@ Note that the mesh is in med format.
 
 [cols="^,^"]
 |======
-|image:{imagesdir}/HL-31/cad_H1.png[]|image:{imagesdir}/HL-31/mesh_H1.png[]
+|image:{imagesdir}/HR/HR-cad.png[]|image:{imagesdir}/HR/HR-mesh.png[]
 |CAD | Mesh
 |======
 
-[[lap-par]]
+[[insert-cad]]
 [source,sh]
 .Quickstart Generation of an Insert in TUI mode
 ----
 > salome -m GEOM,SMESH,HIFIMAGNET -t \
 >   ~/SALOME-8.2.0-DB9.0_64/INSTALL/HIFIMAGNET/bin/salome/HIFIMAGNET_Cmd.py \
->   args:--insert=HL-31.yaml,--mesh
+>   args:--insert=HL-31.yaml
 ----
 
-[cols="^,^"]
+[cols="^"]
 |======
-|image:{imagesdir}/HL-31/cad_HL-31.png[]|image:{imagesdir}/HL-31/mesh_HL_31.png[]
-|CAD | Mesh
+|image:{imagesdir}/HL-31/HL-31-cadgeom.png[]
+|A 14 Helices resistive insert with current leads (latexmath:[1/4^\text{th}] of the helices was removed for presentation sake)
 |======
+
 
 [TIP]
 ====
 link:http://www.salome-platform.org/[Salome]:: is an open-source software that provides a generic platform for Pre- and Post-Processing for numerical simulation.
 link:http://www.meshgems.com/[MeshGems]:: is a Commercial Suite of Reliable Meshing Software Components
-#med-fichier
+//med-fichier
 ====
+
 
 = Installing {hifimagnet} Salome Plugin
 

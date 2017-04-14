@@ -60,7 +60,7 @@ Gitter forum]. New contributors are always welcome!
 ====
 
 
-include::preface.adoc[]
+//include::preface.adoc[]
 
 = Introduction to {hifimagnet}
 
