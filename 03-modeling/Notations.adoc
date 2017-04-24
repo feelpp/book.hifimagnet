@@ -1,0 +1,53 @@
+=== Constants and variable
+
+|===
+^|Notation ^|Quantity ^|Unit
+
+|latexmath:[\rho]
+|material's density
+|latexmath:[kg.m^{-3}]
+
+|C~p~
+|thermal capacity
+|latexmath:[J.K^{-1}]
+
+|r
+|radius
+|m
+
+|T
+|temperature
+|K
+
+|k
+|thermal conductivity
+|latexmath:[W.m^{-1}.K^{-1}]
+
+|U
+|electrical potential
+|V
+
+|latexmath:[\sigma]
+|electrical conductivity
+|latexmath:[S.m^{-1}]
+
+|h
+|heat transfer coefficient
+|latexmath:[W.m^{-2}.K^{-1}]
+
+|===
+
+=== Conventions
+
+[horizontal]
+latexmath:[f]:: function
+latexmath:[\textbf{f}]:: vector of functions
+
+=== Functions
+
+[horizontal]
+latexmath:[\bigtriangledown f]:: gradient of f
+latexmath:[\bigtriangledown.\textbf{ f }]:: divergence of *f*
+latexmath:[\bigtriangledown \times \textbf{ f }]:: curl of *f*
+latexmath:[L_{2}(\Omega)]:: latexmath:[\{f  \mid \int f^{2} < \infty\}]  Lagrangian
+latexmath:[H_{1}(\Omega)]:: latexmath:[\{f \in L_{2}(\Omega) \mid \bigtriangledown f \in [L_{2}(\Omega)\]^{d}\}]  Hilbert space

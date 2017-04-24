@@ -1,0 +1,271 @@
+
+==== Current sensor
+
+Here we want to model a current sensor placed in the connection of a magnet.
+This sensor consist in 6 constantan plates placed in the connection as shown in the images.
+The goal is to allow the users to directly see the evolution of the current, measuring the potential in the connection,
+but the main problem is the temperature reach by the sensor, due to the high current, the fusion of the constantan being around 1500 K.
+We model all of this with `salome` and do the mesh.
+The mesh is more precise on the sensor (the 6 constantan plates)
+
+.Model of the sensor with the cables on `Gmsh`
+image::/images/learning/thermoelectric/Ensemble_CapteurCourant.png[Ensemble_CapteurCourant,475,300,float="left"]
+
+.Only the current sensor
+image::/images/learning/thermoelectric/capteurcourant.png[CapteurCourant,475,300,float="right"]
+
+===== Parameters
+
+There are 8 volumes, 2 cable in copper and the 6 constantan plates which constitute the sensor.
+
+
+[source,json]
+.CapteurCourant.json
+....
+{
+    "Name": "ThermoElectric",
+    "ShortName":"TE",
+    "Model":"thermoelectric-linear",
+    "Materials":
+    {
+	"A1":
+	{
+	    "name":"A1",
+	    "alpha":"3.35e-3",
+	    "T0":"293",
+	    "sigma0":"58e+3",
+	    "k0":"0.38",
+	    "sigma":"sigma0/(1+alpha*(T-T0)):sigma0:alpha:T:T0",
+	    "k":"k0*T/((1+alpha*(T-T0))*T0):k0:T:alpha:T0"
+	},
+	"CurrentLead_1":
+	{
+	    "name":"CurrentLead_1",
+	    "alpha":"3.35e-3",
+	    "T0":"293",
+	    "sigma0":"58e+3",
+	    "k0":"0.38",
+	    "sigma":"sigma0/(1+alpha*(T-T0)):sigma0:alpha:T:T0",
+	    "k":"k0*T/((1+alpha*(T-T0))*T0):k0:T:alpha:T0"
+	},
+	"Constantan_1":
+	{
+	    "name":"Constantan_1",
+	    "alpha":"0",
+	    "T0":"293",
+	    "sigma0":"2.04e+3",
+	    "k0":"0.019",
+	    "sigma":"sigma0/(1+alpha*(T-T0)):sigma0:alpha:T:T0",
+	    "k":"k0*T/((1+alpha*(T-T0))*T0):k0:T:alpha:T0"
+	},
+	"Constantan_2":
+	{
+	    "name":"Constantan_2",
+	    "alpha":"0",
+	    "T0":"293",
+	    "sigma0":"2.04e+3",
+	    "k0":"0.019",
+	    "sigma":"sigma0/(1+alpha*(T-T0)):sigma0:alpha:T:T0",
+	    "k":"k0*T/((1+alpha*(T-T0))*T0):k0:T:alpha:T0"
+	},
+	"Constantan_3":
+	{
+	    "name":"Constantan_3",
+	    "alpha":"0",
+	    "T0":"293",
+	    "sigma0":"2.04e+3",
+	    "k0":"0.019",
+	    "sigma":"sigma0/(1+alpha*(T-T0)):sigma0:alpha:T:T0",
+	    "k":"k0*T/((1+alpha*(T-T0))*T0):k0:T:alpha:T0"
+	},
+	"Constantan_4":
+	{
+	    "name":"Constantan_4",
+	    "alpha":"0",
+	    "T0":"293",
+	    "sigma0":"2.04e+3",
+	    "k0":"0.019",
+	    "sigma":"sigma0/(1+alpha*(T-T0)):sigma0:alpha:T:T0",
+	    "k":"k0*T/((1+alpha*(T-T0))*T0):k0:T:alpha:T0"
+	},
+	"Constantan_5":
+	{
+	    "name":"Constantan_5",
+	    "alpha":"0",
+	    "T0":"293",
+	    "sigma0":"2.04e+3",
+	    "k0":"0.019",
+	    "sigma":"sigma0/(1+alpha*(T-T0)):sigma0:alpha:T:T0",
+	    "k":"k0*T/((1+alpha*(T-T0))*T0):k0:T:alpha:T0"
+	},
+	"Constantan_6":
+	{
+	    "name":"Constantan_6",
+	    "alpha":"0",
+	    "T0":"293",
+	    "sigma0":"2.04e+3",
+	    "k0":"0.019",
+	    "sigma":"sigma0/(1+alpha*(T-T0)):sigma0:alpha:T:T0",
+	    "k":"k0*T/((1+alpha*(T-T0))*T0):k0:T:alpha:T0"
+	}
+},
+....
+
+
+===== Conditions
+
+[source,json]
+.Conditions Capteur Courant (file .json)
+....
+"BoundaryConditions":
+{
+"potential":
+{
+  "Dirichlet":
+  {
+"V0":
+{
+    "expr1":"0",
+    "expr2":"A1"
+},
+"V1":
+{
+    "expr1":"0.1",
+    "expr2":"CurrentLead_1"
+}
+  }
+},
+"temperature":
+{
+  "Dirichlet":
+  {
+"V0":
+{
+    "expr1":"293",
+    "expr2":"A1"
+},
+"V1":
+{
+    "expr1":"293",
+    "expr2":"CurrentLead_1"
+}
+  }
+}
+},
+"PostProcess":
+{
+"Fields":["temperature","potential","current"]
+}
+}
+....
+
+There is also a specific file to study only one plate, to be more precise on the temperature reach.
+We can use here a nonlinear model for the thermoelectric study.
+
+[source,json]
+.1 Plate : Constantan_1.json
+....
+{
+    "Name": "ThermoElectric",
+    "ShortName":"TE",
+    "Model":"thermoelectric-nonlinear",
+    "Materials":
+    {
+	"Constantan_1":
+	{
+	    "name":"Constantan_1",
+	    "alpha":"2.e-5",
+	    "T0":"293",
+	    "sigma0":"2.04e+3",
+	    "k0":"19.5e-3",
+	    "sigma":"sigma0/(1+alpha*(T-T0)):sigma0:alpha:T:T0",
+	    "k":"k0*T/((1+alpha*(T-T0))*T0):k0:T:alpha:T0"
+	}
+    },
+    "BoundaryConditions":
+    {
+	"potential":
+	{
+	    "Dirichlet":
+	    {
+		"Interface_0":
+		{
+		    "expr1":"0",
+		    "expr2":"Constantan_1"
+		},
+		"Interface_1":
+		{
+		    "expr1":"0.1153",
+		    "expr2":"Constantan_1"
+		}
+	    },
+	    "Neumann":
+	    {
+		"Fixer":
+		{
+		    "expr":"0"
+		},
+		"Free_edge":
+		{
+		    "expr":"0"
+		}
+	    }
+	},
+	"temperature":
+	{
+	    "Robin":
+	    {
+		"Free_edge":
+		{
+		    "expr1":"50.e-6",  //the heat transfer coefficient
+		    "expr2":"293"
+		}
+	    },
+	    "Neumann":
+	    {
+		"Fixer":
+		{
+		    "expr":"0"
+		},
+		"Interface_0":
+		{
+		    "expr":"0"
+		},
+		"Interface_1":
+		{
+		    "expr":"0"
+		}
+	    }
+	}
+    },
+    "PostProcess":
+    {
+	"Fields":["temperature","potential","current","joules"]
+    }
+}
+....
+
+
+===== Results
+
+First we can see the potential we should be measuring.
+
+.Potential as a function of current
+image::/images/learning/thermoelectric/Potential.png[potential,600,400,align="center"]
+
+Therefore, we need a voltmeter which can be precise between 0.01 and 0.15 Volt.
+
+Next, we want to control the temperature reached by the sensor, the purpose being to not destroy the sensor.
+The melting temperature of the Constantan is near 1500 K, but we want to stop well before reaching this point to avoid deformations of the sensor.
+The main parameter that we can control is the heat transfer coefficient *h* (latexmath:[W.m^{-2}.K^{-1}])
+displaying or not a ventilator to be in natural or forced convection.
+
+.Temperature max in 1 plate as a function of current
+image::/images/learning/thermoelectric/Temperature_Max.png[Temperature_Max,900,600,align="center"]
+
+Here we see that in natural convection (h=15), the temperature reached is by far too high.
+
+.Temperature max in 1 plate as a function of current, forced convection only
+image::/images/learning/thermoelectric/Temperature_Max_forced_convection.png[Temperature_Max_forced_convection,900,600,align="center"]
+
+A heat transfer coefficient maximum allow to set a higher current but is difficult to set up.
