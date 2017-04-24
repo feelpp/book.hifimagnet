@@ -1,0 +1,16 @@
+
+==== Equations
+
+latexmath:[\oint_{C}\textbf{H} = I = \int_{S}\textbf{j.n}]
+
+
+latexmath:[\textbf{j}=-\sigma(T)\bigtriangledown V]
+
+
+latexmath:[\bigtriangledown\times\textbf{H}=-\sigma(T)\bigtriangledown V]
+
+latexmath:[\textbf{B}=\mu\textbf{H}]
+
+latexmath:[\bigtriangledown.\textbf{B}=0  \Rightarrow  \exists \textbf{A}|\textbf{B}=\bigtriangledown\times \textbf{A}]
+
+latexmath:[\bigtriangledown\times\left(\frac{1}{\mu}\bigtriangledown\times \textbf{A}\right)= \textbf{j}]

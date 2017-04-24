@@ -1,0 +1,29 @@
+= Some Examples
+:page-layout!: default
+:page-permalink: /examples
+:page-root: /
+:title: Modeling Examples
+:icons: font
+:sectnums:
+:sectlinks:
+:toc: left
+:toclevels: 4
+:stem: latexmath
+:source-highlighter: highlightjs
+:imagesdir: images/
+
+== *ThermoElectric*
+
+=== General presentation of the files
+
+include::04-learning/ThermoElectric/General_presentation.adoc[]
+
+=== Examples
+
+include::04-learning/ThermoElectric/Current_sensor.adoc[]
+
+include::04-learning/ThermoElectric/H1-dble.adoc[]
+
+=== Validity
+
+include::04-learning/ThermoElectric/Validity.adoc[]
