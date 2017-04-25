@@ -1,4 +1,3 @@
-
 ==== Equations
 
 First of all, we start with the standart heat equation: +
@@ -8,7 +7,7 @@ The only source of heat considered is the Joule effect, translated by :
 
 latexmath:[P=\textbf{j.E}]
 
-Where latexmath:[\textbf{j}=\sigma\textbf{E}]  (frome the Ohm's law).
+Where latexmath:[\textbf{j}=\sigma\textbf{E}]  (from the Ohm's law).
 But latexmath:[\exists V | \textbf{E}=-\bigtriangledown V]
 
 NOTE: To see more details, link:http://book.feelpp.org/toolbox/thermoelectric[Thermo-Electric Toolbox]
@@ -22,6 +21,10 @@ Coefficients latexmath:[\sigma] and k are temperature-dependent as shown in this
 * latexmath:[\sigma=\frac{\sigma_ {0}}{1 + \alpha(T-T_{ref})}]
 
 * latexmath:[k=k_{0}\frac{T}{(1+\alpha(T-T_{ref}))T_{ref}}]
+
+==== Finite Element
+
+include::Finite_Element_equations_ThermoElectric.adoc[]
 
 ==== Boundary conditions
 

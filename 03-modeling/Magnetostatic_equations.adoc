@@ -1,16 +1,36 @@
-
 ==== Equations
 
-latexmath:[\oint_{C}\textbf{H} = I = \int_{S}\textbf{j.n}]
+First of all, we start with two of the four Maxwell's equations :
 
+[stem]
+++++
+    \left\{ \begin{array}{cc}
+      \bigtriangledown\times\textbf{H}=\textbf{j}\\
+      \bigtriangledown.\textbf{B}=0 \end{array} \right.
+++++
 
-latexmath:[\textbf{j}=-\sigma(T)\bigtriangledown V]
-
-
-latexmath:[\bigtriangledown\times\textbf{H}=-\sigma(T)\bigtriangledown V]
+We also can link the magnetic induction (*B*) and the magnetic field (*H*) using the permeability (latexmath:[\mu]) as :
 
 latexmath:[\textbf{B}=\mu\textbf{H}]
 
-latexmath:[\bigtriangledown.\textbf{B}=0  \Rightarrow  \exists \textbf{A}|\textbf{B}=\bigtriangledown\times \textbf{A}]
+with latexmath:[\mu=\mu_{r}\mu_{0}]
 
-latexmath:[\bigtriangledown\times\left(\frac{1}{\mu}\bigtriangledown\times \textbf{A}\right)= \textbf{j}]
+* latexmath:[\mu_{r}] being the permeability specific to the material
+
+* latexmath:[\mu_{0}] being the vacuum permeability
+
+From the differential operators, we know that *rot*.*div*.*A* = 0    latexmath:[\forall]*A*.
+
+Thus, since latexmath:[\nabla.\textbf{B}=0] there exists *A* such as latexmath:[\textbf{B}=\nabla\times \textbf{A}]
+
+Finally, we can write :
+
+latexmath:[\nabla\times\left(\frac{1}{\mu}\nabla\times\textbf{A}\right)=\textbf{j}]
+
+==== Finite Element
+
+include::Finite_Element_equations_Magnetostatic.adoc[]
+
+==== Boundary conditions
+
+Our materials allow us to only consider the vacuum permeability, so latexmath:[\mu=\mu_{0}].

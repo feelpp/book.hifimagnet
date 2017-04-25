@@ -8,7 +8,7 @@ but the main problem is the temperature reach by the sensor, due to the high cur
 We model all of this with `salome` and do the mesh.
 The mesh is more precise on the sensor (the 6 constantan plates)
 
-.Model of the sensor with the cables on `Gmsh`
+.Model of the sensor with the cables on `Salome`
 image::/images/learning/thermoelectric/Ensemble_CapteurCourant.png[Ensemble_CapteurCourant,475,300,float="left"]
 
 .Only the current sensor
