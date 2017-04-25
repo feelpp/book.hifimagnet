@@ -300,14 +300,14 @@ Finally, to execute our program, run this command :
 
 .to study the convergence
 ....
-mpirun -np 4 ~trophime/feelpp_build/new_Json/research/hifimagnet/testsuite/ThermoElectricModel/feelpp_test_convergence_3D_V1T1_N1  --config-file thermoelectric_3D_V1T1_N1_cvg.cfg
+mpirun -np 4 feelpp_test_convergence_3D_V1T1_N1  --config-file thermoelectric_3D_V1T1_N1_cvg.cfg
 ....
 
 It will create a table with all the informations you need. For our example, we showed the convergence using L2 and H1 (in section <<Results>>).
 
 .to apply for a real case (theory not known)
 ....
-mpirun -np 4 ~trophime/feelpp_build/new_Json/research/hifimagnet/applications/ThermoElectricModel/feelpp_hfm_thermoelectric_model_3D_V1T1_N1 --config-file thermoelectric_3D_V1T1_N1_cvg.cfg
+mpirun -np 4 feelpp_hfm_thermoelectric_model_3D_V1T1_N1 --config-file thermoelectric_3D_V1T1_N1_cvg.cfg
 ....
 
 This command will create files in `~/feel/hifimagnet/ThermoElectricModel/...` . You can see the results with Paraview or Ensight opening `Thermics.case` or `Electrics.case` in the software of your choice.

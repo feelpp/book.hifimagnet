@@ -1,4 +1,4 @@
-==== FEM
+===== FEM
 
 The Finite Element Method is detailed in the chapter link:http://book.feelpp.org/math/fem#cha:appr-r-probl-1[The Mathematics of Feel++]
 
@@ -8,7 +8,7 @@ latexmath:[\int_{\Omega}k(T)\bigtriangledown\phi_{T} + \int_{\partial\Omega_{coo
 
 We use the Picard method to solve this non linear variationnal formulation.
 
-==== Picard method
+===== Picard method
 
 The Picard method is an iterative method which approach the solution of a differential equation, until the difference y~n+1~-y~n~ becomes lower than an user-defined tolerance.
 

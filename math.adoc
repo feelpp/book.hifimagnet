@@ -23,7 +23,7 @@ include::03-modeling/Notations.adoc[]
 == *Modelisation*
 
 The study of a magnet is a multi-physic problem. It combine electromagnetism, thermic and mechanics.
-We divide the modelization into 4 parts:
+We divide the modeling into 4 parts:
 
 . *Thermo-electric* +
 The current flow inside the magnet (copper) involves a warming of the material, due to Joule effect.
@@ -36,10 +36,6 @@ We need to cool down the magnet, with fluid which will circulate around the mate
 This involves the Colburn correlation with the properties of the fluid.
 . *Electromagnetism* +
 The purpose of a magnet is to create a magnetic field, consequently, we will use the Maxwell's equations.
-
-=== Finite Element
-
-include::03-modeling/Finite_Element_equations.adoc[]
 
 === Thermo-electric
 

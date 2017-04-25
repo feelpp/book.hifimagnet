@@ -2,8 +2,8 @@
 
 We model a double helix on `salome` then do the mesh.
 
-.Double Helix on `Gmsh`
-image::/images/learning/thermoelectric/HL-31_H1-dble_32.png[Double_Helix,500,300,align="center"]
+.Double Helix on `Paraview`
+image::/images/learning/thermoelectric/Double_Helix_Geometry.png[Double_Helix,500,300,align="center"]
 
 ===== Parameters
 
@@ -174,4 +174,4 @@ image::/images/learning/thermoelectric/HL-31_H1-dble_32.png[Double_Helix,500,300
 We can see the repartition of the temperature in the helix.
 
 .Temperature's repartition on paraview
-image::/images/learning/thermoelectric/Double_Helix_temperature.png[Double_Helix_temperature,500,400,align="center"]
+image::/images/learning/thermoelectric/Double_Helix_temperature.png[Double_Helix_temperature,900,600,align="center"]
