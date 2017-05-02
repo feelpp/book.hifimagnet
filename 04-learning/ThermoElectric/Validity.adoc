@@ -7,7 +7,7 @@ image::/images/learning/thermoelectric/quarter-turn3D.png[quarter of a torus,300
 ===== Equations
 
 First of all, we start with the standard heat equation, with the heat from the Joule effect : +
-latexmath:[\rho C_{p}\frac{\partial T}{\partial t} - \bigtriangledown.(k \bigtriangledown T)=\sigma(\frac{U}{2\pi r})^{2}]
+latexmath:[\rho C_{p}\frac{\partial T}{\partial t} - \nabla.(k \nabla T)=\sigma(\frac{U}{2\pi r})^{2}]
 
 Coefficients latexmath:[\sigma] and k are in fact, temperature-dependent, shown in this equations :
 

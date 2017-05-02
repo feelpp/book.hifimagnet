@@ -1,20 +1,4 @@
 
-
-
-First, you need to create the 3D model on `Salome` and to make the mesh.
-When the mesh is created, with specific names for the volumes and surfaces, export your creation in `.med` (example : `example_mesh.med`).
-You also need to partition the mesh to allow the number of processors you want to do the calculations in parallel, running this command :
-----
-feelpp_mesh_partitioner --ifile "name_of_your_file.med" --part "number_of_processors_you_want_to_use" --nochdir
-----
-
-example :
-----
-feelpp_mesh_partitioner --ifile example_mesh.med --part 4 --nochdir
-----
-
-This will create a new file, call `"name_of_your_file"_p"number_of_processor_you_want".json` (example_mesh_p4.json) that you will use in your configure file.
-
 You can use ether the linear or the nonlinear model for your calculation, but for our example, we use the linear model, so we select the `thermoelectric-linear` (respectively `thermoelectric-nonlinear`) model in the Json file (details in the <<code.json>>).
 
 When all the files (detailed below) are created, you can run your calculation with this command :
@@ -102,7 +86,7 @@ The structure of a json file is as follows (conditions are details in <<Conditio
 }
 ....
 WARNING: The name of the volumes and surfaces must be the same as defined in `Salome`.
-Be carefull of the value of the characteristic of the material, the *units being in mm* (like ine <<test.json>>).
+Be carefull of the value of the characteristic of the material, the *units being in mm* (like in <<test.json>>).
 
 It is also necessary to create a file to configure the calculation, call `.cfg` file (example <<example_file.cfg>>).
 It will configure which file you will use in your calculations and which type of calculation you do (here we use the Krylov method with the conditions define in the subparts `electro` and `thermal`).

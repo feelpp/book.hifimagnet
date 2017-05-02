@@ -1,0 +1,217 @@
+In this example, we approximate the magnet with an axisymmetric copper torus.
+This torus is modeled with a file `.geo`, which name the volume of the torus (`omega`), each surface and a volume inside the torus (`box3D`)
+, also known as a sphere.
+
+.Model of the torus with the 3D box
+image::/images/learning/magnetostatic/torus3D_box3D.png[torus3D with the box3D,700,400,align="center"]
+
+===== Equations
+
+
+
+===== Parameters
+
+We use here the same parameters as in the ThermoElectric section for the .json file.
+We select the biter-intensity (shown in <<example.cfg>>)
+
+===== Conditions
+
+===== Results
+
+On the next figure, the current is represented by the white arrow in the torus, the color of the torus corresponding to the potential.
+The box3D (the sphere inside the torus) is represented with the magnetic induction's vector (*B*).
+
+image::/images/learning/magnetostatic/B_and_I.png[B and I,700,400,align="center"]
+
+
+image::/images/learning/magnetostatic/potential_A.png[magnetic potential A,700,400,align="center"]
+
+===== Code
+
+For the modelisation of the the torus and his box inside, we create the geometry with this file `.geo`
+
+.torus3D_box3D.geo
+....
+// Define Main params
+Unit = 1.e-3;
+
+h=5;
+r1=61.2*0.5;
+r2=106.4*0.5;
+L=4.61/2.;
+eps=0.1;
+theta1=Asin( eps/(2*r1) );
+theta2=Asin( eps/(2*r2) );
+
+// 1st quarter
+Point(1) = {0, 0, -L, h};
+
+Point(2) = {r1*Cos(theta1), eps/2., -L, h};
+Point(3) = {r2*Cos(theta2), eps/2., -L, h};
+Point(4) = {0, r1, -L, h};
+Point(5) = {0, r2, -L, h};
+Point(6) = {-r1, 0, -L, h};
+Point(7) = {-r2, 0, -L, h};
+Point(8) = {0, -r1, -L, h};
+Point(9) = {0, -r2, -L, h};
+Point(10) = {r1*Cos(-theta1), -eps/2., -L, h};
+Point(11) = {r2*Cos(-theta2), -eps/2., -L, h};
+
+Circle(1) = {2, 1, 4};
+Circle(2) = {4, 1, 6};
+Circle(3) = {6, 1, 8};
+Circle(4) = {8, 1, 10};
+
+Circle(5) = {3, 1, 5};
+Circle(6) = {5, 1, 7};
+Circle(7) = {7, 1, 9};
+Circle(8) = {9, 1, 11};
+
+Line(9) = {2, 3};
+Line(10) = {10, 11};
+
+dL=newl; Line Loop(dL) = {1:4, 10, -8, -7, -6, -5, -9};
+S=news; Plane Surface(S) = {dL};
+
+out[] = Extrude {0,0,2*L} {Surface{S};};
+
+Physical Volume("omega") = {out[1]};
+Physical Surface("top") = {out[0]};
+Physical Surface("bottom") = {S};
+Physical Surface("Rint") = {out[2], out[3], out[4], out[5]};
+Physical Surface("Rext") = {out[7], out[8], out[9], out[10]};
+Physical Surface("in") = {out[6]};
+Physical Surface("out") = {out[11]};
+
+// Define BiotSavart box
+Boxdim=3;
+
+hs=1;
+np=10;
+
+z0=-0.8*r1;
+z1=-z0;
+
+C0=newp; Point(C0) = {0, 0, 0, hs};
+
+P0=newp; Point(P0) = {0, 0, z0, hs};
+P1=newp; Point(P1) = {0, 0, z1, hs};
+Q0=newp; Point(Q0) = {0, z1, 0, hs};
+R0=newp; Point(R0) = {z1, 0, 0, hs};
+
+C0P0=newl; Line(C0P0) = {C0, P0};
+P0P1=newl; Line(P0P1) = {P0, P1};
+BS0=newl; Circle(BS0) = {P0, C0, Q0};
+BS1=newl; Circle(BS1) = {P0, C0, R0};
+BS2=newl; Circle(BS2) = {Q0, C0, R0};
+BS3=newl; Circle(BS3) = {Q0, C0, P1};
+BS4=newl; Circle(BS4) = {R0, C0, P1};
+
+Sb_Sph=newl; Line Loop(Sb_Sph)={BS0, BS2, -BS1};
+S_Sph=newl; Ruled Surface(S_Sph)={Sb_Sph};
+S2_Sph = Rotate { { 0, 0, 1 }, { 0, 0, 0 }, Pi/2. } { Duplicata{ Surface{S_Sph}; } };
+S3_Sph = Rotate { { 0, 0, 1 }, { 0, 0, 0 }, 2*Pi/2. } { Duplicata{ Surface{S_Sph}; } };
+S4_Sph = Rotate { { 0, 0, 1 }, { 0, 0, 0 }, 3*Pi/2. } { Duplicata{ Surface{S_Sph}; } };
+
+Nb_Sph=newl; Line Loop(Nb_Sph)={BS2, BS4, -BS3};
+N_Sph=newl; Ruled Surface(N_Sph)={Nb_Sph};
+N2_Sph = Rotate { { 0, 0, 1 }, { 0, 0, 0 }, Pi/2. } { Duplicata{ Surface{N_Sph}; } };
+N3_Sph = Rotate { { 0, 0, 1 }, { 0, 0, 0 }, 2*Pi/2. } { Duplicata{ Surface{N_Sph}; } };
+N4_Sph = Rotate { { 0, 0, 1 }, { 0, 0, 0 }, 3*Pi/2. } { Duplicata{ Surface{N_Sph}; } };
+
+SLoop=news; Surface Looop(SLoop)={S_Sph, N_Sph, S2_Sph, N2_Sph, S3_Sph, N3_Sph, S4_Sph, N4_Sph};
+RMN=newv; Volume(RMN)={SLoop};
+
+If ( Boxdim == 1 )
+ Physical Line("box1D") = {P0P1};
+EndIf
+
+If ( Boxdim == 2 )
+ Physical Surface("box2D") = {S_Sph, N_Sph, S2_Sph, N2_Sph, S3_Sph, N3_Sph, S4_Sph, N4_Sph};
+EndIf
+
+If ( Boxdim == 3 )
+  Physical Volume("box3D") = {RMN};
+EndIf
+....
+
+
+
+[[example.cfg]]
+[source,cfg]
+.biotsavart_num_box3D_3D_V1T_N1_cvg.cfg
+....
+dim=3
+units=mm
+geofile=torus3D_box3D.geo
+geofile-path=$cfgdir
+gmsh.hsize=10
+
+conductor_volume=omega
+
+[convergence]
+max_iter=3
+
+[functions]
+j={58.e+3*(0.5/(2*Pi))*y/(x^2+y^2),-58.e+3*(0.5/(2*Pi))*x/(x^2+y^2),0}:x:y:z
+u=0.5*atan2(y,x)/(2*Pi)*(atan2(y,x)>0)+(0.5*(atan2(y,x)+2*Pi)/(2*Pi))*(atan2(y,x)<0):x:y:z
+t=362.156146169164-58.e+3/(2*0.38)*(0.5/(2*Pi))^2*log(sqrt(x*x+y*y)/39.4354779237947 )^2:x:y:z
+
+[biot_savart]
+conductor=omega
+box=box3D
+
+[magnetic_field-bmap]
+geo-data=torus3D.d
+geo-path=$cfgdir
+helix-intensity=0
+bitter-intensity=-11767.7
+supra-intensity=0
+
+[thermoelectric]
+model_json=$cfgdir/biotsavart.json
+weakdir=false
+
+[electro]
+pc-type=gamg
+#ksp-monitor=true
+ksp-rtol=1e-7
+ksp-atol=1e-5
+ksp-maxit=2000
+ksp-use-initial-guess-nonzero=1
+
+[thermal]
+pc-type=gamg
+#ksp-monitor=true
+ksp-rtol=1e-8
+ksp-atol=1e-6
+ksp-use-initial-guess-nonzero=1
+....
+
+the next step is to make a file `.d` which fix some parameters on the torus
+
+
+.torus3D.d
+....
+#Power[MW]	Current[A]
+12.5  		31000.
+#Helices	N_Elem
+0
+#N	R1[m]  R2[m]  HalfL[m]	Rho[Ohm.m]  Alpha[1/K]	E_Max[Pa]	K[W/(m.K)]	h[W/(m^2.K)]	<T_Water>[°C]	T_Max[°C]
+0.
+1
+# Bitter I=j1*r1*log(r2/r1)*2*L=11767.657994358965
+#Type	R1	       R2	     Z1	         Z2	         J		             Rho		N_turns
+1       30.6e-3    53.2e-3   -2.305e-3   2.305e-3    150833116.00212305    1         1
+#1       30.6e-3    53.2e-3   -2.305e-3   2.305e-3    124827406.34658459  1         1
+# Supra
+
+#Bz(0)[tesla]	Power[MW]	Bz_total(0)[tesla]
+ 22.7526804266798 12.500000000 22.7526804266798
+
+#H   B0_H[t]	Sum_B0[t] Power_H[MW]	Sum_Power[MW]
+
+
+
+MARGE DE SECURITE CONTRAINTES= 8.0 %
+....

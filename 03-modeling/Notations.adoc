@@ -35,19 +35,33 @@
 |heat transfer coefficient
 |latexmath:[W.m^{-2}.K^{-1}]
 
+|*A*
+|magnetic potential
+|latexmath:[V.s.m^{-1}]
+
+|*B*
+|magnetic induction
+| T
+
+|*H*
+|magnetic field
+|latexmath:[A.m^{-1}]
+
 |===
 
 === Conventions
 
 [horizontal]
 latexmath:[f]:: function
-latexmath:[\textbf{f}]:: vector of functions
+latexmath:[\textbf{f}]:: vector of functionscorrespondance entre les paramètres et les symboles
 
 === Functions
 
 [horizontal]
-latexmath:[\bigtriangledown f]:: gradient of f
-latexmath:[\bigtriangledown.\textbf{ f }]:: divergence of *f*
-latexmath:[\bigtriangledown \times \textbf{ f }]:: curl of *f*
+latexmath:[\nabla f]:: gradient of f
+latexmath:[\nabla.\textbf{ f }]:: divergence of *f*
+latexmath:[\nabla \times \textbf{ f }]:: curl of *f*
 latexmath:[L_{2}(\Omega)]:: latexmath:[\{f  \mid \int f^{2} < \infty\}]  Lagrangian
-latexmath:[H_{1}(\Omega)]:: latexmath:[\{f \in L_{2}(\Omega) \mid \bigtriangledown f \in [L_{2}(\Omega)\]^{d}\}]  Hilbert space
+latexmath:[H_{1}(\Omega)]:: latexmath:[\{f \in L_{2}(\Omega) \mid \nabla f \in [L_{2}(\Omega)\]^{d}\}]  Hilbert space
+latexmath:[H_{div}(\Omega)]:: latexmath:[\{\textbf{f}\in [L^{2}(\Omega\cup\Omega_{c})\]^{d}| \nabla.\textbf{f}\in L^{2}(\Omega\cup\Omega_{c})\}] Divergence space
+latexmath:[H_{curl}(\Omega)]:: latexmath:[\{\textbf{f}\in [L^{2}(\Omega\cup\Omega_{c})\]^{d}| \nabla\times\textbf{f}\in [L^{2}(\Omega\cup\Omega_{c})\]^{d}\}] Rotational space

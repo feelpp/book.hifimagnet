@@ -1,20 +1,20 @@
 ==== Equations
 
 First of all, we start with the standart heat equation: +
-latexmath:[\rho C_{p}\frac{\partial T}{\partial t} - \bigtriangledown.(k \bigtriangledown T)=P]
+latexmath:[\rho C_{p}\frac{\partial T}{\partial t} - \nabla.(k \nabla T)=P]
 
 The only source of heat considered is the Joule effect, translated by :
 
 latexmath:[P=\textbf{j.E}]
 
 Where latexmath:[\textbf{j}=\sigma\textbf{E}]  (from the Ohm's law).
-But latexmath:[\exists V | \textbf{E}=-\bigtriangledown V]
+But latexmath:[\exists V | \textbf{E}=-\nabla V]
 
 NOTE: To see more details, link:http://book.feelpp.org/toolbox/thermoelectric[Thermo-Electric Toolbox]
 
 We also consider that T is time independent, so, finally, we have :
 
-latexmath:[- \bigtriangledown.(k \bigtriangledown T)=\sigma\bigtriangledown V . \bigtriangledown V]
+latexmath:[- \nabla.(k \nabla T)=\sigma\nabla V . \nabla V]
 
 Coefficients latexmath:[\sigma] and k are temperature-dependent as shown in this equations :
 
@@ -35,7 +35,7 @@ The current is due to a difference of potential. We model this with the Dirichle
 
 We consider that the air and the cooling water around the material are electrically insulating. We model that with the Neumann conditions which set the current density flux to null :
 
-* latexmath:[-\sigma(T)\bigtriangledown V.n=0] for all surfaces except V~in~ and V~out~
+* latexmath:[-\sigma(T)\nabla V.n=0] for all surfaces except V~in~ and V~out~
 
 On the surfaces cooled, we set the heat transfer coefficient _h_, determined as follow :
 
