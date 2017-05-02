@@ -5,8 +5,8 @@ First of all, we start with two of the four Maxwell's equations :
 [stem]
 ++++
     \left\{ \begin{array}{cc}
-      \bigtriangledown\times\textbf{H}=\textbf{j}\\
-      \bigtriangledown.\textbf{B}=0 \end{array} \right.
+      \nabla\times\textbf{H}=\textbf{j}\\
+      \nabla.\textbf{B}=0 \end{array} \right.
 ++++
 
 We also can link the magnetic induction (*B*) and the magnetic field (*H*) using the permeability (latexmath:[\mu]) as :
@@ -33,4 +33,13 @@ include::Finite_Element_equations_Magnetostatic.adoc[]
 
 ==== Boundary conditions
 
-Our materials allow us to only consider the vacuum permeability, so latexmath:[\mu=\mu_{0}].
+The current density is located in some finite region in space, this involves considering *B* as zero at infinity.
+But, with the Finite Element Method,we discretize the domain so we impose the domain to be of finite dimension.
+In fact, this domain is composed by latexmath:[\Omega] (the conductor) and a box inside, latexmath:[\Omega_{c}], whose boundaries model the infinity.
+The size of this box can be set manually or be calculated for more precision and validity.
+The boundary condition is expressed with the magnetic potential (*A*) like this :
+
+latexmath:[\textbf{A}\times\textbf{n}=0] on latexmath:[\partial\Omega_{c}]
+
+
+Our materials allow us to only consider the vacuum permeability, so latexmath:[\mu=\mu_{0}=4\pi.10^{-7} kg.m.A^{-2}.s^{-2}].
