@@ -266,6 +266,6 @@ image::/images/learning/thermoelectric/Temperature_Max.png[Temperature_Max,900,6
 Here we see that in natural convection (h=15), the temperature reached is by far too high.
 
 .Temperature max in 1 plate as a function of current, forced convection only
-image::/images/learning/thermoelectric/Temperature_Max_forced_convection.png[Temperature_Max_forced_convection,900,600,align="center"]
+image::/images/learning/thermoelectric/Temperature_Max_Zoom2.png[Temperature Max zoom2,900,600,align="center"]
 
-A heat transfer coefficient maximum allow to set a higher current but is difficult to set up.
+A heat transfer coefficient maximum allow to set a higher current but is more difficult to set up.

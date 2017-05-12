@@ -57,3 +57,19 @@ include::04-learning/Magnetostatic/General_presentation.adoc[]
 === Validity
 
 include::04-learning/Magnetostatic/Validity.adoc[]
+
+=== Cartesian model
+
+include::04-learning/Magnetostatic/Cartesian.adoc[]
+
+== *Elasticity*
+
+=== General presentation of the files
+
+include::04-learning/Elasticity/General_presentation.adoc[]
+
+=== Examples
+
+=== Validity
+
+include::04-learning/Elasticity/Validity.adoc[]

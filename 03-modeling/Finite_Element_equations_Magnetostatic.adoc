@@ -1,4 +1,3 @@
-===== FEM
 
 The Finite Element Method is detailed in the chapter link:http://book.feelpp.org/math/fem#cha:appr-r-probl-1[The Mathematics of Feel++]
 
