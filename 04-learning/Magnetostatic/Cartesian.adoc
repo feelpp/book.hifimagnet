@@ -1,0 +1,26 @@
+Until now, we only focus on the study in the center of the torus.
+Indeed, the program can only calculate the magnetic potential and field outside the torus,
+therefore to be able to calculate *A* and *B* around the torus that implies to create a really complex geometry.
+Instead of this, we use the Cartesian model which allow to calculate *A* and *B* inside the torus,
+this allow us to calculate inside the torus, then we model a large sphere to represent the air all around the conductor.
+
+.model of the torus (red) with the box (blue).
+image::/images/learning/magnetostatic/Cartesian_model.png[Cartesian torus3D with the box3D,700,400,align="center"]
+
+With a simple torus, we can calculate the potential analytically like before.
+
+.Magnetic potentials repartition on paraview
+image::/images/learning/magnetostatic/Cartesian_potential.png[calculated magnetic potential,475,300,float="left"]
+
+.Analytical magnetic potential on paraview
+image::/images/learning/magnetostatic/Cartesian_potential_ana.png[calculated magnetic potential,475,300,float="right"]
+
+Sadly, we can see that there is however some differences between the figures (on the scale)
+
+.Error on paraview
+image::/images/learning/magnetostatic/Cartesian_potential_error.png[potential error,475,300,float="left"]
+
+.Error zoom on paraview
+image::/images/learning/magnetostatic/Cartesian_potential_error_zoom.png[error zoom on the torus,475,300,float="right"]
+
+The maximum of the error is approximately 0.8%, located on the torus.

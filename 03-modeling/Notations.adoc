@@ -53,8 +53,7 @@
 
 [horizontal]
 latexmath:[f]:: function
-latexmath:[\textbf{f}]:: vector of functionscorrespondance entre les paramètres et les symboles
-
+latexmath:[\textbf{f}]:: vector of functions
 === Functions
 
 [horizontal]

@@ -10,7 +10,7 @@ The kind of your test can be :
 [horizontal]
 biotsavart::   calculate *B* and *A* analytically and with BiotSavart, depending of *j* given.
 biotsavart_num::   same than biotsavart but use the thermoelectric program to calculate *j*.
-convergence:: soon
+
 
 You either set the dimension (1, 2 or 3D) of the box inside the conductor.
 

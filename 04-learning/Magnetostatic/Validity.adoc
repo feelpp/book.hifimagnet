@@ -7,14 +7,37 @@ image::/images/learning/magnetostatic/torus3D_box3D.png[torus3D with the box3D,7
 
 ===== Equations
 
+We use the Biot & Savart's law to prove the validity.
+First, we need to set the conditions to use this law, latexmath:[\Omega_{cond}\cap\Omega_{mgn}=\emptyset],
+with latexmath:[\Omega_{cond}] the conductor in which the current is passing and
+latexmath:[\Omega_{mgn}] the domain in which we want to know the magnetic field.
+With this, using the magnetostatic equation, we can write the magneticpotential *A* as
 
+latexmath:[\nabla^{2}\textbf{A}=-\mu\textbf{j}]
+
+The general solution of this equation is :
+
+latexmath:[A(\textbf{r})=-\mu\int_{\Omega_{cond}}G(\textbf{r},\textbf{r'})\textbf{j}(\textbf{r'})]
+
+with latexmath:[G(\textbf{r},\textbf{r'})] the Green's function defined as :
+
+latexmath:[G(\textbf{r},\textbf{r'})=\frac{-1}{4\pi}\frac{1}{|\textbf{r}-\textbf{r'}|}]
+
+with latexmath:[\textbf{r}\in\Omega_{mgn}] and latexmath:[\textbf{r'}\in\Omega_{cond}]
+
+Then we rewrite the expression of the magnetic potential *A* :
+
+latexmath:[A(\textbf{r})=\frac{\mu_{0}}{4\pi}\int_{\Omega_{cond}}\frac{\textbf{j}(\textbf{r'})}{|\textbf{r}-\textbf{r'}|} d\textbf{r'}]        latexmath:[\textbf{r}\in\Omega_{mgn}]
+
+As *B* is defined as the curl of *A*, we can write the so called Biot & Savart's law :
+
+latexmath:[\textbf{B}(\textbf{r})=\frac{\mu_{0}}{4\pi}\int_{\Omega_{cond}}\frac{\textbf{j}(\textbf{r'})\times(\textbf{r}-\textbf{r'})}{|\textbf{r}-\textbf{r'}|^{3}} d\textbf{r'}]        latexmath:[\textbf{r}\in\Omega_{mgn}]
 
 ===== Parameters
 
 We use here the same parameters as in the ThermoElectric section for the .json file.
 We select the biter-intensity (shown in <<example.cfg>>)
-
-===== Conditions
+We also need a file `.d` to define the characteristics of the conductors.
 
 ===== Results
 
@@ -25,6 +48,9 @@ image::/images/learning/magnetostatic/B_and_I.png[B and I,700,400,align="center"
 
 
 image::/images/learning/magnetostatic/potential_A.png[magnetic potential A,700,400,align="center"]
+
+We can see that the magnetic potential (*A*) is in the same way that the current in the torus.
+The scale and the direction of the magnetic field (*B*) are coherent.
 
 ===== Code
 
@@ -135,11 +161,68 @@ If ( Boxdim == 3 )
 EndIf
 ....
 
+the next step is to make a file `.d` which fix some parameters on the torus
 
+
+.torus3D.d
+....
+#Power[MW]	Current[A]
+12.5  		31000.
+#Helices	N_Elem
+0
+#N	R1[m]  R2[m]  HalfL[m]	Rho[Ohm.m]  Alpha[1/K]	E_Max[Pa]	K[W/(m.K)]	h[W/(m^2.K)]	<T_Water>[°C]	T_Max[°C]
+0.
+1
+# Bitter I=j1*r1*log(r2/r1)*2*L=11767.657994358965
+#Type	R1	       R2	     Z1	         Z2	         J		             Rho		N_turns
+1       30.6e-3    53.2e-3   -2.305e-3   2.305e-3    150833116.00212305    1         1
+#1       30.6e-3    53.2e-3   -2.305e-3   2.305e-3    124827406.34658459  1         1
+# Supra
+
+#Bz(0)[tesla]	Power[MW]	Bz_total(0)[tesla]
+ 22.7526804266798 12.500000000 22.7526804266798
+
+#H   B0_H[t]	Sum_B0[t] Power_H[MW]	Sum_Power[MW]
+
+
+
+MARGE DE SECURITE CONTRAINTES= 8.0 %
+....
+
+Finally we can use the `biotsavart_num` (in which we use the thermoelectric model to calculate *j*) or the `biotsavart` (in which we specify manually *j*)
+
+[source,cfg]
+.biotsavart_box3D_3D_P1_N1_cvg.cfg
+....
+dim=3
+units=mm
+geofile=biotsavart_box3D.geo
+geofile-path=$cfgdir
+gmsh.hsize=10
+
+conductor_volume=omega
+
+[convergence]
+max_iter=1
+
+[functions]
+j={-58.e+3*(0.5/(2*Pi))*y/(x^2+y^2),58.e+3*(0.5/(2*Pi))*x/(x^2+y^2),0}:x:y:z
+
+[biot_savart]
+conductor=omega
+box=box3D
+
+[magnetic_field-bmap]
+geo-data=torus3D.d
+geo-path=$cfgdir
+helix-intensity=0
+bitter-intensity=11767.7
+supra-intensity=0
+....
 
 [[example.cfg]]
 [source,cfg]
-.biotsavart_num_box3D_3D_V1T_N1_cvg.cfg
+.biotsavart_num_box3D_3D_V1T1_N1_cvg.cfg
 ....
 dim=3
 units=mm
@@ -188,30 +271,66 @@ ksp-atol=1e-6
 ksp-use-initial-guess-nonzero=1
 ....
 
-the next step is to make a file `.d` which fix some parameters on the torus
+For the numerical file, we use a `json` file like in the thermoelectric section.
 
-
-.torus3D.d
+[source,json]
+.biotsavart.json
 ....
-#Power[MW]	Current[A]
-12.5  		31000.
-#Helices	N_Elem
-0
-#N	R1[m]  R2[m]  HalfL[m]	Rho[Ohm.m]  Alpha[1/K]	E_Max[Pa]	K[W/(m.K)]	h[W/(m^2.K)]	<T_Water>[°C]	T_Max[°C]
-0.
-1
-# Bitter I=j1*r1*log(r2/r1)*2*L=11767.657994358965
-#Type	R1	       R2	     Z1	         Z2	         J		             Rho		N_turns
-1       30.6e-3    53.2e-3   -2.305e-3   2.305e-3    150833116.00212305    1         1
-#1       30.6e-3    53.2e-3   -2.305e-3   2.305e-3    124827406.34658459  1         1
-# Supra
-
-#Bz(0)[tesla]	Power[MW]	Bz_total(0)[tesla]
- 22.7526804266798 12.500000000 22.7526804266798
-
-#H   B0_H[t]	Sum_B0[t] Power_H[MW]	Sum_Power[MW]
-
-
-
-MARGE DE SECURITE CONTRAINTES= 8.0 %
+{
+    "Name": "ThermoElectric",
+    "ShortName":"TE",
+    "Model":"thermoelectric-linear",
+    "Materials":
+    {
+        "omega":
+        {
+            "name":"copper",
+            "alpha":"3.35e-3",
+            "T0":"293",
+            "sigma0":"58e+3",
+            "k0":"0.38",
+            "sigma":"sigma0/(1+alpha*(T-T0)):sigma0:alpha:T:T0",
+            "k":"k0*T/((1+alpha*(T-T0))*T0):k0:T:alpha:T0"
+        }
+    },
+    "BoundaryConditions":
+    {
+        "potential":
+        {
+            "Dirichlet":
+            {
+                "in":
+                {
+                    "expr1":"0.5",
+		    "expr2":"omega"
+                },
+                "out":
+                {
+                    "expr1":"0",
+		    "expr2":"omega"
+                }
+            }
+        },
+        "temperature":
+        {
+            "Robin":
+            {
+                "Rext":
+                {
+                    "expr1":"0.08",
+                    "expr2":"293"
+                },
+                "Rint":
+                {
+                    "expr1":"0.08",
+                    "expr2":"293"
+                }
+            }
+        }
+    },
+    "PostProcess":
+    {
+        "Fields":["temperature","potential","current"]
+    }
+}
 ....

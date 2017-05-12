@@ -1,0 +1,49 @@
+
+===== Conditions
+
+We consider the conductor as a solenoid with finite thickness and infinite length. This allow us to ignore the *z* components in our equations
+We admit that there is only a radial expansion.
+
+===== Equations
+
+Taking back the equations in the link:/math.adoc[Maths for Hifimagnet], we consider :
+
+latexmath:[div\sigma+\textbf{j}\times\textbf{b}=0]
+
+With the conditions set in the previous section, we have :
+
+latexmath:[-\sigma_{\theta}+\frac{\partial}{\partial r}(r\sigma_{r})=-rj_{\theta}b_{z}]
+
+===== Parameters
+
+In our case (a coil of copper), we choose the parameters like this :
+
+.Fixed and variable parameters
+[%autowidth.spread,options="header"]
+|===
+^|Name ^|Description ^|Range ^|Nominal Value ^|Unit
+
+|latexmath:[E]
+|Young modulus
+^|
+^|latexmath:[2,1.10^{6}]
+|
+
+|latexmath:[\nu]
+|Poisson's ratio
+^|
+^|0.33
+|
+
+|latexmath:[\alpha_{T}]
+|linear dilatation coefficient
+^|
+^|latexmath:[18.10^{-6}]
+|
+
+|latexmath:[\rho]
+|density
+^|
+^|latexmath:[10.10^{-6}]
+|
+|===
