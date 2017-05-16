@@ -14,19 +14,16 @@
 
 == *Prepare your geometry*
 
-First of all, you need to create the 3D model of your conductor on `Salome` and to make the mesh.
-When the mesh is created, with specific names for the volumes and surfaces, export your creation in `.med` (example : `example_mesh.med`).
-You also need to partition the mesh to allow the number of processors you want to do the calculations in parallel, running this command :
-----
-feelpp_mesh_partitioner --ifile "name_of_your_file.med" --part "number_of_processors_you_want_to_use" --nochdir
-----
+First of all, you need to create the 3D model of your conductor with `Salome` or `gmsh` and to make the mesh.
+When the mesh is created, with specific names for the volumes and surfaces, export it in `.med` (example : `example_mesh.med`) with `Salome`.
+You also need to partition the mesh if you want to do the calculations in parallel, running this command below.
 
 example :
 ----
 feelpp_mesh_partitioner --ifile example_mesh.med --part 4 --nochdir
 ----
-
-This will create a new file, call `"name_of_your_file"_p"number_of_processor_you_want".json` (example_mesh_p4.json) that you will use in your configure file.
+Where `part` indicate the number of processors you want to use.
+This will create a new file, call `example_mesh_p4.json` that you will use in your configure file.
 
 == *ThermoElectric*
 

@@ -4,7 +4,7 @@ v0.1, 2017-04-04
 :page-layout!: default
 :page-permalink: /math/
 :page-root: /
-:title: The Modeliing HiFiMagnet Guide
+:title: The Modeling HiFiMagnet Guide
 :icons: font
 :sectnums:
 :sectlinks:
@@ -31,9 +31,9 @@ The temperature in the different sections of the magnet are calculated thanks to
 . *Elasticity* +
 The temperature's elevation involves a dilatation of the material. It implies some constraints due to the nature of the material.
 . *Hydraulics* +
-Due to the strong current flow inside the magnet, the temperature will rise dangerously.
-We need to cool down the magnet, with fluid which will circulate around the material.
-This involves the Colburn correlation with the properties of the fluid.
+Due to the Joule heating, the temperature will rise dangerously.
+We need to cool down the magnet, with fluid which will circulate around the conductor.
+This is modeled by the Colburn correlation with the properties of the fluid.
 . *Electromagnetism* +
 The purpose of a magnet is to create a magnetic field, consequently, we will use the Maxwell's equations.
 

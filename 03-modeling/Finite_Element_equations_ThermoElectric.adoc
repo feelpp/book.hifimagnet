@@ -2,16 +2,18 @@
 
 The Finite Element Method is detailed in the chapter link:http://book.feelpp.org/math/fem#cha:appr-r-probl-1[The Mathematics of Feel++]
 
-Finally, in our case, the variationnal formulation then consists in finding latexmath:[V\in X_{T}=H_{1}(\Omega)   \forall \phi_{T}\in X_{T}]  :
+Finally, in our case, the variationnal formulation then consists in finding $V\in X_{T}=H_{1}(\Omega)   \forall \phi_{T}\in X_{T}$  :
 
-latexmath:[\int_{\Omega}k(T)\bigtriangledown\phi_{T} + \int_{\partial\Omega_{cooled}}hT\phi_{T}=\int_{\Omega}\sigma(T)\bigtriangledown V. \bigtriangledown V +\int_{\partial\Omega_{cooled}}hT_{\omega}\phi_{T}]
+\[
+\int_{\Omega}k(T)\nabla\phi_{T} + \int_{\partial\Omega_{cooled}}hT\phi_{T}=\int_{\Omega}\sigma(T)\nabla V. \nabla V +\int_{\partial\Omega_{cooled}}hT_{\omega}\phi_{T}
+\]
 
 We use the Picard method to solve this non linear variationnal formulation.
 
 ===== Picard method
 
-The Picard method is an iterative method which approach the solution of a differential equation, until the difference y~n+1~-y~n~ becomes lower than an user-defined tolerance.
+The Picard method is an iterative method which approach the solution of a differential equation, until the difference between y~n+1~ and y~n~ becomes lower than an user-defined tolerance.
 
-latexmath:[\frac{dy}{dx}=f(x,y)]            with latexmath:[y(x_{0})=y_{0}]
+* $\frac{dy}{dx}=f(x,y)$ with $y(x_{0})=y_{0}$
 
-latexmath:[y_{n}=y_{0}+\int_{x_{0}}^{x}f(s,y_{n-1}(s))ds]
+* $y_{n}=y_{0}+\int_{x_{0}}^{x}f(s,y_{n-1}(s))ds$

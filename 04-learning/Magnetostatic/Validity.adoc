@@ -8,30 +8,40 @@ image::/images/learning/magnetostatic/torus3D_box3D.png[torus3D with the box3D,7
 ===== Equations
 
 We use the Biot & Savart's law to prove the validity.
-First, we need to set the conditions to use this law, latexmath:[\Omega_{cond}\cap\Omega_{mgn}=\emptyset],
-with latexmath:[\Omega_{cond}] the conductor in which the current is passing and
-latexmath:[\Omega_{mgn}] the domain in which we want to know the magnetic field.
-With this, using the magnetostatic equation, we can write the magneticpotential *A* as
+First, we need to set the conditions to use this law, $\Omega_{cond}\cap\Omega_{mgn}=\emptyset$,
+with $\Omega_{cond}$ the conductor in which the current is passing and
+$\Omega_{mgn}$ the domain in which we want to know the magnetic field.
+With this, using the magnetostatic equation, we can write the magnetic potential *A* as
 
-latexmath:[\nabla^{2}\textbf{A}=-\mu\textbf{j}]
+\[
+\nabla^{2}\textbf{A}=-\mu\textbf{j}
+\]
 
 The general solution of this equation is :
 
-latexmath:[A(\textbf{r})=-\mu\int_{\Omega_{cond}}G(\textbf{r},\textbf{r'})\textbf{j}(\textbf{r'})]
+\[
+A(\textbf{r})=-\mu\int_{\Omega_{cond}}G(\textbf{r},\textbf{r'})\textbf{j}(\textbf{r'})
+\]
 
-with latexmath:[G(\textbf{r},\textbf{r'})] the Green's function defined as :
+with $G(\textbf{r},\textbf{r'})$ the Green's function defined as :
 
-latexmath:[G(\textbf{r},\textbf{r'})=\frac{-1}{4\pi}\frac{1}{|\textbf{r}-\textbf{r'}|}]
+\[
+G(\textbf{r},\textbf{r'})=\frac{-1}{4\pi}\frac{1}{|\textbf{r}-\textbf{r'}|}
+\]
 
-with latexmath:[\textbf{r}\in\Omega_{mgn}] and latexmath:[\textbf{r'}\in\Omega_{cond}]
+with $\textbf{r}\in\Omega_{mgn}$ and $\textbf{r'}\in\Omega_{cond}$
 
 Then we rewrite the expression of the magnetic potential *A* :
 
-latexmath:[A(\textbf{r})=\frac{\mu_{0}}{4\pi}\int_{\Omega_{cond}}\frac{\textbf{j}(\textbf{r'})}{|\textbf{r}-\textbf{r'}|} d\textbf{r'}]        latexmath:[\textbf{r}\in\Omega_{mgn}]
+\[
+A(\textbf{r})=\frac{\mu_{0}}{4\pi}\int_{\Omega_{cond}}\frac{\textbf{j}(\textbf{r'})}{|\textbf{r}-\textbf{r'}|} d\textbf{r'}\;\;\;\;\;\;\;\textbf{r}\in\Omega_{mgn}
+\]
 
 As *B* is defined as the curl of *A*, we can write the so called Biot & Savart's law :
 
-latexmath:[\textbf{B}(\textbf{r})=\frac{\mu_{0}}{4\pi}\int_{\Omega_{cond}}\frac{\textbf{j}(\textbf{r'})\times(\textbf{r}-\textbf{r'})}{|\textbf{r}-\textbf{r'}|^{3}} d\textbf{r'}]        latexmath:[\textbf{r}\in\Omega_{mgn}]
+\[
+\textbf{B}(\textbf{r})=\frac{\mu_{0}}{4\pi}\int_{\Omega_{cond}}\frac{\textbf{j}(\textbf{r'})\times(\textbf{r}-\textbf{r'})}{|\textbf{r}-\textbf{r'}|^{3}} d\textbf{r'}\;\;\;\;\;\;\;\textbf{r}\in\Omega_{mgn}
+\]
 
 ===== Parameters
 
