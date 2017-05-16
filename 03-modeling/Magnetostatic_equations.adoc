@@ -2,30 +2,33 @@
 
 First of all, we start with two of the four Maxwell's equations :
 
-[stem]
-++++
+\[
     \left\{ \begin{array}{cc}
       \nabla\times\textbf{H}=\textbf{j}\\
       \nabla.\textbf{B}=0 \end{array} \right.
-++++
+\]
 
-We also can link the magnetic induction (*B*) and the magnetic field (*H*) using the permeability (latexmath:[\mu]) as :
+We also can link the magnetic induction (*B*) and the magnetic field (*H*) using the permeability ($\mu$) as :
 
-latexmath:[\textbf{B}=\mu\textbf{H}]
+\[
+\textbf{B}=\mu\textbf{H}
+\]
 
-with latexmath:[\mu=\mu_{r}\mu_{0}]
+with $\mu=\mu_{r}\mu_{0}$
 
-* latexmath:[\mu_{r}] being the permeability specific to the material
+* $\mu_{r}$ being the permeability specific to the material
 
-* latexmath:[\mu_{0}] being the vacuum permeability
+* $\mu_{0}$ being the vacuum permeability
 
-From the differential operators, we know that *rot*.*div*.*A* = 0    latexmath:[\forall]*A*.
+From the differential operators, we know that $\nabla.\nabla\times\textbf{A}=0$    $\forall$ *A*.
 
-Thus, since latexmath:[\nabla.\textbf{B}=0] there exists *A* such as latexmath:[\textbf{B}=\nabla\times \textbf{A}]
+Thus, since $\nabla.\textbf{B}=0$ there exists *A* such as $\textbf{B}=\nabla\times \textbf{A}$
 
 Finally, we can write :
 
-latexmath:[\nabla\times\left(\frac{1}{\mu}\nabla\times\textbf{A}\right)=\textbf{j}]
+\[
+\nabla\times\left(\frac{1}{\mu}\nabla\times\textbf{A}\right)=\textbf{j}
+\]
 
 ==== Finite Element
 
@@ -33,15 +36,17 @@ include::Finite_Element_equations_Magnetostatic.adoc[]
 
 ==== Boundary conditions
 
-The current density is located in some finite region in space, this involves considering *B* as zero at infinity.
+The current density is located in some finite region in space, actually $\Omega$, this involves considering *B* as zero at infinity.
 But, with the Finite Element Method,we discretize the domain so we impose the domain to be of finite dimension.
-In fact, this domain is composed by latexmath:[\Omega] (the conductor) and a box inside, latexmath:[\Omega_{c}], whose boundaries model the infinity.
+In fact, this domain is composed by $\Omega$ (the conductor) and a box inside, $\Omega_{c}$, whose boundaries model the infinity.
 The size of this box can be set manually or be calculated for more precision and validity.
 The boundary condition is expressed with the magnetic potential (*A*) like this :
 
-latexmath:[\textbf{A}\times\textbf{n}=0] on latexmath:[\partial\Omega_{c}]
+\[
+\textbf{A}\times\textbf{n}=0\, on\, \partial\Omega_{c}
+\]
 
 
-Our materials allow us to only consider the vacuum permeability, so latexmath:[\mu=\mu_{0}=4\pi.10^{-7} kg.m.A^{-2}.s^{-2}].
+Our materials allow us to only consider the vacuum permeability, so $\mu=\mu_{0}=4\pi.10^{-7} kg.m.A^{-2} .s^{-2}$.
 
 NOTE: To see some examples (with the code behind), see the chapter link:/examples[Examples]

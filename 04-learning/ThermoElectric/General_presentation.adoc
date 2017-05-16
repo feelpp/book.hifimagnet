@@ -3,7 +3,6 @@ You can use ether the linear or the nonlinear model for your calculation, but fo
 
 When all the files (detailed below) are created, you can run your calculation with this command :
 
-.to execute your calculation
 ----
 mpirun -np "number_of_processor_you_have_chosen_in_the_partition" feelpp_hfm_thermoelectric_model_3D_V1T1_N1 --config-file "name_of_your_file.cfg"
 ----
@@ -14,10 +13,10 @@ mpirun -np "number_of_processor_you_have_chosen_in_the_partition" feelpp_hfm_the
 |===
 ^|Parameter ^|Symbol
 
-|latexmath:[\alpha]
+|$\alpha$
 |alpha
 
-|latexmath:[\sigma_{0}] / latexmath:[\sigma]
+|$\sigma_{0}$ / $\sigma$
 |sigma0 / sigma
 
 |k~0~ / k
@@ -86,11 +85,11 @@ The structure of a json file is as follows (conditions are details in <<Conditio
 }
 ....
 WARNING: The name of the volumes and surfaces must be the same as defined in `Salome`.
-Be carefull of the value of the characteristic of the material, the *units being in mm* (like in <<test.json>>).
+Be careful to the units of the material properties. They need to be consistent with the length unit used for the rest.
+For instance the length unit is in *mm* in <<test.json>>.
 
 It is also necessary to create a file to configure the calculation, call `.cfg` file (example <<example_file.cfg>>).
-It will configure which file you will use in your calculations and which type of calculation you do (here we use the Krylov method with the conditions define in the subparts `electro` and `thermal`).
-There are few differences between the linear and the nonlinear calculation.
+It will configure which file you will use in your calculations and which type of solver you use (here we use the Krylov method to solve both `electro` and `thermal` problem).
 
 [source,cfg]
 .Example_linear.cfg
@@ -122,6 +121,7 @@ ksp-atol="absolute_convergence_tolerance"
 ksp-use-initial-guess-nonzero=1
 ....
 
+There are few differences between the linear and the nonlinear calculation.
 For the nonlinear model, just add this lines in the section `thermoelectric` :
 
 .nonlinear
@@ -136,6 +136,8 @@ target_intensity="the_intensity" (be careful of the sign)
 eps_intensity=1.e-2
 verbosity=2
 ....
+
+We can define the current I using the Ohm's law, defining the voltage ine the `json` file.
 
 ==== Condition
 

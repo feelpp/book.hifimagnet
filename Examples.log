@@ -1,0 +1,5031 @@
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016/Debian) (preloaded format=xelatex 2017.5.15)  16 MAY 2017 09:58
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**Examples.tex
+(./Examples.tex
+LaTeX2e <2017/01/01> patch level 3
+Babel <3.9r> and hyphenation patterns for 7 language(s) loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsart.cls
+Document Class: amsart 2015/03/04 v2.20.2
+\linespacing=\dimen102
+\normalparindent=\dimen103
+\normaltopskip=\skip41
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2016/11/05 v2.16a AMS math features
+\@mathmargin=\skip42
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks14
+\ex@=\dimen104
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen105
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count79
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count80
+\leftroot@=\count81
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count82
+\DOTSCASE@=\count83
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen106
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count84
+\c@MaxMatrixCols=\count85
+\dotsspace@=\muskip10
+\c@parentequation=\count86
+\dspbrk@lvl=\count87
+\tag@help=\toks15
+\row@=\count88
+\column@=\count89
+\maxfields@=\count90
+\andhelp@=\toks16
+\eqnshift@=\dimen107
+\alignsep@=\dimen108
+\tagshift@=\dimen109
+\tagwidth@=\dimen110
+\totwidth@=\dimen111
+\lineht@=\dimen112
+\@envbody=\toks17
+\multlinegap=\skip43
+\multlinetaggap=\skip44
+\mathdisplay@stack=\toks18
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 388.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+\copyins=\insert199
+\abstractbox=\box28
+\listisep=\skip45
+\c@part=\count91
+\c@section=\count92
+\c@subsection=\count93
+\c@subsubsection=\count94
+\c@paragraph=\count95
+\c@subparagraph=\count96
+\c@figure=\count97
+\c@table=\count98
+\abovecaptionskip=\skip46
+\belowcaptionskip=\skip47
+\captionindent=\dimen113
+\thm@style=\toks19
+\thm@bodyfont=\toks20
+\thm@headfont=\toks21
+\thm@notefont=\toks22
+\thm@headpunct=\toks23
+\thm@preskip=\skip48
+\thm@postskip=\skip49
+\thm@headsep=\skip50
+\dth@everypar=\toks24
+)
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks25
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count99
+\Gm@cntv=\count100
+\c@Gm@tempcnt=\count101
+\Gm@bindingoffset=\dimen114
+\Gm@wd@mp=\dimen115
+\Gm@odd@mp=\dimen116
+\Gm@even@mp=\dimen117
+\Gm@layoutwidth=\dimen118
+\Gm@layoutheight=\dimen119
+\Gm@layouthoffset=\dimen120
+\Gm@layoutvoffset=\dimen121
+\Gm@dimlist=\toks26
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
+Package: tcolorbox 2016/11/18 version 3.96 text color boxes
+
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks27
+\pgfutil@tempdima=\dimen122
+\pgfutil@tempdimb=\dimen123
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.t
+ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box29
+(/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+Package: pgfrcs 2015/08/07 v3.0.1a (rcs-revision 1.31)
+))
+Package: pgf 2015/08/07 v3.0.1a (rcs-revision 1.15)
+
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2016/10/09 v1.0u Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: xetex.def on input line 99.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/xetex.def
+File: xetex.def 2016/07/11 v4.10 LaTeX color/graphics driver for XeTeX (L3/RRM/
+JK)
+))
+\Gin@req@height=\dimen124
+\Gin@req@width=\dimen125
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks28
+\pgfkeys@temptoks=\toks29
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.t
+ex
+\pgfkeys@tmptoks=\toks30
+))
+\pgf@x=\dimen126
+\pgf@y=\dimen127
+\pgf@xa=\dimen128
+\pgf@ya=\dimen129
+\pgf@xb=\dimen130
+\pgf@yb=\dimen131
+\pgf@xc=\dimen132
+\pgf@yc=\dimen133
+\w@pgf@writea=\write3
+\r@pgf@reada=\read1
+\c@pgf@counta=\count102
+\c@pgf@countb=\count103
+\c@pgf@countc=\count104
+\c@pgf@countd=\count105
+\t@pgf@toka=\toks31
+\t@pgf@tokb=\toks32
+\t@pgf@tokc=\toks33
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
+)
+Driver file for pgf: pgfsys-xetex.def
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-xetex.def
+File: pgfsys-xetex.def 2014/07/09  (rcs-revision 1.11)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-dvipdfmx.def
+File: pgfsys-dvipdfmx.def 2014/07/09  (rcs-revision 1.14)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.de
+f
+File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
+)
+\pgfsys@objnum=\count106
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
+tex
+File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
+\pgfsyssoftpath@smallbuffer@items=\count107
+\pgfsyssoftpath@bigbuffer@items=\count108
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
+tex
+File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
+)) (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: xetex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen134
+\pgfmath@count=\count109
+\pgfmath@box=\box30
+\pgfmath@toks=\toks34
+\pgfmath@stack@operand=\toks35
+\pgfmath@stack@operation=\toks36
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonomet
+ric.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.cod
+e.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison
+.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerari
+thmetics.code.tex)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count110
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
+x
+File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
+\pgf@picminx=\dimen135
+\pgf@picmaxx=\dimen136
+\pgf@picminy=\dimen137
+\pgf@picmaxy=\dimen138
+\pgf@pathminx=\dimen139
+\pgf@pathmaxx=\dimen140
+\pgf@pathminy=\dimen141
+\pgf@pathmaxy=\dimen142
+\pgf@xx=\dimen143
+\pgf@xy=\dimen144
+\pgf@yx=\dimen145
+\pgf@yy=\dimen146
+\pgf@zx=\dimen147
+\pgf@zy=\dimen148
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.
+code.tex
+File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
+\pgf@path@lastx=\dimen149
+\pgf@path@lasty=\dimen150
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code
+.tex
+File: pgfcorepathusage.code.tex 2014/11/02  (rcs-revision 1.24)
+\pgf@shorten@end@additional=\dimen151
+\pgf@shorten@start@additional=\dimen152
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.te
+x
+File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
+\pgfpic=\box31
+\pgf@hbox=\box32
+\pgf@layerbox@main=\box33
+\pgf@picture@serial@count=\count111
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
+ode.tex
+File: pgfcoregraphicstate.code.tex 2014/11/02  (rcs-revision 1.12)
+\pgflinewidth=\dimen153
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformation
+s.code.tex
+File: pgfcoretransformations.code.tex 2015/08/07  (rcs-revision 1.20)
+\pgf@pt@x=\dimen154
+\pgf@pt@y=\dimen155
+\pgf@pt@temp=\dimen156
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.t
+ex
+File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing
+.code.tex
+File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.te
+x
+File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
+\pgfarrowsep=\dimen157
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
+\pgf@max=\dimen158
+\pgf@sys@shading@range@num=\count112
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.
+tex
+File: pgfcoreexternal.code.tex 2014/07/09  (rcs-revision 1.21)
+\pgfexternal@startupbox=\box34
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.te
+x
+File: pgfcorelayers.code.tex 2013/07/18  (rcs-revision 1.7)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.c
+ode.tex
+File: pgfcoretransparency.code.tex 2013/09/30  (rcs-revision 1.5)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.
+tex
+File: pgfcorepatterns.code.tex 2013/11/07  (rcs-revision 1.5)
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2014/03/21  (rcs-revision 1.35)
+\pgfnodeparttextbox=\box35
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2015/08/03  (rcs-revision 1.13)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65
+.sty
+Package: pgfcomp-version-0-65 2007/07/03 v3.0.1a (rcs-revision 1.7)
+\pgf@nodesepstart=\dimen159
+\pgf@nodesepend=\dimen160
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18
+.sty
+Package: pgfcomp-version-1-18 2007/07/23 v3.0.1a (rcs-revision 1.1)
+)) (/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks37
+\verbatim@line=\toks38
+\verbatim@in@stream=\read2
+)
+(/usr/share/texlive/texmf-dist/tex/latex/environ/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+
+(/usr/share/texlive/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+))
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2017/01/02 v2.4 e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count113
+)
+\tcb@titlebox=\box36
+\tcb@upperbox=\box37
+\tcb@lowerbox=\box38
+\tcb@phantombox=\box39
+\c@tcbbreakpart=\count114
+\c@tcblayer=\count115
+\tcolorbox@number=\count116
+\tcb@temp=\box40
+\tcb@temp=\box41
+\tcb@temp=\box42
+\tcb@temp=\box43
+\tcb@out=\write4
+\tcb@record@out=\write5
+)
+(/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.sty
+Package: lipsum 2014/07/27 v1.3 150 paragraphs of Lorem Ipsum dummy text
+\c@lips@count=\count117
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf.sty
+Package: epstopdf 2016/05/15 v2.6 Conversion with epstopdf on the fly (HO)
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: pdfTeX >= 1.30 not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode not found.
+)
+
+Package epstopdf Warning: Drivers other than `pdftex' and `luatex' are not supp
+orted.
+
+)) (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+)
+(/usr/share/texlive/texmf-dist/tex/latex/mhchem/mhchem.sty
+Package: mhchem 2017/01/16 v4.06 for typesetting chemical formulae
+
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2016/11/21 v6760 L3 programming layer (loader) 
+
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3-code.tex
+Package: expl3 2016/11/21 v6760 L3 programming layer (code)
+L3 Module: l3bootstrap 2016/06/13 v6596 L3 Bootstrap code
+L3 Module: l3names 2016/10/13 v6722 L3 Namespace for primitives
+L3 Module: l3basics 2016/09/01 v6696 L3 Basic definitions
+L3 Module: l3expan 2016/08/19 v6684 L3 Argument expansion
+L3 Module: l3tl 2016/08/19 v6692 L3 Token lists
+L3 Module: l3str 2016/08/19 v6692 L3 Strings
+L3 Module: l3seq 2016/08/19 v6685 L3 Sequences and stacks
+L3 Module: l3int 2016/09/07 v6700 L3 Integers
+\c_max_int=\count118
+\l_tmpa_int=\count119
+\l_tmpb_int=\count120
+\g_tmpa_int=\count121
+\g_tmpb_int=\count122
+L3 Module: l3quark 2016/08/19 v6685 L3 Quarks
+L3 Module: l3prg 2016/08/18 v6679 L3 Control structures
+\g__prg_map_int=\count123
+L3 Module: l3clist 2016/08/19 v6685 L3 Comma separated lists
+L3 Module: l3token 2016/09/01 v6695 L3 Experimental token manipulation
+L3 Module: l3prop 2016/08/19 v6685 L3 Property lists
+L3 Module: l3msg 2016/08/19 v6691 L3 Messages
+L3 Module: l3file 2016/08/19 v6685 L3 File and I/O operations
+\l_iow_line_count_int=\count124
+\l__iow_target_count_int=\count125
+\l__iow_current_line_int=\count126
+\l__iow_current_word_int=\count127
+\l__iow_current_indentation_int=\count128
+L3 Module: l3skip 2016/08/19 v6692 L3 Dimensions and skips
+\c_zero_dim=\dimen161
+\c_max_dim=\dimen162
+\l_tmpa_dim=\dimen163
+\l_tmpb_dim=\dimen164
+\g_tmpa_dim=\dimen165
+\g_tmpb_dim=\dimen166
+\c_zero_skip=\skip51
+\c_max_skip=\skip52
+\l_tmpa_skip=\skip53
+\l_tmpb_skip=\skip54
+\g_tmpa_skip=\skip55
+\g_tmpb_skip=\skip56
+\c_zero_muskip=\muskip11
+\c_max_muskip=\muskip12
+\l_tmpa_muskip=\muskip13
+\l_tmpb_muskip=\muskip14
+\g_tmpa_muskip=\muskip15
+\g_tmpb_muskip=\muskip16
+L3 Module: l3keys 2016/09/21 v6711 L3 Key-value interfaces
+\l_keys_choice_int=\count129
+L3 Module: l3fp 2016/11/21 v6761 L3 Floating points
+\c__fp_leading_shift_int=\count130
+\c__fp_middle_shift_int=\count131
+\c__fp_trailing_shift_int=\count132
+\c__fp_big_leading_shift_int=\count133
+\c__fp_big_middle_shift_int=\count134
+\c__fp_big_trailing_shift_int=\count135
+\c__fp_Bigg_leading_shift_int=\count136
+\c__fp_Bigg_middle_shift_int=\count137
+\c__fp_Bigg_trailing_shift_int=\count138
+L3 Module: l3box 2016/08/19 v6685 L3 Experimental boxes
+\c_empty_box=\box44
+\l_tmpa_box=\box45
+\l_tmpb_box=\box46
+\g_tmpa_box=\box47
+\g_tmpb_box=\box48
+L3 Module: l3coffins 2016/08/19 v6685 L3 Coffin code layer
+\l__coffin_internal_box=\box49
+\l__coffin_internal_dim=\dimen167
+\l__coffin_offset_x_dim=\dimen168
+\l__coffin_offset_y_dim=\dimen169
+\l__coffin_x_dim=\dimen170
+\l__coffin_y_dim=\dimen171
+\l__coffin_x_prime_dim=\dimen172
+\l__coffin_y_prime_dim=\dimen173
+\c_empty_coffin=\box50
+\l__coffin_aligned_coffin=\box51
+\l__coffin_aligned_internal_coffin=\box52
+\l_tmpa_coffin=\box53
+\l_tmpb_coffin=\box54
+\l__coffin_display_coffin=\box55
+\l__coffin_display_coord_coffin=\box56
+\l__coffin_display_pole_coffin=\box57
+\l__coffin_display_offset_dim=\dimen174
+\l__coffin_display_x_dim=\dimen175
+\l__coffin_display_y_dim=\dimen176
+L3 Module: l3color 2016/06/13 v6596 L3 Experimental color support
+L3 Module: l3sys 2015/09/25 v6087 L3 Experimental system/runtime functions
+L3 Module: l3candidates 2016/08/19 v6688 L3 Experimental additions to l3kernel
+\l__box_top_dim=\dimen177
+\l__box_bottom_dim=\dimen178
+\l__box_left_dim=\dimen179
+\l__box_right_dim=\dimen180
+\l__box_top_new_dim=\dimen181
+\l__box_bottom_new_dim=\dimen182
+\l__box_left_new_dim=\dimen183
+\l__box_right_new_dim=\dimen184
+\l__box_internal_box=\box58
+\l__coffin_bounding_shift_dim=\dimen185
+\l__coffin_left_corner_dim=\dimen186
+\l__coffin_right_corner_dim=\dimen187
+\l__coffin_bottom_corner_dim=\dimen188
+\l__coffin_top_corner_dim=\dimen189
+\l__coffin_scaled_total_height_dim=\dimen190
+\l__coffin_scaled_width_dim=\dimen191
+L3 Module: l3luatex 2016/08/18 v6679 L3 Experimental LuaTeX-specific functions
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3xdvipdfmx.def
+File: l3xdvidpfmx.def 2016/08/18 v6679 L3 Experimental driver: xdvipdfmx
+\l__driver_tmp_box=\box59
+))
+(/usr/share/texlive/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+Package: l3keys2e 2016/11/21 v6760 LaTeX2e option processing using LaTeX3 keys
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3experimental/l3str/l3regex.sty
+Package: l3regex 2016/11/21 v6760 L3 Experimental regular expressions
+
+(/usr/share/texlive/texmf-dist/tex/latex/l3experimental/l3str/l3tl-build.sty
+Package: l3tl-build 2016/11/21 v6760 L3 Experimental token list construction
+\l__tl_build_start_index_int=\count139
+\l__tl_build_index_int=\count140
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3experimental/l3str/l3tl-analysis.sty
+Package: l3tl-analysis 2016/06/13 v6589 L3 Experimental token lists analysis
+\l__tl_analysis_normal_int=\count141
+\l__tl_analysis_index_int=\count142
+\l__tl_analysis_nesting_int=\count143
+\l__tl_analysis_type_int=\count144
+) (/usr/share/texlive/texmf-dist/tex/latex/l3experimental/l3str/l3flag.sty
+Package: l3flag 2016/11/21 v6760 L3 Experimental flags
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3experimental/l3str/l3str-convert.sty
+Package: l3str-convert 2016/09/07 v6699 L3 Experimental string encoding convers
+ions
+\l__str_internal_int=\count145
+)
+\l__regex_internal_a_int=\count146
+\l__regex_internal_b_int=\count147
+\l__regex_internal_c_int=\count148
+\l__regex_balance_int=\count149
+\l__regex_group_level_int=\count150
+\l__regex_mode_int=\count151
+\l__regex_catcodes_int=\count152
+\l__regex_default_catcodes_int=\count153
+\c__regex_catcode_L_int=\count154
+\c__regex_catcode_O_int=\count155
+\c__regex_catcode_A_int=\count156
+\c__regex_all_catcodes_int=\count157
+\l__regex_show_lines_int=\count158
+\l__regex_min_state_int=\count159
+\l__regex_max_state_int=\count160
+\l__regex_left_state_int=\count161
+\l__regex_right_state_int=\count162
+\l__regex_capturing_group_int=\count163
+\l__regex_min_pos_int=\count164
+\l__regex_max_pos_int=\count165
+\l__regex_current_pos_int=\count166
+\l__regex_start_pos_int=\count167
+\l__regex_success_pos_int=\count168
+\l__regex_current_char_int=\count169
+\l__regex_current_catcode_int=\count170
+\l__regex_last_char_int=\count171
+\l__regex_case_changed_char_int=\count172
+\l__regex_current_state_int=\count173
+\l__regex_step_int=\count174
+\l__regex_min_active_int=\count175
+\l__regex_max_active_int=\count176
+\l__regex_replacement_csnames_int=\count177
+\l__regex_match_count_int=\count178
+\l__regex_submatch_int=\count179
+\l__regex_zeroth_submatch_int=\count180
+) (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count181
+\calc@Bcount=\count182
+\calc@Adimen=\dimen192
+\calc@Bdimen=\dimen193
+\calc@Askip=\skip57
+\calc@Bskip=\skip58
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count183
+\calc@Cskip=\skip59
+)
+(/usr/share/texlive/texmf-dist/tex/latex/chemgreek/chemgreek.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2016/11/21 v6760 L3 Experimental document command parser
+\l__xparse_current_arg_int=\count184
+\l__xparse_m_args_int=\count185
+\l__xparse_mandatory_args_int=\count186
+\l__xparse_processor_int=\count187
+\l__xparse_v_nesting_int=\count188
+)
+Package: chemgreek 2016/12/20 v1.1 interfaceforuprightgreeklettersforuseinchemi
+stry (CN)
+\l__chemgreek_tmpa_int=\count189
+\g__chemgreek_tmpa_int=\count190
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newchemgreekmapping with sig. 'O{}mm' on line 336.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \renewchemgreekmapping with sig. 'O{}mm' on line 339.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \declarechemgreekmapping with sig. 'O{}mm' on line 342.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newchemgreekmappingalias with sig. 'mm' on line 347.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \renewchemgreekmappingalias with sig. 'mm' on line 350.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \declarechemgreekmappingalias with sig. 'mm' on line 353.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \changechemgreeksymbol with sig. 'mmmm' on line 383.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \chemgreekmappingsymbol with sig. 'mm' on line 477.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \activatechemgreekmapping with sig. 'sm' on line 486.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \selectchemgreekmapping with sig. 'm' on line 491.
+.................................................
+)
+\l__mhchem_ce_distanceFromLastComma_int=\count191
+\__mhchem_arrow_extPgfLength_skip=\skip60
+\mhchem@minispace@tmp=\skip61
+\mhchem@minibackspace@tmp=\skip62
+\mhchem@bondwidth=\skip63
+\mhchem@bondheight=\skip64
+\mhchem@smallbondwidth@tmpA=\skip65
+\mhchem@smallbondwidth@tmpB=\skip66
+\mhchem@smallbondwidth=\skip67
+\mhchem@bondtmp@minussidebearingleft=\skip68
+\mhchem@bondtmp@minussidebearingright=\skip69
+\l__mhchem_option_version_int=\count192
+\mhchem@option@minusmathsidebearingleft=\dimen194
+\mhchem@option@minusmathsidebearingright=\dimen195
+\mhchem@option@minustextsidebearingleft=\dimen196
+\mhchem@option@minustextsidebearingright=\dimen197
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/fix-cm.sty
+Package: fix-cm 2015/01/14 v1.1t fixes to LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+))
+(/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec.sty
+Package: fontspec 2017/02/12 v2.6 Font selection for XeLaTeX and LuaLaTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
+Package: fontspec-xetex 2017/02/12 v2.6 Font selection for XeLaTeX and LuaLaTeX
+
+\l__fontspec_script_int=\count193
+\l__fontspec_language_int=\count194
+\l__fontspec_strnum_int=\count195
+\l__fontspec_tmp_int=\count196
+\l__fontspec_em_int=\count197
+\l__fontspec_emdef_int=\count198
+\l__fontspec_strong_int=\count266
+\l__fontspec_strongdef_int=\count267
+\l__fontspec_tmpa_dim=\dimen198
+\l__fontspec_tmpb_dim=\dimen256
+\l__fontspec_tmpc_dim=\dimen257
+\g__file_internal_ior=\read3
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2017/02/22 v2.0g Standard LaTeX package
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/tuenc.def
+File: tuenc.def 2017/02/22 v2.0g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding TU on input line 82.
+))
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \fontspec with sig. 'O{}mO{}' on line 475.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmainfont with sig. 'O{}mO{}' on line 491.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setsansfont with sig. 'O{}mO{}' on line 507.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmonofont with sig. 'O{}mO{}' on line 523.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmathrm with sig. 'O{}mO{}' on line 528.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setboldmathrm with sig. 'O{}mO{}' on line 533.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmathsf with sig. 'O{}mO{}' on line 538.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmathtt with sig. 'O{}mO{}' on line 543.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontfamily with sig. 'mO{}mO{}' on line 563.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontface with sig. 'mO{}mO{}' on line 567.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \defaultfontfeatures with sig. 't+om' on line 574.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \addfontfeatures with sig. 'm' on line 623.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontfeature with sig. 'mm' on line 634.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newAATfeature with sig. 'mmmm' on line 642.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newopentypefeature with sig. 'mmm' on line 652.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \aliasfontfeature with sig. 'mm' on line 675.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \aliasfontfeatureoption with sig. 'mmm' on line 692.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontscript with sig. 'mm' on line 696.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontlanguage with sig. 'mm' on line 700.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareFontsExtensions with sig. 'm' on line 705.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \IfFontFeatureActiveTF with sig. 'mmm' on line 711.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \EncodingCommand with sig. 'mO{}m' on line 3338.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \EncodingAccent with sig. 'mm' on line 3344.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \EncodingSymbol with sig. 'mm' on line 3350.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \EncodingComposite with sig. 'mmm' on line 3356.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \EncodingCompositeCommand with sig. 'mmm' on line 3362.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareUnicodeEncoding with sig. 'mm' on line 3387.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \UndeclareSymbol with sig. 'm' on line 3393.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \UndeclareComposite with sig. 'mm' on line 3401.
+.................................................
+
+(/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec.cfg)
+LaTeX Info: Redefining \itshape on input line 3586.
+LaTeX Info: Redefining \slshape on input line 3591.
+LaTeX Info: Redefining \scshape on input line 3596.
+LaTeX Info: Redefining \upshape on input line 3601.
+LaTeX Info: Redefining \em on input line 3631.
+LaTeX Info: Redefining \emph on input line 3656.
+LaTeX Info: Redefining \- on input line 3707.
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \oldstylenums with sig. 'm' on line 3802.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \liningnums with sig. 'm' on line 3806.
+.................................................
+))
+(/usr/share/texlive/texmf-dist/tex/xelatex/ucharclasses/ucharclasses.sty
+Package: ucharclasses 2016/04/25 v2.2.1 Unicode block character classes for XeL
+aTeX
+\AlphabeticPresentationFormsClass=\XeTeXcharclass1
+\BasicLatinClass=\XeTeXcharclass2
+\CopticClass=\XeTeXcharclass3
+\GreekAndCopticClass=\XeTeXcharclass4
+\GreekExtendedClass=\XeTeXcharclass5
+\LatinExtendedAdditionalClass=\XeTeXcharclass6
+\LatinExtendedAClass=\XeTeXcharclass7
+\LatinExtendedBClass=\XeTeXcharclass8
+\LatinExtendedCClass=\XeTeXcharclass9
+\LatinExtendedDClass=\XeTeXcharclass10
+\LatinSupplementClass=\XeTeXcharclass11
+\CopticEpactNumbersClass=\XeTeXcharclass12
+\LatinExtendedEClass=\XeTeXcharclass13
+)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2016/06/24 v6.83q Hypertext links for LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
+
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package hobsub Info: Skipping package `ifluatex' (already loaded).
+Package hobsub Info: Skipping package `ifvtex' (already loaded).
+Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
+Package hobsub Info: Skipping package `ifpdf' (already loaded).
+Package hobsub Info: Skipping package `etexcmds' (already loaded).
+Package hobsub Info: Skipping package `kvsetkeys' (already loaded).
+Package hobsub Info: Skipping package `kvdefinekeys' (already loaded).
+Package hobsub Info: Skipping package `pdftexcmds' (already loaded).
+Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
+)
+Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
+Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
+Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
+Package: xcolor-patch 2016/05/16 xcolor patch
+Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
+)
+\@linkdim=\dimen258
+\Hy@linkcounter=\count268
+\Hy@pagecounter=\count269
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2016/06/24 v6.83q Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count270
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4486.
+Package hyperref Info: Link nesting OFF on input line 4491.
+Package hyperref Info: Hyper index ON on input line 4494.
+Package hyperref Info: Plain pages OFF on input line 4501.
+Package hyperref Info: Backreferencing OFF on input line 4506.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4735.
+\c@Hy@tempcnt=\count271
+
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5088.
+\XeTeXLinkMargin=\dimen259
+\Fld@menulength=\count272
+\Field@Width=\dimen260
+\Fld@charsize=\dimen261
+Package hyperref Info: Hyper figures OFF on input line 6342.
+Package hyperref Info: Link nesting OFF on input line 6347.
+Package hyperref Info: Hyper index ON on input line 6350.
+Package hyperref Info: backreferencing OFF on input line 6357.
+Package hyperref Info: Link coloring OFF on input line 6362.
+Package hyperref Info: Link coloring with OCG OFF on input line 6367.
+Package hyperref Info: PDF/A mode OFF on input line 6372.
+LaTeX Info: Redefining \ref on input line 6412.
+LaTeX Info: Redefining \pageref on input line 6416.
+\Hy@abspage=\count273
+\c@Item=\count274
+\c@Hfootnote=\count275
+)
+
+Package hyperref Message: Driver (autodetected): hxetex.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hxetex.def
+File: hxetex.def 2016/06/24 v6.83q Hyperref driver for XeTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2016/06/24 v6.83q Hyperref: PDF Unicode definition (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/stringenc.sty
+Package: stringenc 2016/05/16 v1.11 Convert strings between diff. encodings (HO
+)
+)
+\pdfm@box=\box60
+\c@Hy@AnnotLevel=\count276
+\HyField@AnnotCount=\count277
+\Fld@listcount=\count278
+\c@bookmark@seq@number=\count279
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
+Package rerunfilecheck Info: Feature \pdfmdfivesum is not available
+(rerunfilecheck)             (e.g. pdfTeX or LuaTeX with package `pdftexcmds').
+
+(rerunfilecheck)             Therefore file contents cannot be checked efficien
+tly
+(rerunfilecheck)             and the loading of the package is aborted.
+)
+\Hy@SectionHShift=\skip70
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 48.
+
+(/usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen262
+\WF@size=\dimen263
+\c@WF@wrappedlines=\count280
+\WF@box=\box61
+\WF@everypar=\toks39
+Package: wrapfig 2003/01/31  v 3.6
+)
+\c@theorem=\count281
+\c@proposition=\count282
+\c@corollary=\count283
+\c@lemma=\count284
+\c@definition=\count285
+\c@conjecture=\count286
+\c@problem=\count287
+\c@exercise=\count288
+\c@example=\count289
+\c@note=\count290
+\c@joke=\count291
+\c@objection=\count292
+\mybox=\box62
+ (./Examples.aux)
+\openout1 = `Examples.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 194.
+LaTeX Font Info:    ... okay on input line 194.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 194.
+LaTeX Font Info:    ... okay on input line 194.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 194.
+LaTeX Font Info:    ... okay on input line 194.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 194.
+LaTeX Font Info:    ... okay on input line 194.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 194.
+LaTeX Font Info:    ... okay on input line 194.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 194.
+LaTeX Font Info:    ... okay on input line 194.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 194.
+LaTeX Font Info:    ... okay on input line 194.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 194.
+LaTeX Font Info:    ... okay on input line 194.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 194.
+LaTeX Font Info:    ... okay on input line 194.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 194.
+LaTeX Font Info:    ... okay on input line 194.
+LaTeX Font Info:    Try loading font information for U+msa on input line 194.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 194.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+*geometry* driver: auto-detecting
+*geometry* detected driver: xetex
+*geometry* verbose mode - [ preamble ] result:
+* driver: xetex
+* paper: letterpaper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(73.71613pt, 430.00462pt, 110.57425pt)
+* v-part:(T,H,B)=(95.39737pt, 556.47656pt, 143.09605pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=430.00462pt
+* \textheight=556.47656pt
+* \oddsidemargin=1.44614pt
+* \evensidemargin=38.30426pt
+* \topmargin=1.12738pt
+* \headheight=8.0pt
+* \headsep=14.0pt
+* \topskip=10.0pt
+* \footskip=12.0pt
+* \marginparwidth=90.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=7.0pt plus 11.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+ABD: EveryShipout initializing macros
+.................................................
+. chemgreek info: "mapping-activated"
+. 
+. Activating mapping `fontspec' on line 194.
+.................................................
+.................................................
+. fontspec info: "setup-math"
+. 
+. Adjusting the maths setup (use [no-math] to avoid this).
+.................................................
+\symlegacymaths=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 194.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 194.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 194.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 194.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 194.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 194.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 194.
+LaTeX Font Info:    Redeclaring math accent \check on input line 194.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 194.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 194.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 194.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 194.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 194.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 194.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 194.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 194.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 194.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 194.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 194.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 194.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 194.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 194.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 194.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 194.
+LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
+(Font)              `operators' in the math version `normal' on input line 194.
+
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 194.
+LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
+(Font)              `operators' in the math version `bold' on input line 194.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> TU/lmr/m/n on input line 194.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  TU/lmr/m/n --> TU/lmr/m/n on input line 194.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 194.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> TU/lmr/bx/n on input line 194.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 194.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 194.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  TU/lmr/m/n --> TU/lmr/bx/n on input line 194.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> TU/lmr/bx/it on input line 194.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> TU/lmss/bx/n on input line 194.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/bx/n on input line 194.
+\AtBeginShipoutBox=\box63
+Package hyperref Info: Link coloring ON on input line 194.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
+)
+\c@section@level=\count293
+)
+LaTeX Info: Redefining \ref on input line 194.
+LaTeX Info: Redefining \pageref on input line 194.
+LaTeX Info: Redefining \nameref on input line 194.
+
+(./Examples.out) (./Examples.out)
+\@outlinefile=\write6
+\openout6 = `Examples.out'.
+
+
+
+Package hyperref Warning: Rerun to get /PageLabels entry.
+
+(./Examples.toc)
+\tf@toc=\write7
+\openout7 = `Examples.toc'.
+
+
+
+LaTeX Font Warning: Font shape `TU/lmr/bx/sc' undefined
+(Font)              using `TU/lmr/bx/n' instead on input line 197.
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
+File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
+
+)
+! Missing $ inserted.
+<inserted text> 
+                $
+l.199 ...med} (example : \texttt{example_mesh.med}
+                                                  ) with \texttt{Salome}.
+? r
+OK, entering \nonstopmode...
+! Extra }, or forgotten $.
+<recently read> \egroup 
+                        
+l.199 ...med} (example : \texttt{example_mesh.med}
+                                                  ) with \texttt{Salome}.
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.201 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (349.5835pt too wide) in paragraph at lines 198--201
+\TU/lmr/m/n/10.95 export it in \TU/lmtt/m/n/10.95 .med \TU/lmr/m/n/10.95 (examp
+le : \TU/lmtt/m/n/10.95 example$[]\OML/cmm/m/it/10.95 esh:med\OT1/cmr/m/n/10.95
+ )\OML/cmm/m/it/10.95 with[]:Youalsoneedtopartitionthemeshifyouwanttodothecalcu
+lationsinparallel; runningthiscommandbelow:$ 
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.211 ... file, call \texttt{example_mesh_p4.json}
+                                                   that you will use in your...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+<recently read> \egroup 
+                        
+l.211 ... file, call \texttt{example_mesh_p4.json}
+                                                   that you will use in your...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.212 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (20.31403pt too wide) in paragraph at lines 210--212
+[]\TU/lmtt/m/n/10.95 Where part indicate the number of processors you want to u
+se. This will create
+ []
+
+
+Overfull \hbox (31.67282pt too wide) in paragraph at lines 216--217
+ \TU/lmr/m/n/10.95 2.1.\TU/lmr/bx/sc/10.95 General presentation of the files.[]
+[] \TU/lmtt/m/n/10.95 You can use ether the linear or the nonlinear
+ []
+
+
+Overfull \hbox (6.90028pt too wide) in paragraph at lines 216--217
+\TU/lmtt/m/n/10.95 model for your calculation, but for our example, we use the 
+linear model, so
+ []
+
+
+Overfull \hbox (1.15154pt too wide) in paragraph at lines 216--217
+\TU/lmtt/m/n/10.95 we select the thermoelectric-linear (respectively thermoelec
+tric-nonlinear)
+ []
+
+
+Overfull \hbox (12.64903pt too wide) in paragraph at lines 219--220
+[]\TU/lmtt/m/n/10.95 When all the files (detailed below) are created, you can r
+un your calculation
+ []
+
+
+Overfull \hbox (409.31265pt too wide) in paragraph at lines 223--223
+[]\TU/lmtt/m/n/10.95 mpirun -np "number_of_processor_you_have_chosen_in_the_par
+tition" feelpp_hfm_thermoelectric_model_3D_V1T1_N1 --config-file "name_of_your_
+file.cfg"[] 
+ []
+
+
+Overfull \hbox (6.90028pt too wide) in paragraph at lines 238--240
+[]\TU/lmtt/m/n/10.95 There is a dedicated section in the Json file, named Mater
+ials, to configure
+ []
+
+
+Overfull \hbox (14.56528pt too wide) in paragraph at lines 238--240
+\TU/lmtt/m/n/10.95 the magnet properties. The structure of a json file is as fo
+llows (conditions
+ []
+
+[1] [2]
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 296.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.297 ...c_3D_V1T1_N1_cvgcfg (for the T1V1 model)}
+                                                  ).
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.297 ...c_3D_V1T1_N1_cvgcfg (for the T1V1 model)}
+                                                  ).
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (6.90028pt too wide) in paragraph at lines 296--299
+[]\TU/lmtt/b/n/10.95 WARNING\TU/lmtt/m/n/10.95 : The name of the volumes and su
+rfaces must be the same as defined in
+ []
+
+
+Overfull \hbox (4.98402pt too wide) in paragraph at lines 296--299
+\TU/lmtt/m/n/10.95 Salome. Be careful to the units of the material properties. 
+They need to be
+ []
+
+
+Overfull \hbox (26.06277pt too wide) in paragraph at lines 296--299
+\TU/lmtt/m/n/10.95 consistent with the length unit used for the rest. For insta
+nce the length unit
+ []
+
+
+Overfull \hbox (43.30902pt too wide) in paragraph at lines 296--299
+\TU/lmtt/m/n/10.95 is in \TU/lmtt/b/n/10.95 mm \TU/lmtt/m/n/10.95 in [][]quarte
+r-turn3Djson[][]. It is also necessary to create a file to configure
+ []
+
+
+Overfull \hbox (81.52728pt too wide) in paragraph at lines 296--299
+\TU/lmtt/m/n/10.95 the calculation, call .cfg file (example [][]thermoelectric$
+[]\OML/cmm/m/it/10.95 D[]\OT1/cmr/m/n/10.95 1\OML/cmm/m/it/10.95 T\OT1/cmr/m/n/
+10.95 1[]1[]\OML/cmm/m/it/10.95 vgcfg\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 fo
+rtheT\OT1/cmr/m/n/10.95 1\OML/cmm/m/it/10.95 V\OT1/cmr/m/n/10.95 1\OML/cmm/m/it
+/10.95 model\OT1/cmr/m/n/10.95 )$[][]\TU/lmtt/m/n/10.95 ).
+ []
+
+
+Overfull \hbox (12.64903pt too wide) in paragraph at lines 296--299
+\TU/lmtt/m/n/10.95 It will configure which file you will use in your calculatio
+ns and which type
+ []
+
+
+Overfull \hbox (41.39278pt too wide) in paragraph at lines 296--299
+\TU/lmtt/m/n/10.95 of solver you use (here we use the Krylov method to solve bo
+th electro and thermal
+ []
+
+[3]
+Overfull \hbox (1.15154pt too wide) in paragraph at lines 329--331
+[]\TU/lmtt/m/n/10.95 There are few differences between the linear and the nonli
+near calculation.
+ []
+
+
+Overfull \hbox (6.90028pt too wide) in paragraph at lines 329--331
+\TU/lmtt/m/n/10.95 For the nonlinear model, just add this lines in the section 
+thermoelectric : 
+ []
+
+
+Overfull \hbox (12.64903pt too wide) in paragraph at lines 346--347
+[]\TU/lmtt/m/n/10.95 We can define the current I using the Ohm’s law, defining 
+the voltage ine the
+ []
+
+
+Overfull \hbox (75.88527pt too wide) in paragraph at lines 376--376
+[]\TU/lmtt/m/n/10.95 "Neumann":  // value of the derivative of the solution kno
+wns at the limit of the domain[] 
+ []
+
+[4]
+Overfull \hbox (110.37776pt too wide) in paragraph at lines 393--393
+[]\TU/lmtt/m/n/10.95 "Robin":   // linear relation between the value and the de
+rivative at the limits of the domain[] 
+ []
+
+
+Overfull \hbox (14.56528pt too wide) in paragraph at lines 409--410
+[]\TU/lmtt/b/n/10.95 WARNING\TU/lmtt/m/n/10.95 : Your have to set a condition f
+or each surfaces you have defined. For
+ []
+
+
+Overfull \hbox (58.63902pt too wide) in paragraph at lines 409--410
+\TU/lmtt/m/n/10.95 those where there is no conditions, set an homogeneous Neuma
+nn condition ("expr":"0")
+ []
+
+
+Overfull \hbox (42.24323pt too wide) in paragraph at lines 412--419
+ \TU/lmr/m/n/10.95 2.2.1.\TU/lmr/m/it/10.95 Current sensor.[] \TU/lmtt/m/n/10.9
+5 Here we want to model a current sensor placed in the connection
+ []
+
+
+Overfull \hbox (60.55527pt too wide) in paragraph at lines 412--419
+\TU/lmtt/m/n/10.95 of a magnet. This sensor consist in 6 constantan plates plac
+ed between the connectors
+ []
+
+
+Overfull \hbox (54.80652pt too wide) in paragraph at lines 412--419
+\TU/lmtt/m/n/10.95 as shown in the images. The goal is to allow the users to di
+rectly see the evolution
+ []
+
+
+Overfull \hbox (14.56528pt too wide) in paragraph at lines 412--419
+\TU/lmtt/m/n/10.95 of the current by measuring the potential in the connection.
+ The main problem
+ []
+
+
+Overfull \hbox (12.64903pt too wide) in paragraph at lines 412--419
+\TU/lmtt/m/n/10.95 is the temperature reached by the sensor, due to the high cu
+rrent, the fusion
+ []
+
+
+Overfull \hbox (24.14653pt too wide) in paragraph at lines 412--419
+\TU/lmtt/m/n/10.95 of the constantan being around 1500 K, but we don’t want to 
+exceed an elevation
+ []
+
+
+Overfull \hbox (14.56528pt too wide) in paragraph at lines 412--419
+\TU/lmtt/m/n/10.95 of 200 degree. Because an excessive increase of the temperat
+ure will We model
+ []
+
+
+Overfull \hbox (26.06277pt too wide) in paragraph at lines 412--419
+\TU/lmtt/m/n/10.95 all of this with salome and do the mesh. The mesh is more pr
+ecise on the sensor
+ []
+
+File: ./images/learning/thermoelectric/Ensemble_CapteurCourant.png Graphic file
+ (type QTm)
+<use  "./images/learning/thermoelectric/Ensemble_CapteurCourant.png" >
+
+Package wrapfig Warning: Collision between wrapping environments on input line 
+427.
+
+File: ./images/learning/thermoelectric/capteurcourant.png Graphic file (type QT
+m)
+<use  "./images/learning/thermoelectric/capteurcourant.png" >
+Underfull \vbox (badness 1221) has occurred while \output is active []
+
+ [5]
+Overfull \hbox (14.9184pt too wide) in paragraph at lines 434--435
+[] []\TU/lmr/m/n/10.95 Parameters.[] \TU/lmtt/m/n/10.95 There
+ []
+
+
+Overfull \hbox (3.76035pt too wide) in paragraph at lines 434--435
+\TU/lmtt/m/n/10.95 are 8 volumes,
+ []
+
+
+Overfull \hbox (9.5091pt too wide) in paragraph at lines 434--435
+\TU/lmtt/m/n/10.95 2 connectors in
+ []
+
+
+Overfull \hbox (3.76035pt too wide) in paragraph at lines 434--435
+\TU/lmtt/m/n/10.95 copper and the
+ []
+
+
+Overfull \hbox (32.50409pt too wide) in paragraph at lines 434--435
+\TU/lmtt/m/n/10.95 6 constantan plates
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 434--435
+\TU/lmtt/m/n/10.95 which constitute
+ []
+
+
+Overfull \hbox (89.99158pt too wide) in paragraph at lines 439--439
+[]    \TU/lmtt/m/n/10.95 "Name": "ThermoElectric",[] 
+ []
+
+
+Overfull \hbox (44.00159pt too wide) in paragraph at lines 440--440
+[]    \TU/lmtt/m/n/10.95 "ShortName":"TE",[] 
+ []
+
+
+Overfull \hbox (130.23282pt too wide) in paragraph at lines 441--441
+[]    \TU/lmtt/m/n/10.95 "Model":"thermoelectric-linear",[] 
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 442--442
+[]    \TU/lmtt/m/n/10.95 "Materials":[] 
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 446--446
+[]    \TU/lmtt/m/n/10.95 "name":"A1",[] 
+ []
+
+
+Overfull \hbox (49.75034pt too wide) in paragraph at lines 447--447
+[]    \TU/lmtt/m/n/10.95 "alpha":"3.35e-3",[] 
+ []
+
+
+Overfull \hbox (9.5091pt too wide) in paragraph at lines 448--448
+[]    \TU/lmtt/m/n/10.95 "T0":"293",[] 
+ []
+
+
+Overfull \hbox (44.00159pt too wide) in paragraph at lines 449--449
+[]    \TU/lmtt/m/n/10.95 "sigma0":"58e+3",[] 
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 450--450
+[]    \TU/lmtt/m/n/10.95 "k0":"0.38",[] 
+ []
+
+
+Overfull \hbox (245.20778pt too wide) in paragraph at lines 451--451
+[]    \TU/lmtt/m/n/10.95 "sigma":"sigma0/(1+alpha*(T-T0)):sigma0:alpha:T:T0",[]
+ 
+ []
+
+
+Overfull \hbox (210.71529pt too wide) in paragraph at lines 452--452
+[]    \TU/lmtt/m/n/10.95 "k":"k0*T/((1+alpha*(T-T0))*T0):k0:T:alpha:T0"[] 
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 454--454
+[]\TU/lmtt/m/n/10.95 "CurrentLead_1":[] 
+ []
+
+
+Overfull \hbox (78.49406pt too wide) in paragraph at lines 456--456
+[]    \TU/lmtt/m/n/10.95 "name":"CurrentLead_1",[] 
+ []
+
+
+Overfull \hbox (49.75034pt too wide) in paragraph at lines 457--457
+[]    \TU/lmtt/m/n/10.95 "alpha":"3.35e-3",[] 
+ []
+
+
+Overfull \hbox (9.5091pt too wide) in paragraph at lines 458--458
+[]    \TU/lmtt/m/n/10.95 "T0":"293",[] 
+ []
+
+
+Overfull \hbox (44.00159pt too wide) in paragraph at lines 459--459
+[]    \TU/lmtt/m/n/10.95 "sigma0":"58e+3",[] 
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 460--460
+[]    \TU/lmtt/m/n/10.95 "k0":"0.38",[] 
+ []
+
+
+Overfull \hbox (245.20778pt too wide) in paragraph at lines 461--461
+[]    \TU/lmtt/m/n/10.95 "sigma":"sigma0/(1+alpha*(T-T0)):sigma0:alpha:T:T0",[]
+ 
+ []
+
+
+Underfull \vbox (badness 5091) has occurred while \output is active []
+
+ [6]
+Overfull \hbox (210.71529pt too wide) in paragraph at lines 462--462
+[]    \TU/lmtt/m/n/10.95 "k":"k0*T/((1+alpha*(T-T0))*T0):k0:T:alpha:T0"[] 
+ []
+
+
+Overfull \hbox (9.5091pt too wide) in paragraph at lines 464--464
+[]\TU/lmtt/m/n/10.95 "Constantan_1":[] 
+ []
+
+
+Overfull \hbox (72.74533pt too wide) in paragraph at lines 466--466
+[]    \TU/lmtt/m/n/10.95 "name":"Constantan_1",[] 
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 467--467
+[]    \TU/lmtt/m/n/10.95 "alpha":"0",[] 
+ []
+
+
+Overfull \hbox (9.5091pt too wide) in paragraph at lines 468--468
+[]    \TU/lmtt/m/n/10.95 "T0":"293",[] 
+ []
+
+
+Overfull \hbox (55.49908pt too wide) in paragraph at lines 469--469
+[]    \TU/lmtt/m/n/10.95 "sigma0":"2.04e+3",[] 
+ []
+
+
+Overfull \hbox (21.00659pt too wide) in paragraph at lines 470--470
+[]    \TU/lmtt/m/n/10.95 "k0":"0.019",[] 
+ []
+
+
+Overfull \hbox (245.20778pt too wide) in paragraph at lines 471--471
+[]    \TU/lmtt/m/n/10.95 "sigma":"sigma0/(1+alpha*(T-T0)):sigma0:alpha:T:T0",[]
+ 
+ []
+
+
+Overfull \hbox (210.71529pt too wide) in paragraph at lines 472--472
+[]    \TU/lmtt/m/n/10.95 "k":"k0*T/((1+alpha*(T-T0))*T0):k0:T:alpha:T0"[] 
+ []
+
+
+Overfull \hbox (9.5091pt too wide) in paragraph at lines 474--474
+[]\TU/lmtt/m/n/10.95 "Constantan_2":[] 
+ []
+
+
+Overfull \hbox (72.74533pt too wide) in paragraph at lines 476--476
+[]    \TU/lmtt/m/n/10.95 "name":"Constantan_2",[] 
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 477--477
+[]    \TU/lmtt/m/n/10.95 "alpha":"0",[] 
+ []
+
+
+Overfull \hbox (9.5091pt too wide) in paragraph at lines 478--478
+[]    \TU/lmtt/m/n/10.95 "T0":"293",[] 
+ []
+
+
+Overfull \hbox (55.49908pt too wide) in paragraph at lines 479--479
+[]    \TU/lmtt/m/n/10.95 "sigma0":"2.04e+3",[] 
+ []
+
+
+Overfull \hbox (21.00659pt too wide) in paragraph at lines 480--480
+[]    \TU/lmtt/m/n/10.95 "k0":"0.019",[] 
+ []
+
+
+Overfull \hbox (245.20778pt too wide) in paragraph at lines 481--481
+[]    \TU/lmtt/m/n/10.95 "sigma":"sigma0/(1+alpha*(T-T0)):sigma0:alpha:T:T0",[]
+ 
+ []
+
+
+Overfull \hbox (210.71529pt too wide) in paragraph at lines 482--482
+[]    \TU/lmtt/m/n/10.95 "k":"k0*T/((1+alpha*(T-T0))*T0):k0:T:alpha:T0"[] 
+ []
+
+
+Overfull \hbox (9.5091pt too wide) in paragraph at lines 484--484
+[]\TU/lmtt/m/n/10.95 "Constantan_3":[] 
+ []
+
+
+Overfull \hbox (72.74533pt too wide) in paragraph at lines 486--486
+[]    \TU/lmtt/m/n/10.95 "name":"Constantan_3",[] 
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 487--487
+[]    \TU/lmtt/m/n/10.95 "alpha":"0",[] 
+ []
+
+
+Overfull \hbox (9.5091pt too wide) in paragraph at lines 488--488
+[]    \TU/lmtt/m/n/10.95 "T0":"293",[] 
+ []
+
+
+Overfull \hbox (55.49908pt too wide) in paragraph at lines 489--489
+[]    \TU/lmtt/m/n/10.95 "sigma0":"2.04e+3",[] 
+ []
+
+
+Overfull \hbox (21.00659pt too wide) in paragraph at lines 490--490
+[]    \TU/lmtt/m/n/10.95 "k0":"0.019",[] 
+ []
+
+
+Overfull \hbox (245.20778pt too wide) in paragraph at lines 491--491
+[]    \TU/lmtt/m/n/10.95 "sigma":"sigma0/(1+alpha*(T-T0)):sigma0:alpha:T:T0",[]
+ 
+ []
+
+
+Overfull \hbox (210.71529pt too wide) in paragraph at lines 492--492
+[]    \TU/lmtt/m/n/10.95 "k":"k0*T/((1+alpha*(T-T0))*T0):k0:T:alpha:T0"[] 
+ []
+
+
+Overfull \hbox (9.5091pt too wide) in paragraph at lines 494--494
+[]\TU/lmtt/m/n/10.95 "Constantan_4":[] 
+ []
+
+
+Overfull \hbox (72.74533pt too wide) in paragraph at lines 496--496
+[]    \TU/lmtt/m/n/10.95 "name":"Constantan_4",[] 
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 497--497
+[]    \TU/lmtt/m/n/10.95 "alpha":"0",[] 
+ []
+
+
+Overfull \hbox (9.5091pt too wide) in paragraph at lines 498--498
+[]    \TU/lmtt/m/n/10.95 "T0":"293",[] 
+ []
+
+
+Overfull \hbox (55.49908pt too wide) in paragraph at lines 499--499
+[]    \TU/lmtt/m/n/10.95 "sigma0":"2.04e+3",[] 
+ []
+
+
+Overfull \hbox (21.00659pt too wide) in paragraph at lines 500--500
+[]    \TU/lmtt/m/n/10.95 "k0":"0.019",[] 
+ []
+
+
+Overfull \hbox (245.20778pt too wide) in paragraph at lines 501--501
+[]    \TU/lmtt/m/n/10.95 "sigma":"sigma0/(1+alpha*(T-T0)):sigma0:alpha:T:T0",[]
+ 
+ []
+
+
+Overfull \hbox (210.71529pt too wide) in paragraph at lines 502--502
+[]    \TU/lmtt/m/n/10.95 "k":"k0*T/((1+alpha*(T-T0))*T0):k0:T:alpha:T0"[] 
+ []
+
+
+Overfull \hbox (9.5091pt too wide) in paragraph at lines 504--504
+[]\TU/lmtt/m/n/10.95 "Constantan_5":[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [7]
+Overfull \hbox (72.74533pt too wide) in paragraph at lines 506--506
+[]    \TU/lmtt/m/n/10.95 "name":"Constantan_5",[] 
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 507--507
+[]    \TU/lmtt/m/n/10.95 "alpha":"0",[] 
+ []
+
+
+Overfull \hbox (9.5091pt too wide) in paragraph at lines 508--508
+[]    \TU/lmtt/m/n/10.95 "T0":"293",[] 
+ []
+
+
+Overfull \hbox (55.49908pt too wide) in paragraph at lines 509--509
+[]    \TU/lmtt/m/n/10.95 "sigma0":"2.04e+3",[] 
+ []
+
+
+Overfull \hbox (21.00659pt too wide) in paragraph at lines 510--510
+[]    \TU/lmtt/m/n/10.95 "k0":"0.019",[] 
+ []
+
+
+Overfull \hbox (245.20778pt too wide) in paragraph at lines 511--511
+[]    \TU/lmtt/m/n/10.95 "sigma":"sigma0/(1+alpha*(T-T0)):sigma0:alpha:T:T0",[]
+ 
+ []
+
+
+Overfull \hbox (210.71529pt too wide) in paragraph at lines 512--512
+[]    \TU/lmtt/m/n/10.95 "k":"k0*T/((1+alpha*(T-T0))*T0):k0:T:alpha:T0"[] 
+ []
+
+
+Overfull \hbox (9.5091pt too wide) in paragraph at lines 514--514
+[]\TU/lmtt/m/n/10.95 "Constantan_6":[] 
+ []
+
+
+Overfull \hbox (72.74533pt too wide) in paragraph at lines 516--516
+[]    \TU/lmtt/m/n/10.95 "name":"Constantan_6",[] 
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 517--517
+[]    \TU/lmtt/m/n/10.95 "alpha":"0",[] 
+ []
+
+
+Overfull \hbox (9.5091pt too wide) in paragraph at lines 518--518
+[]    \TU/lmtt/m/n/10.95 "T0":"293",[] 
+ []
+
+
+Overfull \hbox (55.49908pt too wide) in paragraph at lines 519--519
+[]    \TU/lmtt/m/n/10.95 "sigma0":"2.04e+3",[] 
+ []
+
+
+Overfull \hbox (21.00659pt too wide) in paragraph at lines 520--520
+[]    \TU/lmtt/m/n/10.95 "k0":"0.019",[] 
+ []
+
+
+Overfull \hbox (245.20778pt too wide) in paragraph at lines 521--521
+[]    \TU/lmtt/m/n/10.95 "sigma":"sigma0/(1+alpha*(T-T0)):sigma0:alpha:T:T0",[]
+ 
+ []
+
+
+Overfull \hbox (210.71529pt too wide) in paragraph at lines 522--522
+[]    \TU/lmtt/m/n/10.95 "k":"k0*T/((1+alpha*(T-T0))*T0):k0:T:alpha:T0"[] 
+ []
+
+
+Overfull \hbox (44.00159pt too wide) in paragraph at lines 529--529
+[]\TU/lmtt/m/n/10.95 "BoundaryConditions":[] 
+ []
+
+
+Overfull \hbox (3.76035pt too wide) in paragraph at lines 533--533
+[]  \TU/lmtt/m/n/10.95 "Dirichlet":[] 
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 537--537
+[]    \TU/lmtt/m/n/10.95 "expr1":"0",[] 
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 538--538
+[]    \TU/lmtt/m/n/10.95 "expr2":"A1"[] 
+ []
+
+
+Overfull \hbox (26.75534pt too wide) in paragraph at lines 542--542
+[]    \TU/lmtt/m/n/10.95 "expr1":"0.1",[] 
+ []
+
+
+Overfull \hbox (78.49408pt too wide) in paragraph at lines 543--543
+[]    \TU/lmtt/m/n/10.95 "expr2":"CurrentLead_1"[] 
+ []
+
+
+Overfull \hbox (3.76035pt too wide) in paragraph at lines 547--547
+[]\TU/lmtt/m/n/10.95 "temperature":[] 
+ []
+
+[8]
+Overfull \hbox (3.76035pt too wide) in paragraph at lines 549--549
+[]  \TU/lmtt/m/n/10.95 "Dirichlet":[] 
+ []
+
+
+Overfull \hbox (26.75534pt too wide) in paragraph at lines 553--553
+[]    \TU/lmtt/m/n/10.95 "expr1":"293",[] 
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 554--554
+[]    \TU/lmtt/m/n/10.95 "expr2":"A1"[] 
+ []
+
+
+Overfull \hbox (26.75534pt too wide) in paragraph at lines 558--558
+[]    \TU/lmtt/m/n/10.95 "expr1":"293",[] 
+ []
+
+
+Overfull \hbox (78.49408pt too wide) in paragraph at lines 559--559
+[]    \TU/lmtt/m/n/10.95 "expr2":"CurrentLead_1"[] 
+ []
+
+
+Overfull \hbox (3.76035pt too wide) in paragraph at lines 564--564
+[]\TU/lmtt/m/n/10.95 "PostProcess":[] 
+ []
+
+
+Overfull \hbox (187.7203pt too wide) in paragraph at lines 566--566
+[]\TU/lmtt/m/n/10.95 "Fields":["temperature","potential","current"][] 
+ []
+
+
+Overfull \hbox (9.5091pt too wide) in paragraph at lines 571--573
+[]\TU/lmtt/m/n/10.95 There is also a
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 571--573
+\TU/lmtt/m/n/10.95 specific file to
+ []
+
+
+Overfull \hbox (3.76035pt too wide) in paragraph at lines 571--573
+\TU/lmtt/m/n/10.95 study only one
+ []
+
+
+Overfull \hbox (26.06277pt too wide) in paragraph at lines 571--573
+\TU/lmtt/m/n/10.95 plate, to be more precise on the temperature reach. We can u
+se here a nonlinear
+ []
+
+[9]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10]
+File: ./images/learning/thermoelectric/Potential.png Graphic file (type QTm)
+
+<use  "./images/learning/thermoelectric/Potential.png" >
+Overfull \hbox (3.61537pt too wide) in paragraph at lines 661--662
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (24.14653pt too wide) in paragraph at lines 666--667
+[]\TU/lmtt/m/n/10.95 Therefore, we need a voltmeter which can be precise betwee
+n 0.01 and 0.15 Volt. 
+ []
+
+
+Overfull \hbox (1.15154pt too wide) in paragraph at lines 669--673
+[]\TU/lmtt/m/n/10.95 Next, we want to control the temperature reached by the se
+nsor, the purpose
+ []
+
+
+Overfull \hbox (14.56528pt too wide) in paragraph at lines 669--673
+\TU/lmtt/m/n/10.95 being not to destroy the sensor. The melting temperature of 
+the Constantan is
+ []
+
+
+Overfull \hbox (64.38777pt too wide) in paragraph at lines 669--673
+\TU/lmtt/m/n/10.95 near 1500 K, but we want to stop well before reaching this p
+oint to avoid deformations
+ []
+
+
+Overfull \hbox (66.30402pt too wide) in paragraph at lines 669--673
+\TU/lmtt/m/n/10.95 of the sensor. The main parameter that we can control is the
+ heat transfer coefficient
+ []
+
+
+Overfull \hbox (50.11102pt too wide) in paragraph at lines 669--673
+\TU/lmtt/b/n/10.95 h \TU/lmtt/m/n/10.95 ($\OML/cmm/m/it/10.95 W:m[]:K[]$\TU/lmt
+t/m/n/10.95 ). This coefficient \TU/lmtt/b/n/10.95 h \TU/lmtt/m/n/10.95 can be 
+control by displaying or not a ventilator
+ []
+
+File: ./images/learning/thermoelectric/Temperature_Max.png Graphic file (type Q
+Tm)
+<use  "./images/learning/thermoelectric/Temperature_Max.png" >
+Overfull \hbox (220.42537pt too wide) in paragraph at lines 676--677
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (6.90028pt too wide) in paragraph at lines 681--682
+[]\TU/lmtt/m/n/10.95 Here we see that in natural convection (h=15), the tempera
+ture reached is by
+ []
+
+File: ./images/learning/thermoelectric/Temperature_Max_Zoom2.png Graphic file (
+type QTm)
+<use  "./images/learning/thermoelectric/Temperature_Max_Zoom2.png" >
+Overfull \hbox (220.42537pt too wide) in paragraph at lines 685--686
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (12.64903pt too wide) in paragraph at lines 690--691
+[]\TU/lmtt/m/n/10.95 A heat transfer coefficient maximum allow to set a higher 
+current but is more
+ []
+
+
+Overfull \hbox (2.94366pt too wide) in paragraph at lines 694--696
+ \TU/lmr/m/n/10.95 2.2.2.\TU/lmr/m/it/10.95 Double Helix.[] \TU/lmtt/m/n/10.95 
+For this piece, the purpose is to see the elevation of the
+ []
+
+
+Overfull \hbox (14.56528pt too wide) in paragraph at lines 694--696
+\TU/lmtt/m/n/10.95 temperature in the conductor around the double helix. We mod
+el a double helix
+ []
+
+File: ./images/learning/thermoelectric/Double_Helix_Geometry.png Graphic file (
+type QTm)
+<use  "./images/learning/thermoelectric/Double_Helix_Geometry.png" >
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[11] [12] [13] [14] [15]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [16]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [17]
+File: ./images/learning/thermoelectric/Double_Helix_temperature.png Graphic fil
+e (type QTm)
+
+<use  "./images/learning/thermoelectric/Double_Helix_temperature.png" >
+Overfull \hbox (220.42537pt too wide) in paragraph at lines 868--869
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (5.84906pt too wide) in paragraph at lines 877--879
+ \TU/lmr/m/n/10.95 2.3.\TU/lmr/bx/sc/10.95 Validity.[][] \TU/lmtt/m/n/10.95 In 
+this example, we approximate the magnet with an axisymmetric
+ []
+
+
+Overfull \hbox (12.64903pt too wide) in paragraph at lines 877--879
+\TU/lmtt/m/n/10.95 copper torus.Thus we can consider only a quarter of this tor
+us for our study.
+ []
+
+
+Overfull \hbox (24.14653pt too wide) in paragraph at lines 877--879
+\TU/lmtt/m/n/10.95 The torus is modeled thanks to the file geo, which also name
+ the volume (omega)
+ []
+
+File: ./images/learning/thermoelectric/quarter-turn3D.png Graphic file (type QT
+m)
+<use  "./images/learning/thermoelectric/quarter-turn3D.png" >
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (23.43478pt too wide) in paragraph at lines 888--889
+ []\TU/lmr/m/n/10.95 Equations.[] \TU/lmtt/m/n/10.95 First of all, we start wit
+h the standard heat equation, with the heat
+ []
+
+
+Overfull \hbox (30.79636pt too wide) in paragraph at lines 896--897
+[]\TU/lmtt/m/n/10.95 Coefficients $\OML/cmm/m/it/10.95 ^^[$ \TU/lmtt/m/n/10.95 
+and k are in fact, temperature-dependent, shown in this equations
+ []
+
+
+Overfull \hbox (32.1707pt too wide) in paragraph at lines 908--910
+[]\TU/lmtt/m/n/10.95 But, for the next, we consider that $\OML/cmm/m/it/10.95 ^
+^K \OT1/cmr/m/n/10.95 = 0$ \TU/lmtt/m/n/10.95 and T=T$[][]$. Thereby, we are in
+ a linear
+ []
+
+
+Overfull \hbox (29.89528pt too wide) in paragraph at lines 908--910
+\TU/lmtt/m/n/10.95 problem that we can solve with the thermoelectric-linear mod
+el in the Json file. 
+ []
+
+
+Overfull \hbox (13.62701pt too wide) in paragraph at lines 912--914
+[]\TU/lmtt/m/n/10.95 In our case, we consider that T only depends on the radius
+, so $[] \OT1/cmr/m/n/10.95 = 0$\TU/lmtt/m/n/10.95 . We can
+ []
+
+[18]
+Overfull \hbox (18.39778pt too wide) in paragraph at lines 921--922
+[]\TU/lmtt/m/n/10.95 The constants A and B are determined by the boundary condi
+tions (Dirichlet and
+ []
+
+[19]
+Overfull \hbox (46.07806pt too wide) in paragraph at lines 955--968
+ [] 
+ []
+
+[20]
+File: ./images/learning/thermoelectric/Temperature_paraview.png Graphic file (t
+ype QTm)
+ <use  "./images/learning/thermoelectric/Temperature_paraview.png" >
+
+Package wrapfig Warning: Collision between wrapping environments on input line 
+998.
+
+File: ./images/learning/thermoelectric/TemperatureTH.png Graphic file (type QTm
+)
+<use  "./images/learning/thermoelectric/TemperatureTH.png" >
+Overfull \hbox (12.1809pt too wide) in paragraph at lines 1004--1007
+[] []\TU/lmr/m/n/10.95 Results.[] \TU/lmtt/m/n/10.95 We can vary
+ []
+
+
+Overfull \hbox (2.9391pt too wide) in paragraph at lines 1004--1007
+\TU/lmtt/m/n/10.95 the degree of the
+ []
+
+
+Overfull \hbox (14.4366pt too wide) in paragraph at lines 1004--1007
+\TU/lmtt/m/n/10.95 finite element from
+ []
+
+
+Overfull \hbox (66.17534pt too wide) in paragraph at lines 1004--1007
+\TU/lmtt/m/n/10.95 1 (linear) to 2 (quadratic). 
+ []
+
+
+Overfull \hbox (43.18034pt too wide) in paragraph at lines 1004--1007
+\TU/lmtt/m/n/10.95 To prove the convergence
+ []
+
+
+Overfull \hbox (14.4366pt too wide) in paragraph at lines 1004--1007
+\TU/lmtt/m/n/10.95 towards the theory,
+ []
+
+
+Overfull \hbox (31.68285pt too wide) in paragraph at lines 1004--1007
+\TU/lmtt/m/n/10.95 we plot the difference
+ []
+
+
+Overfull \hbox (43.18034pt too wide) in paragraph at lines 1004--1007
+\TU/lmtt/m/n/10.95 the theoretical formulas
+ []
+
+
+Overfull \hbox (31.68285pt too wide) in paragraph at lines 1004--1007
+\TU/lmtt/m/n/10.95 for T and V. The scale
+ []
+
+
+Overfull \hbox (8.68785pt too wide) in paragraph at lines 1004--1007
+\TU/lmtt/m/n/10.95 is logarithmic, to
+ []
+
+
+Overfull \hbox (31.68285pt too wide) in paragraph at lines 1004--1007
+\TU/lmtt/m/n/10.95 see directly the slope
+ []
+
+
+Overfull \hbox (14.4366pt too wide) in paragraph at lines 1004--1007
+\TU/lmtt/m/n/10.95 and note that it is
+ []
+
+
+Overfull \hbox (8.68785pt too wide) in paragraph at lines 1004--1007
+\TU/lmtt/m/n/10.95 directly linked to
+ []
+
+
+Overfull \hbox (2.9391pt too wide) in paragraph at lines 1004--1007
+\TU/lmtt/m/n/10.95 the degree of the
+ []
+
+
+Overfull \hbox (20.18535pt too wide) in paragraph at lines 1004--1007
+\TU/lmtt/m/n/10.95 finite element used. 
+ []
+
+[21]
+Overfull \hbox (3.12814pt too wide) in paragraph at lines 1025--1026
+[]\TU/lmtt/m/n/10.95 For L2, we have directly the output on the table obtained 
+whether for
+ []
+
+
+Overfull \hbox (3.12814pt too wide) in paragraph at lines 1027--1028
+[]\TU/lmtt/m/n/10.95 For H1, we need to do a quadratical mean between the H1 an
+d L2 of the
+ []
+
+File: ./images/learning/thermoelectric/L2V.png Graphic file (type QTm)
+<use  "./images/learning/thermoelectric/L2V.png" >
+
+Package wrapfig Warning: Collision between wrapping environments on input line 
+1038.
+
+File: ./images/learning/thermoelectric/H1V.png Graphic file (type QTm)
+<use  "./images/learning/thermoelectric/H1V.png" >
+
+Package wrapfig Warning: Collision between wrapping environments on input line 
+1044.
+
+File: ./images/learning/thermoelectric/L2T.png Graphic file (type QTm)
+<use  "./images/learning/thermoelectric/L2T.png" > [22]
+
+Package wrapfig Warning: Collision between wrapping environments on input line 
+1050.
+
+File: ./images/learning/thermoelectric/H1T.png Graphic file (type QTm)
+<use  "./images/learning/thermoelectric/H1T.png" >
+Overfull \hbox (71.68318pt too wide) in paragraph at lines 1057--1058
+[] []\TU/lmr/m/n/10.95 Code.[] \TU/lmtt/m/n/10.95 For the modelisation
+ []
+
+
+Overfull \hbox (3.76035pt too wide) in paragraph at lines 1057--1058
+\TU/lmtt/m/n/10.95 of the quarter
+ []
+
+
+Overfull \hbox (32.50409pt too wide) in paragraph at lines 1057--1058
+\TU/lmtt/m/n/10.95 of torus, we create
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 1057--1058
+\TU/lmtt/m/n/10.95 the geometry and
+ []
+
+
+Overfull \hbox (26.75534pt too wide) in paragraph at lines 1057--1058
+\TU/lmtt/m/n/10.95 the mesh on Salome
+ []
+
+
+Overfull \hbox (3.76035pt too wide) in paragraph at lines 1057--1058
+\TU/lmtt/m/n/10.95 and export the
+ []
+
+[23]
+Overfull \hbox (44.00159pt too wide) in paragraph at lines 1061--1061
+[]\TU/lmtt/m/n/10.95 // Define Main params[] 
+ []
+
+
+Overfull \hbox (3.76035pt too wide) in paragraph at lines 1064--1064
+[]\TU/lmtt/m/n/10.95 lc_ext = 3*lc;[] 
+ []
+
+
+Overfull \hbox (3.76035pt too wide) in paragraph at lines 1065--1065
+[]\TU/lmtt/m/n/10.95 lc_inf = 1*lc;[] 
+ []
+
+
+Overfull \hbox (49.75034pt too wide) in paragraph at lines 1074--1074
+[]\TU/lmtt/m/n/10.95 Mesh.ElementOrder = 1;[] 
+ []
+
+
+Overfull \hbox (66.99658pt too wide) in paragraph at lines 1075--1075
+[]\TU/lmtt/m/n/10.95 Point(1) = {0, 0, -L, h};[] 
+ []
+
+
+Overfull \hbox (72.74533pt too wide) in paragraph at lines 1076--1076
+[]\TU/lmtt/m/n/10.95 Point(2) = {r1, 0, -L, h};[] 
+ []
+
+
+Overfull \hbox (72.74533pt too wide) in paragraph at lines 1077--1077
+[]\TU/lmtt/m/n/10.95 Point(3) = {r2, 0, -L, h};[] 
+ []
+
+
+Overfull \hbox (72.74533pt too wide) in paragraph at lines 1078--1078
+[]\TU/lmtt/m/n/10.95 Point(4) = {0, r1, -L, h};[] 
+ []
+
+
+Overfull \hbox (72.74533pt too wide) in paragraph at lines 1079--1079
+[]\TU/lmtt/m/n/10.95 Point(5) = {0, r2, -L, h};[] 
+ []
+
+
+Overfull \hbox (49.75034pt too wide) in paragraph at lines 1080--1080
+[]\TU/lmtt/m/n/10.95 Circle(1) = {2, 1, 4};[] 
+ []
+
+
+Overfull \hbox (49.75034pt too wide) in paragraph at lines 1081--1081
+[]\TU/lmtt/m/n/10.95 Circle(2) = {3, 1, 5};[] 
+ []
+
+
+Overfull \hbox (21.00659pt too wide) in paragraph at lines 1082--1082
+[]\TU/lmtt/m/n/10.95 Line(3) = {4, 5};[] 
+ []
+
+
+Overfull \hbox (21.00659pt too wide) in paragraph at lines 1083--1083
+[]\TU/lmtt/m/n/10.95 Line(4) = {2, 3};[] 
+ []
+
+
+Overfull \hbox (95.74033pt too wide) in paragraph at lines 1084--1084
+[]\TU/lmtt/m/n/10.95 Line Loop(5) = {3, -2, -4, 1};[] 
+ []
+
+
+Overfull \hbox (55.49908pt too wide) in paragraph at lines 1085--1085
+[]\TU/lmtt/m/n/10.95 Plane Surface(1) = {5};[] 
+ []
+
+
+Overfull \hbox (141.73032pt too wide) in paragraph at lines 1087--1087
+[]\TU/lmtt/m/n/10.95 out[] = Extrude {0,0,L} {Surface{1};};[] 
+ []
+
+
+Overfull \hbox (130.23282pt too wide) in paragraph at lines 1089--1089
+[]\TU/lmtt/m/n/10.95 Physical Volume("omega") = {out[1]};[] 
+ []
+
+
+Overfull \hbox (124.48407pt too wide) in paragraph at lines 1090--1090
+[]\TU/lmtt/m/n/10.95 Physical Surface("top") = {out[0]};[] 
+ []
+
+
+Overfull \hbox (112.98657pt too wide) in paragraph at lines 1091--1091
+[]\TU/lmtt/m/n/10.95 Physical Surface("bottom") = {1};[] 
+ []
+
+
+Overfull \hbox (130.23282pt too wide) in paragraph at lines 1092--1092
+[]\TU/lmtt/m/n/10.95 Physical Surface("Rint") = {out[5]};[] 
+ []
+
+
+Overfull \hbox (130.23282pt too wide) in paragraph at lines 1093--1093
+[]\TU/lmtt/m/n/10.95 Physical Surface("Rext") = {out[3]};[] 
+ []
+
+
+Overfull \hbox (118.73532pt too wide) in paragraph at lines 1094--1094
+[]\TU/lmtt/m/n/10.95 Physical Surface("in") = {out[2]};[] 
+ []
+
+
+Overfull \hbox (124.48407pt too wide) in paragraph at lines 1095--1095
+[]\TU/lmtt/m/n/10.95 Physical Surface("out") = {out[4]};[] 
+ []
+
+
+Overfull \hbox (9.5091pt too wide) in paragraph at lines 1098--1099
+[]\TU/lmtt/m/n/10.95 Next step is to
+ []
+
+
+Overfull \hbox (26.75534pt too wide) in paragraph at lines 1098--1099
+\TU/lmtt/m/n/10.95 create a file.json
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 1098--1099
+\TU/lmtt/m/n/10.95 which define the
+ []
+
+
+Overfull \hbox (26.75534pt too wide) in paragraph at lines 1098--1099
+\TU/lmtt/m/n/10.95 model we will use,
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 1098--1099
+\TU/lmtt/m/n/10.95 the material and
+ []
+
+
+Overfull \hbox (38.25284pt too wide) in paragraph at lines 1098--1099
+\TU/lmtt/m/n/10.95 sets the conditions. 
+ []
+
+[24]
+Overfull \hbox (89.99158pt too wide) in paragraph at lines 1103--1103
+[]    \TU/lmtt/m/n/10.95 "Name": "ThermoElectric",[] 
+ []
+
+
+Overfull \hbox (44.00159pt too wide) in paragraph at lines 1104--1104
+[]    \TU/lmtt/m/n/10.95 "ShortName":"TE",[] 
+ []
+
+
+Overfull \hbox (130.23282pt too wide) in paragraph at lines 1105--1105
+[]    \TU/lmtt/m/n/10.95 "Model":"thermoelectric-linear",[] 
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 1107--1107
+[]    \TU/lmtt/m/n/10.95 "Materials":[] 
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 1109--1109
+[]        \TU/lmtt/m/n/10.95 "omega":[] 
+ []
+
+
+Overfull \hbox (84.24283pt too wide) in paragraph at lines 1111--1111
+[]            \TU/lmtt/m/n/10.95 "name":"copper",[] 
+ []
+
+
+Overfull \hbox (95.74033pt too wide) in paragraph at lines 1112--1112
+[]            \TU/lmtt/m/n/10.95 "alpha":"3.35e-3",[] 
+ []
+
+
+Overfull \hbox (55.49908pt too wide) in paragraph at lines 1113--1113
+[]            \TU/lmtt/m/n/10.95 "T0":"293",[] 
+ []
+
+
+Overfull \hbox (89.99158pt too wide) in paragraph at lines 1114--1114
+[]            \TU/lmtt/m/n/10.95 "sigma0":"58e+3",[] 
+ []
+
+
+Overfull \hbox (61.24783pt too wide) in paragraph at lines 1115--1115
+[]            \TU/lmtt/m/n/10.95 "k0":"0.38",[] 
+ []
+
+
+Overfull \hbox (291.19777pt too wide) in paragraph at lines 1116--1116
+[]            \TU/lmtt/m/n/10.95 "sigma":"sigma0/(1+alpha*(T-T0)):sigma0:alpha:
+T:T0",[] 
+ []
+
+
+Overfull \hbox (256.70528pt too wide) in paragraph at lines 1117--1117
+[]            \TU/lmtt/m/n/10.95 "k":"k0*T/((1+alpha*(T-T0))*T0):k0:T:alpha:T0"
+[] 
+ []
+
+
+Overfull \hbox (66.99658pt too wide) in paragraph at lines 1120--1120
+[]    \TU/lmtt/m/n/10.95 "BoundaryConditions":[] 
+ []
+
+
+Overfull \hbox (38.25284pt too wide) in paragraph at lines 1122--1122
+[]        \TU/lmtt/m/n/10.95 "potential":[] 
+ []
+
+
+Overfull \hbox (61.24783pt too wide) in paragraph at lines 1124--1124
+[]            \TU/lmtt/m/n/10.95 "Dirichlet":[] 
+ []
+
+
+Overfull \hbox (44.00159pt too wide) in paragraph at lines 1126--1126
+[]                \TU/lmtt/m/n/10.95 "in":[] 
+ []
+
+
+Overfull \hbox (21.00659pt too wide) in paragraph at lines 1127--1127
+[]                \TU/lmtt/m/n/10.95 {[] 
+ []
+
+
+Overfull \hbox (107.23782pt too wide) in paragraph at lines 1128--1128
+[]                    \TU/lmtt/m/n/10.95 "expr1":"0",[] 
+ []
+
+
+Overfull \hbox (32.50409pt too wide) in paragraph at lines 1129--1129
+[]    \TU/lmtt/m/n/10.95 "expr2":"omega"[] 
+ []
+
+
+Overfull \hbox (26.75534pt too wide) in paragraph at lines 1130--1130
+[]                \TU/lmtt/m/n/10.95 },[] 
+ []
+
+
+Overfull \hbox (49.75034pt too wide) in paragraph at lines 1131--1131
+[]                \TU/lmtt/m/n/10.95 "out":[] 
+ []
+
+
+Overfull \hbox (21.00659pt too wide) in paragraph at lines 1132--1132
+[]                \TU/lmtt/m/n/10.95 {[] 
+ []
+
+
+Overfull \hbox (383.17776pt too wide) in paragraph at lines 1133--1133
+[]                    \TU/lmtt/m/n/10.95 "expr1":"0.3/4.", // since we consider
+ only 1/4th of a torus[] 
+ []
+
+
+Overfull \hbox (32.50409pt too wide) in paragraph at lines 1134--1134
+[]    \TU/lmtt/m/n/10.95 "expr2":"omega"[] 
+ []
+
+
+Overfull \hbox (21.00659pt too wide) in paragraph at lines 1135--1135
+[]                \TU/lmtt/m/n/10.95 }[] 
+ []
+
+
+Overfull \hbox (49.75034pt too wide) in paragraph at lines 1137--1137
+[]        \TU/lmtt/m/n/10.95 "temperature":[] 
+ []
+
+
+Overfull \hbox (38.25284pt too wide) in paragraph at lines 1139--1139
+[]            \TU/lmtt/m/n/10.95 "Robin":[] 
+ []
+
+
+Overfull \hbox (55.49908pt too wide) in paragraph at lines 1141--1141
+[]                \TU/lmtt/m/n/10.95 "Rext":[] 
+ []
+
+[25]
+Overfull \hbox (21.00659pt too wide) in paragraph at lines 1142--1142
+[]                \TU/lmtt/m/n/10.95 {[] 
+ []
+
+
+Overfull \hbox (124.48407pt too wide) in paragraph at lines 1143--1143
+[]                    \TU/lmtt/m/n/10.95 "expr1":"0.08",[] 
+ []
+
+
+Overfull \hbox (112.98657pt too wide) in paragraph at lines 1144--1144
+[]                    \TU/lmtt/m/n/10.95 "expr2":"293"[] 
+ []
+
+
+Overfull \hbox (26.75534pt too wide) in paragraph at lines 1145--1145
+[]                \TU/lmtt/m/n/10.95 },[] 
+ []
+
+
+Overfull \hbox (55.49908pt too wide) in paragraph at lines 1146--1146
+[]                \TU/lmtt/m/n/10.95 "Rint":[] 
+ []
+
+
+Overfull \hbox (21.00659pt too wide) in paragraph at lines 1147--1147
+[]                \TU/lmtt/m/n/10.95 {[] 
+ []
+
+
+Overfull \hbox (170.47404pt too wide) in paragraph at lines 1148--1148
+[]                    \TU/lmtt/m/n/10.95 "expr1":"0.08*(2./1.)",[] 
+ []
+
+
+Overfull \hbox (112.98657pt too wide) in paragraph at lines 1149--1149
+[]                    \TU/lmtt/m/n/10.95 "expr2":"293"[] 
+ []
+
+
+Overfull \hbox (21.00659pt too wide) in paragraph at lines 1150--1150
+[]                \TU/lmtt/m/n/10.95 }[] 
+ []
+
+
+Overfull \hbox (26.75534pt too wide) in paragraph at lines 1154--1154
+[]    \TU/lmtt/m/n/10.95 "PostProcess":[] 
+ []
+
+
+Overfull \hbox (233.7103pt too wide) in paragraph at lines 1156--1156
+[]        \TU/lmtt/m/n/10.95 "Fields":["temperature","potential","current"][] 
+ []
+
+
+Overfull \hbox (21.00659pt too wide) in paragraph at lines 1161--1162
+[]\TU/lmtt/m/n/10.95 Lastly, we create
+ []
+
+
+Overfull \hbox (55.49908pt too wide) in paragraph at lines 1161--1162
+\TU/lmtt/m/n/10.95 a file.cfg to configure
+ []
+
+
+Overfull \hbox (55.49908pt too wide) in paragraph at lines 1161--1162
+\TU/lmtt/m/n/10.95 what we will calculate. 
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.1164 ...3D_V1T1_N1_cvg.cfg (for the T1V1 model)}
+                                                  }\vspace{-1\baselineskip}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+l.1164 ...D_V1T1_N1_cvg.cfg (for the T1V1 model)}}
+                                                  \vspace{-1\baselineskip}
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.1165 \begin{verbatim}
+                       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.1165 \begin{verbatim}
+                       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.1165 \begin{verbatim}
+                       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (189.9654pt too wide) in paragraph at lines 1164--1165
+[]\TU/lmr/bx/sc/10.95 thermoelectric$[]\OML/cmm/m/it/10.95 D[]\OT1/cmr/m/n/10.9
+5 1\OML/cmm/m/it/10.95 T\OT1/cmr/m/n/10.95 1[]1[]\OML/cmm/m/it/10.95 vg:cfg\OT1
+/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 fortheT\OT1/cmr/m/n/10.95 1\OML/cmm/m/it/10
+.95 V\OT1/cmr/m/n/10.95 1\OML/cmm/m/it/10.95 model\OT1/cmr/m/n/10.95 )$ 
+ []
+
+
+Overfull \hbox (72.74533pt too wide) in paragraph at lines 1167--1167
+[]\TU/lmtt/m/n/10.95 geofile=quarter-turn3D.geo[] 
+ []
+
+
+Overfull \hbox (38.25284pt too wide) in paragraph at lines 1168--1168
+[]\TU/lmtt/m/n/10.95 geofile-path=$cfgdir[] 
+ []
+
+
+Overfull \hbox (3.76035pt too wide) in paragraph at lines 1169--1169
+[]\TU/lmtt/m/n/10.95 gmsh.hsize=0.2[] 
+ []
+
+
+Overfull \hbox (49.75032pt too wide) in paragraph at lines 1171--1171
+[]\TU/lmtt/m/n/10.95 conductor_volume=omega[] 
+ []
+
+
+Overfull \hbox (89.99158pt too wide) in paragraph at lines 1178--1178
+[]\TU/lmtt/m/n/10.95 f=0.3*atan2(x,y)/(2*pi):x:y:z[] 
+ []
+
+
+Overfull \hbox (365.93152pt too wide) in paragraph at lines 1180--1180
+[]\TU/lmtt/m/n/10.95 g=600.312-58.e+3/(2*0.38)*(0.3/(2*pi))^2*log(sqrt(x*x+y*y)
+/sqrt(1*2))^2:x:y:z[] 
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 1182--1182
+[]\TU/lmtt/m/n/10.95 [thermoelectric][] 
+ []
+
+
+Overfull \hbox (141.7303pt too wide) in paragraph at lines 1183--1183
+[]\TU/lmtt/m/n/10.95 model_json=$cfgdir/quarter-turn3D.json[] 
+ []
+
+[26]
+Overfull \hbox (21.00659pt too wide) in paragraph at lines 1188--1188
+[]\TU/lmtt/m/n/10.95 #ksp-monitor=true[] 
+ []
+
+
+Overfull \hbox (3.76035pt too wide) in paragraph at lines 1191--1191
+[]\TU/lmtt/m/n/10.95 ksp-maxit=2000[] 
+ []
+
+
+Overfull \hbox (101.48907pt too wide) in paragraph at lines 1192--1192
+[]\TU/lmtt/m/n/10.95 ksp-use-initial-guess-nonzero=1[] 
+ []
+
+
+Overfull \hbox (21.00659pt too wide) in paragraph at lines 1196--1196
+[]\TU/lmtt/m/n/10.95 #ksp-monitor=true[] 
+ []
+
+
+Overfull \hbox (101.48907pt too wide) in paragraph at lines 1199--1199
+[]\TU/lmtt/m/n/10.95 ksp-use-initial-guess-nonzero=1[] 
+ []
+
+
+Overfull \hbox (3.76035pt too wide) in paragraph at lines 1200--1200
+[]\TU/lmtt/m/n/10.95 \end{verbatim}[] 
+ []
+
+
+Overfull \hbox (216.46405pt too wide) in paragraph at lines 1202--1202
+[]\TU/lmtt/m/n/10.95 Finally, to execute our program, run this command :[] 
+ []
+
+
+Overfull \hbox (233.7103pt too wide) in paragraph at lines 1205--1205
+[]\TU/lmtt/m/n/10.95 {\bf to study the convergence}\vspace{-1\baselineskip}[] 
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 1206--1206
+[]\TU/lmtt/m/n/10.95 \begin{verbatim}[] 
+ []
+
+
+Overfull \hbox (475.15775pt too wide) in paragraph at lines 1207--1207
+[]\TU/lmtt/m/n/10.95 mpirun -np 4 feelpp_test_convergence_3D_V1T1_N1  --config-
+file thermoelectric_3D_V1T1_N1_cvg.cfg[] 
+ []
+
+
+Overfull \hbox (3.76035pt too wide) in paragraph at lines 1208--1208
+[]\TU/lmtt/m/n/10.95 \end{verbatim}[] 
+ []
+
+
+Overfull \hbox (854.57516pt too wide) in paragraph at lines 1210--1210
+[]\TU/lmtt/m/n/10.95 It will create a table with all the informations you need.
+ For our example, we showed the convergence using L2 and H1 (in section \hyperl
+ink{x-results}{Results}).[] 
+ []
+
+
+Overfull \hbox (342.93652pt too wide) in paragraph at lines 1213--1213
+[]\TU/lmtt/m/n/10.95 {\bf to apply for a real case (theory not known)}\vspace{-
+1\baselineskip}[] 
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 1214--1214
+[]\TU/lmtt/m/n/10.95 \begin{verbatim}[] 
+ []
+
+
+Overfull \hbox (515.39897pt too wide) in paragraph at lines 1215--1215
+[]\TU/lmtt/m/n/10.95 mpirun -np 4 feelpp_hfm_thermoelectric_model_3D_V1T1_N1 --
+config-file thermoelectric_3D_V1T1_N1_cvg.cfg[] 
+ []
+
+
+Overfull \hbox (3.76035pt too wide) in paragraph at lines 1216--1216
+[]\TU/lmtt/m/n/10.95 \end{verbatim}[] 
+ []
+
+Missing character: There is no ​ in font [lmmono10-regular]:!
+
+Overfull \hbox (1205.24883pt too wide) in paragraph at lines 1218--1218
+[]\TU/lmtt/m/n/10.95 This command will create files in \texttt{~/feel/hifimagne
+t/ThermoElectricModel/…​} . You can see the results with Paraview or Ensight op
+ening \texttt{Thermics.case} or \texttt{Electrics.case} in the software of your
+ choice.[] 
+ []
+
+
+Overfull \hbox (337.18774pt too wide) in paragraph at lines 1221--1221
+[]\TU/lmtt/m/n/10.95 \hypertarget{x-\textbf{magnetostatic}}{\section{\textbf{Ma
+gnetostatic}}}[] 
+ []
+
+
+Overfull \hbox (480.90648pt too wide) in paragraph at lines 1222--1222
+[]\TU/lmtt/m/n/10.95 \hypertarget{x-general-presentation-of-the-files}{\subsect
+ion{General presentation of the files}}[] 
+ []
+
+
+Overfull \hbox (446.414pt too wide) in paragraph at lines 1223--1223
+[]\TU/lmtt/m/n/10.95 There are several applications we can use, but all this ap
+plications follow the same form :[] 
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 1226--1226
+[]\TU/lmtt/m/n/10.95 \begin{verbatim}[] 
+ []
+
+
+Overfull \hbox (296.94653pt too wide) in paragraph at lines 1227--1227
+[]\TU/lmtt/m/n/10.95 feelpp_hfm_test_"kind of your test"_box"1 2 or 3"D_P"1 2 o
+r 3"_N1[] 
+ []
+
+
+Overfull \hbox (3.76035pt too wide) in paragraph at lines 1228--1228
+[]\TU/lmtt/m/n/10.95 \end{verbatim}[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [27]
+Overfull \hbox (95.74033pt too wide) in paragraph at lines 1230--1230
+[]\TU/lmtt/m/n/10.95 The kind of your test can be :[] 
+ []
+
+
+Overfull \hbox (32.50409pt too wide) in paragraph at lines 1233--1233
+[]\TU/lmtt/m/n/10.95 \begin{description}[] 
+ []
+
+
+Overfull \hbox (595.88145pt too wide) in paragraph at lines 1235--1235
+[]\TU/lmtt/m/n/10.95 \item[biotsavart]calculate \textbf{B} and \textbf{A} analy
+tically and with BiotSavart, depending of \textbf{j} given.[] 
+ []
+
+
+Overfull \hbox (503.90147pt too wide) in paragraph at lines 1237--1237
+[]\TU/lmtt/m/n/10.95 \item[biotsavart_num]same than biotsavart but use the ther
+moelectric program to calculate \textbf{j}.[] 
+ []
+
+
+Overfull \hbox (21.00659pt too wide) in paragraph at lines 1239--1239
+[]\TU/lmtt/m/n/10.95 \end{description}[] 
+ []
+
+
+Overfull \hbox (348.68527pt too wide) in paragraph at lines 1242--1242
+[]\TU/lmtt/m/n/10.95 You either set the dimension (1, 2 or 3D) of the box insid
+e the conductor.[] 
+ []
+
+
+Overfull \hbox (210.71529pt too wide) in paragraph at lines 1245--1245
+[]\TU/lmtt/m/n/10.95 \hypertarget{x-material}{\subsubsection{Material}}[] 
+ []
+
+
+Overfull \hbox (613.12772pt too wide) in paragraph at lines 1246--1246
+[]\TU/lmtt/m/n/10.95 There is no json file for the magnetostatic studies (excep
+t for the biotsavart_num which use the termoelectric program).[] 
+ []
+
+
+Overfull \hbox (751.09769pt too wide) in paragraph at lines 1247--1247
+[]\TU/lmtt/m/n/10.95 Instead, the configuration file (\texttt{.cfg}) use a \tex
+ttt{.d} file, which define the geometry and the material of the conductor, like
+ this :[] 
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 1250--1250
+[]\TU/lmtt/m/n/10.95 \begin{verbatim}[] 
+ []
+
+
+Overfull \hbox (44.00159pt too wide) in paragraph at lines 1251--1251
+[]\TU/lmtt/m/n/10.95 #Power[MW] Current[A][] 
+ []
+
+
+Overfull \hbox (9.5091pt too wide) in paragraph at lines 1252--1252
+[] \TU/lmtt/m/n/10.95 "_"        "_"[] 
+ []
+
+
+Overfull \hbox (9.5091pt too wide) in paragraph at lines 1253--1253
+[]\TU/lmtt/m/n/10.95 #Helices N_Elem[] 
+ []
+
+
+Overfull \hbox (66.99658pt too wide) in paragraph at lines 1255--1255
+[]\TU/lmtt/m/n/10.95 #N R1[m]  R2[m]  HalfL[m]
+ []
+
+
+Overfull \hbox (49.75034pt too wide) in paragraph at lines 1255--1255
+\TU/lmtt/m/n/10.95 Rho[Ohm.m]  Alpha[1/K]
+ []
+
+
+Overfull \hbox (210.71529pt too wide) in paragraph at lines 1257--1257
+[]\TU/lmtt/m/n/10.95 # Bitter I=j1*r1*log(r2/r1)*2*L=11767.657994358965[] 
+ []
+
+
+Overfull \hbox (285.44904pt too wide) in paragraph at lines 1258--1258
+[]\TU/lmtt/m/n/10.95 #Type  R1         R2      Z1           Z2         J       
+  Rho
+ []
+
+
+Overfull \hbox (337.18777pt too wide) in paragraph at lines 1259--1259
+[]  \TU/lmtt/m/n/10.95 "_" "_"        "_"      "_"         "_"        "_"      
+  "_"      "_"[] 
+ []
+
+
+Overfull \hbox (55.49908pt too wide) in paragraph at lines 1263--1263
+[]\TU/lmtt/m/n/10.95 #Bz(0)[tesla] Power[MW]
+ []
+
+
+Overfull \hbox (26.75534pt too wide) in paragraph at lines 1263--1263
+\TU/lmtt/m/n/10.95 Bz_total(0)[tesla][] 
+ []
+
+
+Overfull \hbox (101.48907pt too wide) in paragraph at lines 1264--1264
+[]   \TU/lmtt/m/n/10.95 "_"          "_"         "_"[] 
+ []
+
+
+Overfull \hbox (118.73532pt too wide) in paragraph at lines 1266--1266
+[]\TU/lmtt/m/n/10.95 #H   B0_H[t] Sum_B0[t] Power_H[MW]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [28]
+Overfull \hbox (130.23282pt too wide) in paragraph at lines 1270--1270
+[]\TU/lmtt/m/n/10.95 MARGE DE SECURITE CONTRAINTES= 8.0 %[] 
+ []
+
+
+Overfull \hbox (3.76035pt too wide) in paragraph at lines 1271--1271
+[]\TU/lmtt/m/n/10.95 \end{verbatim}[] 
+ []
+
+
+Overfull \hbox (417.67026pt too wide) in paragraph at lines 1273--1273
+[]\TU/lmtt/m/n/10.95 As there is different applications, there is different con
+figure files, the biotsavart[] 
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 1276--1276
+[]\TU/lmtt/m/n/10.95 \begin{verbatim}[] 
+ []
+
+
+Overfull \hbox (331.439pt too wide) in paragraph at lines 1279--1279
+[]\TU/lmtt/m/n/10.95 geofile="name_of_the_file_created_by_the_partition.json" (
+.msh or .geo)[] 
+ []
+
+
+Overfull \hbox (38.25284pt too wide) in paragraph at lines 1280--1280
+[]\TU/lmtt/m/n/10.95 geofile-path=$cfgdir[] 
+ []
+
+
+Overfull \hbox (3.76035pt too wide) in paragraph at lines 1281--1281
+[]\TU/lmtt/m/n/10.95 gmsh.hsize="_"[] 
+ []
+
+
+Overfull \hbox (141.7303pt too wide) in paragraph at lines 1283--1283
+[]\TU/lmtt/m/n/10.95 conductor_volume="name_of_your_volume"[] 
+ []
+
+
+Overfull \hbox (72.74533pt too wide) in paragraph at lines 1289--1289
+[]\TU/lmtt/m/n/10.95 #theoretical function of j[] 
+ []
+
+
+Overfull \hbox (360.18274pt too wide) in paragraph at lines 1290--1290
+[]\TU/lmtt/m/n/10.95 j={-58.e+3*(0.5/(2*Pi))*y/(x^2+y^2),58.e+3*(0.5/(2*Pi))*x/
+(x^2+y^2),0}:x:y:z[] 
+ []
+
+
+Overfull \hbox (101.48906pt too wide) in paragraph at lines 1293--1293
+[]\TU/lmtt/m/n/10.95 conductor="name_of_your_volume"[] 
+ []
+
+
+Overfull \hbox (158.97655pt too wide) in paragraph at lines 1294--1294
+[]\TU/lmtt/m/n/10.95 box=box"dimension_of_your_box(1,2_or_3D)"[] 
+ []
+
+
+Overfull \hbox (44.00159pt too wide) in paragraph at lines 1296--1296
+[]\TU/lmtt/m/n/10.95 [magnetic_field-bmap][] 
+ []
+
+
+Overfull \hbox (95.74031pt too wide) in paragraph at lines 1297--1297
+[]\TU/lmtt/m/n/10.95 geo-data="name_of_your_file.d"[] 
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 1298--1298
+[]\TU/lmtt/m/n/10.95 geo-path=$cfgdir[] 
+ []
+
+
+Overfull \hbox (32.50409pt too wide) in paragraph at lines 1299--1299
+[]\TU/lmtt/m/n/10.95 helix-intensity="_"[] 
+ []
+
+
+Overfull \hbox (38.25284pt too wide) in paragraph at lines 1300--1300
+[]\TU/lmtt/m/n/10.95 bitter-intensity="_"[] 
+ []
+
+
+Overfull \hbox (32.50409pt too wide) in paragraph at lines 1301--1301
+[]\TU/lmtt/m/n/10.95 supra-intensity="_"[] 
+ []
+
+
+Overfull \hbox (3.76035pt too wide) in paragraph at lines 1302--1302
+[]\TU/lmtt/m/n/10.95 \end{verbatim}[] 
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 1304--1304
+[]\TU/lmtt/m/n/10.95 \begin{verbatim}[] 
+ []
+
+
+Overfull \hbox (32.50409pt too wide) in paragraph at lines 1307--1307
+[]\TU/lmtt/m/n/10.95 geofile=torus3D.geo[] 
+ []
+
+
+Overfull \hbox (38.25284pt too wide) in paragraph at lines 1308--1308
+[]\TU/lmtt/m/n/10.95 geofile-path=$cfgdir[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [29]
+Overfull \hbox (49.75032pt too wide) in paragraph at lines 1311--1311
+[]\TU/lmtt/m/n/10.95 conductor_volume=omega[] 
+ []
+
+
+Overfull \hbox (360.18274pt too wide) in paragraph at lines 1317--1317
+[]\TU/lmtt/m/n/10.95 j={-58.e+3*(0.5/(2*Pi))*y/(x^2+y^2),58.e+3*(0.5/(2*Pi))*x/
+(x^2+y^2),0}:x:y:z[] 
+ []
+
+
+Overfull \hbox (9.5091pt too wide) in paragraph at lines 1320--1320
+[]\TU/lmtt/m/n/10.95 conductor=omega[] 
+ []
+
+
+Overfull \hbox (44.00159pt too wide) in paragraph at lines 1323--1323
+[]\TU/lmtt/m/n/10.95 [magnetic_field-bmap][] 
+ []
+
+
+Overfull \hbox (26.75534pt too wide) in paragraph at lines 1324--1324
+[]\TU/lmtt/m/n/10.95 geo-data=torus3D.d[] 
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 1325--1325
+[]\TU/lmtt/m/n/10.95 geo-path=$cfgdir[] 
+ []
+
+
+Overfull \hbox (21.00659pt too wide) in paragraph at lines 1326--1326
+[]\TU/lmtt/m/n/10.95 helix-intensity=0[] 
+ []
+
+
+Overfull \hbox (61.24783pt too wide) in paragraph at lines 1327--1327
+[]\TU/lmtt/m/n/10.95 bitter-intensity=11767.7[] 
+ []
+
+
+Overfull \hbox (21.00659pt too wide) in paragraph at lines 1328--1328
+[]\TU/lmtt/m/n/10.95 supra-intensity=0[] 
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 1330--1330
+[]\TU/lmtt/m/n/10.95 [thermoelectric][] 
+ []
+
+
+Overfull \hbox (118.73532pt too wide) in paragraph at lines 1331--1331
+[]\TU/lmtt/m/n/10.95 model_json=$cfgdir/biotsavart.json[] 
+ []
+
+
+Overfull \hbox (21.00659pt too wide) in paragraph at lines 1336--1336
+[]\TU/lmtt/m/n/10.95 #ksp-monitor=true[] 
+ []
+
+
+Overfull \hbox (3.76035pt too wide) in paragraph at lines 1339--1339
+[]\TU/lmtt/m/n/10.95 ksp-maxit=2000[] 
+ []
+
+
+Overfull \hbox (101.48907pt too wide) in paragraph at lines 1340--1340
+[]\TU/lmtt/m/n/10.95 ksp-use-initial-guess-nonzero=1[] 
+ []
+
+
+Overfull \hbox (21.00659pt too wide) in paragraph at lines 1344--1344
+[]\TU/lmtt/m/n/10.95 #ksp-monitor=true[] 
+ []
+
+
+Overfull \hbox (101.48907pt too wide) in paragraph at lines 1347--1347
+[]\TU/lmtt/m/n/10.95 ksp-use-initial-guess-nonzero=1[] 
+ []
+
+
+Overfull \hbox (3.76035pt too wide) in paragraph at lines 1348--1348
+[]\TU/lmtt/m/n/10.95 \end{verbatim}[] 
+ []
+
+
+Overfull \hbox (193.46906pt too wide) in paragraph at lines 1350--1350
+[]\TU/lmtt/m/n/10.95 \hypertarget{x-examples}{\subsection{Examples}}[] 
+ []
+
+
+Overfull \hbox (193.46906pt too wide) in paragraph at lines 1352--1352
+[]\TU/lmtt/m/n/10.95 \hypertarget{x-validity}{\subsection{Validity}}[] 
+ []
+
+
+Overfull \hbox (365.93152pt too wide) in paragraph at lines 1353--1353
+[]\TU/lmtt/m/n/10.95 In this example, we approximate the magnet with an axisymm
+etric copper torus.[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [30]
+Overfull \hbox (848.82642pt too wide) in paragraph at lines 1354--1354
+[]\TU/lmtt/m/n/10.95 This torus is modeled with a file \texttt{.geo}, which nam
+e the volume of the torus (\texttt{omega}), each surface and a volume inside th
+e torus (\texttt{box3D})[] 
+ []
+
+
+Overfull \hbox (66.99658pt too wide) in paragraph at lines 1355--1355
+[]\TU/lmtt/m/n/10.95 , also known as a sphere.[] 
+ []
+
+
+Overfull \hbox (32.50409pt too wide) in paragraph at lines 1358--1358
+[]\TU/lmtt/m/n/10.95 \begin{figure}[h]{}[] 
+ []
+
+
+Overfull \hbox (463.66025pt too wide) in paragraph at lines 1359--1359
+[]\TU/lmtt/m/n/10.95 \centering\includegraphics[width=7.0truein]{./images/learn
+ing/magnetostatic/torus3D_box3D.png}[] 
+ []
+
+
+Overfull \hbox (176.22281pt too wide) in paragraph at lines 1360--1360
+[]\TU/lmtt/m/n/10.95 \caption{Model of the torus with the 3D box}[] 
+ []
+
+
+Overfull \hbox (199.2178pt too wide) in paragraph at lines 1364--1364
+[]\TU/lmtt/m/n/10.95 \hypertarget{x-equations}{\paragraph{Equations}}[] 
+ []
+
+
+Overfull \hbox (227.96155pt too wide) in paragraph at lines 1365--1365
+[]\TU/lmtt/m/n/10.95 We use the Biot & Savart’s law to prove the validity.[] 
+ []
+
+
+Overfull \hbox (475.15773pt too wide) in paragraph at lines 1366--1366
+[]\TU/lmtt/m/n/10.95 First, we need to set the conditions to use this law, $\Om
+ega_{cond}\cap\Omega_{mgn}=\emptyset$,[] 
+ []
+
+
+Overfull \hbox (325.69028pt too wide) in paragraph at lines 1367--1367
+[]\TU/lmtt/m/n/10.95 with $\Omega_{cond}$ the conductor in which the current is
+ passing and[] 
+ []
+
+
+Overfull \hbox (325.69028pt too wide) in paragraph at lines 1368--1368
+[]\TU/lmtt/m/n/10.95 $\Omega_{mgn}$ the domain in which we want to know the mag
+netic field.[] 
+ []
+
+
+Overfull \hbox (463.66025pt too wide) in paragraph at lines 1369--1369
+[]\TU/lmtt/m/n/10.95 With this, using the magnetostatic equation, we can write 
+the magnetic potential \textbf{A} as[] 
+ []
+
+
+Overfull \hbox (124.48407pt too wide) in paragraph at lines 1374--1374
+[]\TU/lmtt/m/n/10.95 \nabla^{2}\textbf{A}=-\mu\textbf{j}[] 
+ []
+
+
+Overfull \hbox (164.72531pt too wide) in paragraph at lines 1379--1379
+[]\TU/lmtt/m/n/10.95 The general solution of this equation is :[] 
+ []
+
+
+Overfull \hbox (417.67024pt too wide) in paragraph at lines 1384--1384
+[]\TU/lmtt/m/n/10.95 A(\textbf{r})=-\mu\int_{\Omega_{cond}}G(\textbf{r},\textbf
+{r'})\textbf{j}(\textbf{r'})[] 
+ []
+
+
+Overfull \hbox (302.69528pt too wide) in paragraph at lines 1389--1389
+[]\TU/lmtt/m/n/10.95 with $G(\textbf{r},\textbf{r'})$ the Green’s function defi
+ned as :[] 
+ []
+
+
+Overfull \hbox (354.434pt too wide) in paragraph at lines 1394--1394
+[]\TU/lmtt/m/n/10.95 G(\textbf{r},\textbf{r'})=\frac{-1}{4\pi}\frac{1}{|\textbf
+{r}-\textbf{r'}|}[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [31]
+Overfull \hbox (302.69527pt too wide) in paragraph at lines 1399--1399
+[]\TU/lmtt/m/n/10.95 with $\textbf{r}\in\Omega_{mgn}$ and $\textbf{r'}\in\Omega
+_{cond}$[] 
+ []
+
+
+Overfull \hbox (319.94153pt too wide) in paragraph at lines 1402--1402
+[]\TU/lmtt/m/n/10.95 Then we rewrite the expression of the magnetic potential \
+textbf{A} :[] 
+ []
+
+
+Overfull \hbox (854.57512pt too wide) in paragraph at lines 1407--1407
+[]\TU/lmtt/m/n/10.95 A(\textbf{r})=\frac{\mu_{0}}{4\pi}\int_{\Omega_{cond}}\fra
+c{\textbf{j}(\textbf{r'})}{|\textbf{r}-\textbf{r'}|} d\textbf{r'}\;\;\;\;\;\;\;
+\textbf{r}\in\Omega_{mgn}[] 
+ []
+
+
+Overfull \hbox (498.15274pt too wide) in paragraph at lines 1412--1412
+[]\TU/lmtt/m/n/10.95 As \textbf{B} is defined as the curl of \textbf{A}, we can
+ write the so called Biot & Savart’s law :[] 
+ []
+
+
+Overfull \hbox (1101.77129pt too wide) in paragraph at lines 1417--1417
+[]\TU/lmtt/m/n/10.95 \textbf{B}(\textbf{r})=\frac{\mu_{0}}{4\pi}\int_{\Omega_{c
+ond}}\frac{\textbf{j}(\textbf{r'})\times(\textbf{r}-\textbf{r'})}{|\textbf{r}-\
+textbf{r'}|^{3}} d\textbf{r'}\;\;\;\;\;\;\;\textbf{r}\in\Omega_{mgn}[] 
+ []
+
+
+Overfull \hbox (210.71529pt too wide) in paragraph at lines 1422--1422
+[]\TU/lmtt/m/n/10.95 \hypertarget{x-parameters}{\paragraph{Parameters}}[] 
+ []
+
+
+Overfull \hbox (406.17276pt too wide) in paragraph at lines 1423--1423
+[]\TU/lmtt/m/n/10.95 We use here the same parameters as in the ThermoElectric s
+ection for the .json file.[] 
+ []
+
+
+Overfull \hbox (521.1477pt too wide) in paragraph at lines 1424--1424
+[]\TU/lmtt/m/n/10.95 We select the biter-intensity (shown in \hyperlink{example
+.cfg}{biotsavart_num_box3D_3D_V1T1_N1_cvgcfg})[] 
+ []
+
+
+Overfull \hbox (383.17776pt too wide) in paragraph at lines 1425--1425
+[]\TU/lmtt/m/n/10.95 We also need a file \texttt{.d} to define the characterist
+ics of the conductors.[] 
+ []
+
+
+Overfull \hbox (176.2228pt too wide) in paragraph at lines 1428--1428
+[]\TU/lmtt/m/n/10.95 \hypertarget{x-results}{\paragraph{Results}}[] 
+ []
+
+
+Overfull \hbox (693.6102pt too wide) in paragraph at lines 1429--1429
+[]\TU/lmtt/m/n/10.95 On the next figure, the current is represented by the whit
+e arrow in the torus, the color of the torus corresponding to the potential.[] 
+
+ []
+
+
+Overfull \hbox (526.89648pt too wide) in paragraph at lines 1430--1430
+[]\TU/lmtt/m/n/10.95 The box3D (the sphere inside the torus) is represented wit
+h the magnetic induction’s vector (\textbf{B}).[] 
+ []
+
+
+Overfull \hbox (32.50409pt too wide) in paragraph at lines 1433--1433
+[]\TU/lmtt/m/n/10.95 \begin{figure}[h]{}[] 
+ []
+
+
+Overfull \hbox (429.1677pt too wide) in paragraph at lines 1434--1434
+[]\TU/lmtt/m/n/10.95 \centering\includegraphics[width=7.0truein]{./images/learn
+ing/magnetostatic/B_and_I.png}[] 
+ []
+
+
+Overfull \hbox (32.50409pt too wide) in paragraph at lines 1439--1439
+[]\TU/lmtt/m/n/10.95 \begin{figure}[h]{}[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [32]
+Overfull \hbox (452.16275pt too wide) in paragraph at lines 1440--1440
+[]\TU/lmtt/m/n/10.95 \centering\includegraphics[width=7.0truein]{./images/learn
+ing/magnetostatic/potential_A.png}[] 
+ []
+
+
+Overfull \hbox (503.90149pt too wide) in paragraph at lines 1445--1445
+[]\TU/lmtt/m/n/10.95 We can see that the magnetic potential (\textbf{A}) is in 
+the same way that the current in the torus.[] 
+ []
+
+
+Overfull \hbox (360.18277pt too wide) in paragraph at lines 1446--1446
+[]\TU/lmtt/m/n/10.95 The scale and the direction of the magnetic field (\textbf
+{B}) are coherent.[] 
+ []
+
+
+Overfull \hbox (141.73032pt too wide) in paragraph at lines 1449--1449
+[]\TU/lmtt/m/n/10.95 \hypertarget{x-code}{\paragraph{Code}}[] 
+ []
+
+
+Overfull \hbox (549.89148pt too wide) in paragraph at lines 1450--1450
+[]\TU/lmtt/m/n/10.95 For the modelisation of the the torus and his box inside, 
+we create the geometry with this file \texttt{.geo}[] 
+ []
+
+
+Overfull \hbox (193.46904pt too wide) in paragraph at lines 1453--1453
+[]\TU/lmtt/m/n/10.95 {\bf torus3D_box3D.geo}\vspace{-1\baselineskip}[] 
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 1454--1454
+[]\TU/lmtt/m/n/10.95 \begin{verbatim}[] 
+ []
+
+
+Overfull \hbox (44.00159pt too wide) in paragraph at lines 1455--1455
+[]\TU/lmtt/m/n/10.95 // Define Main params[] 
+ []
+
+
+Overfull \hbox (72.74533pt too wide) in paragraph at lines 1463--1463
+[]\TU/lmtt/m/n/10.95 theta1=Asin( eps/(2*r1) );[] 
+ []
+
+
+Overfull \hbox (72.74533pt too wide) in paragraph at lines 1464--1464
+[]\TU/lmtt/m/n/10.95 theta2=Asin( eps/(2*r2) );[] 
+ []
+
+
+Overfull \hbox (3.76035pt too wide) in paragraph at lines 1466--1466
+[]\TU/lmtt/m/n/10.95 // 1st quarter[] 
+ []
+
+
+Overfull \hbox (66.99658pt too wide) in paragraph at lines 1467--1467
+[]\TU/lmtt/m/n/10.95 Point(1) = {0, 0, -L, h};[] 
+ []
+
+
+Overfull \hbox (170.47406pt too wide) in paragraph at lines 1469--1469
+[]\TU/lmtt/m/n/10.95 Point(2) = {r1*Cos(theta1), eps/2., -L, h};[] 
+ []
+
+
+Overfull \hbox (170.47406pt too wide) in paragraph at lines 1470--1470
+[]\TU/lmtt/m/n/10.95 Point(3) = {r2*Cos(theta2), eps/2., -L, h};[] 
+ []
+
+
+Overfull \hbox (72.74533pt too wide) in paragraph at lines 1471--1471
+[]\TU/lmtt/m/n/10.95 Point(4) = {0, r1, -L, h};[] 
+ []
+
+
+Overfull \hbox (72.74533pt too wide) in paragraph at lines 1472--1472
+[]\TU/lmtt/m/n/10.95 Point(5) = {0, r2, -L, h};[] 
+ []
+
+
+Overfull \hbox (78.49408pt too wide) in paragraph at lines 1473--1473
+[]\TU/lmtt/m/n/10.95 Point(6) = {-r1, 0, -L, h};[] 
+ []
+
+
+Overfull \hbox (78.49408pt too wide) in paragraph at lines 1474--1474
+[]\TU/lmtt/m/n/10.95 Point(7) = {-r2, 0, -L, h};[] 
+ []
+
+
+Overfull \hbox (78.49408pt too wide) in paragraph at lines 1475--1475
+[]\TU/lmtt/m/n/10.95 Point(8) = {0, -r1, -L, h};[] 
+ []
+
+
+Overfull \hbox (78.49408pt too wide) in paragraph at lines 1476--1476
+[]\TU/lmtt/m/n/10.95 Point(9) = {0, -r2, -L, h};[] 
+ []
+
+
+Overfull \hbox (187.7203pt too wide) in paragraph at lines 1477--1477
+[]\TU/lmtt/m/n/10.95 Point(10) = {r1*Cos(-theta1), -eps/2., -L, h};[] 
+ []
+
+
+Overfull \hbox (187.7203pt too wide) in paragraph at lines 1478--1478
+[]\TU/lmtt/m/n/10.95 Point(11) = {r2*Cos(-theta2), -eps/2., -L, h};[] 
+ []
+
+
+Overfull \hbox (49.75034pt too wide) in paragraph at lines 1480--1480
+[]\TU/lmtt/m/n/10.95 Circle(1) = {2, 1, 4};[] 
+ []
+
+
+Overfull \hbox (49.75034pt too wide) in paragraph at lines 1481--1481
+[]\TU/lmtt/m/n/10.95 Circle(2) = {4, 1, 6};[] 
+ []
+
+
+Overfull \hbox (49.75034pt too wide) in paragraph at lines 1482--1482
+[]\TU/lmtt/m/n/10.95 Circle(3) = {6, 1, 8};[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [33]
+Overfull \hbox (55.49908pt too wide) in paragraph at lines 1483--1483
+[]\TU/lmtt/m/n/10.95 Circle(4) = {8, 1, 10};[] 
+ []
+
+
+Overfull \hbox (49.75034pt too wide) in paragraph at lines 1485--1485
+[]\TU/lmtt/m/n/10.95 Circle(5) = {3, 1, 5};[] 
+ []
+
+
+Overfull \hbox (49.75034pt too wide) in paragraph at lines 1486--1486
+[]\TU/lmtt/m/n/10.95 Circle(6) = {5, 1, 7};[] 
+ []
+
+
+Overfull \hbox (49.75034pt too wide) in paragraph at lines 1487--1487
+[]\TU/lmtt/m/n/10.95 Circle(7) = {7, 1, 9};[] 
+ []
+
+
+Overfull \hbox (55.49908pt too wide) in paragraph at lines 1488--1488
+[]\TU/lmtt/m/n/10.95 Circle(8) = {9, 1, 11};[] 
+ []
+
+
+Overfull \hbox (21.00659pt too wide) in paragraph at lines 1490--1490
+[]\TU/lmtt/m/n/10.95 Line(9) = {2, 3};[] 
+ []
+
+
+Overfull \hbox (38.25284pt too wide) in paragraph at lines 1491--1491
+[]\TU/lmtt/m/n/10.95 Line(10) = {10, 11};[] 
+ []
+
+
+Overfull \hbox (239.45905pt too wide) in paragraph at lines 1493--1493
+[]\TU/lmtt/m/n/10.95 dL=newl; Line Loop(dL) = {1:4, 10, -8, -7, -6, -5, -9};[] 
+
+ []
+
+
+Overfull \hbox (107.23782pt too wide) in paragraph at lines 1494--1494
+[]\TU/lmtt/m/n/10.95 S=news; Plane Surface(S) = {dL};[] 
+ []
+
+
+Overfull \hbox (153.22781pt too wide) in paragraph at lines 1496--1496
+[]\TU/lmtt/m/n/10.95 out[] = Extrude {0,0,2*L} {Surface{S};};[] 
+ []
+
+
+Overfull \hbox (130.23282pt too wide) in paragraph at lines 1498--1498
+[]\TU/lmtt/m/n/10.95 Physical Volume("omega") = {out[1]};[] 
+ []
+
+
+Overfull \hbox (124.48407pt too wide) in paragraph at lines 1499--1499
+[]\TU/lmtt/m/n/10.95 Physical Surface("top") = {out[0]};[] 
+ []
+
+
+Overfull \hbox (112.98657pt too wide) in paragraph at lines 1500--1500
+[]\TU/lmtt/m/n/10.95 Physical Surface("bottom") = {S};[] 
+ []
+
+
+Overfull \hbox (268.20279pt too wide) in paragraph at lines 1501--1501
+[]\TU/lmtt/m/n/10.95 Physical Surface("Rint") = {out[2], out[3], out[4], out[5]
+};[] 
+ []
+
+
+Overfull \hbox (273.95154pt too wide) in paragraph at lines 1502--1502
+[]\TU/lmtt/m/n/10.95 Physical Surface("Rext") = {out[7], out[8], out[9], out[10
+]};[] 
+ []
+
+
+Overfull \hbox (118.73532pt too wide) in paragraph at lines 1503--1503
+[]\TU/lmtt/m/n/10.95 Physical Surface("in") = {out[6]};[] 
+ []
+
+
+Overfull \hbox (130.23282pt too wide) in paragraph at lines 1504--1504
+[]\TU/lmtt/m/n/10.95 Physical Surface("out") = {out[11]};[] 
+ []
+
+
+Overfull \hbox (61.24783pt too wide) in paragraph at lines 1506--1506
+[]\TU/lmtt/m/n/10.95 // Define BiotSavart box[] 
+ []
+
+
+Overfull \hbox (124.48407pt too wide) in paragraph at lines 1515--1515
+[]\TU/lmtt/m/n/10.95 C0=newp; Point(C0) = {0, 0, 0, hs};[] 
+ []
+
+
+Overfull \hbox (130.23282pt too wide) in paragraph at lines 1517--1517
+[]\TU/lmtt/m/n/10.95 P0=newp; Point(P0) = {0, 0, z0, hs};[] 
+ []
+
+
+Overfull \hbox (130.23282pt too wide) in paragraph at lines 1518--1518
+[]\TU/lmtt/m/n/10.95 P1=newp; Point(P1) = {0, 0, z1, hs};[] 
+ []
+
+
+Overfull \hbox (130.23282pt too wide) in paragraph at lines 1519--1519
+[]\TU/lmtt/m/n/10.95 Q0=newp; Point(Q0) = {0, z1, 0, hs};[] 
+ []
+
+
+Overfull \hbox (130.23282pt too wide) in paragraph at lines 1520--1520
+[]\TU/lmtt/m/n/10.95 R0=newp; Point(R0) = {z1, 0, 0, hs};[] 
+ []
+
+
+Overfull \hbox (112.98657pt too wide) in paragraph at lines 1522--1522
+[]\TU/lmtt/m/n/10.95 C0P0=newl; Line(C0P0) = {C0, P0};[] 
+ []
+
+
+Overfull \hbox (112.98657pt too wide) in paragraph at lines 1523--1523
+[]\TU/lmtt/m/n/10.95 P0P1=newl; Line(P0P1) = {P0, P1};[] 
+ []
+
+
+Overfull \hbox (135.98157pt too wide) in paragraph at lines 1524--1524
+[]\TU/lmtt/m/n/10.95 BS0=newl; Circle(BS0) = {P0, C0, Q0};[] 
+ []
+
+
+Overfull \hbox (135.98157pt too wide) in paragraph at lines 1525--1525
+[]\TU/lmtt/m/n/10.95 BS1=newl; Circle(BS1) = {P0, C0, R0};[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [34]
+Overfull \hbox (135.98157pt too wide) in paragraph at lines 1526--1526
+[]\TU/lmtt/m/n/10.95 BS2=newl; Circle(BS2) = {Q0, C0, R0};[] 
+ []
+
+
+Overfull \hbox (135.98157pt too wide) in paragraph at lines 1527--1527
+[]\TU/lmtt/m/n/10.95 BS3=newl; Circle(BS3) = {Q0, C0, P1};[] 
+ []
+
+
+Overfull \hbox (135.98157pt too wide) in paragraph at lines 1528--1528
+[]\TU/lmtt/m/n/10.95 BS4=newl; Circle(BS4) = {R0, C0, P1};[] 
+ []
+
+
+Overfull \hbox (199.2178pt too wide) in paragraph at lines 1530--1530
+[]\TU/lmtt/m/n/10.95 Sb_Sph=newl; Line Loop(Sb_Sph)={BS0, BS2, -BS1};[] 
+ []
+
+
+Overfull \hbox (164.72531pt too wide) in paragraph at lines 1531--1531
+[]\TU/lmtt/m/n/10.95 S_Sph=newl; Ruled Surface(S_Sph)={Sb_Sph};[] 
+ []
+
+
+Overfull \hbox (411.92151pt too wide) in paragraph at lines 1532--1532
+[]\TU/lmtt/m/n/10.95 S2_Sph = Rotate { { 0, 0, 1 }, { 0, 0, 0 }, Pi/2. } { Dupl
+icata{ Surface{S_Sph}; } };[] 
+ []
+
+
+Overfull \hbox (423.419pt too wide) in paragraph at lines 1533--1533
+[]\TU/lmtt/m/n/10.95 S3_Sph = Rotate { { 0, 0, 1 }, { 0, 0, 0 }, 2*Pi/2. } { Du
+plicata{ Surface{S_Sph}; } };[] 
+ []
+
+
+Overfull \hbox (423.419pt too wide) in paragraph at lines 1534--1534
+[]\TU/lmtt/m/n/10.95 S4_Sph = Rotate { { 0, 0, 1 }, { 0, 0, 0 }, 3*Pi/2. } { Du
+plicata{ Surface{S_Sph}; } };[] 
+ []
+
+
+Overfull \hbox (199.2178pt too wide) in paragraph at lines 1536--1536
+[]\TU/lmtt/m/n/10.95 Nb_Sph=newl; Line Loop(Nb_Sph)={BS2, BS4, -BS3};[] 
+ []
+
+
+Overfull \hbox (164.72531pt too wide) in paragraph at lines 1537--1537
+[]\TU/lmtt/m/n/10.95 N_Sph=newl; Ruled Surface(N_Sph)={Nb_Sph};[] 
+ []
+
+
+Overfull \hbox (411.92151pt too wide) in paragraph at lines 1538--1538
+[]\TU/lmtt/m/n/10.95 N2_Sph = Rotate { { 0, 0, 1 }, { 0, 0, 0 }, Pi/2. } { Dupl
+icata{ Surface{N_Sph}; } };[] 
+ []
+
+
+Overfull \hbox (423.419pt too wide) in paragraph at lines 1539--1539
+[]\TU/lmtt/m/n/10.95 N3_Sph = Rotate { { 0, 0, 1 }, { 0, 0, 0 }, 2*Pi/2. } { Du
+plicata{ Surface{N_Sph}; } };[] 
+ []
+
+
+Overfull \hbox (423.419pt too wide) in paragraph at lines 1540--1540
+[]\TU/lmtt/m/n/10.95 N4_Sph = Rotate { { 0, 0, 1 }, { 0, 0, 0 }, 3*Pi/2. } { Du
+plicata{ Surface{N_Sph}; } };[] 
+ []
+
+
+Overfull \hbox (475.15775pt too wide) in paragraph at lines 1542--1542
+[]\TU/lmtt/m/n/10.95 SLoop=news; Surface Looop(SLoop)={S_Sph, N_Sph, S2_Sph, N2
+_Sph, S3_Sph, N3_Sph, S4_Sph, N4_Sph};[] 
+ []
+
+
+Overfull \hbox (95.74033pt too wide) in paragraph at lines 1543--1543
+[]\TU/lmtt/m/n/10.95 RMN=newv; Volume(RMN)={SLoop};[] 
+ []
+
+
+Overfull \hbox (26.75534pt too wide) in paragraph at lines 1545--1545
+[]\TU/lmtt/m/n/10.95 If ( Boxdim == 1 )[] 
+ []
+
+
+Overfull \hbox (112.98657pt too wide) in paragraph at lines 1546--1546
+[] \TU/lmtt/m/n/10.95 Physical Line("box1D") = {P0P1};[] 
+ []
+
+
+Overfull \hbox (26.75534pt too wide) in paragraph at lines 1549--1549
+[]\TU/lmtt/m/n/10.95 If ( Boxdim == 2 )[] 
+ []
+
+
+Overfull \hbox (452.16275pt too wide) in paragraph at lines 1550--1550
+[] \TU/lmtt/m/n/10.95 Physical Surface("box2D") = {S_Sph, N_Sph, S2_Sph, N2_Sph
+, S3_Sph, N3_Sph, S4_Sph, N4_Sph};[] 
+ []
+
+
+Overfull \hbox (26.75534pt too wide) in paragraph at lines 1553--1553
+[]\TU/lmtt/m/n/10.95 If ( Boxdim == 3 )[] 
+ []
+
+
+Overfull \hbox (124.48407pt too wide) in paragraph at lines 1554--1554
+[]  \TU/lmtt/m/n/10.95 Physical Volume("box3D") = {RMN};[] 
+ []
+
+
+Overfull \hbox (3.76035pt too wide) in paragraph at lines 1556--1556
+[]\TU/lmtt/m/n/10.95 \end{verbatim}[] 
+ []
+
+
+Overfull \hbox (394.67526pt too wide) in paragraph at lines 1558--1558
+[]\TU/lmtt/m/n/10.95 the next step is to make a file \texttt{.d} which fix some
+ parameters on the torus[] 
+ []
+
+
+Overfull \hbox (147.47906pt too wide) in paragraph at lines 1561--1561
+[]\TU/lmtt/m/n/10.95 {\bf torus3D.d}\vspace{-1\baselineskip}[] 
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 1562--1562
+[]\TU/lmtt/m/n/10.95 \begin{verbatim}[] 
+ []
+
+
+Overfull \hbox (44.00159pt too wide) in paragraph at lines 1563--1563
+[]\TU/lmtt/m/n/10.95 #Power[MW] Current[A][] 
+ []
+
+
+Overfull \hbox (9.5091pt too wide) in paragraph at lines 1565--1565
+[]\TU/lmtt/m/n/10.95 #Helices N_Elem[] 
+ []
+
+
+Overfull \hbox (66.99658pt too wide) in paragraph at lines 1567--1567
+[]\TU/lmtt/m/n/10.95 #N R1[m]  R2[m]  HalfL[m]
+ []
+
+
+Overfull \hbox (49.75034pt too wide) in paragraph at lines 1567--1567
+\TU/lmtt/m/n/10.95 Rho[Ohm.m]  Alpha[1/K]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [35]
+Overfull \hbox (210.71529pt too wide) in paragraph at lines 1570--1570
+[]\TU/lmtt/m/n/10.95 # Bitter I=j1*r1*log(r2/r1)*2*L=11767.657994358965[] 
+ []
+
+
+Overfull \hbox (26.75534pt too wide) in paragraph at lines 1571--1571
+[]\TU/lmtt/m/n/10.95 #Type R1        R2
+ []
+
+
+Overfull \hbox (3.76035pt too wide) in paragraph at lines 1571--1571
+\TU/lmtt/m/n/10.95 Z1          Z2
+ []
+
+
+Overfull \hbox (417.67026pt too wide) in paragraph at lines 1572--1572
+[]\TU/lmtt/m/n/10.95 1       30.6e-3    53.2e-3   -2.305e-3   2.305e-3    15083
+3116.00212305    1         1[] 
+ []
+
+
+Overfull \hbox (411.92151pt too wide) in paragraph at lines 1573--1573
+[]\TU/lmtt/m/n/10.95 #1       30.6e-3    53.2e-3   -2.305e-3   2.305e-3    1248
+27406.34658459  1         1[] 
+ []
+
+
+Overfull \hbox (55.49908pt too wide) in paragraph at lines 1576--1576
+[]\TU/lmtt/m/n/10.95 #Bz(0)[tesla] Power[MW]
+ []
+
+
+Overfull \hbox (26.75534pt too wide) in paragraph at lines 1576--1576
+\TU/lmtt/m/n/10.95 Bz_total(0)[tesla][] 
+ []
+
+
+Overfull \hbox (193.46906pt too wide) in paragraph at lines 1577--1577
+[] \TU/lmtt/m/n/10.95 22.7526804266798 12.500000000 22.7526804266798[] 
+ []
+
+
+Overfull \hbox (118.73532pt too wide) in paragraph at lines 1579--1579
+[]\TU/lmtt/m/n/10.95 #H   B0_H[t] Sum_B0[t] Power_H[MW]
+ []
+
+
+Overfull \hbox (130.23282pt too wide) in paragraph at lines 1583--1583
+[]\TU/lmtt/m/n/10.95 MARGE DE SECURITE CONTRAINTES= 8.0 %[] 
+ []
+
+
+Overfull \hbox (3.76035pt too wide) in paragraph at lines 1584--1584
+[]\TU/lmtt/m/n/10.95 \end{verbatim}[] 
+ []
+
+
+Overfull \hbox (969.55014pt too wide) in paragraph at lines 1586--1586
+[]\TU/lmtt/m/n/10.95 Finally we can use the \texttt{biotsavart_num} (in which w
+e use the thermoelectric model to calculate \textbf{j}) or the \texttt{biotsava
+rt} (in which we specify manually \textbf{j})[] 
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 1589--1589
+[]\TU/lmtt/m/n/10.95 \begin{verbatim}[] 
+ []
+
+
+Overfull \hbox (84.24281pt too wide) in paragraph at lines 1592--1592
+[]\TU/lmtt/m/n/10.95 geofile=biotsavart_box3D.geo[] 
+ []
+
+
+Overfull \hbox (38.25284pt too wide) in paragraph at lines 1593--1593
+[]\TU/lmtt/m/n/10.95 geofile-path=$cfgdir[] 
+ []
+
+
+Overfull \hbox (49.75032pt too wide) in paragraph at lines 1596--1596
+[]\TU/lmtt/m/n/10.95 conductor_volume=omega[] 
+ []
+
+
+Overfull \hbox (360.18274pt too wide) in paragraph at lines 1602--1602
+[]\TU/lmtt/m/n/10.95 j={-58.e+3*(0.5/(2*Pi))*y/(x^2+y^2),58.e+3*(0.5/(2*Pi))*x/
+(x^2+y^2),0}:x:y:z[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [36]
+Overfull \hbox (9.5091pt too wide) in paragraph at lines 1605--1605
+[]\TU/lmtt/m/n/10.95 conductor=omega[] 
+ []
+
+
+Overfull \hbox (44.00159pt too wide) in paragraph at lines 1608--1608
+[]\TU/lmtt/m/n/10.95 [magnetic_field-bmap][] 
+ []
+
+
+Overfull \hbox (26.75534pt too wide) in paragraph at lines 1609--1609
+[]\TU/lmtt/m/n/10.95 geo-data=torus3D.d[] 
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 1610--1610
+[]\TU/lmtt/m/n/10.95 geo-path=$cfgdir[] 
+ []
+
+
+Overfull \hbox (21.00659pt too wide) in paragraph at lines 1611--1611
+[]\TU/lmtt/m/n/10.95 helix-intensity=0[] 
+ []
+
+
+Overfull \hbox (61.24783pt too wide) in paragraph at lines 1612--1612
+[]\TU/lmtt/m/n/10.95 bitter-intensity=11767.7[] 
+ []
+
+
+Overfull \hbox (21.00659pt too wide) in paragraph at lines 1613--1613
+[]\TU/lmtt/m/n/10.95 supra-intensity=0[] 
+ []
+
+
+Overfull \hbox (3.76035pt too wide) in paragraph at lines 1614--1614
+[]\TU/lmtt/m/n/10.95 \end{verbatim}[] 
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 1616--1616
+[]\TU/lmtt/m/n/10.95 \begin{verbatim}[] 
+ []
+
+
+Overfull \hbox (66.99657pt too wide) in paragraph at lines 1619--1619
+[]\TU/lmtt/m/n/10.95 geofile=torus3D_box3D.geo[] 
+ []
+
+
+Overfull \hbox (38.25284pt too wide) in paragraph at lines 1620--1620
+[]\TU/lmtt/m/n/10.95 geofile-path=$cfgdir[] 
+ []
+
+
+Overfull \hbox (49.75032pt too wide) in paragraph at lines 1623--1623
+[]\TU/lmtt/m/n/10.95 conductor_volume=omega[] 
+ []
+
+
+Overfull \hbox (360.18275pt too wide) in paragraph at lines 1629--1629
+[]\TU/lmtt/m/n/10.95 j={58.e+3*(0.5/(2*Pi))*y/(x^2+y^2),-58.e+3*(0.5/(2*Pi))*x/
+(x^2+y^2),0}:x:y:z[] 
+ []
+
+
+Overfull \hbox (440.66524pt too wide) in paragraph at lines 1630--1630
+[]\TU/lmtt/m/n/10.95 u=0.5*atan2(y,x)/(2*Pi)*(atan2(y,x)>0)+(0.5*(atan2(y,x)+2*
+Pi)/(2*Pi))*(atan2(y,x)<0):x:y:z[] 
+ []
+
+
+Overfull \hbox (463.66025pt too wide) in paragraph at lines 1631--1631
+[]\TU/lmtt/m/n/10.95 t=362.156146169164-58.e+3/(2*0.38)*(0.5/(2*Pi))^2*log(sqrt
+(x*x+y*y)/39.4354779237947 )^2:x:y:z[] 
+ []
+
+
+Overfull \hbox (9.5091pt too wide) in paragraph at lines 1634--1634
+[]\TU/lmtt/m/n/10.95 conductor=omega[] 
+ []
+
+
+Overfull \hbox (44.00159pt too wide) in paragraph at lines 1637--1637
+[]\TU/lmtt/m/n/10.95 [magnetic_field-bmap][] 
+ []
+
+
+Overfull \hbox (26.75534pt too wide) in paragraph at lines 1638--1638
+[]\TU/lmtt/m/n/10.95 geo-data=torus3D.d[] 
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 1639--1639
+[]\TU/lmtt/m/n/10.95 geo-path=$cfgdir[] 
+ []
+
+
+Overfull \hbox (21.00659pt too wide) in paragraph at lines 1640--1640
+[]\TU/lmtt/m/n/10.95 helix-intensity=0[] 
+ []
+
+
+Overfull \hbox (66.99658pt too wide) in paragraph at lines 1641--1641
+[]\TU/lmtt/m/n/10.95 bitter-intensity=-11767.7[] 
+ []
+
+
+Overfull \hbox (21.00659pt too wide) in paragraph at lines 1642--1642
+[]\TU/lmtt/m/n/10.95 supra-intensity=0[] 
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 1644--1644
+[]\TU/lmtt/m/n/10.95 [thermoelectric][] 
+ []
+
+
+Overfull \hbox (118.73532pt too wide) in paragraph at lines 1645--1645
+[]\TU/lmtt/m/n/10.95 model_json=$cfgdir/biotsavart.json[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [37]
+Overfull \hbox (21.00659pt too wide) in paragraph at lines 1650--1650
+[]\TU/lmtt/m/n/10.95 #ksp-monitor=true[] 
+ []
+
+
+Overfull \hbox (3.76035pt too wide) in paragraph at lines 1653--1653
+[]\TU/lmtt/m/n/10.95 ksp-maxit=2000[] 
+ []
+
+
+Overfull \hbox (101.48907pt too wide) in paragraph at lines 1654--1654
+[]\TU/lmtt/m/n/10.95 ksp-use-initial-guess-nonzero=1[] 
+ []
+
+
+Overfull \hbox (21.00659pt too wide) in paragraph at lines 1658--1658
+[]\TU/lmtt/m/n/10.95 #ksp-monitor=true[] 
+ []
+
+
+Overfull \hbox (101.48907pt too wide) in paragraph at lines 1661--1661
+[]\TU/lmtt/m/n/10.95 ksp-use-initial-guess-nonzero=1[] 
+ []
+
+
+Overfull \hbox (3.76035pt too wide) in paragraph at lines 1662--1662
+[]\TU/lmtt/m/n/10.95 \end{verbatim}[] 
+ []
+
+
+Overfull \hbox (423.419pt too wide) in paragraph at lines 1664--1664
+[]\TU/lmtt/m/n/10.95 For the numerical file, we use a \texttt{json} file like i
+n the thermoelectric section.[] 
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 1667--1667
+[]\TU/lmtt/m/n/10.95 \begin{verbatim}[] 
+ []
+
+
+Overfull \hbox (89.99158pt too wide) in paragraph at lines 1669--1669
+[]    \TU/lmtt/m/n/10.95 "Name": "ThermoElectric",[] 
+ []
+
+
+Overfull \hbox (44.00159pt too wide) in paragraph at lines 1670--1670
+[]    \TU/lmtt/m/n/10.95 "ShortName":"TE",[] 
+ []
+
+
+Overfull \hbox (130.23282pt too wide) in paragraph at lines 1671--1671
+[]    \TU/lmtt/m/n/10.95 "Model":"thermoelectric-linear",[] 
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 1672--1672
+[]    \TU/lmtt/m/n/10.95 "Materials":[] 
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 1674--1674
+[]        \TU/lmtt/m/n/10.95 "omega":[] 
+ []
+
+
+Overfull \hbox (84.24283pt too wide) in paragraph at lines 1676--1676
+[]            \TU/lmtt/m/n/10.95 "name":"copper",[] 
+ []
+
+
+Overfull \hbox (95.74033pt too wide) in paragraph at lines 1677--1677
+[]            \TU/lmtt/m/n/10.95 "alpha":"3.35e-3",[] 
+ []
+
+
+Overfull \hbox (55.49908pt too wide) in paragraph at lines 1678--1678
+[]            \TU/lmtt/m/n/10.95 "T0":"293",[] 
+ []
+
+
+Overfull \hbox (89.99158pt too wide) in paragraph at lines 1679--1679
+[]            \TU/lmtt/m/n/10.95 "sigma0":"58e+3",[] 
+ []
+
+
+Overfull \hbox (61.24783pt too wide) in paragraph at lines 1680--1680
+[]            \TU/lmtt/m/n/10.95 "k0":"0.38",[] 
+ []
+
+
+Overfull \hbox (291.19777pt too wide) in paragraph at lines 1681--1681
+[]            \TU/lmtt/m/n/10.95 "sigma":"sigma0/(1+alpha*(T-T0)):sigma0:alpha:
+T:T0",[] 
+ []
+
+
+Overfull \hbox (256.70528pt too wide) in paragraph at lines 1682--1682
+[]            \TU/lmtt/m/n/10.95 "k":"k0*T/((1+alpha*(T-T0))*T0):k0:T:alpha:T0"
+[] 
+ []
+
+
+Overfull \hbox (66.99658pt too wide) in paragraph at lines 1685--1685
+[]    \TU/lmtt/m/n/10.95 "BoundaryConditions":[] 
+ []
+
+
+Overfull \hbox (38.25284pt too wide) in paragraph at lines 1687--1687
+[]        \TU/lmtt/m/n/10.95 "potential":[] 
+ []
+
+
+Overfull \hbox (61.24783pt too wide) in paragraph at lines 1689--1689
+[]            \TU/lmtt/m/n/10.95 "Dirichlet":[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [38]
+Overfull \hbox (44.00159pt too wide) in paragraph at lines 1691--1691
+[]                \TU/lmtt/m/n/10.95 "in":[] 
+ []
+
+
+Overfull \hbox (21.00659pt too wide) in paragraph at lines 1692--1692
+[]                \TU/lmtt/m/n/10.95 {[] 
+ []
+
+
+Overfull \hbox (118.73532pt too wide) in paragraph at lines 1693--1693
+[]                    \TU/lmtt/m/n/10.95 "expr1":"0.5",[] 
+ []
+
+
+Overfull \hbox (32.50409pt too wide) in paragraph at lines 1694--1694
+[]    \TU/lmtt/m/n/10.95 "expr2":"omega"[] 
+ []
+
+
+Overfull \hbox (26.75534pt too wide) in paragraph at lines 1695--1695
+[]                \TU/lmtt/m/n/10.95 },[] 
+ []
+
+
+Overfull \hbox (49.75034pt too wide) in paragraph at lines 1696--1696
+[]                \TU/lmtt/m/n/10.95 "out":[] 
+ []
+
+
+Overfull \hbox (21.00659pt too wide) in paragraph at lines 1697--1697
+[]                \TU/lmtt/m/n/10.95 {[] 
+ []
+
+
+Overfull \hbox (107.23782pt too wide) in paragraph at lines 1698--1698
+[]                    \TU/lmtt/m/n/10.95 "expr1":"0",[] 
+ []
+
+
+Overfull \hbox (32.50409pt too wide) in paragraph at lines 1699--1699
+[]    \TU/lmtt/m/n/10.95 "expr2":"omega"[] 
+ []
+
+
+Overfull \hbox (21.00659pt too wide) in paragraph at lines 1700--1700
+[]                \TU/lmtt/m/n/10.95 }[] 
+ []
+
+
+Overfull \hbox (49.75034pt too wide) in paragraph at lines 1703--1703
+[]        \TU/lmtt/m/n/10.95 "temperature":[] 
+ []
+
+
+Overfull \hbox (38.25284pt too wide) in paragraph at lines 1705--1705
+[]            \TU/lmtt/m/n/10.95 "Robin":[] 
+ []
+
+
+Overfull \hbox (55.49908pt too wide) in paragraph at lines 1707--1707
+[]                \TU/lmtt/m/n/10.95 "Rext":[] 
+ []
+
+
+Overfull \hbox (21.00659pt too wide) in paragraph at lines 1708--1708
+[]                \TU/lmtt/m/n/10.95 {[] 
+ []
+
+
+Overfull \hbox (124.48407pt too wide) in paragraph at lines 1709--1709
+[]                    \TU/lmtt/m/n/10.95 "expr1":"0.08",[] 
+ []
+
+
+Overfull \hbox (112.98657pt too wide) in paragraph at lines 1710--1710
+[]                    \TU/lmtt/m/n/10.95 "expr2":"293"[] 
+ []
+
+
+Overfull \hbox (26.75534pt too wide) in paragraph at lines 1711--1711
+[]                \TU/lmtt/m/n/10.95 },[] 
+ []
+
+
+Overfull \hbox (55.49908pt too wide) in paragraph at lines 1712--1712
+[]                \TU/lmtt/m/n/10.95 "Rint":[] 
+ []
+
+
+Overfull \hbox (21.00659pt too wide) in paragraph at lines 1713--1713
+[]                \TU/lmtt/m/n/10.95 {[] 
+ []
+
+
+Overfull \hbox (124.48407pt too wide) in paragraph at lines 1714--1714
+[]                    \TU/lmtt/m/n/10.95 "expr1":"0.08",[] 
+ []
+
+
+Overfull \hbox (112.98657pt too wide) in paragraph at lines 1715--1715
+[]                    \TU/lmtt/m/n/10.95 "expr2":"293"[] 
+ []
+
+
+Overfull \hbox (21.00659pt too wide) in paragraph at lines 1716--1716
+[]                \TU/lmtt/m/n/10.95 }[] 
+ []
+
+
+Overfull \hbox (26.75534pt too wide) in paragraph at lines 1720--1720
+[]    \TU/lmtt/m/n/10.95 "PostProcess":[] 
+ []
+
+
+Overfull \hbox (233.7103pt too wide) in paragraph at lines 1722--1722
+[]        \TU/lmtt/m/n/10.95 "Fields":["temperature","potential","current"][] 
+ []
+
+
+Overfull \hbox (3.76035pt too wide) in paragraph at lines 1725--1725
+[]\TU/lmtt/m/n/10.95 \end{verbatim}[] 
+ []
+
+
+Overfull \hbox (273.95152pt too wide) in paragraph at lines 1727--1727
+[]\TU/lmtt/m/n/10.95 \hypertarget{x-cartesian-model}{\subsection{Cartesian mode
+l}}[] 
+ []
+
+
+Overfull \hbox (296.94653pt too wide) in paragraph at lines 1728--1728
+[]\TU/lmtt/m/n/10.95 Until now, we only focus on the study in the center of the
+ torus.[] 
+ []
+
+
+Overfull \hbox (440.66525pt too wide) in paragraph at lines 1729--1729
+[]\TU/lmtt/m/n/10.95 Indeed, the program can only calculate the magnetic potent
+ial and field outside the torus,[] 
+ []
+
+
+Overfull \hbox (647.62021pt too wide) in paragraph at lines 1730--1730
+[]\TU/lmtt/m/n/10.95 therefore to be able to calculate \textbf{A} and \textbf{B
+} around the torus that implies to create a really complex geometry.[] 
+ []
+
+
+Overfull \hbox (567.13773pt too wide) in paragraph at lines 1731--1731
+[]\TU/lmtt/m/n/10.95 Instead of this, we use the Cartesian model which allow to
+ calculate \textbf{A} and \textbf{B} inside the torus,[] 
+ []
+
+
+Overfull \hbox (613.12772pt too wide) in paragraph at lines 1732--1732
+[]\TU/lmtt/m/n/10.95 this allow us to calculate inside the torus, then we model
+ a large sphere to represent the air all around the conductor.[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [39]
+Overfull \hbox (32.50409pt too wide) in paragraph at lines 1735--1735
+[]\TU/lmtt/m/n/10.95 \begin{figure}[h]{}[] 
+ []
+
+
+Overfull \hbox (475.15775pt too wide) in paragraph at lines 1736--1736
+[]\TU/lmtt/m/n/10.95 \centering\includegraphics[width=7.0truein]{./images/learn
+ing/magnetostatic/Cartesian_model.png}[] 
+ []
+
+
+Overfull \hbox (239.45905pt too wide) in paragraph at lines 1737--1737
+[]\TU/lmtt/m/n/10.95 \caption{model of the torus (red) with the box (blue).}[] 
+
+ []
+
+
+Overfull \hbox (365.93152pt too wide) in paragraph at lines 1741--1741
+[]\TU/lmtt/m/n/10.95 With a simple torus, we can calculate the potential analyt
+ically like before.[] 
+ []
+
+
+Overfull \hbox (112.98657pt too wide) in paragraph at lines 1744--1744
+[]\TU/lmtt/m/n/10.95 \begin{wrapfigure}{l}{4.75truein}[] 
+ []
+
+
+Overfull \hbox (503.9014pt too wide) in paragraph at lines 1745--1745
+[]\TU/lmtt/m/n/10.95 \centering\includegraphics[width=4.75truein]{./images/lear
+ning/magnetostatic/Cartesian_potential.png}[] 
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 1748--1748
+[]\TU/lmtt/m/n/10.95 \end{wrapfigure}[] 
+ []
+
+
+Overfull \hbox (112.98657pt too wide) in paragraph at lines 1750--1750
+[]\TU/lmtt/m/n/10.95 \begin{wrapfigure}{r}{4.75truein}[] 
+ []
+
+
+Overfull \hbox (526.89645pt too wide) in paragraph at lines 1751--1751
+[]\TU/lmtt/m/n/10.95 \centering\includegraphics[width=4.75truein]{./images/lear
+ning/magnetostatic/Cartesian_potential_ana.png}[] 
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 1754--1754
+[]\TU/lmtt/m/n/10.95 \end{wrapfigure}[] 
+ []
+
+
+Overfull \hbox (446.414pt too wide) in paragraph at lines 1756--1756
+[]\TU/lmtt/m/n/10.95 Sadly, we can see that there is however some differences b
+etween the figures (on the scale)[] 
+ []
+
+
+Overfull \hbox (112.98657pt too wide) in paragraph at lines 1759--1759
+[]\TU/lmtt/m/n/10.95 \begin{wrapfigure}{l}{4.75truein}[] 
+ []
+
+
+Overfull \hbox (538.39395pt too wide) in paragraph at lines 1760--1760
+[]\TU/lmtt/m/n/10.95 \centering\includegraphics[width=4.75truein]{./images/lear
+ning/magnetostatic/Cartesian_potential_error.png}[] 
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 1763--1763
+[]\TU/lmtt/m/n/10.95 \end{wrapfigure}[] 
+ []
+
+
+Overfull \hbox (112.98657pt too wide) in paragraph at lines 1765--1765
+[]\TU/lmtt/m/n/10.95 \begin{wrapfigure}{r}{4.75truein}[] 
+ []
+
+
+Overfull \hbox (567.13766pt too wide) in paragraph at lines 1766--1766
+[]\TU/lmtt/m/n/10.95 \centering\includegraphics[width=4.75truein]{./images/lear
+ning/magnetostatic/Cartesian_potential_error_zoom.png}[] 
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 1769--1769
+[]\TU/lmtt/m/n/10.95 \end{wrapfigure}[] 
+ []
+
+
+Overfull \hbox (319.94153pt too wide) in paragraph at lines 1771--1771
+[]\TU/lmtt/m/n/10.95 The maximum of the error is approximately 0.8%, located on
+ the torus.[] 
+ []
+
+
+Overfull \hbox (302.69525pt too wide) in paragraph at lines 1774--1774
+[]\TU/lmtt/m/n/10.95 \hypertarget{x-\textbf{elasticity}}{\section{\textbf{Elast
+icity}}}[] 
+ []
+
+
+Overfull \hbox (480.90648pt too wide) in paragraph at lines 1775--1775
+[]\TU/lmtt/m/n/10.95 \hypertarget{x-general-presentation-of-the-files}{\subsect
+ion{General presentation of the files}}[] 
+ []
+
+
+Overfull \hbox (561.38898pt too wide) in paragraph at lines 1776--1776
+[]\TU/lmtt/m/n/10.95 In the continuity of the study of the magnet, we use the f
+ile already used in Thermoelectric and Magnetostatic.[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [40]
+Overfull \hbox (360.18277pt too wide) in paragraph at lines 1777--1777
+[]\TU/lmtt/m/n/10.95 We create a new file \texttt{.json} to set up the conditio
+ns for elasticity.[] 
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 1780--1780
+[]\TU/lmtt/m/n/10.95 \begin{verbatim}[] 
+ []
+
+
+Overfull \hbox (72.74533pt too wide) in paragraph at lines 1782--1782
+[]    \TU/lmtt/m/n/10.95 "Name": "CoupledCart",[] 
+ []
+
+
+Overfull \hbox (49.75034pt too wide) in paragraph at lines 1783--1783
+[]    \TU/lmtt/m/n/10.95 "ShortName":"MSC",[] 
+ []
+
+
+Overfull \hbox (66.99658pt too wide) in paragraph at lines 1784--1784
+[]    \TU/lmtt/m/n/10.95 "Model":"Elasticity",[] 
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 1785--1785
+[]    \TU/lmtt/m/n/10.95 "Materials":[] 
+ []
+
+
+Overfull \hbox (89.99158pt too wide) in paragraph at lines 1787--1787
+[]        \TU/lmtt/m/n/10.95 "name_of_the_volume":[] 
+ []
+
+
+Overfull \hbox (95.74033pt too wide) in paragraph at lines 1789--1789
+[]            \TU/lmtt/m/n/10.95 "name":"material",[] 
+ []
+
+
+Overfull \hbox (107.23782pt too wide) in paragraph at lines 1790--1790
+[]            \TU/lmtt/m/n/10.95 "E":"Young_modulus",[] 
+ []
+
+
+Overfull \hbox (124.48407pt too wide) in paragraph at lines 1791--1791
+[]            \TU/lmtt/m/n/10.95 "nu":"Poisson's_ratio",[] 
+ []
+
+
+Overfull \hbox (227.96153pt too wide) in paragraph at lines 1792--1792
+[]            \TU/lmtt/m/n/10.95 "alphaT":"linear_dilatation_coefficient",[] 
+ []
+
+
+Overfull \hbox (78.49408pt too wide) in paragraph at lines 1793--1793
+[]            \TU/lmtt/m/n/10.95 "rho":"density"[] 
+ []
+
+
+Overfull \hbox (66.99658pt too wide) in paragraph at lines 1796--1796
+[]    \TU/lmtt/m/n/10.95 "BoundaryConditions":[] 
+ []
+
+
+Overfull \hbox (199.2178pt too wide) in paragraph at lines 1798--1798
+[]        \TU/lmtt/m/n/10.95 "condition(like displacement_x y or z)":[] 
+ []
+
+
+Overfull \hbox (279.70029pt too wide) in paragraph at lines 1800--1800
+[]            \TU/lmtt/m/n/10.95 "type_of_condition (Dirichlet, Neumann or Robi
+n)":[] 
+ []
+
+
+Overfull \hbox (130.23282pt too wide) in paragraph at lines 1802--1802
+[]                \TU/lmtt/m/n/10.95 "surface_concerned":[] 
+ []
+
+
+Overfull \hbox (21.00659pt too wide) in paragraph at lines 1803--1803
+[]                \TU/lmtt/m/n/10.95 {[] 
+ []
+
+
+Overfull \hbox (95.74033pt too wide) in paragraph at lines 1804--1804
+[]                    \TU/lmtt/m/n/10.95 "expr":"_"[] 
+ []
+
+
+Overfull \hbox (26.75534pt too wide) in paragraph at lines 1805--1805
+[]                \TU/lmtt/m/n/10.95 },[] 
+ []
+
+
+Overfull \hbox (72.74533pt too wide) in paragraph at lines 1808--1808
+[]        \TU/lmtt/m/n/10.95 "other_condition":[] 
+ []
+
+
+Overfull \hbox (9.5091pt too wide) in paragraph at lines 1810--1810
+[]            \TU/lmtt/m/n/10.95 ...[] 
+ []
+
+
+Overfull \hbox (26.75534pt too wide) in paragraph at lines 1814--1814
+[]    \TU/lmtt/m/n/10.95 "PostProcess":[] 
+ []
+
+
+Overfull \hbox (354.43402pt too wide) in paragraph at lines 1816--1816
+[]        \TU/lmtt/m/n/10.95 "Fields":["displacement","Von-Mises","tresca","pri
+ncipal-stresses"][] 
+ []
+
+
+Overfull \hbox (3.76035pt too wide) in paragraph at lines 1819--1819
+[]\TU/lmtt/m/n/10.95 \end{verbatim}[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [41]
+Overfull \hbox (733.85144pt too wide) in paragraph at lines 1821--1821
+[]\TU/lmtt/m/n/10.95 We also need to set up the configuration file (\texttt{.cf
+g}) to compute the elasticity part, which consist in adding the elasticity sect
+ion.[] 
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 1824--1824
+[]\TU/lmtt/m/n/10.95 \begin{verbatim}[] 
+ []
+
+
+Overfull \hbox (199.2178pt too wide) in paragraph at lines 1826--1826
+[]\TU/lmtt/m/n/10.95 filename=$cfgdir/quarter-torus3D-elasticity.json[] 
+ []
+
+
+Overfull \hbox (89.99156pt too wide) in paragraph at lines 1827--1827
+[]\TU/lmtt/m/n/10.95 on.type=elimination_symmetric[] 
+ []
+
+
+Overfull \hbox (61.24783pt too wide) in paragraph at lines 1828--1828
+[]\TU/lmtt/m/n/10.95 thermal_dilatation=false[] 
+ []
+
+
+Overfull \hbox (26.75534pt too wide) in paragraph at lines 1829--1829
+[]\TU/lmtt/m/n/10.95 do_export_all=true[] 
+ []
+
+
+Overfull \hbox (61.24783pt too wide) in paragraph at lines 1831--1831
+[]\TU/lmtt/m/n/10.95 # # precondtioner config[] 
+ []
+
+
+Overfull \hbox (61.24783pt too wide) in paragraph at lines 1832--1832
+[]\TU/lmtt/m/n/10.95 pc-type=gamg #lu,gasm,ml[] 
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 1833--1833
+[]\TU/lmtt/m/n/10.95 ksp-monitor=true[] 
+ []
+
+
+Overfull \hbox (61.24783pt too wide) in paragraph at lines 1834--1834
+[]\TU/lmtt/m/n/10.95 # ksp-converged-reason=1[] 
+ []
+
+
+Overfull \hbox (3.76035pt too wide) in paragraph at lines 1835--1835
+[]\TU/lmtt/m/n/10.95 \end{verbatim}[] 
+ []
+
+
+Overfull \hbox (193.46906pt too wide) in paragraph at lines 1837--1837
+[]\TU/lmtt/m/n/10.95 \hypertarget{x-examples}{\subsection{Examples}}[] 
+ []
+
+
+Overfull \hbox (193.46906pt too wide) in paragraph at lines 1839--1839
+[]\TU/lmtt/m/n/10.95 \hypertarget{x-validity}{\subsection{Validity}}[] 
+ []
+
+
+Overfull \hbox (210.71529pt too wide) in paragraph at lines 1840--1840
+[]\TU/lmtt/m/n/10.95 \hypertarget{x-conditions}{\paragraph{Conditions}}[] 
+ []
+
+
+Overfull \hbox (785.59018pt too wide) in paragraph at lines 1841--1841
+[]\TU/lmtt/m/n/10.95 We consider the conductor as a solenoid with finite thickn
+ess and infinite length. This allow us to ignore the \textbf{z} components in o
+ur equations.[] 
+ []
+
+
+Overfull \hbox (193.46906pt too wide) in paragraph at lines 1842--1842
+[]\TU/lmtt/m/n/10.95 We admit that there is only a radial expansion.[] 
+ []
+
+
+Overfull \hbox (199.2178pt too wide) in paragraph at lines 1845--1845
+[]\TU/lmtt/m/n/10.95 \hypertarget{x-equations}{\paragraph{Equations}}[] 
+ []
+
+
+Overfull \hbox (423.419pt too wide) in paragraph at lines 1846--1846
+[]\TU/lmtt/m/n/10.95 Taking back the equations in the \href{/math.adoc}{Maths f
+or Hifimagnet}, we consider :[] 
+ []
+
+
+Overfull \hbox (141.7303pt too wide) in paragraph at lines 1851--1851
+[]\TU/lmtt/m/n/10.95 div\sigma+\textbf{j}\times\textbf{b}=0[] 
+ []
+
+
+Overfull \hbox (256.70529pt too wide) in paragraph at lines 1856--1856
+[]\TU/lmtt/m/n/10.95 With the conditions set in the previous section, we have :
+[] 
+ []
+
+
+Overfull \hbox (354.434pt too wide) in paragraph at lines 1861--1861
+[]\TU/lmtt/m/n/10.95 -\sigma_{\theta}+\frac{\partial}{\partial r}(r\sigma_{r})=
+-rj_{\theta}b_{z}[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [42]
+Overfull \hbox (210.71529pt too wide) in paragraph at lines 1866--1866
+[]\TU/lmtt/m/n/10.95 \hypertarget{x-parameters}{\paragraph{Parameters}}[] 
+ []
+
+
+Overfull \hbox (314.19278pt too wide) in paragraph at lines 1867--1867
+[]\TU/lmtt/m/n/10.95 In our case (a coil of copper), we choose the parameters l
+ike this :[] 
+ []
+
+
+Overfull \hbox (3.76035pt too wide) in paragraph at lines 1870--1870
+[]\TU/lmtt/m/n/10.95 \begin{center}[] 
+ []
+
+
+Overfull \hbox (84.24281pt too wide) in paragraph at lines 1871--1871
+[]\TU/lmtt/m/n/10.95 \begin{tabular}{|c|c|c|c|c|}[] 
+ []
+
+
+Overfull \hbox (446.414pt too wide) in paragraph at lines 1873--1873
+[]\TU/lmtt/m/n/10.95 $E$ & Young modulus & $[124.10^{9} ;128.10^{9}$] & $128.10
+^{9}$ & $Pa=kg.m^{-1} .s^{-2}$ \\[] 
+ []
+
+
+Overfull \hbox (176.22281pt too wide) in paragraph at lines 1874--1874
+[]\TU/lmtt/m/n/10.95 $\nu$ & Poisson’s ratio & 0.33 & 0.33 & - \\[] 
+ []
+
+
+Overfull \hbox (521.14774pt too wide) in paragraph at lines 1875--1875
+[]\TU/lmtt/m/n/10.95 $\alpha_{T}$ & linear dilatation coefficient & $[16,6.10^{
+-6} ;18.10^{-6}$] & $18.10^{-6}$ & $K^{-1}$ \\[] 
+ []
+
+
+Overfull \hbox (256.70529pt too wide) in paragraph at lines 1876--1876
+[]\TU/lmtt/m/n/10.95 $\rho$ & density & $[8920;8960$] & $8950$ & $kg.m^{-3}$ \\
+[] 
+ []
+
+
+Overfull \hbox (176.2228pt too wide) in paragraph at lines 1881--1881
+[]\TU/lmtt/m/n/10.95 \hypertarget{x-results}{\paragraph{Results}}[] 
+ []
+
+
+Overfull \hbox (377.42902pt too wide) in paragraph at lines 1882--1882
+[]\TU/lmtt/m/n/10.95 As we can see in this coarse mesh, the scale is coherent (
+he unit being in Pa).[] 
+ []
+
+
+Overfull \hbox (112.98657pt too wide) in paragraph at lines 1885--1885
+[]\TU/lmtt/m/n/10.95 \begin{wrapfigure}{l}{4.75truein}[] 
+ []
+
+
+Overfull \hbox (469.40897pt too wide) in paragraph at lines 1886--1886
+[]\TU/lmtt/m/n/10.95 \centering\includegraphics[width=4.75truein]{./images/lear
+ning/elasticity/Coarse_Von-Mises.png}[] 
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 1889--1889
+[]\TU/lmtt/m/n/10.95 \end{wrapfigure}[] 
+ []
+
+
+Overfull \hbox (112.98657pt too wide) in paragraph at lines 1891--1891
+[]\TU/lmtt/m/n/10.95 \begin{wrapfigure}{r}{4.75truein}[] 
+ []
+
+
+Overfull \hbox (452.16275pt too wide) in paragraph at lines 1892--1892
+[]\TU/lmtt/m/n/10.95 \centering\includegraphics[width=4.75truein]{./images/lear
+ning/elasticity/Coarse_Tresca.png}[] 
+ []
+
+
+Overfull \hbox (15.25784pt too wide) in paragraph at lines 1895--1895
+[]\TU/lmtt/m/n/10.95 \end{wrapfigure}[] 
+ []
+
+[43]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1897.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1897.
+ (./Examples.aux
+Overfull \hbox (190.86021pt too wide) in paragraph at lines 20--20
+[]\TU/lmtt/m/n/10.95 \@writefile{toc}{\contentsline {section}{\tocsection {}{1}
+{\textbf  {Prepare your geometry}}}{1}{section.1}}[] 
+ []
+
+
+Overfull \hbox (150.61899pt too wide) in paragraph at lines 21--21
+[]\TU/lmtt/m/n/10.95 \@writefile{toc}{\contentsline {section}{\tocsection {}{2}
+{\textbf  {ThermoElectric}}}{1}{section.2}}[] 
+ []
+
+
+Overfull \hbox (271.34268pt too wide) in paragraph at lines 22--22
+[]\TU/lmtt/m/n/10.95 \@writefile{toc}{\contentsline {subsection}{\tocsubsection
+ {}{2.1}{General presentation of the files}}{1}{subsection.2.1}}[] 
+ []
+
+
+Overfull \hbox (202.3577pt too wide) in paragraph at lines 23--23
+[]\TU/lmtt/m/n/10.95 \@writefile{toc}{\contentsline {subsubsection}{\tocsubsubs
+ection {}{2.1.1}{Material}}{1}{subsubsection.2.1.1}}[] 
+ []
+
+
+Overfull \hbox (208.10648pt too wide) in paragraph at lines 24--24
+[]\TU/lmtt/m/n/10.95 \@writefile{toc}{\contentsline {subsubsection}{\tocsubsubs
+ection {}{2.1.2}{Condition}}{4}{subsubsection.2.1.2}}[] 
+ []
+
+
+Overfull \hbox (127.62396pt too wide) in paragraph at lines 25--25
+[]\TU/lmtt/m/n/10.95 \@writefile{toc}{\contentsline {subsection}{\tocsubsection
+ {}{2.2}{Examples}}{5}{subsection.2.2}}[] 
+ []
+
+
+Overfull \hbox (236.85022pt too wide) in paragraph at lines 26--26
+[]\TU/lmtt/m/n/10.95 \@writefile{toc}{\contentsline {subsubsection}{\tocsubsubs
+ection {}{2.2.1}{Current sensor}}{5}{subsubsection.2.2.1}}[] 
+ []
+
+
+Overfull \hbox (87.38274pt too wide) in paragraph at lines 27--27
+[]\TU/lmtt/m/n/10.95 \@writefile{toc}{\contentsline {paragraph}{\tocparagraph {
+}{}{Parameters}}{6}{section*.2}}[] 
+ []
+
+
+Overfull \hbox (87.38274pt too wide) in paragraph at lines 28--28
+[]\TU/lmtt/m/n/10.95 \@writefile{toc}{\contentsline {paragraph}{\tocparagraph {
+}{}{Conditions}}{8}{section*.3}}[] 
+ []
+
+
+Overfull \hbox (75.88522pt too wide) in paragraph at lines 29--29
+[]\TU/lmtt/m/n/10.95 \@writefile{toc}{\contentsline {paragraph}{\tocparagraph {
+}{}{Results}}{11}{section*.4}}[] 
+ []
+
+
+Overfull \hbox (231.10147pt too wide) in paragraph at lines 30--30
+[]\TU/lmtt/m/n/10.95 \@writefile{toc}{\contentsline {subsubsection}{\tocsubsubs
+ection {}{2.2.2}{Double Helix}}{11}{subsubsection.2.2.2}}[] 
+ []
+
+
+Overfull \hbox (93.13148pt too wide) in paragraph at lines 31--31
+[]\TU/lmtt/m/n/10.95 \@writefile{toc}{\contentsline {paragraph}{\tocparagraph {
+}{}{Parameters}}{11}{section*.5}}[] 
+ []
+
+
+Overfull \hbox (265.59396pt too wide) in paragraph at lines 32--32
+[]\TU/lmtt/m/n/10.95 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\i
+gnorespaces Potential as a function of current}}{12}{figure.1}}[] 
+ []
+
+
+Overfull \hbox (363.3227pt too wide) in paragraph at lines 33--33
+[]\TU/lmtt/m/n/10.95 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\i
+gnorespaces Temperature max in 1 plate as a function of current}}{13}{figure.2}
+}[] 
+ []
+
+
+Overfull \hbox (501.29266pt too wide) in paragraph at lines 34--34
+[]\TU/lmtt/m/n/10.95 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\i
+gnorespaces Temperature max in 1 plate as a function of current, forced convect
+ion only}}{14}{figure.3}}[] 
+ []
+
+
+Overfull \hbox (219.60397pt too wide) in paragraph at lines 35--35
+[]\TU/lmtt/m/n/10.95 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\i
+gnorespaces Double Helix on `Paraview`}}{15}{figure.4}}[] 
+ []
+
+
+Overfull \hbox (93.13148pt too wide) in paragraph at lines 36--36
+[]\TU/lmtt/m/n/10.95 \@writefile{toc}{\contentsline {paragraph}{\tocparagraph {
+}{}{Conditions}}{15}{section*.6}}[] 
+ []
+
+
+Overfull \hbox (75.88522pt too wide) in paragraph at lines 37--37
+[]\TU/lmtt/m/n/10.95 \@writefile{toc}{\contentsline {paragraph}{\tocparagraph {
+}{}{Results}}{18}{section*.7}}[] 
+ []
+
+
+Overfull \hbox (133.37271pt too wide) in paragraph at lines 38--38
+[]\TU/lmtt/m/n/10.95 \@writefile{toc}{\contentsline {subsection}{\tocsubsection
+ {}{2.3}{Validity}}{18}{subsection.2.3}}[] 
+ []
+
+
+Overfull \hbox (87.38274pt too wide) in paragraph at lines 39--39
+[]\TU/lmtt/m/n/10.95 \@writefile{toc}{\contentsline {paragraph}{\tocparagraph {
+}{}{Equations}}{18}{section*.8}}[] 
+ []
+
+
+Overfull \hbox (282.8402pt too wide) in paragraph at lines 40--40
+[]\TU/lmtt/m/n/10.95 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\i
+gnorespaces Temperature's repartition on paraview}}{19}{figure.5}}[] 
+ []
+
+
+Overfull \hbox (294.3377pt too wide) in paragraph at lines 41--41
+[]\TU/lmtt/m/n/10.95 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\i
+gnorespaces Model of the quarter of torus on `Gmsh`}}{20}{figure.6}}[] 
+ []
+
+
+Overfull \hbox (93.13148pt too wide) in paragraph at lines 42--42
+[]\TU/lmtt/m/n/10.95 \@writefile{toc}{\contentsline {paragraph}{\tocparagraph {
+}{}{Parameters}}{20}{section*.9}}[] 
+ []
+
+
+Overfull \hbox (98.88022pt too wide) in paragraph at lines 43--43
+[]\TU/lmtt/m/n/10.95 \@writefile{toc}{\contentsline {paragraph}{\tocparagraph {
+}{}{Conditions}}{21}{section*.10}}[] 
+ []
+
+
+Overfull \hbox (81.63397pt too wide) in paragraph at lines 44--44
+[]\TU/lmtt/m/n/10.95 \@writefile{toc}{\contentsline {paragraph}{\tocparagraph {
+}{}{Results}}{21}{section*.11}}[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [44
+
+]
+Overfull \hbox (64.38773pt too wide) in paragraph at lines 45--45
+[]\TU/lmtt/m/n/10.95 \@writefile{toc}{\contentsline {paragraph}{\tocparagraph {
+}{}{Code}}{23}{section*.12}}[] 
+ []
+
+)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1897.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1897.
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ )
+(\end occurred inside a group at level 3)
+
+### simple group (level 3) entered at line 1164 ({)
+### simple group (level 2) entered at line 211 ({)
+### simple group (level 1) entered at line 199 ({)
+### bottom level
+(\end occurred when \ifx on line 161 was incomplete) 
+Here is how much of TeX's memory you used:
+ 31398 strings out of 494970
+ 634717 string characters out of 6176981
+ 780447 words of memory out of 5000000
+ 34651 multiletter control sequences out of 15000+600000
+ 10942 words of font info for 55 fonts, out of 8000000 for 9000
+ 197 hyphenation exceptions out of 8191
+ 54i,9n,73p,10350b,622s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on Examples.pdf (44 pages).

@@ -2,9 +2,10 @@
 ==== Current sensor
 
 Here we want to model a current sensor placed in the connection of a magnet.
-This sensor consist in 6 constantan plates placed in the connection as shown in the images.
-The goal is to allow the users to directly see the evolution of the current, measuring the potential in the connection,
-but the main problem is the temperature reach by the sensor, due to the high current, the fusion of the constantan being around 1500 K.
+This sensor consist in 6 constantan plates placed between the connectors as shown in the images.
+The goal is to allow the users to directly see the evolution of the current by measuring the potential in the connection.
+The main problem is the temperature reached by the sensor, due to the high current, the fusion of the constantan being around 1500 K, but we don't want to exceed an elevation of 200 degree.
+Because an excessive increase of the temperature will
 We model all of this with `salome` and do the mesh.
 The mesh is more precise on the sensor (the 6 constantan plates)
 
@@ -16,7 +17,7 @@ image::/images/learning/thermoelectric/capteurcourant.png[CapteurCourant,475,300
 
 ===== Parameters
 
-There are 8 volumes, 2 cable in copper and the 6 constantan plates which constitute the sensor.
+There are 8 volumes, 2 connectors in copper and the 6 constantan plates which constitute the sensor.
 
 
 [source,json]
@@ -255,10 +256,10 @@ image::/images/learning/thermoelectric/Potential.png[potential,600,400,align="ce
 
 Therefore, we need a voltmeter which can be precise between 0.01 and 0.15 Volt.
 
-Next, we want to control the temperature reached by the sensor, the purpose being to not destroy the sensor.
+Next, we want to control the temperature reached by the sensor, the purpose being not to destroy the sensor.
 The melting temperature of the Constantan is near 1500 K, but we want to stop well before reaching this point to avoid deformations of the sensor.
-The main parameter that we can control is the heat transfer coefficient *h* (latexmath:[W.m^{-2}.K^{-1}])
-displaying or not a ventilator to be in natural or forced convection.
+The main parameter that we can control is the heat transfer coefficient *h* ($W.m^{-2} .K^{-1}$).
+This coefficient *h* can be control by displaying or not a ventilator to be in natural or forced convection.
 
 .Temperature max in 1 plate as a function of current
 image::/images/learning/thermoelectric/Temperature_Max.png[Temperature_Max,900,600,align="center"]

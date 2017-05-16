@@ -1,5 +1,6 @@
 ==== Double Helix
 
+For this piece, the purpose is to see the elevation of the temperature in the conductor around the double helix.
 We model a double helix on `salome` then do the mesh.
 
 .Double Helix on `Paraview`
@@ -175,3 +176,5 @@ We can see the repartition of the temperature in the helix.
 
 .Temperature's repartition on paraview
 image::/images/learning/thermoelectric/Double_Helix_temperature.png[Double_Helix_temperature,900,600,align="center"]
+
+We can note that the peak temperature is inside the double helix.
