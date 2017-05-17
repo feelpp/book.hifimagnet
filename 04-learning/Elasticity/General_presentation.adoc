@@ -2,7 +2,7 @@ In the continuity of the study of the magnet, we use the file already used in Th
 We create a new file `.json` to set up the conditions for elasticity.
 
 [source,json]
-.quarter_torus_3D-elasticity.json
+.quarter\_torus\_3D-elasticity.json
 ....
 {
     "Name": "CoupledCart",
@@ -47,7 +47,7 @@ We create a new file `.json` to set up the conditions for elasticity.
 We also need to set up the configuration file (`.cfg`) to compute the elasticity part, which consist in adding the elasticity section.
 
 [source,cfg]
-.coupledcart_3D_P1_N1_cvg.cfg
+.coupledcart\_3D\_P1\_N1\_cvg.cfg
 ....
 [elasticity]
 filename=$cfgdir/quarter-torus3D-elasticity.json
