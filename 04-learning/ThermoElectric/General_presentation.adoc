@@ -152,12 +152,12 @@ There are three type of conditions :
   {
     "Surface":
       {
-        "expr1":"Value_of_the_solution"
+        "expr1":"Value_of_the_solution",
         "expr2":"Volume_concerned"
       },
     "other_surface":
       {
-        "expr1":"Value_of_the_solution"
+        "expr1":"Value_of_the_solution",
         "expr2":"Volume_concerned"
       }
   }
@@ -188,12 +188,12 @@ There are three type of conditions :
   {
     "Surface":
       {
-        "expr1":"Value_of_derivatives_of_the_solution"
+        "expr1":"Value_of_derivatives_of_the_solution",
         "expr2":"Value_of_the_solution"
       },
     "other_surface":
       {
-        "expr1":"Value_of_derivatives_of_the_solution"
+        "expr1":"Value_of_derivatives_of_the_solution",
         "expr2":"Value_of_the_solution"
       }
   }

@@ -201,7 +201,7 @@ Physical Surface("out") = {out[4]};
 
 Next step is to create a file.json which define the model we will use, the material and sets the conditions.
 
-[[test.json]]
+
 [source,json]
 .quarter-turn3D.json
 ....
@@ -236,7 +236,7 @@ Next step is to create a file.json which define the model we will use, the mater
                 },
                 "out":
                 {
-                    "expr1":"0.3/4.", // since we consider only 1/4th of a torus
+                    "expr1":"0.3/4.", //since we only consider a quarter of the torus
 		    "expr2":"omega"
                 }
         },
@@ -267,7 +267,7 @@ Next step is to create a file.json which define the model we will use, the mater
 Lastly, we create a file.cfg to configure what we will calculate.
 
 [[example_file.cfg]]
-.thermoelectric_3D_V1T1_N1_cvg.cfg (for the T1V1 model)
+.thermoelectric\_3D\_V1T1\_N1\_cvg.cfg (for the T1V1 model)
 ....
 dim=3
 geofile=quarter-turn3D.geo

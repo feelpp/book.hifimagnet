@@ -7,7 +7,7 @@ image::/images/learning/magnetostatic/torus3D_box3D.png[torus3D with the box3D,7
 
 ===== Equations
 
-We use the Biot & Savart's law to prove the validity.
+We use the Biot \& Savart's law to prove the validity.
 First, we need to set the conditions to use this law, $\Omega_{cond}\cap\Omega_{mgn}=\emptyset$,
 with $\Omega_{cond}$ the conductor in which the current is passing and
 $\Omega_{mgn}$ the domain in which we want to know the magnetic field.
@@ -37,7 +37,7 @@ Then we rewrite the expression of the magnetic potential *A* :
 A(\textbf{r})=\frac{\mu_{0}}{4\pi}\int_{\Omega_{cond}}\frac{\textbf{j}(\textbf{r'})}{|\textbf{r}-\textbf{r'}|} d\textbf{r'}\;\;\;\;\;\;\;\textbf{r}\in\Omega_{mgn}
 \]
 
-As *B* is defined as the curl of *A*, we can write the so called Biot & Savart's law :
+As *B* is defined as the curl of *A*, we can write the so called Biot \& Savart's law :
 
 \[
 \textbf{B}(\textbf{r})=\frac{\mu_{0}}{4\pi}\int_{\Omega_{cond}}\frac{\textbf{j}(\textbf{r'})\times(\textbf{r}-\textbf{r'})}{|\textbf{r}-\textbf{r'}|^{3}} d\textbf{r'}\;\;\;\;\;\;\;\textbf{r}\in\Omega_{mgn}
@@ -66,7 +66,7 @@ The scale and the direction of the magnetic field (*B*) are coherent.
 
 For the modelisation of the the torus and his box inside, we create the geometry with this file `.geo`
 
-.torus3D_box3D.geo
+.torus3D\_box3D.geo
 ....
 // Define Main params
 Unit = 1.e-3;
@@ -199,10 +199,10 @@ the next step is to make a file `.d` which fix some parameters on the torus
 MARGE DE SECURITE CONTRAINTES= 8.0 %
 ....
 
-Finally we can use the `biotsavart_num` (in which we use the thermoelectric model to calculate *j*) or the `biotsavart` (in which we specify manually *j*)
+Finally we can use the `biotsavart\_num` (in which we use the thermoelectric model to calculate *j*) or the `biotsavart` (in which we specify manually *j*)
 
 [source,cfg]
-.biotsavart_box3D_3D_P1_N1_cvg.cfg
+.biotsavart\_box3D\_3D\_P1\_N1\_cvg.cfg
 ....
 dim=3
 units=mm
@@ -232,7 +232,7 @@ supra-intensity=0
 
 [[example.cfg]]
 [source,cfg]
-.biotsavart_num_box3D_3D_V1T1_N1_cvg.cfg
+.biotsavart\_num\_box3D\_3D\_V1T1\_N1\_cvg.cfg
 ....
 dim=3
 units=mm

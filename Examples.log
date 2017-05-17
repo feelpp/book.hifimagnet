@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016/Debian) (preloaded format=xelatex 2017.5.15)  16 MAY 2017 09:58
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016/Debian) (preloaded format=xelatex 2017.5.15)  17 MAY 2017 15:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1130,19 +1130,19 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
 * driver: xetex
-* paper: letterpaper
+* paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: twoside 
-* h-part:(L,W,R)=(73.71613pt, 430.00462pt, 110.57425pt)
-* v-part:(T,H,B)=(95.39737pt, 556.47656pt, 143.09605pt)
-* \paperwidth=614.295pt
-* \paperheight=794.96999pt
-* \textwidth=430.00462pt
-* \textheight=556.47656pt
-* \oddsidemargin=1.44614pt
-* \evensidemargin=38.30426pt
-* \topmargin=1.12738pt
+* h-part:(L,W,R)=(71.70166pt, 418.25368pt, 107.55254pt)
+* v-part:(T,H,B)=(101.40665pt, 591.5302pt, 152.11pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=418.25368pt
+* \textheight=591.5302pt
+* \oddsidemargin=-0.56833pt
+* \evensidemargin=35.28255pt
+* \topmargin=7.13666pt
 * \headheight=8.0pt
 * \headsep=14.0pt
 * \topskip=10.0pt
@@ -1243,11 +1243,7 @@ LaTeX Info: Redefining \nameref on input line 194.
 \@outlinefile=\write6
 \openout6 = `Examples.out'.
 
-
-
-Package hyperref Warning: Rerun to get /PageLabels entry.
-
-(./Examples.toc)
+ (./Examples.toc)
 \tf@toc=\write7
 \openout7 = `Examples.toc'.
 
@@ -1260,277 +1256,32 @@ LaTeX Font Warning: Font shape `TU/lmr/bx/sc' undefined
 File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
 
 )
-! Missing $ inserted.
-<inserted text> 
-                $
-l.199 ...med} (example : \texttt{example_mesh.med}
-                                                  ) with \texttt{Salome}.
-? r
-OK, entering \nonstopmode...
-! Extra }, or forgotten $.
-<recently read> \egroup 
-                        
-l.199 ...med} (example : \texttt{example_mesh.med}
-                                                  ) with \texttt{Salome}.
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.201 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (349.5835pt too wide) in paragraph at lines 198--201
-\TU/lmr/m/n/10.95 export it in \TU/lmtt/m/n/10.95 .med \TU/lmr/m/n/10.95 (examp
-le : \TU/lmtt/m/n/10.95 example$[]\OML/cmm/m/it/10.95 esh:med\OT1/cmr/m/n/10.95
- )\OML/cmm/m/it/10.95 with[]:Youalsoneedtopartitionthemeshifyouwanttodothecalcu
-lationsinparallel; runningthiscommandbelow:$ 
- []
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.211 ... file, call \texttt{example_mesh_p4.json}
-                                                   that you will use in your...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Extra }, or forgotten $.
-<recently read> \egroup 
-                        
-l.211 ... file, call \texttt{example_mesh_p4.json}
-                                                   that you will use in your...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.212 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (20.31403pt too wide) in paragraph at lines 210--212
-[]\TU/lmtt/m/n/10.95 Where part indicate the number of processors you want to u
-se. This will create
- []
-
-
-Overfull \hbox (31.67282pt too wide) in paragraph at lines 216--217
- \TU/lmr/m/n/10.95 2.1.\TU/lmr/bx/sc/10.95 General presentation of the files.[]
-[] \TU/lmtt/m/n/10.95 You can use ether the linear or the nonlinear
- []
-
-
-Overfull \hbox (6.90028pt too wide) in paragraph at lines 216--217
-\TU/lmtt/m/n/10.95 model for your calculation, but for our example, we use the 
-linear model, so
- []
-
-
-Overfull \hbox (1.15154pt too wide) in paragraph at lines 216--217
-\TU/lmtt/m/n/10.95 we select the thermoelectric-linear (respectively thermoelec
-tric-nonlinear)
- []
-
-
-Overfull \hbox (12.64903pt too wide) in paragraph at lines 219--220
-[]\TU/lmtt/m/n/10.95 When all the files (detailed below) are created, you can r
-un your calculation
- []
-
-
-Overfull \hbox (409.31265pt too wide) in paragraph at lines 223--223
+[1]
+Overfull \hbox (421.0636pt too wide) in paragraph at lines 223--223
 []\TU/lmtt/m/n/10.95 mpirun -np "number_of_processor_you_have_chosen_in_the_par
 tition" feelpp_hfm_thermoelectric_model_3D_V1T1_N1 --config-file "name_of_your_
 file.cfg"[] 
  []
 
+[2]
 
-Overfull \hbox (6.90028pt too wide) in paragraph at lines 238--240
-[]\TU/lmtt/m/n/10.95 There is a dedicated section in the Json file, named Mater
-ials, to configure
- []
+Package hyperref Warning: Suppressing empty link on input line 296.
 
-
-Overfull \hbox (14.56528pt too wide) in paragraph at lines 238--240
-\TU/lmtt/m/n/10.95 the magnet properties. The structure of a json file is as fo
-llows (conditions
- []
-
-[1] [2]
-LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 296.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.297 ...c_3D_V1T1_N1_cvgcfg (for the T1V1 model)}
-                                                  ).
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.297 ...c_3D_V1T1_N1_cvgcfg (for the T1V1 model)}
-                                                  ).
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
-Overfull \hbox (6.90028pt too wide) in paragraph at lines 296--299
-[]\TU/lmtt/b/n/10.95 WARNING\TU/lmtt/m/n/10.95 : The name of the volumes and su
-rfaces must be the same as defined in
- []
-
-
-Overfull \hbox (4.98402pt too wide) in paragraph at lines 296--299
-\TU/lmtt/m/n/10.95 Salome. Be careful to the units of the material properties. 
-They need to be
- []
-
-
-Overfull \hbox (26.06277pt too wide) in paragraph at lines 296--299
-\TU/lmtt/m/n/10.95 consistent with the length unit used for the rest. For insta
-nce the length unit
- []
-
-
-Overfull \hbox (43.30902pt too wide) in paragraph at lines 296--299
-\TU/lmtt/m/n/10.95 is in \TU/lmtt/b/n/10.95 mm \TU/lmtt/m/n/10.95 in [][]quarte
-r-turn3Djson[][]. It is also necessary to create a file to configure
- []
-
-
-Overfull \hbox (81.52728pt too wide) in paragraph at lines 296--299
-\TU/lmtt/m/n/10.95 the calculation, call .cfg file (example [][]thermoelectric$
-[]\OML/cmm/m/it/10.95 D[]\OT1/cmr/m/n/10.95 1\OML/cmm/m/it/10.95 T\OT1/cmr/m/n/
-10.95 1[]1[]\OML/cmm/m/it/10.95 vgcfg\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 fo
-rtheT\OT1/cmr/m/n/10.95 1\OML/cmm/m/it/10.95 V\OT1/cmr/m/n/10.95 1\OML/cmm/m/it
-/10.95 model\OT1/cmr/m/n/10.95 )$[][]\TU/lmtt/m/n/10.95 ).
- []
-
-
-Overfull \hbox (12.64903pt too wide) in paragraph at lines 296--299
-\TU/lmtt/m/n/10.95 It will configure which file you will use in your calculatio
-ns and which type
- []
-
-
-Overfull \hbox (41.39278pt too wide) in paragraph at lines 296--299
-\TU/lmtt/m/n/10.95 of solver you use (here we use the Krylov method to solve bo
-th electro and thermal
- []
-
-[3]
-Overfull \hbox (1.15154pt too wide) in paragraph at lines 329--331
-[]\TU/lmtt/m/n/10.95 There are few differences between the linear and the nonli
-near calculation.
- []
-
-
-Overfull \hbox (6.90028pt too wide) in paragraph at lines 329--331
-\TU/lmtt/m/n/10.95 For the nonlinear model, just add this lines in the section 
-thermoelectric : 
- []
-
-
-Overfull \hbox (12.64903pt too wide) in paragraph at lines 346--347
-[]\TU/lmtt/m/n/10.95 We can define the current I using the Ohm’s law, defining 
-the voltage ine the
- []
-
-
-Overfull \hbox (75.88527pt too wide) in paragraph at lines 376--376
+[3] [4]
+Overfull \hbox (87.63622pt too wide) in paragraph at lines 376--376
 []\TU/lmtt/m/n/10.95 "Neumann":  // value of the derivative of the solution kno
 wns at the limit of the domain[] 
  []
 
-[4]
-Overfull \hbox (110.37776pt too wide) in paragraph at lines 393--393
+
+Overfull \hbox (122.12871pt too wide) in paragraph at lines 393--393
 []\TU/lmtt/m/n/10.95 "Robin":   // linear relation between the value and the de
 rivative at the limits of the domain[] 
  []
 
-
-Overfull \hbox (14.56528pt too wide) in paragraph at lines 409--410
-[]\TU/lmtt/b/n/10.95 WARNING\TU/lmtt/m/n/10.95 : Your have to set a condition f
-or each surfaces you have defined. For
- []
-
-
-Overfull \hbox (58.63902pt too wide) in paragraph at lines 409--410
-\TU/lmtt/m/n/10.95 those where there is no conditions, set an homogeneous Neuma
-nn condition ("expr":"0")
- []
-
-
-Overfull \hbox (42.24323pt too wide) in paragraph at lines 412--419
- \TU/lmr/m/n/10.95 2.2.1.\TU/lmr/m/it/10.95 Current sensor.[] \TU/lmtt/m/n/10.9
-5 Here we want to model a current sensor placed in the connection
- []
-
-
-Overfull \hbox (60.55527pt too wide) in paragraph at lines 412--419
-\TU/lmtt/m/n/10.95 of a magnet. This sensor consist in 6 constantan plates plac
-ed between the connectors
- []
-
-
-Overfull \hbox (54.80652pt too wide) in paragraph at lines 412--419
-\TU/lmtt/m/n/10.95 as shown in the images. The goal is to allow the users to di
-rectly see the evolution
- []
-
-
-Overfull \hbox (14.56528pt too wide) in paragraph at lines 412--419
-\TU/lmtt/m/n/10.95 of the current by measuring the potential in the connection.
- The main problem
- []
-
-
-Overfull \hbox (12.64903pt too wide) in paragraph at lines 412--419
-\TU/lmtt/m/n/10.95 is the temperature reached by the sensor, due to the high cu
-rrent, the fusion
- []
-
-
-Overfull \hbox (24.14653pt too wide) in paragraph at lines 412--419
-\TU/lmtt/m/n/10.95 of the constantan being around 1500 K, but we don’t want to 
-exceed an elevation
- []
-
-
-Overfull \hbox (14.56528pt too wide) in paragraph at lines 412--419
-\TU/lmtt/m/n/10.95 of 200 degree. Because an excessive increase of the temperat
-ure will We model
- []
-
-
-Overfull \hbox (26.06277pt too wide) in paragraph at lines 412--419
-\TU/lmtt/m/n/10.95 all of this with salome and do the mesh. The mesh is more pr
-ecise on the sensor
- []
-
 File: ./images/learning/thermoelectric/Ensemble_CapteurCourant.png Graphic file
  (type QTm)
-<use  "./images/learning/thermoelectric/Ensemble_CapteurCourant.png" >
+<use  "./images/learning/thermoelectric/Ensemble_CapteurCourant.png" > [5]
 
 Package wrapfig Warning: Collision between wrapping environments on input line 
 427.
@@ -1538,304 +1289,288 @@ Package wrapfig Warning: Collision between wrapping environments on input line
 File: ./images/learning/thermoelectric/capteurcourant.png Graphic file (type QT
 m)
 <use  "./images/learning/thermoelectric/capteurcourant.png" >
-Underfull \vbox (badness 1221) has occurred while \output is active []
-
- [5]
-Overfull \hbox (14.9184pt too wide) in paragraph at lines 434--435
-[] []\TU/lmr/m/n/10.95 Parameters.[] \TU/lmtt/m/n/10.95 There
+Overfull \hbox (23.83328pt too wide) in paragraph at lines 434--435
+[] []\TU/lmr/m/n/10.95 Parameters.[] There
  []
 
 
-Overfull \hbox (3.76035pt too wide) in paragraph at lines 434--435
-\TU/lmtt/m/n/10.95 are 8 volumes,
+Overfull \hbox (1.41867pt too wide) in paragraph at lines 434--435
+\TU/lmr/m/n/10.95 are 8 volumes,
  []
 
 
-Overfull \hbox (9.5091pt too wide) in paragraph at lines 434--435
-\TU/lmtt/m/n/10.95 2 connectors in
+Underfull \hbox (badness 2409) in paragraph at lines 434--435
+\TU/lmr/m/n/10.95 2 connectors
  []
 
 
-Overfull \hbox (3.76035pt too wide) in paragraph at lines 434--435
-\TU/lmtt/m/n/10.95 copper and the
+Overfull \hbox (11.4379pt too wide) in paragraph at lines 434--435
+\TU/lmr/m/n/10.95 tan plates which
  []
 
 
-Overfull \hbox (32.50409pt too wide) in paragraph at lines 434--435
-\TU/lmtt/m/n/10.95 6 constantan plates
- []
-
-
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 434--435
-\TU/lmtt/m/n/10.95 which constitute
- []
-
-
-Overfull \hbox (89.99158pt too wide) in paragraph at lines 439--439
+Overfull \hbox (101.74252pt too wide) in paragraph at lines 439--439
 []    \TU/lmtt/m/n/10.95 "Name": "ThermoElectric",[] 
  []
 
 
-Overfull \hbox (44.00159pt too wide) in paragraph at lines 440--440
+Overfull \hbox (55.75253pt too wide) in paragraph at lines 440--440
 []    \TU/lmtt/m/n/10.95 "ShortName":"TE",[] 
  []
 
 
-Overfull \hbox (130.23282pt too wide) in paragraph at lines 441--441
+Overfull \hbox (141.98376pt too wide) in paragraph at lines 441--441
 []    \TU/lmtt/m/n/10.95 "Model":"thermoelectric-linear",[] 
  []
 
 
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 442--442
+Overfull \hbox (27.00879pt too wide) in paragraph at lines 442--442
 []    \TU/lmtt/m/n/10.95 "Materials":[] 
  []
 
 
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 446--446
+Overfull \hbox (27.00879pt too wide) in paragraph at lines 446--446
 []    \TU/lmtt/m/n/10.95 "name":"A1",[] 
  []
 
 
-Overfull \hbox (49.75034pt too wide) in paragraph at lines 447--447
+Overfull \hbox (61.50128pt too wide) in paragraph at lines 447--447
 []    \TU/lmtt/m/n/10.95 "alpha":"3.35e-3",[] 
  []
 
 
-Overfull \hbox (9.5091pt too wide) in paragraph at lines 448--448
+Overfull \hbox (21.26004pt too wide) in paragraph at lines 448--448
 []    \TU/lmtt/m/n/10.95 "T0":"293",[] 
  []
 
 
-Overfull \hbox (44.00159pt too wide) in paragraph at lines 449--449
+Overfull \hbox (55.75253pt too wide) in paragraph at lines 449--449
 []    \TU/lmtt/m/n/10.95 "sigma0":"58e+3",[] 
  []
 
 
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 450--450
+Overfull \hbox (27.00879pt too wide) in paragraph at lines 450--450
 []    \TU/lmtt/m/n/10.95 "k0":"0.38",[] 
  []
 
 
-Overfull \hbox (245.20778pt too wide) in paragraph at lines 451--451
+Overfull \hbox (256.95872pt too wide) in paragraph at lines 451--451
 []    \TU/lmtt/m/n/10.95 "sigma":"sigma0/(1+alpha*(T-T0)):sigma0:alpha:T:T0",[]
  
  []
 
 
-Overfull \hbox (210.71529pt too wide) in paragraph at lines 452--452
+Overfull \hbox (222.46623pt too wide) in paragraph at lines 452--452
 []    \TU/lmtt/m/n/10.95 "k":"k0*T/((1+alpha*(T-T0))*T0):k0:T:alpha:T0"[] 
  []
 
 
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 454--454
+Overfull \hbox (27.00879pt too wide) in paragraph at lines 454--454
 []\TU/lmtt/m/n/10.95 "CurrentLead_1":[] 
  []
 
 
-Overfull \hbox (78.49406pt too wide) in paragraph at lines 456--456
+Overfull \hbox (90.24501pt too wide) in paragraph at lines 456--456
 []    \TU/lmtt/m/n/10.95 "name":"CurrentLead_1",[] 
  []
 
 
-Overfull \hbox (49.75034pt too wide) in paragraph at lines 457--457
+Overfull \hbox (61.50128pt too wide) in paragraph at lines 457--457
 []    \TU/lmtt/m/n/10.95 "alpha":"3.35e-3",[] 
  []
 
 
-Overfull \hbox (9.5091pt too wide) in paragraph at lines 458--458
+Overfull \hbox (21.26004pt too wide) in paragraph at lines 458--458
 []    \TU/lmtt/m/n/10.95 "T0":"293",[] 
  []
 
 
-Overfull \hbox (44.00159pt too wide) in paragraph at lines 459--459
+Overfull \hbox (55.75253pt too wide) in paragraph at lines 459--459
 []    \TU/lmtt/m/n/10.95 "sigma0":"58e+3",[] 
  []
 
 
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 460--460
+Overfull \hbox (27.00879pt too wide) in paragraph at lines 460--460
 []    \TU/lmtt/m/n/10.95 "k0":"0.38",[] 
  []
 
-
-Overfull \hbox (245.20778pt too wide) in paragraph at lines 461--461
+[6]
+Overfull \hbox (256.95872pt too wide) in paragraph at lines 461--461
 []    \TU/lmtt/m/n/10.95 "sigma":"sigma0/(1+alpha*(T-T0)):sigma0:alpha:T:T0",[]
  
  []
 
 
-Underfull \vbox (badness 5091) has occurred while \output is active []
-
- [6]
-Overfull \hbox (210.71529pt too wide) in paragraph at lines 462--462
+Overfull \hbox (222.46623pt too wide) in paragraph at lines 462--462
 []    \TU/lmtt/m/n/10.95 "k":"k0*T/((1+alpha*(T-T0))*T0):k0:T:alpha:T0"[] 
  []
 
 
-Overfull \hbox (9.5091pt too wide) in paragraph at lines 464--464
+Overfull \hbox (21.26004pt too wide) in paragraph at lines 464--464
 []\TU/lmtt/m/n/10.95 "Constantan_1":[] 
  []
 
 
-Overfull \hbox (72.74533pt too wide) in paragraph at lines 466--466
+Overfull \hbox (84.49628pt too wide) in paragraph at lines 466--466
 []    \TU/lmtt/m/n/10.95 "name":"Constantan_1",[] 
  []
 
 
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 467--467
+Overfull \hbox (27.00879pt too wide) in paragraph at lines 467--467
 []    \TU/lmtt/m/n/10.95 "alpha":"0",[] 
  []
 
 
-Overfull \hbox (9.5091pt too wide) in paragraph at lines 468--468
+Overfull \hbox (21.26004pt too wide) in paragraph at lines 468--468
 []    \TU/lmtt/m/n/10.95 "T0":"293",[] 
  []
 
 
-Overfull \hbox (55.49908pt too wide) in paragraph at lines 469--469
+Overfull \hbox (67.25003pt too wide) in paragraph at lines 469--469
 []    \TU/lmtt/m/n/10.95 "sigma0":"2.04e+3",[] 
  []
 
 
-Overfull \hbox (21.00659pt too wide) in paragraph at lines 470--470
+Overfull \hbox (32.75754pt too wide) in paragraph at lines 470--470
 []    \TU/lmtt/m/n/10.95 "k0":"0.019",[] 
  []
 
 
-Overfull \hbox (245.20778pt too wide) in paragraph at lines 471--471
+Overfull \hbox (256.95872pt too wide) in paragraph at lines 471--471
 []    \TU/lmtt/m/n/10.95 "sigma":"sigma0/(1+alpha*(T-T0)):sigma0:alpha:T:T0",[]
  
  []
 
 
-Overfull \hbox (210.71529pt too wide) in paragraph at lines 472--472
+Overfull \hbox (222.46623pt too wide) in paragraph at lines 472--472
 []    \TU/lmtt/m/n/10.95 "k":"k0*T/((1+alpha*(T-T0))*T0):k0:T:alpha:T0"[] 
  []
 
 
-Overfull \hbox (9.5091pt too wide) in paragraph at lines 474--474
+Overfull \hbox (21.26004pt too wide) in paragraph at lines 474--474
 []\TU/lmtt/m/n/10.95 "Constantan_2":[] 
  []
 
 
-Overfull \hbox (72.74533pt too wide) in paragraph at lines 476--476
+Overfull \hbox (84.49628pt too wide) in paragraph at lines 476--476
 []    \TU/lmtt/m/n/10.95 "name":"Constantan_2",[] 
  []
 
 
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 477--477
+Overfull \hbox (27.00879pt too wide) in paragraph at lines 477--477
 []    \TU/lmtt/m/n/10.95 "alpha":"0",[] 
  []
 
 
-Overfull \hbox (9.5091pt too wide) in paragraph at lines 478--478
+Overfull \hbox (21.26004pt too wide) in paragraph at lines 478--478
 []    \TU/lmtt/m/n/10.95 "T0":"293",[] 
  []
 
 
-Overfull \hbox (55.49908pt too wide) in paragraph at lines 479--479
+Overfull \hbox (67.25003pt too wide) in paragraph at lines 479--479
 []    \TU/lmtt/m/n/10.95 "sigma0":"2.04e+3",[] 
  []
 
 
-Overfull \hbox (21.00659pt too wide) in paragraph at lines 480--480
+Overfull \hbox (32.75754pt too wide) in paragraph at lines 480--480
 []    \TU/lmtt/m/n/10.95 "k0":"0.019",[] 
  []
 
 
-Overfull \hbox (245.20778pt too wide) in paragraph at lines 481--481
+Overfull \hbox (256.95872pt too wide) in paragraph at lines 481--481
 []    \TU/lmtt/m/n/10.95 "sigma":"sigma0/(1+alpha*(T-T0)):sigma0:alpha:T:T0",[]
  
  []
 
 
-Overfull \hbox (210.71529pt too wide) in paragraph at lines 482--482
+Overfull \hbox (222.46623pt too wide) in paragraph at lines 482--482
 []    \TU/lmtt/m/n/10.95 "k":"k0*T/((1+alpha*(T-T0))*T0):k0:T:alpha:T0"[] 
  []
 
 
-Overfull \hbox (9.5091pt too wide) in paragraph at lines 484--484
+Overfull \hbox (21.26004pt too wide) in paragraph at lines 484--484
 []\TU/lmtt/m/n/10.95 "Constantan_3":[] 
  []
 
 
-Overfull \hbox (72.74533pt too wide) in paragraph at lines 486--486
+Overfull \hbox (84.49628pt too wide) in paragraph at lines 486--486
 []    \TU/lmtt/m/n/10.95 "name":"Constantan_3",[] 
  []
 
 
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 487--487
+Overfull \hbox (27.00879pt too wide) in paragraph at lines 487--487
 []    \TU/lmtt/m/n/10.95 "alpha":"0",[] 
  []
 
 
-Overfull \hbox (9.5091pt too wide) in paragraph at lines 488--488
+Overfull \hbox (21.26004pt too wide) in paragraph at lines 488--488
 []    \TU/lmtt/m/n/10.95 "T0":"293",[] 
  []
 
 
-Overfull \hbox (55.49908pt too wide) in paragraph at lines 489--489
+Overfull \hbox (67.25003pt too wide) in paragraph at lines 489--489
 []    \TU/lmtt/m/n/10.95 "sigma0":"2.04e+3",[] 
  []
 
 
-Overfull \hbox (21.00659pt too wide) in paragraph at lines 490--490
+Overfull \hbox (32.75754pt too wide) in paragraph at lines 490--490
 []    \TU/lmtt/m/n/10.95 "k0":"0.019",[] 
  []
 
 
-Overfull \hbox (245.20778pt too wide) in paragraph at lines 491--491
+Overfull \hbox (256.95872pt too wide) in paragraph at lines 491--491
 []    \TU/lmtt/m/n/10.95 "sigma":"sigma0/(1+alpha*(T-T0)):sigma0:alpha:T:T0",[]
  
  []
 
 
-Overfull \hbox (210.71529pt too wide) in paragraph at lines 492--492
+Overfull \hbox (222.46623pt too wide) in paragraph at lines 492--492
 []    \TU/lmtt/m/n/10.95 "k":"k0*T/((1+alpha*(T-T0))*T0):k0:T:alpha:T0"[] 
  []
 
 
-Overfull \hbox (9.5091pt too wide) in paragraph at lines 494--494
+Overfull \hbox (21.26004pt too wide) in paragraph at lines 494--494
 []\TU/lmtt/m/n/10.95 "Constantan_4":[] 
  []
 
 
-Overfull \hbox (72.74533pt too wide) in paragraph at lines 496--496
+Overfull \hbox (84.49628pt too wide) in paragraph at lines 496--496
 []    \TU/lmtt/m/n/10.95 "name":"Constantan_4",[] 
  []
 
 
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 497--497
+Overfull \hbox (27.00879pt too wide) in paragraph at lines 497--497
 []    \TU/lmtt/m/n/10.95 "alpha":"0",[] 
  []
 
 
-Overfull \hbox (9.5091pt too wide) in paragraph at lines 498--498
+Overfull \hbox (21.26004pt too wide) in paragraph at lines 498--498
 []    \TU/lmtt/m/n/10.95 "T0":"293",[] 
  []
 
 
-Overfull \hbox (55.49908pt too wide) in paragraph at lines 499--499
+Overfull \hbox (67.25003pt too wide) in paragraph at lines 499--499
 []    \TU/lmtt/m/n/10.95 "sigma0":"2.04e+3",[] 
  []
 
 
-Overfull \hbox (21.00659pt too wide) in paragraph at lines 500--500
+Overfull \hbox (32.75754pt too wide) in paragraph at lines 500--500
 []    \TU/lmtt/m/n/10.95 "k0":"0.019",[] 
  []
 
 
-Overfull \hbox (245.20778pt too wide) in paragraph at lines 501--501
+Overfull \hbox (256.95872pt too wide) in paragraph at lines 501--501
 []    \TU/lmtt/m/n/10.95 "sigma":"sigma0/(1+alpha*(T-T0)):sigma0:alpha:T:T0",[]
  
  []
 
 
-Overfull \hbox (210.71529pt too wide) in paragraph at lines 502--502
+Overfull \hbox (222.46623pt too wide) in paragraph at lines 502--502
 []    \TU/lmtt/m/n/10.95 "k":"k0*T/((1+alpha*(T-T0))*T0):k0:T:alpha:T0"[] 
  []
 
 
-Overfull \hbox (9.5091pt too wide) in paragraph at lines 504--504
+Overfull \hbox (21.26004pt too wide) in paragraph at lines 504--504
 []\TU/lmtt/m/n/10.95 "Constantan_5":[] 
  []
 
@@ -1843,171 +1578,155 @@ Overfull \hbox (9.5091pt too wide) in paragraph at lines 504--504
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [7]
-Overfull \hbox (72.74533pt too wide) in paragraph at lines 506--506
+Overfull \hbox (84.49628pt too wide) in paragraph at lines 506--506
 []    \TU/lmtt/m/n/10.95 "name":"Constantan_5",[] 
  []
 
 
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 507--507
+Overfull \hbox (27.00879pt too wide) in paragraph at lines 507--507
 []    \TU/lmtt/m/n/10.95 "alpha":"0",[] 
  []
 
 
-Overfull \hbox (9.5091pt too wide) in paragraph at lines 508--508
+Overfull \hbox (21.26004pt too wide) in paragraph at lines 508--508
 []    \TU/lmtt/m/n/10.95 "T0":"293",[] 
  []
 
 
-Overfull \hbox (55.49908pt too wide) in paragraph at lines 509--509
+Overfull \hbox (67.25003pt too wide) in paragraph at lines 509--509
 []    \TU/lmtt/m/n/10.95 "sigma0":"2.04e+3",[] 
  []
 
 
-Overfull \hbox (21.00659pt too wide) in paragraph at lines 510--510
+Overfull \hbox (32.75754pt too wide) in paragraph at lines 510--510
 []    \TU/lmtt/m/n/10.95 "k0":"0.019",[] 
  []
 
 
-Overfull \hbox (245.20778pt too wide) in paragraph at lines 511--511
+Overfull \hbox (256.95872pt too wide) in paragraph at lines 511--511
 []    \TU/lmtt/m/n/10.95 "sigma":"sigma0/(1+alpha*(T-T0)):sigma0:alpha:T:T0",[]
  
  []
 
 
-Overfull \hbox (210.71529pt too wide) in paragraph at lines 512--512
+Overfull \hbox (222.46623pt too wide) in paragraph at lines 512--512
 []    \TU/lmtt/m/n/10.95 "k":"k0*T/((1+alpha*(T-T0))*T0):k0:T:alpha:T0"[] 
  []
 
 
-Overfull \hbox (9.5091pt too wide) in paragraph at lines 514--514
+Overfull \hbox (21.26004pt too wide) in paragraph at lines 514--514
 []\TU/lmtt/m/n/10.95 "Constantan_6":[] 
  []
 
 
-Overfull \hbox (72.74533pt too wide) in paragraph at lines 516--516
+Overfull \hbox (84.49628pt too wide) in paragraph at lines 516--516
 []    \TU/lmtt/m/n/10.95 "name":"Constantan_6",[] 
  []
 
 
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 517--517
+Overfull \hbox (27.00879pt too wide) in paragraph at lines 517--517
 []    \TU/lmtt/m/n/10.95 "alpha":"0",[] 
  []
 
 
-Overfull \hbox (9.5091pt too wide) in paragraph at lines 518--518
+Overfull \hbox (21.26004pt too wide) in paragraph at lines 518--518
 []    \TU/lmtt/m/n/10.95 "T0":"293",[] 
  []
 
 
-Overfull \hbox (55.49908pt too wide) in paragraph at lines 519--519
+Overfull \hbox (67.25003pt too wide) in paragraph at lines 519--519
 []    \TU/lmtt/m/n/10.95 "sigma0":"2.04e+3",[] 
  []
 
 
-Overfull \hbox (21.00659pt too wide) in paragraph at lines 520--520
+Overfull \hbox (32.75754pt too wide) in paragraph at lines 520--520
 []    \TU/lmtt/m/n/10.95 "k0":"0.019",[] 
  []
 
 
-Overfull \hbox (245.20778pt too wide) in paragraph at lines 521--521
+Overfull \hbox (256.95872pt too wide) in paragraph at lines 521--521
 []    \TU/lmtt/m/n/10.95 "sigma":"sigma0/(1+alpha*(T-T0)):sigma0:alpha:T:T0",[]
  
  []
 
 
-Overfull \hbox (210.71529pt too wide) in paragraph at lines 522--522
+Overfull \hbox (222.46623pt too wide) in paragraph at lines 522--522
 []    \TU/lmtt/m/n/10.95 "k":"k0*T/((1+alpha*(T-T0))*T0):k0:T:alpha:T0"[] 
  []
 
 
-Overfull \hbox (44.00159pt too wide) in paragraph at lines 529--529
+Overfull \hbox (55.75253pt too wide) in paragraph at lines 529--529
 []\TU/lmtt/m/n/10.95 "BoundaryConditions":[] 
  []
 
 
-Overfull \hbox (3.76035pt too wide) in paragraph at lines 533--533
+Overfull \hbox (4.0138pt too wide) in paragraph at lines 531--531
+[]\TU/lmtt/m/n/10.95 "potential":[] 
+ []
+
+
+Overfull \hbox (15.51129pt too wide) in paragraph at lines 533--533
 []  \TU/lmtt/m/n/10.95 "Dirichlet":[] 
  []
 
 
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 537--537
+Overfull \hbox (27.00879pt too wide) in paragraph at lines 537--537
 []    \TU/lmtt/m/n/10.95 "expr1":"0",[] 
  []
 
 
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 538--538
+Overfull \hbox (27.00879pt too wide) in paragraph at lines 538--538
 []    \TU/lmtt/m/n/10.95 "expr2":"A1"[] 
  []
 
 
-Overfull \hbox (26.75534pt too wide) in paragraph at lines 542--542
+Overfull \hbox (38.50629pt too wide) in paragraph at lines 542--542
 []    \TU/lmtt/m/n/10.95 "expr1":"0.1",[] 
  []
 
 
-Overfull \hbox (78.49408pt too wide) in paragraph at lines 543--543
+Overfull \hbox (90.24503pt too wide) in paragraph at lines 543--543
 []    \TU/lmtt/m/n/10.95 "expr2":"CurrentLead_1"[] 
  []
 
 
-Overfull \hbox (3.76035pt too wide) in paragraph at lines 547--547
+Overfull \hbox (15.51129pt too wide) in paragraph at lines 547--547
 []\TU/lmtt/m/n/10.95 "temperature":[] 
  []
 
-[8]
-Overfull \hbox (3.76035pt too wide) in paragraph at lines 549--549
+
+Overfull \hbox (15.51129pt too wide) in paragraph at lines 549--549
 []  \TU/lmtt/m/n/10.95 "Dirichlet":[] 
  []
 
-
-Overfull \hbox (26.75534pt too wide) in paragraph at lines 553--553
+[8]
+Overfull \hbox (38.50629pt too wide) in paragraph at lines 553--553
 []    \TU/lmtt/m/n/10.95 "expr1":"293",[] 
  []
 
 
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 554--554
+Overfull \hbox (27.00879pt too wide) in paragraph at lines 554--554
 []    \TU/lmtt/m/n/10.95 "expr2":"A1"[] 
  []
 
 
-Overfull \hbox (26.75534pt too wide) in paragraph at lines 558--558
+Overfull \hbox (38.50629pt too wide) in paragraph at lines 558--558
 []    \TU/lmtt/m/n/10.95 "expr1":"293",[] 
  []
 
 
-Overfull \hbox (78.49408pt too wide) in paragraph at lines 559--559
+Overfull \hbox (90.24503pt too wide) in paragraph at lines 559--559
 []    \TU/lmtt/m/n/10.95 "expr2":"CurrentLead_1"[] 
  []
 
 
-Overfull \hbox (3.76035pt too wide) in paragraph at lines 564--564
+Overfull \hbox (15.51129pt too wide) in paragraph at lines 564--564
 []\TU/lmtt/m/n/10.95 "PostProcess":[] 
  []
 
 
-Overfull \hbox (187.7203pt too wide) in paragraph at lines 566--566
+Overfull \hbox (199.47125pt too wide) in paragraph at lines 566--566
 []\TU/lmtt/m/n/10.95 "Fields":["temperature","potential","current"][] 
- []
-
-
-Overfull \hbox (9.5091pt too wide) in paragraph at lines 571--573
-[]\TU/lmtt/m/n/10.95 There is also a
- []
-
-
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 571--573
-\TU/lmtt/m/n/10.95 specific file to
- []
-
-
-Overfull \hbox (3.76035pt too wide) in paragraph at lines 571--573
-\TU/lmtt/m/n/10.95 study only one
- []
-
-
-Overfull \hbox (26.06277pt too wide) in paragraph at lines 571--573
-\TU/lmtt/m/n/10.95 plate, to be more precise on the temperature reach. We can u
-se here a nonlinear
  []
 
 [9]
@@ -2017,135 +1736,48 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: ./images/learning/thermoelectric/Potential.png Graphic file (type QTm)
 
 <use  "./images/learning/thermoelectric/Potential.png" >
-Overfull \hbox (3.61537pt too wide) in paragraph at lines 661--662
+Overfull \hbox (15.36632pt too wide) in paragraph at lines 661--662
  [][] 
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Overfull \hbox (24.14653pt too wide) in paragraph at lines 666--667
-[]\TU/lmtt/m/n/10.95 Therefore, we need a voltmeter which can be precise betwee
-n 0.01 and 0.15 Volt. 
- []
-
-
-Overfull \hbox (1.15154pt too wide) in paragraph at lines 669--673
-[]\TU/lmtt/m/n/10.95 Next, we want to control the temperature reached by the se
-nsor, the purpose
- []
-
-
-Overfull \hbox (14.56528pt too wide) in paragraph at lines 669--673
-\TU/lmtt/m/n/10.95 being not to destroy the sensor. The melting temperature of 
-the Constantan is
- []
-
-
-Overfull \hbox (64.38777pt too wide) in paragraph at lines 669--673
-\TU/lmtt/m/n/10.95 near 1500 K, but we want to stop well before reaching this p
-oint to avoid deformations
- []
-
-
-Overfull \hbox (66.30402pt too wide) in paragraph at lines 669--673
-\TU/lmtt/m/n/10.95 of the sensor. The main parameter that we can control is the
- heat transfer coefficient
- []
-
-
-Overfull \hbox (50.11102pt too wide) in paragraph at lines 669--673
-\TU/lmtt/b/n/10.95 h \TU/lmtt/m/n/10.95 ($\OML/cmm/m/it/10.95 W:m[]:K[]$\TU/lmt
-t/m/n/10.95 ). This coefficient \TU/lmtt/b/n/10.95 h \TU/lmtt/m/n/10.95 can be 
-control by displaying or not a ventilator
  []
 
 File: ./images/learning/thermoelectric/Temperature_Max.png Graphic file (type Q
 Tm)
 <use  "./images/learning/thermoelectric/Temperature_Max.png" >
-Overfull \hbox (220.42537pt too wide) in paragraph at lines 676--677
+Overfull \hbox (232.17632pt too wide) in paragraph at lines 676--677
  [][] 
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Overfull \hbox (6.90028pt too wide) in paragraph at lines 681--682
-[]\TU/lmtt/m/n/10.95 Here we see that in natural convection (h=15), the tempera
-ture reached is by
- []
-
+[11]
 File: ./images/learning/thermoelectric/Temperature_Max_Zoom2.png Graphic file (
 type QTm)
-<use  "./images/learning/thermoelectric/Temperature_Max_Zoom2.png" >
-Overfull \hbox (220.42537pt too wide) in paragraph at lines 685--686
+ <use  "./images/learning/thermoelectric/Temperature_Max_Zoom2.png" >
+Overfull \hbox (232.17632pt too wide) in paragraph at lines 685--686
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Overfull \hbox (12.64903pt too wide) in paragraph at lines 690--691
-[]\TU/lmtt/m/n/10.95 A heat transfer coefficient maximum allow to set a higher 
-current but is more
- []
-
-
-Overfull \hbox (2.94366pt too wide) in paragraph at lines 694--696
- \TU/lmr/m/n/10.95 2.2.2.\TU/lmr/m/it/10.95 Double Helix.[] \TU/lmtt/m/n/10.95 
-For this piece, the purpose is to see the elevation of the
- []
-
-
-Overfull \hbox (14.56528pt too wide) in paragraph at lines 694--696
-\TU/lmtt/m/n/10.95 temperature in the conductor around the double helix. We mod
-el a double helix
- []
 
 File: ./images/learning/thermoelectric/Double_Helix_Geometry.png Graphic file (
 type QTm)
-<use  "./images/learning/thermoelectric/Double_Helix_Geometry.png" >
+<use  "./images/learning/thermoelectric/Double_Helix_Geometry.png" > [12]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[11] [12] [13] [14] [15]
+[13] [14] [15]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [16]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [17]
 File: ./images/learning/thermoelectric/Double_Helix_temperature.png Graphic fil
 e (type QTm)
 
 <use  "./images/learning/thermoelectric/Double_Helix_temperature.png" >
-Overfull \hbox (220.42537pt too wide) in paragraph at lines 868--869
+Overfull \hbox (232.17632pt too wide) in paragraph at lines 868--869
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Overfull \hbox (5.84906pt too wide) in paragraph at lines 877--879
- \TU/lmr/m/n/10.95 2.3.\TU/lmr/bx/sc/10.95 Validity.[][] \TU/lmtt/m/n/10.95 In 
-this example, we approximate the magnet with an axisymmetric
- []
-
-
-Overfull \hbox (12.64903pt too wide) in paragraph at lines 877--879
-\TU/lmtt/m/n/10.95 copper torus.Thus we can consider only a quarter of this tor
-us for our study.
- []
-
-
-Overfull \hbox (24.14653pt too wide) in paragraph at lines 877--879
-\TU/lmtt/m/n/10.95 The torus is modeled thanks to the file geo, which also name
- the volume (omega)
- []
 
 File: ./images/learning/thermoelectric/quarter-turn3D.png Graphic file (type QT
 m)
@@ -2154,142 +1786,66 @@ m)
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (23.43478pt too wide) in paragraph at lines 888--889
- []\TU/lmr/m/n/10.95 Equations.[] \TU/lmtt/m/n/10.95 First of all, we start wit
-h the standard heat equation, with the heat
- []
+Underfull \vbox (badness 1609) has occurred while \output is active []
 
-
-Overfull \hbox (30.79636pt too wide) in paragraph at lines 896--897
-[]\TU/lmtt/m/n/10.95 Coefficients $\OML/cmm/m/it/10.95 ^^[$ \TU/lmtt/m/n/10.95 
-and k are in fact, temperature-dependent, shown in this equations
- []
-
-
-Overfull \hbox (32.1707pt too wide) in paragraph at lines 908--910
-[]\TU/lmtt/m/n/10.95 But, for the next, we consider that $\OML/cmm/m/it/10.95 ^
-^K \OT1/cmr/m/n/10.95 = 0$ \TU/lmtt/m/n/10.95 and T=T$[][]$. Thereby, we are in
- a linear
- []
-
-
-Overfull \hbox (29.89528pt too wide) in paragraph at lines 908--910
-\TU/lmtt/m/n/10.95 problem that we can solve with the thermoelectric-linear mod
-el in the Json file. 
- []
-
-
-Overfull \hbox (13.62701pt too wide) in paragraph at lines 912--914
-[]\TU/lmtt/m/n/10.95 In our case, we consider that T only depends on the radius
-, so $[] \OT1/cmr/m/n/10.95 = 0$\TU/lmtt/m/n/10.95 . We can
- []
-
-[18]
-Overfull \hbox (18.39778pt too wide) in paragraph at lines 921--922
-[]\TU/lmtt/m/n/10.95 The constants A and B are determined by the boundary condi
-tions (Dirichlet and
- []
-
-[19]
-Overfull \hbox (46.07806pt too wide) in paragraph at lines 955--968
+ [17]
+[18] [19]
+Overfull \hbox (25.30063pt too wide) in paragraph at lines 955--968
  [] 
  []
 
-[20]
 File: ./images/learning/thermoelectric/Temperature_paraview.png Graphic file (t
 ype QTm)
- <use  "./images/learning/thermoelectric/Temperature_paraview.png" >
+<use  "./images/learning/thermoelectric/Temperature_paraview.png" >
 
 Package wrapfig Warning: Collision between wrapping environments on input line 
 998.
 
 File: ./images/learning/thermoelectric/TemperatureTH.png Graphic file (type QTm
 )
-<use  "./images/learning/thermoelectric/TemperatureTH.png" >
-Overfull \hbox (12.1809pt too wide) in paragraph at lines 1004--1007
-[] []\TU/lmr/m/n/10.95 Results.[] \TU/lmtt/m/n/10.95 We can vary
+<use  "./images/learning/thermoelectric/TemperatureTH.png" > [20]
+Underfull \hbox (badness 3780) in paragraph at lines 1004--1007
+[] []\TU/lmr/m/n/10.95 Results.[] We can
  []
 
 
-Overfull \hbox (2.9391pt too wide) in paragraph at lines 1004--1007
-\TU/lmtt/m/n/10.95 the degree of the
+Underfull \hbox (badness 1694) in paragraph at lines 1004--1007
+\TU/lmr/m/n/10.95 vary the degree
  []
 
 
-Overfull \hbox (14.4366pt too wide) in paragraph at lines 1004--1007
-\TU/lmtt/m/n/10.95 finite element from
+Underfull \hbox (badness 1264) in paragraph at lines 1004--1007
+\TU/lmr/m/n/10.95 ear) to 2 (qua-
  []
 
 
-Overfull \hbox (66.17534pt too wide) in paragraph at lines 1004--1007
-\TU/lmtt/m/n/10.95 1 (linear) to 2 (quadratic). 
+Underfull \hbox (badness 5064) in paragraph at lines 1004--1007
+\TU/lmr/m/n/10.95 the theory, we
  []
 
 
-Overfull \hbox (43.18034pt too wide) in paragraph at lines 1004--1007
-\TU/lmtt/m/n/10.95 To prove the convergence
+Underfull \hbox (badness 4899) in paragraph at lines 1004--1007
+\TU/lmr/m/n/10.95 plot the differ-
  []
 
 
-Overfull \hbox (14.4366pt too wide) in paragraph at lines 1004--1007
-\TU/lmtt/m/n/10.95 towards the theory,
+Overfull \hbox (11.14874pt too wide) in paragraph at lines 1004--1007
+\TU/lmr/m/n/10.95 ence between L$[][]$/H$[][]$
  []
 
 
-Overfull \hbox (31.68285pt too wide) in paragraph at lines 1004--1007
-\TU/lmtt/m/n/10.95 we plot the difference
+Underfull \hbox (badness 2707) in paragraph at lines 1004--1007
+\TU/lmr/m/n/10.95 T and V. The
  []
 
 
-Overfull \hbox (43.18034pt too wide) in paragraph at lines 1004--1007
-\TU/lmtt/m/n/10.95 the theoretical formulas
+Underfull \hbox (badness 1776) in paragraph at lines 1004--1007
+\TU/lmr/m/n/10.95 mic, to see di-
  []
 
 
-Overfull \hbox (31.68285pt too wide) in paragraph at lines 1004--1007
-\TU/lmtt/m/n/10.95 for T and V. The scale
- []
-
-
-Overfull \hbox (8.68785pt too wide) in paragraph at lines 1004--1007
-\TU/lmtt/m/n/10.95 is logarithmic, to
- []
-
-
-Overfull \hbox (31.68285pt too wide) in paragraph at lines 1004--1007
-\TU/lmtt/m/n/10.95 see directly the slope
- []
-
-
-Overfull \hbox (14.4366pt too wide) in paragraph at lines 1004--1007
-\TU/lmtt/m/n/10.95 and note that it is
- []
-
-
-Overfull \hbox (8.68785pt too wide) in paragraph at lines 1004--1007
-\TU/lmtt/m/n/10.95 directly linked to
- []
-
-
-Overfull \hbox (2.9391pt too wide) in paragraph at lines 1004--1007
-\TU/lmtt/m/n/10.95 the degree of the
- []
-
-
-Overfull \hbox (20.18535pt too wide) in paragraph at lines 1004--1007
-\TU/lmtt/m/n/10.95 finite element used. 
- []
-
-[21]
-Overfull \hbox (3.12814pt too wide) in paragraph at lines 1025--1026
-[]\TU/lmtt/m/n/10.95 For L2, we have directly the output on the table obtained 
-whether for
- []
-
-
-Overfull \hbox (3.12814pt too wide) in paragraph at lines 1027--1028
-[]\TU/lmtt/m/n/10.95 For H1, we need to do a quadratical mean between the H1 an
-d L2 of the
+Underfull \hbox (badness 1681) in paragraph at lines 1004--1007
+\TU/lmr/m/n/10.95 rectly the slope
  []
 
 File: ./images/learning/thermoelectric/L2V.png Graphic file (type QTm)
@@ -2300,2732 +1856,732 @@ Package wrapfig Warning: Collision between wrapping environments on input line
 
 File: ./images/learning/thermoelectric/H1V.png Graphic file (type QTm)
 <use  "./images/learning/thermoelectric/H1V.png" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [21]
 
 Package wrapfig Warning: Collision between wrapping environments on input line 
 1044.
 
 File: ./images/learning/thermoelectric/L2T.png Graphic file (type QTm)
-<use  "./images/learning/thermoelectric/L2T.png" > [22]
+<use  "./images/learning/thermoelectric/L2T.png" >
 
 Package wrapfig Warning: Collision between wrapping environments on input line 
 1050.
 
 File: ./images/learning/thermoelectric/H1T.png Graphic file (type QTm)
 <use  "./images/learning/thermoelectric/H1T.png" >
-Overfull \hbox (71.68318pt too wide) in paragraph at lines 1057--1058
-[] []\TU/lmr/m/n/10.95 Code.[] \TU/lmtt/m/n/10.95 For the modelisation
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [22]
+Overfull \hbox (6.8827pt too wide) in paragraph at lines 1057--1058
+\TU/lmr/m/n/10.95 modelisation of
  []
 
 
-Overfull \hbox (3.76035pt too wide) in paragraph at lines 1057--1058
-\TU/lmtt/m/n/10.95 of the quarter
+Overfull \hbox (10.33197pt too wide) in paragraph at lines 1057--1058
+\TU/lmr/m/n/10.95 mesh on \TU/lmtt/m/n/10.95 Salome
  []
 
 
-Overfull \hbox (32.50409pt too wide) in paragraph at lines 1057--1058
-\TU/lmtt/m/n/10.95 of torus, we create
+Overfull \hbox (3.81671pt too wide) in paragraph at lines 1057--1058
+\TU/lmr/m/n/10.95 and export the
  []
 
 
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 1057--1058
-\TU/lmtt/m/n/10.95 the geometry and
- []
-
-
-Overfull \hbox (26.75534pt too wide) in paragraph at lines 1057--1058
-\TU/lmtt/m/n/10.95 the mesh on Salome
- []
-
-
-Overfull \hbox (3.76035pt too wide) in paragraph at lines 1057--1058
-\TU/lmtt/m/n/10.95 and export the
- []
-
-[23]
-Overfull \hbox (44.00159pt too wide) in paragraph at lines 1061--1061
+Overfull \hbox (55.75253pt too wide) in paragraph at lines 1061--1061
 []\TU/lmtt/m/n/10.95 // Define Main params[] 
  []
 
 
-Overfull \hbox (3.76035pt too wide) in paragraph at lines 1064--1064
+Overfull \hbox (9.76254pt too wide) in paragraph at lines 1062--1062
+[]\TU/lmtt/m/n/10.95 Unit = 1.e-3;[] 
+ []
+
+
+Overfull \hbox (4.0138pt too wide) in paragraph at lines 1063--1063
+[]\TU/lmtt/m/n/10.95 lc = 1*Unit;[] 
+ []
+
+
+Overfull \hbox (15.51129pt too wide) in paragraph at lines 1064--1064
 []\TU/lmtt/m/n/10.95 lc_ext = 3*lc;[] 
  []
 
 
-Overfull \hbox (3.76035pt too wide) in paragraph at lines 1065--1065
+Overfull \hbox (15.51129pt too wide) in paragraph at lines 1065--1065
 []\TU/lmtt/m/n/10.95 lc_inf = 1*lc;[] 
  []
 
 
-Overfull \hbox (49.75034pt too wide) in paragraph at lines 1074--1074
+Overfull \hbox (61.50128pt too wide) in paragraph at lines 1074--1074
 []\TU/lmtt/m/n/10.95 Mesh.ElementOrder = 1;[] 
  []
 
 
-Overfull \hbox (66.99658pt too wide) in paragraph at lines 1075--1075
+Overfull \hbox (78.74753pt too wide) in paragraph at lines 1075--1075
 []\TU/lmtt/m/n/10.95 Point(1) = {0, 0, -L, h};[] 
  []
 
 
-Overfull \hbox (72.74533pt too wide) in paragraph at lines 1076--1076
+Overfull \hbox (84.49628pt too wide) in paragraph at lines 1076--1076
 []\TU/lmtt/m/n/10.95 Point(2) = {r1, 0, -L, h};[] 
  []
 
 
-Overfull \hbox (72.74533pt too wide) in paragraph at lines 1077--1077
+Overfull \hbox (84.49628pt too wide) in paragraph at lines 1077--1077
 []\TU/lmtt/m/n/10.95 Point(3) = {r2, 0, -L, h};[] 
  []
 
 
-Overfull \hbox (72.74533pt too wide) in paragraph at lines 1078--1078
+Underfull \vbox (badness 2197) has occurred while \output is active []
+
+ [23]
+Overfull \hbox (84.49628pt too wide) in paragraph at lines 1078--1078
 []\TU/lmtt/m/n/10.95 Point(4) = {0, r1, -L, h};[] 
  []
 
 
-Overfull \hbox (72.74533pt too wide) in paragraph at lines 1079--1079
+Overfull \hbox (84.49628pt too wide) in paragraph at lines 1079--1079
 []\TU/lmtt/m/n/10.95 Point(5) = {0, r2, -L, h};[] 
  []
 
 
-Overfull \hbox (49.75034pt too wide) in paragraph at lines 1080--1080
+Overfull \hbox (61.50128pt too wide) in paragraph at lines 1080--1080
 []\TU/lmtt/m/n/10.95 Circle(1) = {2, 1, 4};[] 
  []
 
 
-Overfull \hbox (49.75034pt too wide) in paragraph at lines 1081--1081
+Overfull \hbox (61.50128pt too wide) in paragraph at lines 1081--1081
 []\TU/lmtt/m/n/10.95 Circle(2) = {3, 1, 5};[] 
  []
 
 
-Overfull \hbox (21.00659pt too wide) in paragraph at lines 1082--1082
+Overfull \hbox (32.75754pt too wide) in paragraph at lines 1082--1082
 []\TU/lmtt/m/n/10.95 Line(3) = {4, 5};[] 
  []
 
 
-Overfull \hbox (21.00659pt too wide) in paragraph at lines 1083--1083
+Overfull \hbox (32.75754pt too wide) in paragraph at lines 1083--1083
 []\TU/lmtt/m/n/10.95 Line(4) = {2, 3};[] 
  []
 
 
-Overfull \hbox (95.74033pt too wide) in paragraph at lines 1084--1084
+Overfull \hbox (107.49127pt too wide) in paragraph at lines 1084--1084
 []\TU/lmtt/m/n/10.95 Line Loop(5) = {3, -2, -4, 1};[] 
  []
 
 
-Overfull \hbox (55.49908pt too wide) in paragraph at lines 1085--1085
+Overfull \hbox (67.25003pt too wide) in paragraph at lines 1085--1085
 []\TU/lmtt/m/n/10.95 Plane Surface(1) = {5};[] 
  []
 
 
-Overfull \hbox (141.73032pt too wide) in paragraph at lines 1087--1087
+Overfull \hbox (153.48126pt too wide) in paragraph at lines 1087--1087
 []\TU/lmtt/m/n/10.95 out[] = Extrude {0,0,L} {Surface{1};};[] 
  []
 
 
-Overfull \hbox (130.23282pt too wide) in paragraph at lines 1089--1089
+Overfull \hbox (141.98376pt too wide) in paragraph at lines 1089--1089
 []\TU/lmtt/m/n/10.95 Physical Volume("omega") = {out[1]};[] 
  []
 
 
-Overfull \hbox (124.48407pt too wide) in paragraph at lines 1090--1090
+Overfull \hbox (136.23502pt too wide) in paragraph at lines 1090--1090
 []\TU/lmtt/m/n/10.95 Physical Surface("top") = {out[0]};[] 
  []
 
 
-Overfull \hbox (112.98657pt too wide) in paragraph at lines 1091--1091
+Overfull \hbox (124.73752pt too wide) in paragraph at lines 1091--1091
 []\TU/lmtt/m/n/10.95 Physical Surface("bottom") = {1};[] 
  []
 
 
-Overfull \hbox (130.23282pt too wide) in paragraph at lines 1092--1092
+Overfull \hbox (141.98376pt too wide) in paragraph at lines 1092--1092
 []\TU/lmtt/m/n/10.95 Physical Surface("Rint") = {out[5]};[] 
  []
 
 
-Overfull \hbox (130.23282pt too wide) in paragraph at lines 1093--1093
+Overfull \hbox (141.98376pt too wide) in paragraph at lines 1093--1093
 []\TU/lmtt/m/n/10.95 Physical Surface("Rext") = {out[3]};[] 
  []
 
 
-Overfull \hbox (118.73532pt too wide) in paragraph at lines 1094--1094
+Overfull \hbox (130.48627pt too wide) in paragraph at lines 1094--1094
 []\TU/lmtt/m/n/10.95 Physical Surface("in") = {out[2]};[] 
  []
 
 
-Overfull \hbox (124.48407pt too wide) in paragraph at lines 1095--1095
+Overfull \hbox (136.23502pt too wide) in paragraph at lines 1095--1095
 []\TU/lmtt/m/n/10.95 Physical Surface("out") = {out[4]};[] 
  []
 
 
-Overfull \hbox (9.5091pt too wide) in paragraph at lines 1098--1099
-[]\TU/lmtt/m/n/10.95 Next step is to
+Underfull \hbox (badness 5475) in paragraph at lines 1098--1099
+\TU/lmr/m/n/10.95 to create a
  []
 
 
-Overfull \hbox (26.75534pt too wide) in paragraph at lines 1098--1099
-\TU/lmtt/m/n/10.95 create a file.json
+Overfull \hbox (1.4077pt too wide) in paragraph at lines 1098--1099
+\TU/lmr/m/n/10.95 file.json which
  []
 
 
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 1098--1099
-\TU/lmtt/m/n/10.95 which define the
+Overfull \hbox (11.98541pt too wide) in paragraph at lines 1098--1099
+\TU/lmr/m/n/10.95 define the model
  []
 
 
-Overfull \hbox (26.75534pt too wide) in paragraph at lines 1098--1099
-\TU/lmtt/m/n/10.95 model we will use,
+Underfull \hbox (badness 1975) in paragraph at lines 1098--1099
+\TU/lmr/m/n/10.95 we will use,
  []
 
 
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 1098--1099
-\TU/lmtt/m/n/10.95 the material and
+Underfull \hbox (badness 4608) in paragraph at lines 1098--1099
+\TU/lmr/m/n/10.95 the material
  []
 
 
-Overfull \hbox (38.25284pt too wide) in paragraph at lines 1098--1099
-\TU/lmtt/m/n/10.95 sets the conditions. 
- []
-
-[24]
-Overfull \hbox (89.99158pt too wide) in paragraph at lines 1103--1103
+Overfull \hbox (101.74252pt too wide) in paragraph at lines 1103--1103
 []    \TU/lmtt/m/n/10.95 "Name": "ThermoElectric",[] 
  []
 
 
-Overfull \hbox (44.00159pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (55.75253pt too wide) in paragraph at lines 1104--1104
 []    \TU/lmtt/m/n/10.95 "ShortName":"TE",[] 
  []
 
 
-Overfull \hbox (130.23282pt too wide) in paragraph at lines 1105--1105
+Overfull \hbox (141.98376pt too wide) in paragraph at lines 1105--1105
 []    \TU/lmtt/m/n/10.95 "Model":"thermoelectric-linear",[] 
  []
 
 
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 1107--1107
+Overfull \hbox (27.00879pt too wide) in paragraph at lines 1107--1107
 []    \TU/lmtt/m/n/10.95 "Materials":[] 
  []
 
 
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 1109--1109
+Overfull \hbox (27.00879pt too wide) in paragraph at lines 1109--1109
 []        \TU/lmtt/m/n/10.95 "omega":[] 
  []
 
 
-Overfull \hbox (84.24283pt too wide) in paragraph at lines 1111--1111
+Overfull \hbox (95.99377pt too wide) in paragraph at lines 1111--1111
 []            \TU/lmtt/m/n/10.95 "name":"copper",[] 
  []
 
 
-Overfull \hbox (95.74033pt too wide) in paragraph at lines 1112--1112
+Overfull \hbox (107.49127pt too wide) in paragraph at lines 1112--1112
 []            \TU/lmtt/m/n/10.95 "alpha":"3.35e-3",[] 
  []
 
 
-Overfull \hbox (55.49908pt too wide) in paragraph at lines 1113--1113
+Overfull \hbox (67.25003pt too wide) in paragraph at lines 1113--1113
 []            \TU/lmtt/m/n/10.95 "T0":"293",[] 
  []
 
 
-Overfull \hbox (89.99158pt too wide) in paragraph at lines 1114--1114
+Overfull \hbox (101.74252pt too wide) in paragraph at lines 1114--1114
 []            \TU/lmtt/m/n/10.95 "sigma0":"58e+3",[] 
  []
 
 
-Overfull \hbox (61.24783pt too wide) in paragraph at lines 1115--1115
+Overfull \hbox (72.99878pt too wide) in paragraph at lines 1115--1115
 []            \TU/lmtt/m/n/10.95 "k0":"0.38",[] 
  []
 
 
-Overfull \hbox (291.19777pt too wide) in paragraph at lines 1116--1116
+Overfull \hbox (302.94872pt too wide) in paragraph at lines 1116--1116
 []            \TU/lmtt/m/n/10.95 "sigma":"sigma0/(1+alpha*(T-T0)):sigma0:alpha:
 T:T0",[] 
  []
 
 
-Overfull \hbox (256.70528pt too wide) in paragraph at lines 1117--1117
+Overfull \hbox (268.45622pt too wide) in paragraph at lines 1117--1117
 []            \TU/lmtt/m/n/10.95 "k":"k0*T/((1+alpha*(T-T0))*T0):k0:T:alpha:T0"
 [] 
  []
 
-
-Overfull \hbox (66.99658pt too wide) in paragraph at lines 1120--1120
+[24]
+Overfull \hbox (78.74753pt too wide) in paragraph at lines 1120--1120
 []    \TU/lmtt/m/n/10.95 "BoundaryConditions":[] 
  []
 
 
-Overfull \hbox (38.25284pt too wide) in paragraph at lines 1122--1122
+Overfull \hbox (50.00378pt too wide) in paragraph at lines 1122--1122
 []        \TU/lmtt/m/n/10.95 "potential":[] 
  []
 
 
-Overfull \hbox (61.24783pt too wide) in paragraph at lines 1124--1124
+Overfull \hbox (72.99878pt too wide) in paragraph at lines 1124--1124
 []            \TU/lmtt/m/n/10.95 "Dirichlet":[] 
  []
 
 
-Overfull \hbox (44.00159pt too wide) in paragraph at lines 1126--1126
+Overfull \hbox (9.76254pt too wide) in paragraph at lines 1125--1125
+[]            \TU/lmtt/m/n/10.95 {[] 
+ []
+
+
+Overfull \hbox (55.75253pt too wide) in paragraph at lines 1126--1126
 []                \TU/lmtt/m/n/10.95 "in":[] 
  []
 
 
-Overfull \hbox (21.00659pt too wide) in paragraph at lines 1127--1127
+Overfull \hbox (32.75754pt too wide) in paragraph at lines 1127--1127
 []                \TU/lmtt/m/n/10.95 {[] 
  []
 
 
-Overfull \hbox (107.23782pt too wide) in paragraph at lines 1128--1128
+Overfull \hbox (118.98877pt too wide) in paragraph at lines 1128--1128
 []                    \TU/lmtt/m/n/10.95 "expr1":"0",[] 
  []
 
 
-Overfull \hbox (32.50409pt too wide) in paragraph at lines 1129--1129
+Overfull \hbox (44.25504pt too wide) in paragraph at lines 1129--1129
 []    \TU/lmtt/m/n/10.95 "expr2":"omega"[] 
  []
 
 
-Overfull \hbox (26.75534pt too wide) in paragraph at lines 1130--1130
+Overfull \hbox (38.50629pt too wide) in paragraph at lines 1130--1130
 []                \TU/lmtt/m/n/10.95 },[] 
  []
 
 
-Overfull \hbox (49.75034pt too wide) in paragraph at lines 1131--1131
+Overfull \hbox (61.50128pt too wide) in paragraph at lines 1131--1131
 []                \TU/lmtt/m/n/10.95 "out":[] 
  []
 
 
-Overfull \hbox (21.00659pt too wide) in paragraph at lines 1132--1132
+Overfull \hbox (32.75754pt too wide) in paragraph at lines 1132--1132
 []                \TU/lmtt/m/n/10.95 {[] 
  []
 
 
-Overfull \hbox (383.17776pt too wide) in paragraph at lines 1133--1133
-[]                    \TU/lmtt/m/n/10.95 "expr1":"0.3/4.", // since we consider
- only 1/4th of a torus[] 
+Overfull \hbox (423.67245pt too wide) in paragraph at lines 1133--1133
+[]                    \TU/lmtt/m/n/10.95 "expr1":"0.3/4.", //since we only cons
+ider a quarter of the torus[] 
  []
 
 
-Overfull \hbox (32.50409pt too wide) in paragraph at lines 1134--1134
+Overfull \hbox (44.25504pt too wide) in paragraph at lines 1134--1134
 []    \TU/lmtt/m/n/10.95 "expr2":"omega"[] 
  []
 
 
-Overfull \hbox (21.00659pt too wide) in paragraph at lines 1135--1135
+Overfull \hbox (32.75754pt too wide) in paragraph at lines 1135--1135
 []                \TU/lmtt/m/n/10.95 }[] 
  []
 
 
-Overfull \hbox (49.75034pt too wide) in paragraph at lines 1137--1137
+Overfull \hbox (61.50128pt too wide) in paragraph at lines 1137--1137
 []        \TU/lmtt/m/n/10.95 "temperature":[] 
  []
 
 
-Overfull \hbox (38.25284pt too wide) in paragraph at lines 1139--1139
+Overfull \hbox (50.00378pt too wide) in paragraph at lines 1139--1139
 []            \TU/lmtt/m/n/10.95 "Robin":[] 
  []
 
 
-Overfull \hbox (55.49908pt too wide) in paragraph at lines 1141--1141
+Overfull \hbox (9.76254pt too wide) in paragraph at lines 1140--1140
+[]            \TU/lmtt/m/n/10.95 {[] 
+ []
+
+
+Overfull \hbox (67.25003pt too wide) in paragraph at lines 1141--1141
 []                \TU/lmtt/m/n/10.95 "Rext":[] 
  []
 
-[25]
-Overfull \hbox (21.00659pt too wide) in paragraph at lines 1142--1142
+
+Overfull \hbox (32.75754pt too wide) in paragraph at lines 1142--1142
 []                \TU/lmtt/m/n/10.95 {[] 
  []
 
 
-Overfull \hbox (124.48407pt too wide) in paragraph at lines 1143--1143
+Overfull \hbox (136.23502pt too wide) in paragraph at lines 1143--1143
 []                    \TU/lmtt/m/n/10.95 "expr1":"0.08",[] 
  []
 
 
-Overfull \hbox (112.98657pt too wide) in paragraph at lines 1144--1144
+Overfull \hbox (124.73752pt too wide) in paragraph at lines 1144--1144
 []                    \TU/lmtt/m/n/10.95 "expr2":"293"[] 
  []
 
 
-Overfull \hbox (26.75534pt too wide) in paragraph at lines 1145--1145
+Overfull \hbox (38.50629pt too wide) in paragraph at lines 1145--1145
 []                \TU/lmtt/m/n/10.95 },[] 
  []
 
 
-Overfull \hbox (55.49908pt too wide) in paragraph at lines 1146--1146
+Overfull \hbox (67.25003pt too wide) in paragraph at lines 1146--1146
 []                \TU/lmtt/m/n/10.95 "Rint":[] 
  []
 
 
-Overfull \hbox (21.00659pt too wide) in paragraph at lines 1147--1147
+Overfull \hbox (32.75754pt too wide) in paragraph at lines 1147--1147
 []                \TU/lmtt/m/n/10.95 {[] 
  []
 
 
-Overfull \hbox (170.47404pt too wide) in paragraph at lines 1148--1148
+Overfull \hbox (182.22499pt too wide) in paragraph at lines 1148--1148
 []                    \TU/lmtt/m/n/10.95 "expr1":"0.08*(2./1.)",[] 
  []
 
 
-Overfull \hbox (112.98657pt too wide) in paragraph at lines 1149--1149
+Overfull \hbox (124.73752pt too wide) in paragraph at lines 1149--1149
 []                    \TU/lmtt/m/n/10.95 "expr2":"293"[] 
  []
 
 
-Overfull \hbox (21.00659pt too wide) in paragraph at lines 1150--1150
+Overfull \hbox (32.75754pt too wide) in paragraph at lines 1150--1150
 []                \TU/lmtt/m/n/10.95 }[] 
  []
 
 
-Overfull \hbox (26.75534pt too wide) in paragraph at lines 1154--1154
+Overfull \hbox (9.76254pt too wide) in paragraph at lines 1151--1151
+[]            \TU/lmtt/m/n/10.95 }[] 
+ []
+
+
+Overfull \hbox (38.50629pt too wide) in paragraph at lines 1154--1154
 []    \TU/lmtt/m/n/10.95 "PostProcess":[] 
  []
 
 
-Overfull \hbox (233.7103pt too wide) in paragraph at lines 1156--1156
+Overfull \hbox (245.46124pt too wide) in paragraph at lines 1156--1156
 []        \TU/lmtt/m/n/10.95 "Fields":["temperature","potential","current"][] 
  []
 
 
-Overfull \hbox (21.00659pt too wide) in paragraph at lines 1161--1162
-[]\TU/lmtt/m/n/10.95 Lastly, we create
+Overfull \hbox (2.1107pt too wide) in paragraph at lines 1161--1162
+[]\TU/lmr/m/n/10.95 Lastly, we cre-
  []
 
-
-Overfull \hbox (55.49908pt too wide) in paragraph at lines 1161--1162
-\TU/lmtt/m/n/10.95 a file.cfg to configure
- []
-
-
-Overfull \hbox (55.49908pt too wide) in paragraph at lines 1161--1162
-\TU/lmtt/m/n/10.95 what we will calculate. 
- []
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.1164 ...3D_V1T1_N1_cvg.cfg (for the T1V1 model)}
-                                                  }\vspace{-1\baselineskip}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Extra }, or forgotten $.
-l.1164 ...D_V1T1_N1_cvg.cfg (for the T1V1 model)}}
-                                                  \vspace{-1\baselineskip}
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.1165 \begin{verbatim}
-                       
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing \endgroup inserted.
-<inserted text> 
-                \endgroup 
-l.1165 \begin{verbatim}
-                       
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing \endgroup inserted.
-<inserted text> 
-                \endgroup 
-l.1165 \begin{verbatim}
-                       
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
-Overfull \hbox (189.9654pt too wide) in paragraph at lines 1164--1165
-[]\TU/lmr/bx/sc/10.95 thermoelectric$[]\OML/cmm/m/it/10.95 D[]\OT1/cmr/m/n/10.9
-5 1\OML/cmm/m/it/10.95 T\OT1/cmr/m/n/10.95 1[]1[]\OML/cmm/m/it/10.95 vg:cfg\OT1
-/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 fortheT\OT1/cmr/m/n/10.95 1\OML/cmm/m/it/10
-.95 V\OT1/cmr/m/n/10.95 1\OML/cmm/m/it/10.95 model\OT1/cmr/m/n/10.95 )$ 
- []
-
-
-Overfull \hbox (72.74533pt too wide) in paragraph at lines 1167--1167
-[]\TU/lmtt/m/n/10.95 geofile=quarter-turn3D.geo[] 
- []
-
-
-Overfull \hbox (38.25284pt too wide) in paragraph at lines 1168--1168
-[]\TU/lmtt/m/n/10.95 geofile-path=$cfgdir[] 
- []
-
-
-Overfull \hbox (3.76035pt too wide) in paragraph at lines 1169--1169
-[]\TU/lmtt/m/n/10.95 gmsh.hsize=0.2[] 
- []
-
-
-Overfull \hbox (49.75032pt too wide) in paragraph at lines 1171--1171
-[]\TU/lmtt/m/n/10.95 conductor_volume=omega[] 
- []
-
-
-Overfull \hbox (89.99158pt too wide) in paragraph at lines 1178--1178
-[]\TU/lmtt/m/n/10.95 f=0.3*atan2(x,y)/(2*pi):x:y:z[] 
- []
-
-
-Overfull \hbox (365.93152pt too wide) in paragraph at lines 1180--1180
+[25]
+Overfull \hbox (24.39998pt too wide) in paragraph at lines 1180--1180
 []\TU/lmtt/m/n/10.95 g=600.312-58.e+3/(2*0.38)*(0.3/(2*pi))^2*log(sqrt(x*x+y*y)
 /sqrt(1*2))^2:x:y:z[] 
  []
 
 
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 1182--1182
-[]\TU/lmtt/m/n/10.95 [thermoelectric][] 
- []
-
-
-Overfull \hbox (141.7303pt too wide) in paragraph at lines 1183--1183
-[]\TU/lmtt/m/n/10.95 model_json=$cfgdir/quarter-turn3D.json[] 
- []
-
-[26]
-Overfull \hbox (21.00659pt too wide) in paragraph at lines 1188--1188
-[]\TU/lmtt/m/n/10.95 #ksp-monitor=true[] 
- []
-
-
-Overfull \hbox (3.76035pt too wide) in paragraph at lines 1191--1191
-[]\TU/lmtt/m/n/10.95 ksp-maxit=2000[] 
- []
-
-
-Overfull \hbox (101.48907pt too wide) in paragraph at lines 1192--1192
-[]\TU/lmtt/m/n/10.95 ksp-use-initial-guess-nonzero=1[] 
- []
-
-
-Overfull \hbox (21.00659pt too wide) in paragraph at lines 1196--1196
-[]\TU/lmtt/m/n/10.95 #ksp-monitor=true[] 
- []
-
-
-Overfull \hbox (101.48907pt too wide) in paragraph at lines 1199--1199
-[]\TU/lmtt/m/n/10.95 ksp-use-initial-guess-nonzero=1[] 
- []
-
-
-Overfull \hbox (3.76035pt too wide) in paragraph at lines 1200--1200
-[]\TU/lmtt/m/n/10.95 \end{verbatim}[] 
- []
-
-
-Overfull \hbox (216.46405pt too wide) in paragraph at lines 1202--1202
-[]\TU/lmtt/m/n/10.95 Finally, to execute our program, run this command :[] 
- []
-
-
-Overfull \hbox (233.7103pt too wide) in paragraph at lines 1205--1205
-[]\TU/lmtt/m/n/10.95 {\bf to study the convergence}\vspace{-1\baselineskip}[] 
- []
-
-
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 1206--1206
-[]\TU/lmtt/m/n/10.95 \begin{verbatim}[] 
- []
-
-
-Overfull \hbox (475.15775pt too wide) in paragraph at lines 1207--1207
+Overfull \hbox (133.6262pt too wide) in paragraph at lines 1207--1207
 []\TU/lmtt/m/n/10.95 mpirun -np 4 feelpp_test_convergence_3D_V1T1_N1  --config-
 file thermoelectric_3D_V1T1_N1_cvg.cfg[] 
  []
 
 
-Overfull \hbox (3.76035pt too wide) in paragraph at lines 1208--1208
-[]\TU/lmtt/m/n/10.95 \end{verbatim}[] 
- []
-
-
-Overfull \hbox (854.57516pt too wide) in paragraph at lines 1210--1210
-[]\TU/lmtt/m/n/10.95 It will create a table with all the informations you need.
- For our example, we showed the convergence using L2 and H1 (in section \hyperl
-ink{x-results}{Results}).[] 
- []
-
-
-Overfull \hbox (342.93652pt too wide) in paragraph at lines 1213--1213
-[]\TU/lmtt/m/n/10.95 {\bf to apply for a real case (theory not known)}\vspace{-
-1\baselineskip}[] 
- []
-
-
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 1214--1214
-[]\TU/lmtt/m/n/10.95 \begin{verbatim}[] 
- []
-
-
-Overfull \hbox (515.39897pt too wide) in paragraph at lines 1215--1215
+Overfull \hbox (173.86743pt too wide) in paragraph at lines 1215--1215
 []\TU/lmtt/m/n/10.95 mpirun -np 4 feelpp_hfm_thermoelectric_model_3D_V1T1_N1 --
 config-file thermoelectric_3D_V1T1_N1_cvg.cfg[] 
  []
 
-
-Overfull \hbox (3.76035pt too wide) in paragraph at lines 1216--1216
-[]\TU/lmtt/m/n/10.95 \end{verbatim}[] 
- []
-
 Missing character: There is no ​ in font [lmmono10-regular]:!
 
-Overfull \hbox (1205.24883pt too wide) in paragraph at lines 1218--1218
-[]\TU/lmtt/m/n/10.95 This command will create files in \texttt{~/feel/hifimagne
-t/ThermoElectricModel/…​} . You can see the results with Paraview or Ensight op
-ening \texttt{Thermics.case} or \texttt{Electrics.case} in the software of your
- choice.[] 
+Underfull \vbox (badness 3735) has occurred while \output is active []
+
+ [26]
+Overfull \hbox (53.14372pt too wide) in paragraph at lines 1255--1255
+[]\TU/lmtt/m/n/10.95 #N R1[m]  R2[m]  HalfL[m] Rho[Ohm.m]  Alpha[1/K] E_Max[Pa]
+ K[W/(m.K)] h[W/(m^2.K)]
  []
 
 
-Overfull \hbox (337.18774pt too wide) in paragraph at lines 1221--1221
-[]\TU/lmtt/m/n/10.95 \hypertarget{x-\textbf{magnetostatic}}{\section{\textbf{Ma
-gnetostatic}}}[] 
- []
-
-
-Overfull \hbox (480.90648pt too wide) in paragraph at lines 1222--1222
-[]\TU/lmtt/m/n/10.95 \hypertarget{x-general-presentation-of-the-files}{\subsect
-ion{General presentation of the files}}[] 
- []
-
-
-Overfull \hbox (446.414pt too wide) in paragraph at lines 1223--1223
-[]\TU/lmtt/m/n/10.95 There are several applications we can use, but all this ap
-plications follow the same form :[] 
- []
-
-
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 1226--1226
-[]\TU/lmtt/m/n/10.95 \begin{verbatim}[] 
- []
-
-
-Overfull \hbox (296.94653pt too wide) in paragraph at lines 1227--1227
-[]\TU/lmtt/m/n/10.95 feelpp_hfm_test_"kind of your test"_box"1 2 or 3"D_P"1 2 o
-r 3"_N1[] 
- []
-
-
-Overfull \hbox (3.76035pt too wide) in paragraph at lines 1228--1228
-[]\TU/lmtt/m/n/10.95 \end{verbatim}[] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [27]
-Overfull \hbox (95.74033pt too wide) in paragraph at lines 1230--1230
-[]\TU/lmtt/m/n/10.95 The kind of your test can be :[] 
- []
-
-
-Overfull \hbox (32.50409pt too wide) in paragraph at lines 1233--1233
-[]\TU/lmtt/m/n/10.95 \begin{description}[] 
- []
-
-
-Overfull \hbox (595.88145pt too wide) in paragraph at lines 1235--1235
-[]\TU/lmtt/m/n/10.95 \item[biotsavart]calculate \textbf{B} and \textbf{A} analy
-tically and with BiotSavart, depending of \textbf{j} given.[] 
- []
-
-
-Overfull \hbox (503.90147pt too wide) in paragraph at lines 1237--1237
-[]\TU/lmtt/m/n/10.95 \item[biotsavart_num]same than biotsavart but use the ther
-moelectric program to calculate \textbf{j}.[] 
- []
-
-
-Overfull \hbox (21.00659pt too wide) in paragraph at lines 1239--1239
-[]\TU/lmtt/m/n/10.95 \end{description}[] 
- []
-
-
-Overfull \hbox (348.68527pt too wide) in paragraph at lines 1242--1242
-[]\TU/lmtt/m/n/10.95 You either set the dimension (1, 2 or 3D) of the box insid
-e the conductor.[] 
- []
-
-
-Overfull \hbox (210.71529pt too wide) in paragraph at lines 1245--1245
-[]\TU/lmtt/m/n/10.95 \hypertarget{x-material}{\subsubsection{Material}}[] 
- []
-
-
-Overfull \hbox (613.12772pt too wide) in paragraph at lines 1246--1246
-[]\TU/lmtt/m/n/10.95 There is no json file for the magnetostatic studies (excep
-t for the biotsavart_num which use the termoelectric program).[] 
- []
-
-
-Overfull \hbox (751.09769pt too wide) in paragraph at lines 1247--1247
-[]\TU/lmtt/m/n/10.95 Instead, the configuration file (\texttt{.cfg}) use a \tex
-ttt{.d} file, which define the geometry and the material of the conductor, like
- this :[] 
- []
-
-
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 1250--1250
-[]\TU/lmtt/m/n/10.95 \begin{verbatim}[] 
- []
-
-
-Overfull \hbox (44.00159pt too wide) in paragraph at lines 1251--1251
-[]\TU/lmtt/m/n/10.95 #Power[MW] Current[A][] 
- []
-
-
-Overfull \hbox (9.5091pt too wide) in paragraph at lines 1252--1252
-[] \TU/lmtt/m/n/10.95 "_"        "_"[] 
- []
-
-
-Overfull \hbox (9.5091pt too wide) in paragraph at lines 1253--1253
-[]\TU/lmtt/m/n/10.95 #Helices N_Elem[] 
- []
-
-
-Overfull \hbox (66.99658pt too wide) in paragraph at lines 1255--1255
-[]\TU/lmtt/m/n/10.95 #N R1[m]  R2[m]  HalfL[m]
- []
-
-
-Overfull \hbox (49.75034pt too wide) in paragraph at lines 1255--1255
-\TU/lmtt/m/n/10.95 Rho[Ohm.m]  Alpha[1/K]
- []
-
-
-Overfull \hbox (210.71529pt too wide) in paragraph at lines 1257--1257
-[]\TU/lmtt/m/n/10.95 # Bitter I=j1*r1*log(r2/r1)*2*L=11767.657994358965[] 
- []
-
-
-Overfull \hbox (285.44904pt too wide) in paragraph at lines 1258--1258
+Overfull \hbox (7.15373pt too wide) in paragraph at lines 1258--1258
 []\TU/lmtt/m/n/10.95 #Type  R1         R2      Z1           Z2         J       
-  Rho
+  Rho    N_turns[] 
  []
 
-
-Overfull \hbox (337.18777pt too wide) in paragraph at lines 1259--1259
-[]  \TU/lmtt/m/n/10.95 "_" "_"        "_"      "_"         "_"        "_"      
-  "_"      "_"[] 
- []
-
-
-Overfull \hbox (55.49908pt too wide) in paragraph at lines 1263--1263
-[]\TU/lmtt/m/n/10.95 #Bz(0)[tesla] Power[MW]
- []
-
-
-Overfull \hbox (26.75534pt too wide) in paragraph at lines 1263--1263
-\TU/lmtt/m/n/10.95 Bz_total(0)[tesla][] 
- []
-
-
-Overfull \hbox (101.48907pt too wide) in paragraph at lines 1264--1264
-[]   \TU/lmtt/m/n/10.95 "_"          "_"         "_"[] 
- []
-
-
-Overfull \hbox (118.73532pt too wide) in paragraph at lines 1266--1266
-[]\TU/lmtt/m/n/10.95 #H   B0_H[t] Sum_B0[t] Power_H[MW]
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [28]
-Overfull \hbox (130.23282pt too wide) in paragraph at lines 1270--1270
-[]\TU/lmtt/m/n/10.95 MARGE DE SECURITE CONTRAINTES= 8.0 %[] 
- []
-
-
-Overfull \hbox (3.76035pt too wide) in paragraph at lines 1271--1271
-[]\TU/lmtt/m/n/10.95 \end{verbatim}[] 
- []
-
-
-Overfull \hbox (417.67026pt too wide) in paragraph at lines 1273--1273
-[]\TU/lmtt/m/n/10.95 As there is different applications, there is different con
-figure files, the biotsavart[] 
- []
-
-
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 1276--1276
-[]\TU/lmtt/m/n/10.95 \begin{verbatim}[] 
- []
-
-
-Overfull \hbox (331.439pt too wide) in paragraph at lines 1279--1279
-[]\TU/lmtt/m/n/10.95 geofile="name_of_the_file_created_by_the_partition.json" (
-.msh or .geo)[] 
- []
-
-
-Overfull \hbox (38.25284pt too wide) in paragraph at lines 1280--1280
-[]\TU/lmtt/m/n/10.95 geofile-path=$cfgdir[] 
- []
-
-
-Overfull \hbox (3.76035pt too wide) in paragraph at lines 1281--1281
-[]\TU/lmtt/m/n/10.95 gmsh.hsize="_"[] 
- []
-
-
-Overfull \hbox (141.7303pt too wide) in paragraph at lines 1283--1283
-[]\TU/lmtt/m/n/10.95 conductor_volume="name_of_your_volume"[] 
- []
-
-
-Overfull \hbox (72.74533pt too wide) in paragraph at lines 1289--1289
-[]\TU/lmtt/m/n/10.95 #theoretical function of j[] 
- []
-
-
-Overfull \hbox (360.18274pt too wide) in paragraph at lines 1290--1290
+[27]
+Overfull \hbox (18.6512pt too wide) in paragraph at lines 1290--1290
 []\TU/lmtt/m/n/10.95 j={-58.e+3*(0.5/(2*Pi))*y/(x^2+y^2),58.e+3*(0.5/(2*Pi))*x/
 (x^2+y^2),0}:x:y:z[] 
  []
 
 
-Overfull \hbox (101.48906pt too wide) in paragraph at lines 1293--1293
-[]\TU/lmtt/m/n/10.95 conductor="name_of_your_volume"[] 
- []
-
-
-Overfull \hbox (158.97655pt too wide) in paragraph at lines 1294--1294
-[]\TU/lmtt/m/n/10.95 box=box"dimension_of_your_box(1,2_or_3D)"[] 
- []
-
-
-Overfull \hbox (44.00159pt too wide) in paragraph at lines 1296--1296
-[]\TU/lmtt/m/n/10.95 [magnetic_field-bmap][] 
- []
-
-
-Overfull \hbox (95.74031pt too wide) in paragraph at lines 1297--1297
-[]\TU/lmtt/m/n/10.95 geo-data="name_of_your_file.d"[] 
- []
-
-
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 1298--1298
-[]\TU/lmtt/m/n/10.95 geo-path=$cfgdir[] 
- []
-
-
-Overfull \hbox (32.50409pt too wide) in paragraph at lines 1299--1299
-[]\TU/lmtt/m/n/10.95 helix-intensity="_"[] 
- []
-
-
-Overfull \hbox (38.25284pt too wide) in paragraph at lines 1300--1300
-[]\TU/lmtt/m/n/10.95 bitter-intensity="_"[] 
- []
-
-
-Overfull \hbox (32.50409pt too wide) in paragraph at lines 1301--1301
-[]\TU/lmtt/m/n/10.95 supra-intensity="_"[] 
- []
-
-
-Overfull \hbox (3.76035pt too wide) in paragraph at lines 1302--1302
-[]\TU/lmtt/m/n/10.95 \end{verbatim}[] 
- []
-
-
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 1304--1304
-[]\TU/lmtt/m/n/10.95 \begin{verbatim}[] 
- []
-
-
-Overfull \hbox (32.50409pt too wide) in paragraph at lines 1307--1307
-[]\TU/lmtt/m/n/10.95 geofile=torus3D.geo[] 
- []
-
-
-Overfull \hbox (38.25284pt too wide) in paragraph at lines 1308--1308
-[]\TU/lmtt/m/n/10.95 geofile-path=$cfgdir[] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [29]
-Overfull \hbox (49.75032pt too wide) in paragraph at lines 1311--1311
-[]\TU/lmtt/m/n/10.95 conductor_volume=omega[] 
- []
-
-
-Overfull \hbox (360.18274pt too wide) in paragraph at lines 1317--1317
+Overfull \hbox (18.6512pt too wide) in paragraph at lines 1317--1317
 []\TU/lmtt/m/n/10.95 j={-58.e+3*(0.5/(2*Pi))*y/(x^2+y^2),58.e+3*(0.5/(2*Pi))*x/
 (x^2+y^2),0}:x:y:z[] 
  []
 
+[28]
+File: ./images/learning/magnetostatic/torus3D_box3D.png Graphic file (type QTm)
 
-Overfull \hbox (9.5091pt too wide) in paragraph at lines 1320--1320
-[]\TU/lmtt/m/n/10.95 conductor=omega[] 
+ <use  "./images/learning/magnetostatic/torus3D_box3D.png" >
+Overfull \hbox (87.63632pt too wide) in paragraph at lines 1359--1360
+ [][] 
  []
 
 
-Overfull \hbox (44.00159pt too wide) in paragraph at lines 1323--1323
-[]\TU/lmtt/m/n/10.95 [magnetic_field-bmap][] 
- []
-
-
-Overfull \hbox (26.75534pt too wide) in paragraph at lines 1324--1324
-[]\TU/lmtt/m/n/10.95 geo-data=torus3D.d[] 
- []
-
-
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 1325--1325
-[]\TU/lmtt/m/n/10.95 geo-path=$cfgdir[] 
- []
-
-
-Overfull \hbox (21.00659pt too wide) in paragraph at lines 1326--1326
-[]\TU/lmtt/m/n/10.95 helix-intensity=0[] 
- []
-
-
-Overfull \hbox (61.24783pt too wide) in paragraph at lines 1327--1327
-[]\TU/lmtt/m/n/10.95 bitter-intensity=11767.7[] 
- []
-
-
-Overfull \hbox (21.00659pt too wide) in paragraph at lines 1328--1328
-[]\TU/lmtt/m/n/10.95 supra-intensity=0[] 
- []
-
-
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 1330--1330
-[]\TU/lmtt/m/n/10.95 [thermoelectric][] 
- []
-
-
-Overfull \hbox (118.73532pt too wide) in paragraph at lines 1331--1331
-[]\TU/lmtt/m/n/10.95 model_json=$cfgdir/biotsavart.json[] 
- []
-
-
-Overfull \hbox (21.00659pt too wide) in paragraph at lines 1336--1336
-[]\TU/lmtt/m/n/10.95 #ksp-monitor=true[] 
- []
-
-
-Overfull \hbox (3.76035pt too wide) in paragraph at lines 1339--1339
-[]\TU/lmtt/m/n/10.95 ksp-maxit=2000[] 
- []
-
-
-Overfull \hbox (101.48907pt too wide) in paragraph at lines 1340--1340
-[]\TU/lmtt/m/n/10.95 ksp-use-initial-guess-nonzero=1[] 
- []
-
-
-Overfull \hbox (21.00659pt too wide) in paragraph at lines 1344--1344
-[]\TU/lmtt/m/n/10.95 #ksp-monitor=true[] 
- []
-
-
-Overfull \hbox (101.48907pt too wide) in paragraph at lines 1347--1347
-[]\TU/lmtt/m/n/10.95 ksp-use-initial-guess-nonzero=1[] 
- []
-
-
-Overfull \hbox (3.76035pt too wide) in paragraph at lines 1348--1348
-[]\TU/lmtt/m/n/10.95 \end{verbatim}[] 
- []
-
-
-Overfull \hbox (193.46906pt too wide) in paragraph at lines 1350--1350
-[]\TU/lmtt/m/n/10.95 \hypertarget{x-examples}{\subsection{Examples}}[] 
- []
-
-
-Overfull \hbox (193.46906pt too wide) in paragraph at lines 1352--1352
-[]\TU/lmtt/m/n/10.95 \hypertarget{x-validity}{\subsection{Validity}}[] 
- []
-
-
-Overfull \hbox (365.93152pt too wide) in paragraph at lines 1353--1353
-[]\TU/lmtt/m/n/10.95 In this example, we approximate the magnet with an axisymm
-etric copper torus.[] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [30]
-Overfull \hbox (848.82642pt too wide) in paragraph at lines 1354--1354
-[]\TU/lmtt/m/n/10.95 This torus is modeled with a file \texttt{.geo}, which nam
-e the volume of the torus (\texttt{omega}), each surface and a volume inside th
-e torus (\texttt{box3D})[] 
- []
-
-
-Overfull \hbox (66.99658pt too wide) in paragraph at lines 1355--1355
-[]\TU/lmtt/m/n/10.95 , also known as a sphere.[] 
- []
-
-
-Overfull \hbox (32.50409pt too wide) in paragraph at lines 1358--1358
-[]\TU/lmtt/m/n/10.95 \begin{figure}[h]{}[] 
- []
-
-
-Overfull \hbox (463.66025pt too wide) in paragraph at lines 1359--1359
-[]\TU/lmtt/m/n/10.95 \centering\includegraphics[width=7.0truein]{./images/learn
-ing/magnetostatic/torus3D_box3D.png}[] 
- []
-
-
-Overfull \hbox (176.22281pt too wide) in paragraph at lines 1360--1360
-[]\TU/lmtt/m/n/10.95 \caption{Model of the torus with the 3D box}[] 
- []
-
-
-Overfull \hbox (199.2178pt too wide) in paragraph at lines 1364--1364
-[]\TU/lmtt/m/n/10.95 \hypertarget{x-equations}{\paragraph{Equations}}[] 
- []
-
-
-Overfull \hbox (227.96155pt too wide) in paragraph at lines 1365--1365
-[]\TU/lmtt/m/n/10.95 We use the Biot & Savart’s law to prove the validity.[] 
- []
-
-
-Overfull \hbox (475.15773pt too wide) in paragraph at lines 1366--1366
-[]\TU/lmtt/m/n/10.95 First, we need to set the conditions to use this law, $\Om
-ega_{cond}\cap\Omega_{mgn}=\emptyset$,[] 
- []
-
-
-Overfull \hbox (325.69028pt too wide) in paragraph at lines 1367--1367
-[]\TU/lmtt/m/n/10.95 with $\Omega_{cond}$ the conductor in which the current is
- passing and[] 
- []
-
-
-Overfull \hbox (325.69028pt too wide) in paragraph at lines 1368--1368
-[]\TU/lmtt/m/n/10.95 $\Omega_{mgn}$ the domain in which we want to know the mag
-netic field.[] 
- []
-
-
-Overfull \hbox (463.66025pt too wide) in paragraph at lines 1369--1369
-[]\TU/lmtt/m/n/10.95 With this, using the magnetostatic equation, we can write 
-the magnetic potential \textbf{A} as[] 
- []
-
-
-Overfull \hbox (124.48407pt too wide) in paragraph at lines 1374--1374
-[]\TU/lmtt/m/n/10.95 \nabla^{2}\textbf{A}=-\mu\textbf{j}[] 
- []
-
-
-Overfull \hbox (164.72531pt too wide) in paragraph at lines 1379--1379
-[]\TU/lmtt/m/n/10.95 The general solution of this equation is :[] 
- []
-
-
-Overfull \hbox (417.67024pt too wide) in paragraph at lines 1384--1384
-[]\TU/lmtt/m/n/10.95 A(\textbf{r})=-\mu\int_{\Omega_{cond}}G(\textbf{r},\textbf
-{r'})\textbf{j}(\textbf{r'})[] 
- []
-
-
-Overfull \hbox (302.69528pt too wide) in paragraph at lines 1389--1389
-[]\TU/lmtt/m/n/10.95 with $G(\textbf{r},\textbf{r'})$ the Green’s function defi
-ned as :[] 
- []
-
-
-Overfull \hbox (354.434pt too wide) in paragraph at lines 1394--1394
-[]\TU/lmtt/m/n/10.95 G(\textbf{r},\textbf{r'})=\frac{-1}{4\pi}\frac{1}{|\textbf
-{r}-\textbf{r'}|}[] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [31]
-Overfull \hbox (302.69527pt too wide) in paragraph at lines 1399--1399
-[]\TU/lmtt/m/n/10.95 with $\textbf{r}\in\Omega_{mgn}$ and $\textbf{r'}\in\Omega
-_{cond}$[] 
- []
-
-
-Overfull \hbox (319.94153pt too wide) in paragraph at lines 1402--1402
-[]\TU/lmtt/m/n/10.95 Then we rewrite the expression of the magnetic potential \
-textbf{A} :[] 
- []
-
-
-Overfull \hbox (854.57512pt too wide) in paragraph at lines 1407--1407
-[]\TU/lmtt/m/n/10.95 A(\textbf{r})=\frac{\mu_{0}}{4\pi}\int_{\Omega_{cond}}\fra
-c{\textbf{j}(\textbf{r'})}{|\textbf{r}-\textbf{r'}|} d\textbf{r'}\;\;\;\;\;\;\;
-\textbf{r}\in\Omega_{mgn}[] 
- []
-
-
-Overfull \hbox (498.15274pt too wide) in paragraph at lines 1412--1412
-[]\TU/lmtt/m/n/10.95 As \textbf{B} is defined as the curl of \textbf{A}, we can
- write the so called Biot & Savart’s law :[] 
- []
-
-
-Overfull \hbox (1101.77129pt too wide) in paragraph at lines 1417--1417
-[]\TU/lmtt/m/n/10.95 \textbf{B}(\textbf{r})=\frac{\mu_{0}}{4\pi}\int_{\Omega_{c
-ond}}\frac{\textbf{j}(\textbf{r'})\times(\textbf{r}-\textbf{r'})}{|\textbf{r}-\
-textbf{r'}|^{3}} d\textbf{r'}\;\;\;\;\;\;\;\textbf{r}\in\Omega_{mgn}[] 
- []
-
-
-Overfull \hbox (210.71529pt too wide) in paragraph at lines 1422--1422
-[]\TU/lmtt/m/n/10.95 \hypertarget{x-parameters}{\paragraph{Parameters}}[] 
- []
-
-
-Overfull \hbox (406.17276pt too wide) in paragraph at lines 1423--1423
-[]\TU/lmtt/m/n/10.95 We use here the same parameters as in the ThermoElectric s
-ection for the .json file.[] 
- []
-
-
-Overfull \hbox (521.1477pt too wide) in paragraph at lines 1424--1424
-[]\TU/lmtt/m/n/10.95 We select the biter-intensity (shown in \hyperlink{example
-.cfg}{biotsavart_num_box3D_3D_V1T1_N1_cvgcfg})[] 
- []
-
-
-Overfull \hbox (383.17776pt too wide) in paragraph at lines 1425--1425
-[]\TU/lmtt/m/n/10.95 We also need a file \texttt{.d} to define the characterist
-ics of the conductors.[] 
- []
-
-
-Overfull \hbox (176.2228pt too wide) in paragraph at lines 1428--1428
-[]\TU/lmtt/m/n/10.95 \hypertarget{x-results}{\paragraph{Results}}[] 
- []
-
-
-Overfull \hbox (693.6102pt too wide) in paragraph at lines 1429--1429
-[]\TU/lmtt/m/n/10.95 On the next figure, the current is represented by the whit
-e arrow in the torus, the color of the torus corresponding to the potential.[] 
-
- []
-
-
-Overfull \hbox (526.89648pt too wide) in paragraph at lines 1430--1430
-[]\TU/lmtt/m/n/10.95 The box3D (the sphere inside the torus) is represented wit
-h the magnetic induction’s vector (\textbf{B}).[] 
- []
-
-
-Overfull \hbox (32.50409pt too wide) in paragraph at lines 1433--1433
-[]\TU/lmtt/m/n/10.95 \begin{figure}[h]{}[] 
- []
-
-
-Overfull \hbox (429.1677pt too wide) in paragraph at lines 1434--1434
-[]\TU/lmtt/m/n/10.95 \centering\includegraphics[width=7.0truein]{./images/learn
-ing/magnetostatic/B_and_I.png}[] 
- []
-
-
-Overfull \hbox (32.50409pt too wide) in paragraph at lines 1439--1439
-[]\TU/lmtt/m/n/10.95 \begin{figure}[h]{}[] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [32]
-Overfull \hbox (452.16275pt too wide) in paragraph at lines 1440--1440
-[]\TU/lmtt/m/n/10.95 \centering\includegraphics[width=7.0truein]{./images/learn
-ing/magnetostatic/potential_A.png}[] 
- []
-
-
-Overfull \hbox (503.90149pt too wide) in paragraph at lines 1445--1445
-[]\TU/lmtt/m/n/10.95 We can see that the magnetic potential (\textbf{A}) is in 
-the same way that the current in the torus.[] 
- []
-
-
-Overfull \hbox (360.18277pt too wide) in paragraph at lines 1446--1446
-[]\TU/lmtt/m/n/10.95 The scale and the direction of the magnetic field (\textbf
-{B}) are coherent.[] 
- []
-
-
-Overfull \hbox (141.73032pt too wide) in paragraph at lines 1449--1449
-[]\TU/lmtt/m/n/10.95 \hypertarget{x-code}{\paragraph{Code}}[] 
- []
-
-
-Overfull \hbox (549.89148pt too wide) in paragraph at lines 1450--1450
-[]\TU/lmtt/m/n/10.95 For the modelisation of the the torus and his box inside, 
-we create the geometry with this file \texttt{.geo}[] 
- []
-
-
-Overfull \hbox (193.46904pt too wide) in paragraph at lines 1453--1453
-[]\TU/lmtt/m/n/10.95 {\bf torus3D_box3D.geo}\vspace{-1\baselineskip}[] 
- []
-
-
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 1454--1454
-[]\TU/lmtt/m/n/10.95 \begin{verbatim}[] 
- []
-
-
-Overfull \hbox (44.00159pt too wide) in paragraph at lines 1455--1455
-[]\TU/lmtt/m/n/10.95 // Define Main params[] 
- []
-
-
-Overfull \hbox (72.74533pt too wide) in paragraph at lines 1463--1463
-[]\TU/lmtt/m/n/10.95 theta1=Asin( eps/(2*r1) );[] 
- []
-
-
-Overfull \hbox (72.74533pt too wide) in paragraph at lines 1464--1464
-[]\TU/lmtt/m/n/10.95 theta2=Asin( eps/(2*r2) );[] 
- []
-
-
-Overfull \hbox (3.76035pt too wide) in paragraph at lines 1466--1466
-[]\TU/lmtt/m/n/10.95 // 1st quarter[] 
- []
-
-
-Overfull \hbox (66.99658pt too wide) in paragraph at lines 1467--1467
-[]\TU/lmtt/m/n/10.95 Point(1) = {0, 0, -L, h};[] 
- []
-
-
-Overfull \hbox (170.47406pt too wide) in paragraph at lines 1469--1469
-[]\TU/lmtt/m/n/10.95 Point(2) = {r1*Cos(theta1), eps/2., -L, h};[] 
- []
-
-
-Overfull \hbox (170.47406pt too wide) in paragraph at lines 1470--1470
-[]\TU/lmtt/m/n/10.95 Point(3) = {r2*Cos(theta2), eps/2., -L, h};[] 
- []
-
-
-Overfull \hbox (72.74533pt too wide) in paragraph at lines 1471--1471
-[]\TU/lmtt/m/n/10.95 Point(4) = {0, r1, -L, h};[] 
- []
-
-
-Overfull \hbox (72.74533pt too wide) in paragraph at lines 1472--1472
-[]\TU/lmtt/m/n/10.95 Point(5) = {0, r2, -L, h};[] 
- []
-
-
-Overfull \hbox (78.49408pt too wide) in paragraph at lines 1473--1473
-[]\TU/lmtt/m/n/10.95 Point(6) = {-r1, 0, -L, h};[] 
- []
-
-
-Overfull \hbox (78.49408pt too wide) in paragraph at lines 1474--1474
-[]\TU/lmtt/m/n/10.95 Point(7) = {-r2, 0, -L, h};[] 
- []
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-Overfull \hbox (78.49408pt too wide) in paragraph at lines 1475--1475
-[]\TU/lmtt/m/n/10.95 Point(8) = {0, -r1, -L, h};[] 
- []
-
-
-Overfull \hbox (78.49408pt too wide) in paragraph at lines 1476--1476
-[]\TU/lmtt/m/n/10.95 Point(9) = {0, -r2, -L, h};[] 
- []
-
-
-Overfull \hbox (187.7203pt too wide) in paragraph at lines 1477--1477
-[]\TU/lmtt/m/n/10.95 Point(10) = {r1*Cos(-theta1), -eps/2., -L, h};[] 
+[29]
+Overfull \hbox (47.08841pt too wide) in paragraph at lines 1423--1426
+\TU/lmr/m/n/10.95 .json file. We select the biter-intensity (shown in [][]biots
+avart_num_box3D_3D_V1T1_N1_cvgcfg[][])
  []
 
-
-Overfull \hbox (187.7203pt too wide) in paragraph at lines 1478--1478
-[]\TU/lmtt/m/n/10.95 Point(11) = {r2*Cos(-theta2), -eps/2., -L, h};[] 
- []
-
-
-Overfull \hbox (49.75034pt too wide) in paragraph at lines 1480--1480
-[]\TU/lmtt/m/n/10.95 Circle(1) = {2, 1, 4};[] 
+[30]
+File: ./images/learning/magnetostatic/B_and_I.png Graphic file (type QTm)
+ <use  "./images/learning/magnetostatic/B_and_I.png" >
+Overfull \hbox (87.63632pt too wide) in paragraph at lines 1434--1435
+ [][] 
  []
-
 
-Overfull \hbox (49.75034pt too wide) in paragraph at lines 1481--1481
-[]\TU/lmtt/m/n/10.95 Circle(2) = {4, 1, 6};[] 
+File: ./images/learning/magnetostatic/potential_A.png Graphic file (type QTm)
+<use  "./images/learning/magnetostatic/potential_A.png" >
+Overfull \hbox (87.63632pt too wide) in paragraph at lines 1440--1441
+ [][] 
  []
 
-
-Overfull \hbox (49.75034pt too wide) in paragraph at lines 1482--1482
-[]\TU/lmtt/m/n/10.95 Circle(3) = {6, 1, 8};[] 
- []
 
+LaTeX Warning: `h' float specifier changed to `ht'.
 
+[31] [32]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [33]
-Overfull \hbox (55.49908pt too wide) in paragraph at lines 1483--1483
-[]\TU/lmtt/m/n/10.95 Circle(4) = {8, 1, 10};[] 
- []
-
-
-Overfull \hbox (49.75034pt too wide) in paragraph at lines 1485--1485
-[]\TU/lmtt/m/n/10.95 Circle(5) = {3, 1, 5};[] 
- []
-
-
-Overfull \hbox (49.75034pt too wide) in paragraph at lines 1486--1486
-[]\TU/lmtt/m/n/10.95 Circle(6) = {5, 1, 7};[] 
- []
-
-
-Overfull \hbox (49.75034pt too wide) in paragraph at lines 1487--1487
-[]\TU/lmtt/m/n/10.95 Circle(7) = {7, 1, 9};[] 
- []
-
-
-Overfull \hbox (55.49908pt too wide) in paragraph at lines 1488--1488
-[]\TU/lmtt/m/n/10.95 Circle(8) = {9, 1, 11};[] 
- []
-
-
-Overfull \hbox (21.00659pt too wide) in paragraph at lines 1490--1490
-[]\TU/lmtt/m/n/10.95 Line(9) = {2, 3};[] 
- []
-
-
-Overfull \hbox (38.25284pt too wide) in paragraph at lines 1491--1491
-[]\TU/lmtt/m/n/10.95 Line(10) = {10, 11};[] 
- []
-
-
-Overfull \hbox (239.45905pt too wide) in paragraph at lines 1493--1493
-[]\TU/lmtt/m/n/10.95 dL=newl; Line Loop(dL) = {1:4, 10, -8, -7, -6, -5, -9};[] 
-
- []
-
-
-Overfull \hbox (107.23782pt too wide) in paragraph at lines 1494--1494
-[]\TU/lmtt/m/n/10.95 S=news; Plane Surface(S) = {dL};[] 
- []
-
-
-Overfull \hbox (153.22781pt too wide) in paragraph at lines 1496--1496
-[]\TU/lmtt/m/n/10.95 out[] = Extrude {0,0,2*L} {Surface{S};};[] 
- []
-
-
-Overfull \hbox (130.23282pt too wide) in paragraph at lines 1498--1498
-[]\TU/lmtt/m/n/10.95 Physical Volume("omega") = {out[1]};[] 
- []
-
-
-Overfull \hbox (124.48407pt too wide) in paragraph at lines 1499--1499
-[]\TU/lmtt/m/n/10.95 Physical Surface("top") = {out[0]};[] 
- []
-
-
-Overfull \hbox (112.98657pt too wide) in paragraph at lines 1500--1500
-[]\TU/lmtt/m/n/10.95 Physical Surface("bottom") = {S};[] 
- []
-
-
-Overfull \hbox (268.20279pt too wide) in paragraph at lines 1501--1501
-[]\TU/lmtt/m/n/10.95 Physical Surface("Rint") = {out[2], out[3], out[4], out[5]
-};[] 
- []
-
-
-Overfull \hbox (273.95154pt too wide) in paragraph at lines 1502--1502
-[]\TU/lmtt/m/n/10.95 Physical Surface("Rext") = {out[7], out[8], out[9], out[10
-]};[] 
- []
-
-
-Overfull \hbox (118.73532pt too wide) in paragraph at lines 1503--1503
-[]\TU/lmtt/m/n/10.95 Physical Surface("in") = {out[6]};[] 
- []
-
-
-Overfull \hbox (130.23282pt too wide) in paragraph at lines 1504--1504
-[]\TU/lmtt/m/n/10.95 Physical Surface("out") = {out[11]};[] 
- []
-
-
-Overfull \hbox (61.24783pt too wide) in paragraph at lines 1506--1506
-[]\TU/lmtt/m/n/10.95 // Define BiotSavart box[] 
- []
-
-
-Overfull \hbox (124.48407pt too wide) in paragraph at lines 1515--1515
-[]\TU/lmtt/m/n/10.95 C0=newp; Point(C0) = {0, 0, 0, hs};[] 
- []
-
-
-Overfull \hbox (130.23282pt too wide) in paragraph at lines 1517--1517
-[]\TU/lmtt/m/n/10.95 P0=newp; Point(P0) = {0, 0, z0, hs};[] 
- []
-
-
-Overfull \hbox (130.23282pt too wide) in paragraph at lines 1518--1518
-[]\TU/lmtt/m/n/10.95 P1=newp; Point(P1) = {0, 0, z1, hs};[] 
- []
-
-
-Overfull \hbox (130.23282pt too wide) in paragraph at lines 1519--1519
-[]\TU/lmtt/m/n/10.95 Q0=newp; Point(Q0) = {0, z1, 0, hs};[] 
- []
-
-
-Overfull \hbox (130.23282pt too wide) in paragraph at lines 1520--1520
-[]\TU/lmtt/m/n/10.95 R0=newp; Point(R0) = {z1, 0, 0, hs};[] 
- []
-
-
-Overfull \hbox (112.98657pt too wide) in paragraph at lines 1522--1522
-[]\TU/lmtt/m/n/10.95 C0P0=newl; Line(C0P0) = {C0, P0};[] 
- []
-
-
-Overfull \hbox (112.98657pt too wide) in paragraph at lines 1523--1523
-[]\TU/lmtt/m/n/10.95 P0P1=newl; Line(P0P1) = {P0, P1};[] 
- []
-
-
-Overfull \hbox (135.98157pt too wide) in paragraph at lines 1524--1524
-[]\TU/lmtt/m/n/10.95 BS0=newl; Circle(BS0) = {P0, C0, Q0};[] 
- []
-
-
-Overfull \hbox (135.98157pt too wide) in paragraph at lines 1525--1525
-[]\TU/lmtt/m/n/10.95 BS1=newl; Circle(BS1) = {P0, C0, R0};[] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [34]
-Overfull \hbox (135.98157pt too wide) in paragraph at lines 1526--1526
-[]\TU/lmtt/m/n/10.95 BS2=newl; Circle(BS2) = {Q0, C0, R0};[] 
- []
-
-
-Overfull \hbox (135.98157pt too wide) in paragraph at lines 1527--1527
-[]\TU/lmtt/m/n/10.95 BS3=newl; Circle(BS3) = {Q0, C0, P1};[] 
- []
-
-
-Overfull \hbox (135.98157pt too wide) in paragraph at lines 1528--1528
-[]\TU/lmtt/m/n/10.95 BS4=newl; Circle(BS4) = {R0, C0, P1};[] 
- []
-
-
-Overfull \hbox (199.2178pt too wide) in paragraph at lines 1530--1530
-[]\TU/lmtt/m/n/10.95 Sb_Sph=newl; Line Loop(Sb_Sph)={BS0, BS2, -BS1};[] 
- []
-
-
-Overfull \hbox (164.72531pt too wide) in paragraph at lines 1531--1531
-[]\TU/lmtt/m/n/10.95 S_Sph=newl; Ruled Surface(S_Sph)={Sb_Sph};[] 
- []
-
-
-Overfull \hbox (411.92151pt too wide) in paragraph at lines 1532--1532
+Overfull \hbox (70.38997pt too wide) in paragraph at lines 1532--1532
 []\TU/lmtt/m/n/10.95 S2_Sph = Rotate { { 0, 0, 1 }, { 0, 0, 0 }, Pi/2. } { Dupl
 icata{ Surface{S_Sph}; } };[] 
  []
 
 
-Overfull \hbox (423.419pt too wide) in paragraph at lines 1533--1533
+Overfull \hbox (81.88747pt too wide) in paragraph at lines 1533--1533
 []\TU/lmtt/m/n/10.95 S3_Sph = Rotate { { 0, 0, 1 }, { 0, 0, 0 }, 2*Pi/2. } { Du
 plicata{ Surface{S_Sph}; } };[] 
  []
 
 
-Overfull \hbox (423.419pt too wide) in paragraph at lines 1534--1534
+Overfull \hbox (81.88747pt too wide) in paragraph at lines 1534--1534
 []\TU/lmtt/m/n/10.95 S4_Sph = Rotate { { 0, 0, 1 }, { 0, 0, 0 }, 3*Pi/2. } { Du
 plicata{ Surface{S_Sph}; } };[] 
  []
 
 
-Overfull \hbox (199.2178pt too wide) in paragraph at lines 1536--1536
-[]\TU/lmtt/m/n/10.95 Nb_Sph=newl; Line Loop(Nb_Sph)={BS2, BS4, -BS3};[] 
- []
-
-
-Overfull \hbox (164.72531pt too wide) in paragraph at lines 1537--1537
-[]\TU/lmtt/m/n/10.95 N_Sph=newl; Ruled Surface(N_Sph)={Nb_Sph};[] 
- []
-
-
-Overfull \hbox (411.92151pt too wide) in paragraph at lines 1538--1538
+Overfull \hbox (70.38997pt too wide) in paragraph at lines 1538--1538
 []\TU/lmtt/m/n/10.95 N2_Sph = Rotate { { 0, 0, 1 }, { 0, 0, 0 }, Pi/2. } { Dupl
 icata{ Surface{N_Sph}; } };[] 
  []
 
 
-Overfull \hbox (423.419pt too wide) in paragraph at lines 1539--1539
+Overfull \hbox (81.88747pt too wide) in paragraph at lines 1539--1539
 []\TU/lmtt/m/n/10.95 N3_Sph = Rotate { { 0, 0, 1 }, { 0, 0, 0 }, 2*Pi/2. } { Du
 plicata{ Surface{N_Sph}; } };[] 
  []
 
 
-Overfull \hbox (423.419pt too wide) in paragraph at lines 1540--1540
+Overfull \hbox (81.88747pt too wide) in paragraph at lines 1540--1540
 []\TU/lmtt/m/n/10.95 N4_Sph = Rotate { { 0, 0, 1 }, { 0, 0, 0 }, 3*Pi/2. } { Du
 plicata{ Surface{N_Sph}; } };[] 
  []
 
 
-Overfull \hbox (475.15775pt too wide) in paragraph at lines 1542--1542
+Overfull \hbox (133.6262pt too wide) in paragraph at lines 1542--1542
 []\TU/lmtt/m/n/10.95 SLoop=news; Surface Looop(SLoop)={S_Sph, N_Sph, S2_Sph, N2
 _Sph, S3_Sph, N3_Sph, S4_Sph, N4_Sph};[] 
  []
 
 
-Overfull \hbox (95.74033pt too wide) in paragraph at lines 1543--1543
-[]\TU/lmtt/m/n/10.95 RMN=newv; Volume(RMN)={SLoop};[] 
- []
-
-
-Overfull \hbox (26.75534pt too wide) in paragraph at lines 1545--1545
-[]\TU/lmtt/m/n/10.95 If ( Boxdim == 1 )[] 
- []
-
-
-Overfull \hbox (112.98657pt too wide) in paragraph at lines 1546--1546
-[] \TU/lmtt/m/n/10.95 Physical Line("box1D") = {P0P1};[] 
- []
-
-
-Overfull \hbox (26.75534pt too wide) in paragraph at lines 1549--1549
-[]\TU/lmtt/m/n/10.95 If ( Boxdim == 2 )[] 
- []
-
-
-Overfull \hbox (452.16275pt too wide) in paragraph at lines 1550--1550
+Overfull \hbox (110.63121pt too wide) in paragraph at lines 1550--1550
 [] \TU/lmtt/m/n/10.95 Physical Surface("box2D") = {S_Sph, N_Sph, S2_Sph, N2_Sph
 , S3_Sph, N3_Sph, S4_Sph, N4_Sph};[] 
  []
 
 
-Overfull \hbox (26.75534pt too wide) in paragraph at lines 1553--1553
-[]\TU/lmtt/m/n/10.95 If ( Boxdim == 3 )[] 
+Overfull \hbox (53.14372pt too wide) in paragraph at lines 1567--1567
+[]\TU/lmtt/m/n/10.95 #N R1[m]  R2[m]  HalfL[m] Rho[Ohm.m]  Alpha[1/K] E_Max[Pa]
+ K[W/(m.K)] h[W/(m^2.K)]
  []
 
 
-Overfull \hbox (124.48407pt too wide) in paragraph at lines 1554--1554
-[]  \TU/lmtt/m/n/10.95 Physical Volume("box3D") = {RMN};[] 
+Overfull \hbox (7.15373pt too wide) in paragraph at lines 1571--1571
+[]\TU/lmtt/m/n/10.95 #Type R1        R2      Z1          Z2          J         
+     Rho N_turns[] 
  []
 
-
-Overfull \hbox (3.76035pt too wide) in paragraph at lines 1556--1556
-[]\TU/lmtt/m/n/10.95 \end{verbatim}[] 
- []
-
-
-Overfull \hbox (394.67526pt too wide) in paragraph at lines 1558--1558
-[]\TU/lmtt/m/n/10.95 the next step is to make a file \texttt{.d} which fix some
- parameters on the torus[] 
- []
-
-
-Overfull \hbox (147.47906pt too wide) in paragraph at lines 1561--1561
-[]\TU/lmtt/m/n/10.95 {\bf torus3D.d}\vspace{-1\baselineskip}[] 
- []
-
-
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 1562--1562
-[]\TU/lmtt/m/n/10.95 \begin{verbatim}[] 
- []
-
-
-Overfull \hbox (44.00159pt too wide) in paragraph at lines 1563--1563
-[]\TU/lmtt/m/n/10.95 #Power[MW] Current[A][] 
- []
-
-
-Overfull \hbox (9.5091pt too wide) in paragraph at lines 1565--1565
-[]\TU/lmtt/m/n/10.95 #Helices N_Elem[] 
- []
-
-
-Overfull \hbox (66.99658pt too wide) in paragraph at lines 1567--1567
-[]\TU/lmtt/m/n/10.95 #N R1[m]  R2[m]  HalfL[m]
- []
-
-
-Overfull \hbox (49.75034pt too wide) in paragraph at lines 1567--1567
-\TU/lmtt/m/n/10.95 Rho[Ohm.m]  Alpha[1/K]
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [35]
-Overfull \hbox (210.71529pt too wide) in paragraph at lines 1570--1570
-[]\TU/lmtt/m/n/10.95 # Bitter I=j1*r1*log(r2/r1)*2*L=11767.657994358965[] 
- []
-
-
-Overfull \hbox (26.75534pt too wide) in paragraph at lines 1571--1571
-[]\TU/lmtt/m/n/10.95 #Type R1        R2
- []
-
-
-Overfull \hbox (3.76035pt too wide) in paragraph at lines 1571--1571
-\TU/lmtt/m/n/10.95 Z1          Z2
- []
-
-
-Overfull \hbox (417.67026pt too wide) in paragraph at lines 1572--1572
+[34]
+Overfull \hbox (76.13872pt too wide) in paragraph at lines 1572--1572
 []\TU/lmtt/m/n/10.95 1       30.6e-3    53.2e-3   -2.305e-3   2.305e-3    15083
 3116.00212305    1         1[] 
  []
 
 
-Overfull \hbox (411.92151pt too wide) in paragraph at lines 1573--1573
+Overfull \hbox (70.38997pt too wide) in paragraph at lines 1573--1573
 []\TU/lmtt/m/n/10.95 #1       30.6e-3    53.2e-3   -2.305e-3   2.305e-3    1248
 27406.34658459  1         1[] 
  []
 
 
-Overfull \hbox (55.49908pt too wide) in paragraph at lines 1576--1576
-[]\TU/lmtt/m/n/10.95 #Bz(0)[tesla] Power[MW]
- []
-
-
-Overfull \hbox (26.75534pt too wide) in paragraph at lines 1576--1576
-\TU/lmtt/m/n/10.95 Bz_total(0)[tesla][] 
- []
-
-
-Overfull \hbox (193.46906pt too wide) in paragraph at lines 1577--1577
-[] \TU/lmtt/m/n/10.95 22.7526804266798 12.500000000 22.7526804266798[] 
- []
-
-
-Overfull \hbox (118.73532pt too wide) in paragraph at lines 1579--1579
-[]\TU/lmtt/m/n/10.95 #H   B0_H[t] Sum_B0[t] Power_H[MW]
- []
-
-
-Overfull \hbox (130.23282pt too wide) in paragraph at lines 1583--1583
-[]\TU/lmtt/m/n/10.95 MARGE DE SECURITE CONTRAINTES= 8.0 %[] 
- []
-
-
-Overfull \hbox (3.76035pt too wide) in paragraph at lines 1584--1584
-[]\TU/lmtt/m/n/10.95 \end{verbatim}[] 
- []
-
-
-Overfull \hbox (969.55014pt too wide) in paragraph at lines 1586--1586
-[]\TU/lmtt/m/n/10.95 Finally we can use the \texttt{biotsavart_num} (in which w
-e use the thermoelectric model to calculate \textbf{j}) or the \texttt{biotsava
-rt} (in which we specify manually \textbf{j})[] 
- []
-
-
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 1589--1589
-[]\TU/lmtt/m/n/10.95 \begin{verbatim}[] 
- []
-
-
-Overfull \hbox (84.24281pt too wide) in paragraph at lines 1592--1592
-[]\TU/lmtt/m/n/10.95 geofile=biotsavart_box3D.geo[] 
- []
-
-
-Overfull \hbox (38.25284pt too wide) in paragraph at lines 1593--1593
-[]\TU/lmtt/m/n/10.95 geofile-path=$cfgdir[] 
- []
-
-
-Overfull \hbox (49.75032pt too wide) in paragraph at lines 1596--1596
-[]\TU/lmtt/m/n/10.95 conductor_volume=omega[] 
- []
-
-
-Overfull \hbox (360.18274pt too wide) in paragraph at lines 1602--1602
+Overfull \hbox (18.6512pt too wide) in paragraph at lines 1602--1602
 []\TU/lmtt/m/n/10.95 j={-58.e+3*(0.5/(2*Pi))*y/(x^2+y^2),58.e+3*(0.5/(2*Pi))*x/
 (x^2+y^2),0}:x:y:z[] 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [36]
-Overfull \hbox (9.5091pt too wide) in paragraph at lines 1605--1605
-[]\TU/lmtt/m/n/10.95 conductor=omega[] 
- []
-
-
-Overfull \hbox (44.00159pt too wide) in paragraph at lines 1608--1608
-[]\TU/lmtt/m/n/10.95 [magnetic_field-bmap][] 
- []
-
-
-Overfull \hbox (26.75534pt too wide) in paragraph at lines 1609--1609
-[]\TU/lmtt/m/n/10.95 geo-data=torus3D.d[] 
- []
-
-
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 1610--1610
-[]\TU/lmtt/m/n/10.95 geo-path=$cfgdir[] 
- []
-
-
-Overfull \hbox (21.00659pt too wide) in paragraph at lines 1611--1611
-[]\TU/lmtt/m/n/10.95 helix-intensity=0[] 
- []
-
-
-Overfull \hbox (61.24783pt too wide) in paragraph at lines 1612--1612
-[]\TU/lmtt/m/n/10.95 bitter-intensity=11767.7[] 
- []
-
-
-Overfull \hbox (21.00659pt too wide) in paragraph at lines 1613--1613
-[]\TU/lmtt/m/n/10.95 supra-intensity=0[] 
- []
-
-
-Overfull \hbox (3.76035pt too wide) in paragraph at lines 1614--1614
-[]\TU/lmtt/m/n/10.95 \end{verbatim}[] 
- []
-
-
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 1616--1616
-[]\TU/lmtt/m/n/10.95 \begin{verbatim}[] 
- []
-
-
-Overfull \hbox (66.99657pt too wide) in paragraph at lines 1619--1619
-[]\TU/lmtt/m/n/10.95 geofile=torus3D_box3D.geo[] 
- []
-
-
-Overfull \hbox (38.25284pt too wide) in paragraph at lines 1620--1620
-[]\TU/lmtt/m/n/10.95 geofile-path=$cfgdir[] 
- []
-
-
-Overfull \hbox (49.75032pt too wide) in paragraph at lines 1623--1623
-[]\TU/lmtt/m/n/10.95 conductor_volume=omega[] 
- []
-
-
-Overfull \hbox (360.18275pt too wide) in paragraph at lines 1629--1629
+[35]
+Overfull \hbox (18.65121pt too wide) in paragraph at lines 1629--1629
 []\TU/lmtt/m/n/10.95 j={58.e+3*(0.5/(2*Pi))*y/(x^2+y^2),-58.e+3*(0.5/(2*Pi))*x/
 (x^2+y^2),0}:x:y:z[] 
  []
 
 
-Overfull \hbox (440.66524pt too wide) in paragraph at lines 1630--1630
+Overfull \hbox (99.1337pt too wide) in paragraph at lines 1630--1630
 []\TU/lmtt/m/n/10.95 u=0.5*atan2(y,x)/(2*Pi)*(atan2(y,x)>0)+(0.5*(atan2(y,x)+2*
 Pi)/(2*Pi))*(atan2(y,x)<0):x:y:z[] 
  []
 
 
-Overfull \hbox (463.66025pt too wide) in paragraph at lines 1631--1631
+Overfull \hbox (122.12871pt too wide) in paragraph at lines 1631--1631
 []\TU/lmtt/m/n/10.95 t=362.156146169164-58.e+3/(2*0.38)*(0.5/(2*Pi))^2*log(sqrt
 (x*x+y*y)/39.4354779237947 )^2:x:y:z[] 
  []
 
-
-Overfull \hbox (9.5091pt too wide) in paragraph at lines 1634--1634
-[]\TU/lmtt/m/n/10.95 conductor=omega[] 
- []
-
-
-Overfull \hbox (44.00159pt too wide) in paragraph at lines 1637--1637
-[]\TU/lmtt/m/n/10.95 [magnetic_field-bmap][] 
- []
-
-
-Overfull \hbox (26.75534pt too wide) in paragraph at lines 1638--1638
-[]\TU/lmtt/m/n/10.95 geo-data=torus3D.d[] 
- []
-
-
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 1639--1639
-[]\TU/lmtt/m/n/10.95 geo-path=$cfgdir[] 
- []
-
-
-Overfull \hbox (21.00659pt too wide) in paragraph at lines 1640--1640
-[]\TU/lmtt/m/n/10.95 helix-intensity=0[] 
- []
-
-
-Overfull \hbox (66.99658pt too wide) in paragraph at lines 1641--1641
-[]\TU/lmtt/m/n/10.95 bitter-intensity=-11767.7[] 
- []
-
-
-Overfull \hbox (21.00659pt too wide) in paragraph at lines 1642--1642
-[]\TU/lmtt/m/n/10.95 supra-intensity=0[] 
- []
-
-
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 1644--1644
-[]\TU/lmtt/m/n/10.95 [thermoelectric][] 
- []
-
-
-Overfull \hbox (118.73532pt too wide) in paragraph at lines 1645--1645
-[]\TU/lmtt/m/n/10.95 model_json=$cfgdir/biotsavart.json[] 
- []
-
-
+[36]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [37]
-Overfull \hbox (21.00659pt too wide) in paragraph at lines 1650--1650
-[]\TU/lmtt/m/n/10.95 #ksp-monitor=true[] 
- []
-
-
-Overfull \hbox (3.76035pt too wide) in paragraph at lines 1653--1653
-[]\TU/lmtt/m/n/10.95 ksp-maxit=2000[] 
- []
-
-
-Overfull \hbox (101.48907pt too wide) in paragraph at lines 1654--1654
-[]\TU/lmtt/m/n/10.95 ksp-use-initial-guess-nonzero=1[] 
- []
-
-
-Overfull \hbox (21.00659pt too wide) in paragraph at lines 1658--1658
-[]\TU/lmtt/m/n/10.95 #ksp-monitor=true[] 
- []
-
-
-Overfull \hbox (101.48907pt too wide) in paragraph at lines 1661--1661
-[]\TU/lmtt/m/n/10.95 ksp-use-initial-guess-nonzero=1[] 
- []
-
-
-Overfull \hbox (3.76035pt too wide) in paragraph at lines 1662--1662
-[]\TU/lmtt/m/n/10.95 \end{verbatim}[] 
- []
-
-
-Overfull \hbox (423.419pt too wide) in paragraph at lines 1664--1664
-[]\TU/lmtt/m/n/10.95 For the numerical file, we use a \texttt{json} file like i
-n the thermoelectric section.[] 
- []
-
-
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 1667--1667
-[]\TU/lmtt/m/n/10.95 \begin{verbatim}[] 
- []
-
-
-Overfull \hbox (89.99158pt too wide) in paragraph at lines 1669--1669
-[]    \TU/lmtt/m/n/10.95 "Name": "ThermoElectric",[] 
- []
-
-
-Overfull \hbox (44.00159pt too wide) in paragraph at lines 1670--1670
-[]    \TU/lmtt/m/n/10.95 "ShortName":"TE",[] 
- []
-
-
-Overfull \hbox (130.23282pt too wide) in paragraph at lines 1671--1671
-[]    \TU/lmtt/m/n/10.95 "Model":"thermoelectric-linear",[] 
- []
-
-
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 1672--1672
-[]    \TU/lmtt/m/n/10.95 "Materials":[] 
- []
-
-
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 1674--1674
-[]        \TU/lmtt/m/n/10.95 "omega":[] 
- []
-
-
-Overfull \hbox (84.24283pt too wide) in paragraph at lines 1676--1676
-[]            \TU/lmtt/m/n/10.95 "name":"copper",[] 
- []
-
-
-Overfull \hbox (95.74033pt too wide) in paragraph at lines 1677--1677
-[]            \TU/lmtt/m/n/10.95 "alpha":"3.35e-3",[] 
- []
-
-
-Overfull \hbox (55.49908pt too wide) in paragraph at lines 1678--1678
-[]            \TU/lmtt/m/n/10.95 "T0":"293",[] 
- []
-
-
-Overfull \hbox (89.99158pt too wide) in paragraph at lines 1679--1679
-[]            \TU/lmtt/m/n/10.95 "sigma0":"58e+3",[] 
- []
-
-
-Overfull \hbox (61.24783pt too wide) in paragraph at lines 1680--1680
-[]            \TU/lmtt/m/n/10.95 "k0":"0.38",[] 
- []
-
-
-Overfull \hbox (291.19777pt too wide) in paragraph at lines 1681--1681
-[]            \TU/lmtt/m/n/10.95 "sigma":"sigma0/(1+alpha*(T-T0)):sigma0:alpha:
-T:T0",[] 
- []
-
-
-Overfull \hbox (256.70528pt too wide) in paragraph at lines 1682--1682
-[]            \TU/lmtt/m/n/10.95 "k":"k0*T/((1+alpha*(T-T0))*T0):k0:T:alpha:T0"
-[] 
- []
-
-
-Overfull \hbox (66.99658pt too wide) in paragraph at lines 1685--1685
-[]    \TU/lmtt/m/n/10.95 "BoundaryConditions":[] 
- []
-
-
-Overfull \hbox (38.25284pt too wide) in paragraph at lines 1687--1687
-[]        \TU/lmtt/m/n/10.95 "potential":[] 
- []
-
-
-Overfull \hbox (61.24783pt too wide) in paragraph at lines 1689--1689
-[]            \TU/lmtt/m/n/10.95 "Dirichlet":[] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [38]
-Overfull \hbox (44.00159pt too wide) in paragraph at lines 1691--1691
-[]                \TU/lmtt/m/n/10.95 "in":[] 
- []
-
-
-Overfull \hbox (21.00659pt too wide) in paragraph at lines 1692--1692
-[]                \TU/lmtt/m/n/10.95 {[] 
- []
-
-
-Overfull \hbox (118.73532pt too wide) in paragraph at lines 1693--1693
-[]                    \TU/lmtt/m/n/10.95 "expr1":"0.5",[] 
- []
-
-
-Overfull \hbox (32.50409pt too wide) in paragraph at lines 1694--1694
-[]    \TU/lmtt/m/n/10.95 "expr2":"omega"[] 
- []
-
-
-Overfull \hbox (26.75534pt too wide) in paragraph at lines 1695--1695
-[]                \TU/lmtt/m/n/10.95 },[] 
- []
-
-
-Overfull \hbox (49.75034pt too wide) in paragraph at lines 1696--1696
-[]                \TU/lmtt/m/n/10.95 "out":[] 
- []
-
-
-Overfull \hbox (21.00659pt too wide) in paragraph at lines 1697--1697
-[]                \TU/lmtt/m/n/10.95 {[] 
- []
-
-
-Overfull \hbox (107.23782pt too wide) in paragraph at lines 1698--1698
-[]                    \TU/lmtt/m/n/10.95 "expr1":"0",[] 
- []
-
-
-Overfull \hbox (32.50409pt too wide) in paragraph at lines 1699--1699
-[]    \TU/lmtt/m/n/10.95 "expr2":"omega"[] 
- []
-
-
-Overfull \hbox (21.00659pt too wide) in paragraph at lines 1700--1700
-[]                \TU/lmtt/m/n/10.95 }[] 
- []
-
-
-Overfull \hbox (49.75034pt too wide) in paragraph at lines 1703--1703
-[]        \TU/lmtt/m/n/10.95 "temperature":[] 
- []
-
-
-Overfull \hbox (38.25284pt too wide) in paragraph at lines 1705--1705
-[]            \TU/lmtt/m/n/10.95 "Robin":[] 
- []
-
-
-Overfull \hbox (55.49908pt too wide) in paragraph at lines 1707--1707
-[]                \TU/lmtt/m/n/10.95 "Rext":[] 
- []
-
-
-Overfull \hbox (21.00659pt too wide) in paragraph at lines 1708--1708
-[]                \TU/lmtt/m/n/10.95 {[] 
- []
-
-
-Overfull \hbox (124.48407pt too wide) in paragraph at lines 1709--1709
-[]                    \TU/lmtt/m/n/10.95 "expr1":"0.08",[] 
- []
-
-
-Overfull \hbox (112.98657pt too wide) in paragraph at lines 1710--1710
-[]                    \TU/lmtt/m/n/10.95 "expr2":"293"[] 
- []
-
-
-Overfull \hbox (26.75534pt too wide) in paragraph at lines 1711--1711
-[]                \TU/lmtt/m/n/10.95 },[] 
- []
-
-
-Overfull \hbox (55.49908pt too wide) in paragraph at lines 1712--1712
-[]                \TU/lmtt/m/n/10.95 "Rint":[] 
- []
+File: ./images/learning/magnetostatic/Cartesian_model.png Graphic file (type QT
+m)
 
-
-Overfull \hbox (21.00659pt too wide) in paragraph at lines 1713--1713
-[]                \TU/lmtt/m/n/10.95 {[] 
- []
-
-
-Overfull \hbox (124.48407pt too wide) in paragraph at lines 1714--1714
-[]                    \TU/lmtt/m/n/10.95 "expr1":"0.08",[] 
- []
-
-
-Overfull \hbox (112.98657pt too wide) in paragraph at lines 1715--1715
-[]                    \TU/lmtt/m/n/10.95 "expr2":"293"[] 
- []
-
-
-Overfull \hbox (21.00659pt too wide) in paragraph at lines 1716--1716
-[]                \TU/lmtt/m/n/10.95 }[] 
- []
-
-
-Overfull \hbox (26.75534pt too wide) in paragraph at lines 1720--1720
-[]    \TU/lmtt/m/n/10.95 "PostProcess":[] 
- []
-
-
-Overfull \hbox (233.7103pt too wide) in paragraph at lines 1722--1722
-[]        \TU/lmtt/m/n/10.95 "Fields":["temperature","potential","current"][] 
- []
-
-
-Overfull \hbox (3.76035pt too wide) in paragraph at lines 1725--1725
-[]\TU/lmtt/m/n/10.95 \end{verbatim}[] 
- []
-
-
-Overfull \hbox (273.95152pt too wide) in paragraph at lines 1727--1727
-[]\TU/lmtt/m/n/10.95 \hypertarget{x-cartesian-model}{\subsection{Cartesian mode
-l}}[] 
- []
-
-
-Overfull \hbox (296.94653pt too wide) in paragraph at lines 1728--1728
-[]\TU/lmtt/m/n/10.95 Until now, we only focus on the study in the center of the
- torus.[] 
- []
-
-
-Overfull \hbox (440.66525pt too wide) in paragraph at lines 1729--1729
-[]\TU/lmtt/m/n/10.95 Indeed, the program can only calculate the magnetic potent
-ial and field outside the torus,[] 
- []
-
-
-Overfull \hbox (647.62021pt too wide) in paragraph at lines 1730--1730
-[]\TU/lmtt/m/n/10.95 therefore to be able to calculate \textbf{A} and \textbf{B
-} around the torus that implies to create a really complex geometry.[] 
- []
-
-
-Overfull \hbox (567.13773pt too wide) in paragraph at lines 1731--1731
-[]\TU/lmtt/m/n/10.95 Instead of this, we use the Cartesian model which allow to
- calculate \textbf{A} and \textbf{B} inside the torus,[] 
- []
-
-
-Overfull \hbox (613.12772pt too wide) in paragraph at lines 1732--1732
-[]\TU/lmtt/m/n/10.95 this allow us to calculate inside the torus, then we model
- a large sphere to represent the air all around the conductor.[] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [39]
-Overfull \hbox (32.50409pt too wide) in paragraph at lines 1735--1735
-[]\TU/lmtt/m/n/10.95 \begin{figure}[h]{}[] 
- []
-
-
-Overfull \hbox (475.15775pt too wide) in paragraph at lines 1736--1736
-[]\TU/lmtt/m/n/10.95 \centering\includegraphics[width=7.0truein]{./images/learn
-ing/magnetostatic/Cartesian_model.png}[] 
- []
-
-
-Overfull \hbox (239.45905pt too wide) in paragraph at lines 1737--1737
-[]\TU/lmtt/m/n/10.95 \caption{model of the torus (red) with the box (blue).}[] 
-
- []
-
-
-Overfull \hbox (365.93152pt too wide) in paragraph at lines 1741--1741
-[]\TU/lmtt/m/n/10.95 With a simple torus, we can calculate the potential analyt
-ically like before.[] 
- []
-
-
-Overfull \hbox (112.98657pt too wide) in paragraph at lines 1744--1744
-[]\TU/lmtt/m/n/10.95 \begin{wrapfigure}{l}{4.75truein}[] 
- []
-
-
-Overfull \hbox (503.9014pt too wide) in paragraph at lines 1745--1745
-[]\TU/lmtt/m/n/10.95 \centering\includegraphics[width=4.75truein]{./images/lear
-ning/magnetostatic/Cartesian_potential.png}[] 
- []
-
-
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 1748--1748
-[]\TU/lmtt/m/n/10.95 \end{wrapfigure}[] 
- []
-
-
-Overfull \hbox (112.98657pt too wide) in paragraph at lines 1750--1750
-[]\TU/lmtt/m/n/10.95 \begin{wrapfigure}{r}{4.75truein}[] 
- []
-
-
-Overfull \hbox (526.89645pt too wide) in paragraph at lines 1751--1751
-[]\TU/lmtt/m/n/10.95 \centering\includegraphics[width=4.75truein]{./images/lear
-ning/magnetostatic/Cartesian_potential_ana.png}[] 
- []
-
-
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 1754--1754
-[]\TU/lmtt/m/n/10.95 \end{wrapfigure}[] 
- []
-
-
-Overfull \hbox (446.414pt too wide) in paragraph at lines 1756--1756
-[]\TU/lmtt/m/n/10.95 Sadly, we can see that there is however some differences b
-etween the figures (on the scale)[] 
- []
-
-
-Overfull \hbox (112.98657pt too wide) in paragraph at lines 1759--1759
-[]\TU/lmtt/m/n/10.95 \begin{wrapfigure}{l}{4.75truein}[] 
- []
-
-
-Overfull \hbox (538.39395pt too wide) in paragraph at lines 1760--1760
-[]\TU/lmtt/m/n/10.95 \centering\includegraphics[width=4.75truein]{./images/lear
-ning/magnetostatic/Cartesian_potential_error.png}[] 
- []
-
-
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 1763--1763
-[]\TU/lmtt/m/n/10.95 \end{wrapfigure}[] 
- []
-
-
-Overfull \hbox (112.98657pt too wide) in paragraph at lines 1765--1765
-[]\TU/lmtt/m/n/10.95 \begin{wrapfigure}{r}{4.75truein}[] 
- []
-
-
-Overfull \hbox (567.13766pt too wide) in paragraph at lines 1766--1766
-[]\TU/lmtt/m/n/10.95 \centering\includegraphics[width=4.75truein]{./images/lear
-ning/magnetostatic/Cartesian_potential_error_zoom.png}[] 
- []
-
-
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 1769--1769
-[]\TU/lmtt/m/n/10.95 \end{wrapfigure}[] 
- []
-
-
-Overfull \hbox (319.94153pt too wide) in paragraph at lines 1771--1771
-[]\TU/lmtt/m/n/10.95 The maximum of the error is approximately 0.8%, located on
- the torus.[] 
- []
-
-
-Overfull \hbox (302.69525pt too wide) in paragraph at lines 1774--1774
-[]\TU/lmtt/m/n/10.95 \hypertarget{x-\textbf{elasticity}}{\section{\textbf{Elast
-icity}}}[] 
- []
-
-
-Overfull \hbox (480.90648pt too wide) in paragraph at lines 1775--1775
-[]\TU/lmtt/m/n/10.95 \hypertarget{x-general-presentation-of-the-files}{\subsect
-ion{General presentation of the files}}[] 
- []
-
-
-Overfull \hbox (561.38898pt too wide) in paragraph at lines 1776--1776
-[]\TU/lmtt/m/n/10.95 In the continuity of the study of the magnet, we use the f
-ile already used in Thermoelectric and Magnetostatic.[] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [40]
-Overfull \hbox (360.18277pt too wide) in paragraph at lines 1777--1777
-[]\TU/lmtt/m/n/10.95 We create a new file \texttt{.json} to set up the conditio
-ns for elasticity.[] 
- []
-
-
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 1780--1780
-[]\TU/lmtt/m/n/10.95 \begin{verbatim}[] 
- []
-
-
-Overfull \hbox (72.74533pt too wide) in paragraph at lines 1782--1782
-[]    \TU/lmtt/m/n/10.95 "Name": "CoupledCart",[] 
- []
-
-
-Overfull \hbox (49.75034pt too wide) in paragraph at lines 1783--1783
-[]    \TU/lmtt/m/n/10.95 "ShortName":"MSC",[] 
+<use  "./images/learning/magnetostatic/Cartesian_model.png" >
+Overfull \hbox (87.63632pt too wide) in paragraph at lines 1736--1737
+ [][] 
  []
 
 
-Overfull \hbox (66.99658pt too wide) in paragraph at lines 1784--1784
-[]    \TU/lmtt/m/n/10.95 "Model":"Elasticity",[] 
- []
-
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 1785--1785
-[]    \TU/lmtt/m/n/10.95 "Materials":[] 
- []
+File: ./images/learning/magnetostatic/Cartesian_potential.png Graphic file (typ
+e QTm)
+<use  "./images/learning/magnetostatic/Cartesian_potential.png" >
 
+Package wrapfig Warning: Collision between wrapping environments on input line 
+1750.
 
-Overfull \hbox (89.99158pt too wide) in paragraph at lines 1787--1787
-[]        \TU/lmtt/m/n/10.95 "name_of_the_volume":[] 
+File: ./images/learning/magnetostatic/Cartesian_potential_ana.png Graphic file 
+(type QTm)
+<use  "./images/learning/magnetostatic/Cartesian_potential_ana.png" >
+Overfull \hbox (9.36836pt too wide) in paragraph at lines 1756--1757
+\TU/lmr/m/n/10.95 is however some
  []
 
 
-Overfull \hbox (95.74033pt too wide) in paragraph at lines 1789--1789
-[]            \TU/lmtt/m/n/10.95 "name":"material",[] 
+Overfull \hbox (2.0209pt too wide) in paragraph at lines 1756--1757
+\TU/lmr/m/n/10.95 differences be-
  []
-
 
-Overfull \hbox (107.23782pt too wide) in paragraph at lines 1790--1790
-[]            \TU/lmtt/m/n/10.95 "E":"Young_modulus",[] 
- []
 
+Package wrapfig Warning: Collision between wrapping environments on input line 
+1759.
 
-Overfull \hbox (124.48407pt too wide) in paragraph at lines 1791--1791
-[]            \TU/lmtt/m/n/10.95 "nu":"Poisson's_ratio",[] 
- []
+File: ./images/learning/magnetostatic/Cartesian_potential_error.png Graphic fil
+e (type QTm)
+<use  "./images/learning/magnetostatic/Cartesian_potential_error.png" >
 
+Package wrapfig Warning: Collision between wrapping environments on input line 
+1765.
 
-Overfull \hbox (227.96153pt too wide) in paragraph at lines 1792--1792
-[]            \TU/lmtt/m/n/10.95 "alphaT":"linear_dilatation_coefficient",[] 
- []
+File: ./images/learning/magnetostatic/Cartesian_potential_error_zoom.png Graphi
+c file (type QTm)
+<use  "./images/learning/magnetostatic/Cartesian_potential_error_zoom.png" >
+[38]
+Overfull \vbox (6.85027pt too high) has occurred while \output is active []
 
 
-Overfull \hbox (78.49408pt too wide) in paragraph at lines 1793--1793
-[]            \TU/lmtt/m/n/10.95 "rho":"density"[] 
+[39]
+Overfull \hbox (3.76195pt too wide) in paragraph at lines 1771--1772
+[][]\TU/lmr/m/n/10.95 The maximum
  []
 
 
-Overfull \hbox (66.99658pt too wide) in paragraph at lines 1796--1796
-[]    \TU/lmtt/m/n/10.95 "BoundaryConditions":[] 
+Underfull \hbox (badness 2334) in paragraph at lines 1771--1772
+\TU/lmr/m/n/10.95 of the error
  []
 
 
-Overfull \hbox (199.2178pt too wide) in paragraph at lines 1798--1798
-[]        \TU/lmtt/m/n/10.95 "condition(like displacement_x y or z)":[] 
+Overfull \hbox (13.2994pt too wide) in paragraph at lines 1771--1772
+\TU/lmr/m/n/10.95 is approximately
  []
 
 
-Overfull \hbox (279.70029pt too wide) in paragraph at lines 1800--1800
-[]            \TU/lmtt/m/n/10.95 "type_of_condition (Dirichlet, Neumann or Robi
-n)":[] 
+Overfull \hbox (3.0721pt too wide) in paragraph at lines 1776--1778
+\TU/lmr/bx/sc/10.95 presentation
  []
 
 
-Overfull \hbox (130.23282pt too wide) in paragraph at lines 1802--1802
-[]                \TU/lmtt/m/n/10.95 "surface_concerned":[] 
+Underfull \hbox (badness 1496) in paragraph at lines 1776--1778
+\TU/lmr/m/n/10.95 nuity of the
  []
 
 
-Overfull \hbox (21.00659pt too wide) in paragraph at lines 1803--1803
-[]                \TU/lmtt/m/n/10.95 {[] 
+Overfull \hbox (6.1841pt too wide) in paragraph at lines 1776--1778
+\TU/lmr/m/n/10.95 magnet, we use
  []
 
 
-Overfull \hbox (95.74033pt too wide) in paragraph at lines 1804--1804
-[]                    \TU/lmtt/m/n/10.95 "expr":"_"[] 
+Overfull \hbox (4.11237pt too wide) in paragraph at lines 1776--1778
+\TU/lmr/m/n/10.95 the file already
  []
 
 
-Overfull \hbox (26.75534pt too wide) in paragraph at lines 1805--1805
-[]                \TU/lmtt/m/n/10.95 },[] 
+Overfull \hbox (4.1014pt too wide) in paragraph at lines 1776--1778
+\TU/lmr/m/n/10.95 moelectric and
  []
 
 
-Overfull \hbox (72.74533pt too wide) in paragraph at lines 1808--1808
-[]        \TU/lmtt/m/n/10.95 "other_condition":[] 
+Overfull \hbox (5.96289pt too wide) in paragraph at lines 1776--1778
+\TU/lmr/m/n/10.95 Magnetostatic.
  []
 
 
-Overfull \hbox (9.5091pt too wide) in paragraph at lines 1810--1810
-[]            \TU/lmtt/m/n/10.95 ...[] 
+Underfull \hbox (badness 1210) in paragraph at lines 1776--1778
+\TU/lmr/m/n/10.95 We create a
  []
 
 
-Overfull \hbox (26.75534pt too wide) in paragraph at lines 1814--1814
-[]    \TU/lmtt/m/n/10.95 "PostProcess":[] 
+Overfull \hbox (1.48436pt too wide) in paragraph at lines 1776--1778
+\TU/lmr/m/n/10.95 new file \TU/lmtt/m/n/10.95 .json
  []
-
 
-Overfull \hbox (354.43402pt too wide) in paragraph at lines 1816--1816
+[40]
+Overfull \hbox (12.90248pt too wide) in paragraph at lines 1816--1816
 []        \TU/lmtt/m/n/10.95 "Fields":["displacement","Von-Mises","tresca","pri
 ncipal-stresses"][] 
  []
 
+[41]
+File: ./images/learning/elasticity/Coarse_Von-Mises.png Graphic file (type QTm)
 
-Overfull \hbox (3.76035pt too wide) in paragraph at lines 1819--1819
-[]\TU/lmtt/m/n/10.95 \end{verbatim}[] 
- []
+ <use  "./images/learning/elasticity/Coarse_Von-Mises.png" >
 
+Package wrapfig Warning: Collision between wrapping environments on input line 
+1891.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [41]
-Overfull \hbox (733.85144pt too wide) in paragraph at lines 1821--1821
-[]\TU/lmtt/m/n/10.95 We also need to set up the configuration file (\texttt{.cf
-g}) to compute the elasticity part, which consist in adding the elasticity sect
-ion.[] 
- []
-
-
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 1824--1824
-[]\TU/lmtt/m/n/10.95 \begin{verbatim}[] 
- []
-
-
-Overfull \hbox (199.2178pt too wide) in paragraph at lines 1826--1826
-[]\TU/lmtt/m/n/10.95 filename=$cfgdir/quarter-torus3D-elasticity.json[] 
- []
-
-
-Overfull \hbox (89.99156pt too wide) in paragraph at lines 1827--1827
-[]\TU/lmtt/m/n/10.95 on.type=elimination_symmetric[] 
- []
-
-
-Overfull \hbox (61.24783pt too wide) in paragraph at lines 1828--1828
-[]\TU/lmtt/m/n/10.95 thermal_dilatation=false[] 
- []
-
-
-Overfull \hbox (26.75534pt too wide) in paragraph at lines 1829--1829
-[]\TU/lmtt/m/n/10.95 do_export_all=true[] 
- []
-
-
-Overfull \hbox (61.24783pt too wide) in paragraph at lines 1831--1831
-[]\TU/lmtt/m/n/10.95 # # precondtioner config[] 
- []
-
-
-Overfull \hbox (61.24783pt too wide) in paragraph at lines 1832--1832
-[]\TU/lmtt/m/n/10.95 pc-type=gamg #lu,gasm,ml[] 
- []
-
-
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 1833--1833
-[]\TU/lmtt/m/n/10.95 ksp-monitor=true[] 
- []
-
-
-Overfull \hbox (61.24783pt too wide) in paragraph at lines 1834--1834
-[]\TU/lmtt/m/n/10.95 # ksp-converged-reason=1[] 
- []
-
-
-Overfull \hbox (3.76035pt too wide) in paragraph at lines 1835--1835
-[]\TU/lmtt/m/n/10.95 \end{verbatim}[] 
- []
-
-
-Overfull \hbox (193.46906pt too wide) in paragraph at lines 1837--1837
-[]\TU/lmtt/m/n/10.95 \hypertarget{x-examples}{\subsection{Examples}}[] 
- []
-
-
-Overfull \hbox (193.46906pt too wide) in paragraph at lines 1839--1839
-[]\TU/lmtt/m/n/10.95 \hypertarget{x-validity}{\subsection{Validity}}[] 
- []
-
-
-Overfull \hbox (210.71529pt too wide) in paragraph at lines 1840--1840
-[]\TU/lmtt/m/n/10.95 \hypertarget{x-conditions}{\paragraph{Conditions}}[] 
- []
-
-
-Overfull \hbox (785.59018pt too wide) in paragraph at lines 1841--1841
-[]\TU/lmtt/m/n/10.95 We consider the conductor as a solenoid with finite thickn
-ess and infinite length. This allow us to ignore the \textbf{z} components in o
-ur equations.[] 
- []
-
-
-Overfull \hbox (193.46906pt too wide) in paragraph at lines 1842--1842
-[]\TU/lmtt/m/n/10.95 We admit that there is only a radial expansion.[] 
- []
-
-
-Overfull \hbox (199.2178pt too wide) in paragraph at lines 1845--1845
-[]\TU/lmtt/m/n/10.95 \hypertarget{x-equations}{\paragraph{Equations}}[] 
- []
-
-
-Overfull \hbox (423.419pt too wide) in paragraph at lines 1846--1846
-[]\TU/lmtt/m/n/10.95 Taking back the equations in the \href{/math.adoc}{Maths f
-or Hifimagnet}, we consider :[] 
- []
-
-
-Overfull \hbox (141.7303pt too wide) in paragraph at lines 1851--1851
-[]\TU/lmtt/m/n/10.95 div\sigma+\textbf{j}\times\textbf{b}=0[] 
- []
-
-
-Overfull \hbox (256.70529pt too wide) in paragraph at lines 1856--1856
-[]\TU/lmtt/m/n/10.95 With the conditions set in the previous section, we have :
-[] 
- []
-
-
-Overfull \hbox (354.434pt too wide) in paragraph at lines 1861--1861
-[]\TU/lmtt/m/n/10.95 -\sigma_{\theta}+\frac{\partial}{\partial r}(r\sigma_{r})=
--rj_{\theta}b_{z}[] 
- []
-
-
+File: ./images/learning/elasticity/Coarse_Tresca.png Graphic file (type QTm)
+<use  "./images/learning/elasticity/Coarse_Tresca.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [42]
-Overfull \hbox (210.71529pt too wide) in paragraph at lines 1866--1866
-[]\TU/lmtt/m/n/10.95 \hypertarget{x-parameters}{\paragraph{Parameters}}[] 
- []
-
-
-Overfull \hbox (314.19278pt too wide) in paragraph at lines 1867--1867
-[]\TU/lmtt/m/n/10.95 In our case (a coil of copper), we choose the parameters l
-ike this :[] 
- []
-
-
-Overfull \hbox (3.76035pt too wide) in paragraph at lines 1870--1870
-[]\TU/lmtt/m/n/10.95 \begin{center}[] 
- []
-
-
-Overfull \hbox (84.24281pt too wide) in paragraph at lines 1871--1871
-[]\TU/lmtt/m/n/10.95 \begin{tabular}{|c|c|c|c|c|}[] 
- []
-
-
-Overfull \hbox (446.414pt too wide) in paragraph at lines 1873--1873
-[]\TU/lmtt/m/n/10.95 $E$ & Young modulus & $[124.10^{9} ;128.10^{9}$] & $128.10
-^{9}$ & $Pa=kg.m^{-1} .s^{-2}$ \\[] 
- []
-
-
-Overfull \hbox (176.22281pt too wide) in paragraph at lines 1874--1874
-[]\TU/lmtt/m/n/10.95 $\nu$ & Poisson’s ratio & 0.33 & 0.33 & - \\[] 
- []
-
-
-Overfull \hbox (521.14774pt too wide) in paragraph at lines 1875--1875
-[]\TU/lmtt/m/n/10.95 $\alpha_{T}$ & linear dilatation coefficient & $[16,6.10^{
--6} ;18.10^{-6}$] & $18.10^{-6}$ & $K^{-1}$ \\[] 
- []
-
-
-Overfull \hbox (256.70529pt too wide) in paragraph at lines 1876--1876
-[]\TU/lmtt/m/n/10.95 $\rho$ & density & $[8920;8960$] & $8950$ & $kg.m^{-3}$ \\
-[] 
- []
-
-
-Overfull \hbox (176.2228pt too wide) in paragraph at lines 1881--1881
-[]\TU/lmtt/m/n/10.95 \hypertarget{x-results}{\paragraph{Results}}[] 
- []
-
-
-Overfull \hbox (377.42902pt too wide) in paragraph at lines 1882--1882
-[]\TU/lmtt/m/n/10.95 As we can see in this coarse mesh, the scale is coherent (
-he unit being in Pa).[] 
- []
-
-
-Overfull \hbox (112.98657pt too wide) in paragraph at lines 1885--1885
-[]\TU/lmtt/m/n/10.95 \begin{wrapfigure}{l}{4.75truein}[] 
- []
-
-
-Overfull \hbox (469.40897pt too wide) in paragraph at lines 1886--1886
-[]\TU/lmtt/m/n/10.95 \centering\includegraphics[width=4.75truein]{./images/lear
-ning/elasticity/Coarse_Von-Mises.png}[] 
- []
-
-
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 1889--1889
-[]\TU/lmtt/m/n/10.95 \end{wrapfigure}[] 
- []
-
-
-Overfull \hbox (112.98657pt too wide) in paragraph at lines 1891--1891
-[]\TU/lmtt/m/n/10.95 \begin{wrapfigure}{r}{4.75truein}[] 
- []
-
-
-Overfull \hbox (452.16275pt too wide) in paragraph at lines 1892--1892
-[]\TU/lmtt/m/n/10.95 \centering\includegraphics[width=4.75truein]{./images/lear
-ning/elasticity/Coarse_Tresca.png}[] 
- []
-
-
-Overfull \hbox (15.25784pt too wide) in paragraph at lines 1895--1895
-[]\TU/lmtt/m/n/10.95 \end{wrapfigure}[] 
- []
-
 [43]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1897.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 1897.
- (./Examples.aux
-Overfull \hbox (190.86021pt too wide) in paragraph at lines 20--20
-[]\TU/lmtt/m/n/10.95 \@writefile{toc}{\contentsline {section}{\tocsection {}{1}
-{\textbf  {Prepare your geometry}}}{1}{section.1}}[] 
- []
-
-
-Overfull \hbox (150.61899pt too wide) in paragraph at lines 21--21
-[]\TU/lmtt/m/n/10.95 \@writefile{toc}{\contentsline {section}{\tocsection {}{2}
-{\textbf  {ThermoElectric}}}{1}{section.2}}[] 
- []
-
-
-Overfull \hbox (271.34268pt too wide) in paragraph at lines 22--22
-[]\TU/lmtt/m/n/10.95 \@writefile{toc}{\contentsline {subsection}{\tocsubsection
- {}{2.1}{General presentation of the files}}{1}{subsection.2.1}}[] 
- []
-
-
-Overfull \hbox (202.3577pt too wide) in paragraph at lines 23--23
-[]\TU/lmtt/m/n/10.95 \@writefile{toc}{\contentsline {subsubsection}{\tocsubsubs
-ection {}{2.1.1}{Material}}{1}{subsubsection.2.1.1}}[] 
- []
-
-
-Overfull \hbox (208.10648pt too wide) in paragraph at lines 24--24
-[]\TU/lmtt/m/n/10.95 \@writefile{toc}{\contentsline {subsubsection}{\tocsubsubs
-ection {}{2.1.2}{Condition}}{4}{subsubsection.2.1.2}}[] 
- []
-
-
-Overfull \hbox (127.62396pt too wide) in paragraph at lines 25--25
-[]\TU/lmtt/m/n/10.95 \@writefile{toc}{\contentsline {subsection}{\tocsubsection
- {}{2.2}{Examples}}{5}{subsection.2.2}}[] 
- []
-
-
-Overfull \hbox (236.85022pt too wide) in paragraph at lines 26--26
-[]\TU/lmtt/m/n/10.95 \@writefile{toc}{\contentsline {subsubsection}{\tocsubsubs
-ection {}{2.2.1}{Current sensor}}{5}{subsubsection.2.2.1}}[] 
- []
-
-
-Overfull \hbox (87.38274pt too wide) in paragraph at lines 27--27
-[]\TU/lmtt/m/n/10.95 \@writefile{toc}{\contentsline {paragraph}{\tocparagraph {
-}{}{Parameters}}{6}{section*.2}}[] 
- []
-
-
-Overfull \hbox (87.38274pt too wide) in paragraph at lines 28--28
-[]\TU/lmtt/m/n/10.95 \@writefile{toc}{\contentsline {paragraph}{\tocparagraph {
-}{}{Conditions}}{8}{section*.3}}[] 
- []
-
-
-Overfull \hbox (75.88522pt too wide) in paragraph at lines 29--29
-[]\TU/lmtt/m/n/10.95 \@writefile{toc}{\contentsline {paragraph}{\tocparagraph {
-}{}{Results}}{11}{section*.4}}[] 
- []
-
-
-Overfull \hbox (231.10147pt too wide) in paragraph at lines 30--30
-[]\TU/lmtt/m/n/10.95 \@writefile{toc}{\contentsline {subsubsection}{\tocsubsubs
-ection {}{2.2.2}{Double Helix}}{11}{subsubsection.2.2.2}}[] 
- []
-
-
-Overfull \hbox (93.13148pt too wide) in paragraph at lines 31--31
-[]\TU/lmtt/m/n/10.95 \@writefile{toc}{\contentsline {paragraph}{\tocparagraph {
-}{}{Parameters}}{11}{section*.5}}[] 
- []
-
-
-Overfull \hbox (265.59396pt too wide) in paragraph at lines 32--32
-[]\TU/lmtt/m/n/10.95 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\i
-gnorespaces Potential as a function of current}}{12}{figure.1}}[] 
- []
-
-
-Overfull \hbox (363.3227pt too wide) in paragraph at lines 33--33
-[]\TU/lmtt/m/n/10.95 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\i
-gnorespaces Temperature max in 1 plate as a function of current}}{13}{figure.2}
-}[] 
- []
-
-
-Overfull \hbox (501.29266pt too wide) in paragraph at lines 34--34
-[]\TU/lmtt/m/n/10.95 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\i
-gnorespaces Temperature max in 1 plate as a function of current, forced convect
-ion only}}{14}{figure.3}}[] 
- []
-
-
-Overfull \hbox (219.60397pt too wide) in paragraph at lines 35--35
-[]\TU/lmtt/m/n/10.95 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\i
-gnorespaces Double Helix on `Paraview`}}{15}{figure.4}}[] 
- []
-
-
-Overfull \hbox (93.13148pt too wide) in paragraph at lines 36--36
-[]\TU/lmtt/m/n/10.95 \@writefile{toc}{\contentsline {paragraph}{\tocparagraph {
-}{}{Conditions}}{15}{section*.6}}[] 
- []
-
-
-Overfull \hbox (75.88522pt too wide) in paragraph at lines 37--37
-[]\TU/lmtt/m/n/10.95 \@writefile{toc}{\contentsline {paragraph}{\tocparagraph {
-}{}{Results}}{18}{section*.7}}[] 
- []
-
-
-Overfull \hbox (133.37271pt too wide) in paragraph at lines 38--38
-[]\TU/lmtt/m/n/10.95 \@writefile{toc}{\contentsline {subsection}{\tocsubsection
- {}{2.3}{Validity}}{18}{subsection.2.3}}[] 
- []
-
-
-Overfull \hbox (87.38274pt too wide) in paragraph at lines 39--39
-[]\TU/lmtt/m/n/10.95 \@writefile{toc}{\contentsline {paragraph}{\tocparagraph {
-}{}{Equations}}{18}{section*.8}}[] 
- []
-
-
-Overfull \hbox (282.8402pt too wide) in paragraph at lines 40--40
-[]\TU/lmtt/m/n/10.95 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\i
-gnorespaces Temperature's repartition on paraview}}{19}{figure.5}}[] 
- []
-
-
-Overfull \hbox (294.3377pt too wide) in paragraph at lines 41--41
-[]\TU/lmtt/m/n/10.95 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\i
-gnorespaces Model of the quarter of torus on `Gmsh`}}{20}{figure.6}}[] 
- []
-
-
-Overfull \hbox (93.13148pt too wide) in paragraph at lines 42--42
-[]\TU/lmtt/m/n/10.95 \@writefile{toc}{\contentsline {paragraph}{\tocparagraph {
-}{}{Parameters}}{20}{section*.9}}[] 
- []
-
-
-Overfull \hbox (98.88022pt too wide) in paragraph at lines 43--43
-[]\TU/lmtt/m/n/10.95 \@writefile{toc}{\contentsline {paragraph}{\tocparagraph {
-}{}{Conditions}}{21}{section*.10}}[] 
- []
-
-
-Overfull \hbox (81.63397pt too wide) in paragraph at lines 44--44
-[]\TU/lmtt/m/n/10.95 \@writefile{toc}{\contentsline {paragraph}{\tocparagraph {
-}{}{Results}}{21}{section*.11}}[] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [44
-
-]
-Overfull \hbox (64.38773pt too wide) in paragraph at lines 45--45
-[]\TU/lmtt/m/n/10.95 \@writefile{toc}{\contentsline {paragraph}{\tocparagraph {
-}{}{Code}}{23}{section*.12}}[] 
- []
-
-)
+ (./Examples.aux)
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1897.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1897.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  )
-(\end occurred inside a group at level 3)
-
-### simple group (level 3) entered at line 1164 ({)
-### simple group (level 2) entered at line 211 ({)
-### simple group (level 1) entered at line 199 ({)
-### bottom level
 (\end occurred when \ifx on line 161 was incomplete) 
 Here is how much of TeX's memory you used:
- 31398 strings out of 494970
- 634717 string characters out of 6176981
- 780447 words of memory out of 5000000
- 34651 multiletter control sequences out of 15000+600000
- 10942 words of font info for 55 fonts, out of 8000000 for 9000
+ 31421 strings out of 494970
+ 635585 string characters out of 6176981
+ 780481 words of memory out of 5000000
+ 34663 multiletter control sequences out of 15000+600000
+ 10926 words of font info for 53 fonts, out of 8000000 for 9000
  197 hyphenation exceptions out of 8191
- 54i,9n,73p,10350b,622s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 54i,9n,73p,10350b,475s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Examples.pdf (44 pages).
+Output written on Examples.pdf (43 pages).

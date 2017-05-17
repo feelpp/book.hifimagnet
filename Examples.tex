@@ -5,7 +5,7 @@
 
 \documentclass[11pt]{amsart}
 \usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
-\geometry{letterpaper}               % ... or a4paper or a5paper or ...
+\geometry{a4paper}               % ... or a4paper or a5paper or ...
 %\geometry{landscape}                % Activate for for rotated page geometry
 %\usepackage[parfill]{parskip}       % Activate to begin paragraphs with an empty line rather than an indent
 
@@ -196,7 +196,7 @@
 \tableofcontents
 \hypertarget{x-\textbf{prepare-your-geometry}}{\section{\textbf{Prepare your geometry}}}
 First of all, you need to create the 3D model of your conductor with \texttt{Salome} or \texttt{gmsh} and to make the mesh.
-When the mesh is created, with specific names for the volumes and surfaces, export it in \texttt{.med} (example : \texttt{example_mesh.med}) with \texttt{Salome}.
+When the mesh is created, with specific names for the volumes and surfaces, export it in \texttt{.med} (example : \texttt{example\_mesh.med}) with \texttt{Salome}.
 You also need to partition the mesh if you want to do the calculations in parallel, running this command below.
 
 
@@ -208,7 +208,7 @@ feelpp_mesh_partitioner --ifile example_mesh.med --part 4 --nochdir
 \end{verbatim}
 
 Where \texttt{part} indicate the number of processors you want to use.
-This will create a new file, call \texttt{example_mesh_p4.json} that you will use in your configure file.
+This will create a new file, call \texttt{example\_mesh\_p4.json} that you will use in your configure file.
 
 
 \hypertarget{x-\textbf{thermoelectric}}{\section{\textbf{ThermoElectric}}}
@@ -293,8 +293,8 @@ The structure of a json file is as follows (conditions are details in \hyperlink
 
 \admonition{WARNING}{The name of the volumes and surfaces must be the same as defined in \texttt{Salome}.
 Be careful to the units of the material properties. They need to be consistent with the length unit used for the rest.
-For instance the length unit is in \textbf{mm} in \hyperlink{test.json}{quarter-turn3Djson}.}
-It is also necessary to create a file to configure the calculation, call \texttt{.cfg} file (example \hyperlink{example-file.cfg}{thermoelectric_3D_V1T1_N1_cvgcfg (for the T1V1 model)}).
+For instance the length unit is in \textbf{mm} in \hyperlink{test.json}{}.}
+It is also necessary to create a file to configure the calculation, call \texttt{.cfg} file (example \hyperlink{example-file.cfg}{thermoelectric\_3D\_V1T1\_N1\_cvgcfg (for the T1V1 model)}).
 It will configure which file you will use in your calculations and which type of solver you use (here we use the Krylov method to solve both \texttt{electro} and \texttt{thermal} problem).
 
 
@@ -358,12 +358,12 @@ There are three type of conditions :
   {
     "Surface":
       {
-        "expr1":"Value_of_the_solution"
+        "expr1":"Value_of_the_solution",
         "expr2":"Volume_concerned"
       },
     "other_surface":
       {
-        "expr1":"Value_of_the_solution"
+        "expr1":"Value_of_the_solution",
         "expr2":"Volume_concerned"
       }
   }
@@ -394,12 +394,12 @@ There are three type of conditions :
   {
     "Surface":
       {
-        "expr1":"Value_of_derivatives_of_the_solution"
+        "expr1":"Value_of_derivatives_of_the_solution",
         "expr2":"Value_of_the_solution"
       },
     "other_surface":
       {
-        "expr1":"Value_of_derivatives_of_the_solution"
+        "expr1":"Value_of_derivatives_of_the_solution",
         "expr2":"Value_of_the_solution"
       }
   }
@@ -1130,7 +1130,7 @@ Next step is to create a file.json which define the model we will use, the mater
                 },
                 "out":
                 {
-                    "expr1":"0.3/4.", // since we consider only 1/4th of a torus
+                    "expr1":"0.3/4.", //since we only consider a quarter of the torus
 		    "expr2":"omega"
                 }
         },
@@ -1161,7 +1161,7 @@ Next step is to create a file.json which define the model we will use, the mater
 Lastly, we create a file.cfg to configure what we will calculate.
 
 
-{\bf \hypertarget{example-file.cfg}{thermoelectric_3D_V1T1_N1_cvg.cfg (for the T1V1 model)}}\vspace{-1\baselineskip}
+{\bf \hypertarget{example-file.cfg}{thermoelectric\_3D\_V1T1\_N1\_cvg.cfg (for the T1V1 model)}}\vspace{-1\baselineskip}
 \begin{verbatim}
 dim=3
 geofile=quarter-turn3D.geo
@@ -1234,7 +1234,7 @@ The kind of your test can be :
 
 \item[biotsavart]calculate \textbf{B} and \textbf{A} analytically and with BiotSavart, depending of \textbf{j} given.
 
-\item[biotsavart_num]same than biotsavart but use the thermoelectric program to calculate \textbf{j}.
+\item[biotsavart\_num]same than biotsavart but use the thermoelectric program to calculate \textbf{j}.
 
 \end{description}
 
@@ -1243,7 +1243,7 @@ You either set the dimension (1, 2 or 3D) of the box inside the conductor.
 
 
 \hypertarget{x-material}{\subsubsection{Material}}
-There is no json file for the magnetostatic studies (except for the biotsavart_num which use the termoelectric program).
+There is no json file for the magnetostatic studies (except for the biotsavart\_num which use the termoelectric program).
 Instead, the configuration file (\texttt{.cfg}) use a \texttt{.d} file, which define the geometry and the material of the conductor, like this :
 
 
@@ -1362,7 +1362,7 @@ This torus is modeled with a file \texttt{.geo}, which name the volume of the to
 \end{figure}
 
 \hypertarget{x-equations}{\paragraph{Equations}}
-We use the Biot & Savart’s law to prove the validity.
+We use the Biot \& Savart’s law to prove the validity.
 First, we need to set the conditions to use this law, $\Omega_{cond}\cap\Omega_{mgn}=\emptyset$,
 with $\Omega_{cond}$ the conductor in which the current is passing and
 $\Omega_{mgn}$ the domain in which we want to know the magnetic field.
@@ -1409,7 +1409,7 @@ A(\textbf{r})=\frac{\mu_{0}}{4\pi}\int_{\Omega_{cond}}\frac{\textbf{j}(\textbf{r
 
 
 
-As \textbf{B} is defined as the curl of \textbf{A}, we can write the so called Biot & Savart’s law :
+As \textbf{B} is defined as the curl of \textbf{A}, we can write the so called Biot \& Savart’s law :
 
 
 
@@ -1421,7 +1421,7 @@ As \textbf{B} is defined as the curl of \textbf{A}, we can write the so called B
 
 \hypertarget{x-parameters}{\paragraph{Parameters}}
 We use here the same parameters as in the ThermoElectric section for the .json file.
-We select the biter-intensity (shown in \hyperlink{example.cfg}{biotsavart_num_box3D_3D_V1T1_N1_cvgcfg})
+We select the biter-intensity (shown in \hyperlink{example.cfg}{biotsavart\_num\_box3D\_3D\_V1T1\_N1\_cvgcfg})
 We also need a file \texttt{.d} to define the characteristics of the conductors.
 
 
@@ -1450,7 +1450,7 @@ The scale and the direction of the magnetic field (\textbf{B}) are coherent.
 For the modelisation of the the torus and his box inside, we create the geometry with this file \texttt{.geo}
 
 
-{\bf torus3D_box3D.geo}\vspace{-1\baselineskip}
+{\bf torus3D\_box3D.geo}\vspace{-1\baselineskip}
 \begin{verbatim}
 // Define Main params
 Unit = 1.e-3;
@@ -1583,7 +1583,7 @@ the next step is to make a file \texttt{.d} which fix some parameters on the tor
 MARGE DE SECURITE CONTRAINTES= 8.0 %
 \end{verbatim}
 
-Finally we can use the \texttt{biotsavart_num} (in which we use the thermoelectric model to calculate \textbf{j}) or the \texttt{biotsavart} (in which we specify manually \textbf{j})
+Finally we can use the \texttt{biotsavart\_num} (in which we use the thermoelectric model to calculate \textbf{j}) or the \texttt{biotsavart} (in which we specify manually \textbf{j})
 
 
 \begin{verbatim}
