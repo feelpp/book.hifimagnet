@@ -1,0 +1,122 @@
+
+There are several applications we can use, but all this applications follow the same form :
+
+----
+feelpp_hfm_test_"kind of your test"_box"1 2 or 3"D_P"1 2 or 3"_N1
+----
+
+The kind of your test can be :
+
+[horizontal]
+biotsavart::   calculate *B* and *A* analytically and with BiotSavart, depending of *j* given.
+biotsavart\_num::   same than biotsavart but use the thermoelectric program to calculate *j*.
+
+
+You either set the dimension (1, 2 or 3D) of the box inside the conductor.
+
+==== Material
+
+There is no json file for the magnetostatic studies (except for the biotsavart\_num which use the termoelectric program).
+Instead, the configuration file (`.cfg`) use a `.d` file, which define the geometry and the material of the conductor, like this :
+
+.torus3D.d
+----
+#Power[MW]	Current[A]
+ "_"  		     "_"
+#Helices	N_Elem
+"_"
+#N	R1[m]  R2[m]  HalfL[m]	Rho[Ohm.m]  Alpha[1/K]	E_Max[Pa]	K[W/(m.K)]	h[W/(m^2.K)]	<T_Water>[°C]	T_Max[°C]
+"_ _ _ _"
+# Bitter I=j1*r1*log(r2/r1)*2*L=11767.657994358965
+#Type  R1         R2      Z1           Z2         J         Rho	  	N_turns
+  "_" "_"        "_"      "_"         "_"        "_"        "_"      "_"
+
+# Supra
+
+#Bz(0)[tesla]	Power[MW]	Bz_total(0)[tesla]
+   "_"          "_"         "_"
+
+#H   B0_H[t]	Sum_B0[t] Power_H[MW]	Sum_Power[MW]
+
+
+
+MARGE DE SECURITE CONTRAINTES= 8.0 %
+----
+
+As there is different applications, there is different configure files, the biotsavart
+
+.biotsavart\_box.cfg
+----
+dim=3
+units=mm
+geofile="name_of_the_file_created_by_the_partition.json" (.msh or .geo)
+geofile-path=$cfgdir
+gmsh.hsize="_"
+
+conductor_volume="name_of_your_volume"
+
+[convergence]
+max_iter="_"
+
+[functions]
+#theoretical function of j
+j={-58.e+3*(0.5/(2*Pi))*y/(x^2+y^2),58.e+3*(0.5/(2*Pi))*x/(x^2+y^2),0}:x:y:z
+
+[biot_savart]
+conductor="name_of_your_volume"
+box=box"dimension_of_your_box(1,2_or_3D)"
+
+[magnetic_field-bmap]
+geo-data="name_of_your_file.d"
+geo-path=$cfgdir
+helix-intensity="_"
+bitter-intensity="_"
+supra-intensity="_"
+----
+
+.biosavart\_num\_box.cfg
+----
+dim=3
+units=mm
+geofile=torus3D.geo
+geofile-path=$cfgdir
+gmsh.hsize=10
+
+conductor_volume=omega
+
+[convergence]
+max_iter=1
+
+[functions]
+j={-58.e+3*(0.5/(2*Pi))*y/(x^2+y^2),58.e+3*(0.5/(2*Pi))*x/(x^2+y^2),0}:x:y:z
+
+[biot_savart]
+conductor=omega
+box=box3D
+
+[magnetic_field-bmap]
+geo-data=torus3D.d
+geo-path=$cfgdir
+helix-intensity=0
+bitter-intensity=11767.7
+supra-intensity=0
+
+[thermoelectric]
+model_json=$cfgdir/biotsavart.json
+weakdir=false
+
+[electro]
+pc-type=gamg
+#ksp-monitor=true
+ksp-rtol=1e-7
+ksp-atol=1e-5
+ksp-maxit=2000
+ksp-use-initial-guess-nonzero=1
+
+[thermal]
+pc-type=gamg
+#ksp-monitor=true
+ksp-rtol=1e-8
+ksp-atol=1e-6
+ksp-use-initial-guess-nonzero=1
+----

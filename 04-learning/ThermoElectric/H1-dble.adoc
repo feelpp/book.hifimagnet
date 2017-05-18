@@ -1,0 +1,180 @@
+==== Double Helix
+
+For this piece, the purpose is to see the elevation of the temperature in the conductor around the double helix.
+We model a double helix on `salome` then do the mesh.
+
+.Double Helix on `Paraview`
+image::/images/learning/thermoelectric/Double_Helix_Geometry.png[Double_Helix,500,300,align="center"]
+
+===== Parameters
+
+[source,json]
+.HL-31_H1-double.json
+....
+{
+    "Name": "ThermoElectric",
+    "ShortName": "TE",
+    "Model":"thermoelectric-nonlinear",
+    "Materials":
+    {
+	"Cu":
+	{
+	    "name":"copper",
+	    "alpha":"3.75e-3",
+	    "T0":"293",
+	    "sigma0":"56.e+3",
+	    "k0":"0.4",
+	    "sigma":"sigma0/(1+alpha*(T-T0)):sigma0:alpha:T:T0",
+	    "k":"k0*T/((1+alpha*(T-T0))*T0):k0:T:alpha:T0"
+	},
+	"Glue0":
+	{
+	    "name":"glue0",
+	    "alpha":"0",
+	    "T0":"293",
+	    "sigma0":"0",
+	    "k0":"1.2e-3",
+	    "sigma":"sigma0/(1+alpha*(T-T0)):sigma0:alpha:T:T0",
+	    "k":"k0*T/((1+alpha*(T-T0))*T0):k0:T:alpha:T0"
+	},
+	"Glue1":
+	{
+	    "name":"glue1",
+	    "alpha":"0",
+	    "T0":"293",
+	    "sigma0":"0",
+	    "k0":"1.2e-3",
+	    "sigma":"sigma0/(1+alpha*(T-T0)):sigma0:alpha:T:T0",
+	    "k":"k0*T/((1+alpha*(T-T0))*T0):k0:T:alpha:T0"
+	}
+    },
+....
+
+===== Conditions
+
+[source,json]
+.Conditions of the double Helix
+....
+"BoundaryConditions":
+{
+"potential":
+{
+  "Dirichlet":
+  {
+"V1":
+{
+    "expr1":"9",
+    "expr2":"Cu"
+},
+"V0":
+{
+    "expr1":"0",
+    "expr2":"Cu"
+}
+  },
+  "Neumann":
+  {
+"Interface0_1":
+{
+    "expr":"0"
+},
+"Interface0_2":
+{
+    "expr":"0"
+},
+"Rint":
+{
+    "expr":"0"
+},
+"Rext":
+{
+    "expr":"0"
+},
+"iRint1":
+{
+    "expr":"0"
+},
+"iRext1":
+{
+    "expr":"0"
+},
+"iRint2":
+{
+    "expr":"0"
+},
+"iRext2":
+{
+    "expr":"0"
+}
+  }
+},
+"temperature":
+{
+  "Robin":
+  {
+"Rint":
+{
+    "expr1":"85000.e-6",
+    "expr2":"293"
+},
+"Rext":
+{
+    "expr1":"85000.e-6",
+    "expr2":"293"
+},
+"iRint1":
+{
+    "expr1":"85000.e-6",
+    "expr2":"293"
+},
+"iRext1":
+{
+    "expr1":"85000.e-6",
+    "expr2":"293"
+},
+"iRint2":
+{
+    "expr1":"85000.e-6",
+    "expr2":"293"
+},
+"iRext2":
+{
+    "expr1":"85000.e-6",
+    "expr2":"293"
+}
+  },
+  "Neumann":
+  {
+"Interface0_1":
+{
+    "expr":"0"
+},
+"Interface0_2":
+{
+    "expr":"0"
+},
+"V0":
+{
+    "expr":"0"
+},
+"V1":
+{
+    "expr":"0"
+}
+  }
+}
+},
+"PostProcess":
+{
+"Fields":["temperature","potential","current"]
+}
+}
+....
+===== Results
+
+We can see the repartition of the temperature in the helix.
+
+.Temperature's repartition on paraview
+image::/images/learning/thermoelectric/Double_Helix_temperature.png[Double_Helix_temperature,900,600,align="center"]
+
+We can note that the peak temperature is inside the double helix.

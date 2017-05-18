@@ -1,0 +1,19 @@
+\contentsline {section}{\tocsection {}{1}{\textbf {Notations}}}{1}{section.1}
+\contentsline {subsection}{\tocsubsection {}{1.1}{Constants and variable}}{1}{subsection.1.1}
+\contentsline {subsection}{\tocsubsection {}{1.2}{Conventions}}{2}{subsection.1.2}
+\contentsline {subsection}{\tocsubsection {}{1.3}{Functions}}{2}{subsection.1.3}
+\contentsline {section}{\tocsection {}{2}{\textbf {Modelisation}}}{2}{section.2}
+\contentsline {subsection}{\tocsubsection {}{2.1}{Thermo-electric}}{2}{subsection.2.1}
+\contentsline {subsubsection}{\tocsubsubsection {}{2.1.1}{Equations}}{2}{subsubsection.2.1.1}
+\contentsline {subsubsection}{\tocsubsubsection {}{2.1.2}{Finite Element}}{3}{subsubsection.2.1.2}
+\contentsline {paragraph}{\tocparagraph {}{}{FEM}}{3}{section*.2}
+\contentsline {paragraph}{\tocparagraph {}{}{Picard method}}{3}{section*.3}
+\contentsline {subsubsection}{\tocsubsubsection {}{2.1.3}{Boundary conditions}}{3}{subsubsection.2.1.3}
+\contentsline {subsection}{\tocsubsection {}{2.2}{Magnetostatic}}{4}{subsection.2.2}
+\contentsline {subsubsection}{\tocsubsubsection {}{2.2.1}{Equations}}{4}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\tocsubsubsection {}{2.2.2}{Finite Element}}{4}{subsubsection.2.2.2}
+\contentsline {subsubsection}{\tocsubsubsection {}{2.2.3}{Boundary conditions}}{5}{subsubsection.2.2.3}
+\contentsline {subsection}{\tocsubsection {}{2.3}{Linear elasticity}}{5}{subsection.2.3}
+\contentsline {subsubsection}{\tocsubsubsection {}{2.3.1}{Conditions and suppositions}}{5}{subsubsection.2.3.1}
+\contentsline {subsubsection}{\tocsubsubsection {}{2.3.2}{Equations}}{5}{subsubsection.2.3.2}
+\contentsline {subsubsection}{\tocsubsubsection {}{2.3.3}{Finite Element}}{6}{subsubsection.2.3.3}

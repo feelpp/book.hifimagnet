@@ -1,0 +1,72 @@
+= Some Examples
+:page-layout!: default
+:page-permalink: /examples
+:page-root: /
+:title: Modeling Examples
+:icons: font
+:sectnums:
+:sectlinks:
+:toc: left
+:toclevels: 4
+:stem: latexmath
+:source-highlighter: highlightjs
+:imagesdir: images/
+
+== *Prepare your geometry*
+
+First of all, you need to create the 3D model of your conductor with `Salome` or `gmsh` and to make the mesh.
+When the mesh is created, with specific names for the volumes and surfaces, export it in `.med` (example : `example\_mesh.med`) with `Salome`.
+You also need to partition the mesh if you want to do the calculations in parallel, running this command below.
+
+example :
+----
+feelpp_mesh_partitioner --ifile example_mesh.med --part 4 --nochdir
+----
+Where `part` indicate the number of processors you want to use.
+This will create a new file, call `example\_mesh\_p4.json` that you will use in your configure file.
+
+== *ThermoElectric*
+
+=== General presentation of the files
+
+include::04-learning/ThermoElectric/General_presentation.adoc[]
+
+=== Examples
+
+include::04-learning/ThermoElectric/Current_sensor.adoc[]
+
+include::04-learning/ThermoElectric/H1-dble.adoc[]
+
+=== Validity
+
+include::04-learning/ThermoElectric/Validity.adoc[]
+
+== *Magnetostatic*
+
+=== General presentation of the files
+
+include::04-learning/Magnetostatic/General_presentation.adoc[]
+
+=== Examples
+
+
+
+=== Validity
+
+include::04-learning/Magnetostatic/Validity.adoc[]
+
+=== Cartesian model
+
+include::04-learning/Magnetostatic/Cartesian.adoc[]
+
+== *Elasticity*
+
+=== General presentation of the files
+
+include::04-learning/Elasticity/General_presentation.adoc[]
+
+=== Examples
+
+=== Validity
+
+include::04-learning/Elasticity/Validity.adoc[]

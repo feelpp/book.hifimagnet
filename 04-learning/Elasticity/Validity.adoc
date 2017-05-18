@@ -1,0 +1,62 @@
+
+===== Conditions
+
+We consider the conductor as a solenoid with finite thickness and infinite length. This allow us to ignore the *z* components in our equations.
+We admit that there is only a radial expansion.
+
+===== Equations
+
+Taking back the equations in the link:/math.adoc[Maths for Hifimagnet], we consider :
+
+\[
+div\sigma+\textbf{j}\times\textbf{b}=0
+\]
+
+With the conditions set in the previous section, we have :
+
+\[
+-\sigma_{\theta}+\frac{\partial}{\partial r}(r\sigma_{r})=-rj_{\theta}b_{z}
+\]
+
+===== Parameters
+
+In our case (a coil of copper), we choose the parameters like this :
+
+.Fixed and variable parameters
+[%autowidth.spread,options="header"]
+|===
+^|Name ^|Description ^|Range ^|Nominal Value ^|Unit
+
+|$E$
+|Young modulus
+^|$[124.10^{9} ;128.10^{9}]$
+^|$128.10^{9}$
+|$Pa=kg.m^{-1} .s^{-2}$
+
+|$\nu$
+|Poisson's ratio
+^|0.33
+^|0.33
+|-
+
+|$\alpha_{T}$
+|linear dilatation coefficient
+^|$[16,6.10^{-6} ;18.10^{-6}]$
+^|$18.10^{-6}$
+|$K^{-1}$
+
+|$\rho$
+|density
+^|$[8920;8960]$
+^|$8950$
+|$kg.m^{-3}$
+|===
+
+===== Results
+
+As we can see in this coarse mesh, the scale is coherent (he unit being in Pa).
+
+.Von Mises criterion for a coarse mesh
+image::/images/learning/elasticity/Coarse_Von-Mises.png[Coarse Von Mises,475,300,float="left"]
+.Tresca criterion for a coarse mesh
+image::/images/learning/elasticity/Coarse_Tresca.png[Coarse Tresca,475,300,float="right"]
