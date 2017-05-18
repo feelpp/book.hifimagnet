@@ -1,0 +1,62 @@
+In the continuity of the study of the magnet, we use the file already used in Thermoelectric and Magnetostatic.
+We create a new file `.json` to set up the conditions for elasticity.
+
+[source,json]
+.quarter\_torus\_3D-elasticity.json
+....
+{
+    "Name": "CoupledCart",
+    "ShortName":"MSC",
+    "Model":"Elasticity",
+    "Materials":
+    {
+        "name_of_the_volume":
+        {
+            "name":"material",
+            "E":"Young_modulus",
+            "nu":"Poisson's_ratio",
+            "alphaT":"linear_dilatation_coefficient",
+            "rho":"density"
+        }
+    },
+    "BoundaryConditions":
+    {
+        "condition(like displacement_x y or z)":
+        {
+            "type_of_condition (Dirichlet, Neumann or Robin)":
+            {
+                "surface_concerned":
+                {
+                    "expr":"_"
+                },
+            }
+        },
+        "other_condition":
+        {
+            ...
+        },
+
+    },
+    "PostProcess":
+    {
+        "Fields":["displacement","Von-Mises","tresca","principal-stresses"]
+    }
+}
+....
+
+We also need to set up the configuration file (`.cfg`) to compute the elasticity part, which consist in adding the elasticity section.
+
+[source,cfg]
+.coupledcart\_3D\_P1\_N1\_cvg.cfg
+....
+[elasticity]
+filename=$cfgdir/quarter-torus3D-elasticity.json
+on.type=elimination_symmetric
+thermal_dilatation=false
+do_export_all=true
+
+# # precondtioner config
+pc-type=gamg #lu,gasm,ml
+ksp-monitor=true
+# ksp-converged-reason=1
+....

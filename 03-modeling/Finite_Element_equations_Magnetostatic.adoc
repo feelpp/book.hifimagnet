@@ -1,0 +1,12 @@
+
+The Finite Element Method is detailed in the chapter link:http://book.feelpp.org/math/fem#cha:appr-r-probl-1[The Mathematics of Feel++]
+
+In our case, the variational formulation consists in resolve :
+
+\[
+\int_{\Omega\cup\Omega_{c}}\frac{1}{\mu}\textbf{A}.\nabla\times\varphi+\int_{\partial\Omega_{c}}\frac{1}{\mu}\left(\nabla\times\textbf{A}\times\textbf{n}\right).\varphi=\int_{\Omega}\textbf{j}.\varphi
+\]
+
+With $\Omega$ being the volume of our geometry and $\Omega_{c}$ the volume inside (for example the air).
+$\textbf{A}\in\{\textbf{v}\in L^{2}(\Omega\cup\Omega_{c}); \nabla\times\textbf{v}\in L^{2}(\Omega\cup\Omega_{c})\}$
+corresponding of H~curl~ .

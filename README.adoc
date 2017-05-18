@@ -57,8 +57,10 @@ brew install ruby
 gem install bundle
 
 # on debian/ubuntu
-apt-get install ruby-bundler ruby-jekyll-feed ruby-thread-safe jekyll
+sudo apt-get install ruby-bundler ruby-jekyll-feed ruby-thread-safe
+
 ----
+WARNING: on debian linux, do not install jekyll
 
 then run `bundle` in the top level directory of the book
 ----
