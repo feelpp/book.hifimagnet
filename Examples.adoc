@@ -1,6 +1,6 @@
 = Some Examples
 :page-layout!: default
-:page-permalink: /examples
+:page-permalink: /examples/
 :page-root: /
 :title: Modeling Examples
 :icons: font
