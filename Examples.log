@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016/Debian) (preloaded format=xelatex 2017.5.15)  17 MAY 2017 15:25
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016/Debian) (preloaded format=xelatex 2017.5.15)  17 MAY 2017 15:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -135,7 +135,14 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutvoffset=\dimen121
 \Gm@dimlist=\toks26
 )
-(/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
+(/usr/share/texlive/texmf-dist/tex/latex/parskip/parskip.sty
+Package: parskip 2001/04/09 non-zero parskip adjustments
+
+
+LaTeX Warning: Command \@starttoc  has changed.
+               Check if current package is valid.
+
+) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
 Package: tcolorbox 2016/11/18 version 3.96 text color boxes
 
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
@@ -1256,24 +1263,26 @@ LaTeX Font Warning: Font shape `TU/lmr/bx/sc' undefined
 File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
 
 )
-[1]
 Overfull \hbox (421.0636pt too wide) in paragraph at lines 223--223
 []\TU/lmtt/m/n/10.95 mpirun -np "number_of_processor_you_have_chosen_in_the_par
 tition" feelpp_hfm_thermoelectric_model_3D_V1T1_N1 --config-file "name_of_your_
 file.cfg"[] 
  []
 
-[2]
+[1] [2]
 
 Package hyperref Warning: Suppressing empty link on input line 296.
 
-[3] [4]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3]
 Overfull \hbox (87.63622pt too wide) in paragraph at lines 376--376
 []\TU/lmtt/m/n/10.95 "Neumann":  // value of the derivative of the solution kno
 wns at the limit of the domain[] 
  []
 
-
+[4]
 Overfull \hbox (122.12871pt too wide) in paragraph at lines 393--393
 []\TU/lmtt/m/n/10.95 "Robin":   // linear relation between the value and the de
 rivative at the limits of the domain[] 
@@ -1281,7 +1290,7 @@ rivative at the limits of the domain[]
 
 File: ./images/learning/thermoelectric/Ensemble_CapteurCourant.png Graphic file
  (type QTm)
-<use  "./images/learning/thermoelectric/Ensemble_CapteurCourant.png" > [5]
+<use  "./images/learning/thermoelectric/Ensemble_CapteurCourant.png" >
 
 Package wrapfig Warning: Collision between wrapping environments on input line 
 427.
@@ -1289,6 +1298,9 @@ Package wrapfig Warning: Collision between wrapping environments on input line
 File: ./images/learning/thermoelectric/capteurcourant.png Graphic file (type QT
 m)
 <use  "./images/learning/thermoelectric/capteurcourant.png" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5]
 Overfull \hbox (23.83328pt too wide) in paragraph at lines 434--435
 [] []\TU/lmr/m/n/10.95 Parameters.[] There
  []
@@ -1394,7 +1406,7 @@ Overfull \hbox (27.00879pt too wide) in paragraph at lines 460--460
 []    \TU/lmtt/m/n/10.95 "k0":"0.38",[] 
  []
 
-[6]
+
 Overfull \hbox (256.95872pt too wide) in paragraph at lines 461--461
 []    \TU/lmtt/m/n/10.95 "sigma":"sigma0/(1+alpha*(T-T0)):sigma0:alpha:T:T0",[]
  
@@ -1406,6 +1418,9 @@ Overfull \hbox (222.46623pt too wide) in paragraph at lines 462--462
  []
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6]
 Overfull \hbox (21.26004pt too wide) in paragraph at lines 464--464
 []\TU/lmtt/m/n/10.95 "Constantan_1":[] 
  []
@@ -1575,9 +1590,6 @@ Overfull \hbox (21.26004pt too wide) in paragraph at lines 504--504
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [7]
 Overfull \hbox (84.49628pt too wide) in paragraph at lines 506--506
 []    \TU/lmtt/m/n/10.95 "name":"Constantan_5",[] 
  []
@@ -1593,6 +1605,9 @@ Overfull \hbox (21.26004pt too wide) in paragraph at lines 508--508
  []
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [7]
 Overfull \hbox (67.25003pt too wide) in paragraph at lines 509--509
 []    \TU/lmtt/m/n/10.95 "sigma0":"2.04e+3",[] 
  []
@@ -1655,6 +1670,11 @@ Overfull \hbox (222.46623pt too wide) in paragraph at lines 522--522
  []
 
 
+Overfull \hbox (19.85544pt too wide) in paragraph at lines 528--528
+ []\TU/lmr/m/n/10.95 Conditions.[] 
+ []
+
+
 Overfull \hbox (55.75253pt too wide) in paragraph at lines 529--529
 []\TU/lmtt/m/n/10.95 "BoundaryConditions":[] 
  []
@@ -1699,7 +1719,7 @@ Overfull \hbox (15.51129pt too wide) in paragraph at lines 549--549
 []  \TU/lmtt/m/n/10.95 "Dirichlet":[] 
  []
 
-[8]
+
 Overfull \hbox (38.50629pt too wide) in paragraph at lines 553--553
 []    \TU/lmtt/m/n/10.95 "expr1":"293",[] 
  []
@@ -1710,6 +1730,9 @@ Overfull \hbox (27.00879pt too wide) in paragraph at lines 554--554
  []
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8]
 Overfull \hbox (38.50629pt too wide) in paragraph at lines 558--558
 []    \TU/lmtt/m/n/10.95 "expr1":"293",[] 
  []
@@ -1729,7 +1752,10 @@ Overfull \hbox (199.47125pt too wide) in paragraph at lines 566--566
 []\TU/lmtt/m/n/10.95 "Fields":["temperature","potential","current"][] 
  []
 
-[9]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [9]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [10]
@@ -1747,24 +1773,30 @@ Overfull \hbox (232.17632pt too wide) in paragraph at lines 676--677
  [][] 
  []
 
-[11]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 File: ./images/learning/thermoelectric/Temperature_Max_Zoom2.png Graphic file (
 type QTm)
- <use  "./images/learning/thermoelectric/Temperature_Max_Zoom2.png" >
+<use  "./images/learning/thermoelectric/Temperature_Max_Zoom2.png" >
 Overfull \hbox (232.17632pt too wide) in paragraph at lines 685--686
  [][] 
  []
 
+[11]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 File: ./images/learning/thermoelectric/Double_Helix_Geometry.png Graphic file (
 type QTm)
-<use  "./images/learning/thermoelectric/Double_Helix_Geometry.png" > [12]
+<use  "./images/learning/thermoelectric/Double_Helix_Geometry.png" >
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[13] [14] [15]
+[12] [13] [14]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [15]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [16]
@@ -1786,7 +1818,7 @@ m)
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \vbox (badness 1609) has occurred while \output is active []
+Underfull \vbox (badness 6188) has occurred while \output is active []
 
  [17]
 [18] [19]
@@ -1803,7 +1835,10 @@ Package wrapfig Warning: Collision between wrapping environments on input line
 
 File: ./images/learning/thermoelectric/TemperatureTH.png Graphic file (type QTm
 )
-<use  "./images/learning/thermoelectric/TemperatureTH.png" > [20]
+<use  "./images/learning/thermoelectric/TemperatureTH.png" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [20]
 Underfull \hbox (badness 3780) in paragraph at lines 1004--1007
 [] []\TU/lmr/m/n/10.95 Results.[] We can
  []
@@ -1848,7 +1883,12 @@ Underfull \hbox (badness 1681) in paragraph at lines 1004--1007
 \TU/lmr/m/n/10.95 rectly the slope
  []
 
+
+Underfull \vbox (badness 6412) has occurred while \output is active []
+
+ [21]
 File: ./images/learning/thermoelectric/L2V.png Graphic file (type QTm)
+
 <use  "./images/learning/thermoelectric/L2V.png" >
 
 Package wrapfig Warning: Collision between wrapping environments on input line 
@@ -1856,24 +1896,21 @@ Package wrapfig Warning: Collision between wrapping environments on input line
 
 File: ./images/learning/thermoelectric/H1V.png Graphic file (type QTm)
 <use  "./images/learning/thermoelectric/H1V.png" >
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [21]
 
 Package wrapfig Warning: Collision between wrapping environments on input line 
 1044.
 
 File: ./images/learning/thermoelectric/L2T.png Graphic file (type QTm)
 <use  "./images/learning/thermoelectric/L2T.png" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [22]
 
 Package wrapfig Warning: Collision between wrapping environments on input line 
 1050.
 
 File: ./images/learning/thermoelectric/H1T.png Graphic file (type QTm)
 <use  "./images/learning/thermoelectric/H1T.png" >
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [22]
 Overfull \hbox (6.8827pt too wide) in paragraph at lines 1057--1058
 \TU/lmr/m/n/10.95 modelisation of
  []
@@ -1889,6 +1926,11 @@ Overfull \hbox (3.81671pt too wide) in paragraph at lines 1057--1058
  []
 
 
+Overfull \hbox (16.01201pt too wide) in paragraph at lines 1057--1058
+\TU/lmr/m/n/10.95 file in \TU/lmtt/m/n/10.95 .geo 
+ []
+
+[23]
 Overfull \hbox (55.75253pt too wide) in paragraph at lines 1061--1061
 []\TU/lmtt/m/n/10.95 // Define Main params[] 
  []
@@ -1934,9 +1976,6 @@ Overfull \hbox (84.49628pt too wide) in paragraph at lines 1077--1077
  []
 
 
-Underfull \vbox (badness 2197) has occurred while \output is active []
-
- [23]
 Overfull \hbox (84.49628pt too wide) in paragraph at lines 1078--1078
 []\TU/lmtt/m/n/10.95 Point(4) = {0, r1, -L, h};[] 
  []
@@ -2042,6 +2081,14 @@ Underfull \hbox (badness 4608) in paragraph at lines 1098--1099
  []
 
 
+Overfull \hbox (16.81134pt too wide) in paragraph at lines 1098--1099
+\TU/lmr/m/n/10.95 conditions. 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [24]
 Overfull \hbox (101.74252pt too wide) in paragraph at lines 1103--1103
 []    \TU/lmtt/m/n/10.95 "Name": "ThermoElectric",[] 
  []
@@ -2103,7 +2150,7 @@ Overfull \hbox (268.45622pt too wide) in paragraph at lines 1117--1117
 [] 
  []
 
-[24]
+
 Overfull \hbox (78.74753pt too wide) in paragraph at lines 1120--1120
 []    \TU/lmtt/m/n/10.95 "BoundaryConditions":[] 
  []
@@ -2215,6 +2262,9 @@ Overfull \hbox (38.50629pt too wide) in paragraph at lines 1145--1145
  []
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [25]
 Overfull \hbox (67.25003pt too wide) in paragraph at lines 1146--1146
 []                \TU/lmtt/m/n/10.95 "Rint":[] 
  []
@@ -2259,13 +2309,16 @@ Overfull \hbox (2.1107pt too wide) in paragraph at lines 1161--1162
 []\TU/lmr/m/n/10.95 Lastly, we cre-
  []
 
-[25]
+
 Overfull \hbox (24.39998pt too wide) in paragraph at lines 1180--1180
 []\TU/lmtt/m/n/10.95 g=600.312-58.e+3/(2*0.38)*(0.3/(2*pi))^2*log(sqrt(x*x+y*y)
 /sqrt(1*2))^2:x:y:z[] 
  []
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [26]
 Overfull \hbox (133.6262pt too wide) in paragraph at lines 1207--1207
 []\TU/lmtt/m/n/10.95 mpirun -np 4 feelpp_test_convergence_3D_V1T1_N1  --config-
 file thermoelectric_3D_V1T1_N1_cvg.cfg[] 
@@ -2279,33 +2332,33 @@ config-file thermoelectric_3D_V1T1_N1_cvg.cfg[]
 
 Missing character: There is no ​ in font [lmmono10-regular]:!
 
-Underfull \vbox (badness 3735) has occurred while \output is active []
-
- [26]
 Overfull \hbox (53.14372pt too wide) in paragraph at lines 1255--1255
 []\TU/lmtt/m/n/10.95 #N R1[m]  R2[m]  HalfL[m] Rho[Ohm.m]  Alpha[1/K] E_Max[Pa]
  K[W/(m.K)] h[W/(m^2.K)]
  []
 
-
+[27]
 Overfull \hbox (7.15373pt too wide) in paragraph at lines 1258--1258
 []\TU/lmtt/m/n/10.95 #Type  R1         R2      Z1           Z2         J       
   Rho    N_turns[] 
  []
 
-[27]
+
 Overfull \hbox (18.6512pt too wide) in paragraph at lines 1290--1290
 []\TU/lmtt/m/n/10.95 j={-58.e+3*(0.5/(2*Pi))*y/(x^2+y^2),58.e+3*(0.5/(2*Pi))*x/
 (x^2+y^2),0}:x:y:z[] 
  []
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [28]
 Overfull \hbox (18.6512pt too wide) in paragraph at lines 1317--1317
 []\TU/lmtt/m/n/10.95 j={-58.e+3*(0.5/(2*Pi))*y/(x^2+y^2),58.e+3*(0.5/(2*Pi))*x/
 (x^2+y^2),0}:x:y:z[] 
  []
 
-[28]
+[29]
 File: ./images/learning/magnetostatic/torus3D_box3D.png Graphic file (type QTm)
 
  <use  "./images/learning/magnetostatic/torus3D_box3D.png" >
@@ -2313,21 +2366,20 @@ Overfull \hbox (87.63632pt too wide) in paragraph at lines 1359--1360
  [][] 
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[29]
+[30]
 Overfull \hbox (47.08841pt too wide) in paragraph at lines 1423--1426
 \TU/lmr/m/n/10.95 .json file. We select the biter-intensity (shown in [][]biots
 avart_num_box3D_3D_V1T1_N1_cvgcfg[][])
  []
 
-[30]
 File: ./images/learning/magnetostatic/B_and_I.png Graphic file (type QTm)
- <use  "./images/learning/magnetostatic/B_and_I.png" >
+<use  "./images/learning/magnetostatic/B_and_I.png" >
 Overfull \hbox (87.63632pt too wide) in paragraph at lines 1434--1435
  [][] 
  []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 File: ./images/learning/magnetostatic/potential_A.png Graphic file (type QTm)
 <use  "./images/learning/magnetostatic/potential_A.png" >
@@ -2338,10 +2390,7 @@ Overfull \hbox (87.63632pt too wide) in paragraph at lines 1440--1441
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[31] [32]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [33]
+[31] [32] [33]
 Overfull \hbox (70.38997pt too wide) in paragraph at lines 1532--1532
 []\TU/lmtt/m/n/10.95 S2_Sph = Rotate { { 0, 0, 1 }, { 0, 0, 0 }, Pi/2. } { Dupl
 icata{ Surface{S_Sph}; } };[] 
@@ -2384,6 +2433,9 @@ _Sph, S3_Sph, N3_Sph, S4_Sph, N4_Sph};[]
  []
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [34]
 Overfull \hbox (110.63121pt too wide) in paragraph at lines 1550--1550
 [] \TU/lmtt/m/n/10.95 Physical Surface("box2D") = {S_Sph, N_Sph, S2_Sph, N2_Sph
 , S3_Sph, N3_Sph, S4_Sph, N4_Sph};[] 
@@ -2401,7 +2453,7 @@ Overfull \hbox (7.15373pt too wide) in paragraph at lines 1571--1571
      Rho N_turns[] 
  []
 
-[34]
+
 Overfull \hbox (76.13872pt too wide) in paragraph at lines 1572--1572
 []\TU/lmtt/m/n/10.95 1       30.6e-3    53.2e-3   -2.305e-3   2.305e-3    15083
 3116.00212305    1         1[] 
@@ -2414,12 +2466,15 @@ Overfull \hbox (70.38997pt too wide) in paragraph at lines 1573--1573
  []
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [35]
 Overfull \hbox (18.6512pt too wide) in paragraph at lines 1602--1602
 []\TU/lmtt/m/n/10.95 j={-58.e+3*(0.5/(2*Pi))*y/(x^2+y^2),58.e+3*(0.5/(2*Pi))*x/
 (x^2+y^2),0}:x:y:z[] 
  []
 
-[35]
+
 Overfull \hbox (18.65121pt too wide) in paragraph at lines 1629--1629
 []\TU/lmtt/m/n/10.95 j={58.e+3*(0.5/(2*Pi))*y/(x^2+y^2),-58.e+3*(0.5/(2*Pi))*x/
 (x^2+y^2),0}:x:y:z[] 
@@ -2437,7 +2492,10 @@ Overfull \hbox (122.12871pt too wide) in paragraph at lines 1631--1631
 (x*x+y*y)/39.4354779237947 )^2:x:y:z[] 
  []
 
-[36]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [36]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [37]
@@ -2462,6 +2520,13 @@ Package wrapfig Warning: Collision between wrapping environments on input line
 File: ./images/learning/magnetostatic/Cartesian_potential_ana.png Graphic file 
 (type QTm)
 <use  "./images/learning/magnetostatic/Cartesian_potential_ana.png" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [38]
+Overfull \vbox (7.2485pt too high) has occurred while \output is active []
+
+
+[39]
 Overfull \hbox (9.36836pt too wide) in paragraph at lines 1756--1757
 \TU/lmr/m/n/10.95 is however some
  []
@@ -2485,11 +2550,6 @@ Package wrapfig Warning: Collision between wrapping environments on input line
 File: ./images/learning/magnetostatic/Cartesian_potential_error_zoom.png Graphi
 c file (type QTm)
 <use  "./images/learning/magnetostatic/Cartesian_potential_error_zoom.png" >
-[38]
-Overfull \vbox (6.85027pt too high) has occurred while \output is active []
-
-
-[39]
 Overfull \hbox (3.76195pt too wide) in paragraph at lines 1771--1772
 [][]\TU/lmr/m/n/10.95 The maximum
  []
@@ -2550,17 +2610,21 @@ Overfull \hbox (12.90248pt too wide) in paragraph at lines 1816--1816
 ncipal-stresses"][] 
  []
 
-[41]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [41]
 File: ./images/learning/elasticity/Coarse_Von-Mises.png Graphic file (type QTm)
 
- <use  "./images/learning/elasticity/Coarse_Von-Mises.png" >
+
+<use  "./images/learning/elasticity/Coarse_Von-Mises.png" >
 
 Package wrapfig Warning: Collision between wrapping environments on input line 
 1891.
 
 File: ./images/learning/elasticity/Coarse_Tresca.png Graphic file (type QTm)
 <use  "./images/learning/elasticity/Coarse_Tresca.png" >
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 4084) has occurred while \output is active []
 
  [42]
 [43]
@@ -2576,12 +2640,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
  )
 (\end occurred when \ifx on line 161 was incomplete) 
 Here is how much of TeX's memory you used:
- 31421 strings out of 494970
- 635585 string characters out of 6176981
- 780481 words of memory out of 5000000
- 34663 multiletter control sequences out of 15000+600000
+ 31429 strings out of 494970
+ 635818 string characters out of 6176981
+ 780492 words of memory out of 5000000
+ 34668 multiletter control sequences out of 15000+600000
  10926 words of font info for 53 fonts, out of 8000000 for 9000
  197 hyphenation exceptions out of 8191
- 54i,9n,73p,10350b,475s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 54i,9n,73p,10350b,471s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on Examples.pdf (43 pages).

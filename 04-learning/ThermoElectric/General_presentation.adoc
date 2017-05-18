@@ -4,7 +4,8 @@ You can use ether the linear or the nonlinear model for your calculation, but fo
 When all the files (detailed below) are created, you can run your calculation with this command :
 
 ----
-mpirun -np "number_of_processor_you_have_chosen_in_the_partition" feelpp_hfm_thermoelectric_model_3D_V1T1_N1 --config-file "name_of_your_file.cfg"
+mpirun -np "number_of_processor_you_have_chosen_in_the_partition"
+feelpp_hfm_thermoelectric_model_3D_V1T1_N1 --config-file "name_of_your_file.cfg"
 ----
 
 ==== Material
@@ -145,10 +146,12 @@ There are three type of conditions :
 
 1 *Dirichlet*
 
+The values of the solution is known at the limits of the domain.
+
 [source,json]
 .Dirichlet Condition
 ....
-"Dirichlet": //values of the solution known at the limits of the domain
+"Dirichlet":
   {
     "Surface":
       {
@@ -164,10 +167,12 @@ There are three type of conditions :
 ....
 2 *Neumann*
 
+The value of the derivative of the solution is known at the limit of the domain.
+
 [source,json]
 .Neumann Condition
 ....
-"Neumann":  // value of the derivative of the solution knowns at the limit of the domain
+"Neumann":
   {
     "Surface":
       {
@@ -181,10 +186,12 @@ There are three type of conditions :
 ....
 3 *Robin*
 
+There is a linear relation between the value and the derivative at the limits of the domain.
+
 [source,json]
 .Robin Condition
 ....
-"Robin":   // linear relation between the value and the derivative at the limits of the domain
+"Robin":
   {
     "Surface":
       {
