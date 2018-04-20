@@ -1,0 +1,5 @@
+name: docs
+title: HiFiMagnet Documentation
+version: "stable"
+nav:
+- modules/ROOT/nav.adoc
