@@ -1,0 +1,58 @@
+<header class="header" role="banner">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <div class="navbar-item">
+         <!--  <a href="https://book.hifimagnet.org">HiFiMagnet Documentations</a> -->
+         {{#each site.components}} {{#if (eq 'docs' ./name)}} {{#each ./versions}} {{#if (eq this ../latestVersion)}}
+           <a href="{{{./url}}}">HiFiMagnet Documentations</a>
+         {{/if}} {{/each}} {{/if}} {{/each}}            
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-link">Books</div>
+          <div class="navbar-dropdown">
+            <div class="navbar-item"><strong>Main</strong></div>
+
+            <!-- this code allow to manage ordering of navbar item -->
+            {{#each site.components}} {{#if (eq 'user' ./name)}} {{#each ./versions}} {{#if (eq this ../latestVersion)}}
+              <a class="navbar-item" href="{{{./url}}}"> {{{./title}}} </a>
+            {{/if}} {{/each}} {{/if}} {{/each}}            
+
+            {{#each site.components}} {{#if (eq 'dev' ./name)}} {{#each ./versions}} {{#if (eq this ../latestVersion)}}
+              <a class="navbar-item" href="{{{./url}}}"> {{{./title}}} </a>
+            {{/if}} {{/each}} {{/if}} {{/each}}            
+
+            {{#each site.components}} {{#if (eq 'toolboxes' ./name)}} {{#each ./versions}} {{#if (eq this ../latestVersion)}}
+              <a class="navbar-item" href="{{{./url}}}"> {{{./title}}} </a>
+            {{/if}} {{/each}} {{/if}} {{/each}}
+
+            <hr class="navbar-divider">
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-link">Projects</div>
+          <div class="navbar-dropdown">
+            <div class="navbar-item"><strong>Core</strong></div>
+            <a class="navbar-item" href="http://github.com/feelpp/hifimagnet">Repository</a>
+            <a class="navbar-item" href="http://github.com/feelpp/hifimagnet/issues">Issue Tracker</a>
+            <hr class="navbar-divider">
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-link">Community</div>
+          <div class="navbar-dropdown is-right">
+            <a class="navbar-item" href="https://feelpp.slack.com/messages/G6L3X3C94">Slack Chat</a>
+            <a class="navbar-item" href="https://gitter.im/feelpp/hifimagnet">Gitter chat (Users)</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>

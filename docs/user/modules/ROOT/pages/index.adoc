@@ -1,0 +1,152 @@
+= {hifimagnet} user manual
+include::{partialsdir}/header-uri.adoc[]
+include::{partialsdir}/header-levels.adoc[]
+
+Welcome to {hifimagnet} documentation!
+
+NOTE: The {hifimagnet} documentation introduce the {feelpp} concepts, the process to build and run an application and the process to run a toolbox application.
+New user should begin with the xref:user:ROOT:index.adoc[User Manual].
+
+IMPORTANT: You wish to contribute? Please consult the <<Contribute, contribute>> section to learn how to proceed!
+
+[[introduction]]
+= Introduction to {hifimagnet}
+
+.Discuss and Contribute
+TIP: Use {uri-feelpp-issues}/858[Issue 858] to drive development of this
+section. Your contributions make a difference. No contribution is too small.
+
+== What is {hifimagnet}?
+
+
+[[quickstart]]
+= Quick Starts
+
+
+[[qs_installation]]
+== Installation Quick Start
+
+
+Using {hifimagnet} inside <<docker/what-is-docker.adoc#what-is-docker,Docker>> is the recommended and fastest way to use {hifimagnet}.
+The <<docker/README.adoc#docker,Docker>> chapter is dedicated to Docker and using {feelpp} in Docker.
+
+We strongly encourage you to follow these steps if you begin with {hifimagnet} in particular as an end-user.
+
+People who would like to develop with and in {hifimagnet} should read through the remaining sections of this chapter.
+
+[[qs_usage]]
+== Usage Start
+
+Start the Docker container `feelpp/hifimagnet` as follows
+
+[source,sh]
+----
+> docker run -it -v $HOME/feel:/feel feelpp/hifimagnet
+----
+
+NOTE: these steps are explained in the chapter on <<02-docker/hfimagnet-containers.adoc#hifimagnet-containers,{feelpp} containers>>.
+
+[TIP]
+====
+link:http://www.ensight.com[EnSight (recommended)]:: is a commercial multi-platform data analysis and visualization application.
+link:http://www.paraview.org[ParaView (recommended)]:: is an open-source, multi-platform data analysis and visualization application.
+link:https://wci.llnl.gov/simulation/computer-codes/visit[Visit]:: is a distributed, parallel visualization and graphical analysis tool for data defined on two- and three-dimensional (2D and 3D) meshes
+====
+
+[[installation]]
+= Installing {hifimagnet}
+
+:leveloffset=+1:
+include::installation/README.adoc[]
+
+:leveloffset=-1:
+:leveloffset=+1:
+
+include::installation/PREREQUISITES.adoc[]
+
+:leveloffset=-1:
+:leveloffset=+1:
+
+include::installation/docker.adoc[]
+
+:leveloffset=-1:
+:leveloffset=+1:
+
+include::installation/lncmi-repository.adoc[]
+
+:leveloffset=-1:
+:leveloffset=+1:
+
+include::installation/from-scratch.adoc[]
+
+:leveloffset=-1:
+
+[[usage]]
+= Using {hifimagnet}
+
+:leveloffset=+1:
+
+include::learning/README.adoc[]
+
+:leveloffset=-1:
+:leveloffset=+1:
+
+include::learning/Optimization.adoc[]
+
+:leveloffset=-1:
+:leveloffset=+1:
+
+include::learning/Geometry.adoc[]
+
+:leveloffset=-1:
+:leveloffset=+1:
+
+include::learning/AxiModeling.adoc[]
+
+:leveloffset=-1:
+:leveloffset=+1:
+
+include::learning/3DModeling.adoc[]
+
+:leveloffset=-1:
+
+[[cad]]
+= Modeling an PolyHelix Insert from scratch with {hifimagnet}
+
+:leveloffset=+1:
+
+include::programming/README.adoc[]
+
+:leveloffset=-1:
+:leveloffset=+1:
+
+include::programming/Optimization.adoc[]
+
+:leveloffset=-1:
+:leveloffset=+1:
+
+include::programming/CAD.adoc[]
+
+:leveloffset=-1:
+:leveloffset=+1:
+
+include::programming/Mesh.adoc[]
+
+:leveloffset=-1:
+:leveloffset=+1:
+
+include::programming/AxiModeling.adoc[]
+
+:leveloffset=-1:
+:leveloffset=+1:
+
+include::programming/3DModeling.adoc[]
+
+:leveloffset=-1:
+
+[[references]]
+= Quick Reference
+
+include::quickref/README.adoc[]
+
+include::resources.adoc[]

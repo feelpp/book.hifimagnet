@@ -1,0 +1,14 @@
+* xref:index.adoc#manuals[Manuals]
+** xref:index.adoc#user_manual[User]
+
+* xref:index.adoc#help[Help]
+* xref:index.adoc#contribute[Contribute]
+* xref:index.adoc#copyright[Licenses]
+
+* xref:acknowledgments.adoc[Acknowledgments]
+** xref:index.adoc#authors[Authors]
+
+* xref:policy/index.adoc[Policies]
+** xref:policy/version.adoc[Version]
+
+* xref:GLOSSARY.adoc[Glossary]

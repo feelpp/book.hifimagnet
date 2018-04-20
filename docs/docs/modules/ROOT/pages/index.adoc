@@ -1,9 +1,19 @@
-= {hifimagnet}: High Field Magnet Modeling: A Feelpp application
-Christophe Trophime <https://github.com/trophime[@Trophime]>
-v1.0, 2017/04/06
-:hifimagnet: HiFiMagnet
-:feelpp: Feel++
-:cpp: C++
+= {hifimagnet} documentation
+:page-feelpp_book_cover: true
+include::{partialsdir}/header-uri.adoc[]
+include::{partialsdir}/header-levels.adoc[]
+
+Welcome to {hifimagnet} documentation!
+
+NOTE: The {hifimagnet} documentations introduce the {hifimagnet} project, models, and
+process to build and run an application.
+New user should begin with the xref:user:ROOT:index.adoc[User Manual].
+
+IMPORTANT: This documentation is based on link:www.antora.org[antora].
+You wish to contribute? Please consult the <<Contribute, contribute>> section to learn how to proceed!
+
+[[introduction]]
+== Introduction
 
 The Laboratoire National de Champs
 MAgnétiques Intenses (LNCMI) is a French large scale facility enabling researchers 
@@ -31,23 +41,15 @@ The goals are twofold:
 
 Models have been implemented with the finite element library https://github.com/feelpp/feelpp[Feel++].
 
-== Help and Support
+[[manuals]]
+== Manuals references
 
-We're always happy to help out with {hifimagnet} or any other questions you might
-have. You can ask a question or signal an issue at the Gitter {hifimagnet} salon.
+[[user_manual]]
+xref:user:ROOT:index.adoc[Read the official user manual].
+image:HL-31-cadgeom.png[magnet,200]
 
-https://gitter.im/feelpp/hifimagnet?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge[
-image:https://badges.gitter.im/Join%20Chat.svg[Join the chat at https://gitter.im/feelpp/hifimagnet]]
-
-
-== Contribute to this documentation
-
-You can contribute to improve this documentation on
-https://github.com/feelpp/hifimagnet[GitHub] and follow the
-https://gitter.im/feelpp/hifimagnet-book[Gitter {hifimagnet} Book] forum.
-
-
-== Compiling the book
+[[compile]]
+== Compile {hifimagnet} book
 
 You only require an node >= 8 install.
 
@@ -59,3 +61,29 @@ make serve
 
 NOTE: This will install antora. Then compile the book. And finally run a local web server
 to visualize the documentation in a webbrowser.
+
+[[help]]
+== Help and Support
+
+We're always happy to help out with {hifimagnet} or any other questions you might
+have. You can ask a question or signal an issue at the Gitter {hifimagnet} salon.
+
+https://gitter.im/feelpp/hifimagnet?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge[
+image:https://badges.gitter.im/Join%20Chat.svg[Join the chat at https://gitter.im/feelpp/hifimagnet]]
+
+[[contribute]]
+== Contribute to this documentation
+
+You can contribute to improve this documentation on
+https://github.com/feelpp/hifimagnet[GitHub] and follow the
+https://gitter.im/feelpp/hifimagnet-book[Gitter {hifimagnet} Book] forum.
+
+[[copyright]]
+== Copyright and Licensing
+
+[[authors]]
+== Authors
+
+{hifimagnet} development is led by https://github.com/ctrophime[Christophe Trophime] 
+with the close collaboration of https://github.com/prudhomm[Christophe Prud'homme] and https://github.com/vincentchabannes[Vincent Chabannes].
+It has received contributions from {uri-contributors}[many other individuals].
