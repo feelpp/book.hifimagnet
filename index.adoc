@@ -4,7 +4,7 @@
 :uri-org: https://github.com/feelpp
 :uri-repo: {uri-org}/hifimagnet
 :uri-www: http://www.hifimagnet.org
-:uri-project: http://book.hifimagnet
+:uri-project: http://book.hifimagnet.cemosis.fr
 ifdef::env-site[:uri-project: link:]
 :uri-docs: {uri-project}/docs
 :uri-news: {uri-project}/news
@@ -25,6 +25,8 @@ endif::[]
 :docinfo: shared
 :hifimagnet: HiFiMagnet
 :feelpp: Feel++
+
+{hifimagnet} is a platform for modeling, simulation and optimisation of high field magnets.
 
 The http://www.lncmi.cnrs.fr/[Laboratoire National de Champs
 Magnétiques Intenses] (LNCMI) is a French large scale facility cite:[LNCMI2013] enabling researchers
@@ -59,7 +61,7 @@ link:/salome/[Geometry Modeling]::
 Geometrical Modeling High Field PolyHelix Magnets with http://www.salome-platform.org/[Salome]
 
 link:/math[The Mathematics of {hifimagnet}]::
-Non-Linear MultiPhysics Modeling in {hifimagnet}
+Non-Linear Multi-Physics Modeling in {hifimagnet}
 
 link:/user-manual/[{hifimagnet} User Manual]::
 The A to Z guide to {hifimagnet}.
@@ -69,7 +71,7 @@ Quick reference cards for {hifimagnet}.
 
 == Getting Help
 
-The {hifimagnet} project is developed to help you easily do _(i)_ modelisation simulation and optimisation and _(ii)_ high performance computing.
+The {hifimagnet} project is developed to help you easily do _(i)_ modeling simulation and optimization and _(ii)_ high performance computing.
 But we can't do it without your feedback!
 We encourage you to ask questions and discuss any aspects of the project on the discussion list or in the chat room.
 
