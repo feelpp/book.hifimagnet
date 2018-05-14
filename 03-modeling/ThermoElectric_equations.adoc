@@ -12,7 +12,7 @@ The only source of heat considered is the Joule effect, expressed by :
 P=\textbf{j.E}
 \]
 
-Where $\textbf{j}=\sigma\textbf{E}$  (from the Ohm's law).
+where $\textbf{j}=\sigma\textbf{E}$ (from the Ohm's law).
 But $\exists V | \textbf{E}=-\nabla V$
 
 NOTE: To see more details, link:http://book.feelpp.org/toolbox/thermoelectric[Thermo-Electric Toolbox]
