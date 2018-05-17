@@ -1,0 +1,39 @@
+== {singularity} image
+
+The simpliest way to create a {singularity} image for {salome} is to use dockerhub feelpp/salome channel:
+
+[source,sh]
+----
+sudo singularity create --size 6144 salome-7.8.0.img
+sudo singularity --verbose import salome-7.8.0.img docker://trophime/salome-7.8.0:nvidia
+----
+
+You  can also rebuild the image from scratch using either the official {salome} binaries either the custom ones build following instructions in ref:
+
+[source,sh]
+----
+sudo singularity create --size 6144 salome-7.8.0.img
+sudo singularity --verbose build salome-7.8.0.img salome.def
+----
+
+The obtained image may also pushed to a singularity Sregistry:
+
+[source,sh]
+----
+export SREGISTRY_CLIENT=registry
+export SREGISTRY_CLIENT_SECRETS=~/.sregistry-cesga
+sregistry push --name hifimagnet/salome --tag 8.3.0 salome-8.3.0.simg
+----
+where `~/.sregistry` holds the token, user and url of the associated singularity sregistry:
+[source,sh]
+----
+{ "registry": { "token": "xxxxxxx", "username": "user", "base": "http://sregistry.lcmi.local" } }
+----
+
+To retreive the image, just:
+[source,sh]
+----
+sregistry pull ...
+----
+
+
