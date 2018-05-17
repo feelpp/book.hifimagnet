@@ -1,0 +1,23 @@
+FROM node:8
+
+# Add some tools to edit
+RUN apt update && \
+    apt install -y \
+      lsb-release emacs-nox vim nano git \
+      libressl-dev make python libcurl-dev xsel
+
+RUN yarn --cache-folder=.yarn-cache add @antora/cli @antora/site-generator-default > /dev/null
+ENV PATH /node_modules/.bin:$PATH
+
+RUN useradd -r -u 999 -d /home/buildkite-agent  buildkite-agent
+RUN mkdir /antora && chown -R buildkite-agent /antora &&  mkdir /home/buildkite-agent && chown -R buildkite-agent /home/buildkite-agent
+USER buildkite-agent
+WORKDIR /antora
+
+ADD . /antora
+
+
+# Our helper scripts
+COPY start-antora-env.sh /usr/local/bin/start.sh
+COPY build-antora-site.sh /usr/local/bin/start-site.sh
+CMD ["/usr/local/bin/start.sh"]
