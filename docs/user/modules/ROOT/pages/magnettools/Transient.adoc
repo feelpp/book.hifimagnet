@@ -1,0 +1,7 @@
+= Transient Analysis
+
+* power failure
+** matrix exponential
+** implicit/explicit euler
+
+* critical scenario: bitter burnout

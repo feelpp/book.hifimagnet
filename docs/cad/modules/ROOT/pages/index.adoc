@@ -102,7 +102,7 @@ salome -m GEOM,SMESH,HIFIMAGNET [-t] \
 
 [[ring-cad]]
 [source,sh]
-.Generation of an connection ring
+.Generation of an connection Ring
 ----
 salome -m GEOM,SMESH,HIFIMAGNET [-t] \
    ${SALOME_INSTALLDIR}/HIFIMAGNET/bin/salome/HIFIMAGNET_Cmd.py \

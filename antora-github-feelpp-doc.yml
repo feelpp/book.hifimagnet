@@ -1,5 +1,5 @@
 site:
-  title: HiFiMagnet Documentations
+  title: HiFiMagnet Documentation
   url: https://docs.hifimagnet.org
   start_page: stable@docs::index.adoc
   keys:

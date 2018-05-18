@@ -3,4 +3,4 @@
 ** xref:index.adoc#qs_installation[installation]
 ** xref:index.adoc#qs_reference[running]
 * xref:index.adoc#installation[Installation]
-* xref:index.adoc#installation[Usage]
+* xref:index.adoc#usage[Usage]

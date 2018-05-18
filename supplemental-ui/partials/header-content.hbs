@@ -2,9 +2,9 @@
   <nav class="navbar">
     <div class="navbar-brand">
       <div class="navbar-item">
-         <!--  <a href="https://book.hifimagnet.org">HiFiMagnet Documentations</a> -->
+         <!--  <a href="https://book.hifimagnet.org">HiFiMagnet Documentation</a> -->
          {{#each site.components}} {{#if (eq 'docs' ./name)}} {{#each ./versions}} {{#if (eq this ../latestVersion)}}
-           <a href="{{{./url}}}">HiFiMagnet Documentations</a>
+           <a href="{{{./url}}}">HiFiMagnet Documentation</a>
          {{/if}} {{/each}} {{/if}} {{/each}}            
       </div>
       <button class="navbar-burger" data-target="topbar-nav">

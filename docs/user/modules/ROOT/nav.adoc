@@ -2,7 +2,23 @@
 * xref:index.adoc#quickstart[Quickstart]
 ** xref:index.adoc#qs_installation[installation]
 ** xref:index.adoc#qs_usage[usage]
+
 * xref:index.adoc#installation[Installation]
-* xref:index.adoc#cad[CAD Modeling]
+** xref:index.adoc#installation_prerequis[PreRequisites]
+** xref:index.adoc#installation_repository[Repository]
+** xref:index.adoc#installation_container[Containers]
+** xref:index.adoc#installation_scratch[From scratch]
+
+* xref:index.adoc#usage[Usage]
+** xref:index.adoc#usage_magnettools[{magnettools}]
+*** xref:index.adoc#usage_bmap[{Magnetic Field mapping}]
+*** xref:index.adoc#usage_optim[{Optimization}]
+
+** xref:index.adoc#usage_hifimagnet[{hifimagnet}]
+// ** xref:index.adoc#usage_axi[Axi Models]
+*** xref:index.adoc#usage_cad[Building CAD geometries]
+*** xref:index.adoc#usage_mesh[Meshing]
+*** xref:index.adoc#usage_3d[3D Models]
+
 * xref:index.adoc#references[References]
 * xref:docs:ROOT:GLOSSARY.adoc[Glossary]
