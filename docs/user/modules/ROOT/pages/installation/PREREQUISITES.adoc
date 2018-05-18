@@ -1,7 +1,20 @@
 == PREREQUISITES
 
-MagnetTools:
-* popt, gsl, freesteam, spherepack, expokit, sundials, yamlcpp, json-spirit
-* nag
+* {MagnetTools}: for Optimization and Analytical calc. 
 
-Salome
+** `popt`,
+** `gsl`, `freesteam`,
+** `spherepack, expokit`,
+** `sundials`,
+** `yamlcpp`, `json-spirit`
+** `nag` (only required for Optimization)
+
+* {feelpp}: for Numerical Axi and 3D Modeling
+
+** toolbox:
+** RB framework:
+
+* {Salome}: for GUI/TUI CAD and Meshing features
+
+* gmsh:
+* {MeshGems}: for Meshing features

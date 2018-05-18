@@ -1,0 +1,8 @@
+== Singularity
+
+:leveloffset=+1:
+include::../singularity/salome-containers.adoc[leveloffset=+1]
+include::../singularity/feelpp-containers.adoc[leveloffset=+1]
+include::../singularity/hifimagnet-containers.adoc[leveloffset=+1]
+
+:leveloffset=-1:

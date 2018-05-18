@@ -22,7 +22,7 @@ and pulsed fields up to 90 T at Toulouse. The technology used for DC magnets rel
 the most stressed parts of the magnets. Their design relies on non-linear 3D multi-physic models. 
 
 {hifimagnet} is a research project carried out by the LNCMI in collaboration with
-Institut de Recherche Mathématique Avanc\'ee (IRMA) and Cemosis.
+Institut de Recherche Mathématique Avancée (IRMA) and Cemosis.
 
 The goals are twofold:
 
@@ -52,11 +52,9 @@ image:HL-31-cadgeom.png[magnet,200]
 xref:user:ROOT:index.adoc[User manual].
 image:HL-31-cadgeom.png[magnet,200]
 
-////
-[[benchmarks_manual]]
+[[benchmarks]]
 xref:benchmarks:ROOT:index.adoc[Benchmarks manual].
 image:HL-31-cadgeom.png[magnet,200]
-////
 
 [[compile]]
 == Compile {hifimagnet} book

@@ -1,4 +1,4 @@
-== Using Official binary
+= Using Official binary
 
 This is not the recommended installation and this method is supported only starting from {salome} 8.3.0.
 

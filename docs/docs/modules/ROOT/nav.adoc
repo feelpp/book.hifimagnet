@@ -1,7 +1,7 @@
 * xref:index.adoc#manuals[Manuals]
-** xref:index.adoc#user_manual[User]
 ** xref:cad:ROOT:index.adoc#cad_manual[Cad]
-// ** xref:index.adoc#benchmarks_manual[BenchMarks]
+** xref:user:ROOT:index.adoc#user_manual[User]
+** xref:benchmarks:ROOT:index.adoc#benchmarks_manual[Benchmarks]
 
 * xref:index.adoc#help[Help]
 * xref:index.adoc#contribute[Contribute]
