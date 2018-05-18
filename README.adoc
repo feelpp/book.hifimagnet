@@ -59,8 +59,23 @@ make serve
 
 NOTE: This will install antora. Then compile the book. And finally run a local web server
 to visualize the documentation in a web browser:
-
-
 ```
 firefox http://localhost:5000
+```
+
+Alternatively you can run the book within a docker container:
+```
+docker pull antora/antora
+```
+Then simply start the docker image:
+```
+docker run --entrypoint ash -v `pwd`:/antora -p 5000:5000 --rm -it antora/antora
+```
+the `pwd` shall be the source dir of the book.
+
+Then in the container:
+```
+nmp -i -g serve
+antora antora-local-feelpp-doc.yml
+serve build/site
 ```
