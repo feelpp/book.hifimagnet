@@ -1,1 +1,33 @@
 = Force Field Maps
+
+`Inductances` also enables the computation of Axial Forces.
+
+
+`Forces` enables the calculations of forces and torques in case of radial misalignement of magnet axis. Available options are
+
+```
+ --output=STRING          set output filename
+ --input=STRING           load input filename
+ --save=STRING            save input data to filename
+ --rotation=STRING        OxOz angle between z-axis (in deg)
+ --translation=STRING     translations between Magnetic Center and Origin
+ --grid=STRING            nr nz ntheta grid size 
+ --verbose                activate verbose mode
+```
+
+`F_Map`
+
+```
+ -f, --input_format=INPUT_FORMAT     input mesh format (eg, .dat)
+ --density=DOUBLE                specify density (default is nan)
+ --verbose                       activate verbose mode
+ --mm                            force switch to mm as default units
+ --ascii                         ascii write mode for ensight
+ --samcef                        Generate Samcef Forces data for Samcef
+                                 (default is off)
+ --ansys                         Generate Ansys Forces data for Ansys
+                                 (default is off)
+ --num_integ=INT                 specify num_integ size (default 100)
+ --num_eval=INT                  specify num_eval size (default 100)
+ --gsl-error-handler             deactivate gsl error handler (default is
+```

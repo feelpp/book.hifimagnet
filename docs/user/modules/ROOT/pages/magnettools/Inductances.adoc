@@ -1,1 +1,15 @@
 = Self and Mutual Inductances
+
+
+`Inductances` enables calculation of self and mutual inductances. Available options are:
+```
+ --output=STRING        set output filename
+ --print-detail         activate detailled printing mode
+ --num-int              activate numerical integration
+ --log                  activate logging mode
+ --verbose              activate verbose mode
+ --currents=STRING      total currents
+ --tolerance=STRING     z tolerances
+ --ntol=STRING          ntol tolerances case
+ --grid=STRING          ni nj grid size
+```
