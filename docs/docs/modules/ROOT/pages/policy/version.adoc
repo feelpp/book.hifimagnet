@@ -9,8 +9,8 @@ endif::[]
 :table-caption!:
 :core-version: 0.104
 
-{feelpp} follows the semantic versioning rules.
-Each {feelpp} component release is versioned *major.minor.patch*.
+{hifimagnet} follows the same semantic versioning rules as {feelpp}.
+{hifimagnet} component release is versioned *major.minor.patch*.
 
 Major::
 Major releases occur when there are substantial changes in functionality or when new functionality breaks backwards compatibility.

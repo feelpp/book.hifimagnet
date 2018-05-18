@@ -58,4 +58,9 @@ make serve
 ```
 
 NOTE: This will install antora. Then compile the book. And finally run a local web server
-to visualize the documentation in a web browser.
+to visualize the documentation in a web browser:
+
+
+```
+firefox http://localhost:5000
+```

@@ -7,7 +7,7 @@ Welcome to {hifimagnet} documentation!
 
 NOTE: The {hifimagnet} documentations introduce the {hifimagnet} project, models, and
 process to build and run an application.
-New user should begin with the xref:user:ROOT:index.adoc[User Manual].
+New user should begin with the xref:user_h:ROOT:index.adoc[User Manual].
 
 IMPORTANT: This documentation is based on link:www.antora.org[antora].
 You wish to contribute? Please consult the <<Contribute, contribute>> section to learn how to proceed!
@@ -17,8 +17,8 @@ You wish to contribute? Please consult the <<Contribute, contribute>> section to
 
 The http://www.lncmi.cnrs.fr/[Laboratoire National de Champs
 Magnétiques Intenses] (LNCMI) is a French large scale facility enabling researchers 
-to perform experiments in the highest possible magnetic field. DC magnetic fields up to 36 T are provided at the Grenoble site 
-and pulsed fields up to 90 T at Toulouse. The technology used for DC magnets relies on the so-called polyhelix inserts for 
+to perform experiments in the highest possible magnetic field. DC magnetic fields up to 37 T are provided at the Grenoble site 
+and pulsed fields up to 99 T at Toulouse. The technology used for DC magnets relies on the so-called polyhelix inserts for 
 the most stressed parts of the magnets. Their design relies on non-linear 3D multi-physic models. 
 
 {hifimagnet} is a research project carried out by the LNCMI in collaboration with
@@ -44,31 +44,14 @@ Models have been implemented with the finite element library https://github.com/
 [[manuals]]
 == Manuals references
 
-[[cad_manual]]
-xref:cad:ROOT:index.adoc[CAD manual].
-image:HL-31-cadgeom.png[magnet,200]
+[options="header"]
+|===
+^.^| xref:cad:ROOT:index.adoc[image:HL-31-cadgeom.png[insert_cad,200]] ^.^| xref:user_h:ROOT:index.adoc[image:HL-31-model.png[insert_disp,200]] ^.^| xref:benchmarks_h:ROOT:index.adoc[image:bitter-adapt.png[Bitter,200]]
+^.^| xref:cad:ROOT:index.adoc[CAD manual]    ^.^| xref:user_h:ROOT:index.adoc[User manual] ^.^| xref:benchmarks_h:ROOT:index.adoc[Benchmarks manual]
+|===
 
-[[user_manual]]
-xref:user:ROOT:index.adoc[User manual].
-image:HL-31-cadgeom.png[magnet,200]
 
-[[benchmarks]]
-xref:benchmarks:ROOT:index.adoc[Benchmarks manual].
-image:HL-31-cadgeom.png[magnet,200]
-
-[[compile]]
-== Compile {hifimagnet} book
-
-You only require an node >= 8 install.
-
-```
-make install
-make build
-make serve
-```
-
-NOTE: This will install antora. Then compile the book. And finally run a local web server
-to visualize the documentation in a webbrowser.
+// include::xref:0.104@user:ROOT:index.adoc#Conventions[Conventions]
 
 [[help]]
 == Help and Support

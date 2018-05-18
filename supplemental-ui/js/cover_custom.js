@@ -4,51 +4,27 @@
 // Load when is page ready.
 document.addEventListener('DOMContentLoaded', function() {
     cover({
-        id:"mancover",
-        title0:"THE FEEL++",
-        title1:"USER MANUAL",
+        id:"cadcover",
+        title0:"HiFiMagnet",
+        title1:"CAD MANUAL",
         title0_x:"55",
         title1_x:"45",
     });
     cover({
-        id:"devcover",
+        id:"usercover",
         bgcolor:"#50377B",
-        title0:"THE FEEL++",
-        title1:"DEV. MANUAL",
+        title0:"HiFiMagnet",
+        title1:"User MANUAL",
         title0_x:"55",
         title1_x:"45",
     });
     cover({
-        id:"datacover",
+        id:"excover",
         bgcolor:"#0080FF",
-        title0:"THE FEEL++",
-        title1:"DATA MANUAL",
+        title0:"HiFiMagnet",
+        title1:"Benchmarks MANUAL",
         title0_x:"55",
         title1_x:"45",
-    });
-    cover({
-        id:"femcover",
-        bgcolor:"red",
-        title0:"THE FEEL++",
-        title1:"FEM BOOK",
-        title0_x:"55",
-        title1_x:"55",
-    });
-    cover({
-        id:"rbmcover",
-        bgcolor:"green",
-        title0:"THE FEEL++",
-        title1:"RBM BOOK",
-        title0_x:"55",
-        title1_x:"55",
-    });
-    cover({
-        id:"hdgcover",
-        bgcolor:"magenta",
-        title0:"THE FEEL++",
-        title1:"HDG BOOK",
-        title0_x:"55",
-        title1_x:"55",
     });
     cover({
         id:"progcover",
