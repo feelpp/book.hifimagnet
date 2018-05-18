@@ -27,8 +27,8 @@ section. Your contributions make a difference. No contribution is too small.
 == Installation Quick Start
 
 
-Using {hifimagnet} inside <<docker/what-is-docker.adoc#what-is-docker,Docker>> is the recommended and fastest way to use {hifimagnet}.
-The <<docker/README.adoc#docker,Docker>> chapter is dedicated to Docker and using {feelpp} in Docker.
+Using {hifimagnet} inside https://www.docker.com/what-docker[Docker] is the recommended and fastest way to use {hifimagnet}.
+The xref:0.104@user:ROOT:install/containers.adoc#Docker[Docker chapter] is dedicated to Docker and using {feelpp} in Docker.
 
 We strongly encourage you to follow these steps if you begin with {hifimagnet} in particular as an end-user.
 
@@ -44,7 +44,8 @@ Start the Docker container `feelpp/hifimagnet` as follows
 > docker run -it -v $HOME/feel:/feel feelpp/hifimagnet
 ----
 
-NOTE: these steps are explained in the chapter on <<02-docker/hfimagnet-containers.adoc#hifimagnet-containers,{feelpp} containers>>.
+NOTE: these steps are explained in the chapter on xref:0.1@user:ROOT:docker/hifimagnet-containers.adoc[{hifimagnet}] and
+xref:0.104@user:ROOT:install/containers.adoc#Docker[{feelpp} containers].
 
 [TIP]
 ====
@@ -56,27 +57,21 @@ link:https://wci.llnl.gov/simulation/computer-codes/visit[Visit]:: is a distribu
 [[installation]]
 = Installing {hifimagnet}
 
-:leveloffset=+1:
 include::installation/README.adoc[]
 
-:leveloffset=-1:
-:leveloffset=+1:
 
+:leveloffset=-1:
 include::installation/PREREQUISITES.adoc[]
 
 :leveloffset=-1:
-:leveloffset=+1:
-
-include::installation/docker.adoc[]
-
-:leveloffset=-1:
-:leveloffset=+1:
-
 include::installation/lncmi-repository.adoc[]
 
-:leveloffset=-1:
-:leveloffset=+1:
+== Using containers
+include::installation/docker.adoc[leveloffset=+1]
+include::installation/singularity.adoc[leveloffset=+1]
 
+:leveloffset=-1:
+:leveloffset=-1:
 include::installation/from-scratch.adoc[]
 
 :leveloffset=-1:

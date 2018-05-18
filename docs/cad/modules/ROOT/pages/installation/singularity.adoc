@@ -1,4 +1,4 @@
-== {singularity} image
+= {singularity} image
 
 The simpliest way to create a {singularity} image for {salome} is to use dockerhub feelpp/salome channel:
 

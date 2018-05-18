@@ -13,11 +13,12 @@ content:
   - url: ./
     branches: feature/antora
     start_path: docs/cad
-# # to add a new source that may be reference
-#  - url: https://github.com/feelpp/toolbox
-#    branches: master
-#    start_path: examples
-#
+  - url: ./
+    branches: feature/antora
+    start_path: docs/benchmarks
+  - url:  https://github.com/feelpp/book.feelpp.org/
+    branches: master
+    start_path: docs/user
 ui:
   bundle:
     url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
@@ -33,6 +34,7 @@ asciidoc:
     angiotk: AngioTK
     stem: latexmath
     hifimagnet: HiFiMagnet
+    magnettools: MagnetTools
     meshgems: MeshGems
     salome: Salome
     singularity: Singularity

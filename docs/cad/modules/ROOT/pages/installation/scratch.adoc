@@ -1,4 +1,4 @@
-== Building from scratch
+= Building from scratch
 
 * First create a directory to hold salome tarball release:
 
