@@ -7,7 +7,7 @@ endif::[]
 :idprefix:
 :idseparator: -
 :table-caption!:
-:core-version: 0.104
+//:core-version: 0.104
 
 {feelpp} follows the semantic versioning rules.
 Each {feelpp} component release is versioned *major.minor.patch*.

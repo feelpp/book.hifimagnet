@@ -2,9 +2,9 @@
 include::{partialsdir}/header-uri.adoc[]
 include::{partialsdir}/header-levels.adoc[]
 
-Welcome to {hifimagnet} documentation!
+Welcome to {hifimagnet} manual documentation!
 
-NOTE: The {hifimagnet} documentation introduce the {feelpp} concepts, the process to build and run an application and the process to run a toolbox application.
+NOTE: The {hifimagnet} manual documentation introduces the process to build and run an application.
 New user should begin with the xref:user:ROOT:index.adoc[{feelpp} User Manual].
 
 IMPORTANT: You wish to contribute? Please consult the <<Contribute, contribute>> section to learn how to proceed!
@@ -41,11 +41,11 @@ Start the Docker container `feelpp/hifimagnet` as follows
 
 [source,sh]
 ----
-> docker run -it -v $HOME/feel:/feel feelpp/hifimagnet
+docker run -it -v $HOME/feel:/feel feelpp/hifimagnet
 ----
 
 NOTE: these steps are explained in the chapter on xref:index.adoc#installation_container[{hifimagnet}] and
-xref:0.104@user:ROOT:install/containers.adoc#Docker[{feelpp} containers].
+xref:user:ROOT:install/containers.adoc#Docker[{feelpp} containers].
 
 
 [[installation]]

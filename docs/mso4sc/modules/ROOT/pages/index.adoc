@@ -1,0 +1,42 @@
+Tis document will provide basic informations to connect to the http://portal.mso4sc.eu[MSOPortal],
+to register an {hifimagnet} application and to purchase an {hifimagnet} applications.
+
+= Get an account on http://portal.mso4sc.eu[MSOPortal]
+
+Connect to http://portal.mso4sc.eu[MSOPortal]
+
+By default you will be a "end user" unless you are "promote" "dev user" by Admins.
+
+= Overview of the Portal
+
+the portal is split into several services:
+* MarketCatalogue: where you can register, purchase applications
+* DataCatalogue:
+* Experiments:
+* RemoteDesktop
+
+more details on ...
+
+= What is an application?
+
+consists of:
+* a blueprint TOSCA file that describes the workflow
+* set of scripts to deploy and undeploy the applications
+
+= Register an {hifimagnet} application
+
+To register an application you need to be "..."
+The process is split ito several part:
+* add the app and create an offer in the MarketPlace
+* register the app in the experimenttools
+
+= Purchase an {hifimagnet} application
+
+= Running an {hifimagnet} application in Experiments
+
+= Debuging an {hifimagnet} application in Experiments
+
+
+See https://github.com/MSO4SC/blueprint/feelpp/hifimagnet_test/blob/master/README.adoc for details
+
+

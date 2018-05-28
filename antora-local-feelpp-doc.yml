@@ -16,9 +16,22 @@ content:
   - url: ./
     branches: feature/antora
     start_path: docs/benchmarks
+  - url: ./
+    branches: feature/antora
+    start_path: docs/model
   - url:  https://github.com/feelpp/book.feelpp.org/
     branches: master
     start_path: docs/user
+  - url: https://github.com/feelpp/toolbox
+    branches: [master,example*]
+    start_path: examples
+    tags:
+    - v*
+  - url: https://github.com/feelpp/toolbox
+    branches: [master,benchmark*]
+    tags:
+    - v*
+    start_path: benchmarks
 ui:
   bundle:
     url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable

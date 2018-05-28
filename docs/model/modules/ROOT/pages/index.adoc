@@ -1,0 +1,37 @@
+= {hifimagnet} model manual
+include::{partialsdir}/header-uri.adoc[]
+include::{partialsdir}/header-levels.adoc[]
+
+Welcome to {hifimagnet} Model documentation!
+
+[[introduction]]
+== Introduction
+
+[[coupled3d]]
+== Coupled Model
+
+[[thermoelec]]
+=== ThermoElectric
+
+[[magneto]]
+=== Magnetostatic
+
+[[meca]]
+=== Elasticity
+
+=== ThermoHydraulics
+
+[[coupledaxi]]
+== A simplified model: Axisymetrical Geometry
+
+[[optim]]
+== Optimization: Axisymetrical Geometry
+
+[[todo]]
+== TODO
+
+=== Improved ThermoHydraulics
+
+=== transient regimes
+
+=== SuperConductor
