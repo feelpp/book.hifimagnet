@@ -9,17 +9,33 @@ NOTE: The {hifimagnet} documentations introduce the {hifimagnet} project, models
 process to build and run an application.
 New user should begin with the xref:user_h:ROOT:index.adoc[User Manual].
 
-IMPORTANT: This documentation is based on link:www.antora.org[antora].
-You wish to contribute? Please consult the <<Contribute, contribute>> section to learn how to proceed!
+IMPORTANT: This documentation is based on http://www.antora.org[antora].
+You wish to contribute? Please consult the <<contribute, contribute>> section to learn how to proceed!
 
 [[introduction]]
 == Introduction
 
-The http://www.lncmi.cnrs.fr/[Laboratoire National de Champs
-Magnétiques Intenses] (LNCMI) is a French large scale facility enabling researchers 
-to perform experiments in the highest possible magnetic field. DC magnetic fields up to 37 T are provided at the Grenoble site 
-and pulsed fields up to 99 T at Toulouse. The technology used for DC magnets relies on the so-called polyhelix inserts for 
-the most stressed parts of the magnets. Their design relies on non-linear 3D multi-physic models. 
+High Field Magnets are an essential ingredient for many research areas (e.g. High Energy Physics in CERN, High resolution MRI for NeuroSciences).
+The {uri-lncmi-www}[Laboratoire National de Champs Magnétiques Intenses] (LNCMI) is a French large scale facility, also part of {uri-emfl-www}[European Magnetic Field Laboratory] (EMFL),
+that build and provides such magnets in solenoidal configuration, enabling researchers to perform experiments in the highest possible magnetic field.
+DC magnetic fields up to 37 T are provided at the Grenoble site and pulsed fields up to 99 T at Toulouse.
+
+The technology used for DC magnets relies on the *polyhelix* technic. The magnet consists in a set of Copper alloy tubes,
+in  which an helical cut has been machined by Electric Discharge Machining (EDM), connected into series. Each tube is refered as an *helix* and the resulting magnet
+is the so-called *PolyHelix insert* cut by EDM.
+
+[options="header"]
+|===
+^.^|image:Magnet_vue_eclatee.png[An artistic view of a 14 *PolyHelices insert*,400] ^.^| image:Helices.png[Detailed view of the connection between 2 *helices*model,300]
+|===
+
+
+The use of classical resistive materials as Copper alloy enables to reach higher magnetic field than those provided by magnets
+made out of Low Temperature Superconductor material (namely 24.5 tesla). To achieve these values the magnets will be powered by 24 MW and
+need some water cooling is needed to dissipate the Joules losses and keep the magnet temperature bellow some heuristic threshold.
+
+
+== What is {hifimagnet}?
 
 {hifimagnet} is a research project carried out by the LNCMI in collaboration with
 Institut de Recherche Mathématique Avancée (IRMA) and Cemosis.
@@ -39,35 +55,36 @@ The goals are twofold:
   perform quantile estimation, to compute probability of failure and
   ultimately to provide safety operational controls.
 
-Models have been implemented with the finite element library https://github.com/feelpp/feelpp[Feel++].
+Models have been implemented with the finite element library {uri-feelpp-sources}[Feel++].
 
 [[manuals]]
 == Manuals references
 
 [options="header"]
 |===
-^.^| xref:cad:ROOT:index.adoc[image:HL-31-cadgeom.png[insert_cad,200]] ^.^| xref:user_h:ROOT:index.adoc[image:HL-31-model.png[insert_disp,200]] ^.^| xref:benchmarks_h:ROOT:index.adoc[image:bitter-adapt.png[Bitter,200]]
-^.^| xref:cad:ROOT:index.adoc[CAD manual]    ^.^| xref:user_h:ROOT:index.adoc[User manual] ^.^| xref:benchmarks_h:ROOT:index.adoc[Benchmarks manual]
+^.^| xref:model_h:ROOT:index.adoc[image:Model.png[model,300]] ^.^| xref:cad:ROOT:index.adoc[image:HL-31-cadgeom.png[insert_cad,200]] ^.^| xref:user_h:ROOT:index.adoc[image:HL-31-model.png[insert_disp,200]] ^.^| xref:benchmarks_h:ROOT:index.adoc[image:bitter-adapt.png[Bitter,300]]
+^.^| xref:model_h:ROOT:index.adoc[Model manual]               ^.^| xref:cad:ROOT:index.adoc[CAD manual]                              ^.^| xref:user_h:ROOT:index.adoc[User manual]                            ^.^| xref:benchmarks_h:ROOT:index.adoc[Benchmarks manual]
 |===
 
 
-// include::xref:0.104@user:ROOT:index.adoc#Conventions[Conventions]
 
 [[help]]
 == Help and Support
 
 We're always happy to help out with {hifimagnet} or any other questions you might
-have. You can ask a question or signal an issue at the Gitter {hifimagnet} salon.
+have. You can ask a question or signal an issue in  a chat room:
 
-https://gitter.im/feelpp/hifimagnet?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge[
-image:https://badges.gitter.im/Join%20Chat.svg[Join the chat at https://gitter.im/feelpp/hifimagnet]]
+Chat using Slack:: link:https://feelpp.slack.com/messages/G6L3X3C94[image:tools/joinslack.svg[]]
+Chat using Gitter (deprecated):: image:https://badges.gitter.im/Join%20In.svg[Gitter, link=https://gitter.im/feelpp/hifimagnet]
+
+For help or questions more related to {feelpp} see xref:docs:ROOT#_get_help[here].
+
 
 [[contribute]]
 == Contribute to this documentation
 
 You can contribute to improve this documentation on
-https://github.com/feelpp/hifimagnet[GitHub] and follow the
-https://gitter.im/feelpp/hifimagnet-book[Gitter {hifimagnet} Book] forum.
+https://github.com/feelpp/book.hifimagnet[GitHub].
 
 [[copyright]]
 == Copyright and Licensing

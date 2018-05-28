@@ -4,7 +4,7 @@ Detailled instructions regarding the use of docker may be found in xref:index.ad
 Alternatively you can install {hifimagnet} from sources.
 To speed up the build you can use the lncmi Debian/Ubuntu repository
 which contains packages for the prerequisites. The use of the repository
-is described in xref:0.1@user_h:ROOT:installation/lncmi-repository.adoc[LCMI repository].
+is described in xref:user_h:ROOT:installation/lncmi-repository.adoc[LCMI repository].
 
 Finaly to rebuild {hifimagnet} from scratch instructions may be found in xref:index.adoc#installation_scratch[building {hifimagnet}].
 Bassicaly first install {feelpp}, {magnettools}, {hifimagnet} and {hifimagnet} {salome} plugin.
