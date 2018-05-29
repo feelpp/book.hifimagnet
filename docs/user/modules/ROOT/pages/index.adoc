@@ -155,4 +155,3 @@ include::learning/3DModeling.adoc[leveloffset=+2]
 
 include::quickref/README.adoc[]
 
-include::resources.adoc[]
