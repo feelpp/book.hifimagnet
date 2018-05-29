@@ -1,6 +1,6 @@
-Name: cesga
-Host: ft2.cesga.es
-User: [Your cesga user]
+Name: cesga <1>
+Host: ft2.cesga.es <2>
+User: [Your cesga user] 
 Password: [Your cesga password]
-timezone:
-batch system:
+Workload Manager: SLURM <3>
+timezone: <4>
