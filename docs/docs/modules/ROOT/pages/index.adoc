@@ -86,6 +86,8 @@ For help or questions more related to {feelpp} see http://docs.feelpp.org/docs/s
 You can contribute to improve this documentation on
 https://github.com/feelpp/book.hifimagnet[GitHub].
 
+To contribute to {hifimagnet}...
+
 [[copyright]]
 == Copyright and Licensing
 

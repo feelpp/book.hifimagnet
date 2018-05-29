@@ -2,6 +2,7 @@
 ** xref:model_h:ROOT:index.adoc#model_manual[Model]
 ** xref:cad:ROOT:index.adoc#cad_manual[Cad]
 ** xref:user_h:ROOT:index.adoc#user_manual[User]
+** xref:post_h:ROOT:index.adoc#post_manual[Post-Processing]
 ** xref:benchmarks_h:ROOT:index.adoc#benchmarks_manual[Benchmarks]
 
 * xref:mso4sc_h:ROOT:index.adoc#mso4sc_manual[MSOPortal]

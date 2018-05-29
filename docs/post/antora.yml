@@ -1,0 +1,5 @@
+name: post_h
+title: HiFiMagnet PostProcessing Documentation
+version: "stable"
+nav:
+- modules/ROOT/nav.adoc

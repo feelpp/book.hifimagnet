@@ -2,9 +2,16 @@
 include::{partialsdir}/header-uri.adoc[]
 include::{partialsdir}/header-levels.adoc[]
 
-This document will provide basic informations to connect to the http://portal.mso4sc.eu[MSOPortal],
-to register an {hifimagnet} application and to purchase an {hifimagnet} applications.
+This document will provide basic information:
 
+* to connect to the http://portal.mso4sc.eu[MSOPortal],
+* to register an {hifimagnet} application,
+* to purchase an {hifimagnet} application,
+* to run an  {hifimagnet} application.
+
+It will define the role of *DevUser* and *EndUser*.
+
+[[connect]]
 == Get an account on http://portal.mso4sc.eu[MSOPortal]
 
 Connect to http://portal.mso4sc.eu[MSOPortal]
@@ -13,39 +20,50 @@ image::PortalMSO4SC_login.png[login page MSOPortal]
 
 You need to provide a valid email and a password.
 Then you have to validate your account by following the instructions send
-by the portal. To finalize your registration, you need to be assigned a *role*: either *EndUser* or *DevUser*.
-This may done by any *DevUser* or *Portal Admins*.
+by the portal.
 
 NOTE: Right now the portal *is not* using https protocol. As a consequence, the credentials `user/password` are
 send in clear. So be careful. 
 
+[[overview]]
 == Overview of the Portal
 
 image::PortalMSO4SC.png[Main page for MSOPortal]
 
 the portal is split into several services:
 
-* *MarketPlace*, where you can add and/or purchase applications
-* *DataCatalogue*, where you can add and/or retreive data
+* *Marketplace*, where you can add and/or purchase applications
+* *Data Catalog*, where you can add and/or retrieve data
 * *Experiments*, where the app is setup and the simulation is launched
 * *Visualization*, to access a Remote desktop to pre and/or post-processes your simulations
 
-more details on https://github.com/MSO4SC/MSOPortal/blob/master/portal/README.adoc[MSO4SC Frontend & Experiments Tool]
+more details on https://github.com/MSO4SC/MSOPortal/blob/master/portal/README.adoc[MSO4SC Front-end & Experiments Tool]
+
+[[devuser]]
+== *DevUser* role
 
 
-==  Register an {hifimagnet} application
+=== Finalize registration
+
+To finalize your registration, you need to ask to become a *DevUser*.
+This may done by sending email to *Portal Admins* (who? actually Victor or Javi).
+
+=== Valid an *EndUser*
+
+[[registerapp]]
+===  Register an {hifimagnet} application
 
 To register an application you need to be *DevUSer*
-The process is split ito several part:
+The process is split into several part:
 
-* add the app and create an offer in the *MarketPlace*:
+* add the app and create an offer in the *Marketplace*:
 ** go to *My stock/Catalog*
 ** go to *My stock/Product*
 ** go to *My stock/Offering*
 
 Then you need to perform the following steps in *Experiments*:
 
-* goto *RegisterApp*
+* go to *RegisterApp*
 ** select the name of the *Offering*
 ** load the application.
 
@@ -57,26 +75,41 @@ An application consists of:
 * set of scripts to deploy and undeploy the applications
 ====
 
-[NOTE]
-====
-Once the app has been registered in the *MarketPlace* (actually it means that an offering has been defined) you will be *owner* of this app. Any *EndUser* may purchase your app. To check if you have any order:
+[[validorder]]
+==  Validate an {hifimagnet} application purchase order
 
-* go to *Product Orders*
+Once the app has been registered in the *Marketplace* (actually it means that an offering has been defined) you will be *owner* of this app. Any *EndUser* may purchase your app.
+To check if you have any order:
+
+* go to *My Inventory*
+* go to Product Orders*
 * check *Recibibas* menu
 * if any new message, you need to:
 ** click to validate the order
-** clic again to finalize the order
+** click again to finalize the order
+
 The *EndUser* may now proceed to perform *Experiments* with you product
-====
 
-== Purchase an application
 
-To purchase an application from the *MarketPlace* you can either be *DevUser*
+[[enduser]]
+== *EndUser* role
+
+TIP: when running into some strange portal behavior, first try to `logout/login` from the portal
+before reporting an issue.
+
+TIP: make sure that you have access to https://sregistry.srv.cesga.es/[sregistry] holding all the singularity images.
+Right now its the only such service (see key `sregistry_url` in blueprints) available in the frame of the project.
+
+
+[[purchase]]
+=== Purchase an application
+
+To purchase an application from the *Marketplace* you can either be *DevUser*
 or a simple *EndUser*. The process is the following:
 
-* connect to the *MarketPlace*, in *Home* you will find all available apps.
-* Click on *Add to Cart* to purchace the app you want.
-* Click on *ShoppingCart* and *Checkout* to go on
+* connect to the *Marketplace*, in *Home* (top left Marketplace page) you will find all available apps (*All categories*).
+* Click on *Add to Cart* to purchase the app you want.
+* Click on *Shopping Cart* and *Checkout* to go on
 ** ask to fill some form (??)
 ** provide a *shipping address* if not already defined
 ** provide a *billing address* if not already defined
@@ -85,75 +118,94 @@ or a simple *EndUser*. The process is the following:
 To use the app, you will have to wait that the owner/seller of the app validate
 you order. To check the status of your order:
 
+* go to *My Inventory*
 * go to *Product Orders*
-* check *Requested* and *Recibidas* menus on the top right of *MarketPlace* webpage
 
-== Upload Data to *DataCatalogue*
+You shall be to see your products and their status in each product form.
+// * check *Requested* and *Recibidas* menus on the top right of *Market Place* web-page
 
-Connect to *Data Catalogue*
+[[data]]
+=== Upload Data to *Data Catalog*
 
-== Setting up an HPC ressource in *Experiments*
+* Connect to *Data Catalog*
+* Select an organization
+* Add a dataset
+
+=== Setting up an HP res-source in *Experiments*
 
 * Go to *Experiments*
 * Select *Settings*
-* Define a HPC ressource
+* Define a HPV res-source
 
 [source,java]
 ----
 include::{examplesdir}/hpc.txt[]
 ----
 
-== Running an {hifimagnet} application in *Experiments*
+[[running]]
+=== Running an {hifimagnet} application in *Experiments*
 
-* Create an App
+* Select *Create App Instance*
 ** define an ID
 ** select a registered app in the menu
 
-At this point you should have a page with all the options that need to be filled before *Deploy Instance*
+At this point you should have a page with all the options that need to be filled before moving to *Deploy Instance*
 
 image::Portal_HifiMagApp.png[ex: Main {hifimagnet} app]
+
+The fields to fill may be grouped into categories:
+
+* specs for running simulations
+* HPC settings
+* specs retrieving singularity images
+* specs for singularity image
+
+The "EndUser" shall only need to fill the fields related to the 1st and 2nd category.
+The fields that are to be filled by *EndUser* are marked in *bold*.
+
+The others fields are designed for more advanced users.
+
 
 [NOTE]
 ====
 
-.List of keys to be defined for HPC settings
-[options="header,footer,autowidth"]
-|===
-| Key                        | Description              | Default          | Notes
-| monitor_entrypoint         |  Monitor entrypoint IP   | "193.144.35.146" |
-| job_prefix                 | Job name prefix in HPCs | "mso4sc"         |
-| mso4sc_hpc_primary         | HPC settings | | 
-| hpc_modules | modules to load depending on the targeted machine | [gcc/6.3.0, openmpi/2.0.2, singularity/2.4.2] | shall depends on HPC and sing image
-| hpc_volumes | volumes to be mounted on the targeted machine |  [/scratch,/mnt,${LUSTRE}/feel:/feel] | depends on HPC and sing. image
-| hpc_partition | select partition queue | 'thin-shared' | shall depends on batch system and HPC (TODO)
-| hpc_reservation | select reservation queue | `` | is optional
-| parallel_tasks |  number of tasks/processes to run in parallel | 2 |  shall depends on batch system and selected partition
-| max_time | maximum allowed time for run (minutes and seconds) | '00:30:00' |  shall depends on batch system and selected partition
-|===
-
 .List of keys specs for running simulations
-[options="header,footer,autowidth"]
+[options="header,footer"]
+|===
+| Key                           | Description                                 | Default                                                            | Notes
+| *Dataset resource: input_url* | url to retrieve for cfg file and input data | `None`                                                             | URL pointing to an archive of data files (comes from the data Catalog)
+| *execfile*                    | executable file                             | `feelpp_hfm_thermoelectric_model_3D_V1T1_N1`                       | any exec `feelpp_hfm...`                  
+| *cfgfile*                     | configuration file                          | `/usr/share/doc/hifimagnet/ThermoElectricModel/quarter-turn3D.cfg` | cfg file need to be in the container, or in a mounted dir or in the dataset
+|===
+
+.List of keys to be defined for HPC settings
+[options="header,footer"]
 |===
 | Key                        | Description              | Default          | Notes
-| mso4sc_dataset_input_url | url to retrieve for cfg file and input data |  `None`
-
-| execfile | executable file | `feelpp_hfm_thermoelectric_model_3D_V1T1_N1` |
-| cfgfile |  configuration file | `/usr/share/doc/hifimagnet/ThermoElectricModel/quarter-turn3D.cfg` |
+| *monitor_entrypoint*       |  Monitor entrypoint IP   | "193.144.35.146" | for this release it should be empty
+| job_prefix                 | Job name prefix in HPCs  | "mso4sc"         |
+| *HPC: primary*               | HPC settings             | "cesga"          | 
+| hpc_modules | modules to load depending on the targeted machine | [gcc/6.3.0, openmpi/2.0.2, singularity/2.4.2] | shall depends on HPC and singularity image
+| hpc_volumes | volumes to be mounted on the targeted machine |  [/scratch,/mnt,${LUSTRE}/feel:/feel] | depends on HPC and singularity image
+| *hpc_partition* | select partition queue | 'thin-shared' | shall depends on batch system and HPC (TODO)
+| hpc_reservation | select reservation queue | `` | is optional
+| *parallel_tasks* |  number of tasks/processes to run in parallel | 2 |  shall depends on batch system and selected partition
+| *max_time* | maximum allowed time for run (minutes and seconds) | '00:30:00' |  shall depends on batch system and selected partition
 |===
 
-.List of keys specs for retreiving singularity images
-[options="header,footer,autowidth"]
+.List of keys specs for retrieving singularity images
+[options="header,footer"]
 |===
-| Key                        | Description              | Default          | Notes
-| sregistry_client           | define default sregistry client                |  `registry` | 
-| sregistry_client_secrets   | path to file where sregistry secret are stored | `$HOME/.sregistry` |
+| Key                        | Description                                    | Default                        | Notes
+| sregistry_client           | define default sregistry client                |  `registry`                    | 
+| sregistry_client_secrets   | path to file where sregistry secret are stored | `$HOME/.sregistry`             |
 | sregistry_storage          | path to container directory                    | `${LUSTRE}/singularity_images` |
-| sregistry_url              | URI pointing to the sregistry                  | `sregistry.srv.cesga.es` |
-| sregistry_image            | URI pointing to the sregistry-cli image        | `mso4sc/sregistry` |
+| sregistry_url              | URI pointing to the sregistry                  | `sregistry.srv.cesga.es`       |
+| sregistry_image            | URI pointing to the sregistry-cli image        | `mso4sc/sregistry`             |
 |===
 
 .List of keys specs for singularity image
-[options="header,footer,autowidth"]
+[options="header,footer"]
 |===
 | Key                        | Description              | Default          | Notes
 | singularity_image_uri      |  URI pointing to the singularity image   | `hifimagnet/hifimagnet:stretch` |
@@ -182,10 +234,10 @@ To *Run Instance*, the procedure is similar:
 ====
 these step may take some minutes to be performed. A red button will indicates an error.
 Check the message in the frame bellow the status button. To have more details about the actual error
-is more tricky; we recommed to:
+is more tricky; we recommend to:
 
-* make sure you have uncheck the cleanup option
-* connect to the HPC ressource
+* make sure you have unchecked the cleanup option
+* connect to the HPC resource
 * move to the selected `WORKIR`
 * check the logs
 
@@ -202,22 +254,44 @@ You may cleanup your working by
 
 * Destroy your Instance
 ** select the *ID*, you defined in the previous step, in the *App instance * menu
-** click on *Destry*
+** click on *Destroy*
 
-== Setting up an RemoteDesktop ressource in *Visualisation*
+[[post]]
+=== Setting up an Remote Desktop resource in *Visualization*
 
-* Go to *Visualisation*
+* Go to *Visualization*
 * Select *Settings*
-* Define a RemoteDesktop ressource
+* Define a Remote Desktop resource
 
 [source,java]
 ----
 include::{examplesdir}/remotedesktop.txt[]
 ----
 
+=== Running an Remote Desktop resource in *Visualization*
+
+* Go to *Visualization*
+* Click *Desktop Available*
+** Select your Visu Settings
+** Click on *Create*
+** Click either on *Desktop* or *View Only*
+
+it should start a webpage within your browser.
+In this page you should be able to:
+
+* start a 'terminal' and check the output of your simulation
+* start a post-processing GUI:
+** either by loading {paraview}
+** or using singularity {ensight} image
+* to quit just click on `Menu/logout` (top left)
+
+For more details on using {paraview} or {ensight} please check XXXX
+
+=== To go further
+
 == References
 
 * https://github.com/MSO4SC/MSOPortal/blob/master/portal/README.adoc#visualization--pre--post-tool[portal usage]
-* https://github.com/MSO4SC/blueprint/feelpp/hifimagnet_test/blob/master/README.adoc[blueprints examples]
+* https://raw.githubusercontent.com/MSO4SC/resources/master/blueprint/feelpp/hifimagnet_test/upload/blueprint.yaml[blueprints examples]
 
 
