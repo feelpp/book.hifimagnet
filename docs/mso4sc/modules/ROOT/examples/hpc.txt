@@ -1,0 +1,6 @@
+Name: cesga
+Host: ft2.cesga.es
+User: [Your cesga user]
+Password: [Your cesga password]
+timezone:
+batch system:

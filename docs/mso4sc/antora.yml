@@ -1,5 +1,5 @@
 name: mso4sc_h
-title: Using {hifimagnet} in MSOPortal
+title: MSO4SC Portal
 version: "stable"
 nav:
 - modules/ROOT/nav.adoc

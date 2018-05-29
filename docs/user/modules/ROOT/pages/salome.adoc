@@ -91,7 +91,7 @@ Note that the mesh is in med format.
 
 [cols="^,^"]
 |======
-|image:{imagesdir}/HR/HR-cad.png[]|image:{imagesdir}/HR/HR-mesh.png[]
+|image::{imagesdir}/HR/HR-cad.png[]|image::{imagesdir}/HR/HR-mesh.png[]
 |CAD | Mesh
 |======
 
@@ -106,7 +106,7 @@ Note that the mesh is in med format.
 
 [cols="^"]
 |======
-|image:{imagesdir}/HL-31/HL-31-cadgeom.png[]
+|image::{imagesdir}/HL-31/HL-31-cadgeom.png[]
 |A 14 Helices resistive insert with current leads (latexmath:[1/4^\text{th}] of the helices was removed for presentation sake)
 |======
 

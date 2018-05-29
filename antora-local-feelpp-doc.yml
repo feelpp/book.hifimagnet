@@ -19,19 +19,12 @@ content:
   - url: ./
     branches: feature/antora
     start_path: docs/model
-  - url:  https://github.com/feelpp/book.feelpp.org/
+  - url: ./
+    branches: feature/antora
+    start_path: docs/mso4sc
+  - url: https://github.com/feelpp/book.feelpp.org
     branches: master
     start_path: docs/user
-  - url: https://github.com/feelpp/toolbox
-    branches: [master,example*]
-    start_path: examples
-    tags:
-    - v*
-  - url: https://github.com/feelpp/toolbox
-    branches: [master,benchmark*]
-    tags:
-    - v*
-    start_path: benchmarks
 ui:
   bundle:
     url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
@@ -44,7 +37,6 @@ asciidoc:
     allow-uri-read: true
     hide-uri-scheme: true
     feelpp: Feel++
-    angiotk: AngioTK
     stem: latexmath
     hifimagnet: HiFiMagnet
     magnettools: MagnetTools
