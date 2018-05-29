@@ -24,6 +24,9 @@ content:
     start_path: docs/mso4sc
   - url: ./
     branches: feature/antora
+    start_path: docs/dev
+  - url: ./
+    branches: feature/antora
     start_path: docs/post
   - url: https://github.com/feelpp/book.feelpp.org
     branches: master
