@@ -18,7 +18,14 @@ Connect to http://portal.mso4sc.eu[MSOPortal]
 
 image::PortalMSO4SC_login.png[login page MSOPortal]
 
-You need to provide a valid email and a password.
+* Click on *login*
+
+You will be forwarded to IDM component to the portal.
+
+image::PortalMSO4SC_idm.png[IDM component of MSOPortal]
+
+* Create an account there providing a valid email and a password.
+
 Then you have to validate your account by following the instructions send
 by the portal.
 
@@ -42,13 +49,10 @@ more details on https://github.com/MSO4SC/MSOPortal/blob/master/portal/README.ad
 [[devuser]]
 == *DevUser* role
 
+=== Becoming *DevUser*
 
-=== Finalize registration
-
-To finalize your registration, you need to ask to become a *DevUser*.
-This may done by sending email to *Portal Admins* (who? actually Victor or Javi).
-
-=== Valid an *EndUser*
+Once registered in the portal, you  are a *EndUser*.
+To be granted *DevUser* rights, just email to Portal Admins (actually Victor or Javi).
 
 [[registerapp]]
 ===  Register an {hifimagnet} application
@@ -69,20 +73,25 @@ Then you need to perform the following steps in *Experiments*:
 
 [NOTE]
 ====
-An application consists of:
+An application is an gzipped archive holding a directory which in tunrs contains :
 
-* a blueprint TOSCA file that describes the workflow
-* set of scripts to deploy and undeploy the applications
+* a `blueprint.yml` TOSCA file that describes the workflow
+* a `scripts` subdirectory holding the scripts required to deploy and undeploy the app
+
+In https://github.com/MSO4SC/resources/tree/master/blueprint/feelpp/hifimagnet_test(this git repository)
+you will find the actual application corresponding to the {hifimagnet} basic demonstrator.
+
+To actually build the app, use: ```./deploy pkg``` 
 ====
 
 [[validorder]]
-==  Validate an {hifimagnet} application purchase order
+=== Validate an {hifimagnet} application purchase order
 
 Once the app has been registered in the *Marketplace* (actually it means that an offering has been defined) you will be *owner* of this app. Any *EndUser* may purchase your app.
 To check if you have any order:
 
 * go to *My Inventory*
-* go to Product Orders*
+* go to *Product Orders*
 * check *Recibibas* menu
 * if any new message, you need to:
 ** click to validate the order
@@ -310,7 +319,7 @@ They are grouped into 4 categories:
 
 The HifiMagnet offering is created by *DevUser* as described in this <<registerapp, section>>.
 Any *EndUser* may purchase the offering following the <<purchase, generic procedure>>. Then,
-he or she can run the purchased offering provided that some fields are filled properly as in this <<, example>>.
+he or she can run the purchased offering provided that some fields are filled properly as in this <<running, example>>.
 Details for setup each offering will be giving in the <<next section,offering_setup>>.
 
 Even if each offering is specific, what is going on under the hood is described here:
