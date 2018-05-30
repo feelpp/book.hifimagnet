@@ -287,7 +287,48 @@ In this page you should be able to:
 
 For more details on using {paraview} or {ensight} please check XXXX
 
-=== To go further
+[[hifimagnet_offerings]]
+== HifiMagnet Offerings in *Marketplace*
+
+Currently the apps available in the *Marketplace* are given in the table bellow.
+They are grouped into 4 categories:
+
+* MagnetTools:
+* Preprocessing:
+* Simulations:
+* Postprocessing:
+* Bundles:
+
+.Available {hifimagnet} apps
+[options="header,footer"]
+|===
+| Offering            | Description        | Category    | Notes
+| Hifimagnet Offering | Basic demonstrator | Simulations |
+|===
+
+== Synopsys of the HifiMagnet Offering
+
+The HifiMagnet offering is created by *DevUser* as described in this <<registerapp, section>>.
+Any *EndUser* may purchase the offering following the <<purchase, generic procedure>>. Then,
+he or she can run the purchased offering provided that some fields are filled properly as in this <<, example>>.
+Details for setup each offering will be giving in the <<next section,offering_setup>>.
+
+Even if each offering is specific, what is going on under the hood is described here:
+
+* deploy:
+* running:
+* undeploy:
+
+
+[[offering setup]]
+== To go further
+
+* MagnetTools:
+* Preprocessing:
+* Simulations:
+** direct models
+** CRB
+* Postprocessing:
 
 == References
 

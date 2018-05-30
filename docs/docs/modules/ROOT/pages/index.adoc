@@ -24,9 +24,10 @@ The technology used for DC magnets relies on the *polyhelix* technic. The magnet
 in  which an helical cut has been machined by Electric Discharge Machining (EDM), connected into series. Each tube is refered as an *helix* and the resulting magnet
 is the so-called *PolyHelix insert* cut by EDM.
 
-[options="header"]
+[cols="2",options="header"]
 |===
-^.^|image::Magnet_vue_eclatee.png[An artistic view of a 14 *PolyHelices insert*,400] ^.^| image::Helices.png[Detailed view of the connection between 2 *helices*model,300]
+^.^| image:Magnet_vue_eclatee.png[caption="An artistic view of a 14 *PolyHelices insert*",width=400]
+^.^| image:Helices.png[caption="Detailed view of the connection between 2 *helices*model",width=300]
 |===
 
 
@@ -60,10 +61,16 @@ Models have been implemented with the finite element library {uri-feelpp-sources
 [[manuals]]
 == Manuals references
 
-[options="header"]
+[cols="4",frame="none"]
 |===
-^.^| xref:model_h:ROOT:index.adoc[image::Model.png[model,300]] ^.^| xref:cad:ROOT:index.adoc[image::HL-31-cadgeom.png[insert_cad,200]] ^.^| xref:user_h:ROOT:index.adoc[image::HL-31-model.png[insert_disp,200]] ^.^| xref:benchmarks_h:ROOT:index.adoc[image::bitter-adapt.png[Bitter,300]]
-^.^| xref:model_h:ROOT:index.adoc[Model manual]               ^.^| xref:cad:ROOT:index.adoc[CAD manual]                              ^.^| xref:user_h:ROOT:index.adoc[User manual]                            ^.^| xref:benchmarks_h:ROOT:index.adoc[Benchmarks manual]
+^.^| xref:model_h:ROOT:index.adoc[image:Model.png[model,300]]
+^.^| xref:cad:ROOT:index.adoc[image:HL-31-cadgeom.png[insert_cad,200]]
+^.^| xref:user_h:ROOT:index.adoc[image:HL-31-model.png[insert_disp,200]]
+^.^| xref:benchmarks_h:ROOT:index.adoc[image:bitter-adapt.png[Bitter,300]]
+^.^| xref:model_h:ROOT:index.adoc[Model manual]
+^.^| xref:cad:ROOT:index.adoc[CAD manual]
+^.^| xref:user_h:ROOT:index.adoc[User manual]
+^.^| xref:benchmarks_h:ROOT:index.adoc[Benchmarks manual]
 |===
 
 
@@ -115,8 +122,10 @@ For the book, special thanks to link:{uri-github}MayaffreG[Gabriel Mayaffre].
 
 {hifimagnet} has been funded by various sources and especially
 
-image::logos/logo_anr.png[ANR,width=100]
-image::logos/logo_irmia.png[IRMIA,width=100,link="http://irma.math.unistra.fr/"]
-image::logos/logo_prace.png[Prace,width="100",link="http://www.prace-ri.eu"]
-image::logos/logo_mso4sc.png[MSO4C,width="100",link="http://mso4sc.elmerex.hu/"]
-
+[cols="4"]
+|===
+| image:logos/logo_anr.png[caption="ANR",width=100]
+| image:logos/logo_irmia.png[caption="IRMIA",width=100,link="http://irma.math.unistra.fr/"]
+| image:logos/logo_prace.png[caption="Prace",width="100",link="http://www.prace-ri.eu"]
+| image:logos/logo_mso4sc.png[caption="MSO4C",width="100",link="http://mso4sc.elmerex.hu/"]
+|===
