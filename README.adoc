@@ -60,8 +60,11 @@ make serve
 NOTE: This will install antora. Then compile the book. And finally run a local web server
 to visualize the documentation in a web browser:
 ```
-firefox http://localhost:3000
+firefox http://localhost:5000/
 ```
+
+NOTE: Watch out `serve` 6.5.8 should be used. Latter versions introduce a rendering bug
+for images.
 
 Alternatively you can run the book within a docker container:
 ```
@@ -69,14 +72,30 @@ docker pull antora/antora
 ```
 Then simply start the docker image:
 ```
-docker run --entrypoint ash -v `pwd`:/antora -p 3000:3000 --rm -it antora/antora
+docker run --entrypoint ash -v `pwd`:/antora -p 80:5000 --rm -it antora/antora
 ```
 the `pwd` shall be the source dir of the book.
 
 Then in the container:
 ```
-npm i -g npm
-npm i -g serve
+npm i -g serve@6.5.8
 antora antora-local-feelpp-doc.yml
 serve build/site
 ```
+
+To view the documentation in a web browser, this time you will simply:
+```
+firefox http://localhost/
+```
+If the *host* is accessible from internet (and the port is open), you can also access the documentation
+from any place: 
+```
+firefox http://host_ip/
+```
+
+TIP: this won't work if any http server is already running on port 80 on you `host_ip`.
+Make sure to shutdown the http server before running the above commands.
+ 
+TIP: you can use `nmap -p 80 host_ip` to check if http port is open on `host_ip`
+
+

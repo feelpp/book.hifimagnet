@@ -1,6 +1,6 @@
 = {hifimagnet} user manual
-include::{partialsdir}/header-uri.adoc[]
-include::{partialsdir}/header-levels.adoc[]
+// include::{partialsdir}/header-uri.adoc[]
+// include::{partialsdir}/header-levels.adoc[]
 
 Welcome to {hifimagnet} manual documentation!
 

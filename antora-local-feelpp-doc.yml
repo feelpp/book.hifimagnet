@@ -28,7 +28,7 @@ content:
   - url: ./
     branches: feature/antora
     start_path: docs/post
-  - url: https://github.com/feelpp/book.feelpp.org
+  - url: ../book.feelpp.org
     branches: master
     start_path: docs/user
 ui:

@@ -7,7 +7,7 @@ endif::[]
 :idprefix:
 :idseparator: -
 :table-caption!:
-//:core-version: 0.104
+:core-version: stable
 
 {hifimagnet} follows the same semantic versioning rules as {feelpp}.
 {hifimagnet} component release is versioned *major.minor.patch*.

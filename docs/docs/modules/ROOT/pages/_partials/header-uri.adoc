@@ -38,4 +38,6 @@ endif::[]
 :uri-salome-www: http://www.salome-platform.org/
 :uri-meshgems-www: http://meshgems.com/meshgems-products.html
 :uri-ensight-www: http://www.ensight.com/
-ifndef::imagesdir[:imagesdir: /images]
+:uri-paraview-www: http://www.paraview.org/
+:uri-visit-www: https://wci.llnl.gov/simulation/computer-codes/visit/
+//ifndef::imagesdir[:imagesdir: /images]

@@ -1,6 +1,6 @@
 = {hifimagnet} Salome Plugin
-include::{partialsdir}/header-uri.adoc[]
-include::{partialsdir}/header-levels.adoc[]
+// include::{partialsdir}/header-uri.adoc[]
+// include::{partialsdir}/header-levels.adoc[]
 
 Welcome to {hifimagnet} Salome Plugin documentation!
 
