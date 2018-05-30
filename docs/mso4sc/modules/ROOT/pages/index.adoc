@@ -24,6 +24,12 @@ You will be forwarded to IDM component to the portal.
 
 image::PortalMSO4SC_idm.png[IDM component of MSOPortal]
 
+* *Sign up* to get an account
+
+image::PortalMSO4SC_signup.png[IDM component of MSOPortal]
+
+TIP: do not check *gravatar* bug as it is buggy right now.
+
 * Create an account there providing a valid email and a password.
 
 Then you have to validate your account by following the instructions send
@@ -40,7 +46,7 @@ image::PortalMSO4SC.png[Main page for MSOPortal]
 the portal is split into several services:
 
 * *Marketplace*, where you can add and/or purchase applications
-* *Data Catalog*, where you can add and/or retrieve data
+* *Data Catalogue*, where you can add and/or retrieve data
 * *Experiments*, where the app is setup and the simulation is launched
 * *Visualization*, to access a Remote desktop to pre and/or post-processes your simulations
 
@@ -61,7 +67,7 @@ To register an application you need to be *DevUSer*
 The process is split into several part:
 
 * add the app and create an offer in the *Marketplace*:
-** go to *My stock/Catalog*
+** go to *My stock/Catalogue*
 ** go to *My stock/Product*
 ** go to *My stock/Offering*
 
@@ -134,9 +140,9 @@ You shall be to see your products and their status in each product form.
 // * check *Requested* and *Recibidas* menus on the top right of *Market Place* web-page
 
 [[data]]
-=== Upload Data to *Data Catalog*
+=== Upload Data to *Data Catalogue*
 
-* Connect to *Data Catalog*
+* Connect to *Data Catalogue*
 * Select an organization
 * Add a dataset
 
