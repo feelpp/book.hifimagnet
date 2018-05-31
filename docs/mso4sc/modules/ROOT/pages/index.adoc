@@ -36,7 +36,7 @@ Then you have to validate your account by following the instructions send
 by the portal.
 
 NOTE: Right now the portal *is not* using https protocol. As a consequence, the credentials `user/password` are
-send in clear. So be careful. 
+send in clear. So be careful.
 
 [[overview]]
 == Overview of the Portal
@@ -50,7 +50,11 @@ the portal is split into several services:
 * *Experiments*, where the app is setup and the simulation is launched
 * *Visualization*, to access a Remote desktop to pre and/or post-processes your simulations
 
-more details on https://github.com/MSO4SC/MSOPortal/blob/master/portal/README.adoc[MSO4SC Front-end & Experiments Tool]
+more details on:
+
+* https://github.com/MSO4SC/MSOPortal/blob/master/portal/README.adoc[MSO4SC Front-end & Experiments Tool]
+* https://github.com/FIWARE-TMForum/Business-API-Ecosystem/blob/master/doc/user-guide.rst[*Marketplace* User manual]
+* https://ckan.org/documentation-and-api/[*Data Catalogue* doc manual]
 
 [[devuser]]
 == *DevUser* role
@@ -87,7 +91,7 @@ An application is an gzipped archive holding a directory which in tunrs contains
 In https://github.com/MSO4SC/resources/tree/master/blueprint/feelpp/hifimagnet_test(this git repository)
 you will find the actual application corresponding to the {hifimagnet} basic demonstrator.
 
-To actually build the app, use: ```./deploy pkg``` 
+To actually build the app, use: ```./deploy pkg```
 ====
 
 [[validorder]]
@@ -105,6 +109,39 @@ To check if you have any order:
 
 The *EndUser* may now proceed to perform *Experiments* with you product
 
+[NOTE]
+====
+For app that requires some additional services like:
+
+* {sregistry}: a registry holding singularity images,
+* {girder}: a data management system
+
+that requires additional settings (like credentials).
+
+It is important to notify the *EndUser* that he has to get an account on these services.
+
+For {sregistry} see this https://singularityhub.github.io/sregistry/credentials[manual]
+for managing the account and this https://singularityhub.github.io/sregistry/client[note]
+to setup the {sregistry} client.
+
+As for {girder}...
+====
+
+[[ckan_dev]]
+=== Data Catalogue
+
+As a *DevUser* you can create *Organization* in *Data Catalogue*
+
+* ...
+
+You have then to manage user that are allowed to be part of your organisation.
+They may the following role:
+
+* admin : can view/add dataset, add user and manage role
+* editor : can add dataset
+* member : can view dataset
+
+NOTE: *EndUser* has to connect at least once to *Data Catalogue* before you can grant them a role in your organization.
 
 [[enduser]]
 == *EndUser* role
@@ -144,7 +181,7 @@ You shall be to see your products and their status in each product form.
 
 * Connect to *Data Catalogue*
 * Select an organization
-* Add a dataset
+* Add a dataset if you are assign the role of *editor*
 
 === Setting up an HP res-source in *Experiments*
 
@@ -189,7 +226,7 @@ The others fields are designed for more advanced users.
 |===
 | Key                           | Description                                 | Default                                                            | Notes
 | *Dataset resource: input_url* | url to retrieve for cfg file and input data | `None`                                                             | URL pointing to an archive of data files (comes from the data Catalog)
-| *execfile*                    | executable file                             | `feelpp_hfm_thermoelectric_model_3D_V1T1_N1`                       | any exec `feelpp_hfm...`                  
+| *execfile*                    | executable file                             | `feelpp_hfm_thermoelectric_model_3D_V1T1_N1`                       | any exec `feelpp_hfm...`
 | *cfgfile*                     | configuration file                          | `/usr/share/doc/hifimagnet/ThermoElectricModel/quarter-turn3D.cfg` | cfg file need to be in the container, or in a mounted dir or in the dataset
 |===
 
@@ -199,7 +236,7 @@ The others fields are designed for more advanced users.
 | Key                        | Description              | Default          | Notes
 | *monitor_entrypoint*       |  Monitor entrypoint IP   | "193.144.35.146" | for this release it should be empty
 | job_prefix                 | Job name prefix in HPCs  | "mso4sc"         |
-| *HPC: primary*               | HPC settings             | "cesga"          | 
+| *HPC: primary*               | HPC settings             | "cesga"          |
 | hpc_modules | modules to load depending on the targeted machine | [gcc/6.3.0, openmpi/2.0.2, singularity/2.4.2] | shall depends on HPC and singularity image
 | hpc_volumes | volumes to be mounted on the targeted machine |  [/scratch,/mnt,${LUSTRE}/feel:/feel] | depends on HPC and singularity image
 | *hpc_partition* | select partition queue | 'thin-shared' | shall depends on batch system and HPC (TODO)
@@ -212,7 +249,7 @@ The others fields are designed for more advanced users.
 [options="header,footer"]
 |===
 | Key                        | Description                                    | Default                        | Notes
-| sregistry_client           | define default sregistry client                |  `registry`                    | 
+| sregistry_client           | define default sregistry client                |  `registry`                    |
 | sregistry_client_secrets   | path to file where sregistry secret are stored | `$HOME/.sregistry`             |
 | sregistry_storage          | path to container directory                    | `${LUSTRE}/singularity_images` |
 | sregistry_url              | URI pointing to the sregistry                  | `sregistry.srv.cesga.es`       |
@@ -224,7 +261,7 @@ The others fields are designed for more advanced users.
 |===
 | Key                        | Description              | Default          | Notes
 | singularity_image_uri      |  URI pointing to the singularity image   | `hifimagnet/hifimagnet:stretch` |
-| singularity_image_filename |  Filename of the singularity image       | `hifimagnet-stretch.simg` | 
+| singularity_image_filename |  Filename of the singularity image       | `hifimagnet-stretch.simg` |
 | singularity_image_cleanup  | force remove of singularity image        | `false` |
 |===
 
@@ -253,8 +290,11 @@ is more tricky; we recommend to:
 
 * make sure you have unchecked the cleanup option
 * connect to the HPC resource
-* move to the selected `WORKIR`
+* move to the selected `base_dir/working_prefix<id>`
 * check the logs
+
+`base_dir`, `working_prefix` are filled within the portal *Experiments*.
+The `<id>` is a random character generated by the deployment.
 
 An other option is to run the app using the *orchestrator CLI*.
 see https://github.com/MSO4SC/resources/blob/master/blueprint/feelpp/hifimagnet_test/README.adoc[this file] for details
@@ -349,5 +389,3 @@ Even if each offering is specific, what is going on under the hood is described 
 
 * https://github.com/MSO4SC/MSOPortal/blob/master/portal/README.adoc#visualization--pre--post-tool[portal usage]
 * https://raw.githubusercontent.com/MSO4SC/resources/master/blueprint/feelpp/hifimagnet_test/upload/blueprint.yaml[blueprints examples]
-
-
