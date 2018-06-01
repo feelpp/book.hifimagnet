@@ -148,12 +148,14 @@ The process is split into several part:
 Then you need to perform the following steps in *Experiments*:
 
 * go to *RegisterApp*
-** select the name of the *Offering*
-** load the application.
+** select your *Offering* in the sliding menu *New Products*
+** give the app a meaningfull name
+** Choose a package file to load.
 
 [NOTE]
 ====
-An application is an gzipped archive holding a directory which in tunrs contains :
+The package file is an gzipped archive holding the formal description of the app.
+It's actually a directory which contains :
 
 * a `blueprint.yml` TOSCA file that describes the workflow
 * a `scripts` subdirectory holding the scripts required to deploy and undeploy the app

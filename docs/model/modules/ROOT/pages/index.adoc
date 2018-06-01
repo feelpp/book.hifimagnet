@@ -7,7 +7,10 @@ Welcome to {hifimagnet} Model documentation!
 [[introduction]]
 == Introduction
 
-include::_partials/Notations.adoc[]
+
+:leveloffset=+1:
+include::_partials/Notations.adoc[leveloffset=+1]
+include::_partials/MathNotations.adoc[leveloffset=+1]
 
 [[coupled3d]]
 == Coupled Model
