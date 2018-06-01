@@ -1,0 +1,16 @@
+= Mathematical Functions
+
+== Usual operators
+
+stem:[\nabla f] : the gradient of stem:[f] 
+stem:[\nabla \cdot \mathbf{f}] : the divergence of stem:[\mathbf{f}] 
+stem:[\nabla \times \mathbf{ f }]  : the curl of stem:[\mathbf{f}] 
+
+By abuse we will use only stem:[\nabla] and not stem:[{\nabla }]
+
+== Space Functions
+
+stem:[L_{2}(\Omega)$:: $\{f  \mid \int f^{2} < \infty\}]
+stem:[H_{1}(\Omega)$:: $\{f \in L_{2}(\Omega) \mid \nabla f \in [L_{2}(\Omega)]^{d}\}]
+stem:[H_{div}(\Omega)$:: $\{\mathbf{f}\in [L^{2} (\Omega\cup\Omega_{c})]^{d}| \nabla.\mathbf{f}\in L^{2}(\Omega\cup\Omega_{c})\}]
+stem:[H_{curl}(\Omega)$:: $\{\mathbf{f}\in [L^{2} (\Omega\cup\Omega_{c})]^{d}| \nabla\times\mathbf{f}\in [L^{2} (\Omega\cup\Omega_{c})]^{d}\}]

@@ -7,6 +7,8 @@ Welcome to {hifimagnet} Model documentation!
 [[introduction]]
 == Introduction
 
+include::_partials/Notations.adoc[]
+
 [[coupled3d]]
 == Coupled Model
 

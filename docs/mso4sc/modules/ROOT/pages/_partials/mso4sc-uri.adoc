@@ -10,7 +10,6 @@
 :uri-singularity-www: http://singularity.lbl.gov/
 :uri-sregistry-cli-www: https://singularityhub.github.io/sregistry-cli/
 :uri-sregistry-www: https://singularityhub.github.io/sregistry/
-:uri-sregistry-www: https://sregistry.srv.cesga.es/
 :uri-sregistry-cesga: https://sregistry.srv.cesga.es/
 :uri-mso4sc-www: http://mso4sc.elmerex.hu/
 :uri-msoportal-www: http://portal.mso4sc.eu/
@@ -19,5 +18,5 @@
 :uri-msoportal-experiment-www: {uri-msoportal-www}experimentstool/
 :uri-msoportal-visu-www: {uri-msoportal-www}visualization/
 :uri-girder-unistras: https://girder.math.unistra.fr/
-
+:fiware: FiWare
 //ifndef::imagesdir[:imagesdir: /images]

@@ -2,7 +2,6 @@
 :page-feelpp_book_cover: true
 include::_partials/header-macro.adoc[]
 include::_partials/header-uri.adoc[]
-include::_partials/mso4sc-uri.adoc[]
 
 
 Welcome to {hifimagnet} documentation!
