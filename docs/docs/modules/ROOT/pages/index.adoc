@@ -1,7 +1,9 @@
 = {hifimagnet} documentation
 :page-feelpp_book_cover: true
-include::{partialsdir}/header-uri.adoc[]
-include::{partialsdir}/header-levels.adoc[]
+include::_partials/header-macro.adoc[]
+include::_partials/header-uri.adoc[]
+include::_partials/mso4sc-uri.adoc[]
+
 
 Welcome to {hifimagnet} documentation!
 
@@ -56,7 +58,8 @@ The goals are twofold:
   perform quantile estimation, to compute probability of failure and
   ultimately to provide safety operational controls.
 
-Models have been implemented with the finite element library {uri-feelpp-sources}[Feel++].
+Models have been implemented with the finite element library {uri-feelpp-sources}[Feel++]
+ and the {feelpp} toolboxes.
 
 [[manuals]]
 == Manuals references
@@ -81,8 +84,10 @@ Models have been implemented with the finite element library {uri-feelpp-sources
 We're always happy to help out with {hifimagnet} or any other questions you might
 have. You can ask a question or signal an issue in  a chat room:
 
-Chat using Slack:: link:https://feelpp.slack.com/messages/G6L3X3C94[image::tools/joinslack.svg[]]
-Chat using Gitter (deprecated):: image::https://badges.gitter.im/Join%20In.svg[Gitter, link=https://gitter.im/feelpp/hifimagnet]
+Chat using Slack:: link:https://feelpp.slack.com/messages/G6L3X3C94[image:tools/joinslack.svg[]]
+// Chat using Gitter (deprecated):: image::https://badges.gitter.im/Join%20In.svg[Gitter, link=https://gitter.im/feelpp/hifimagnet]
+
+To contribute to the development of {hifimagnet} see the dev section.
 
 For help or questions more related to {feelpp} see http://docs.feelpp.org/docs/stable/#_get_help[here].
 
@@ -112,7 +117,7 @@ This book is  part of {hifimagnet} and is licensed under image::http://creativec
 [[authors]]
 == Authors
 
-{hifimagnet} development is led by https://github.com/ctrophime[Christophe Trophime] 
+{hifimagnet} development is led by https://github.com/ctrophime[Christophe Trophime]
 with the close collaboration of https://github.com/prudhomm[Christophe Prud'homme] and https://github.com/vincentchabannes[Vincent Chabannes].
 It has received contributions from {uri-contributors}[many other individuals].
 

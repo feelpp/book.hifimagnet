@@ -1,20 +1,34 @@
-= Using http://portal.mso4sc.eu[MSOPortal]
+= Using the **MSO4SC Portal**
+// :toc: macro
+include::{partialsdir}/header-macro.adoc[]
 include::{partialsdir}/header-uri.adoc[]
-include::{partialsdir}/header-levels.adoc[]
+include::{partialsdir}/mso4sc-uri.adoc[]
+
 
 This document will provide basic information:
 
-* to connect to the http://portal.mso4sc.eu[MSOPortal],
+* to connect to the {uri-msoportal-www}[Portal],
 * to register an {hifimagnet} application,
 * to purchase an {hifimagnet} application,
 * to run an  {hifimagnet} application.
 
-It will define the role of *DevUser* and *EndUser*.
+and it defines the role of
+
+* <<devuser, *DevUser*>>
+* <<enduser, *EndUser*>>.
+
+An overview of the main portal functionnalities is given in this <<overview,section>>.
+This is followed by a brief description of the {hifimagnet} apps available and on the over-whole workflow
+of actually running apps within the portal.
+
+The user that have already an account on {uri-msoportal-www}[Portal] may skip the next section
+and go directly to the section related to his/her role.
+
 
 [[connect]]
-== Get an account on http://portal.mso4sc.eu[MSOPortal]
+== Get an account on *MSO4SC Portal*
 
-Connect to http://portal.mso4sc.eu[MSOPortal]
+Connect to {uri-msoportal-www}[MSOPortal]
 
 image::PortalMSO4SC_login.png[login page MSOPortal]
 
@@ -54,7 +68,62 @@ more details on:
 
 * https://github.com/MSO4SC/MSOPortal/blob/master/portal/README.adoc[MSO4SC Front-end & Experiments Tool]
 * https://github.com/FIWARE-TMForum/Business-API-Ecosystem/blob/master/doc/user-guide.rst[*Marketplace* User manual]
-* https://ckan.org/documentation-and-api/[*Data Catalogue* doc manual]
+* https://ckan.org/documentation-and-api/[*Data Catalogue* docs]
+
+[[hifimagnet_offerings]]
+
+== {hifimagnet} Offerings in *Marketplace*
+
+Currently the apps available in the *Marketplace* are given in the table bellow.
+They are grouped into 4 categories:
+
+* MagnetTools:
+* Preprocessing:
+* Simulations:
+* Postprocessing:
+* Bundles:
+
+.Available {hifimagnet} apps
+[options="header,footer"]
+|===
+| Offering            | Description        | Category    | Notes
+| Hifimagnet Offering | Basic demonstrator | Simulations |
+|===
+
+For details about settings up these apps please refer to these <<offering setup, docs>>.
+For the new user we recommend to read this guide. The impatient may go directly to the <<enduser, *EndUser*>>
+ and try to run the basic demonstrator.
+
+== Synopsys of the HifiMagnet Offering
+
+The HifiMagnet offering is created by *DevUser* as described in this <<registerapp, section>>.
+Any *EndUser* may purchase the offering following the <<purchase, generic procedure>>. Then,
+he or she can run the purchased offering provided that some fields are filled properly as in this <<running, example>>.
+Details for setup each offering will be giving in the <<next section,offering_setup>>.
+
+Even if each offering is specific, what is going on under the hood is described here:
+
+* deploy:
+* running:
+* undeploy:
+
+[NOTE]
+====
+For app that requires some additional services like:
+
+* {sregistry}: a registry holding singularity images,
+* {girder}: a data management system
+
+that requires additional settings (like credentials).
+
+It is important to notify the *EndUser* that he has to get an account on these services.
+
+For {sregistry} see this https://singularityhub.github.io/sregistry/credentials[manual]
+for managing the account and this https://singularityhub.github.io/sregistry/client[note]
+to setup the {sregistry} client.
+
+As for {girder} ...
+====
 
 [[devuser]]
 == *DevUser* role
@@ -70,7 +139,7 @@ To be granted *DevUser* rights, just email to Portal Admins (actually Victor or 
 To register an application you need to be *DevUSer*
 The process is split into several part:
 
-* add the app and create an offer in the *Marketplace*:
+* add the app and create an offer in the {uri-msoportal-market-www}[*Marketplace*]:
 ** go to *My stock/Catalogue*
 ** go to *My stock/Product*
 ** go to *My stock/Offering*
@@ -88,7 +157,7 @@ An application is an gzipped archive holding a directory which in tunrs contains
 * a `blueprint.yml` TOSCA file that describes the workflow
 * a `scripts` subdirectory holding the scripts required to deploy and undeploy the app
 
-In https://github.com/MSO4SC/resources/tree/master/blueprint/feelpp/hifimagnet_test(this git repository)
+In this https://github.com/MSO4SC/resources/tree/master/blueprint/feelpp/hifimagnet_test[git repository]
 you will find the actual application corresponding to the {hifimagnet} basic demonstrator.
 
 To actually build the app, use: ```./deploy pkg```
@@ -109,32 +178,32 @@ To check if you have any order:
 
 The *EndUser* may now proceed to perform *Experiments* with you product
 
-[NOTE]
+[IMPORTANT]
 ====
-For app that requires some additional services like:
+Do not forget to notify the user that he/she has to connect once to:
 
-* {sregistry}: a registry holding singularity images,
-* {girder}: a data management system
+* {uri-sregistry-cesga}[{sregistry} service]
+* {uri-msoportal-ckan-www}[*DataCatalogue*]
 
-that requires additional settings (like credentials).
+and eventually to :
 
-It is important to notify the *EndUser* that he has to get an account on these services.
+* {uri-girder-unistras}[{girder} service]
 
-For {sregistry} see this https://singularityhub.github.io/sregistry/credentials[manual]
-for managing the account and this https://singularityhub.github.io/sregistry/client[note]
-to setup the {sregistry} client.
+This steps are mandatory for smooth operation of the app since the user has to be included
+into {hifimagnet} user group. Fortunatly this need to be done only once for any {hifimagnet} app.
 
-As for {girder}...
+Unfortunately the management of user has to be carried out manualy by the *DevUser* in charge of the app
+and cannot be performed from the portal.
 ====
 
 [[ckan_dev]]
 === Data Catalogue
 
-As a *DevUser* you can create *Organization* in *Data Catalogue*
+As a *DevUser* you can create *Organization* in {uri-msoportal-ckan-www}[*Data Catalogue*]
 
 * ...
 
-You have then to manage user that are allowed to be part of your organisation.
+You have then to manage user that are allowed to be part of your organization.
 They may the following role:
 
 * admin : can view/add dataset, add user and manage role
@@ -149,9 +218,8 @@ NOTE: *EndUser* has to connect at least once to *Data Catalogue* before you can 
 TIP: when running into some strange portal behavior, first try to `logout/login` from the portal
 before reporting an issue.
 
-TIP: make sure that you have access to https://sregistry.srv.cesga.es/[sregistry] holding all the singularity images.
+TIP: make sure that you have access to {uri-sregistry-cesga}[sregistry] holding all the singularity images.
 Right now its the only such service (see key `sregistry_url` in blueprints) available in the frame of the project.
-
 
 [[purchase]]
 === Purchase an application
@@ -159,7 +227,7 @@ Right now its the only such service (see key `sregistry_url` in blueprints) avai
 To purchase an application from the *Marketplace* you can either be *DevUser*
 or a simple *EndUser*. The process is the following:
 
-* connect to the *Marketplace*, in *Home* (top left Marketplace page) you will find all available apps (*All categories*).
+* connect to the {uri-msoportal-ckan-www}[*Marketplace*], in *Home* (top left Marketplace page) you will find all available apps (*All categories*).
 * Click on *Add to Cart* to purchase the app you want.
 * Click on *Shopping Cart* and *Checkout* to go on
 ** ask to fill some form (??)
@@ -174,22 +242,34 @@ you order. To check the status of your order:
 * go to *Product Orders*
 
 You shall be to see your products and their status in each product form.
-// * check *Requested* and *Recibidas* menus on the top right of *Market Place* web-page
+
+To finalize your purchase *DO NOT FORGET* to connect to :
+
+* {uri-sregistry-cesga}[{sregistry}]
+* {uri-mosportal-ckan-www}[{*Data Catalogue*}]
+* {uri-girder-unistras}[{girder}]
+
+Then notify the ownver/seller that you request to be part of {hifimagnet} user group.
+This will allow you to access {himagnet} singularity images and datasets.
+
+NOTE: {girder} is optional.
 
 [[data]]
 === Upload Data to *Data Catalogue*
 
-* Connect to *Data Catalogue*
+* Connect to {uri-msoportal-ckan-www}[*Data Catalogue*]
 * Select an organization
 * Add a dataset if you are assign the role of *editor*
 
+NOTE: you need to ask the owner/seller of {hifimagnet} app to be granted the role of *editor*
+
 === Setting up an HP res-source in *Experiments*
 
-* Go to *Experiments*
+* Go to {uri-msoportal-experimentstool-www}[*Experiments*]
 * Select *Settings*
 * Define a HPV res-source
 
-[source,java]
+[source,txt]
 ----
 include::{examplesdir}/hpc.txt[]
 ----
@@ -212,7 +292,7 @@ The fields to fill may be grouped into categories:
 * specs retrieving singularity images
 * specs for singularity image
 
-The "EndUser" shall only need to fill the fields related to the 1st and 2nd category.
+The *EndUser* shall only need to fill the fields related to the 1st and 2nd category.
 The fields that are to be filled by *EndUser* are marked in *bold*.
 
 The others fields are designed for more advanced users.
@@ -268,7 +348,7 @@ The others fields are designed for more advanced users.
 ====
 
 Once filled, click on *Create Instance*.
-This will result in the executions on the selected HPC ressource of the boostrap script included in the app definition.
+This will result in the executions on the selected HPC resource of the bootstrap script included in the app definition.
 
 TIP: Any error will result in a message at the top of the page, bellow the menus.
 
@@ -279,7 +359,7 @@ The next step is to *Deploy Instance*:
 
 To *Run Instance*, the procedure is similar:
 
-* select the *ID*, you defined in the previous step, in the *App instance * menu
+* select the *ID*, you defined in the previous step, in the *App instance* menu
 * click on *RUN*
 
 [TIP]
@@ -314,7 +394,7 @@ You may cleanup your working by
 [[post]]
 === Setting up an Remote Desktop resource in *Visualization*
 
-* Go to *Visualization*
+* Go to {uri-msoportal-visu-www}[*Visualization*]
 * Select *Settings*
 * Define a Remote Desktop resource
 
@@ -336,43 +416,11 @@ In this page you should be able to:
 
 * start a 'terminal' and check the output of your simulation
 * start a post-processing GUI:
-** either by loading {paraview}
-** or using singularity {ensight} image
+** either by loading {uri-paraview-www}[{paraview}]
+** or using singularity {uri-ensight-www}[{ensight}] image
 * to quit just click on `Menu/logout` (top left)
 
 For more details on using {paraview} or {ensight} please check XXXX
-
-[[hifimagnet_offerings]]
-== HifiMagnet Offerings in *Marketplace*
-
-Currently the apps available in the *Marketplace* are given in the table bellow.
-They are grouped into 4 categories:
-
-* MagnetTools:
-* Preprocessing:
-* Simulations:
-* Postprocessing:
-* Bundles:
-
-.Available {hifimagnet} apps
-[options="header,footer"]
-|===
-| Offering            | Description        | Category    | Notes
-| Hifimagnet Offering | Basic demonstrator | Simulations |
-|===
-
-== Synopsys of the HifiMagnet Offering
-
-The HifiMagnet offering is created by *DevUser* as described in this <<registerapp, section>>.
-Any *EndUser* may purchase the offering following the <<purchase, generic procedure>>. Then,
-he or she can run the purchased offering provided that some fields are filled properly as in this <<running, example>>.
-Details for setup each offering will be giving in the <<next section,offering_setup>>.
-
-Even if each offering is specific, what is going on under the hood is described here:
-
-* deploy:
-* running:
-* undeploy:
 
 
 [[offering setup]]
