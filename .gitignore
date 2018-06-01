@@ -8,6 +8,7 @@ auto/
 /quickref-cards.html
 /quickref.html
 /math/*.tex
+*#
 *~
 *.*~
 *.lock

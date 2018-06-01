@@ -1,0 +1,48 @@
+= Conventions
+
+In this document we will use the following convention:
+
+* scalar number or function will be in plain, eg stem:[f]
+* vector will be in **bold**, stem:[\mathbf{f}]
+
+All the units used are derived from the https://en.wikipedia.org/wiki/International_System_of_Units[SI system].
+
+We will consider the usual notation for the space coordinates in   stem:[\mathbf{R}^3]:
+
+* stem:[x,y,z] in cartesian
+* stem:[r,\theta,z] in cylindrical
+
+= Constants
+
+|===
+^|Notation ^|Quantity ^|Unit
+|stem:[\mu_0]      |vacuum magnetic permeabilty             |m
+|===
+
+= Fields
+
+|===
+^|Notation ^|Quantity ^|Unit
+|stem:[T]      |temperature        |K
+|stem:[U]      |electrical potential|V
+
+|stem:[\mathbf{A}] |magnetic potential |stem:[V.s.m^{-1}]
+|stem:[\mathbf{B}] |magnetic induction | T
+|stem:[\mathbf{H}] |magnetic field |stem:[A.m^{-1}]
+|===
+
+= Physical Properties
+
+|===
+^|Notation ^|Quantity ^|Unit
+|stem:[\rho] |material's density |stem:[kg.m^{-3}]
+|stem:[C_p]   |thermal capacity   |stem:[J.K^{-1}]
+|stem:[k]      |thermal conductivity |stem:[W.m^{-1} .K^{-1}]
+|stem:[\sigma] |electrical conductivity |stem:[S.m^{-1}]
+|===
+
+
+|===
+|stem:[h] |heat transfer coefficient |stem:[W.m^{-2} .K^{-1}]
+|===
+
