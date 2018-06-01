@@ -1,5 +1,5 @@
 = Using the **MSO4SC Portal**
-// :toc: macro
+:toc: macro
 include::{partialsdir}/header-macro.adoc[]
 include::{partialsdir}/header-uri.adoc[]
 include::{partialsdir}/mso4sc-uri.adoc[]
@@ -90,7 +90,7 @@ They are grouped into 4 categories:
 | Hifimagnet Offering | Basic demonstrator | Simulations |
 |===
 
-For details about settings up these apps please refer to these <<offering setup, docs>>.
+For details about settings up these apps please refer to these <<offering_setup, docs>>.
 For the new user we recommend to read this guide. The impatient may go directly to the <<enduser, *EndUser*>>
  and try to run the basic demonstrator.
 
@@ -99,7 +99,7 @@ For the new user we recommend to read this guide. The impatient may go directly 
 The HifiMagnet offering is created by *DevUser* as described in this <<registerapp, section>>.
 Any *EndUser* may purchase the offering following the <<purchase, generic procedure>>. Then,
 he or she can run the purchased offering provided that some fields are filled properly as in this <<running, example>>.
-Details for setup each offering will be giving in the <<next section,offering_setup>>.
+Details for setup each offering will be giving in the <<offering_setup, next section>>.
 
 Even if each offering is specific, what is going on under the hood is described here:
 
