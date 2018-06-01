@@ -319,6 +319,11 @@ One more step consists in retreiving the *TOKEN* and storing it into ypur home d
 ====
 To copy the file to the HPC resource you can use `scp .sregistry username@host:.`
 or whatever method you prefer. `username` and `host` are key defined in the <<hpc_setting,HPC resource setting>>
+
+You may connect to your account on HPC resource
+```
+ssh -Y username@host
+```
 ====
 
 [[running]]
