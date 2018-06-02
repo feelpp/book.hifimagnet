@@ -1,0 +1,83 @@
+## Description of the example
+
+In this example, we consider a solenoid conductor with finite thickness and infinite length.
+This allow us to ignore the *z* components in our equations.
+We admit that there is only a radial expansion.
+
+## Geometry
+
+The conductor $\Omega$ consists in a rectangular cross section torus.
+The geometry also contains an external domain which is an approximation of $\mathbf{R}^3/\Omega$.
+
+| Name     | Description                      | Value                            | Unit               |
+| -------- | -------------------------------- | -------------------------------- | ------------------ |
+| $r_1$    | internal radius                  | $1.10^{-3}$                      | m                  |
+| $r_2$    | external radius                  | $2.10^{-3}$                      | m                  |
+| dz~      | height                           | $2.10^{-1}$                      | m                  |
+
+## Input parameters
+
+current density: $\textbf{j}$ in $A/m^2$.
+magnetic field:  $\textbf{b}$ in $T$.
+
+## Model & Toolbox
+
+- From the momentum conservation equation, we have:
+\[
+div\sigma+\textbf{j}\times\textbf{b}=0
+\]
+With the hypothesys specified in introduction, this equation may be rewritten :
+\[
+-\sigma_{\theta}+\frac{\partial}{\partial r}(r\sigma_{r})=-rj_{\theta}b_{z}
+\]
+For a solenoid conductor with finite thickness and infinite length, we have for a constant current density
+$j_{\theta}$:
+\[
+- b_{z} = ...
+\]
+With these hypothesys, we can show that (see [REF002]):
+\[
+- u_{r} = ...
+\]
+
+- **toolbox**:  elasticity
+
+### Materials
+
+|Name |Description | Value | Unit |
+|$E$ |Young modulus||$128.10^{9}$|$Pa=kg.m^{-1} .s^{-2}$|
+|$\nu$|Poisson's ratio|0.33|- |
+
+### Boundary conditions
+
+- entry/exit: $\textbf{u} \dot \texbf{n} = 0$, displacements only in the perpendical plane,
+- top:bottom: clamped
+
+
+## Outputs
+
+The output is describe the output set of the example
+
+### Fields
+
+add scalar vectorial and matricial fields to be visualized
+
+### Measures
+
+add measures, scalar quantities, mean values, performance metrics
+
+## Benchmark
+
+Describe Benchmark type:
+[X] Verification
+[] Validation
+[] Performance
+
+The computed values of the displacements on r-axis in the solenoidal mid-plane are compared
+with the analytical expression given by Montgomery.
+
+## References (articles, papers, reports...)
+
+- https://github.com/feelpp/hifimagnet/blob/develop/MagnetTools/docs/Stress/stress.tex
+- [REF001] Montgomery, Solenoid Magnet Design, Wiley-Interscience, New-York. 1969.
+- [REF002] M N. Wilson, Superconducting Magnets, Oxford University Press, London, 1987.
