@@ -67,7 +67,7 @@ the portal is split into several services:
 more details on:
 
 * https://github.com/MSO4SC/MSOPortal/blob/master/portal/README.adoc[MSO4SC Front-end & Experiments Tool]
-* https://github.com/FIWARE-TMForum/Business-API-Ecosystem/blob/master/doc/user-guide.rst[*Marketplace* User manual]
+* https://business-api-ecosystem.readthedocs.io/en/v5.4.1/user-programmer-guide.html[*Marketplace* User manual]
 * https://ckan.org/documentation-and-api/[*Data Catalogue* docs]
 
 [[hifimagnet_offerings]]
@@ -474,8 +474,16 @@ In this page you should be able to:
 ** or using singularity {uri-ensight-www}[{ensight}] image
 * to quit just click on `Menu/logout` (top left)
 
-For more details on using {paraview} or {ensight} please check XXXX
+For more details on using {paraview} or {ensight} please check XXXX.
 
+[NOTE]
+====
+The result are stored in `${LUSTRE}/feel/<workdir_prefix>_<date>_<id>` if
+you have choosen to use the `<hpc_volumes>` bindmount option: `${LUSTRE}/feel:/feel`.
+
+Check the output of the script in `<basedir>/<workdir_prefix>_<date>_<id>`
+to see the exact name of this directory.
+===
 
 [[offering setup]]
 == To go further
