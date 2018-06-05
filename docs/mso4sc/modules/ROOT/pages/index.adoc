@@ -72,7 +72,7 @@ more details on:
 
 [NOTE]
 ====
-For smooth operations of {uri-msoportal-www}{portal}, the following ports have to *open*:
+For smooth operations of {uri-msoportal-www}[portal], the following ports have to *open*:
 
 * `3000`: *IDM*, the service responsible for authentification 
 * `5000`: *MarkePlace*
@@ -85,7 +85,7 @@ You may need to contact your system admin to check and eventually open these por
 
 [NOTE]
 ====
-For *DevUser* using the {uri-msoportal-dev-www}{portal_test} ....
+For *DevUser* using the {uri-msoportal-dev-www}[portal dev version] ....
 
 * `5050, 8080`: ...
 
