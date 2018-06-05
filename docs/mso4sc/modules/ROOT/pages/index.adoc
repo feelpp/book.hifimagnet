@@ -319,7 +319,7 @@ NOTE: you need to ask the owner/seller of {hifimagnet} app to be granted the rol
 
 
 [[hpc_setting]]
-=== Setting up an HP resource in *Experiments*
+=== Setting up an HPC resource in *Experiments*
 
 * Go to {uri-msoportal-experiment-www}[*Experiments*]
 * Select *Settings*
@@ -519,7 +519,7 @@ you have chosen to use the `<hpc_volumes>` bindmount option: `${LUSTRE}/feel:/fe
 
 Check the output of the script in `<basedir>/<workdir_prefix>_<date>_<id>`
 to see the exact name of this directory.
-===
+====
 
 [[offering setup]]
 == To go further
