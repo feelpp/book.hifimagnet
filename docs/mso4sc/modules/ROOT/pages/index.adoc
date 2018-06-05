@@ -70,8 +70,28 @@ more details on:
 * https://business-api-ecosystem.readthedocs.io/en/v5.4.1/user-programmer-guide.html[*Marketplace* User manual]
 * https://ckan.org/documentation-and-api/[*Data Catalogue* docs]
 
-[[hifimagnet_offerings]]
+[NOTE]
+====
+For smooth operations of {uri-msoportal-www}{portal}, the following ports have to *open*:
 
+* `3000`: *IDM*, the service responsible for authentification 
+* `5000`: *MarkePlace*
+* `8000`: *Data Catalogue*
+
+To check, you can use `nmap -p <port> portal.mso4sc.eu`.
+
+You may need to contact your system admin to check and eventually open these ports.
+====
+
+[NOTE]
+====
+For *DevUser* using the {uri-msoportal-dev-www}{portal_test} ....
+
+* `5050, 8080`: ...
+
+====
+
+[[hifimagnet_offerings]]
 == {hifimagnet} Offerings in *Marketplace*
 
 Currently the apps available in the *Marketplace* are given in the table bellow.
