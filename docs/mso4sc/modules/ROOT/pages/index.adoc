@@ -52,6 +52,15 @@ by the portal to your email address.
 NOTE: Right now the portal *is not* using https protocol. As a consequence, the credentials `user/password` are
 sent in clear. So be careful.
 
+[NOTE]
+====
+In the sequel, each time you start a new service that relies on the IDM component responsible for the authentification
+you will be notify by the system and will have to *authorize* this service like in the image below:
+
+image::add_service_IDM.png[Register new compnent to IDM MSOPortal]
+
+====
+
 [[overview]]
 == Overview of the Portal
 
