@@ -1,0 +1,4 @@
+steps:
+ - trigger: "book-dot-feelpp-dot-org"
+   label: ":package: Generate :book:"
+   async: true

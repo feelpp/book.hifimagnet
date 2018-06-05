@@ -1,0 +1,5 @@
+name: benchmarks_h
+title: HiFiMagnet Benchmarks
+version: "0.1"
+nav:
+- modules/ROOT/nav.adoc

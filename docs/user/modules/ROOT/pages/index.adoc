@@ -1,0 +1,157 @@
+= {hifimagnet} user manual
+// include::{partialsdir}/header-uri.adoc[]
+// include::{partialsdir}/header-levels.adoc[]
+
+Welcome to {hifimagnet} manual documentation!
+
+NOTE: The {hifimagnet} manual documentation introduces the process to build and run an application.
+New user should begin with the xref:user:ROOT:index.adoc[{feelpp} User Manual].
+
+IMPORTANT: You wish to contribute? Please consult the xref:docs:ROOT:index.adoc#contribute[contribute] section to learn how to proceed!
+
+[[introduction]]
+= Introduction to {hifimagnet}
+
+.Discuss and Contribute
+TIP: Use {uri-feelpp-issues}/858[Issue 858] to drive development of this
+section. Your contributions make a difference. No contribution is too small.
+
+= What is {hifimagnet}?
+
+
+[[quickstart]]
+= Quick Starts
+
+
+[[qs_installation]]
+== Installation Quick Start
+
+
+Using {hifimagnet} inside https://www.docker.com/what-docker[Docker] is the recommended and fastest way to use {hifimagnet}.
+The xref:user:ROOT:install/containers.adoc#Docker[Docker chapter] is dedicated to Docker and using {feelpp} in Docker.
+
+We strongly encourage you to follow these steps if you begin with {hifimagnet} in particular as an end-user.
+
+People who would like to develop with and in {hifimagnet} should read through the remaining sections of this chapter.
+
+[[qs_usage]]
+== Usage Start
+
+Start the Docker container `feelpp/hifimagnet` as follows
+
+[source,sh]
+----
+docker run -it -v $HOME/feel:/feel feelpp/hifimagnet
+----
+
+NOTE: these steps are explained in the chapter on xref:index.adoc#installation_container[{hifimagnet}] and
+xref:user:ROOT:install/containers.adoc#Docker[{feelpp} containers].
+
+
+[[installation]]
+= Installing {hifimagnet}
+
+include::installation/README.adoc[]
+
+
+:leveloffset=-1:
+[[installation_prerequis]]
+include::installation/PREREQUISITES.adoc[]
+
+:leveloffset=-1:
+[[installation_repository]]
+include::installation/lncmi-repository.adoc[]
+
+[[installation_container]]
+== Using containers
+[[installation_docker]]
+include::installation/docker.adoc[leveloffset=+1]
+[[installation_hifimagnet]]
+include::installation/singularity.adoc[leveloffset=+1]
+
+:leveloffset=-1:
+:leveloffset=-1:
+[[installation_scratch]]
+include::installation/from-scratch.adoc[]
+
+:leveloffset=-1:
+
+[[usage]]
+= Usage
+
+* {magnettools}
+* {hifimagnet}
+** cad tools: gmsh, {salome}
+** meshing: gmsh, netgen, {meshgems}
+** multiphics models: {feelpp} toolboxes
+** post-processing: EnSight, ParaView
+
+[TIP]
+====
+link:http://www.ensight.com[EnSight (recommended)]:: is a commercial multi-platform data analysis and visualization application.
+link:http://www.paraview.org[ParaView]:: is an open-source, multi-platform data analysis and visualization application.
+link:https://wci.llnl.gov/simulation/computer-codes/visit[Visit]:: is a distributed, parallel visualization and graphical analysis tool for data defined on two- and three-dimensional (2D and 3D) meshes
+====
+
+[[usage_magnettools]]
+== Using {magnettools}
+
+{magnettools} is a in-house software that provides tools to compute :
+
+ * Analytically Magnetic Field,
+ * Mutual and Self Inductances,
+ * Axial and Radial Forces,
+
+and to analyze some Transient Analysis.
+
+{magnettools} also contains:
+
+  * Optimization procedure to define the PolyHelices insert geometry,
+  * Files for CAD and CAM of Helices.
+  
+[[usage_data]]
+include::magnettools/DataStructure.adoc[leveloffset=+2]
+
+:leveloffset=-1:
+[[usage_bmap]]
+include::magnettools/Bmap.adoc[leveloffset=+2]
+
+:leveloffset=-1:
+include::magnettools/Inductances.adoc[leveloffset=+2]
+
+:leveloffset=-1:
+include::magnettools/Fmap.adoc[leveloffset=+2]
+
+:leveloffset=-1:
+include::magnettools/Transient.adoc[leveloffset=+2]
+
+:leveloffset=-1:
+[[usage_optim]]
+include::magnettools/Optimization.adoc[leveloffset=+2]
+
+
+[[usage_hifimagnet]]
+== Using {hifimagnet}
+
+include::learning/README.adoc[]
+
+[[usage_cad]]
+include::learning/Geometry.adoc[leveloffset=+2]
+
+:leveloffset=-1:
+[[usage_mesh]]
+include::learning/Meshing.adoc[leveloffset=+2]
+
+:leveloffset=-1:
+[[usage_axi]]
+include::learning/AxiModeling.adoc[leveloffset=+2]
+
+:leveloffset=-1:
+[[usage_3d]]
+include::learning/3DModeling.adoc[leveloffset=+2]
+
+[[references]]
+= Quick Reference
+
+include::quickref/README.adoc[]
+
