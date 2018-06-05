@@ -5,10 +5,10 @@ v1.0, 2017/04/06
 :feelpp: Feel++
 :cpp: C++
 
-The Laboratoire National de Champs
-MAgnétiques Intenses (LNCMI) is a French large scale facility enabling researchers 
+The http://www.lncmi.cnrs.fr/[Laboratoire National des Champs
+Magnétiques Intenses] (LNCMI) is a French large scale facility enabling researchers 
 to perform experiments in the highest possible magnetic field. DC magnetic fields up to 36 T are provided at the Grenoble site 
-and pulsed fields up to 90 T at Toulouse. The technology used for DC magnets relies on the so-called polyhelix inserts for 
+and pulsed fields up to 99 T at Toulouse. The technology used for DC magnets relies on the so-called polyhelix inserts for 
 the most stressed parts of the magnets. Their design relies on non-linear 3D multi-physic models. 
 
 {hifimagnet} is a research project carried out by the LNCMI in collaboration with
@@ -49,31 +49,53 @@ https://gitter.im/feelpp/hifimagnet-book[Gitter {hifimagnet} Book] forum.
 
 == Compiling the book
 
-install `ruby` and  `bundle`
+You only require an node >= 8 install.
 
-----
-# on MacOSX
-brew install ruby
-gem install bundle
+```
+make install
+make build
+make serve
+```
 
-# on debian/ubuntu
-sudo apt-get install ruby-bundler ruby-jekyll-feed ruby-thread-safe
+NOTE: This will install antora. Then compile the book. And finally run a local web server
+to visualize the documentation in a web browser:
+```
+firefox http://localhost:5000/
+```
 
-----
-WARNING: on debian linux, do not install jekyll
+NOTE: Watch out `serve` 6.5.8 should be used. Latter versions introduce a rendering bug
+for images.
 
-then run `bundle` in the top level directory of the book
-----
-bundle
-----
+Alternatively you can run the book within a docker container:
+```
+docker pull antora/antora
+```
+Then simply start the docker image:
+```
+docker run --entrypoint ash -v `pwd`:/antora -p 80:5000 --rm -it antora/antora
+```
+the `pwd` shall be the source dir of the book.
 
-it will install all the requirements
+Then in the container:
+```
+npm i -g serve@6.5.8
+antora antora-local-feelpp-doc.yml
+serve build/site
+```
 
-then type
+To view the documentation in a web browser, this time you will simply:
+```
+firefox http://localhost/
+```
+If the *host* is accessible from internet (and the port is open), you can also access the documentation
+from any place: 
+```
+firefox http://host_ip/
+```
 
-----
-bundle exec jekyll serve
-----
+TIP: this won't work if any http server is already running on port 80 on you `host_ip`.
+Make sure to shutdown the http server before running the above commands.
+ 
+TIP: you can use `nmap -p 80 host_ip` to check if http port is open on `host_ip`
 
-it will start a link:http://127.0.0.1:4000/[local web server] on the
-port 4000 where you can see the book.
+

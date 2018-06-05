@@ -1,0 +1,314 @@
+= {hifimagnet} Salome Plugin
+// include::{partialsdir}/header-uri.adoc[]
+// include::{partialsdir}/header-levels.adoc[]
+
+Welcome to {hifimagnet} Salome Plugin documentation!
+
+NOTE: The {hifimagnet} Salome Plugin documentation describes its installation, its features, its uses  and
+provides some references.
+
+TIP: If you find errors or omissions in this document, please don’t hesitate to
+link:https://github.com/feelpp/hifimagnet/issues[submit an issue or open a pull
+request] with a fix. We also encourage you to ask questions and discuss any
+aspects of the project on the link:http://gitter.im/feelpp/hifimagnet[{hifimagnet}
+Gitter forum]. New contributors are always welcome!
+
+[[introduction]]
+= Introduction
+
+The {hifimagnet} Salome Plugin allows to easily:
+
+* define CAD geometry for Solenoidal High Field Magnet
+* mesh these geometries.
+
+In a near future, the plugin will also provides tools:
+
+* to define files required for running simulations,
+* to run calculations either locally or remotely,
+* to analyze the results
+
+The meshing features require a license to http://www.meshgems.com/[{meshgems} suite].
+
+[[quickstart]]
+= Quick Starts
+
+This document will illustrate how to simply use {hifimagnet} Salome plugin
+and give examples for most common operations.
+
+Custom installation, eg. for native installation, is detailed in appendix.
+
+[[qs_installation]]
+== Installation Quick Start
+
+They are several way to use {hifimagnet} Salome plugin. The easiest way
+is to use container, either Docker based or Singularity based. If your system support
+singularity containers we recommend to use them instead of Docker ones.
+
+You can download docker images from link:https://hub.docker.com/r/feelpp/salome/[feelpp/salome dockerhub].
+Note that the images are private for the moment.
+
+[TIP]
+====
+To use Salome in GUI mode the docker container should contain appropriate graphics drivers.
+Actually only nvidia graphic cards are supported. To custom the images for you graphics
+card you should have a look at the
+link:https://raw.githubusercontent.com/feelpp/hifimagnet/develop/docker/salome/build_salome.sh?token=ABP6f83LtdGN4ApDyGYlwkle_5jZeSy0ks5aeEu2wA%3D%3D[scripts] generating the images.
+====
+
+[[qs_reference]]
+== Running {hifimagnet} Salome plugin
+
+`-t` option may be used to switch to the TUI (eg. batch) mode.
+
+=== from Singularity container
+
+```
+singularity exec [--nv] \
+  -H $HOME:/home/$USER \
+  -B $STORE/Distene/:/opt/DISTENE/DLim \
+  feelpp_salome-mso4sc.simg \
+  salome [-t] ...
+```
+Note the `--nv` flag is mandatory to run in GUI mode and is only supported by nvidia drivers.
+
+
+=== from Docker container
+
+```
+xhost local:root
+docker run -ti --rm -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix \
+   -v $HOME/.Xauthority:/home/feelpp/.Xauthority --net=host --pid=host --ipc=host \
+   --env QT_X11_NO_MITSHM=1 \
+   -v $HOME/Salome_Packages:/home/feelpp/exports \
+   feelpp/salome:8.3.0-nvidia
+```
+
+[TIP]
+====
+On Windows and MacOs X you would need a running X11 server.
+See this http://files.salome-platform.org/Salome/Common/SUD2018/08_Containers.pdf[presentation] for details
+====
+
+=== from command line
+
+[[helix-cad]]
+[source,sh]
+.Generation of an Helix
+----
+salome -m GEOM,SMESH,HIFIMAGNET [-t] \
+   ${SALOME_INSTALLDIR}/HIFIMAGNET/bin/salome/HIFIMAGNET_Cmd.py \
+   args:--helix=HL-31-H1.yaml
+----
+
+[[ring-cad]]
+[source,sh]
+.Generation of an connection Ring
+----
+salome -m GEOM,SMESH,HIFIMAGNET [-t] \
+   ${SALOME_INSTALLDIR}/HIFIMAGNET/bin/salome/HIFIMAGNET_Cmd.py \
+   args:--ring=Ring-H1H2.yaml
+----
+
+[[insert-cad]]
+[source,sh]
+.Generation of an Insert in TUI mode
+----
+salome -m GEOM,SMESH,HIFIMAGNET [-t] \
+   ${SALOME_INSTALLDIR}/HIFIMAGNET/bin/salome/HIFIMAGNET_Cmd.py \
+   args:--insert=HL-31.yaml
+----
+
+
+[TIP]
+====
+On a remote desktop (`novnc` + `virtualgl`), to launch Salome in GUI mode you have to use
+to benefit from hardware acceleration.
+
+[source,sh]
+----
+vglrun salome [...]
+----
+====
+
+[[installation]]
+= Detailed Installation
+
+This section describes {hifimagnet} {salome} Plugin installation from scratch. You can also use official {salome} binairies to build the plugin but this will not be detailed. 
+
+Building {salome} from scratch is performed within a docker image to avoid any conflitcs with pre-existing configuration. The obtained binaries will exported at the end of the build process if successful as a compressed archive. The archive will be later used when creating the containers. 
+
+All the scripts and docker or singularity recipes may be found in http://github.com/hifimagnet/[{hifimagnet} github repository].
+In particular see the followings directory:
+
+* docker: for all docker related stuff
+* singularity: same for singularity
+* package: for all debian/ubuntu packaging questions
+
+include::installation/officialbinary.adoc[leveloffset=+1]
+include::installation/scratch.adoc[leveloffset=+1]
+include::installation/singularity.adoc[leveloffset=+1]
+
+
+[[usage]]
+= Using {salome}
+
+{salome} is an open-source generic platform for Pre- and Post-Processing for numerical simulation.
+Its key features are:
+
+* Supports interoperability between CAD modeling and computation software (CAD-CAE link).
+* Provides access to all functionalities via the integrated Python console.
+
+This latter feature is especially convenient. You can easily build a CAD model and save all
+the performed operations within a python script. This script may be later run either in TUI (eg. batch) or GUI mode.
+For instance, to create a cube and mesh it:
+```
+salome [-t] testcube_mesh.py
+```
+`-t` option is used to switch to the TUI (eg. batch) mode.  
+
+[TIP]
+====
+The default mesh format generated by {salome} is med. This mesh format may not be supported
+by {feelpp}. You can convert a med mesh into a gmsh mesh:
+```
+gmsh -3 -bin testcube.med -o testcube.msh
+```
+====
+
+For detailed use of {salome}, see:
+
+* http://salome-platform.org/user-section/documentation/current-release/current-release-gui[SALOME 8.4.0 Documentation]
+* http://salome-platform.org/user-section/salome-tutorials/copy_of_salome-tutorial[Tutorial]
+
+Examples:
+
+* Test if {meshgems} is properly installed:
+```
+SALOMEDIR=/opt/SALOME_8.3.0_MPI-DB9.3
+singularity exec \
+  -H $HOME:/home/$USER \
+  --pwd /home/$USER/Salome \
+  -B $STORE/Distene/:/opt/DISTENE/DLim \
+  feelpp_salome-mso4sc.simg \
+  $SALOMEDIR/salome -t ghs3d_demo.py```
+```
+
+* Create a simple med mesh and convert it to msh format in TUI mode:
+```
+SALOMEDIR=/opt/SALOME_8.3.0_MPI-DB9.3
+singularity exec \
+  -H $HOME:/home/$USER \
+  --pwd /home/$USER/Salome \
+  -B $STORE/Distene/:/opt/DISTENE/DLim \
+  feelpp_salome-mso4sc.simg \
+  $SALOMEDIR/salome -t testcube_mesh.py
+singularity exec \
+  -H $HOME:/home/$USER \
+  --pwd /home/$USER/Salome \
+  -B $STORE/Distene/:/opt/DISTENE/DLim \
+   feelpp_salome-mso4sc.simg \
+   gmsh -3 -bin testcube.med -o testcube.msh
+```
+
+* A generic script for running {salome} {singularity} image  on cesga: 
+----
+#!/bin/bash
+
+module load singularity
+
+usage(){
+   echo ""
+   echo "Description:"
+   echo "   Run salome within Singularity image"
+   echo ""
+   echo "Usage:"
+   echo "   script.sh [ <option> ] ... ]"
+   echo ""
+   echo "Options:"
+   echo ""
+   echo "-t Activate Salome TUI mode"
+   echo "-s Specify python script to be used (only valid when TUI is on)"
+   echo "-a Specifiy parameters of the python script (only valid in combination with -s, optional)"
+   echo "-i Change singularity image (default: feelpp_salome-mso4sc.simg)"
+   echo "-r Change singularity image directory (default: $LUSTRE/singularity_images)"
+   echo "-d Activate debug mode"
+   echo ""
+   exit 1
+}
+
+DEBUG=0
+
+
+#########################################################
+## parse parameters
+##########################################################
+while getopts "hts:a:i:d" option ; do
+   case $option in
+       h ) usage ;;
+       t ) TUI=1 ;;
+       s ) SCRIPT=$OPTARG ;;
+       a ) SCRIPT_ARGS=$OPTARG ;;
+       i ) IMAGE=$OPTARG ;;
+       r ) SINGULARITY_DIR=$OPTARG ;;
+       d ) DEBUG=1 ;;
+       ? ) usage ;;
+   esac
+done
+# shift to have the good number of other args
+shift $((OPTIND - 1))
+
+# Optionally set VERSION and others if none is defined. 
+: ${IMAGE=feelpp_salome-mso4sc.simg}
+: ${TUI=0}
+: ${SCRIPT=""}
+: ${SCRIPT_ARGS=""}
+
+: ${SINGULARITY_DIR=$LUSTRE/singularity_images}
+
+if [ $TUI = "1" ]; then
+
+    if [ -z $SCRIPT ]; then
+	echo "Trying to run salome in TUI mode without a script"
+	echo "you need to define a python script"
+	usage
+    fi
+
+    if [ -z $SCRIPT_ARGS ]; then
+	singularity exec --nv \
+	    -H $HOME:/home/$USER \
+	    -B /mnt \
+	    -B /scratch \
+	    -B $STORE/Distene:/opt/DISTENE/DLim \
+	    $SINGULARITY_DIR/$IMAGE \
+	    salome -t $SCRIPT
+    else
+	singularity exec --nv \
+	    -H $HOME:/home/$USER \
+	    -B /mnt \
+	    -B /scratch \
+	    -B $STORE/Distene:/opt/DISTENE/DLim \
+	    $SINGULARITY_DIR/$IMAGE \
+	    salome -t $SCRIPT args:$SCRIPT_ARGS
+    fi 
+else
+    if [ -z $SCRIPT ]; then
+    singularity exec --nv \
+	-H $HOME:/home/$USER \
+	-B /mnt \
+	-B /scratch \
+	-B $STORE/Distene:/opt/DISTENE/DLim \
+	$SINGULARITY_DIR/$IMAGE \
+	vglrun salome 
+    else
+    singularity exec --nv \
+	-H $HOME:/home/$USER \
+	-B /mnt \
+	-B /scratch \
+	-B $STORE/Distene:/opt/DISTENE/DLim \
+	$SINGULARITY_DIR/$IMAGE \
+	vglrun salome $SCRIPT
+    else
+    fi
+fi
+----
+

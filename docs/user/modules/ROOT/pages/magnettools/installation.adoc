@@ -1,0 +1,43 @@
+= Installing {magnettools}
+
+== Pre-requisites
+
+To build you will need :
+
+* gsl
+
+* http://freesteam.sourceforge.net/[freesteam]
+
+* eigen3
+* sundials
+* http://www.maths.uq.edu.au/expokit[expokit]
+* https://www2.cisl.ucar.edu/resources/legacy/spherepack[spherepack]
+
+* http://www-pequan.lip6.fr/cadna[cadna]
+* boost-iostream
+* http://www.fadbad.com/fadbad.html[fadbad++]
+
+To build the optimisation tools :
+* Nag Fortran Libray
+
+== Compiling HiFiMagnet
+
+To get {magnettools} sources you need to download or clone {hifimagnet} sources.
+
+=== Using autotools
+
+* First update your ```configure``` script by typing ```./autogen.sh``` in {magnettools} sources
+* Then in a separate directory run ```PATH_TO_MagnetTools/configure``` to generate the necessary Makefiles.
+* Finally compile the applications you are interested in.
+
+=== Using CMake
+
+* In a separate directory, run ```cmake PATH_TO_MagnetTools [...]```
+* if some required dependencies are not found, you will have to compile them using ```make install-deps```
+* once all the required dependencies are found, you can use ```make```
+
+[TIP]
+===
+* To help CMake find the dependencies, use the environment or cmake variables ```<DEPS>_DIR```.
+* If you do not have write access to the default install prefix, you may override the default by using ```-DCMAKE_INSTALL_PREFIX=new_path```)
+===

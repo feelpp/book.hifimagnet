@@ -1,0 +1,60 @@
+= Optimization
+
+The goal of the Axisymetric optimization is to provide an maximum magnetic field at the center of the insert
+under constraints:
+
+* total electric power
+* critical temperature per helix
+* critical elastic limit per helix
+
+for a given insert geometry.
+
+The unknowns may either be:
+
+* the current density distribution per helix: `OptHelix`,
+* the maximum temperature distribution per helix: `OptAubert`
+
+Method used: SQP programming with Nag.
+
+[source,sh]
+----
+> OptAubert ...
+----
+
+
+NOTE: Each helix is splitted in a given number of sections alonz stem[z] axis.
+
+
+The input and output result use the formats desribed in xref:DataStructure.adoc.
+To build the actual 3D geometry, that shall reflect, this Axi distribution, we use
+the following assumption:
+
+*
+*
+
+The optimization result will be used to define the helical cut thet would be machined
+in each copper alloy tubes:
+* CAD data may be obtained for Catia and/or {salome} using:
+
+[source,sh]
+----
+> opt2cad ...
+> addshape ...
+> opt2yml ...
+----
+
+`addshape` generate file for CAD/CAM Helices with "bumps" on the helical cut shape path
+`opt2yml` generates configuration files for building Helices with {salome}.
+
+* CAM data for machining the helices are created by:
+[source,sh]
+----
+> opt2cad ...
+----
+
+NOTE: To create the actual 3D CAD model of an helix (abusively: tube in which an helical cut has been machined by EDM technic),
+we still need some more information...
+
+
+
+References:

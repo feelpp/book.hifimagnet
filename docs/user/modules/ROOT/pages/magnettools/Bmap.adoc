@@ -1,0 +1,56 @@
+= Magnetic Field Maps
+
+`B_Map` enables axisymetrical calculation of the magnetic field and/or potential.
+Available options are:
+
+```
+ --points=STRING           points on which b field is to be computed (x0,y0,z0,...)
+ --points_file=STRING      file containing points on which b field is to be computed (x0,y0,z0,...)
+ --innerbore=INNERBORE     mesh on which b field is to be computed
+ --potential               enable magnetic potential calculation / exclude magnetic field
+ -domain                   perform calculations on whole mesh
+ -per_elem                 perform calculations on node (default is on node)
+ --sphharm=INT             perform calculations for Spherical Harmonic Decomposition [n n]
+ --even_nlon               set even number of longitude
+ --interactive             activate interactive mode
+ --verbose                 activate verbose mode
+ --magnet=INT              switch to magnet type (0: Bitter, 1: Unif, 2: ThinSolenoid, 3: PassiveShims)
+ --mm                      force switch to mm as default units
+ --r=DOUBLE                specify radius [default is 1 m]
+ --restart_from=INT        restating computation of b field from node ID
+ --save                    save results in file (default is off)
+ --display                 display Helices data (default is off)
+ --gnuplot                 Generate Helices Geometry data for Gnuplot (default is off)
+ --ensight                 Generate Helices Geometry data for ensight (default is off)
+ --ascii                   ascii write mode for ensight
+ --num_integ=INT           specify num_integ size (default 100)
+ --num_eval=INT            specify num_eval size (default 100)
+ --gsl-error-handler       deactivate gsl error handler (default is on)
+ --omp_off                 turn off openm
+```
+
+
+`Levitation` compute Bz and its derivatives on Z-Axis using AD technics
+
+```
+ --input=STRING                load input filename
+ --order=INT                   specify order to consider (default is 6)
+ --verbose                     activate verbose mode
+ --no_ensight                  disable output for ensight
+ --G0=DOUBLE                   specify G0 value to reach (default is 500)
+ --residual_gravity=DOUBLE     specify residual gravity targetted in
+                               percent (default is 1%)
+ --check                       activate check mode (default is off)
+ --find                        find levitation point (default is off)
+ --save                        save results in file (default is off)
+ --matlab                      save results in matlab/octave format
+                               (default is off)
+ --gsl-error-handler           deactivate gsl error handler (default is on)
+ --interactive                 activate interactive mode
+ --spec_vol=STRING             define spec vol (r, z) in m
+ --sym                         activate sym mode
+ --num_integ=INT               specify num_integ size (default 100)
+ --num_eval=INT                specify num_eval size (default 100)
+ --ascii                       ascii write mode for ensight
+ --omp_off                     turn off openm
+```
