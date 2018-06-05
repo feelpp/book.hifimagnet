@@ -1,5 +1,5 @@
-name: mso4sc_h
-title: Hifimagnet MSO4SC Application Guide
+name: hifimagnet
+title: Application Hifimagnet
 version: "stable"
 nav:
 - modules/ROOT/nav.adoc
