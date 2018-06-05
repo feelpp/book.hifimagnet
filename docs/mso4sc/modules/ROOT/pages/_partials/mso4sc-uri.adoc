@@ -13,6 +13,7 @@
 :uri-sregistry-cesga: https://sregistry.srv.cesga.es/
 :uri-mso4sc-www: http://mso4sc.elmerex.hu/
 :uri-msoportal-www: http://portal.mso4sc.eu/
+:uri-msoportal-dev-www: http://portal-dev.mso4sc.eu/
 :uri-msoportal-ckan-www: {uri-msoportal-www}datacatalogue/
 :uri-msoportal-market-www: {uri-msoportal-www}marketplace/
 :uri-msoportal-experiment-www: {uri-msoportal-www}experimentstool/
