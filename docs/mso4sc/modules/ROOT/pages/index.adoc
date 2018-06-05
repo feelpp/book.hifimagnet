@@ -17,7 +17,7 @@ and it defines the role of
 * <<devuser, *DevUser*>>
 * <<enduser, *EndUser*>>.
 
-An overview of the main portal functionnalities is given in this <<overview,section>>.
+An overview of the main portal functionalities is given in this <<overview,section>>.
 This is followed by a brief description of the {hifimagnet} apps available and on the over-whole workflow
 of actually running apps within the portal.
 
@@ -47,10 +47,10 @@ TIP: do not check *gravatar* bug as it is buggy right now.
 * Create an account there providing a valid email and a password.
 
 Then you have to validate your account by following the instructions send
-by the portal.
+by the portal to your email address.
 
 NOTE: Right now the portal *is not* using https protocol. As a consequence, the credentials `user/password` are
-send in clear. So be careful.
+sent in clear. So be careful.
 
 [[overview]]
 == Overview of the Portal
@@ -87,16 +87,16 @@ They are grouped into 4 categories:
 [options="header,footer"]
 |===
 | Offering            | Description        | Category    | Notes
-| Hifimagnet Offering | Basic demonstrator | Simulations |
+| {hifimagnet} Offering | Basic demonstrator | Simulations |
 |===
 
 For details about settings up these apps please refer to these <<offering_setup, docs>>.
 For the new user we recommend to read this guide. The impatient may go directly to the <<enduser, *EndUser*>>
  and try to run the basic demonstrator.
 
-== Synopsys of the HifiMagnet Offering
+== Synopsis of the {hifimagnet} Offering
 
-The HifiMagnet offering is created by *DevUser* as described in this <<registerapp, section>>.
+The {hifimagnet} offering is created by *DevUser* as described in this <<registerapp, section>>.
 Any *EndUser* may purchase the offering following the <<purchase, generic procedure>>. Then,
 he or she can run the purchased offering provided that some fields are filled properly as in this <<running, example>>.
 Details for setup each offering will be giving in the <<offering_setup, next section>>.
@@ -149,7 +149,7 @@ Then you need to perform the following steps in *Experiments*:
 
 * go to *RegisterApp*
 ** select your *Offering* in the sliding menu *New Products*
-** give the app a meaningfull name
+** give the app a meaningful name
 ** Choose a package file to load.
 
 [NOTE]
@@ -158,7 +158,7 @@ The package file is an gzipped archive holding the formal description of the app
 It's actually a directory which contains :
 
 * a `blueprint.yml` TOSCA file that describes the workflow
-* a `scripts` subdirectory holding the scripts required to deploy and undeploy the app
+* a `scripts` sub-directory holding the scripts required to deploy and undeploy the app
 
 In this https://github.com/MSO4SC/resources/tree/master/blueprint/feelpp/hifimagnet_test[git repository]
 you will find the actual application corresponding to the {hifimagnet} basic demonstrator.
@@ -173,7 +173,7 @@ Once the app has been registered in the *Marketplace* (actually it means that an
 To check if you have any order:
 
 * go to *My Inventory*
-* go to *Product Orders*
+* go to *My Inventory/Product Orders*
 * check *Recibibas* menu
 * if any new message, you need to:
 ** click to validate the order
@@ -206,11 +206,20 @@ For app like {hifimagnet} apps that require an private singularity image, you mu
 To do so follow these instructions:
 
 * Logged in to your {uri-sregistry-cesga},
-* In your profile in the top right,  you will see an *Admin* link, click on it
-* In the administrative panel, you can see and manage user
-* ...
+* Click on *Teams* menu then select your *team*
+
+image::sregistry_team.png[ex: {{hifimagnet {sregistry} team]
+
+* As in the image above, click on *Invite Users*
+
+image::sregistry_team.png[ex: {{hifimagnet {invitation} team]
+
+* Copy the link (display in blue) and send it to your new *EndUser*
 
 See https://singularityhub.github.io/sregistry/credentials[sregistry docs]
+
+Once the *EndUser* will validate the invitation, his/her name will be display in the list
+of members. You can also make him/her *owner* of the team by clicking on the *Make Owner* button.
 
 [[girder_add_to_team]]
 === Adding an *EndUser* to {girder}
@@ -252,7 +261,7 @@ or a simple *EndUser*. The process is the following:
 * connect to the {uri-msoportal-ckan-www}[*Marketplace*], in *Home* (top left Marketplace page) you will find all available apps (*All categories*).
 * Click on *Add to Cart* to purchase the app you want.
 * Click on *Shopping Cart* and *Checkout* to go on
-** ask to fill some form (??)
+** fill the required forms for *shipping address*
 ** provide a *shipping address* if not already defined
 ** provide a *billing address* if not already defined
 ** Finalize your order by clicking on *Checkout*
@@ -271,7 +280,7 @@ To finalize your purchase *DO NOT FORGET* to connect to :
 * {uri-msoportal-ckan-www}[*Data Catalogue*]
 * {uri-girder-unistras}[{girder}]
 
-Then notify the ownver/seller that you request to be part of {hifimagnet} user group.
+Then notify the owner/seller that you request to be part of {hifimagnet} user group.
 This will allow you to access {himagnet} singularity images and datasets.
 
 NOTE: {girder} is optional.
@@ -285,7 +294,7 @@ NOTE: {girder} is optional.
 
 NOTE: you need to ask the owner/seller of {hifimagnet} app to be granted the role of *editor*
 
-[[using_grider]]
+[[using_girder]]
 === Upload Data to {girder} service
 
 
@@ -294,7 +303,7 @@ NOTE: you need to ask the owner/seller of {hifimagnet} app to be granted the rol
 
 * Go to {uri-msoportal-experiment-www}[*Experiments*]
 * Select *Settings*
-* Define a HPV res-source
+* Define a HPC resource
 
 [source,txt]
 ----
@@ -306,14 +315,18 @@ include::{examplesdir}/hpc.txt[]
 
 Before proceeding to the setup of the app, you need to make sure, at least for {hifimagnet}
  app (or more generally for apps requiring access to a private singularity image) that you have
- been granted the proper rigth on {hifimagnet} {sregistry} team.
+ been granted the proper right on {hifimagnet} {sregistry} team.
 
-One more step consists in retreiving the *TOKEN* and storing it into ypur home directory on the HPC resource.
- This *TOKEN* is needed to download programatically the {singularity} image :
+One more step consists in retrieving the *TOKEN* and storing it into your home directory on the HPC resource.
+ This *TOKEN* is needed to download programmatically the {singularity} image :
 
 * connect to {uri-sregistry-cesga}[{sregistry}] using {fiware} authentification
 * go to your account (top right button)
 * select *Token*
+
+image::sregistry_token.png[ex: {Get {sregistry} token]
+image::sregistry_APItoken.png[ex: {Display {sregistry} token]
+
 * copy the token into a file `.sregistry`
 * copy `.sregistry` on the HPC resource, see <<hpc_setting, previously defined>>, into your home directory
 
@@ -409,7 +422,7 @@ TIP: Any error will result in a message at the top of the page, bellow the menus
 The next step is to *Deploy Instance*:
 
 * select the *ID*, you defined in the previous step, in the *App instance * menu
-* click on *Deploy*
+* click on *Deploy*, wait until the button in blue turns green
 
 To *Run Instance*, the procedure is similar:
 
@@ -418,7 +431,7 @@ To *Run Instance*, the procedure is similar:
 
 [TIP]
 ====
-these step may take some minutes to be performed. A red button will indicates an error.
+These step may take some minutes to be performed. A red button will indicates an error.
 Check the message in the frame bellow the status button. To have more details about the actual error
 is more tricky; we recommend to:
 
@@ -461,11 +474,14 @@ include::{examplesdir}/remotedesktop.txt[]
 
 * Go to *Visualization*
 * Click *Desktop Available*
-** Select your Visu Settings
+** Select your *Infrastructure* in the sliding menu
+
+[NOTE]: if no *Remote desktop* is defined, you will receive a warning message. Create a <<post, *Setting*>>, then go back to this step.
+
 ** Click on *Create*
 ** Click either on *Desktop* or *View Only*
 
-it should start a webpage within your browser.
+it should start a web page within your browser.
 In this page you should be able to:
 
 * start a 'terminal' and check the output of your simulation
@@ -479,7 +495,7 @@ For more details on using {paraview} or {ensight} please check XXXX.
 [NOTE]
 ====
 The result are stored in `${LUSTRE}/feel/<workdir_prefix>_<date>_<id>` if
-you have choosen to use the `<hpc_volumes>` bindmount option: `${LUSTRE}/feel:/feel`.
+you have chosen to use the `<hpc_volumes>` bindmount option: `${LUSTRE}/feel:/feel`.
 
 Check the output of the script in `<basedir>/<workdir_prefix>_<date>_<id>`
 to see the exact name of this directory.
