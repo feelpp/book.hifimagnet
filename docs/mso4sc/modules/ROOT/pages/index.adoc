@@ -186,6 +186,13 @@ you will find the actual application corresponding to the {hifimagnet} basic dem
 To actually build the app, use: ```./deploy pkg```
 ====
 
+[IMPORTANT]
+====
+An app can only be registered once. It means that once you have gone througth the registration process 
+your only choice is to *RemoveApp*.
+
+As a consequence, to upgrade your app package you have first to remove the app and go back to re-register your app.
+====
 [[validorder]]
 === Validate an {hifimagnet} application purchase order
 
