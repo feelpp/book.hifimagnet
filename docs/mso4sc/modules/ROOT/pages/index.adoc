@@ -193,6 +193,7 @@ your only choice is to *RemoveApp*.
 
 As a consequence, to upgrade your app package you have first to remove the app and go back to re-register your app.
 ====
+
 [[validorder]]
 === Validate an {hifimagnet} application purchase order
 
@@ -247,6 +248,21 @@ See https://singularityhub.github.io/sregistry/credentials[sregistry docs]
 
 Once the *EndUser* will validate the invitation, his/her name will be display in the list
 of members. You can also make him/her *owner* of the team by clicking on the *Make Owner* button.
+
+To grant the *EndUser* access to the images in the {hifimagnet} collection, you need to proceed as follows:
+
+* click on the *Collections* menu on the top left
+* click on the link to the {hifimagnet} collections in the collections list
+* once the list of images contained in the {hifimagnet} collection is display, you have to click *settings* button
+
+A list of *owners* and *contributorsllaborators* appears in the top right part of the page. Bellow are lists of user 
+that are nor part of *owners* nor *contributors*. 
+
+* To grant *owner* or *contributor* role to a given user select his/her name
+* finaly simply click on the red *save* button 
+
+The previously selected user shall  not be show in the appropriate list according to your choice.
+
 
 [[girder_add_to_team]]
 === Adding an *EndUser* to {girder}
