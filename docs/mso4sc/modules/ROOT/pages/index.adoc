@@ -236,11 +236,10 @@ To do so follow these instructions:
 * Logged in to your {uri-sregistry-cesga},
 * Click on *Teams* menu then select your *team*
 
-image::sregistry_team.png[ex: {{hifimagnet {sregistry} team]
+image::sregistry_team.png[ex: {hifimagnet} {sregistry} team]
 
 * As in the image above, click on *Invite Users*
 
-image::sregistry_team.png[ex: {{hifimagnet {invitation} team]
 
 * Copy the link (display in blue) and send it to your new *EndUser*
 
@@ -368,7 +367,7 @@ One more step consists in retrieving the *TOKEN* and storing it into your home d
 * select *Token*
 
 image::sregistry_token.png[ex: {Get {sregistry} token]
-image::sregistry_APItoken.png[ex: {Display {sregistry} token]
+image::sregistry_apitoken.png[ex: {Display {sregistry} token]
 
 * copy the token into a file `.sregistry`
 * copy `.sregistry` on the HPC resource, see <<hpc_setting, previously defined>>, into your home directory
