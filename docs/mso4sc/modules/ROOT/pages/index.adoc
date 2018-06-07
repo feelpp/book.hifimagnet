@@ -487,6 +487,38 @@ You may cleanup your working by
 ** select the *ID*, you defined in the previous step, in the *App instance * menu
 ** click on *Destroy*
 
+[[running_dataset]]
+=== Running an {hifimagnet} application in *Experiments* using datasets from *DataCatalogue*
+
+Basically the procedure is the same as <<running, above>>. The only difference here is that you need:
+
+* to select a dataset in the *DataSet* sliding menu
+* to validate your choice 
+* to enter the name of the `<cfgfile> you will use
+
+You should at the end have something like in the following image.
+
+image::portal_running_dataset.png[Selecting a dataset]
+
+
+[NOTE]
+====
+The dataset, at least those from {hifimagnet} organization in the *Data Catalogue* are
+gzipped archive that holds all the files needed to run:
+
+* a mesh or cad file
+* a `<cfgfile>`
+* a list of `json` files for physical properties and/or boundary conditions
+* eventually some more files when using some {magnettools} features (eg ...)
+
+The format of the files in a dataset are respectively described in:
+
+* for {hifimagnet} simulation 
+* for mesh and cad format
+* for {magnettoools}
+
+====
+
 [[post]]
 === Setting up an Remote Desktop resource in *Visualization*
 
