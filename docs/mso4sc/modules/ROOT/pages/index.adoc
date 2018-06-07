@@ -396,6 +396,13 @@ The others fields are designed for more advanced users.
 
 [NOTE]
 ====
+.List of keys to be defined for being notified by email (only available in {hifimagnet})
+[options="header,footer"]
+|===
+| Key                        | Description              | Default          | Notes
+| *email_user*               | email address            |                  |
+| *email_type*               | type of notifications    |                  | workload_manager dependant (for `slurm`: `ALL,END,FAIL`)
+|===
 
 .List of keys specs for running simulations
 [options="header,footer"]
@@ -546,6 +553,43 @@ it should start a web page within your browser.
 In this page you should be able to:
 
 * start a 'terminal' and check the output of your simulation
+
+The outputs of the job (ie `slurm` jobs) are stored in the `<hpc_basedir>/<hpc_workdir_prefix>_<date>_<id>`.
+The actual results for the simulation would be stored in `<hpc_basedir>/feel` directory following {feelpp} usage.
+
+[NOTE]
+====
+The result are stored in `${LUSTRE}/feel/<workdir_prefix>_<date>_<id>` if
+you have chosen to use the `<hpc_volumes>` bindmount option: `${LUSTRE}/feel:/feel`.
+
+Check the output of the script in `<basedir>/<workdir_prefix>_<date>_<id>`
+to see the exact name of this directory.
+====
+
+[NOTE]
+====
+The `<hpc_basedir>/<hpc_workdir_prefix>_<date>_<id>` directory remains present only if you have set `<do_not_delete_workdir>` to `true`.
+The `<id>` field is a random number ...
+
+This directory holds:
+
+* `*.script`
+* `slurm-*.out`
+* `mso*.err`
+* `mso*.out`
+
+and the files coming from the dataset.
+====
+
+[TIP]
+====
+From a computer that is allowed to access HPC resources (if not use a *VPN* client):
+
+* start a terminal,
+* connect to the HPC resource with `ssh -Y <username>@<hpc_host>`,
+* run `ls -lrt <hpc_basedir>` to find the actual name of the working directory which may appears as the last output of this command.
+====
+
 * start a post-processing GUI:
 ** either by loading {uri-paraview-www}[{paraview}]
 ** or using singularity {uri-ensight-www}[{ensight}] image
@@ -555,11 +599,23 @@ For more details on using {paraview} or {ensight} please check XXXX.
 
 [NOTE]
 ====
-The result are stored in `${LUSTRE}/feel/<workdir_prefix>_<date>_<id>` if
-you have chosen to use the `<hpc_volumes>` bindmount option: `${LUSTRE}/feel:/feel`.
+In the remote desktop to get {paraview} running:
 
-Check the output of the script in `<basedir>/<workdir_prefix>_<date>_<id>`
-to see the exact name of this directory.
+* open a terminal,
+* type: `module load gcc/6.4.0 openmpi/2.1.1 paraview/5.4.0`
+====
+
+[NOTE]
+====
+For {ensight} you would need to have:
+
+* a valid license stored in you account on the HPC resource 
+* access to {ensight} singularity image from {hifimagnet} {sregistry} private collection.
+
+In the remote desktop to get {ensight} running:
+
+* open a terminal
+* use the following script (see {ensight} doc in {hifimagnet} docs).
 ====
 
 [[offering setup]]
