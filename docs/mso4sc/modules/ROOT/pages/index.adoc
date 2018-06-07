@@ -559,11 +559,26 @@ The actual results for the simulation would be stored in `<hpc_basedir>/feel` di
 
 [NOTE]
 ====
-The result are stored in `${LUSTRE}/feel/<workdir_prefix>_<date>_<id>` if
-you have chosen to use the `<hpc_volumes>` bindmount option: `${LUSTRE}/feel:/feel`.
+The result are stored in `${LUSTRE}/feel/...` if
+you have chosen to use the `<hpc_volumes>` bindmount option: eg `${LUSTRE}/feel:/feel` on cesga.
 
-Check the output of the script in `<basedir>/<workdir_prefix>_<date>_<id>`
+Check the output of the script (aka `slurm-<id>.out`) in `<basedir>/<workdir_prefix>_<date>_<id>`
 to see the exact name of this directory.
+
+In `slurm-<id>.out` you should see lines like that at the beginning of the files:
+```
+Reading /usr/share/doc/hifimagnet/ThermoElectricModel/quarter-turn3D.cfg...
+[ Starting Feel++ ] application thermoelectric version 0.1 date 2018-Jun-07
+ . thermoelectric files are stored in /feel/thermoelectric/np_2
+ .. exports :/feel/thermoelectric/np_2/exports
+ .. logfiles :/feel/thermoelectric/np_2/logs
+[modelProperties] Loading Model Properties : "/usr/share/doc/hifimagnet/ThermoElectricModel/quarter-turn3D.json"
+ . thermoelectric files are stored in /feel/hifimagnet/ThermoElectricModel/quarter-turn3D.geo/thermoelectric-linear_V1T1_N1/np_2
+ .. exports :/feel/hifimagnet/ThermoElectricModel/quarter-turn3D.geo/thermoelectric-linear_V1T1_N1/np_2/exports
+ .. logfiles :/feel/hifimagnet/ThermoElectricModel/quarter-turn3D.geo/thermoelectric-linear_V1T1_N1/np_2/logs
+```
+
+It means that the actual simulation results are store in `${LUSTRE}/feel/hifimagnet/ThermoElectricModel/quarter-turn3D.geo/thermoelectric-linear_V1T1_N1/np_2/exports/ensightgold/`
 ====
 
 [NOTE]
