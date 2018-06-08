@@ -1,4 +1,6 @@
+[[optim]]
 = Optimization
+:page-partial:
 
 The goal of the Axisymetric optimization is to provide an maximum magnetic field at the center of the insert
 under constraints:

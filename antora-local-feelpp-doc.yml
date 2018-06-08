@@ -21,6 +21,9 @@ content:
     start_path: docs/model
   - url: ./
     branches: feature/antora
+    start_path: docs/magnettools
+  - url: ./
+    branches: feature/antora
     start_path: docs/mso4sc
   - url: ./
     branches: feature/antora

@@ -1,0 +1,5 @@
+name: magnettools
+title: A set of tools for Solenoid Axisymetrical models
+version: "stable"
+nav:
+- modules/ROOT/nav.adoc

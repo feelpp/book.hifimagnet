@@ -1,4 +1,6 @@
+[[bmap]]
 = Magnetic Field Maps
+:page-partial:
 
 `B_Map` enables axisymetrical calculation of the magnetic field and/or potential.
 Available options are:
