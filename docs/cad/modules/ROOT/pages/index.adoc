@@ -130,6 +130,21 @@ vglrun salome [...]
 ----
 ====
 
+[[salome_on_remotedesktop]]
+=== On Remote desktop
+
+* copy {meshgems} licence file on your account in the Visu resource 
+* grab {salome} {hifimagnet} image from {sregistry}
+* use `run_salome.sh`
+
+[source,sh]
+.A script to run {salome} smoothly 
+----
+include::{examplesdir}/run_salome.sh[]
+----
+
+
+
 [[installation]]
 = Detailed Installation
 

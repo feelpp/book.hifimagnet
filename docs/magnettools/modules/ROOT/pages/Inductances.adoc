@@ -1,5 +1,6 @@
+[[inductance]]
 = Self and Mutual Inductances
-
+:page-partial:
 
 `Inductances` enables calculation of self and mutual inductances. Available options are:
 ```
