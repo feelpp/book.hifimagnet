@@ -1,0 +1,17 @@
+[[data]]
+= Data Structure
+:page-partial:
+
+* Input format:
+
+[source,txt]
+----
+include::{examplesdir}/H.d[]
+----
+
+* Output format:
+
+[source,txt]
+----
+include::{examplesdir}/H_res.d[]
+----

@@ -52,6 +52,15 @@ by the portal to your email address.
 NOTE: Right now the portal *is not* using https protocol. As a consequence, the credentials `user/password` are
 sent in clear. So be careful.
 
+[NOTE]
+====
+In the sequel, each time you start a new service that relies on the IDM component responsible for the authentification
+you will be notify by the system and will have to *authorize* this service like in the image below:
+
+image::add_service_IDM.png[Register new compnent to IDM MSOPortal]
+
+====
+
 [[overview]]
 == Overview of the Portal
 
@@ -381,6 +390,20 @@ You may connect to your account on HPC resource
 ```
 ssh -Y username@host
 ```
+
+If you cannot connect directly to the HPC resource, you may have to use alternative.
+On cesga, you can either:
+
+* connect to https://portalusuarios.cesga.es/auth[cesga user portal] with your credentials,
+* click on *Create a new Desktop* to get a remote desktop
+* in a *terminal* try to `scp user@yourmachine/.sregistry  $HOME`
+
+an alternative is to use:
+* a *VPN* solution: for cesga use *fortisvpn client*:
+```
+/opt/forticlient-sslvpn/64bit/forticlientsslvpn_cli --server gateway.cesga.es:443 --vpnuser user_email
+```
+
 ====
 
 [[running]]
@@ -409,6 +432,13 @@ The others fields are designed for more advanced users.
 
 [NOTE]
 ====
+.List of keys to be defined for being notified by email (only available in {hifimagnet})
+[options="header,footer"]
+|===
+| Key                        | Description              | Default          | Notes
+| *email_user*               | email address            |                  |
+| *email_type*               | type of notifications    |                  | workload_manager dependant (for `slurm`: `ALL,END,FAIL`)
+|===
 
 .List of keys specs for running simulations
 [options="header,footer"]
@@ -500,6 +530,38 @@ You may cleanup your working by
 ** select the *ID*, you defined in the previous step, in the *App instance * menu
 ** click on *Destroy*
 
+[[running_dataset]]
+=== Running an {hifimagnet} application in *Experiments* using datasets from *DataCatalogue*
+
+Basically the procedure is the same as <<running, above>>. The only difference here is that you need:
+
+* to select a dataset in the *DataSet* sliding menu
+* to validate your choice 
+* to enter the name of the `<cfgfile> you will use
+
+You should at the end have something like in the following image.
+
+image::portal_running_dataset.png[Selecting a dataset]
+
+
+[NOTE]
+====
+The dataset, at least those from {hifimagnet} organization in the *Data Catalogue* are
+gzipped archive that holds all the files needed to run:
+
+* a mesh or cad file
+* a `<cfgfile>`
+* a list of `json` files for physical properties and/or boundary conditions
+* eventually some more files when using some {magnettools} features (eg ...)
+
+The format of the files in a dataset are respectively described in:
+
+* for {hifimagnet} simulation 
+* for mesh and cad format
+* for {magnettoools}
+
+====
+
 [[post]]
 === Setting up an Remote Desktop resource in *Visualization*
 
@@ -527,6 +589,58 @@ it should start a web page within your browser.
 In this page you should be able to:
 
 * start a 'terminal' and check the output of your simulation
+
+The outputs of the job (ie `slurm` jobs) are stored in the `<hpc_basedir>/<hpc_workdir_prefix>_<date>_<id>`.
+The actual results for the simulation would be stored in `<hpc_basedir>/feel` directory following {feelpp} usage.
+
+[NOTE]
+====
+The result are stored in `${LUSTRE}/feel/...` if
+you have chosen to use the `<hpc_volumes>` bindmount option: eg `${LUSTRE}/feel:/feel` on cesga.
+
+Check the output of the script (aka `slurm-<id>.out`) in `<basedir>/<workdir_prefix>_<date>_<id>`
+to see the exact name of this directory.
+
+In `slurm-<id>.out` you should see lines like that at the beginning of the files:
+```
+Reading /usr/share/doc/hifimagnet/ThermoElectricModel/quarter-turn3D.cfg...
+[ Starting Feel++ ] application thermoelectric version 0.1 date 2018-Jun-07
+ . thermoelectric files are stored in /feel/thermoelectric/np_2
+ .. exports :/feel/thermoelectric/np_2/exports
+ .. logfiles :/feel/thermoelectric/np_2/logs
+[modelProperties] Loading Model Properties : "/usr/share/doc/hifimagnet/ThermoElectricModel/quarter-turn3D.json"
+ . thermoelectric files are stored in /feel/hifimagnet/ThermoElectricModel/quarter-turn3D.geo/thermoelectric-linear_V1T1_N1/np_2
+ .. exports :/feel/hifimagnet/ThermoElectricModel/quarter-turn3D.geo/thermoelectric-linear_V1T1_N1/np_2/exports
+ .. logfiles :/feel/hifimagnet/ThermoElectricModel/quarter-turn3D.geo/thermoelectric-linear_V1T1_N1/np_2/logs
+```
+
+It means that the actual simulation results are store in `${LUSTRE}/feel/hifimagnet/ThermoElectricModel/quarter-turn3D.geo/thermoelectric-linear_V1T1_N1/np_2/exports/ensightgold/`
+====
+
+[NOTE]
+====
+The `<hpc_basedir>/<hpc_workdir_prefix>_<date>_<id>` directory remains present only if you have set `<do_not_delete_workdir>` to `true`.
+The `<id>` field is a random number ...
+
+This directory holds:
+
+* `*.script`
+* `slurm-*.out`
+* `mso*.err`
+* `mso*.out`
+
+and the files coming from the dataset.
+====
+
+[TIP]
+====
+From a computer that is allowed to access HPC resources (if not use a *VPN* client):
+
+* start a terminal,
+* connect to the HPC resource with `ssh -Y <username>@<hpc_host>`,
+* run `ls -lrt <hpc_basedir>` to find the actual name of the working directory which may appears as the last output of this command.
+====
+
 * start a post-processing GUI:
 ** either by loading {uri-paraview-www}[{paraview}]
 ** or using singularity {uri-ensight-www}[{ensight}] image
@@ -536,11 +650,23 @@ For more details on using {paraview} or {ensight} please check XXXX.
 
 [NOTE]
 ====
-The result are stored in `${LUSTRE}/feel/<workdir_prefix>_<date>_<id>` if
-you have chosen to use the `<hpc_volumes>` bindmount option: `${LUSTRE}/feel:/feel`.
+In the remote desktop to get {paraview} running:
 
-Check the output of the script in `<basedir>/<workdir_prefix>_<date>_<id>`
-to see the exact name of this directory.
+* open a terminal,
+* type: `module load gcc/6.4.0 openmpi/2.1.1 paraview/5.4.0`
+====
+
+[NOTE]
+====
+For {ensight} you would need to have:
+
+* a valid license stored in you account on the HPC resource 
+* access to {ensight} singularity image from {hifimagnet} {sregistry} private collection.
+
+In the remote desktop to get {ensight} running:
+
+* open a terminal
+* use the following script (see {ensight} doc in {hifimagnet} docs).
 ====
 
 [[offering_setup]]

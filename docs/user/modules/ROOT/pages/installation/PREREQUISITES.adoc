@@ -1,14 +1,6 @@
 == PREREQUISITES
 
-* {MagnetTools}: for Optimization and Analytical calc. 
-
-** `popt`,
-** `gsl`, `freesteam`,
-** `spherepack, expokit`,
-** `sundials`,
-** `yamlcpp`, `json-spirit`
-** `nag` (only required for Optimization)
-
+* {magnetTools}: for Optimization and Analytical calc. 
 * {feelpp}: for Numerical Axi and 3D Modeling
 
 ** toolbox:

@@ -1,4 +1,6 @@
+[[transient]]
 = Transient Analysis
+:page-partial:
 
 * power failure
 ** matrix exponential
