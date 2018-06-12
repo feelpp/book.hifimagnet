@@ -93,43 +93,6 @@ link:http://www.paraview.org[ParaView]:: is an open-source, multi-platform data 
 link:https://wci.llnl.gov/simulation/computer-codes/visit[Visit]:: is a distributed, parallel visualization and graphical analysis tool for data defined on two- and three-dimensional (2D and 3D) meshes
 ====
 
-[[usage_magnettools]]
-== Using {magnettools}
-
-{magnettools} is a in-house software that provides tools to compute :
-
- * Analytically Magnetic Field,
- * Mutual and Self Inductances,
- * Axial and Radial Forces,
-
-and to analyze some Transient Analysis.
-
-{magnettools} also contains:
-
-  * Optimization procedure to define the PolyHelices insert geometry,
-  * Files for CAD and CAM of Helices.
-  
-[[usage_data]]
-include::magnettools/DataStructure.adoc[leveloffset=+2]
-
-:leveloffset=-1:
-[[usage_bmap]]
-include::magnettools/Bmap.adoc[leveloffset=+2]
-
-:leveloffset=-1:
-include::magnettools/Inductances.adoc[leveloffset=+2]
-
-:leveloffset=-1:
-include::magnettools/Fmap.adoc[leveloffset=+2]
-
-:leveloffset=-1:
-include::magnettools/Transient.adoc[leveloffset=+2]
-
-:leveloffset=-1:
-[[usage_optim]]
-include::magnettools/Optimization.adoc[leveloffset=+2]
-
-
 [[usage_hifimagnet]]
 == Using {hifimagnet}
 

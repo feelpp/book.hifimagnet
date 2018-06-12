@@ -1,4 +1,6 @@
+[[forces]]
 = Force Field Maps
+:page-partial:
 
 `Inductances` also enables the computation of Axial Forces.
 

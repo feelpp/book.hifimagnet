@@ -1,9 +1,3 @@
-= Data Structure
-
-* Input format:
-
-[source,sh]
-----
 #Power[MW]	Current[A]	Safety Ratio[]	T_ref[°C]	SymetryFlag
 12.5		31000		0.8		20		Sym
 #Helices	N_Elem
@@ -16,28 +10,6 @@
 0.
 #External_Magnets
 0
-----
-
-* Output format:
-
-[source,sh]
-----
-# author: trophime
-# date : Mon Aug  7 15:45:15 2006
-
-#Power[MW]	Current[A]	Safety Ratio[]	T_ref[°C]	SymetryFlag
-12.5		31000		0.8		20		NoSym
-#Helices	N_Elem
-14		56
-#N	R1[m]		R2[m]		HalfL[m]	Rho[Ohm.m]	Alpha[1/K]	E_Max[Pa]	K[W/(m.K)]	h[W/(m^2.K)]	<T_Water>[°C]	T_Max[°C]	DT_Water[°C]	z_inf[m]
-#N	     		     		        	T_o=20°C  	T_o=20°C  	         	T_o=10O°C 	            	             	
-4	1.930000e-02	2.420000e-02	7.705000e-02	1.992032e-08	0.000000e+00	3.600000e+08	3.800000e+02	8.500000e+04	3.000000e+01	1.000000e+02	0.000000e+00	0.000000e+00
-...
-4	1.703000e-01	1.860000e-01	1.641500e-01	2.087683e-08	0.000000e+00	3.740000e+08	3.800000e+02	8.500000e+04	3.000000e+01	1.000000e+02	0.000000e+00	0.000000e+00
-0.
-#External_Magnets
-0
-
 
 #Bz(0)[tesla]	Power[MW]	Bz_total(0)[tesla]
 2.754479e+01	1.250000e+01	2.754479e+01
@@ -68,4 +40,3 @@
 
 MARGE DE SECURITE CONTRAINTES= 2.000000e+01 %
 	
-----

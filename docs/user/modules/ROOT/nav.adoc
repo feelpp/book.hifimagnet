@@ -10,7 +10,7 @@
 ** xref:index.adoc#installation_scratch[From scratch]
 
 * xref:index.adoc#usage[Usage]
-** xref:index.adoc#usage_magnettools[{magnettools}]
+// ** xref:magnettools:ROOT:index.adoc#usage[{magnettools}]
 *** xref:index.adoc#usage_bmap[Magnetic Field mapping]
 *** xref:index.adoc#usage_optim[Optimization]
 

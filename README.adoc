@@ -72,13 +72,14 @@ docker pull antora/antora
 ```
 Then simply start the docker image:
 ```
-docker run --entrypoint ash -v `pwd`:/antora -p 80:5000 --rm -it antora/antora
+docker run --entrypoint ash -v `pwd`:/antora/hifimagnet -v $HOME/book.feelpp.org:/antora/book.feelpp.org  -p 80:5000
 ```
-the `pwd` shall be the source dir of the book.
+the `pwd` shall be the source dir of the book and `$HOME/book.feelpp.org` the source dir of feelpp book.
 
 Then in the container:
 ```
 npm i -g serve@6.5.8
+cd hifimagnet
 antora antora-local-feelpp-doc.yml
 serve build/site
 ```
