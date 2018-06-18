@@ -17,3 +17,4 @@ package.json.*
 node_modules
 build
 .sass-cache
+/_site/
