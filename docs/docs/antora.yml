@@ -3,3 +3,5 @@ title: HiFiMagnet Documentation
 version: "stable"
 nav:
 - modules/ROOT/nav.adoc
+- modules/cad/nav.adoc
+- modules/model/nav.adoc

@@ -7,28 +7,22 @@ site:
 content:
   sources:
   - url: https://github.com/feelpp/book.hifimagnet
-    branches: feature/antora
+    branches: master
     start_path: docs/docs
   - url: https://github.com/feelpp/book.hifimagnet
-    branches: feature/antora
+    branches: master
     start_path: docs/user
   - url: https://github.com/feelpp/book.hifimagnet
-    branches: feature/antora
-    start_path: docs/cad
-  - url: https://github.com/feelpp/book.hifimagnet
-    branches: feature/antora
+    branches: master
     start_path: docs/benchmarks
   - url: https://github.com/feelpp/book.hifimagnet
-    branches: feature/antora
-    start_path: docs/model
-  - url: https://github.com/feelpp/book.hifimagnet
-    branches: feature/antora
+    branches: master
     start_path: docs/mso4sc
   - url: https://github.com/feelpp/book.hifimagnet
-    branches: feature/antora
+    branches: master
     start_path: docs/dev
   - url: https://github.com/feelpp/book.hifimagnet
-    branches: feature/antora
+    branches: master
     start_path: docs/post
   - url: https://github.com/feelpp/book.feelpp.org
     branches: master
