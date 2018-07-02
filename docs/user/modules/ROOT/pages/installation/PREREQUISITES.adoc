@@ -1,0 +1,12 @@
+== PREREQUISITES
+
+* {magnetTools}: for Optimization and Analytical calc. 
+* {feelpp}: for Numerical Axi and 3D Modeling
+
+** toolbox:
+** RB framework:
+
+* {Salome}: for GUI/TUI CAD and Meshing features
+
+* gmsh:
+* {MeshGems}: for Meshing features

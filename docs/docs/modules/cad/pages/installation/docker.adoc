@@ -1,0 +1,9 @@
+= Docker image
+
+* build {salome} following previous step with ...
+
+just verify that...
+
+* custom the image with an adapted graphic driver
+
+

@@ -1,0 +1,46 @@
+= Using Official binary
+
+This is not the recommended installation and this method is supported only starting from {salome} 8.3.0.
+
+If a {salome} tarball exist for your os, just retrieve it from the http://salome-platform.org/[{salome} website].
+Note that you would need to be a registered user to download the official binary. Otherwise, you could try to build
+{salome} from scratch followings instructions given above.
+
+Once you have binary, just untar it and try to run {salome} from a command line.
+
+[NOTE]
+====
+To build a container from Official {salome} binaries, you can custom create a custom `Dockerfile-official`
+from the template `Dockerfile-official.in` in http://github.com/hifimagnet/docker/salome[{hifimagnet} docker repository]
+Do not forget to create an account on http://salome-platform.org/[{salome} website].
+
+[source,sh]
+----
+cp Dockerfile-official.in Dockerfile-official
+perl -pi -e "s|DIST|$DIST|" Dockerfile-official
+
+cp WELCOME-official WELCOME
+perl -pi -e "s|VERSION|8.3.0|" WELCOME
+perl -pi -e "s|SVERSION|V8_3_0|" WELCOME
+perl -pi -e "s|DIST|$DIST|" WELCOME
+
+docker build \
+   --build-arg HTTP_USER=... \
+   --build-arg HTTP_PASSWD=... \
+   --build-arg VERSION=8.3.0 \
+   --build-arg ARG SVERSION=V8_3_0 \
+   --build-arg ARG GRAPHICS=nvidia \
+   --build-arg ARG DIST=jessie \
+   --build-arg ARG MESHGEMS=0 \
+   -t salome-8.3.0:new -f Dockerfile-official .
+
+rm -f WELCOME
+rm -f Dockerfile-official
+----
+====
+
+To install {hifimagnet} {salome} plugin you have then 2 options:
+
+* use salomeTools if they are available,....
+* use the installer provided in {hifimagnet] {salome} plugin source,...
+

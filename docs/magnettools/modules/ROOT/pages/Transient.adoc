@@ -1,0 +1,39 @@
+[[transient]]
+= Transient Analysis
+:page-partial:
+
+* power failure
+** matrix exponential
+
+`powerfailure` enables simulations of transients (ie. power failure) using expokit 
+
+** implicit/explicit euler
+
+`transient_ida` enables simulations of transients (ie. power failure) using Sundials IDA lib. Available options are 
+ 
+```
+ --init=STRING            set init_current filename
+ --output=STRING          set output filename
+ --input=STRING           load input filename
+ --save=STRING            save input data to filename
+ --solver=INT             activate solver (0: dense, 1:gmres, 2:tfqmr)
+ --params=STRING          load solver params from file
+ --verbose                activate verbose mode
+ --quench                 activate quench mode (add quench resistance to supra
+ --aubert                 activate aubert init. current calculation mode
+ --screen=INT             add screen definition
+ --burnout=STRING         index of the bitter external magnet with a short-circuit (i j)
+ --shorted_in_series      bitter external magnet(s) with a short-circuit are in series (0: false by default)
+ --tolerance=DOUBLE       specify Optimaly tolerance (default is 1.0e-4)
+ --grid_size=STRING       set grid size of B calculation (r0 r1 z0 z1)
+ --grid_dim=STRING        set grid dim of B calculation (n_r n_z)
+ --ascii                  ascii write mode for ensight
+ --induct_file=STRING     save/load inductances from file
+ --fz_file=STRING         save/load forces from file
+ --num_integ=INT          specify num_integ size (default 100)
+ --num_eval=INT           specify num_eval size (default 100)
+ --no_ensight             disable output for ensight
+ --omp_off                turn off openm
+```
+
+* critical scenario: bitter burnout

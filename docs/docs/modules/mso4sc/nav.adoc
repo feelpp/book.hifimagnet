@@ -1,0 +1,15 @@
+* xref:index.adoc#connect[Create an account]
+* xref:index.adoc#overview[OverView of the Portal]
+
+* xref:index.adoc#registerapp[DevUser]
+** xref:index.adoc#registerapp[Validate an *EndUser*]
+** xref:index.adoc#registerapp[Register App]
+** xref:index.adoc#validorder[Validate an order]
+
+* xref:index.adoc#enduser[EndUser]
+** xref:index.adoc#purchase[Purchasing an app]
+// ** xref:index.adoc#pre[Pre-processing]
+** xref:index.adoc#data[Uploading to DataCatalogue]
+** xref:index.adoc#running[Running an app]
+** xref:index.adoc#post[Viewing results]
+

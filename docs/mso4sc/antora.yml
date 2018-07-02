@@ -1,0 +1,5 @@
+name: hifimagnet
+title: Application Hifimagnet
+version: "stable"
+nav:
+- modules/ROOT/nav.adoc

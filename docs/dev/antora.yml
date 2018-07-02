@@ -1,0 +1,5 @@
+name: dev_h
+title: HiFiMagnet Developper Documentation
+version: "stable"
+nav:
+- modules/ROOT/nav.adoc
