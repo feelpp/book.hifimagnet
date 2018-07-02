@@ -1,0 +1,23 @@
+= {hifimagnet} Benchmarks documentation
+include::{partialsdir}/header-uri.adoc[]
+include::{partialsdir}/header-levels.adoc[]
+
+Welcome to {hifimagnet} Benchmarks documentation!
+
+
+== Cross rectangular Section Torus
+
+=== ThermoElecModel
+
+=== Magnetostatic
+
+=== Elasticity
+
+
+== Bitter Magnet
+
+== Helix Magnet
+
+== LowField Benchmark
+
+== HL-31

@@ -1,0 +1,72 @@
+= Building from scratch
+
+* First create a directory to hold salome tarball release:
+
+[source,sh]
+----
+mkdir -p $HOME/Salome_Packages
+----
+
+* Prepare the archives directory in `SALOME-${VERSION}/ARCHIVES`
+that contains the sources tarballs of the pre-requisites
+
+* Check or create a new application in `PROJECT/applications`,
+see for instance link:https://github.com/feelpp/hifimagnet/blob/Salome_8.3.0/docker/salome/PROJECT/applications/SALOME-8.3.0-native.pyconf[SALOME-8.3.0.pyconf]
+
+* Launch the building of salome
+
+[source,sh]
+----
+./build_salome_new.sh -v $VERSION -p \$DIST -m [-d]
+----
+
+where `-m` enable MPI support and -d is used for debugging purposes.
+
+The actual build process involves:
+
+* the creation of a temporary docker image to hold
+the salomeTools suite that perform the installation.
+The prerequisites are:
+
+** pyconf file describing the requested configuration
+** directory SALOME_$VERSION: holding the archive tarball of the dependencies,
+
+* The Salome tarball is written into $HOME/Salome_Packages directory
+* the creation of a docker image holding VERSION of Salome plus a graphic driver.
+
+[NOTE]
+====
+Only drive for nvidia is installed
+====
+
+The image can be pushed to link:https://hub.docker.com/r/feelpp/salome/[feelpp/salome dockerhub].
+[source,sh]
+----
+docker login
+docker tag ...
+docker push
+----
+
+
+[TIP]
+====
+On Windows 10 Pro you have to:
+
+* install MobaXterm to get a X11 server,
+* install WSL,
+* install Debian/Stretch from Windows Store,
+
+To install {salome} in WSL Debian/Stretch:
+* start Debian
+* setup lncmi debian repository
+* install {salome} binary for Debian/Stretch in Debain WSL.
+
+Then to run {salome}:
+
+* start MobaXterm to get X11 up and running
+* launch Debian from menu or by typing debian.exe in a powershell
+* from the "debian" terminal, run {salome}
+
+Note that you may have to add some missing packages to get salome
+working. 
+====

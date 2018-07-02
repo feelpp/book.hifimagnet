@@ -1,0 +1,5 @@
+name: cad
+title: HiFiMagnet Geometry Modeling
+version: "0.1"
+nav:
+- modules/ROOT/nav.adoc

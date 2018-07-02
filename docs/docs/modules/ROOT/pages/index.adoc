@@ -1,0 +1,135 @@
+= {hifimagnet} documentation
+:page-feelpp_book_cover: true
+include::_partials/header-macro.adoc[]
+include::_partials/header-uri.adoc[]
+
+
+Welcome to {hifimagnet} documentation!
+
+NOTE: The {hifimagnet} documentations introduce the {hifimagnet} project, models, and
+process to build and run an application.
+New user should begin with the xref:user_h:ROOT:index.adoc[User Manual].
+
+IMPORTANT: This documentation is based on http://www.antora.org[antora].
+You wish to contribute? Please consult the <<contribute, contribute>> section to learn how to proceed!
+
+[[introduction]]
+== Introduction
+
+High Field Magnets are an essential ingredient for many research areas (e.g. High Energy Physics in CERN, High resolution MRI for NeuroSciences).
+The {uri-lncmi-www}[Laboratoire National de Champs Magnétiques Intenses] (LNCMI) is a French large scale facility, also part of {uri-emfl-www}[European Magnetic Field Laboratory] (EMFL),
+that build and provides such magnets in solenoidal configuration, enabling researchers to perform experiments in the highest possible magnetic field.
+DC magnetic fields up to 37 T are provided at the Grenoble site and pulsed fields up to 99 T at Toulouse.
+
+The technology used for DC magnets relies on the *polyhelix* technic. The magnet consists in a set of Copper alloy tubes,
+in  which an helical cut has been machined by Electric Discharge Machining (EDM), connected into series. Each tube is refered as an *helix* and the resulting magnet
+is the so-called *PolyHelix insert* cut by EDM.
+
+[cols="2",options="header"]
+|===
+^.^| image:Magnet_vue_eclatee.png[caption="An artistic view of a 14 *PolyHelices insert*",width=400]
+^.^| image:Helices.png[caption="Detailed view of the connection between 2 *helices*model",width=300]
+|===
+
+
+The use of classical resistive materials as Copper alloy enables to reach higher magnetic field than those provided by magnets
+made out of Low Temperature Superconductor material (namely 24.5 tesla). To achieve these values the magnets will be powered by 24 MW and
+need some water cooling is needed to dissipate the Joules losses and keep the magnet temperature bellow some heuristic threshold.
+
+
+== What is {hifimagnet}?
+
+{hifimagnet} is a research project carried out by the LNCMI in collaboration with
+Institut de Recherche Mathématique Avancée (IRMA) and Cemosis.
+
+The goals are twofold:
+
+* to build a hierarchy of numerical models ranging from 2D axi to
+  3D, and including more and more physics. The idea here is to
+  reconsider the hypothesis that are needed to derive  the
+  semi-analytical approximations upon which our standard design and
+  optimization procedures are based and ultimately to quantify the
+  hypotheses effects;
+* to complement our standard design by performing sensitivity
+  analysis and uncertainty quantification  on material properties,
+  operational parameters and geometric
+  clearances. It allows e.g. to identify the important parameters, to
+  perform quantile estimation, to compute probability of failure and
+  ultimately to provide safety operational controls.
+
+Models have been implemented with the finite element library {uri-feelpp-sources}[Feel++]
+ and the {feelpp} toolboxes.
+
+[[manuals]]
+== Manuals references
+
+[cols="4",frame="none"]
+|===
+^.^| xref:model_h:ROOT:index.adoc[image:Model.png[model,300]]
+^.^| xref:cad:ROOT:index.adoc[image:HL-31-cadgeom.png[insert_cad,200]]
+^.^| xref:user_h:ROOT:index.adoc[image:HL-31-model.png[insert_disp,200]]
+^.^| xref:benchmarks_h:ROOT:index.adoc[image:bitter-adapt.png[Bitter,300]]
+^.^| xref:model_h:ROOT:index.adoc[Model manual]
+^.^| xref:cad:ROOT:index.adoc[CAD manual]
+^.^| xref:user_h:ROOT:index.adoc[User manual]
+^.^| xref:benchmarks_h:ROOT:index.adoc[Benchmarks manual]
+|===
+
+
+
+[[help]]
+== Help and Support
+
+We're always happy to help out with {hifimagnet} or any other questions you might
+have. You can ask a question or signal an issue in  a chat room:
+
+Chat using Slack:: link:https://feelpp.slack.com/messages/G6L3X3C94[image:tools/joinslack.svg[]]
+// Chat using Gitter (deprecated):: image::https://badges.gitter.im/Join%20In.svg[Gitter, link=https://gitter.im/feelpp/hifimagnet]
+
+To contribute to the development of {hifimagnet} see the dev section.
+
+For help or questions more related to {feelpp} see http://docs.feelpp.org/docs/stable/#_get_help[here].
+
+
+[[contribute]]
+== Contribute to this documentation
+
+You can contribute to improve this documentation on
+https://github.com/feelpp/book.hifimagnet[GitHub].
+
+To contribute to {hifimagnet}...
+
+[[copyright]]
+== Copyright and Licensing
+
+Copyright (C) 2010-2017 by {feelpp} Consortium +
+Copyright (C) 2005-2015 by Université Joseph Fourier (Grenoble, France) +
+Copyright (C) 2005-2015 by University of Coimbra (Portugal) +
+Copyright (C) 2011-2015 by Université de Strasbourg (France) +
+Copyright (C) 2011-2015 by CNRS (France) +
+Copyright (C) 2005-2006 by Ecole Polytechnique Fédérale de Lausanne (EPFL, Switzerland) +
+
+See the LICENSE file for details
+
+This book is  part of {hifimagnet} and is licensed under image::http://creativecommons.org/images/public/cc-LGPL-a.png[link="http://creativecommons.org/licenses/LGPL/2.1/", align="center"].
+
+[[authors]]
+== Authors
+
+{hifimagnet} development is led by https://github.com/ctrophime[Christophe Trophime]
+with the close collaboration of https://github.com/prudhomm[Christophe Prud'homme] and https://github.com/vincentchabannes[Vincent Chabannes].
+It has received contributions from {uri-contributors}[many other individuals].
+
+For the book, special thanks to link:{uri-github}MayaffreG[Gabriel Mayaffre].
+
+== Funding
+
+{hifimagnet} has been funded by various sources and especially
+
+[cols="4"]
+|===
+| image:logos/logo_anr.png[caption="ANR",width=100]
+| image:logos/logo_irmia.png[caption="IRMIA",width=100,link="http://irma.math.unistra.fr/"]
+| image:logos/logo_prace.png[caption="Prace",width="100",link="http://www.prace-ri.eu"]
+| image:logos/logo_mso4sc.png[caption="MSO4C",width="100",link="http://mso4sc.elmerex.hu/"]
+|===
