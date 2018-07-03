@@ -1,7 +1,8 @@
-** CAD
+** xref:index.adoc#salome_plugin[CAD: {salome} plugin]
 *** xref:index.adoc#introduction[Introduction]
 *** xref:index.adoc#quickstart[Quickstart]
-**** xref:index.adoc#qs_installation[installation]
-**** xref:index.adoc#qs_reference[running]
-*** xref:index.adoc#installation[Installation]
+**** xref:index.adoc#qs_getting[Getting {salome}]
+**** xref:index.adoc#qs_reference[Running {salome}]
+*** xref:index.adoc#data[Data Structure]
 *** xref:index.adoc#usage[Usage]
+*** xref:index.adoc#installation[Installation]

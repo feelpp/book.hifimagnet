@@ -1,0 +1,18 @@
+!<Helix>
+name: HL-31_H1, <1>
+dble: true, <2>
+odd: true, <3>
+r:, <4>
+  - 19.3
+  - 24.2
+z:, <5>
+  - -226
+  - 108
+cutwidth: 0.22, <6>
+axi: !<ModelAxi>, <7>
+  ...
+m3d: !<Model3D>, <8>
+  ...
+shape: !<Shape>, <9>
+  ...
+materials:, <10>
