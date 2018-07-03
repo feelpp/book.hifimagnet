@@ -56,6 +56,12 @@ link:https://raw.githubusercontent.com/feelpp/hifimagnet/develop/docker/salome/b
 ====
 
 [[qs_reference]]
+== Getting {hifimagnet} Salome plugin
+
+=== sregistry
+=== dockerhub
+=== install from...
+
 == Running {hifimagnet} Salome plugin
 
 `-t` option may be used to switch to the TUI (eg. batch) mode.
@@ -199,14 +205,14 @@ Examples:
 
 * Test if {meshgems} is properly installed:
 ```
-SALOMEDIR=/opt/SALOME_8.3.0_MPI-DB9.3
 singularity exec \
   -H $HOME:/home/$USER \
   --pwd /home/$USER/Salome \
   -B $STORE/Distene/:/opt/DISTENE/DLim \
   feelpp_salome-mso4sc.simg \
-  $SALOMEDIR/salome -t ghs3d_demo.py```
+  $SALOMEDIR/salome -t ghs3d_demo.py
 ```
+where `SALOMEDIR=/opt/SALOME_8.3.0_MPI-DB9.3` is {salome} install directory.
 
 * Create a simple med mesh and convert it to msh format in TUI mode:
 ```
@@ -224,106 +230,4 @@ singularity exec \
    feelpp_salome-mso4sc.simg \
    gmsh -3 -bin testcube.med -o testcube.msh
 ```
-
-* A generic script for running {salome} {singularity} image  on cesga: 
-----
-#!/bin/bash
-
-module load singularity
-
-usage(){
-   echo ""
-   echo "Description:"
-   echo "   Run salome within Singularity image"
-   echo ""
-   echo "Usage:"
-   echo "   script.sh [ <option> ] ... ]"
-   echo ""
-   echo "Options:"
-   echo ""
-   echo "-t Activate Salome TUI mode"
-   echo "-s Specify python script to be used (only valid when TUI is on)"
-   echo "-a Specifiy parameters of the python script (only valid in combination with -s, optional)"
-   echo "-i Change singularity image (default: feelpp_salome-mso4sc.simg)"
-   echo "-r Change singularity image directory (default: $LUSTRE/singularity_images)"
-   echo "-d Activate debug mode"
-   echo ""
-   exit 1
-}
-
-DEBUG=0
-
-
-#########################################################
-## parse parameters
-##########################################################
-while getopts "hts:a:i:d" option ; do
-   case $option in
-       h ) usage ;;
-       t ) TUI=1 ;;
-       s ) SCRIPT=$OPTARG ;;
-       a ) SCRIPT_ARGS=$OPTARG ;;
-       i ) IMAGE=$OPTARG ;;
-       r ) SINGULARITY_DIR=$OPTARG ;;
-       d ) DEBUG=1 ;;
-       ? ) usage ;;
-   esac
-done
-# shift to have the good number of other args
-shift $((OPTIND - 1))
-
-# Optionally set VERSION and others if none is defined. 
-: ${IMAGE=feelpp_salome-mso4sc.simg}
-: ${TUI=0}
-: ${SCRIPT=""}
-: ${SCRIPT_ARGS=""}
-
-: ${SINGULARITY_DIR=$LUSTRE/singularity_images}
-
-if [ $TUI = "1" ]; then
-
-    if [ -z $SCRIPT ]; then
-	echo "Trying to run salome in TUI mode without a script"
-	echo "you need to define a python script"
-	usage
-    fi
-
-    if [ -z $SCRIPT_ARGS ]; then
-	singularity exec --nv \
-	    -H $HOME:/home/$USER \
-	    -B /mnt \
-	    -B /scratch \
-	    -B $STORE/Distene:/opt/DISTENE/DLim \
-	    $SINGULARITY_DIR/$IMAGE \
-	    salome -t $SCRIPT
-    else
-	singularity exec --nv \
-	    -H $HOME:/home/$USER \
-	    -B /mnt \
-	    -B /scratch \
-	    -B $STORE/Distene:/opt/DISTENE/DLim \
-	    $SINGULARITY_DIR/$IMAGE \
-	    salome -t $SCRIPT args:$SCRIPT_ARGS
-    fi 
-else
-    if [ -z $SCRIPT ]; then
-    singularity exec --nv \
-	-H $HOME:/home/$USER \
-	-B /mnt \
-	-B /scratch \
-	-B $STORE/Distene:/opt/DISTENE/DLim \
-	$SINGULARITY_DIR/$IMAGE \
-	vglrun salome 
-    else
-    singularity exec --nv \
-	-H $HOME:/home/$USER \
-	-B /mnt \
-	-B /scratch \
-	-B $STORE/Distene:/opt/DISTENE/DLim \
-	$SINGULARITY_DIR/$IMAGE \
-	vglrun salome $SCRIPT
-    else
-    fi
-fi
-----
 

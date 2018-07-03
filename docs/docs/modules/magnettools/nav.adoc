@@ -1,0 +1,8 @@
+** MagnetTools
+*** xref:index.adoc#installation[Installation]
+*** xref:DataStructure.adoc[Data]
+*** xref:Bmap.adoc[Magnetic Field Map]
+// *** xref:Inductances.adoc[leveloffset=+2]
+// *** xref:Fmap.adoc[leveloffset=+2]
+*** xref:Transient.adoc[Transient Analysis]
+*** xref:Optimization.adoc[Optimization]
