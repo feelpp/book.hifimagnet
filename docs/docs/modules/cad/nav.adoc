@@ -1,7 +1,7 @@
-* CAD
-** xref:index.adoc#introduction[Introduction]
-** xref:index.adoc#quickstart[Quickstart]
-*** xref:index.adoc#qs_installation[installation]
-*** xref:index.adoc#qs_reference[running]
-** xref:index.adoc#installation[Installation]
-** xref:index.adoc#usage[Usage]
+** CAD
+*** xref:index.adoc#introduction[Introduction]
+*** xref:index.adoc#quickstart[Quickstart]
+**** xref:index.adoc#qs_installation[installation]
+**** xref:index.adoc#qs_reference[running]
+*** xref:index.adoc#installation[Installation]
+*** xref:index.adoc#usage[Usage]

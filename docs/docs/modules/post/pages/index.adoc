@@ -5,6 +5,7 @@
 
 Welcome to {hifimagnet} processing documentation!
 
+[[paraview]]
 = Using {paraview}
 
 [[paraview_on_remotedesktop]]
@@ -15,7 +16,7 @@ In the {cesga} remote desktop to get {paraview} running:
 * open a terminal,
 * type: `module load gcc/6.4.0 openmpi/2.1.1 paraview/5.4.0`
 
-
+[[ensight]]
 = Using {ensight}
 
 [[ensight_on_remotedesktop]]
