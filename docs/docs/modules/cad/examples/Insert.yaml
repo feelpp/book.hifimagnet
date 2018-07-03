@@ -1,5 +1,5 @@
 !<Insert>
-name: "HL-31", >1>
+name: "HL-31", <1>
 Helices:, <2>
   - HL-31_H1
   ...

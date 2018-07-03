@@ -24,15 +24,21 @@ Method used: SQP programming with Nag.
 ----
 
 
-NOTE: Each helix is splitted in a given number of sections alonz stem[z] axis.
+NOTE: Each helix is splitted in a given number of sections stem:[S_i] along stem:[z] axis.
 
 
 The input and output result use the formats desribed in xref:DataStructure.adoc.
-To build the actual 3D geometry, that shall reflect, this Axi distribution, we use
+To build the actual 3D geometry, that shall reflect, this axi current density distribution, we use
 the following assumption:
 
-*
-*
+* the nominal current is stem:[I_o],
+* each element stem:[S_i] will be represented to an helix with a pitch  stem:[p] and a number of turn stem:[n] such that
+carries the same current as the element:
+
+[stem]
+++++
+n * I_o = \int_{S_i} \mathbf{j} \cdot \mathbf{n} \,d\Gamma
+++++
 
 The optimization result will be used to define the helical cut thet would be machined
 in each copper alloy tubes:

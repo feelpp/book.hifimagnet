@@ -134,8 +134,8 @@ xhost local:root
 docker run -ti --rm -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix \
    -v $HOME/.Xauthority:/home/feelpp/.Xauthority --net=host --pid=host --ipc=host \
    --env QT_X11_NO_MITSHM=1 \
-   -v $HOME/Salome_Packages:/home/feelpp/exports \
-   feelpp/salome:8.3.0-nvidia
+   -v /opt/DISTENE/DLim:/opt/DISTENE/DLim \
+   feelpp/salome:8.3.0-nvidia salome [-t] ...
 ```
 
 [TIP]
@@ -154,7 +154,7 @@ be described in the <<data, data structure section>>.
 [source,sh]
 .Generation of an Helix
 ----
-salome -m GEOM,SMESH,HIFIMAGNET [-t] \
+salome [-m GEOM,SMESH,HIFIMAGNET] [-t] \
    ${SALOME_INSTALLDIR}/HIFIMAGNET/bin/salome/HIFIMAGNET_Cmd.py \
    args:--helix=HL-31-H1.yaml[,--mesh]
 ----
@@ -163,7 +163,7 @@ salome -m GEOM,SMESH,HIFIMAGNET [-t] \
 [source,sh]
 .Generation of an connection Ring
 ----
-salome -m GEOM,SMESH,HIFIMAGNET [-t] \
+salome [-m GEOM,SMESH,HIFIMAGNET] [-t] \
    ${SALOME_INSTALLDIR}/HIFIMAGNET/bin/salome/HIFIMAGNET_Cmd.py \
    args:--ring=Ring-H1H2.yaml[,--mesh]
 ----
@@ -172,11 +172,12 @@ salome -m GEOM,SMESH,HIFIMAGNET [-t] \
 [source,sh]
 .Generation of an Insert in TUI mode
 ----
-salome -m GEOM,SMESH,HIFIMAGNET [-t] \
+salome [-m GEOM,SMESH,HIFIMAGNET] [-t] \
    ${SALOME_INSTALLDIR}/HIFIMAGNET/bin/salome/HIFIMAGNET_Cmd.py \
    args:--insert=HL-31.yaml[,--air,--mesh]
 ----
 
+`${SALOME_INSTALLDIR}` is the install root directories of {salome} modules, eg `/opt/SALOME-8.4.0-Debian-DB9.4/BINARIES-DB9.4`.
 
 [TIP]
 ====
@@ -261,9 +262,24 @@ include::{examplesdir}/H_m3d.yaml[]
 include::{examplesdir}/H_shape.yaml[]
 ----
 
+=[[shape]]
+[source,txt]
+----
+include::{examplesdir}/Shape.dat[]
+----
+
 === `helical cut` structure
 
-== ring
+The geometry of the `helical cut` is computed using {magnettools}. It provides
+the coordinates of the cut in developed form which will be mapped onto the outer cylinder boundary of an helix.
+
+=[[helix_cut]]
+[source,txt]
+----
+include::{examplesdir}/H_cut_salome.dat[]
+----
+
+= ring
 
 A ring ensure the electrical and mechanical connection between 2 consecutive helices.
 It is a cylinder eventually with stem:[n] cylindrical slots, disposed at regular angular interval stem:[angle] in it to ensure a proper cooling of the connected helices.
@@ -297,11 +313,56 @@ The first time the mesh is generated, a file , namely `Insert_meshdata.yaml` whe
 the actual yaml cfg file used in the main command line, is also created containing main mesh parameters.
 This file may be later used to regenerate the same mesh or modify to get a finner or coarser mesh.
 
+So far only {meshgems} mesher is supported.
+
+Here is an example of the yaml cfg file:
+
 [[mesh]]
 [source,yml]
 ----
 include::{examplesdir}/Insert_meshdata.yaml[]
 ----
+<0> name of the CAD geometry without extension
+<1> basename of the output mesh
+<2> mesh algorithm used for surfacic meshes
+<3> mesh algorithm used for volumic meshes
+<4> maximum ratio between the lengths of two adjacent edges.
+<5> allows checking input and output files of MG-Tetra software, while usually these files are removed after the launch of the mesher. The log file (if any) is also kept if this option is `1`.
+<6> allows grouping volumes into domains
+<7> allows choosing the required optimization level (higher level of optimization provides better mesh, but can be time-consuming):
+
+* 1: none
+* 2: light
+* 3: medium (standard)
+* 4: standard+
+* 5: strong
+
+<8> removes or not files upon mesh completion 
+<9> launches MG-Tetra software with work space limited to the specified amount of RAM, in Mbytes. If this option is checked off, the software will be launched with 7O% of the total RAM space. 
+<10> list of input data for the surfacic mesher provided for each boundary group defined in the CAD geometry 
+
+The input data for the surfacic mesher (or hypothesys in {salome} formalism) are defined as follows:
+
+[[surfhypoth]]
+[source,yml]
+----
+include::{examplesdir}/surfhypot.yaml[]
+----
+<0> the name of the consider boundary group
+<1> the actual hypothesis are:
+
+* `2` for
+* `1` for
+* `physsize` for setting the requested element size in *mm*
+* `minsize` for setting the minimum allowed element size in *mm*
+* `maxsize` for setting the maximum allowed size in *mm*
+* `chordalerror` for setting the requested chordalerror size in *mm*
+
+[NOTE]
+====
+The `chordalerror` is the maximum desired distance between a triangle and its supporting CAD surface.
+The smaller this distance is, the closer the mesh is to the exact surface (only available in isotropic meshing).
+====
 
 [[usage]]
 = Using {salome}

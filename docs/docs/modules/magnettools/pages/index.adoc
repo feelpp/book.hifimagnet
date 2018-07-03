@@ -1,4 +1,4 @@
-[[user_manual]]
+[[magnettools]]
 = {magnettools} user manual
 
 Welcome to {magnettools} manual documentation!

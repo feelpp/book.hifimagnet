@@ -1,4 +1,4 @@
-** MagnetTools
+** xref:index.adoc#magnettools[MagnetTools]
 *** xref:index.adoc#installation[Installation]
 *** xref:DataStructure.adoc[Data]
 *** xref:Bmap.adoc[Magnetic Field Map]
