@@ -32,3 +32,5 @@ asciidoc:
     paraview: ParaView
     ensight: EnSight
     girder: Girder
+    fiware: Fiware
+    cesga: Cesga

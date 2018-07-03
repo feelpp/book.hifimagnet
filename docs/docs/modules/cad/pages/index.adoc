@@ -1,3 +1,4 @@
+[[salome_plugin]]
 = {hifimagnet} Salome Plugin
 // include::{partialsdir}/header-uri.adoc[]
 // include::{partialsdir}/header-levels.adoc[]
@@ -37,8 +38,8 @@ and give examples for most common operations.
 
 Custom installation, eg. for native installation, is detailed in appendix.
 
-[[qs_installation]]
-== Installation Quick Start
+[[qs_getting]]
+== Getting {hifimagnet} Salome plugin
 
 They are several way to use {hifimagnet} Salome plugin. The easiest way
 is to use container, either Docker based or Singularity based. If your system support
@@ -46,6 +47,12 @@ singularity containers we recommend to use them instead of Docker ones.
 
 You can download docker images from link:https://hub.docker.com/r/feelpp/salome/[feelpp/salome dockerhub].
 Note that the images are private for the moment.
+
+[NOTE]
+====
+if you do no need {hifimagnet} {salome} plugin you can use a public version of {salome } docker image
+that you may find in link:https://hub.docker.com/r/trophime/[dockerhub].
+====
 
 [TIP]
 ====
@@ -55,24 +62,66 @@ card you should have a look at the
 link:https://raw.githubusercontent.com/feelpp/hifimagnet/develop/docker/salome/build_salome.sh?token=ABP6f83LtdGN4ApDyGYlwkle_5jZeSy0ks5aeEu2wA%3D%3D[scripts] generating the images.
 ====
 
-[[qs_reference]]
-== Getting {hifimagnet} Salome plugin
+=== from sregistry
 
-=== sregistry
-=== dockerhub
+To get the {salome} singularity image you need first to get you token on a valid sregistry:
+
+* connect to the {sregistry} service (eg link:https://sregistry.srv.cesga.es/[cesga sregistry] use the {fiware} authentification}
+* in the top right scrolling menu with your user id, select *Token*
+* copy the line to a `.sregistry` in your home directory
+
+Then from a terminal:
+
+```
+export SREGISTRY_CLIENT=registry
+export SREGISTRY_CLIENT_SECRETS=~/.sregistry-cesga
+[export SREGISTRY_STORAGE=...]
+
+sregistry pull --name salome-8.4.0.simg hifimagnet/salome:8.4.0
+```
+
+[NOTE]
+====
+`SREGISTRY_STORAGE` enables you to specify a directory to hold the singularity images.
+By default images will be downloaded to `$HOME/.sregistry`
+====
+
+[[rename_sing_image]]
+You can eventually rename the image using:
+
+```
+sregistry rename hifimagnet/salome:8.4.0 salome-8.4.0.simg
+```
+
+=== from dockerhub
+
+You need to be member of {feelpp} team on link:https://hub.docker.com/[dockerhub] to be able to download the image.
+To get the image:
+
+```
+docker login
+docker pull feelpp/salome:8.3.0-nvidia
+```
+
+Check the existing docker images on link:https://hub.docker.com/r/feelpp/salome/[feelpp/salome dockerhub]
+
+
 === install from...
 
+[[qs_reference]]
 == Running {hifimagnet} Salome plugin
 
 `-t` option may be used to switch to the TUI (eg. batch) mode.
 
 === from Singularity container
 
+Assuming we use `salome.simg` singularity image:
+
 ```
 singularity exec [--nv] \
   -H $HOME:/home/$USER \
   -B $STORE/Distene/:/opt/DISTENE/DLim \
-  feelpp_salome-mso4sc.simg \
+  salome.simg \
   salome [-t] ...
 ```
 Note the `--nv` flag is mandatory to run in GUI mode and is only supported by nvidia drivers.
@@ -95,7 +144,11 @@ On Windows and MacOs X you would need a running X11 server.
 See this http://files.salome-platform.org/Salome/Common/SUD2018/08_Containers.pdf[presentation] for details
 ====
 
-=== from command line
+=== Main commands
+
+We will omit the part of the command related to the use of {singularity} or {docker} to only give
+the {salome} command. The structure of the `yaml` file describing the geometry and mesh be generated will
+be described in the <<data, data structure section>>.
 
 [[helix-cad]]
 [source,sh]
@@ -103,7 +156,7 @@ See this http://files.salome-platform.org/Salome/Common/SUD2018/08_Containers.pd
 ----
 salome -m GEOM,SMESH,HIFIMAGNET [-t] \
    ${SALOME_INSTALLDIR}/HIFIMAGNET/bin/salome/HIFIMAGNET_Cmd.py \
-   args:--helix=HL-31-H1.yaml
+   args:--helix=HL-31-H1.yaml[,--mesh]
 ----
 
 [[ring-cad]]
@@ -112,7 +165,7 @@ salome -m GEOM,SMESH,HIFIMAGNET [-t] \
 ----
 salome -m GEOM,SMESH,HIFIMAGNET [-t] \
    ${SALOME_INSTALLDIR}/HIFIMAGNET/bin/salome/HIFIMAGNET_Cmd.py \
-   args:--ring=Ring-H1H2.yaml
+   args:--ring=Ring-H1H2.yaml[,--mesh]
 ----
 
 [[insert-cad]]
@@ -121,7 +174,7 @@ salome -m GEOM,SMESH,HIFIMAGNET [-t] \
 ----
 salome -m GEOM,SMESH,HIFIMAGNET [-t] \
    ${SALOME_INSTALLDIR}/HIFIMAGNET/bin/salome/HIFIMAGNET_Cmd.py \
-   args:--insert=HL-31.yaml
+   args:--insert=HL-31.yaml[,--air,--mesh]
 ----
 
 
@@ -136,6 +189,7 @@ vglrun salome [...]
 ----
 ====
 
+
 [[salome_on_remotedesktop]]
 === On Remote desktop
 
@@ -144,11 +198,137 @@ vglrun salome [...]
 * use `run_salome.sh`
 
 [source,sh]
-.A script to run {salome} smoothly 
+.A script to run {salome} smoothly at {cesga} 
 ----
 include::{examplesdir}/run_salome.sh[]
 ----
 
+[[data]]
+= Data Structure
+
+== helix structure
+
+[[helix]]
+[source,yml]
+----
+include::{examplesdir}/H_struct.yaml[]
+----
+
+=== `axi` structure
+
+[[helix_axi]]
+[source,yml]
+----
+include::{examplesdir}/H_axi.yaml[]
+----
+
+=== `m3d` structure
+
+[[helix_m3d]]
+[source,yml]
+----
+include::{examplesdir}/H_m3d.yaml[]
+----
+
+=== `shape` structure
+
+[[helix_shape]]
+[source,yml]
+----
+include::{examplesdir}/H_shape.yaml[]
+----
+
+== ring
+
+== CurrentLeads
+
+== insert
+
+== mesh
+
+
+[[usage]]
+= Using {salome}
+
+{salome} is an open-source generic platform for Pre- and Post-Processing for numerical simulation.
+Its key features are:
+
+* Supports interoperability between CAD modeling and computation software (CAD-CAE link).
+* Provides access to all functionalities via the integrated Python console.
+
+This latter feature is especially convenient. You can easily build a CAD model and save all
+the performed operations within a python script. This script may be later run either in TUI (eg. batch) or GUI mode.
+For instance, to create a cube and mesh it:
+```
+salome [-t] testcube_mesh.py
+```
+`-t` option is used to switch to the TUI (eg. batch) mode.  
+
+
+For detailed use of {salome}, see:
+
+* http://salome-platform.org/user-section/documentation/current-release/current-release-gui[SALOME 8.4.0 Documentation]
+* http://salome-platform.org/user-section/salome-tutorials/copy_of_salome-tutorial[Tutorial]
+
+[NOTE]
+====
+If the test python scripts are not available in your {docker} or {singularity} images
+you may found then here:
+
+* link:examples/testcube_mesh.py[`testcube_mesh.py`] 
+* link:examples/ghs3d_demo.py[`ghs3d_demo.py`]
+====
+
+== Basic examples
+
+In the following examples we assume that you have pulled a singularity image from a {sregistry} service
+for {salome} and  {hifimagnet}. For sake of simplicity the images are been named:
+
+* `salome.simg`
+* `hifimagnet.simg`
+
+You shall adapt the scripts to the actual names of the images or rename the images (see <<rename_sing_image, above>>)
+
+
+=== Check {meshgems} installation
+
+```
+singularity exec \
+  -H $HOME:/home/$USER \
+  --pwd /home/$USER/Salome \
+  -B $STORE/Distene/:/opt/DISTENE/DLim \
+  salome.simg \
+  $SALOMEDIR/salome -t ghs3d_demo.py
+```
+where:
+
+* `SALOMEDIR` is {salome} install directory (eg. /opt/SALOME_8.3.0_MPI-DB9.3),
+* `$STORE/Distene` is the directory containing a valid `slim8.key` license file.
+
+=== A simple `med` mesh in `TUI` mode
+
+```
+singularity exec \
+  -H $HOME:/home/$USER \
+  --pwd /home/$USER/Salome \
+  -B $STORE/Distene/:/opt/DISTENE/DLim \
+  salome.simg \
+  $SALOMEDIR/salome -t testcube_mesh.py
+```
+
+[TIP]
+====
+The default mesh format generated by {salome} is med. This mesh format may not be supported
+by {feelpp}. You can convert a med mesh into a gmsh mesh:
+```
+singularity exec \
+  -H $HOME:/home/$USER \
+  --pwd /home/$USER/Salome \
+  -B $STORE/Distene/:/opt/DISTENE/DLim \
+   hifimagnet.simg \
+   gmsh -3 -bin testcube.med -o testcube.msh
+```
+====
 
 
 [[installation]]
@@ -169,65 +349,4 @@ include::installation/officialbinary.adoc[leveloffset=+1]
 include::installation/scratch.adoc[leveloffset=+1]
 include::installation/singularity.adoc[leveloffset=+1]
 
-
-[[usage]]
-= Using {salome}
-
-{salome} is an open-source generic platform for Pre- and Post-Processing for numerical simulation.
-Its key features are:
-
-* Supports interoperability between CAD modeling and computation software (CAD-CAE link).
-* Provides access to all functionalities via the integrated Python console.
-
-This latter feature is especially convenient. You can easily build a CAD model and save all
-the performed operations within a python script. This script may be later run either in TUI (eg. batch) or GUI mode.
-For instance, to create a cube and mesh it:
-```
-salome [-t] testcube_mesh.py
-```
-`-t` option is used to switch to the TUI (eg. batch) mode.  
-
-[TIP]
-====
-The default mesh format generated by {salome} is med. This mesh format may not be supported
-by {feelpp}. You can convert a med mesh into a gmsh mesh:
-```
-gmsh -3 -bin testcube.med -o testcube.msh
-```
-====
-
-For detailed use of {salome}, see:
-
-* http://salome-platform.org/user-section/documentation/current-release/current-release-gui[SALOME 8.4.0 Documentation]
-* http://salome-platform.org/user-section/salome-tutorials/copy_of_salome-tutorial[Tutorial]
-
-Examples:
-
-* Test if {meshgems} is properly installed:
-```
-singularity exec \
-  -H $HOME:/home/$USER \
-  --pwd /home/$USER/Salome \
-  -B $STORE/Distene/:/opt/DISTENE/DLim \
-  feelpp_salome-mso4sc.simg \
-  $SALOMEDIR/salome -t ghs3d_demo.py
-```
-where `SALOMEDIR=/opt/SALOME_8.3.0_MPI-DB9.3` is {salome} install directory.
-
-* Create a simple med mesh and convert it to msh format in TUI mode:
-```
-SALOMEDIR=/opt/SALOME_8.3.0_MPI-DB9.3
-singularity exec \
-  -H $HOME:/home/$USER \
-  --pwd /home/$USER/Salome \
-  -B $STORE/Distene/:/opt/DISTENE/DLim \
-  feelpp_salome-mso4sc.simg \
-  $SALOMEDIR/salome -t testcube_mesh.py
-singularity exec \
-  -H $HOME:/home/$USER \
-  --pwd /home/$USER/Salome \
-  -B $STORE/Distene/:/opt/DISTENE/DLim \
-   feelpp_salome-mso4sc.simg \
-   gmsh -3 -bin testcube.med -o testcube.msh
-```
 
