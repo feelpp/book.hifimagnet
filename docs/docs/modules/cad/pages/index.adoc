@@ -206,13 +206,35 @@ include::{examplesdir}/run_salome.sh[]
 [[data]]
 = Data Structure
 
+An insert consists in a set of:
+
+* helices,
+* connection rings
+
+and eventually an inner and an outer currentLead.
+
+Each structure is defined as a `yaml` file.
+
+
 == helix structure
+
+An helix is actually a cylindrical tube which exhibit a single or double helical cut made by EDM.
 
 [[helix]]
 [source,yml]
 ----
 include::{examplesdir}/H_struct.yaml[]
 ----
+<1> name of the CAD to be created (it corresponds to the name in the {lncmi} Bureau d'Etudes nomemclature).
+<2> specify if the helix is single or double (ie. helical cut).
+<3> specify if the helix is odd or even (the helical cut patch orientation changes from one helix to the other).
+<4> the radial dimension in *mm*.
+<5> the axial dimension in *mm*.
+<6> the width of the helical cut.
+<7> the corresponding axi model.
+<8> the ............  3d model.
+<9> definition of the shape added along the helical path
+<10> .......... of the material
 
 === `axi` structure
 
@@ -240,12 +262,43 @@ include::{examplesdir}/H_shape.yaml[]
 
 == ring
 
+A ring ensure the electrical and mechanical connection between 2 consecutive helices.
+It is a cylinder eventually with stem:[n] cylindrical slots, disposed at regular angular interval stem:[angle] in it to ensure a proper cooling of the connected helices.
+
+[[ring]]
+[source,yml]
+----
+include::{examplesdir}/R.yaml[]
+----
+<1> name of the CAD to be created (it corresponds to the name in the {lncmi} Bureau d'Etudes nomemclature).
+<2> specifiy the position of the ring: either on Low pressure (eg `BPside=true`) or High Pressure side (eg `BPside=false`)
+<3> the radial dimension in *mm*.
+<4> the axial dimension in *mm*.
+<5> indicates the presence or the absence of cylindrical slot
+
 == CurrentLeads
 
 == insert
 
+[[insert]]
+[source,yml]
+----
+include::{examplesdir}/Insert.yaml[]
+----
+
+
 == mesh
 
+The mesh is generated from the command line when the option `--mesh` is passed to salome.
+The first time the mesh is generated, a file , namely `Insert_meshdata.yaml` where `Insert.yaml` is
+the actual yaml cfg file used in the main command line, is also created containing main mesh parameters.
+This file may be later used to regenerate the same mesh or modify to get a finner or coarser mesh.
+
+[[mesh]]
+[source,yml]
+----
+include::{examplesdir}/Insert_meshdata.yaml[]
+----
 
 [[usage]]
 = Using {salome}
