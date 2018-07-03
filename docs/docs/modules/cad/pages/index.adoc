@@ -219,6 +219,7 @@ Each structure is defined as a `yaml` file.
 == helix structure
 
 An helix is actually a cylindrical tube which exhibit a single or double helical cut made by EDM.
+The path of the helical cut is provided in a separate file.
 
 [[helix]]
 [source,yml]
@@ -259,6 +260,8 @@ include::{examplesdir}/H_m3d.yaml[]
 ----
 include::{examplesdir}/H_shape.yaml[]
 ----
+
+=== `helical cut` structure
 
 == ring
 
@@ -355,8 +358,8 @@ singularity exec \
 ```
 where:
 
-* `SALOMEDIR` is {salome} install directory (eg. /opt/SALOME_8.3.0_MPI-DB9.3),
-* `$STORE/Distene` is the directory containing a valid `slim8.key` license file.
+* `SALOMEDIR` is {salome} install directory (eg. `/opt/SALOME_8.3.0_MPI-DB9.3`),
+* `$STORE/Distene` is the directory containing a valid `dlim8.key` license file.
 
 === A simple `med` mesh in `TUI` mode
 
@@ -383,6 +386,37 @@ singularity exec \
 ```
 ====
 
+=== Create a simple object in `GUI` mode
+
+* start `salome`
+* activate the *Geometry* module by clicking on the proper icon or selecting it in the dropdown menu
+* create a simple object
+* extract the boundary of the object ...
+* rename the boundary ...
+
+* select the geometry to save and export in your favorite CAD format
+* dump the python script
+* save the study 
+
+note on replaying the python script
+non on reloading the study
+
+=== Loading a CAD in `GUI` mode
+
+* start `salome`
+* activate the *Geometry* module by clicking on the proper icon or selecting it in the dropdown menu
+* import the geometry using the File/Import menu
+* select the proper format
+
+=== Create a simple mesh in `GUI` mode
+
+* start `salome`
+* activate the *Mesh* module by clicking on the proper icon or selecting it in the dropdown menu
+* ...
+
+// === Create a ring in `GUI` mode
+// === Create an helix in `GUI` mode
+// === Create an insert in `GUI` mode
 
 [[installation]]
 = Detailed Installation
