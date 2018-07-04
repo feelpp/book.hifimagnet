@@ -297,7 +297,7 @@ the coordinates of the cut in developed form which will be mapped onto the outer
 include::{examplesdir}/H_cut_salome.dat[]
 ----
 <0> header
-<1> `theta`, 'Z_i` defines the coordinates of the point in a 2D cartesian frame (note: ) and `Shape_id`
+<1> `theta`, `Z_i` defines the coordinates of the point in a 2D cartesian frame (note: stem:[\text{theta} \in [0,2\pi*n_{turns}] with stem:[n_{turns}] the total number of turn of the path) and `Shape_id` indicates the precense or absence of shape and eventually of micro-cooling channel
 
 = ring
 
@@ -385,8 +385,8 @@ The input data for the surfacic mesher (or hypothesys in {salome} formalism) are
 ----
 include::{examplesdir}/surfhypot.yaml[]
 ----
-<0> the name of the consider boundary group
-<1> the actual hypothesis are:
+<1> the name of the consider boundary group
+<2> the actual hypothesis are:
 
 * `2` for
 * `1` for
