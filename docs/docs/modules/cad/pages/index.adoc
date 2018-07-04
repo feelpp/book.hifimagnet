@@ -220,7 +220,7 @@ Each structure is defined as a `yaml` file.
 == helix structure
 
 An helix is actually a cylindrical tube which exhibit a single or double helical cut made by EDM.
-The path of the helical cut is provided in a separate file.
+The path of the helical cut is provided in a separate file `*_cut_salome.dat`.
 
 [[helix]]
 [source,yml]
@@ -239,11 +239,19 @@ include::{examplesdir}/H_struct.yaml[]
 
 === `axi` structure
 
+The `axi` structure defines the helical cut along with the file `*_cut_salome.dat` 
+
 [[helix_axi]]
 [source,yml]
 ----
 include::{examplesdir}/H_axi.yaml[]
 ----
+<1> name of the axisymetrical description of the magnet (see magnettools)
+<2> half electrical length; stem:[2h] corresponds to the axial length of the helical path centered on the origin.
+<3> list of pitch stem:[p_i]
+<3> list of turns stem:[n_i]
+
+The helical path consists in a set of stem:[i] helices with a pitch stem:[p_i] and a number of turns stem:[n_i]
 
 === `m3d` structure
 
@@ -251,6 +259,10 @@ include::{examplesdir}/H_axi.yaml[]
 [source,yml]
 ----
 include::{examplesdir}/H_m3d.yaml[]
+<1> name of the CAD geometry (usually this name comes from the Bureau d'Etudes nomemclature to keep track of the CADs)
+<2> indicates wether shapes are added or not on the helical path
+<3> indicates wether micro-cooling channels are added (only for radial helices)
+
 ----
 
 === `shape` structure
@@ -260,8 +272,16 @@ include::{examplesdir}/H_m3d.yaml[]
 ----
 include::{examplesdir}/H_shape.yaml[]
 ----
+<1> name of the shape to be added (actually it's the name of the shape file description without extension )
+<2> name of CAD profile (this name comes from the Bureau d'Etudes nomemclature to keep track of the CADs) 
+<3> angular length of the shape in *degree*)
+<4> angular shift between 2 consecutive shapes (optionnal)
+<5> specify on wich turns the shape are disposed
+<6> orientation of the shape (values valid are ...)
 
-=[[shape]]
+The shape file description is a simple `.dat` file that defines the number of points of the shape and theirs coordinates in a local cartesian frame:
+
+[[shape]]
 [source,txt]
 ----
 include::{examplesdir}/Shape.dat[]
@@ -272,11 +292,13 @@ include::{examplesdir}/Shape.dat[]
 The geometry of the `helical cut` is computed using {magnettools}. It provides
 the coordinates of the cut in developed form which will be mapped onto the outer cylinder boundary of an helix.
 
-=[[helix_cut]]
+[[helix_cut]]
 [source,txt]
 ----
 include::{examplesdir}/H_cut_salome.dat[]
 ----
+<0> header
+<1> `theta`, 'Z_i` defines the coordinates of the point in a 2D cartesian frame (note: ) and `Shape_id`
 
 = ring
 
@@ -296,6 +318,22 @@ include::{examplesdir}/R.yaml[]
 
 == CurrentLeads
 
+=== Inner Lead
+
+[[inner]]
+[source,yml]
+----
+include::{examplesdir}/inner.yaml[]
+----
+
+=== Outer Lead
+
+[[outer]]
+[source,yml]
+----
+include::{examplesdir}/outer.yaml[]
+----
+
 == insert
 
 [[insert]]
@@ -303,7 +341,14 @@ include::{examplesdir}/R.yaml[]
 ----
 include::{examplesdir}/Insert.yaml[]
 ----
-
+<1> name of the CAD geometry
+<2> list of helices
+<3> list of rings
+<4> define inner and outer current leads
+<5> radius of the inner bore tube
+<6> radius of the external tube holding the helices insert
+<7> angular orientation of helices (optionnal)
+<8> angular orientation of rings (optionnal)
 
 == mesh
 
