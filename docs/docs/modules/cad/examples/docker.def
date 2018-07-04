@@ -1,0 +1,50 @@
+Bootstrap: docker
+From: feelpp/salome:8.3.0-nvidia
+
+%runscript
+exec echo "The runscript is the containers default runtime command!"
+
+%setup
+    echo "Looking in directory '$SINGULARITY_ROOTFS' for /bin/sh"
+    if [ ! -x "$SINGULARITY_ROOTFS/bin/sh" ]; then
+        echo "Hrmm, this container does not have /bin/sh installed..."
+        exit 1
+    fi
+exit 0
+
+
+%environment
+
+export FEELPP_REPOSITORY=/feel
+export DISTENE_LICENSE_FILE=/opt/DISTENE/DLim/dlim8.key 
+export LD_LIBRARY_PATH=/usr/lib/paraview/:$LD_LIBRARY_PATH
+export PATH=/opt/SALOME-8.3.0-MPI-DB9.3/:$PATH
+
+%labels
+AUTHOR christophe.trophime@lncmi.cnrs.fr
+
+%post
+
+# create repositories
+mkdir -p /scratch /tmp /home /mnt
+mkdir -p /opt/DISTENE/DLim
+mkdir -p /feel
+
+export LANG=C
+
+# firefox-esr on Debian 
+apt-get update
+apt-get -y install lsb-release \
+           iceweasel \
+           iputils-ping net-tools \
+         python-simplejson jsonlint \
+         python-yaml yamllint
+
+# Install Vglrun
+wget https://sourceforge.net/projects/virtualgl/files/2.5.2/virtualgl_2.5.2_amd64.deb/download -O /tmp/virtualgl_2.5.2_amd64.deb
+apt-get -y install mesa-utils mesa-utils-extra x11-apps libxv1
+dpkg -i /tmp/virtualgl_2.5.2_amd64.deb
+
+# Work around "ERROR: ld.so: object 'libvglfaker.so' from LD_PRELOAD cannot be preloaded: ignored."
+chmod u+s /usr/lib/libvglfaker.so
+chmod u+s /usr/lib/libdlfaker.so
