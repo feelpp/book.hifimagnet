@@ -259,11 +259,10 @@ The helical path consists in a set of stem:[i] helices with a pitch stem:[p_i] a
 [source,yml]
 ----
 include::{examplesdir}/H_m3d.yaml[]
+----
 <1> name of the CAD geometry (usually this name comes from the Bureau d'Etudes nomemclature to keep track of the CADs)
 <2> indicates wether shapes are added or not on the helical path
 <3> indicates wether micro-cooling channels are added (only for radial helices)
-
-----
 
 === `shape` structure
 
