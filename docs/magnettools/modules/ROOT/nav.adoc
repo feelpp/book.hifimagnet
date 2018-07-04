@@ -1,8 +1,0 @@
-* xref:index.adoc#installation[Installation]
-** xref:index.adoc#installation_prerequis[PreRequisites]
-** xref:index.adoc#installation_repository[Repository]
-
-* xref:index.adoc#usage[Usage]
-** xref:index.adoc#data[Data structure]
-** xref:index.adoc#bmap[Magnetic Field Map]
-** xref:index.adoc#optim[Optimization]

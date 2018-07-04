@@ -8,7 +8,7 @@ Welcome to {hifimagnet} documentation!
 
 NOTE: The {hifimagnet} documentations introduce the {hifimagnet} project, models, and
 process to build and run an application.
-New user should begin with the xref:user_h:ROOT:index.adoc[User Manual].
+New user should begin with the xref:user:index.adoc[User Manual].
 
 IMPORTANT: This documentation is based on http://www.antora.org[antora].
 You wish to contribute? Please consult the <<contribute, contribute>> section to learn how to proceed!
@@ -65,14 +65,14 @@ Models have been implemented with the finite element library {uri-feelpp-sources
 
 [cols="4",frame="none"]
 |===
-^.^| xref:model_h:ROOT:index.adoc[image:Model.png[model,300]]
-^.^| xref:cad:ROOT:index.adoc[image:HL-31-cadgeom.png[insert_cad,200]]
-^.^| xref:user_h:ROOT:index.adoc[image:HL-31-model.png[insert_disp,200]]
-^.^| xref:benchmarks_h:ROOT:index.adoc[image:bitter-adapt.png[Bitter,300]]
-^.^| xref:model_h:ROOT:index.adoc[Model manual]
-^.^| xref:cad:ROOT:index.adoc[CAD manual]
-^.^| xref:user_h:ROOT:index.adoc[User manual]
-^.^| xref:benchmarks_h:ROOT:index.adoc[Benchmarks manual]
+^.^| xref:model:index.adoc[image:Model.png[model,300]]
+^.^| xref:cad:index.adoc[image:HL-31-cadgeom.png[insert_cad,200]]
+^.^| xref:user:index.adoc[image:HL-31-model.png[insert_disp,200]]
+^.^| xref:benchmarks:index.adoc[image:bitter-adapt.png[Bitter,300]]
+^.^| xref:model:index.adoc[Model manual]
+^.^| xref:cad:index.adoc[CAD manual]
+^.^| xref:user:index.adoc[User manual]
+^.^| xref:benchmarks:index.adoc[Benchmarks manual]
 |===
 
 

@@ -1,3 +1,4 @@
+[[salome_plugin]]
 = {hifimagnet} Salome Plugin
 // include::{partialsdir}/header-uri.adoc[]
 // include::{partialsdir}/header-levels.adoc[]
@@ -37,8 +38,8 @@ and give examples for most common operations.
 
 Custom installation, eg. for native installation, is detailed in appendix.
 
-[[qs_installation]]
-== Installation Quick Start
+[[qs_getting]]
+== Getting {hifimagnet} Salome plugin
 
 They are several way to use {hifimagnet} Salome plugin. The easiest way
 is to use container, either Docker based or Singularity based. If your system support
@@ -46,6 +47,12 @@ singularity containers we recommend to use them instead of Docker ones.
 
 You can download docker images from link:https://hub.docker.com/r/feelpp/salome/[feelpp/salome dockerhub].
 Note that the images are private for the moment.
+
+[NOTE]
+====
+if you do no need {hifimagnet} {salome} plugin you can use a public version of {salome } docker image
+that you may find in link:https://hub.docker.com/r/trophime/[dockerhub].
+====
 
 [TIP]
 ====
@@ -55,6 +62,52 @@ card you should have a look at the
 link:https://raw.githubusercontent.com/feelpp/hifimagnet/develop/docker/salome/build_salome.sh?token=ABP6f83LtdGN4ApDyGYlwkle_5jZeSy0ks5aeEu2wA%3D%3D[scripts] generating the images.
 ====
 
+=== from sregistry
+
+To get the {salome} singularity image you need first to get you token on a valid sregistry:
+
+* connect to the {sregistry} service (eg link:https://sregistry.srv.cesga.es/[cesga sregistry] use the {fiware} authentification}
+* in the top right scrolling menu with your user id, select *Token*
+* copy the line to a `.sregistry` in your home directory
+
+Then from a terminal:
+
+```
+export SREGISTRY_CLIENT=registry
+export SREGISTRY_CLIENT_SECRETS=~/.sregistry-cesga
+[export SREGISTRY_STORAGE=...]
+
+sregistry pull --name salome-8.4.0.simg hifimagnet/salome:8.4.0
+```
+
+[NOTE]
+====
+`SREGISTRY_STORAGE` enables you to specify a directory to hold the singularity images.
+By default images will be downloaded to `$HOME/.sregistry`
+====
+
+[[rename_sing_image]]
+You can eventually rename the image using:
+
+```
+sregistry rename hifimagnet/salome:8.4.0 salome-8.4.0.simg
+```
+
+=== from dockerhub
+
+You need to be member of {feelpp} team on link:https://hub.docker.com/[dockerhub] to be able to download the image.
+To get the image:
+
+```
+docker login
+docker pull feelpp/salome:8.3.0-nvidia
+```
+
+Check the existing docker images on link:https://hub.docker.com/r/feelpp/salome/[feelpp/salome dockerhub]
+
+
+=== install from...
+
 [[qs_reference]]
 == Running {hifimagnet} Salome plugin
 
@@ -62,11 +115,13 @@ link:https://raw.githubusercontent.com/feelpp/hifimagnet/develop/docker/salome/b
 
 === from Singularity container
 
+Assuming we use `salome.simg` singularity image:
+
 ```
 singularity exec [--nv] \
   -H $HOME:/home/$USER \
   -B $STORE/Distene/:/opt/DISTENE/DLim \
-  feelpp_salome-mso4sc.simg \
+  salome.simg \
   salome [-t] ...
 ```
 Note the `--nv` flag is mandatory to run in GUI mode and is only supported by nvidia drivers.
@@ -79,8 +134,8 @@ xhost local:root
 docker run -ti --rm -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix \
    -v $HOME/.Xauthority:/home/feelpp/.Xauthority --net=host --pid=host --ipc=host \
    --env QT_X11_NO_MITSHM=1 \
-   -v $HOME/Salome_Packages:/home/feelpp/exports \
-   feelpp/salome:8.3.0-nvidia
+   -v /opt/DISTENE/DLim:/opt/DISTENE/DLim \
+   feelpp/salome:8.3.0-nvidia salome [-t] ...
 ```
 
 [TIP]
@@ -89,35 +144,40 @@ On Windows and MacOs X you would need a running X11 server.
 See this http://files.salome-platform.org/Salome/Common/SUD2018/08_Containers.pdf[presentation] for details
 ====
 
-=== from command line
+=== Main commands
+
+We will omit the part of the command related to the use of {singularity} or {docker} to only give
+the {salome} command. The structure of the `yaml` file describing the geometry and mesh be generated will
+be described in the <<data, data structure section>>.
 
 [[helix-cad]]
 [source,sh]
 .Generation of an Helix
 ----
-salome -m GEOM,SMESH,HIFIMAGNET [-t] \
+salome [-m GEOM,SMESH,HIFIMAGNET] [-t] \
    ${SALOME_INSTALLDIR}/HIFIMAGNET/bin/salome/HIFIMAGNET_Cmd.py \
-   args:--helix=HL-31-H1.yaml
+   args:--helix=HL-31-H1.yaml[,--mesh]
 ----
 
 [[ring-cad]]
 [source,sh]
 .Generation of an connection Ring
 ----
-salome -m GEOM,SMESH,HIFIMAGNET [-t] \
+salome [-m GEOM,SMESH,HIFIMAGNET] [-t] \
    ${SALOME_INSTALLDIR}/HIFIMAGNET/bin/salome/HIFIMAGNET_Cmd.py \
-   args:--ring=Ring-H1H2.yaml
+   args:--ring=Ring-H1H2.yaml[,--mesh]
 ----
 
 [[insert-cad]]
 [source,sh]
 .Generation of an Insert in TUI mode
 ----
-salome -m GEOM,SMESH,HIFIMAGNET [-t] \
+salome [-m GEOM,SMESH,HIFIMAGNET] [-t] \
    ${SALOME_INSTALLDIR}/HIFIMAGNET/bin/salome/HIFIMAGNET_Cmd.py \
-   args:--insert=HL-31.yaml
+   args:--insert=HL-31.yaml[,--air,--mesh]
 ----
 
+`${SALOME_INSTALLDIR}` is the install root directories of {salome} modules, eg `/opt/SALOME-8.4.0-Debian-DB9.4/BINARIES-DB9.4`.
 
 [TIP]
 ====
@@ -130,6 +190,7 @@ vglrun salome [...]
 ----
 ====
 
+
 [[salome_on_remotedesktop]]
 === On Remote desktop
 
@@ -138,12 +199,322 @@ vglrun salome [...]
 * use `run_salome.sh`
 
 [source,sh]
-.A script to run {salome} smoothly 
+.A script to run {salome} smoothly at {cesga} 
 ----
 include::{examplesdir}/run_salome.sh[]
 ----
 
+[[data]]
+= Data Structure
 
+An insert consists in a set of:
+
+* helices,
+* connection rings
+
+and eventually an inner and an outer currentLead.
+
+Each structure is defined as a `yaml` file.
+
+
+== helix structure
+
+An helix is actually a cylindrical tube which exhibit a single or double helical cut made by EDM.
+The path of the helical cut is provided in a separate file `*_cut_salome.dat`.
+
+[[helix]]
+[source,yml]
+----
+include::{examplesdir}/H_struct.yaml[]
+----
+<1> name of the CAD to be created (it corresponds to the name in the {lncmi} Bureau d'Etudes nomemclature).
+<2> specify if the helix is single or double (ie. helical cut).
+<3> specify if the helix is odd or even (the helical cut patch orientation changes from one helix to the other).
+<4> the radial dimension in *mm*.
+<5> the axial dimension in *mm*.
+<6> the width of the helical cut.
+<7> the corresponding axi model.
+<8> the ............  3d model.
+<9> definition of the shape added along the helical path
+
+=== `axi` structure
+
+The `axi` structure defines the helical cut along with the file `*_cut_salome.dat` 
+
+[[helix_axi]]
+[source,yml]
+----
+include::{examplesdir}/H_axi.yaml[]
+----
+<1> name of the axisymetrical description of the magnet (see magnettools)
+<2> half electrical length; stem:[2h] corresponds to the axial length of the helical path centered on the origin.
+<3> list of pitch stem:[p_i]
+<3> list of turns stem:[n_i]
+
+The helical path consists in a set of stem:[i] helices with a pitch stem:[p_i] and a number of turns stem:[n_i]
+
+=== `m3d` structure
+
+[[helix_m3d]]
+[source,yml]
+----
+include::{examplesdir}/H_m3d.yaml[]
+----
+<1> name of the CAD geometry (usually stems from the Bureau d'Etudes nomemclature to keep track of the CADs)
+<2> indicates wether shapes are added or not on the helical path
+<3> indicates wether micro-cooling channels are added (only for radial helices)
+
+=== `shape` structure
+
+[[helix_shape]]
+[source,yml]
+----
+include::{examplesdir}/H_shape.yaml[]
+----
+<1> name of the shape to be added (actually it's the name of the shape file description without extension )
+<2> name of CAD profile (this name comes from the Bureau d'Etudes nomemclature to keep track of the CADs) 
+<3> angular length of the shape in *degree*)
+<4> angular shift between 2 consecutive shapes (optionnal)
+<5> specify on wich turns the shape are disposed
+<6> orientation of the shape (values valid are ...)
+
+The shape file description is a simple `.dat` file that defines the number of points of the shape and theirs coordinates in a local cartesian frame:
+
+[[shape]]
+[source,txt]
+----
+include::{examplesdir}/Shape.dat[]
+----
+
+=== `helical cut` structure
+
+The geometry of the `helical cut` is computed using {magnettools}. It provides
+the coordinates of the cut in developed form which will be mapped onto the outer cylinder boundary of an helix.
+
+[[helix_cut]]
+[source,txt]
+----
+include::{examplesdir}/H_cut_salome.dat[]
+----
+<0> header
+<1> `theta`, `Z_i` defines the coordinates of the point in a 2D cartesian frame (note: stem:[\text{theta} \in [0,2\pi*n_{turns}]] with stem:[n_{turns}] the total number of turn of the path) and `Shape_id` indicates the precense or absence of shape and eventually of micro-cooling channel
+
+= ring
+
+A ring ensure the electrical and mechanical connection between 2 consecutive helices.
+It is a cylinder eventually with stem:[n] cylindrical slots, disposed at regular angular interval stem:[angle] in it to ensure a proper cooling of the connected helices.
+
+[[ring]]
+[source,yml]
+----
+include::{examplesdir}/R.yaml[]
+----
+<1> name of the CAD to be created (it corresponds to the name in the {lncmi} Bureau d'Etudes nomemclature).
+<2> specifiy the position of the ring: either on Low pressure (eg `BPside=true`) or High Pressure side (eg `BPside=false`)
+<3> the radial dimension in *mm*.
+<4> the axial dimension in *mm*.
+<5> indicates the presence or the absence of cylindrical slot
+
+== CurrentLeads
+
+=== Inner Lead
+
+[[inner]]
+[source,yml]
+----
+include::{examplesdir}/inner.yaml[]
+----
+
+=== Outer Lead
+
+[[outer]]
+[source,yml]
+----
+include::{examplesdir}/outer.yaml[]
+----
+
+== insert
+
+[[insert]]
+[source,yml]
+----
+include::{examplesdir}/Insert.yaml[]
+----
+<1> name of the CAD geometry
+<2> list of helices
+<3> list of rings
+<4> define inner and outer current leads
+<5> radius of the inner bore tube
+<6> radius of the external tube holding the helices insert
+<7> angular orientation of helices (optionnal)
+<8> angular orientation of rings (optionnal)
+
+== mesh
+
+The mesh is generated from the command line when the option `--mesh` is passed to salome.
+The first time the mesh is generated, a file , namely `Insert_meshdata.yaml` where `Insert.yaml` is
+the actual yaml cfg file used in the main command line, is also created containing main mesh parameters.
+This file may be later used to regenerate the same mesh or modify to get a finner or coarser mesh.
+
+So far only {meshgems} mesher is supported.
+
+Here is an example of the yaml cfg file:
+
+[[mesh]]
+[source,yml]
+----
+include::{examplesdir}/Insert_meshdata.yaml[]
+----
+<0> name of the CAD geometry without extension
+<1> basename of the output mesh
+<2> mesh algorithm used for surfacic meshes
+<3> mesh algorithm used for volumic meshes
+<4> maximum ratio between the lengths of two adjacent edges.
+<5> allows checking input and output files of MG-Tetra software, while usually these files are removed after the launch of the mesher. The log file (if any) is also kept if this option is `1`.
+<6> allows grouping volumes into domains
+<7> allows choosing the required optimization level (higher level of optimization provides better mesh, but can be time-consuming); values are 1: none, 2: light, 3: medium (standard), 4: standard+, 5: strong
+
+<8> removes or not files upon mesh completion 
+<9> launches MG-Tetra software with work space limited to the specified amount of RAM, in Mbytes. If this option is checked off, the software will be launched with 7O% of the total RAM space. 
+<10> list of input data for the surfacic mesher provided for each boundary group defined in the CAD geometry 
+
+The input data for the surfacic mesher (or hypothesys in {salome} formalism) are defined as follows:
+
+[[surfhypoth]]
+[source,yml]
+----
+include::{examplesdir}/surfhypot.yaml[]
+----
+<1> the name of the consider boundary group
+<2> the actual hypothesis are:
+
+* `2` for
+* `1` for
+* `physsize` for setting the requested element size in *mm*
+* `minsize` for setting the minimum allowed element size in *mm*
+* `maxsize` for setting the maximum allowed size in *mm*
+* `chordalerror` for setting the requested chordalerror size in *mm*
+
+[NOTE]
+====
+The `chordalerror` is the maximum desired distance between a triangle and its supporting CAD surface.
+The smaller this distance is, the closer the mesh is to the exact surface (only available in isotropic meshing).
+====
+
+[[usage]]
+= Using {salome}
+
+{salome} is an open-source generic platform for Pre- and Post-Processing for numerical simulation.
+Its key features are:
+
+* Supports interoperability between CAD modeling and computation software (CAD-CAE link).
+* Provides access to all functionalities via the integrated Python console.
+
+This latter feature is especially convenient. You can easily build a CAD model and save all
+the performed operations within a python script. This script may be later run either in TUI (eg. batch) or GUI mode.
+For instance, to create a cube and mesh it:
+```
+salome [-t] testcube_mesh.py
+```
+`-t` option is used to switch to the TUI (eg. batch) mode.  
+
+
+For detailed use of {salome}, see:
+
+* http://salome-platform.org/user-section/documentation/current-release/current-release-gui[SALOME 8.4.0 Documentation]
+* http://salome-platform.org/user-section/salome-tutorials/copy_of_salome-tutorial[Tutorial]
+
+[NOTE]
+====
+If the test python scripts are not available in your {docker} or {singularity} images
+you may found then here:
+
+* link:examples/testcube_mesh.py[`testcube_mesh.py`] 
+* link:examples/ghs3d_demo.py[`ghs3d_demo.py`]
+====
+
+== Basic examples
+
+In the following examples we assume that you have pulled a singularity image from a {sregistry} service
+for {salome} and  {hifimagnet}. For sake of simplicity the images are been named:
+
+* `salome.simg`
+* `hifimagnet.simg`
+
+You shall adapt the scripts to the actual names of the images or rename the images (see <<rename_sing_image, above>>)
+
+
+=== Check {meshgems} installation
+
+```
+singularity exec \
+  -H $HOME:/home/$USER \
+  --pwd /home/$USER/Salome \
+  -B $STORE/Distene/:/opt/DISTENE/DLim \
+  salome.simg \
+  $SALOMEDIR/salome -t ghs3d_demo.py
+```
+where:
+
+* `SALOMEDIR` is {salome} install directory (eg. `/opt/SALOME_8.3.0_MPI-DB9.3`),
+* `$STORE/Distene` is the directory containing a valid `dlim8.key` license file.
+
+=== A simple `med` mesh in `TUI` mode
+
+```
+singularity exec \
+  -H $HOME:/home/$USER \
+  --pwd /home/$USER/Salome \
+  -B $STORE/Distene/:/opt/DISTENE/DLim \
+  salome.simg \
+  $SALOMEDIR/salome -t testcube_mesh.py
+```
+
+[TIP]
+====
+The default mesh format generated by {salome} is med. This mesh format may not be supported
+by {feelpp}. You can convert a med mesh into a gmsh mesh:
+```
+singularity exec \
+  -H $HOME:/home/$USER \
+  --pwd /home/$USER/Salome \
+  -B $STORE/Distene/:/opt/DISTENE/DLim \
+   hifimagnet.simg \
+   gmsh -3 -bin testcube.med -o testcube.msh
+```
+====
+
+=== Create a simple object in `GUI` mode
+
+* start `salome`
+* activate the *Geometry* module by clicking on the proper icon or selecting it in the dropdown menu
+* create a simple object
+* extract the boundary of the object ...
+* rename the boundary ...
+
+* select the geometry to save and export in your favorite CAD format
+* dump the python script
+* save the study 
+
+note on replaying the python script
+non on reloading the study
+
+=== Loading a CAD in `GUI` mode
+
+* start `salome`
+* activate the *Geometry* module by clicking on the proper icon or selecting it in the dropdown menu
+* import the geometry using the File/Import menu
+* select the proper format
+
+=== Create a simple mesh in `GUI` mode
+
+* start `salome`
+* activate the *Mesh* module by clicking on the proper icon or selecting it in the dropdown menu
+* ...
+
+// === Create a ring in `GUI` mode
+// === Create an helix in `GUI` mode
+// === Create an insert in `GUI` mode
 
 [[installation]]
 = Detailed Installation
@@ -163,167 +534,4 @@ include::installation/officialbinary.adoc[leveloffset=+1]
 include::installation/scratch.adoc[leveloffset=+1]
 include::installation/singularity.adoc[leveloffset=+1]
 
-
-[[usage]]
-= Using {salome}
-
-{salome} is an open-source generic platform for Pre- and Post-Processing for numerical simulation.
-Its key features are:
-
-* Supports interoperability between CAD modeling and computation software (CAD-CAE link).
-* Provides access to all functionalities via the integrated Python console.
-
-This latter feature is especially convenient. You can easily build a CAD model and save all
-the performed operations within a python script. This script may be later run either in TUI (eg. batch) or GUI mode.
-For instance, to create a cube and mesh it:
-```
-salome [-t] testcube_mesh.py
-```
-`-t` option is used to switch to the TUI (eg. batch) mode.  
-
-[TIP]
-====
-The default mesh format generated by {salome} is med. This mesh format may not be supported
-by {feelpp}. You can convert a med mesh into a gmsh mesh:
-```
-gmsh -3 -bin testcube.med -o testcube.msh
-```
-====
-
-For detailed use of {salome}, see:
-
-* http://salome-platform.org/user-section/documentation/current-release/current-release-gui[SALOME 8.4.0 Documentation]
-* http://salome-platform.org/user-section/salome-tutorials/copy_of_salome-tutorial[Tutorial]
-
-Examples:
-
-* Test if {meshgems} is properly installed:
-```
-SALOMEDIR=/opt/SALOME_8.3.0_MPI-DB9.3
-singularity exec \
-  -H $HOME:/home/$USER \
-  --pwd /home/$USER/Salome \
-  -B $STORE/Distene/:/opt/DISTENE/DLim \
-  feelpp_salome-mso4sc.simg \
-  $SALOMEDIR/salome -t ghs3d_demo.py```
-```
-
-* Create a simple med mesh and convert it to msh format in TUI mode:
-```
-SALOMEDIR=/opt/SALOME_8.3.0_MPI-DB9.3
-singularity exec \
-  -H $HOME:/home/$USER \
-  --pwd /home/$USER/Salome \
-  -B $STORE/Distene/:/opt/DISTENE/DLim \
-  feelpp_salome-mso4sc.simg \
-  $SALOMEDIR/salome -t testcube_mesh.py
-singularity exec \
-  -H $HOME:/home/$USER \
-  --pwd /home/$USER/Salome \
-  -B $STORE/Distene/:/opt/DISTENE/DLim \
-   feelpp_salome-mso4sc.simg \
-   gmsh -3 -bin testcube.med -o testcube.msh
-```
-
-* A generic script for running {salome} {singularity} image  on cesga: 
-----
-#!/bin/bash
-
-module load singularity
-
-usage(){
-   echo ""
-   echo "Description:"
-   echo "   Run salome within Singularity image"
-   echo ""
-   echo "Usage:"
-   echo "   script.sh [ <option> ] ... ]"
-   echo ""
-   echo "Options:"
-   echo ""
-   echo "-t Activate Salome TUI mode"
-   echo "-s Specify python script to be used (only valid when TUI is on)"
-   echo "-a Specifiy parameters of the python script (only valid in combination with -s, optional)"
-   echo "-i Change singularity image (default: feelpp_salome-mso4sc.simg)"
-   echo "-r Change singularity image directory (default: $LUSTRE/singularity_images)"
-   echo "-d Activate debug mode"
-   echo ""
-   exit 1
-}
-
-DEBUG=0
-
-
-#########################################################
-## parse parameters
-##########################################################
-while getopts "hts:a:i:d" option ; do
-   case $option in
-       h ) usage ;;
-       t ) TUI=1 ;;
-       s ) SCRIPT=$OPTARG ;;
-       a ) SCRIPT_ARGS=$OPTARG ;;
-       i ) IMAGE=$OPTARG ;;
-       r ) SINGULARITY_DIR=$OPTARG ;;
-       d ) DEBUG=1 ;;
-       ? ) usage ;;
-   esac
-done
-# shift to have the good number of other args
-shift $((OPTIND - 1))
-
-# Optionally set VERSION and others if none is defined. 
-: ${IMAGE=feelpp_salome-mso4sc.simg}
-: ${TUI=0}
-: ${SCRIPT=""}
-: ${SCRIPT_ARGS=""}
-
-: ${SINGULARITY_DIR=$LUSTRE/singularity_images}
-
-if [ $TUI = "1" ]; then
-
-    if [ -z $SCRIPT ]; then
-	echo "Trying to run salome in TUI mode without a script"
-	echo "you need to define a python script"
-	usage
-    fi
-
-    if [ -z $SCRIPT_ARGS ]; then
-	singularity exec --nv \
-	    -H $HOME:/home/$USER \
-	    -B /mnt \
-	    -B /scratch \
-	    -B $STORE/Distene:/opt/DISTENE/DLim \
-	    $SINGULARITY_DIR/$IMAGE \
-	    salome -t $SCRIPT
-    else
-	singularity exec --nv \
-	    -H $HOME:/home/$USER \
-	    -B /mnt \
-	    -B /scratch \
-	    -B $STORE/Distene:/opt/DISTENE/DLim \
-	    $SINGULARITY_DIR/$IMAGE \
-	    salome -t $SCRIPT args:$SCRIPT_ARGS
-    fi 
-else
-    if [ -z $SCRIPT ]; then
-    singularity exec --nv \
-	-H $HOME:/home/$USER \
-	-B /mnt \
-	-B /scratch \
-	-B $STORE/Distene:/opt/DISTENE/DLim \
-	$SINGULARITY_DIR/$IMAGE \
-	vglrun salome 
-    else
-    singularity exec --nv \
-	-H $HOME:/home/$USER \
-	-B /mnt \
-	-B /scratch \
-	-B $STORE/Distene:/opt/DISTENE/DLim \
-	$SINGULARITY_DIR/$IMAGE \
-	vglrun salome $SCRIPT
-    else
-    fi
-fi
-----
 

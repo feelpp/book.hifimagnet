@@ -7,6 +7,13 @@ auto/
 /programming.html
 /quickref-cards.html
 /quickref.html
+*~
+Gemfile.lock
+*.toc
+*.aux
+*.log
+*.out
+*.tex
 /math/*.tex
 *#
 *~

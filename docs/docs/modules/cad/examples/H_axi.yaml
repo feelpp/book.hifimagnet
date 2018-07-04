@@ -1,0 +1,7 @@
+axi: !<ModelAxi>
+  name: "HL-31.d", <1>
+  h: 86.51, <2>
+  pitch:, <3>
+    - 17.302
+  turns:, <4>
+    - 10
