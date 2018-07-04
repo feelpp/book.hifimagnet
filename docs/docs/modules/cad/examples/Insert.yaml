@@ -1,0 +1,15 @@
+!<Insert>
+name: "HL-31", <1>
+Helices:, <2>
+  - HL-31_H1
+  ...
+Rings:, <3>
+  - Ring-H1H2
+  ...
+CurrentLeads:, <4>
+  - inner
+  - outer-H14
+innerbore: 18.54, <5>
+outerbore: 186.25, <6>
+HAngles:, <7>
+RAngles:, <8>

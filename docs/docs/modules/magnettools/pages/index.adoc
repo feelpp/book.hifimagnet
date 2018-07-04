@@ -1,0 +1,48 @@
+[[magnettools]]
+= {magnettools} user manual
+
+Welcome to {magnettools} manual documentation!
+
+[[installation]]
+== Installation
+
+[[installation_prerequis]]
+=== Prerequis
+
+{MagnetTools} relies on the following software : 
+
+** `popt`,
+** `gsl`, `freesteam`,
+** `spherepack, expokit`,
+** `sundials`,
+** `yamlcpp`, `json-spirit`
+** `nag` (only required for Optimization)
+
+[[installation_repository]]
+=== Repository
+
+=== From scratch
+
+[[usage]]
+== Using {magnettools}
+
+{magnettools} is a in-house software that provides tools to compute :
+
+ * Analytically Magnetic Field,
+ * Mutual and Self Inductances,
+ * Axial and Radial Forces,
+
+and to analyze some Transient Analysis.
+
+{magnettools} also contains:
+
+  * Optimization procedure to define the PolyHelices insert geometry,
+  * Files for CAD and CAM of Helices.
+
+include::DataStructure.adoc[leveloffset=+2]
+include::Bmap.adoc[leveloffset=+2]
+include::Inductances.adoc[leveloffset=+2]
+include::Fmap.adoc[leveloffset=+2]
+include::Transient.adoc[leveloffset=+2]
+include::Optimization.adoc[leveloffset=+2]
+

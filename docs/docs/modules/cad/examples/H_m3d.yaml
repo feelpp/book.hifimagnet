@@ -1,0 +1,4 @@
+m3d: !<Model3D>
+  cad: "HL-31-202MC", <1>
+  with_shapes: false, <2>
+  with_channels: false, <3>

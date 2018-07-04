@@ -1,0 +1,4 @@
+surfhypoths:
+- - - Boundary_Name, <1>
+    - [2, 1, physsize, minsize, maxsize, chordalerror], <2>
+  ...

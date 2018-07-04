@@ -1,0 +1,33 @@
+= {hifimagnet} PostProcessing documentation
+// :page-feelpp_book_cover: true
+// include::{partialsdir}/header-uri.adoc[]
+// include::{partialsdir}/header-levels.adoc[]
+
+Welcome to {hifimagnet} processing documentation!
+
+[[paraview]]
+= Using {paraview}
+
+[[paraview_on_remotedesktop]]
+=== On Remote desktop
+
+In the {cesga} remote desktop to get {paraview} running:
+
+* open a terminal,
+* type: `module load gcc/6.4.0 openmpi/2.1.1 paraview/5.4.0`
+
+[[ensight]]
+= Using {ensight}
+
+[[ensight_on_remotedesktop]]
+=== On Remote desktop
+
+* copy {ensight} licence file on your account in the Visu resource 
+* grab {ensight} {hifimagnet} image from {sregistry}
+* use `run_ensight.sh`
+
+[source,sh]
+.A script to run {ensight} smoothly 
+----
+include::{examplesdir}/run_ensight.sh[]
+----

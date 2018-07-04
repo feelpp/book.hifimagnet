@@ -1,5 +1,0 @@
-name: user_h
-title: HiFiMagnet User Manual
-version: "0.1"
-nav:
-- modules/ROOT/nav.adoc

@@ -1,0 +1,47 @@
+!<MeshData>
+geometry: BancMesure_H3H4, <1>
+name: BancMesure_H3H4-air, <2>
+algosurf: BLSURF, <3>
+algovol: GHS3D, <4>
+Gradation: 1.05, <5>
+KeepFiles: 0, <6>
+MakeGroupsOfDomains: 0, <7>
+OptimizationLevel: 4, <8>
+RemoveLogOnSuccess: 1, <9>
+MaximumMemory: 450559, <10>
+surfhypoths:, <11>
+- - - HL-31_H3_inputs
+    - [2, 1, 2.16, 0.65, 65.0, 1.546]
+  - - HL-31_H3_boundary
+    - [2, 1, 2.16, 0.65, 65.0, 1.546]
+  - - HL-31_H3_interface
+    - [2, 1, 0.72, 0.065, 6.5, 0.1546]
+  - - HL-31_H3_iboundary
+    - [2, 1, 0.72, 0.065, 6.5, 0.1546]
+  - - HL-31_H3_others
+    - [2, 1, 2.16, 0.65, 65.0, 1.546]
+- - - HL-31_H4_inputs
+    - [2, 1, 2.43, 0.729, 72.99, 1.90]
+  - - HL-31_H4_boundary
+    - [2, 1, 2.43, 0.729, 72.9, 1.90]
+  - - HL-31_H4_interface
+    - [2, 1, 0.81, 0.0729, 7.29, 0.190]
+  - - HL-31_H4_iboundary
+    - [2, 1, 0.81, 0.0729, 7.29, 0.190]
+  - - HL-31_H4_others
+    - [2, 1, 2.43, 0.729, 72.9, 1.90]
+- - - Ring-H3H4_H1
+    - [2, 1, 2.16, 0.65, 65.0, 1.546]
+  - - Ring-H3H4_H2
+    - [2, 1, 2.43, 0.729, 72.9, 1.90]
+  - - Ring-H3H4_cooling
+    - [2, 1, 4.89, 1.469, 146.9, 1.546]
+  - - Ring-H3H4_boundary
+    - [2, 1, 4.89, 1.46, 146.9, 1.546]
+- - - Air_inner
+    - [2, 1, 2.16, 0.65, 65.0, 1.546]
+  - - Air_inputs
+    - [2, 1, 3.86, 0.925, 926.0, 176.85]
+  - - Air_infty
+    - [2, 1, 3.86, 0.925, 926.0, 176.85]
+volhypoths: []

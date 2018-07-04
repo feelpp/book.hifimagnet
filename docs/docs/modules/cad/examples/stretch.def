@@ -1,0 +1,164 @@
+Bootstrap: docker
+From: debian:stretch
+
+%help
+USAGE: salome [-h]
+
+NOTES:
+1) This image is read-only!
+
+EXAMPLES:
+List availailable apps
+    $ singularity apps <image-name>
+
+Run salome in TUI mode:
+    $ singularity run   <image-name> salome -t scrypt.py args:....
+
+Run salome in GUI mode:
+    $ singularity run --nv --app salome  <image-name>
+
+Run salome in GUI mode on NoVNC/Virtual :
+    $ singularity run --nv --app vgl_salome  <image-name> ...
+
+To add support for MeshGems:
+    $ singularity run --nv -B ${MESHGEMS_LICDIR}:/opt/DISTENE/Dlim  [--app <app>] <image-app>
+where MESHGEMS_LICDIR points to the directory holding a valid MeshGems license
+
+%runscript
+exec salome "$@"
+
+%setup
+    echo "Looking in directory '$SINGULARITY_ROOTFS' for /bin/sh"
+    if [ ! -x "$SINGULARITY_ROOTFS/bin/sh" ]; then
+        echo "Hrmm, this container does not have /bin/sh installed..."
+        exit 1
+    fi
+    # prepare for MeshGems
+    mkdir -p $SINGULARITY_ROOTFS/opt
+    mkdir -p $SINGULARITY_ROOTFS/opt/DISTENE/Dlim
+    mkdir -p $SINGULARITY_ROOTFS/opt
+    cp /home/LNCMI-G/trophime/Salome_Packages/SALOME-8.3.0-MPI-DB9.4.tgz $SINGULARITY_ROOTFS/opt/
+    mkdir -p /usr/local/share/salome/test
+    for script in $(ls /home/LNCMI-G/trophime/Salome_Tests/*py); do
+       cp $script  /usr/local/share/salome/test
+    done
+exit 0
+
+
+%environment
+CASROOT=/usr
+LD_LIBRARY_PATH=/usr/lib/paraview:$LD_LIBRARY_PATH
+PATH=/opt/SALOME-8.3.0-MPI-DB9.4:$PATH
+export CASROOT
+export LD_LIBRARY_PATH
+export PATH
+
+FEELPP_REPOSITORY=/feel
+export FEELPP_REPOSITORY
+
+%labels
+AUTHOR christophe.trophime@lncmi.cnrs.fr
+Maintainer: Christophe Trophime
+Maintainer_email: christophe.trophime@lncmi.cnrs.fr
+Version 1.0
+
+%post
+
+echo "alias ls='ls --color=auto'" >> /etc/bash.bashrc
+echo "alias ll='ls -ls'" >> /etc/bash.bashrc
+echo "alias cp='cp -i'" >> /etc/bash.bashrc
+echo "alias mv='mv -i'" >> /etc/bash.bashrc
+echo "alias rm='rm -i'" >> /etc/bash.bashrc
+echo "alias grep='grep --color'" >> /etc/bash.bashrc
+
+echo "# Add support for openmp" >> /etc/bash.bashrc
+echo "export OMP_NUM_THREADS=1" >> /etc/bash.bashrc
+echo "export OPENBLAS_NUM_THREADS=1 #OMP_NUM_THREADS=1,1" >> /etc/bash.bashrc
+
+export LANG=C
+mkdir -p /feel
+mkdir -p /scratch /tmp
+
+# Add contrib and non-free section (should check if updates and backports exist)
+echo "deb http://ftp.debian.org/debian stable-updates main" >> /etc/apt/sources.list
+echo "deb http://ftp.debian.org/debian stable-backports main" >> /etc/apt/sources.list
+sed -i'.bak' 's/$/ contrib non-free/' /etc/apt/sources.list
+
+# Add Debian/Ubuntu Lncmi repository (should check if depot is accessible)
+apt-get update
+apt-get -y install gnupg2  
+gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv 535D3508
+gpg --export --armor 535D3508 | apt-key add -
+echo "deb http://euler/~trophime/debian/ stretch main" >  /etc/apt/sources.list.d/lncmi.list
+
+apt-get update
+apt-get -y upgrade
+apt-get -y install emacs vim nano \
+   bash-completion wget curl \
+   openssh-client net-tools
+
+apt-get install -y \
+   firefox-esr \
+   libcos4-1 \
+   omniidl omniidl-python omniorb-idl omniorb-nameserver python-omniorb python-omniorb-omg \
+   paraview-python \
+   netgen libnglib-5.3.1 \
+   gmsh-tetgen libpastix-dev \
+   libqwt-qt5-6 \
+   libopencascade-visualization-dev libopencascade-ocaf-dev \
+   libqt5xml5 libqt5test5 libqt5sensors5 libqt5positioning5 libqt5multimediawidgets5 libqt5webengine5 libqt5webenginewidgets5 \
+   libboost-filesystem1.62.0 libboost-regex1.62.0 libboost-signals1.62.0 libboost-thread1.62.0 libboost-date-time1.62.0 libboost-chrono1.62.0 libboost-atomic1.62.0 \
+   python-sip python-pyqt5 \
+   graphviz \
+   valgrind \
+   python-psutil python-memory-profiler  \
+   yamllint python-yaml
+
+## Installing VirtualGl for noVNC
+wget https://sourceforge.net/projects/virtualgl/files/2.5.2/virtualgl_2.5.2_amd64.deb/download -O /tmp/virtualgl_2.5.2_amd64.deb
+apt-get -y install mesa-utils mesa-utils-extra x11-apps libxv1
+dpkg -i /tmp/virtualgl_2.5.2_amd64.deb
+rm -f /tmp/virtualgl_2.5.2_amd64.deb
+
+
+# To use on Cluster with InfinyBand and Slurm
+apt-get -y install dapl2-utils \
+                   libdapl2 \
+                   libibverbs1 \
+                   librdmacm1 \
+                   libcxgb3-1 \
+                   libipathverbs1 \
+                   libmlx4-1 \
+                   libmlx5-1 \
+                   libmthca1 \
+                   libnes1 \
+                   libpmi0 \
+                   libslurm30
+
+# to get some performance metrices for Salome
+#apt-get -y install python-memory-profiler
+
+# Cleanup
+apt -y clean
+
+# Installing Salome
+cd /opt && tar zxvf /opt/SALOME-8.3.0-MPI-DB9.4.tgz
+rm /opt/SALOME-8.3.0-MPI-DB9.4.tgz
+
+%test
+for script in $(ls /usr/local/share/salome/test/*py); do
+  echo -n "Running $script"
+  status=salome -t $script > /dev/null
+  if [ "x$status" = "0" ]; then
+     echo "\t FAILED"
+  else
+     echo "\t PASS"
+  fi   
+done
+
+%apprun salome
+echo "Need to pass --nv options to singularity"
+salome "$@"
+
+%apprun vgl_salome
+vglrun salome "$@"
