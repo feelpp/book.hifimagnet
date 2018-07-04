@@ -1,4 +1,4 @@
 steps:
- - trigger: "book-dot-feelpp-dot-org"
-   label: ":package: Generate :book:"
+ - trigger: "docs-dot-cemosis-dot-fr"
+   label: ":package: Generate :book: docs.cemosis.fr"
    async: true
