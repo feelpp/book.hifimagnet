@@ -236,7 +236,6 @@ include::{examplesdir}/H_struct.yaml[]
 <7> the corresponding axi model.
 <8> the ............  3d model.
 <9> definition of the shape added along the helical path
-<10> .......... of the material
 
 === `axi` structure
 
@@ -329,13 +328,7 @@ include::{examplesdir}/Insert_meshdata.yaml[]
 <4> maximum ratio between the lengths of two adjacent edges.
 <5> allows checking input and output files of MG-Tetra software, while usually these files are removed after the launch of the mesher. The log file (if any) is also kept if this option is `1`.
 <6> allows grouping volumes into domains
-<7> allows choosing the required optimization level (higher level of optimization provides better mesh, but can be time-consuming):
-
-* 1: none
-* 2: light
-* 3: medium (standard)
-* 4: standard+
-* 5: strong
+<7> allows choosing the required optimization level (higher level of optimization provides better mesh, but can be time-consuming); values are 1: none, 2: light, 3: medium (standard), 4: standard+, 5: strong
 
 <8> removes or not files upon mesh completion 
 <9> launches MG-Tetra software with work space limited to the specified amount of RAM, in Mbytes. If this option is checked off, the software will be launched with 7O% of the total RAM space. 
