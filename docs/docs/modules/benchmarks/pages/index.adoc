@@ -12,11 +12,15 @@ Welcome to {hifimagnet} Examples and Benchmarks documentation!
 === ThermoElecModel
 
 // from feelpp/toolbox
-include:quaterturn/readme.adoc
+xref:quarterturn/thermoelec.adoc[quarterturn]
 
 === Magnetostatic
 
+xref:quarterturn/magneto.adoc[quarterturn]
+
 === Elasticity
+
+xref:quarterturn/elasticity.adoc[quarterturn]
 
 === Coupled Models
 

@@ -1,0 +1,92 @@
+In this example, we consider a solenoid conductor with finite thickness and infinite length.
+This allow us to ignore the z components in our equations.
+We admit that there is only a radial expansion.
+
+== Problem
+Since we cannot build an infinite geometry, we will use the same as in section \ref{sec:pb-validation-mag-fe}. +
+The volumic force stem:[\mathbf{f}] take into account the Lorenz forces but not the thermal dilation, hence stem:[\mathbf{f}=\mathbf{j}\times\mathbf{B}]. The current density stem:[\mathbf{j}] and the magnetic field stem:[\mathbf{B}] can be seen as input parameters or given by our thermoelectric and magnetostatic models.
+
+The materials properties of the solenoid are presented in the table \ref{tab:mat-le-fe}.
+[options="header"]
+|===
+| Name | Description | Value | Unit |
+| stem:[E] | Young modulus | stem:[128.10^{9}] | stem:[Pa=kg.m^{-1} .s^{-2}] |
+| stem:[\nu]| Poisson's ratio | 0.33| - |
+|===
+
+We impose Neumann conditions on all boundary of the solenoid, except for the top and bottom, where we will use Dirichlet boundary conditions set to 0 to modelize the clamped side of the magnet.
+
+The analytical solution of an infinite solenoid differs from this case because of the geometry used.
+We will then only compare the radial displacement at stem:[z=0], to be as far as possible from the top and bottom of the solenoid.
+
+An analytical solution can be found in \cite{Wilson87} or \cite{Montgomery69}, and interested readers can find more details in them.
+The idea to find the analytical solution is to express our quantities in cylindrical coordinates and use the fact that the only non null component of the current density is its angular component stem:[j_\theta]. We can find the radial component stem:[u_r] of stem:[\mathbf{u}] as solution of:
+[stem]
+++++
+\begin{equation*}
+  \frac{\partial}{\partial r}\left( r \frac{\partial u_r}{\partial r} \right) - \frac{u_r}{r}
+  = - \frac{(1+\nu)(1-2\nu)}{E(1-\nu)}r j_{\theta} b_z
+\end{equation*}
+++++
+We want to express the solution as
+[stem]
+++++
+\begin{equation*}
+  u_r=C_1 r + \frac{C_2}{r} + u_p(r)
+\end{equation*}
+++++
+where stem:[u_p] is a particular solution.
+Using boundary conditions we can find the two coefficients stem:[C_1] and stem:[C_2]:
+[stem]
+++++
+\begin{alignat*}{2}
+  C_1 &= \frac{(1+\nu)(1-2\nu)}{E(1-\nu)}j_{\theta}r_i &&\left[  
+    \left( b_z(r_i) + \frac{\Delta b_z}{\alpha - 1}\right) \left( \frac{2 - \nu}{3} \right)
+    \left( 1 - \frac{r_e^2}{(r_e^2 - r_i^2)}\left( 1 - \frac{r_e}{r_i} \right) \right) \right. \\
+  &&&+ \left. \frac{\Delta b_z}{\alpha - 1}\left( \frac{2\nu - 3}{8} \right)
+    \left( 1 - \frac{r_e^2}{(r_e^2 - r_i^2)} \left( 1 - \left( \frac{r_e}{r_i} \right)^2 \right) \right) \right]\\
+  C_2 &= \frac{-r_i^3 r_e^2 j_{\theta}}{(r_e^2 - r_i^2)}\frac{(1+\nu)}{E(1-\nu)}
+  &&\left[ \left( b_z(r_i) + \frac{\Delta b_z}{\alpha - 1}\right) \left( \frac{2 - \nu}{3} \right)\left( 1 - \frac{r_e}{r_i} \right)
+    +\frac{\Delta b_z}{\alpha - 1}\left( \frac{2\nu - 3}{8} \right)\left( 1 - \left( \frac{r_e}{r_i} \right)^2 \right)  \right]
+\end{alignat*}
+++++
+where stem:[\alpha=\frac{r_e}{r_i}] and stem:[\Delta b_z=b_z(r_i)-b_z(r_e)]. +
+Using the expressions for stem:[\mathbf{j}] and stem:[\mathbf{B}], we can find the particular solution stem:[u_p].
+In case of a Bitter coil, as in section \ref{sec:pb-validation-te-fe}, the current distribution is in stem:[r_i/r], we find:
+[stem]
+++++
+\begin{equation*}
+  u_p(r) = \frac{(1+\nu)(1-2\nu)}{E(1-\nu)}r_i j_{\theta}
+  \left[ \frac{\Delta b_z}{\ln(\alpha)}r\ln\left(\frac{r}{r_1}\right)^2
+    - \left(2b_z(r_1)+\frac{\Delta b_z}{\ln(\alpha)}\right)r\ln\left(\frac{r}{r_1}\right)\right]
+\end{equation*}
+++++
+whereas if the current density is uniform in the coil, we have:
+[stem]
+++++
+\begin{equation*}
+  u_p(r) = \frac{(1+\nu)(1-2\nu)}{E(1-\nu)}r_i j_{\theta}
+  \left[ -\frac{r_i}{3}
+    \left( b_z(r_i) + \frac{\Delta b_z}{\alpha - 1} \right)\left( \frac{r}{r_i}\right)^2
+    + \frac{r_i}{8}\frac{\Delta b_z}{\alpha - 1} \left( \frac{r}{r_i}\right)^3 \right]
+\end{equation*}
+++++
+Finally, returning to cartesian coordinates, the displacement stem:[\mathbf{u}] can be written as:
+[stem]
+++++
+\begin{equation*}
+  \mathbf{u} = \begin{pmatrix}
+    \cos(\theta)u_r(r) \\
+    \sin(\theta)u_r(r) \\
+    0
+  \end{pmatrix}
+  = \begin{pmatrix}
+    \frac{x}{\sqrt{x^2 + y^2}}u_r(\sqrt{x^2 + y^2}) \\
+    \frac{y}{\sqrt{x^2 + y^2}}u_r(\sqrt{x^2 + y^2}) \\
+    0
+  \end{pmatrix}
+\end{equation*}
+++++
+
+== Results
+
