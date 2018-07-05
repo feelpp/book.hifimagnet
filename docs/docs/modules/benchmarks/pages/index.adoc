@@ -1,23 +1,36 @@
-= {hifimagnet} Benchmarks documentation
+[[examples]]
+= {hifimagnet} Examples and Benchmarks documentation
 include::{partialsdir}/header-uri.adoc[]
 include::{partialsdir}/header-levels.adoc[]
 
-Welcome to {hifimagnet} Benchmarks documentation!
+Welcome to {hifimagnet} Examples and Benchmarks documentation!
 
 
+[[validations]]
 == Cross rectangular Section Torus
 
 === ThermoElecModel
+
+// from feelpp/toolbox
+include:quaterturn/readme.adoc
 
 === Magnetostatic
 
 === Elasticity
 
+=== Coupled Models
 
+
+[[bitter]]
 == Bitter Magnet
 
 == Helix Magnet
 
+// from feelpp/toolbox
+include:HL/README.adoc
+
 == LowField Benchmark
 
 == HL-31
+
+== SEISM
