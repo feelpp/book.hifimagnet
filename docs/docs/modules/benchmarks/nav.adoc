@@ -1,1 +1,1 @@
-** Examples and Benchmarks
+** xref:index.adoc[Examples and Benchmarks]
