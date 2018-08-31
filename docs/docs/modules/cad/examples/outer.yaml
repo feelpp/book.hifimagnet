@@ -1,6 +1,6 @@
 !<OuterCurrentLead>
-Bar: [4, 9, 5, 501]
-H: 10
-Support: [10, 5, 40, 45]
+bar: [4, 9, 5, 501]
+h: 10
+support: [10, 5, 40, 45]
 name: Outer
 r: [19.3, 24.2]

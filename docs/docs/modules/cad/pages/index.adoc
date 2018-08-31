@@ -50,7 +50,7 @@ Note that the images are private for the moment.
 
 [NOTE]
 ====
-if you do no need {hifimagnet} {salome} plugin you can use a public version of {salome } docker image
+if you do no need {hifimagnet} {salome} plugin you can use a public version of {salome} docker image
 that you may find in link:https://hub.docker.com/r/trophime/[dockerhub].
 ====
 
@@ -77,7 +77,7 @@ export SREGISTRY_CLIENT=registry
 export SREGISTRY_CLIENT_SECRETS=~/.sregistry-cesga
 [export SREGISTRY_STORAGE=...]
 
-sregistry pull --name salome-8.4.0.simg hifimagnet/salome:8.4.0
+sregistry pull --name salome-8.3.0.simg hifimagnet/salome:8.3.0
 ```
 
 [NOTE]
@@ -90,7 +90,7 @@ By default images will be downloaded to `$HOME/.sregistry`
 You can eventually rename the image using:
 
 ```
-sregistry rename hifimagnet/salome:8.4.0 salome-8.4.0.simg
+sregistry rename hifimagnet/salome:8.3.0 salome-8.3.0.simg
 ```
 
 === from dockerhub
@@ -156,7 +156,7 @@ be described in the <<data, data structure section>>.
 ----
 salome [-m GEOM,SMESH,HIFIMAGNET] [-t] \
    ${SALOME_INSTALLDIR}/HIFIMAGNET/bin/salome/HIFIMAGNET_Cmd.py \
-   args:--helix=HL-31-H1.yaml[,--mesh]
+   args:--cfg=HL-31-H1.yaml[,--mesh]
 ----
 
 [[ring-cad]]
@@ -165,19 +165,37 @@ salome [-m GEOM,SMESH,HIFIMAGNET] [-t] \
 ----
 salome [-m GEOM,SMESH,HIFIMAGNET] [-t] \
    ${SALOME_INSTALLDIR}/HIFIMAGNET/bin/salome/HIFIMAGNET_Cmd.py \
-   args:--ring=Ring-H1H2.yaml[,--mesh]
+   args:--cfg=Ring-H1H2.yaml[,--mesh]
+----
+
+[[ilead-cad]]
+[source,sh]
+.Generation of an inner current Lead
+----
+salome [-m GEOM,SMESH,HIFIMAGNET] [-t] \
+   ${SALOME_INSTALLDIR}/HIFIMAGNET/bin/salome/HIFIMAGNET_Cmd.py \
+   args:--cfg=inner.yaml,--inner[,--mesh]
+----
+
+[[olead-cad]]
+[source,sh]
+.Generation of an outer current Lead
+----
+salome [-m GEOM,SMESH,HIFIMAGNET] [-t] \
+   ${SALOME_INSTALLDIR}/HIFIMAGNET/bin/salome/HIFIMAGNET_Cmd.py \
+   args:--cfg=outer.yaml,--outer[,--mesh]
 ----
 
 [[insert-cad]]
 [source,sh]
-.Generation of an Insert in TUI mode
+.Generation of an Insert with an air box in TUI mode
 ----
 salome [-m GEOM,SMESH,HIFIMAGNET] [-t] \
    ${SALOME_INSTALLDIR}/HIFIMAGNET/bin/salome/HIFIMAGNET_Cmd.py \
-   args:--insert=HL-31.yaml[,--air,--mesh]
+   args:--cfg=HL-31.yaml[,--air[,--infty_Rratio=2,--infty_ZRatio=1.5],--mesh]
 ----
 
-`${SALOME_INSTALLDIR}` is the install root directories of {salome} modules, eg `/opt/SALOME-8.4.0-Debian-DB9.4/BINARIES-DB9.4`.
+`${SALOME_INSTALLDIR}` is the install root directories of {salome} modules, eg `/opt/SALOME-8.3.0-Debian-DB9.5/BINARIES-DB9.5`.
 
 [TIP]
 ====
@@ -401,6 +419,20 @@ The `chordalerror` is the maximum desired distance between a triangle and its su
 The smaller this distance is, the closer the mesh is to the exact surface (only available in isotropic meshing).
 ====
 
+There is a 
+== advanced mesh options
+
+The mesh can customized using the yaml cgf file presented above. There are also some options to reduce the number of surfacic meshes that will be latter use to apply boundary conditions:
+
+* `--hideIsolant`:
+* `--groupIsolant`:
+* `--groupCoolingChannels`: 
+* `--groupLeads`:
+
+and there is also an `--coarse` option to generate a quite coarse mesh.
+
+These options are available in the main command line:
+
 [[usage]]
 = Using {salome}
 
@@ -456,7 +488,7 @@ singularity exec \
 ```
 where:
 
-* `SALOMEDIR` is {salome} install directory (eg. `/opt/SALOME_8.3.0_MPI-DB9.3`),
+* `SALOMEDIR` is {salome} install directory (eg. `/opt/SALOME_8.3.0_MPI-DB9.5`),
 * `$STORE/Distene` is the directory containing a valid `dlim8.key` license file.
 
 === A simple `med` mesh in `TUI` mode

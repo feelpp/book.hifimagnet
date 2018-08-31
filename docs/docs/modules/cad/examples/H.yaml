@@ -27,4 +27,3 @@ shape: !<Shape>, <9>
   angle: 0
   onturns: 0
   position: ABOVE
-materials:, <10>
