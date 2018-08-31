@@ -3,10 +3,24 @@
 The simpliest way to install {salome} on bare metal linux is to follows this procedure:
 
 * build a binary for your os
-* retreive and untar the custom binary
+* retreive and run the custom installation script
 * test salome and install missing packages if any
 
 You can also retreive {salome} tarball for your os on http://salome-platform.org/[{salome} website].
 Note that you would need to be a registered user to download the official binary. Then follow this
 instructions on {salome} website to install it and run {salome} from a command line. You may also have
 to add some missing packages.
+
+==== Building for you os
+
+* set the pyconf file
+* eventually adapt the pyconf
+* run the build procedure in a clean docker image of your os
+
+The build procedure will create:
+
+* a binary in $HOME/Salome_Packages
+* a custom install script
+
+To debug the build:
+...
