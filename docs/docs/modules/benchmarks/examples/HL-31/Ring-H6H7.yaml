@@ -1,0 +1,10 @@
+!<Ring>
+BPside: false
+angle: 23
+fillets: false
+n: 12
+name: Ring-H6H7
+r: [56.2, 65.6, 66.5, 77.2]
+z: [0, 20]
+orientation: 0
+material:

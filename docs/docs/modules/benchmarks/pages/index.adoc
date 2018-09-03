@@ -24,17 +24,19 @@ xref:quarterturn/elasticity.adoc[quarterturn]
 
 === Coupled Models
 
+xref:quarterturn/coupled.adoc[quarterturn]
 
-[[bitter]]
-== Bitter Magnet
+// [[bitter]]
+// == Bitter Magnet
+
+include::Bitter/README.adoc
 
 == Helix Magnet
 
-// from feelpp/toolbox
-include:HL/README.adoc
+include::LowFieldBench/README.adoc
 
 == LowField Benchmark
-
+include::HL/README.adoc
 == HL-31
 
 == SEISM

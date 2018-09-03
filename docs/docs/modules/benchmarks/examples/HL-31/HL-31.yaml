@@ -1,0 +1,38 @@
+!<Insert>
+name: "HL-31"
+Helices:
+  - HL-31_H1
+  - HL-31_H2
+  - HL-31_H3
+  - HL-31_H4
+  - HL-31_H5
+  - HL-31_H6
+  - HL-31_H7
+  - HL-31_H8
+  - HL-31_H9
+  - HL-31_H10
+  - HL-31_H11
+  - HL-31_H12
+  - HL-31_H13
+  - HL-31_H14
+Rings:
+  - Ring-H1H2
+  - Ring-H2H3
+  - Ring-H3H4
+  - Ring-H4H5
+  - Ring-H5H6
+  - Ring-H6H7
+  - Ring-H7H8
+  - Ring-H8H9
+  - Ring-H9H10
+  - Ring-H10H11
+  - Ring-H11H12
+  - Ring-H12H13
+  - Ring-H13H14
+HAngles:
+RAngles:
+CurrentLeads:
+  - inner
+  - outer-H14
+innerbore: 18.54
+outerbore: 186.25

@@ -3,8 +3,81 @@
 
 Welcome to {magnettools} manual documentation!
 
+{magnettools} is a in-house software that provides tools to compute :
+
+ * Analytically Magnetic Field,
+ * Mutual and Self Inductances,
+ * Axial and Radial Forces,
+
+and to analyze some Transient Analysis.
+
+{magnettools} also contains:
+
+  * Optimization procedure to define the PolyHelices insert geometry,
+  * Files for CAD and CAM of Helices.
+
+[[quickstart]]
+= Quick Starts
+
+
+[[qs_installation]]
+== Getting {magnetttools}
+
+Using {magnettools} inside container, either {https://www.docker.com/what-docker}[Docker] or Singularity based,
+is the recommended and fastest way. If your system support singularity containers we recommend to use them instead of Docker ones.
+
+=== from sregistry
+
+{magnettools} are included in {hifimagnet} singularity image.
+To get {hifimagnet} singularity image see xref:user/index.adoc[singularity]
+
+=== from dockerhub
+
+{magnettools} are included in {hifimagnet} docker image.
+To get {hifimagnet} docker image see xref:user/index.adoc[dockerhub]
+
+=== Install from {lncmi} Debian repository
+
+On Debian/Ubuntu system you can install {magnettools} from the local {lncmi} packages repository.
+To do so:
+
+* you need access to the {lncmi} repository
+* add a lncmi.lst into your `/etc/apt/sources.list.d` directory:
+
+Then run:
+
+```
+sudo apt update
+sudo apt install magnettools
+```
+
+[NOTE]
+====
+Supported Debian/Ubuntu distributions:
+
+* Stretch
+* Xenial
+
+On Windows 10 Pro you can also install {hifimagnet} without much effort.
+Just enable WSL feature and download Debian Stretch or Ubuntu Xenial (aka 16.04 LST)
+from Microsoft App Store. Then apply the same procedure as above to install the package.
+====
+
+=== Install from scratch
+
+[[usage]]
+== Using {magnettools}
+
+include::DataStructure.adoc[leveloffset=+2]
+include::Bmap.adoc[leveloffset=+2]
+include::Inductances.adoc[leveloffset=+2]
+include::Fmap.adoc[leveloffset=+2]
+include::Transient.adoc[leveloffset=+2]
+include::Optimization.adoc[leveloffset=+2]
+
+
 [[installation]]
-== Installation
+== Detailed  Installation
 
 [[installation_prerequis]]
 === Prerequis
@@ -22,27 +95,4 @@ Welcome to {magnettools} manual documentation!
 === Repository
 
 === From scratch
-
-[[usage]]
-== Using {magnettools}
-
-{magnettools} is a in-house software that provides tools to compute :
-
- * Analytically Magnetic Field,
- * Mutual and Self Inductances,
- * Axial and Radial Forces,
-
-and to analyze some Transient Analysis.
-
-{magnettools} also contains:
-
-  * Optimization procedure to define the PolyHelices insert geometry,
-  * Files for CAD and CAM of Helices.
-
-include::DataStructure.adoc[leveloffset=+2]
-include::Bmap.adoc[leveloffset=+2]
-include::Inductances.adoc[leveloffset=+2]
-include::Fmap.adoc[leveloffset=+2]
-include::Transient.adoc[leveloffset=+2]
-include::Optimization.adoc[leveloffset=+2]
 

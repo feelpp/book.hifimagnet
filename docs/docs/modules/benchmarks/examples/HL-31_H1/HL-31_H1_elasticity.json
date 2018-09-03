@@ -1,0 +1,39 @@
+{
+    "Name": "CoupledCart",
+    "ShortName":"MSC",
+    "Model":"Elasticity",
+    "Materials":
+    {
+	"Cu":
+	{
+	    "name":"copper",
+	    "filename":"$cfgdir/Materials/Cu5Ag.json"
+	},
+	"Glue":
+	{
+            "name":"glue",
+	    "filename":"$cfgdir/Materials/glue.json"
+	}
+    },
+    "BoundaryConditions":
+    {
+        "displacement":
+        {
+            "Dirichlet":
+            {
+                "V0":
+                {
+                    "expr":"{0,0,0}:x:y:z"
+                },
+                "V1":
+                {
+                    "expr":"{0,0,0}:x:y:z"
+                }
+	    }
+	}
+    },
+    "PostProcess":
+    {
+	"Fields":["displacement","Von-Mises","tresca","principal-stresses"]
+    }
+}

@@ -1,0 +1,8 @@
+!<Insert>
+name: "HL-31-H1H2_shapes"
+Helices:
+  - HL-31_H1_shapes
+  - HL-31_H2_shapes
+Rings:
+  - Ring-H1H2
+CurrentLeads:

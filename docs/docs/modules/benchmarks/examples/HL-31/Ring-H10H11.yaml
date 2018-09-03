@@ -1,0 +1,10 @@
+!<Ring>
+BPside: false
+angle: 16
+fillets: false
+n: 18
+name: Ring-H10H11
+r: [104.8, 118.9, 119.8, 135]
+z: [0, 20]
+orientation: 0
+material:
