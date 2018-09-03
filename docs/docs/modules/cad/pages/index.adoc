@@ -106,7 +106,19 @@ docker pull feelpp/salome:8.3.0-nvidia
 Check the existing docker images on link:https://hub.docker.com/r/feelpp/salome/[feelpp/salome dockerhub]
 
 
-=== install from...
+=== Install from {lncmi} Salome_Packages
+
+You can also download the binaries for you platform and the corresponding installation script.
+Supported platforms are:
+
+* Debian/Stretch
+* Ubuntu/Xenial (aka 16.04 LST)
+
+[NOTE]
+====
+On Windows 10 Pro with WSL enabled, you can also follow this procedure to install {hifimagnet} {salome} plugin.
+Before running just install a X11 server. We recommend MobaXterm 10.9 or latter. 
+====
 
 [[qs_reference]]
 == Running {hifimagnet} Salome plugin

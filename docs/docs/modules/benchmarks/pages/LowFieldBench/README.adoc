@@ -1,0 +1,113 @@
+= LowFieldBench
+
+In this test case, we consider a polyhelix magnet consisting of 2 helices operated at a low current.
+The simulations are compared with experimental results, more precisely with magnetic field measurements
+with a 3D hall probe in the zone of interest for researchers.
+
+include:setup_lowres.jpg[Experimental Setup for Low field Measurements on a Workbench]
+
+The magnetic field produced  will be computed on a zone of interest namely a cylinder along the helicesZ-Axis.
+
+
+== Running the case
+
+As the CAD generation is time consuming, the mesh is provided but will eventually need to be partitionned.
+However if you ever want to rebuild the CAD and Mesh you will find detailled instructions bellow.
+
+To run this example on MSO4SC portal see this section.
+
+=== Creating the geometry
+
+[source,sh]
+----
+salome -t $HIFIMAGNET_SALOME_DIR/HIFIMAGNET_Cmd.py args:--cfg=BancMesure_H3H4_with_shapes.yaml,--hideIsolant
+----
+
+=== Creating the mesh
+
+[source,sh]
+----
+salome -t $HIFIMAGNET_SALOME_DIR/HIFIMAGNET_Cmd.py args:--insert=BancMesure_H3H4_with_shapes.yaml,--hideIsolant,--mesh
+----
+
+=== Create the zone of interest for the magnetic field calculation and generate corresponding mesh:
+
+[source,sh]
+----
+gmsh -3 -bin BancMesure_H3H4_with_shapes-biotsavart_z_wo_glue.geo -o BancMesure_H3H4_with_shapes_wo_isolant.msh
+----
+
+Note that the dimension of the box may be changed in the geo:
+
+[source,geo]
+---
+Merge "BancMesure_H3H4_with_shapes.med";
+
+hs=5;
+rbox = 10;
+zbox0 = -45;
+zbox1 = 185;
+Include "createbox.geo";
+---
+
+=== Partitionning the mesh:
+
+[source,sh]
+----
+feelpp_mesh_partitioner --ifile BancMesure_H3H4_with_shapes_wo_isolant.msh  --part 32  --nochdir
+----
+
+=== Running the model with couplecartmodel app:
+
+[source,sh]
+----
+mpirun -np 32 feelpp_hfm_coupledcartmodel_3DP1N1 --config-file H3H4.cfg
+----
+
+== Data files
+
+=== Geometry files
+
+* BancMesure_H3H4_with_shapes.yaml
+* HL27-H3_with_shapes.yaml
+* HL27-H4_with_shapes.yaml
+* Ring-H3H4.yaml
+
+with data for defining the helical cut:
+
+* HL27-H3_with_shapes_cut_salome.dat
+* HL27-H4_with_shapes_cut_salome.dat
+
+=== Mesh files
+
+* BancMesure_H3H4_meshdata.yaml
+
+
+=== Model files
+
+* H3H4_thermoelec.json
+* H3H4_magcart.json
+
+=== Model files
+
+* H3H4.cfg
+
+=== Measurements data
+
+
+== Outputs
+
+
+== Notes
+
+the executables must be in the path or should be prefixed with appropriate directories.
+
+For instance on Lncmi server:
+```
+FEELPP_MESH_APPS_DIR=$FEELPP_BUILD_DIR/applications/mesh/
+HIFIMAGNET_APPS_DIR=~/feelpp_build/new_Json/research/hifimagnet/applications
+HIFIMAGNET_SALOME_DIR=~/SALOME-8.3.0-DB9.5/INSTALL/HIFIMAGNET/bin/salome
+```
+
+The coupledcart model is in ```$HIFIMAGNET_APPS_DIR/CoupledCartModel/```
+

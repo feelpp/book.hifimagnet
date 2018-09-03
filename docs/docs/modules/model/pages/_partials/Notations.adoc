@@ -39,6 +39,14 @@ We will consider the usual notation for the space coordinates in   stem:[\mathbf
 |stem:[C_p]   |thermal capacity   |stem:[J.K^{-1}]
 |stem:[k]      |thermal conductivity |stem:[W.m^{-1} .K^{-1}]
 |stem:[\sigma] |electrical conductivity |stem:[S.m^{-1}]
+|stem:[\alpha] |thermal resistivity coefficient |
+|===
+|stem:[\mu]    | magnetic permeability |
+|stem:[\epsilon] | electric permeability |
+|===
+|stem:[\alpha_T] |thermal expansion coefficient |
+|stem:[Y]      |Young modulus |stem:[W.m^{-1} .K^{-1}]
+|stem:[\nu]    |Poisson ratio |]
 |===
 
 

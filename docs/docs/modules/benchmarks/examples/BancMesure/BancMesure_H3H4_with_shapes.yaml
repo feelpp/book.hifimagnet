@@ -1,0 +1,15 @@
+!<Insert>
+name: "BancMesure_H3H4_with_shapes"
+Helices:
+  - HL27-H3_with_shapes
+  - HL27-H4_with_shapes
+Rings:
+  - Ring-H3H4
+CurrentLeads:
+innerbore: 18.54
+outerbore: 186.85
+HAngles:
+  - -22.5
+  - 0
+RAngles:
+  - -5.625

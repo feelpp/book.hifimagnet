@@ -1,0 +1,14 @@
+{
+    "name":"Cu",
+    "sigma0":"50.e+3",
+    "k0":"0.33",
+    "T0":"293",
+    "alpha":"3.4e-3",
+    "sigma":"sigma0/(1+alpha*(T-T0)):sigma0:alpha:T:T0",
+    "k":"k0*T/((1+alpha*(T-T0))*T0):k0:T:alpha:T0",
+    "E":"120.e+9",
+    "nu":"0.35",
+    "alphaT":"18e-6",
+    "rho":"10.e-6",
+    "mu":"1"
+}

@@ -1,0 +1,10 @@
+!<Ring>
+BPside: false
+angle: 26
+fillets: false
+n: 10
+name: Ring-H4H5
+r: [39, 46.3, 47.2, 55.3]
+z: [0, 20]
+orientation: 0
+material:

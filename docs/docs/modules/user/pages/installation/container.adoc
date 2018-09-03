@@ -1,0 +1,6 @@
+= Using containers
+
+[[installation_docker]]
+include::installation/docker.adoc[leveloffset=+1]
+[[installation_hifimagnet]]
+include::installation/singularity.adoc[leveloffset=+1]

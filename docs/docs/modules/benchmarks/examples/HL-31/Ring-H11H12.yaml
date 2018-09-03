@@ -1,0 +1,10 @@
+!<Ring>
+BPside: true
+angle: 14
+fillets: false
+n: 20
+name: Ring-H11H12
+r: [119.8, 135, 135.9, 152.2]
+z: [0, 20]
+orientation: 0
+material:

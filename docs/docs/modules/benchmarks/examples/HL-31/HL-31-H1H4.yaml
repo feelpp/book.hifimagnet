@@ -1,0 +1,16 @@
+!<Insert>
+name: "HL-31-H1H4"
+Helices:
+  - HL-31_H1
+  - HL-31_H2
+  - HL-31_H3
+  - HL-31_H4
+Rings:
+  - Ring-H1H2
+  - Ring-H2H3
+  - Ring-H3H4
+HAngles:
+RAngles:
+CurrentLeads:
+innerbore: 18.54
+outerbore: 186.25

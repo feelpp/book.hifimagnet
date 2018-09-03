@@ -7,6 +7,26 @@ Welcome to {hifimagnet} Model documentation!
 [[introduction]]
 == Introduction
 
+High Field Magnets modeling relies on a coupled nonlinear multiphysic model that involves:
+
+* electromagnetism,
+* thermics,
+* mechanics
+* and thermohydraulics for the cooling.
+
+The nonlinearity arise from the dependencies of the physical properties of the copper alloy materials
+that compose the insert (ie. the so-called helices). Indeed the electrical and thermal conductivity
+depends on the temperature field following the {https://en.wikipedia.org/wiki/Wiedemann%E2%80%93Franz_law}[Wiedemann-Frantz law]:
+stem:[\frac{k(T)}{\sigma(T)\,T} = L], where stem:[L] is a material dependent constant.
+
+image:Model.png[model]
+
+The coupling of each physics is sketched in the chart bellow.
+Details on each physics will be given in the following sections.
+Finally, a specific section will be devoted to a simpler axisymetrical model
+used mostly for quick calculations and optimzation.
+
+image:Model.png[model]
 
 :leveloffset=+1:
 include::_partials/Notations.adoc[leveloffset=+1]
@@ -15,14 +35,109 @@ include::_partials/MathNotations.adoc[leveloffset=+1]
 [[coupled3d]]
 == Coupled Model
 
+[[magneto]]
+=== Electromagnetic
+
+The starting point of the electromagnetic model is the {https://en.wikipedia.org/wiki/Maxwell%27s_equations}[Maxwell equations].
+Using a classical approach we rewritte the equations by introducing the gauged magnetic and electric potentials, namely stem:[\mathbf{A}] and stem:[V].
+This leads to the following equation:
+
+[stem]
+====
+\epsilon \frac{\partial^2 \mathbf{A}}{\partial t^2} + \sigma \frac{\partial \mathbf{A}}{\partial t} - \sigma \mathbf{u} \times (\nabla \times \mathbf{A}) + \nabla \times (\frac{1}{\mu} \nabla \times \mathbf{A}) = -\sigma \nabla V in \mathbf{R}^3
+====
+
+We add the conservation of current:
+
+[stem]
+====
+\nabla \cdot \( \sigma ( -\nabla V + \mathbf{u} \times (\nabla \times \mathbf{A}) \) = 0 in \Omega.
+====
+
+[NOTE]
+====
+We use the classical Coulomb gauge to properly define the magnetic potential (ie stem:[\nabla \cdat \mathbf{A}=0]).
+Moreover we have assume that no material exhibits an aimantation nor a polarization. 
+====
+
+====  QuasiStatic Maxwell (QMS)
+
+In our case, we will neglect the second order time derivative.
+The final system of EDP to be solved is:
+
+[stem]
+====
+\sigma \frac{\partial \mathbf{A}}{\partial t} - \sigma \mathbf{u} \times (\nabla \times \mathbf{A}) + \nabla \times (\frac{1}{\mu} \nabla \times \mathbf{A}) = -\sigma \nabla V in \mathbf{R}^3
+\nabla \cdot \( \sigma ( -\nabla V + \mathbf{u} \times (\nabla \times \mathbf{A}) \) = 0 in \Omega.
+====
+
+
+==== Magnetostatic
+
+The steady state regime will be given by:
+
+[stem]
+====
+\nabla \times (\frac{1}{\mu} \nabla \times \mathbf{A}) = -\sigma \nabla V in \mathbf{R}^3
+\nabla \cdot \( \sigma ( -\nabla V + \mathbf{u} \times (\nabla \times \mathbf{A}) \) = 0 in \Omega.
+====
+
+In the case of non magnetic materials (ie stem:[\mu=\mu_0]), we can easily derive a solution using
+the Biot Savart law:
+
+[stem]
+====
+\mathbf{A}(\mathbf{X}) = \mu_0 \int_{\Omega} \mathbf{j} \, G(\mathbf{X},Y) \,d\Omega_\mathbf{X} \qquad \vorall \mathbf{X} \in \mathbf{R^3} 
+====
+
+where stem:[G(\mathbf{X},Y)] stands for the Green function and stem:[\mathbf{j} = - \sigma \nabla V].
+
+[NOTE]
+====
+From a mathematical point of view we can refer to this solution as the fundamental solution for the laplace equation: stem:[- \nabla^2 \mathbf{A} = \mu_0 \mathbf{j}].
+====
+
 [[thermoelec]]
 === ThermoElectric
 
-[[magneto]]
-=== Magnetostatic
+The temperature field stem:[T] is given by the classical heat equation with the Joule losses as the source term withing stem:[\Omega]:
+
+[stem]
+====
+\rho C_p \frac{\partial T}{\partial t} + \mathbf{u} \cdot \nabla T - \nabla ( k \nabla T) = \mathbf{j} \cdot \mathbf{e} \qquad in \Omega.
+====
+
+Boundary conditions...
+
 
 [[meca]]
 === Elasticity
+
+To model the mechanical behaviour of our magnets submitted to the action of Lorentz forces stem:[\mathbf{j} \times \mathbf{b}],
+thermal expansion and to the pressure of the water flow used for the cooling, we use the classical formulation: 
+
+[stem]
+====
+\nabla \cdot {\bar{\bar{\sigma}}} + \mathbf{j} \times \mathbf{b} = \rho \frac{\partial^2 \mathbf{u}}{\partial t^2} - \rho \nabla P
+{\bar{\bar{\epsilon}}} = \frac{1}{2} (\nabla \mathbf{u} + \nabla \mathbf{u}^T )
+{\bar{\bar{\sigma}}} = C : {\bar{\bar{\sigma}}} 
+====
+
+In testbooks the latest equation is referred as the Hooke law which represents the constitutive equation for linear material.
+This equation may be also expressed by: 
+[stem]
+====
+{\bar{\bar{\sigma}}} = \frac{Y}{1+\nu}\( {\bar{\bar{\epsilon}}} + \frac{\nu}{1+2\nu}} {\bar{\bar{\epsilon}}}^T \)
+====
+
+To account for the thermal expansion of the material we add to the stress tensor stem:[{\bar{\bar{\sigma}}}]:
+
+[stem]
+====
+{\bar{\bar{\sigma}}}^T = - \frac{Y}{1+\nu}\,\alpha_T \, (T-T_0)\, {\bar{\bar{I}}
+====
+with stem:[{\bar{\bar{I}}] the identity tensor, and stem:[T_0] is a reference temperature.
+
 
 === ThermoHydraulics
 

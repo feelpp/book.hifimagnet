@@ -1,0 +1,57 @@
+{
+    "Name": "CoupledCart",
+    "ShortName":"MSC",
+    "Models":
+    {
+        "equations": "magnetostatic-regularized"
+    },
+    "Materials":
+    {
+        "coil":
+        {
+            "name":"copper",
+            "mu_mag": "1"
+        },
+        "air":
+        {
+            "name":"air",
+            "mu_mag": "1"
+        }
+    },
+    "BoundaryConditions":
+    {
+        "magnetic_potential":
+        {
+            "Dirichlet":
+            {
+                "Border":
+                {
+                    "expr":"{0,0,0}:x:y:z"
+                },
+                "OYOZ":
+                {
+                    "expr":"0:x:y:z"
+                },
+                "V1":
+                {
+                    "expr":"0:x:y:z"
+                },
+                "OXOZ":
+                {
+                    "expr":"0:x:y:z"
+                },
+                "V0":
+                {
+                    "expr":"0:x:y:z"
+                }
+            }
+        }
+    },
+    "PostProcess":
+    {
+        "Exports":
+        {
+            "fields":["magneticPotential","magneticField","currentDensity"]
+        }
+    }
+}

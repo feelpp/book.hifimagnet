@@ -1,0 +1,13 @@
+{
+    "application": {
+        "name": "mesh_partitioner",
+        "date": {
+            "end": "2017-Dec-07 12:11:50"
+        },
+        "directories": {
+            "exports": "\/home\/LNCMI-G\/trophime\/MSO4SC\/HiFiMagnet\/demos\/HL-dble\/exports",
+            "logs": "\/home\/LNCMI-G\/trophime\/MSO4SC\/HiFiMagnet\/demos\/HL-dble\/logs",
+            "exprs": "\/home\/LNCMI-G\/trophime\/MSO4SC\/HiFiMagnet\/demos\/HL-dble\/exprs"
+        }
+    }
+}

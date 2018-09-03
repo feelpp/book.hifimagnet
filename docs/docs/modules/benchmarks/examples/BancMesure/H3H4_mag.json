@@ -1,0 +1,85 @@
+{
+    "Name": "CoupledCart",
+    "ShortName":"MSC",
+    "Model":"coupled-cart",
+    "Materials":
+    {
+	"H0":
+	{
+            "name":"CuAg0.1",
+	    "filename":"$cfgdir/../Materials/CuCrZn.json"
+	},
+	"H1":
+	{
+            "name":"CuAg0.1",
+	    "filename":"$cfgdir/../Materials/CuCrZn.json"
+	},
+	"H0_Isolant1":
+	{
+            "name":"Glue",
+	    "filename":"$cfgdir/../Materials/glue.json"
+	},
+	"H0_Isolant2":
+	{
+            "name":"Glue",
+	    "filename":"$cfgdir/../Materials/glue.json"
+	},
+	"H1_Isolant1":
+	{
+            "name":"Glue",
+	    "filename":"$cfgdir/../Materials/glue.json"
+	},
+	"H1_Isolant2":
+	{
+            "name":"Glue",
+	    "filename":"$cfgdir/../Materials/glue.json"
+	},
+	"R0":
+	{
+	    "name":"CuCr",
+	    "filename":"$cfgdir/../Materials/CuCr.json"
+	}
+    },
+    "BoundaryConditions":
+    {
+	"magnetic_potential":
+	{
+            // "Dirichlet_Biot":
+            // {
+            //     "from_InfR1":
+            //     {
+            //     }
+            // }
+            "Dirichlet":
+            {
+		"from_InfR1":
+		{
+                    "expr":"{0,0,0}:x:y:z"
+		},
+		"from_V00":
+		{
+                    "expr":"{0,0,0}:x:y:z"
+		},
+		"from_V11":
+		{
+                    "expr":"{0,0,0}:x:y:z"
+		},
+		"from_InfV00":
+		{
+                    "expr":"{0,0,0}:x:y:z"
+		},
+		"from_InfV01":
+		{
+                    "expr":"{0,0,0}:x:y:z"
+		},
+		"from_InfV1":
+		{
+                    "expr":"{0,0,0}:x:y:z"
+		}
+	}
+    },
+    "PostProcess":
+    {
+	"Fields":["magneticPotential","magneticField","currentDensity"]
+    }
+}

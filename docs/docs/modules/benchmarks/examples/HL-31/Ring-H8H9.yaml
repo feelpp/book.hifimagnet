@@ -1,0 +1,10 @@
+!<Ring>
+BPside: false
+angle: 17
+fillets: false
+n: 16
+name: Ring-H8H9
+r: [78.1, 90, 90.9, 103.9]
+z: [0, 20]
+orientation: 0
+material:
