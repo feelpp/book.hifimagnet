@@ -5,7 +5,7 @@ include::{partialsdir}/header-levels.adoc[]
 
 Welcome to {hifimagnet} Examples and Benchmarks documentation!
 
-
+[[examples]]
 == CAD generation and Meshing
 
 xref:CAD/README.adoc[insert with 4 helices]
@@ -41,6 +41,7 @@ xref:HL/README.adoc[HL]
 xref:HR/README.adoc[HR] 
 // include::LowFieldBench/README.adoc
 
+[[verifications]]
 == LowField Benchmark
 // include::LowFieldBench/README.adoc
 xref::LowFieldBench/README.adoc[LowField]
