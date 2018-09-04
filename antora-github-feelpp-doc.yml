@@ -27,5 +27,15 @@ asciidoc:
     feelpp: Feel++
     stem: latexmath
     hifimagnet: HiFiMagnet
+    magnettools: MagnetTools
+    meshgems: MeshGems
+    salome: Salome
+    singularity: Singularity
+    sregistry: Sregistry
+    paraview: ParaView
+    ensight: EnSight
+    girder: Girder
+    fiware: Fiware
+    cesga: Cesga
   extensions:
     - ./lib/remote-include-processor
