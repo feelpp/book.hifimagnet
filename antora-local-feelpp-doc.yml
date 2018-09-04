@@ -34,3 +34,5 @@ asciidoc:
     girder: Girder
     fiware: Fiware
     cesga: Cesga
+extensions:
+    - ./lib/remote-include-processor
