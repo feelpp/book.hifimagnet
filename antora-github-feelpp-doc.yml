@@ -27,5 +27,5 @@ asciidoc:
     feelpp: Feel++
     stem: latexmath
     hifimagnet: HiFiMagnet
-extensions:
+  extensions:
     - ./lib/remote-include-processor
