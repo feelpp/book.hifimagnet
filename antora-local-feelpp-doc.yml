@@ -1,7 +1,7 @@
 site:
   title: HiFiMagnet Documentation
   url: ./
-  #  start_page: stable@docs::index.adoc
+  start_page: stable@hifimagnet::index.adoc
 content:
   sources:
   - url: ./
