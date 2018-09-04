@@ -18,13 +18,17 @@ salome -t $HIFIMAGNET/HIFIMAGNET_Cmd.py args:--cfg=HL-31.yaml
 salome -t $HIFIMAGNET/HIFIMAGNET_Cmd.py args:--cfg=HL-31.yaml,--air
 ----
 
-WARNING: Creating the geometry from scratch takes at least 4 days...
+[WARNING]
+====
+Beware that creating the geometry from scratch may take a long time.
+For a 14 Helices insert it takes at least 4 days...
+====
 
 === Generate the mesh
 
 [source,sh]
 ----
-salome -t $HIFIMAGNET//HIFIMAGNET_Cmd.py args:--insert=HL-31.yaml,--air,--mesh,--groupCoolingChannels
+salome -t $HIFIMAGNET//HIFIMAGNET_Cmd.py args:--insert=HL-31.yaml,--air,--mesh[,--groupCoolingChannels]
 ----
 
 === Partitionning the mesh:
@@ -60,13 +64,15 @@ Definition of the helical cut per helix:
 
 * HL-31_meshdata.yaml
 
-=== Model files
+=== Simulation cfg file
 
 * HL-31.cfg
 
-HL-31_thermoelec.json
-HL-31_magcart.json
-HL-31_elasticity.json
+=== Model files
+
+* HL-31_thermoelec.json
+* HL-31_magcart.json
+* HL-31_elasticity.json
 
 === Materials files
 
