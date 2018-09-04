@@ -135,16 +135,16 @@ In testbooks the latest equation is referred as the Hooke law which represents t
 This equation may be also expressed by: 
 [stem]
 ++++
-{\bar{\bar{\sigma}}} = \frac{Y}{1+\nu}\left( {\bar{\bar{\epsilon}}} + \frac{\nu}{1+2\nu}} {\bar{\bar{\epsilon}}}^T \right)
+{\bar{\bar{\sigma}}} = \frac{Y}{1+\nu}\left( {\bar{\bar{\epsilon}}} + \frac{\nu}{1+2\nu} {\bar{\bar{\epsilon}}}^T \right)
 ++++
 
 To account for the thermal expansion of the material we add to the stress tensor stem:[{\bar{\bar{\sigma}}}]:
 
 [stem]
 ++++
-{\bar{\bar{\sigma}}}^T = - \frac{Y}{1+\nu}\,\alpha_T \, (T-T_0)\, {\bar{\bar{I}}
+{\bar{\bar{\sigma}}}^T = - \frac{Y}{1+\nu} \,\alpha_T \, (T-T_0)\, {\bar{\bar{I}}}
 ++++
-with stem:[{\bar{\bar{I}}] the identity tensor, and stem:[T_0] is a reference temperature.
+with stem:[{\bar{\bar{I}}}] the identity tensor, and stem:[T_0] is a reference temperature.
 
 
 === ThermoHydraulics
