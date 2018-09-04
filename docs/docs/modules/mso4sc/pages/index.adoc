@@ -248,8 +248,6 @@ To do so follow these instructions:
 image::sregistry_team.png[ex: {hifimagnet} {sregistry} team]
 
 * As in the image above, click on *Invite Users*
-
-
 * Copy the link (display in blue) and send it to your new *EndUser*
 
 See https://singularityhub.github.io/sregistry/credentials[sregistry docs]
@@ -415,7 +413,7 @@ an alternative is to use:
 
 At this point you should have a page with all the options that need to be filled before moving to *Deploy Instance*
 
-image::Portal_HifiMagApp.png[ex: Main {hifimagnet} app]
+image::Portal_HifiMagApp.png[ex: Main {hifimagnet} app `3DSim`]
 
 The fields to fill may be grouped into categories:
 
@@ -569,7 +567,7 @@ The format of the files in a dataset are respectively described in:
 * Select *Settings*
 * Define a Remote Desktop resource
 
-[source,java]
+[source,txt]
 ----
 include::{examplesdir}/remotedesktop.txt[]
 ----
@@ -602,7 +600,9 @@ Check the output of the script (aka `slurm-<id>.out`) in `<basedir>/<workdir_pre
 to see the exact name of this directory.
 
 In `slurm-<id>.out` you should see lines like that at the beginning of the files:
-```
+
+[source,log]
+----
 Reading /usr/share/doc/hifimagnet/ThermoElectricModel/quarter-turn3D.cfg...
 [ Starting Feel++ ] application thermoelectric version 0.1 date 2018-Jun-07
  . thermoelectric files are stored in /feel/thermoelectric/np_2
@@ -612,7 +612,7 @@ Reading /usr/share/doc/hifimagnet/ThermoElectricModel/quarter-turn3D.cfg...
  . thermoelectric files are stored in /feel/hifimagnet/ThermoElectricModel/quarter-turn3D.geo/thermoelectric-linear_V1T1_N1/np_2
  .. exports :/feel/hifimagnet/ThermoElectricModel/quarter-turn3D.geo/thermoelectric-linear_V1T1_N1/np_2/exports
  .. logfiles :/feel/hifimagnet/ThermoElectricModel/quarter-turn3D.geo/thermoelectric-linear_V1T1_N1/np_2/logs
-```
+----
 
 It means that the actual simulation results are store in `${LUSTRE}/feel/hifimagnet/ThermoElectricModel/quarter-turn3D.geo/thermoelectric-linear_V1T1_N1/np_2/exports/ensightgold/`
 ====
@@ -672,12 +672,20 @@ In the remote desktop to get {ensight} running:
 [[offering_setup]]
 == To go further
 
-* MagnetTools:
-* Preprocessing:
+Available apps in **MSO4SC Portal** are:
+
+* MagnetTools: xref::bmap.adoc[BMap], 
+* Preprocessing: xref::MagCAD.adoc[MagCAD],
 * Simulations:
-** direct models
-** CRB
-* Postprocessing:
+** direct models: xref::3Dsim.adoc[3DSim]
+** CRB:
+// * Postprocessing:
+
+To get more details about the app, click on it.
+This will display more information about the app and its settings.
+
+Note that we won't repeat the overwhole process described above to setup, run the app.
+We will focuss on inputs that are specific to each app.
 
 == References
 

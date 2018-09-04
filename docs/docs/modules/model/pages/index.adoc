@@ -19,8 +19,6 @@ that compose the insert (ie. the so-called helices). Indeed the electrical and t
 depends on the temperature field following the {https://en.wikipedia.org/wiki/Wiedemann%E2%80%93Franz_law}[Wiedemann-Frantz law]:
 stem:[\frac{k(T)}{\sigma(T)\,T} = L], where stem:[L] is a material dependent constant.
 
-image:Model.png[model]
-
 The coupling of each physics is sketched in the chart bellow.
 Details on each physics will be given in the following sections.
 Finally, a specific section will be devoted to a simpler axisymetrical model
@@ -174,9 +172,9 @@ with stem:[Re] the Reynolds number, stem:[Pr] the Prandlt number and stem:[D_h] 
 These quantities are defined by cooling channels:
 [stem]
 ++++
-	R_e &= \displaystyle \frac{\rho u}{\mu},\\
-	P_r &= \displaystyle \frac{\mu C_p}{{k}, \\
-	D_h &= 2 (r^{(n+1)}_1 - r^{(n)}_2).
+R_e &= \displaystyle \frac{\rho u}{\mu},\\
+P_r &= \displaystyle \frac{\mu C_p}{{k}, \\
+D_h &= 2 (r^{(n+1)}_1 - r^{(n)}_2).
 ++++
 
 Note that stem:[\mu] stands here for the viscosity of water.
