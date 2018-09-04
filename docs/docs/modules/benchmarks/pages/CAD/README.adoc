@@ -1,0 +1,115 @@
+= Insert Geometry and Mesh
+
+In this example, we will create the geometry for an insert with 4 helices and mesh it
+
+== Running the case
+
+
+To run this example on MSO4SC portal see this section.
+
+=== Create the geometry:
+
+[source,sh]
+----
+salome -t -b -m GEOM,SMESH,HIFIMAGNET $HIFIMAGNET/HIFIMAGNET_Cmd.py args:--cfg=Insert-H1H4-Leads-2t.yaml
+----
+
+The `HIFIMAGNET` environment variable points to where the {hifimagnet} {salome} plugin is installed:
+
+* on premise machine with {salome} 8.3.0 for instance: `export HIFIMAGNET=/opt/SALOME-8.3.0-MPI-DB9.5/BINARIES-DB9.5/HIFIMAGNET/bin/salome/`
+* in singularity container: the variable is automatically set into the container
+
+For the magnetostic model, we need to add some air surrounding the insert. To do so:
+
+[source,sh]
+----
+salome -t -b -m GEOM,SMESH,HIFIMAGNET $HIFIMAGNET/HIFIMAGNET_Cmd.py args:--cfg=Insert-H1H4-Leads-2t.yaml,--air
+----
+
+=== Generate the mesh
+
+[source,sh]
+----
+salome -t -b -m GEOM,SMESH,HIFIMAGNET $HIFIMAGNET/HIFIMAGNET_Cmd.py args:--cfg=Insert-H1H4-Leads-2t.yaml[,--air],--mesh[,--groupCoolingChannels]
+----
+
+The mesh may be converted into an another format using `gmsh` compiled with proper `med` support
+----
+gmsh -3 -bin HL-31-H1H4-Leads-2t[_withAir].med -o HL-31-H1H4-Leads-2t[_withAir].msh
+----
+
+[NOTE]
+====
+When running this example you need to have a valid {meshgems} license.
+For singularity, do not forget to mount the directory holding the {meshgems} license key into the container, eg:
+
+```
+singularity shell -B /opt/DISTENE/DLim:/opt/DISTENE/DLim:ro salome-8.4.0-stretch.simg 
+````
+
+====
+
+== Data files
+
+=== Geometry files
+
+* Insert-H1H4-Leads-2t.yaml
+* HL-31_H1-2t.yaml
+* HL-31_H2-2t.yaml
+* HL-31_H3-2t.yaml
+* HL-31_H4-2t.yaml
+* Ring-H1H2.yaml
+* Ring-H2H3.yaml
+* Ring-H3H4.yaml
+* inner.yaml
+* outer-H4.yaml
+
+Definition of the helical cut per helix:
+
+* HL-31_H1-2t_cut_salome.dat
+* HL-31_H2-2t_cut_salome.dat
+* HL-31_H3-2t_cut_salome.dat
+* HL-31_H4-2t_cut_salome.dat
+
+
+=== Mesh input data
+
+* HL-31-H1H4-Leads-2t_Air_meshdata.yaml
+
+== Outputs
+
+include::CAD/ex_CAD_Insert_Air.png[Insert with surrounding air]
+
+The outputs will consist in a set of a `brep` and `xao` files for each component of the insert
+and for the assembly:
+
+* `brep` file hold a CAD into native {salome} CAD format,
+* `xao` file hold the definition of groups into the correspond CAD and point to the correspodning `brep` file
+
+The obtained geometry should be similar to the image bellow:
+
+The mesh is in `med` format. For the case with air, its main characteristics are:
+
+[options="header,footer"]
+|===
+| vertices | 570625
+| elements | 3860823
+|===
+
+To get this information within {salome}:
+
+* start {salome} in GUI with only the `SMESH` module: `salome -m SMESH`
+* From File/Import/Med menu select the mesh
+* From Mesh/Mesh Information menu print the mesh characteristics
+
+include::CAD/ex_Mesh_Insert.png[Mesh (with Air) characteristics]
+
+[NOTE]
+====
+When using singularity, do not forget to add the `--nv` flag to get GUI, eg:
+
+```
+singularity shell --nv -B /opt/DISTENE/DLim:/opt/DISTENE/DLim:ro salome-8.4.0-stretch.simg 
+````
+
+====

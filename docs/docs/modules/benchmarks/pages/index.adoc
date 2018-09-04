@@ -6,6 +6,10 @@ include::{partialsdir}/header-levels.adoc[]
 Welcome to {hifimagnet} Examples and Benchmarks documentation!
 
 
+== CAD generation and Meshing
+
+xref:CAD/README.adoc[insert with 4 helices]
+
 [[validations]]
 == Cross rectangular Section Torus
 
@@ -13,6 +17,7 @@ Welcome to {hifimagnet} Examples and Benchmarks documentation!
 
 // from feelpp/toolbox
 xref:quarterturn/thermoelec.adoc[quarterturn]
+//xref:Bitter/README.ado[Bitter]
 
 === Magnetostatic
 
@@ -28,15 +33,19 @@ xref:quarterturn/coupled.adoc[quarterturn]
 
 // [[bitter]]
 // == Bitter Magnet
-
-include::Bitter/README.adoc
+// include::Bitter/README.adoc
 
 == Helix Magnet
 
-include::LowFieldBench/README.adoc
+xref:HL/README.adoc[HL] 
+xref:HR/README.adoc[HR] 
+// include::LowFieldBench/README.adoc
 
 == LowField Benchmark
-include::HL/README.adoc
+// include::LowFieldBench/README.adoc
+xref::LowFieldBench/README.adoc[LowField]
+
 == HL-31
+xref::HL-31/README.adoc[HL-31]
 
 == SEISM
