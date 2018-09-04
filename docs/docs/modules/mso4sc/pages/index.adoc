@@ -269,6 +269,27 @@ that are nor part of *owners* nor *contributors*.
 
 The previously selected user shall  not be show in the appropriate list according to your choice.
 
+[[sregistry_add_to_collection]]
+=== Adding an new image into {sregistry} {hifimagnet} collection
+
+To upload `salome-8.4.0.simg` newest image on {sregistry} {hifimagnet} collection
+from your local machine you can type the following commands:
+
+[source,sh]
+----
+export SREGISTRY_CLIENT=registry
+export SREGISTRY_CLIENT_SECRETS=~/.sregistry
+[export SREGISTRY_STORAGE=...]
+
+sregistry push --name hifimagnet/salome --tag 8.4.0 salome-8.4.0.simg 
+----
+
+The `.sregistry` holds the {sregistry} *TOKEN* (to get the *TOKEN* see this <<section, using_sregistry>>).
+
+[NOTE]
+====
+You need to install {https://singularityhub.github.io/sregistry-cli}[sregistry-cli] to get this working.
+====
 
 [[girder_add_to_team]]
 === Adding an *EndUser* to {girder}
