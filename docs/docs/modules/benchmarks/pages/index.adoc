@@ -17,7 +17,6 @@ xref:CAD/README.adoc[insert with 4 helices]
 
 // from feelpp/toolbox
 xref:quarterturn/thermoelec.adoc[quarterturn]
-//xref:Bitter/README.ado[Bitter]
 
 === Magnetostatic
 
@@ -39,14 +38,16 @@ xref:quarterturn/coupled.adoc[quarterturn]
 
 xref:HL/README.adoc[HL] 
 xref:HR/README.adoc[HR] 
-// include::LowFieldBench/README.adoc
 
 [[verifications]]
 == LowField Benchmark
-// include::LowFieldBench/README.adoc
+
 xref::LowFieldBench/README.adoc[LowField]
 
-== HL-31
+== Insert
+
 xref::HL-31/README.adoc[HL-31]
 
-== SEISM
+== Other Magnetic structures
+
+xref::SEISM/README.adoc[SEISM: an ECR ion source]
