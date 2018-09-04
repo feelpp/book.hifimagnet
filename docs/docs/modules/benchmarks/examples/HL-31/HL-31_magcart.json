@@ -7,37 +7,37 @@
 	"H0":
 	{
             "name":"CuAg0.1",
-	    "filename":"$cfgdir/../Materials/CuCrZn.json"
+	    "filename":"$cfgdir/Materials/CuCrZn.json"
 	},
 	"H1":
 	{
             "name":"CuAg0.1",
-	    "filename":"$cfgdir/../Materials/CuCrZn.json"
+	    "filename":"$cfgdir/Materials/CuCrZn.json"
 	},
 	"H0_Isolant1":
 	{
             "name":"Glue",
-	    "filename":"$cfgdir/../Materials/glue.json"
+	    "filename":"$cfgdir/Materials/glue.json"
 	},
 	"H0_Isolant2":
 	{
             "name":"Glue",
-	    "filename":"$cfgdir/../Materials/glue.json"
+	    "filename":"$cfgdir/Materials/glue.json"
 	},
 	"H1_Isolant1":
 	{
             "name":"Glue",
-	    "filename":"$cfgdir/../Materials/glue.json"
+	    "filename":"$cfgdir/Materials/glue.json"
 	},
 	"H1_Isolant2":
 	{
             "name":"Glue",
-	    "filename":"$cfgdir/../Materials/glue.json"
+	    "filename":"$cfgdir/Materials/glue.json"
 	},
 	"R0":
 	{
 	    "name":"CuCr",
-	    "filename":"$cfgdir/../Materials/CuCr.json"
+	    "filename":"$cfgdir/Materials/CuCr.json"
 	}
     },
     "BoundaryConditions":

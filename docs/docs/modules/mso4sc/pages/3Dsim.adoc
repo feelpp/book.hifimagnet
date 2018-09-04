@@ -1,0 +1,55 @@
+=== 3D Simulations
+
+Use this app to run simulations of High Field Magnets for:
+
+* ThermoElectric
+* CoupledCartModel
+
+==== To test the app
+
+To check the app, just change the following values:
+
+* ThermoElectric
+
+[options="header,footer"]
+|===
+| Key         | Value                                                            
+| *execfile*  | `feelpp_hfm_thermoelectric_model_3D_V1T1_N1`                       
+| *cfgfile*   | `/usr/share/doc/hifimagnet/ThermoElectricModel/quarter-turn3D.cfg` 
+|===
+
+* CoupledCartModel
+
+[options="header,footer"]
+|===
+| Key         | Value                                                            
+| *execfile*  | `feelpp_hfm_thermoelectric_model_3D_V1T1_N1`                       
+| *cfgfile*   | `/usr/share/doc/hifimagnet/ThermoElectricModel/quarter-turn3D.cfg` 
+|===
+
+==== Prepare your simulation
+
+* provide appropiate configuration, model and materials (see <<here, >> for details)
+* create an tar gzipped archive of these files
+* upload the data on CKAN  (see <<here, >> for details)
+
+==== Set up the simulation in *Experiments*:
+ 
+[options="header,footer"]
+|===
+| Key                           | Default                                                            | Notes
+|===
+| *Dataset resource: input_url* | URL pointing to an archive of data files (comes from the data Catalog)
+|===
+| *execfile*                    | `feelpp_hfm_thermoelectric_model_3D_V1T1_N1`                       | Valid values are:
+|                               |                                                                    |  `feelpp_hfm...`
+|===
+| *cfgfile*                     | `quarter-turn3D.cfg`                                               | cfg file need to be in the dataset
+|===
+
+
+==== Examples and Benchmarks
+
+* HL
+* HL-31
+* LowFieldBench

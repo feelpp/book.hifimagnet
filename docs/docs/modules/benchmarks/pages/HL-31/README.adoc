@@ -6,6 +6,7 @@ In this test case we will simulate a full insert.
 
 As the CAD generation is time consuming, the mesh is provided but will eventually need to be partitionned.
 However if you ever want to rebuild the CAD and Mesh you will find detailled instructions bellow.
+Otherwise you can directly skip these sections.
 
 To run this example on MSO4SC portal see this section.
 
@@ -13,8 +14,8 @@ To run this example on MSO4SC portal see this section.
 
 [source,sh]
 ----
-salome -t $HIFIMAGNET_SALOME_DIR/HIFIMAGNET_Cmd.py args:--cfg=HL-31.yaml
-salome -t $HIFIMAGNET_SALOME_DIR/HIFIMAGNET_Cmd.py args:--cfg=HL-31.yaml,--air
+salome -t $HIFIMAGNET/HIFIMAGNET_Cmd.py args:--cfg=HL-31.yaml
+salome -t $HIFIMAGNET/HIFIMAGNET_Cmd.py args:--cfg=HL-31.yaml,--air
 ----
 
 WARNING: Creating the geometry from scratch takes at least 4 days...
@@ -23,7 +24,7 @@ WARNING: Creating the geometry from scratch takes at least 4 days...
 
 [source,sh]
 ----
-salome -t $HIFIMAGNET_SALOME_DIR//HIFIMAGNET_Cmd.py args:--insert=HL-31.yaml,--air,--mesh,--groupCoolingChannels
+salome -t $HIFIMAGNET//HIFIMAGNET_Cmd.py args:--insert=HL-31.yaml,--air,--mesh,--groupCoolingChannels
 ----
 
 === Partitionning the mesh:
@@ -44,12 +45,32 @@ mpirun -np 32 feelpp_hfm_coupledcartmodel_3DP1N1 --config-file HL-31.cfg
 == Data files
 
 === Geometry files
+
+* HL-31.yaml
+* HL-31_Hn.yaml with n=1,..14
+* Ring-HnH(n+11).yaml with n=1,..,13
+* inner.yaml
+* outer.yaml
+
+Definition of the helical cut per helix:
+
+* HL-31_Hn_cut_salome.dat with n=1,..14
+
 === Mesh files
 
+* HL-31_meshdata.yaml
 
 === Model files
 
 * HL-31.cfg
+
+HL-31_thermoelec.json
+HL-31_magcart.json
+HL-31_elasticity.json
+
+=== Materials files
+
+Materials are stored in a dedicated repository Materials
 
 == Outputs
 
@@ -63,7 +84,7 @@ For instance on Lncmi server:
 ```
 FEELPP_MESH_APPS_DIR=$FEELPP_BUILD_DIR/applications/mesh/
 HIFIMAGNET_APPS_DIR=~/feelpp_build/new_Json/research/hifimagnet/applications
-HIFIMAGNET_SALOME_DIR=~/SALOME-8.3.0-DB9.5/INSTALL/HIFIMAGNET/bin/salome
+HIFIMAGNET=/opt/SALOME-8.3.0-DB9.5/INSTALL/HIFIMAGNET/bin/salome
 ```
 
 The coupledcart model is in ```$HIFIMAGNET_APPS_DIR/CoupledCartModel/```

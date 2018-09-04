@@ -7,287 +7,287 @@
 	"H0":
 	{
             "name":"Cu5Ag",
-	    "filename":"$cfgdir/../Materials/Cu5Ag.json"
+	    "filename":"$cfgdir/Materials/Cu5Ag.json"
 	},
 	"H1":
         {
             "name":"Cu5Ag",
-            "filename":"$cfgdir/../Materials/Cu5Ag.json"
+            "filename":"$cfgdir/Materials/Cu5Ag.json"
         },
 	"H2":
         {
             "name":"Cu5Ag",
-            "filename":"$cfgdir/../Materials/Cu5Ag.json"
+            "filename":"$cfgdir/Materials/Cu5Ag.json"
         },
 	"H3":
         {
             "name":"Cu5Ag",
-            "filename":"$cfgdir/../Materials/Cu5Ag.json"
+            "filename":"$cfgdir/Materials/Cu5Ag.json"
         },
 	"H4":
         {
             "name":"Cu5Ag",
-            "filename":"$cfgdir/../Materials/Cu5Ag.json"
+            "filename":"$cfgdir/Materials/Cu5Ag.json"
         },
 	"H5":
         {
             "name":"Cu5Ag",
-            "filename":"$cfgdir/../Materials/Cu5Ag.json"
+            "filename":"$cfgdir/Materials/Cu5Ag.json"
         },
         "H6":
         {
             "name":"Cu5Ag",
-            "filename":"$cfgdir/../Materials/Cu5Ag.json"
+            "filename":"$cfgdir/Materials/Cu5Ag.json"
         },
         "H7":
         {
             "name":"Cu5Ag",
-            "filename":"$cfgdir/../Materials/Cu5Ag.json"
+            "filename":"$cfgdir/Materials/Cu5Ag.json"
         },
         "H8":
         {
             "name":"Cu5Ag",
-            "filename":"$cfgdir/../Materials/Cu5Ag.json"
+            "filename":"$cfgdir/Materials/Cu5Ag.json"
         },
         "H9":
         {
             "name":"Cu5Ag",
-            "filename":"$cfgdir/../Materials/Cu5Ag.json"
+            "filename":"$cfgdir/Materials/Cu5Ag.json"
         },
 	"H10":
         {
             "name":"Cu5Ag",
-            "filename":"$cfgdir/../Materials/Cu5Ag.json"
+            "filename":"$cfgdir/Materials/Cu5Ag.json"
         },
         "H11":
         {
             "name":"Cu5Ag",
-            "filename":"$cfgdir/../Materials/Cu5Ag.json"
+            "filename":"$cfgdir/Materials/Cu5Ag.json"
         },
         "H12":
         {
             "name":"Cu5Ag",
-            "filename":"$cfgdir/../Materials/Cu5Ag.json"
+            "filename":"$cfgdir/Materials/Cu5Ag.json"
         },
 	"H13":
 	{
             "name":"Cu5Ag",
-	    "filename":"$cfgdir/../Materials/Cu5Ag.json"
+	    "filename":"$cfgdir/Materials/Cu5Ag.json"
 	},
 	"H0_Glue0":
 	{
             "name":"Glue",
-	    "filename":"$cfgdir/../Materials/glue.json"
+	    "filename":"$cfgdir/Materials/glue.json"
 	},
 	"H0_Glue1":
 	{
             "name":"Glue",
-	    "filename":"$cfgdir/../Materials/glue.json"
+	    "filename":"$cfgdir/Materials/glue.json"
 	},
 	"H1_Glue0":
         {
             "name":"Glue",
-            "filename":"$cfgdir/../Materials/glue.json"
+            "filename":"$cfgdir/Materials/glue.json"
         },
         "H1_Glue1":
         {
             "name":"Glue",
-            "filename":"$cfgdir/../Materials/glue.json"
+            "filename":"$cfgdir/Materials/glue.json"
         },
 	"H2_Glue0":
         {
             "name":"Glue",
-            "filename":"$cfgdir/../Materials/glue.json"
+            "filename":"$cfgdir/Materials/glue.json"
         },
         "H2_Glue1":
         {
             "name":"Glue",
-            "filename":"$cfgdir/../Materials/glue.json"
+            "filename":"$cfgdir/Materials/glue.json"
         },
         "H3_Glue0":
         {
             "name":"Glue",
-            "filename":"$cfgdir/../Materials/glue.json"
+            "filename":"$cfgdir/Materials/glue.json"
         },
         "H3_Glue1":
         {
             "name":"Glue",
-            "filename":"$cfgdir/../Materials/glue.json"
+            "filename":"$cfgdir/Materials/glue.json"
         },
 	"H4_Glue0":
         {
             "name":"Glue",
-            "filename":"$cfgdir/../Materials/glue.json"
+            "filename":"$cfgdir/Materials/glue.json"
         },
         "H4_Glue1":
         {
             "name":"Glue",
-            "filename":"$cfgdir/../Materials/glue.json"
+            "filename":"$cfgdir/Materials/glue.json"
         },
         "H5_Glue0":
         {
             "name":"Glue",
-            "filename":"$cfgdir/../Materials/glue.json"
+            "filename":"$cfgdir/Materials/glue.json"
         },
         "H5_Glue1":
         {
             "name":"Glue",
-            "filename":"$cfgdir/../Materials/glue.json"
+            "filename":"$cfgdir/Materials/glue.json"
         },
 	"H6_Glue0":
         {
             "name":"Glue",
-            "filename":"$cfgdir/../Materials/glue.json"
+            "filename":"$cfgdir/Materials/glue.json"
         },
         "H6_Glue1":
         {
             "name":"Glue",
-            "filename":"$cfgdir/../Materials/glue.json"
+            "filename":"$cfgdir/Materials/glue.json"
         },
         "H7_Glue0":
         {
             "name":"Glue",
-            "filename":"$cfgdir/../Materials/glue.json"
+            "filename":"$cfgdir/Materials/glue.json"
         },
         "H7_Glue1":
         {
             "name":"Glue",
-            "filename":"$cfgdir/../Materials/glue.json"
+            "filename":"$cfgdir/Materials/glue.json"
         },
 	"H8_Glue0":
         {
             "name":"Glue",
-            "filename":"$cfgdir/../Materials/glue.json"
+            "filename":"$cfgdir/Materials/glue.json"
         },
         "H8_Glue1":
         {
             "name":"Glue",
-            "filename":"$cfgdir/../Materials/glue.json"
+            "filename":"$cfgdir/Materials/glue.json"
         },
         "H9_Glue0":
         {
             "name":"Glue",
-            "filename":"$cfgdir/../Materials/glue.json"
+            "filename":"$cfgdir/Materials/glue.json"
         },
         "H9_Glue1":
         {
             "name":"Glue",
-            "filename":"$cfgdir/../Materials/glue.json"
+            "filename":"$cfgdir/Materials/glue.json"
         },
 	"H10_Glue0":
         {
             "name":"Glue",
-            "filename":"$cfgdir/../Materials/glue.json"
+            "filename":"$cfgdir/Materials/glue.json"
         },
         "H10_Glue1":
         {
             "name":"Glue",
-            "filename":"$cfgdir/../Materials/glue.json"
+            "filename":"$cfgdir/Materials/glue.json"
         },
         "H11_Glue0":
         {
             "name":"Glue",
-            "filename":"$cfgdir/../Materials/glue.json"
+            "filename":"$cfgdir/Materials/glue.json"
         },
         "H11_Glue1":
         {
             "name":"Glue",
-            "filename":"$cfgdir/../Materials/glue.json"
+            "filename":"$cfgdir/Materials/glue.json"
         },
 	"H12_Glue0":
         {
             "name":"Glue",
-            "filename":"$cfgdir/../Materials/glue.json"
+            "filename":"$cfgdir/Materials/glue.json"
         },
         "H12_Glue1":
         {
             "name":"Glue",
-            "filename":"$cfgdir/../Materials/glue.json"
+            "filename":"$cfgdir/Materials/glue.json"
         },
         "H13_Glue0":
         {
             "name":"Glue",
-            "filename":"$cfgdir/../Materials/glue.json"
+            "filename":"$cfgdir/Materials/glue.json"
         },
         "H13_Glue1":
         {
             "name":"Glue",
-            "filename":"$cfgdir/../Materials/glue.json"
+            "filename":"$cfgdir/Materials/glue.json"
         },
 	"R0":
 	{
 	    "name":"Cu5Ag",
-	    "filename":"$cfgdir/../Materials/Cu5Ag.json"
+	    "filename":"$cfgdir/Materials/Cu5Ag.json"
 	},
 	"R1":
         {
             "name":"Cu5Ag",
-            "filename":"$cfgdir/../Materials/Cu5Ag.json"
+            "filename":"$cfgdir/Materials/Cu5Ag.json"
         },
 	"R2":
         {
             "name":"Cu5Ag",
-            "filename":"$cfgdir/../Materials/Cu5Ag.json"
+            "filename":"$cfgdir/Materials/Cu5Ag.json"
         },
 	"R3":
         {
             "name":"Cu5Ag",
-            "filename":"$cfgdir/../Materials/Cu5Ag.json"
+            "filename":"$cfgdir/Materials/Cu5Ag.json"
         },
 	"R4":
         {
             "name":"Cu5Ag",
-            "filename":"$cfgdir/../Materials/Cu5Ag.json"
+            "filename":"$cfgdir/Materials/Cu5Ag.json"
         },
 	"R5":
         {
             "name":"Cu5Ag",
-            "filename":"$cfgdir/../Materials/Cu5Ag.json"
+            "filename":"$cfgdir/Materials/Cu5Ag.json"
         },
 	"R6":
         {
             "name":"Cu5Ag",
-            "filename":"$cfgdir/../Materials/Cu5Ag.json"
+            "filename":"$cfgdir/Materials/Cu5Ag.json"
         },
 	"R7":
         {
             "name":"Cu5Ag",
-            "filename":"$cfgdir/../Materials/Cu5Ag.json"
+            "filename":"$cfgdir/Materials/Cu5Ag.json"
         },
 	"R8":
         {
             "name":"Cu5Ag",
-            "filename":"$cfgdir/../Materials/Cu5Ag.json"
+            "filename":"$cfgdir/Materials/Cu5Ag.json"
         },
 	"R9":
         {
             "name":"Cu5Ag",
-            "filename":"$cfgdir/../Materials/Cu5Ag.json"
+            "filename":"$cfgdir/Materials/Cu5Ag.json"
         },
 	"R10":
         {
             "name":"Cu5Ag",
-            "filename":"$cfgdir/../Materials/Cu5Ag.json"
+            "filename":"$cfgdir/Materials/Cu5Ag.json"
         },
 	"R11":
         {
             "name":"Cu5Ag",
-            "filename":"$cfgdir/../Materials/Cu5Ag.json"
+            "filename":"$cfgdir/Materials/Cu5Ag.json"
         },
 	"R12":
         {
             "name":"Cu5Ag",
-            "filename":"$cfgdir/../Materials/Cu5Ag.json"
+            "filename":"$cfgdir/Materials/Cu5Ag.json"
         },
 	"Lead0_0":
         {
             "name":"Cu_lead",
-            "filename":"$cfgdir/../Materials/CuLead.json"
+            "filename":"$cfgdir/Materials/CuLead.json"
         },
 	"Lead1_grouped":
         {
             "name":"Cu_lead",
-            "filename":"$cfgdir/../Materials/CuLead.json"
+            "filename":"$cfgdir/Materials/CuLead.json"
         }
     },
     "BoundaryConditions":
