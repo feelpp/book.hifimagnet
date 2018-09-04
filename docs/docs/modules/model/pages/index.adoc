@@ -43,16 +43,16 @@ Using a classical approach we rewritte the equations by introducing the gauged m
 This leads to the following equation:
 
 [stem]
-====
+++++
 \epsilon \frac{\partial^2 \mathbf{A}}{\partial t^2} + \sigma \frac{\partial \mathbf{A}}{\partial t} - \sigma \mathbf{u} \times (\nabla \times \mathbf{A}) + \nabla \times (\frac{1}{\mu} \nabla \times \mathbf{A}) = -\sigma \nabla V in \mathbf{R}^3
-====
+++++
 
 We add the conservation of current:
 
 [stem]
-====
+++++
 \nabla \cdot \( \sigma ( -\nabla V + \mathbf{u} \times (\nabla \times \mathbf{A}) \) = 0 in \Omega.
-====
+++++
 
 [NOTE]
 ====
@@ -66,10 +66,10 @@ In our case, we will neglect the second order time derivative.
 The final system of EDP to be solved is:
 
 [stem]
-====
+++++
 \sigma \frac{\partial \mathbf{A}}{\partial t} - \sigma \mathbf{u} \times (\nabla \times \mathbf{A}) + \nabla \times (\frac{1}{\mu} \nabla \times \mathbf{A}) = -\sigma \nabla V in \mathbf{R}^3
 \nabla \cdot \( \sigma ( -\nabla V + \mathbf{u} \times (\nabla \times \mathbf{A}) \) = 0 in \Omega.
-====
+++++
 
 
 ==== Magnetostatic
@@ -77,18 +77,22 @@ The final system of EDP to be solved is:
 The steady state regime will be given by:
 
 [stem]
-====
+++++
 \nabla \times (\frac{1}{\mu} \nabla \times \mathbf{A}) = -\sigma \nabla V in \mathbf{R}^3
 \nabla \cdot \( \sigma ( -\nabla V + \mathbf{u} \times (\nabla \times \mathbf{A}) \) = 0 in \Omega.
-====
+++++
+
+The boundary conditions ...
+
+===== Biot-Savart law
 
 In the case of non magnetic materials (ie stem:[\mu=\mu_0]), we can easily derive a solution using
 the Biot Savart law:
 
 [stem]
-====
+++++
 \mathbf{A}(\mathbf{X}) = \mu_0 \int_{\Omega} \mathbf{j} \, G(\mathbf{X},Y) \,d\Omega_\mathbf{X} \qquad \vorall \mathbf{X} \in \mathbf{R^3} 
-====
+++++
 
 where stem:[G(\mathbf{X},Y)] stands for the Green function and stem:[\mathbf{j} = - \sigma \nabla V].
 
@@ -103,11 +107,17 @@ From a mathematical point of view we can refer to this solution as the fundament
 The temperature field stem:[T] is given by the classical heat equation with the Joule losses as the source term withing stem:[\Omega]:
 
 [stem]
-====
+++++
 \rho C_p \frac{\partial T}{\partial t} + \mathbf{u} \cdot \nabla T - \nabla ( k \nabla T) = \mathbf{j} \cdot \mathbf{e} \qquad in \Omega.
-====
+++++
 
-Boundary conditions...
+The boundary conditions associated are mainly of 3 types:
+
+* Homogeneous Neumann for ...: stem:[-k \frac{\partial T}{\partial \mathbf{n}} = 0]
+* Robin for cooled surfaces: stem:[-k \frac{\partial T}{\partial \mathbf{n}} = h (T-T_w)]
+* Radiation conditons: stem:[-k \frac{\partial T}{\partial \mathbf{n}} = \epsilon_T T^4]
+
+In the current version radiation conditions are not implemented.
 
 
 [[meca]]
@@ -117,29 +127,71 @@ To model the mechanical behaviour of our magnets submitted to the action of Lore
 thermal expansion and to the pressure of the water flow used for the cooling, we use the classical formulation: 
 
 [stem]
-====
+++++
 \nabla \cdot {\bar{\bar{\sigma}}} + \mathbf{j} \times \mathbf{b} = \rho \frac{\partial^2 \mathbf{u}}{\partial t^2} - \rho \nabla P
 {\bar{\bar{\epsilon}}} = \frac{1}{2} (\nabla \mathbf{u} + \nabla \mathbf{u}^T )
 {\bar{\bar{\sigma}}} = C : {\bar{\bar{\sigma}}} 
-====
+++++
 
 In testbooks the latest equation is referred as the Hooke law which represents the constitutive equation for linear material.
 This equation may be also expressed by: 
 [stem]
-====
+++++
 {\bar{\bar{\sigma}}} = \frac{Y}{1+\nu}\( {\bar{\bar{\epsilon}}} + \frac{\nu}{1+2\nu}} {\bar{\bar{\epsilon}}}^T \)
-====
+++++
 
 To account for the thermal expansion of the material we add to the stress tensor stem:[{\bar{\bar{\sigma}}}]:
 
 [stem]
-====
+++++
 {\bar{\bar{\sigma}}}^T = - \frac{Y}{1+\nu}\,\alpha_T \, (T-T_0)\, {\bar{\bar{I}}
-====
+++++
 with stem:[{\bar{\bar{I}}] the identity tensor, and stem:[T_0] is a reference temperature.
 
 
 === ThermoHydraulics
+
+Cooling the magnet is mandatory to evacuate Joules losses and to keep magnet temperature bellow some
+heuristic limit as some copper alloys can have poorer mechanical behavior at high temperature. The cooling
+is ensured by a forced water flow with a volumic flow rate stem:[Q] up to 150 l/s.
+
+The total heat elevation in the water stem:[\Delta T_w] may be easily estimated from the electrical power stem:[P_e] dissipated
+by the magnet using :
+
+[stem]
+++++
+\Delta T_w = \frac{P_e}{\rho_w C_p Q}
+++++
+
+To model the heat exchange coefficient stem:[h] we use standard thermohydraulic correlation:
+
+[stem]
+++++
+h = \frac{\alpha R_e^n P_r^m}{D_h},
+++++
+
+with stem:[Re] the Reynolds number, stem:[Pr] the Prandlt number and stem:[D_h] the hydraulic diameter.
+These quantities are defined by cooling channels:
+[stem]
+++++
+	R_e &= \displaystyle \frac{\rho u}{\mu},\\
+	P_r &= \displaystyle \frac{\mu C_p}{{k}, \\
+	D_h &= 2 (r^{(n+1)}_1 - r^{(n)}_2).
+++++
+
+Note that stem:[\mu] stands here for the viscosity of water.
+
+The flow velocity stem:[u] per cooling channel is defined by:
+
+[stem]
+++++
+u = \sqrt{\displaystyle \frac{2 \Delta P}{\rho \left[P_{in}+P_{out} + c \frac{L}{D_h}\right]}}
+++++
+
+where stem:[\Delta P] is the pressure drop applied to force the flow (typically 25 bar),
+stem:[P_{in}] and stem:[P_{out}] are additionnal hydraulic pressure drop at the input and output of the magnet.
+
+In practice...
 
 [[coupledaxi]]
 == A simplified model: Axisymetrical Geometry
@@ -147,11 +199,11 @@ with stem:[{\bar{\bar{I}}] the identity tensor, and stem:[T_0] is a reference te
 [[optim]]
 == Optimization: Axisymetrical Geometry
 
-[[todo]]
-== TODO
+// [[todo]]
+// == TODO
 
-=== Improved ThermoHydraulics
+// === Improved ThermoHydraulics
 
-=== transient regimes
+// === transient regimes
 
-=== SuperConductor
+// === SuperConductor
