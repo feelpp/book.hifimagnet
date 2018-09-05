@@ -105,6 +105,15 @@ docker pull feelpp/salome:8.3.0-nvidia
 
 Check the existing docker images on link:https://hub.docker.com/r/feelpp/salome/[feelpp/salome dockerhub]
 
+[IMPORTANT]
+====
+For system without Nvidia graphic card, we recommend to `fellpp/salome:8.3.0-mesa` instead
+====
+
+[NOTE]
+====
+Supported {salome} versions are: 8.3.0, 8.4.0 and 8.5.0.
+====
 
 === Install from {lncmi} Salome_Packages
 
@@ -123,7 +132,8 @@ Before running just install a X11 server. We recommend MobaXterm 10.9 or latter.
 [[qs_reference]]
 == Running {hifimagnet} Salome plugin
 
-`-t` option may be used to switch to the TUI (eg. batch) mode.
+`-t` option may be used to switch to the TUI mode.
+`-b` option to the use TUI in batch mode.
 
 === from Singularity container
 
@@ -134,7 +144,7 @@ singularity exec [--nv] \
   -H $HOME:/home/$USER \
   -B $STORE/Distene/:/opt/DISTENE/DLim \
   salome.simg \
-  salome [-t] ...
+  salome [-t -b] ...
 ```
 Note the `--nv` flag is mandatory to run in GUI mode and is only supported by nvidia drivers.
 
@@ -147,7 +157,7 @@ docker run -ti --rm -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix \
    -v $HOME/.Xauthority:/home/feelpp/.Xauthority --net=host --pid=host --ipc=host \
    --env QT_X11_NO_MITSHM=1 \
    -v /opt/DISTENE/DLim:/opt/DISTENE/DLim \
-   feelpp/salome:8.3.0-nvidia salome [-t] ...
+   feelpp/salome:8.3.0-nvidia salome [-t -b] ...
 ```
 
 [TIP]
@@ -159,15 +169,19 @@ See this http://files.salome-platform.org/Salome/Common/SUD2018/08_Containers.pd
 === Main commands
 
 We will omit the part of the command related to the use of {singularity} or {docker} to only give
-the {salome} command. The structure of the `yaml` file describing the geometry and mesh be generated will
+the {salome} command. If you plan to run these commands from a {singularity} or {docker} image,
+just start the container (see <<here, qs_reference>>, watch out to not forget to enable the display
+if you want to use the GUI mode).
+
+The structure of the `yaml` file describing the geometry and mesh be generated will
 be described in the <<data, data structure section>>.
 
 [[helix-cad]]
 [source,sh]
 .Generation of an Helix
 ----
-salome [-m GEOM,SMESH,HIFIMAGNET] [-t] \
-   ${SALOME_INSTALLDIR}/HIFIMAGNET/bin/salome/HIFIMAGNET_Cmd.py \
+salome [-m GEOM,SMESH,HIFIMAGNET] [-t -b] \
+   ${HIFIMAGNET}/HIFIMAGNET_Cmd.py \
    args:--cfg=HL-31-H1.yaml[,--mesh]
 ----
 
@@ -175,8 +189,8 @@ salome [-m GEOM,SMESH,HIFIMAGNET] [-t] \
 [source,sh]
 .Generation of an connection Ring
 ----
-salome [-m GEOM,SMESH,HIFIMAGNET] [-t] \
-   ${SALOME_INSTALLDIR}/HIFIMAGNET/bin/salome/HIFIMAGNET_Cmd.py \
+salome [-m GEOM,SMESH,HIFIMAGNET] [-t -b] \
+   ${HIFIMAGNET}/HIFIMAGNET_Cmd.py \
    args:--cfg=Ring-H1H2.yaml[,--mesh]
 ----
 
@@ -184,8 +198,8 @@ salome [-m GEOM,SMESH,HIFIMAGNET] [-t] \
 [source,sh]
 .Generation of an inner current Lead
 ----
-salome [-m GEOM,SMESH,HIFIMAGNET] [-t] \
-   ${SALOME_INSTALLDIR}/HIFIMAGNET/bin/salome/HIFIMAGNET_Cmd.py \
+salome [-m GEOM,SMESH,HIFIMAGNET] [-t -b] \
+   ${HIFIMAGNET}/HIFIMAGNET_Cmd.py \
    args:--cfg=inner.yaml,--inner[,--mesh]
 ----
 
@@ -193,8 +207,8 @@ salome [-m GEOM,SMESH,HIFIMAGNET] [-t] \
 [source,sh]
 .Generation of an outer current Lead
 ----
-salome [-m GEOM,SMESH,HIFIMAGNET] [-t] \
-   ${SALOME_INSTALLDIR}/HIFIMAGNET/bin/salome/HIFIMAGNET_Cmd.py \
+salome [-m GEOM,SMESH,HIFIMAGNET] [-t -b] \
+   ${HIFIMAGNET}/HIFIMAGNET_Cmd.py \
    args:--cfg=outer.yaml,--outer[,--mesh]
 ----
 
@@ -202,12 +216,12 @@ salome [-m GEOM,SMESH,HIFIMAGNET] [-t] \
 [source,sh]
 .Generation of an Insert with an air box in TUI mode
 ----
-salome [-m GEOM,SMESH,HIFIMAGNET] [-t] \
-   ${SALOME_INSTALLDIR}/HIFIMAGNET/bin/salome/HIFIMAGNET_Cmd.py \
+salome [-m GEOM,SMESH,HIFIMAGNET] [-t -b] \
+   ${HIFIMAGNET}/HIFIMAGNET_Cmd.py \
    args:--cfg=HL-31.yaml[,--air[,--infty_Rratio=2,--infty_ZRatio=1.5],--mesh]
 ----
 
-`${SALOME_INSTALLDIR}` is the install root directories of {salome} modules, eg `/opt/SALOME-8.3.0-Debian-DB9.5/BINARIES-DB9.5`.
+`${HIFIMAGNET}` is the install directory of {hifimagnet} {salome} plugin, eg `/opt/SALOME-8.3.0-Debian-DB9.5/BINARIES-DB9.5/HIFIMAGNET/bin/salome`.
 
 [TIP]
 ====
@@ -218,6 +232,7 @@ to benefit from hardware acceleration.
 ----
 vglrun salome [...]
 ----
+
 ====
 
 

@@ -78,7 +78,14 @@ Aternatively there is an other test:
 
 ==== Examples and Benchmarks
 
-* quarter-tunr
-* HL
+* quarter-turn:
+** thermoelectric model:
+
+* HL:
+** thermoelectric model:
+*** dataset: 
+*** cesga params: thinnodes, N 4, ntasks-per-node=8, n 32
+
+
 * HL-31
 * LowFieldBench
