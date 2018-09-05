@@ -417,8 +417,10 @@ On cesga, you can either:
 * click on *Create a new Desktop* to get a remote desktop
 * in a *terminal* try to `scp user@yourmachine/.sregistry  $HOME`
 
-an alternative is to use:
-* a *VPN* solution: for cesga use *fortisvpn client*:
+an alternative consists in:
+
+* a *VPN* solution: use cesga *fortisvpn client*
+
 ```
 /opt/forticlient-sslvpn/64bit/forticlientsslvpn_cli --server gateway.cesga.es:443 --vpnuser user_email
 ```
