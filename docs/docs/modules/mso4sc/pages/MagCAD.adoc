@@ -1,1 +1,11 @@
 === Creating Insert CAD and Generate Mesh
+
+Use this app *MagCAD* to create CAD geometry and mesh for High Field Magnets
+
+==== To test the app
+
+To check the app, just change the following values:
+
+
+* Insert H1-H4
+*** dataset: cad-insert-h4

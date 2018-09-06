@@ -1,0 +1,34 @@
+= HPC setting for local {lcnmi} ressources
+
+Local {lncmi} computationnal ressources have been configured to be used within **MSO4SC Portal**.
+To use these ressources you need an account on {lncmi} SI.
+
+Two ressources are available:
+
+* stokes (147.183.80.28)
+* euler (147.173.80.14)
+
+.Specific settings for {lncmi} ressources versus {cesga} HPC settings
+[options="header,footer"]
+|===
+| Key                        | *stokes*                            | *euler*                     | cesga
+| hpc_basedir                | ${HOME}                             | ${HOME}                     | ${LUSTRE}
+| hpc_feelpp                 | ${HOME}/feel                        | ${HOME}/feel                | ${LUSTRE}/feel
+| hpc_modules                | -                                   | -                           | [gcc/6.3.0, openmpi/2.0.2, singularity/2.4.2] |
+| hpc_volumes                | ${HOME}/feel:/feel                  | ${HOME}/feel:/feel          | /scratch,/mnt,${LUSTRE}/feel:/feel
+| *hpc_partition*            | "stokes"                            | "euler"                     | "thin-node, thin-shared,..." (use `command` or see {file:///home/LNCMI-G/trophime/Downloads/FTII_Quick_start_guide.pdf}[doc] for details)
+| hpc_reservation            | N/A                                 | N/A                         | optional
+| sregistry_storage          | ${HOME}/singularity_images          | ${HOME}/singularity_images  | `${LUSTRE}/singularity_images`
+|===
+
+[NOTE]
+====
+
+* for Meshing you may need to `/opt/DISTENE/DLim:/opt/DISTENE/DLim:ro` to get access to {meshgems} license key.
+On {cesga} it depends where was stored your key (eg. `${HOME}/MeshGems::/opt/DISTENE/DLim:ro`). `:ro` is added to mount in read only mode. 
+
+* Prerequisites for a ressource to be used in the portal is:
+** a workload manager installed (`slurm` is the only supported),
+** ressource accessible from internet with `ssh` either directly or throught a ssh-tunnel.
+
+====

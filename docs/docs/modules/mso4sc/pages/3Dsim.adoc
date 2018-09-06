@@ -1,6 +1,6 @@
 === 3D Simulations
 
-Use this app to run simulations of High Field Magnets for:
+Use *MagSim* this app to run simulations of High Field Magnets for:
 
 * ThermoElectric
 * CoupledCartModel
@@ -72,20 +72,51 @@ Aternatively there is an other test:
 |                               |                                                                    |  `feelpp_hfm_coupledmodel_3DP1N1`
 |                               |                                                                    |  `feelpp_hfm_coupledcartmodel_3DP1N1`
 |===
+| *Dataset resource: model*     |                                                                    | dataset mode from the data Catalog
 | *cfgfile*                     | `quarter-turn3D.cfg`                                               | cfg file need to be in the dataset
+| *Output dataset: outputs_at*  |                                                                    | optional
 |===
 
 
 ==== Examples and Benchmarks
 
+[NOTE]
+====
+Use a modified verion of the canary {mso4sc} hpc-plugin:
+https://raw.githubusercontent.com/Trophime/cloudify-hpc-plugin/add_checks/plugin.yaml
+====
+
 * quarter-turn:
 ** thermoelectric model:
+*** execfile: feelpp_hfm_thermoelectric_model_3D_V1T1_N1
+*** dataset: thermoelec-test
+*** stokes params: stokes
+*** cesga params: thinnodes
+
+*** Lncmi HPC:
+*** cesga 
 
 * HL:
 ** thermoelectric model:
-*** dataset: 
+*** execfile: feelpp_hfm_thermoelectric_model_3D_V1T1_N1
+*** dataset: hl-test
+*** cfg: HL-31_H1_boomeramg_p32.cfg
+*** stokes params: stokes, n 32
 *** cesga params: thinnodes, N 4, ntasks-per-node=8, n 32
 
 
+* Insert H1H4
+** coupledcartmodel:
+*** execfile: feelpp_hfm_coupledcartmodel_3DP1N1
+*** cfgfile: H1H4_cart.cfg
+*** dataset: insert-test
+*** stokes params: stokes, n 32
+
 * HL-31
+** coupledcartmodel: +bmap (without magnetostatic)
+*** execfile: feelpp_hfm_coupledcartmodel_3DP1N1
+*** cfgfile: HL-31_cart_boomeramg.cfg
+*** dataset: hl-31
+*** stokes params: stokes, n 32
+
 * LowFieldBench
