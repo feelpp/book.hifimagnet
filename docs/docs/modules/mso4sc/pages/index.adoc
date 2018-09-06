@@ -115,11 +115,13 @@ They are grouped into 4 categories:
 .Available {hifimagnet} apps
 [options="header,footer"]
 |===
-| Offering            | Description        | Category    | Notes
-| {hifimagnet} Offering | Basic demonstrator | Simulations |
+| Offering                   | Description        | Category      | Notes
+| xref::3Dsim.adoc[MagSim]   | direct models      | Simulations   |
+| xref::bmap.adoc[AxiMagMap] |                    | MagnetTools   |
+| xref::MagCAD.adoc[MagCAD]  |                    | Preprocessing |
 |===
 
-For details about settings up these apps please refer to these <<offering_setup, docs>>.
+For details about settings up these apps please click on the correponsding apps. You can also refer to these <<offering_setup, docs>>.
 For the new user we recommend to read this guide. The impatient may go directly to the <<enduser, *EndUser*>>
  and try to run the basic demonstrator.
 
@@ -465,7 +467,8 @@ The others fields are designed for more advanced users.
 [options="header,footer"]
 |===
 | Key                           | Description                                 | Default                                                            | Notes
-| *Dataset resource: input_url* | url to retrieve for cfg file and input data | `None`                                                             | URL pointing to an archive of data files (comes from the data Catalog)
+| *Dataset resource: model*     | dataset mode                                | `None`                                                             | comes from the data Catalog
+| *Output dataset: outputs_at*  |                                             |                                                                    |
 | *execfile*                    | executable file                             | `feelpp_hfm_thermoelectric_model_3D_V1T1_N1`                       | any exec `feelpp_hfm...`
 | *cfgfile*                     | configuration file                          | `/usr/share/doc/hifimagnet/ThermoElectricModel/quarter-turn3D.cfg` | cfg file need to be in the container, or in a mounted dir or in the dataset
 |===
@@ -505,6 +508,11 @@ The others fields are designed for more advanced users.
 | singularity_image_cleanup  | force remove of singularity image        | `false` |
 |===
 
+====
+
+[IMPORTANT]
+====
+HPC settings for local {lncmi} ressources are specificied xref::lncmi-hpc.adoc[here]
 ====
 
 Once filled, click on *Create Instance*.
@@ -697,10 +705,10 @@ In the remote desktop to get {ensight} running:
 
 Available apps in **MSO4SC Portal** are:
 
-* MagnetTools: xref::bmap.adoc[BMap], 
+* MagnetTools: xref::bmap.adoc[AxiMagMap], 
 * Preprocessing: xref::MagCAD.adoc[MagCAD],
 * Simulations:
-** direct models: xref::3Dsim.adoc[3DSim]
+** direct models: xref::3Dsim.adoc[MagSim]
 ** CRB:
 // * Postprocessing:
 
