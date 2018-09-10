@@ -54,6 +54,7 @@ include:user:installation/singularity.adoc[leveloffset=+1]
 
 //include:user:installation/from-scratch.adoc[leveloffset=+1]
 
+[[mso4sc]]
 = {mso4sc} Portal
 
 include:mso4sc:dev.adoc[leveloffset=+1]
