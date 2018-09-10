@@ -110,7 +110,7 @@ Just enable WSL feature and download Debian Stretch or Ubuntu Xenial (aka 16.04 
 from Microsoft App Store. Then apply the same procedure as above to install the package.
 ====
 
-=== Install from scratch
+// === Install from scratch
 
 [[qs_usage]]
 == Running {hifimagnet}
@@ -277,10 +277,10 @@ This will create new files `mesh-np4.json` and `mesh-np4.h5` ready for running.
 // [[usage_3d]]
 // include::learning/3DModeling.adoc[leveloffset=+2]
 
-[[installation]]
-= Detailed Installation
+// [[installation]]
+// = Detailed Installation
 
-include::installation/README.adoc[]
+// include::installation/README.adoc[]
 
 include::installation/PREREQUISITES.adoc[leveloffset=+1]
 include::installation/lncmi-repository.adoc[leveloffset=+1]

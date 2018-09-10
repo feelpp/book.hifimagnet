@@ -80,21 +80,21 @@ include::Transient.adoc[leveloffset=+2]
 include::Optimization.adoc[leveloffset=+2]
 
 
-[[installation]]
-== Detailed  Installation
+// [[installation]]
+// == Detailed  Installation
 
-[[installation_prerequis]]
-=== Prerequis
+// [[installation_prerequis]]
+// === Prerequis
 
-{magnettools} relies on the following software : 
+// {magnettools} relies on the following software : 
 
-** `popt`,
-** `gsl`, `freesteam`,
-** `spherepack, expokit`,
-** `sundials`,
-** `yamlcpp`, `json-spirit`
-** `nag` (only required for Optimization)
+// ** `popt`,
+// ** `gsl`, `freesteam`,
+// ** `spherepack, expokit`,
+// ** `sundials`,
+// ** `yamlcpp`, `json-spirit`
+// ** `nag` (only required for Optimization)
 
-[[installation_scratch]]
-=== From scratch
+// [[installation_scratch]]
+// === From scratch
 
