@@ -25,7 +25,7 @@ and to analyze some Transient Analysis.
 
 
 [[qs_installation]]
-== Getting {magnetttools}
+== Getting {magnettools}
 
 Using {magnettools} inside container, either https://www.docker.com/what-docker[Docker] or Singularity based,
 is the recommended and fastest way. If your system support singularity containers we recommend to use them instead of Docker ones.

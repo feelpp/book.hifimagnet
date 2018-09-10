@@ -14,8 +14,9 @@ This document will provide basic information:
 
 and it defines the role of
 
+// * xref:dev:mso4sc/dev.adoc[*DevUser*]
 * <<devuser, *DevUser*>>
-* <<enduser, *EndUser*>>.
+* <<enduser, *EndUser*>>
 
 An overview of the main portal functionalities is given in this <<overview,section>>.
 This is followed by a brief description of the {hifimagnet} apps available and on the over-whole workflow
@@ -157,8 +158,8 @@ to setup the {sregistry} client.
 As for {girder} ...
 ====
 
-include::dev.adoc[]
 include::user.adoc[]
+// include::dev.adoc[]
 
 == References
 
