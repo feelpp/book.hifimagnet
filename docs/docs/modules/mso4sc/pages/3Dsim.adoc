@@ -23,8 +23,8 @@ To check the app, just change the following values:
 [options="header,footer"]
 |===
 | Key         | Value                                                            
-| *execfile*  | `feelpp_hfm_coupledcartmodel_3DP1N1`                       
-| *cfgfile*   | `/usr/share/doc/hifimagnet/CoupledCartModel/quarter-torus3D.cfg` 
+| *execfile*  | `feelpp_hfm_coupledmodel_3DP1N1`                       
+| *cfgfile*   | `/usr/share/doc/hifimagnet/CoupledModel/quarter-torus3D.cfg` 
 |===
 
 Alternatively the are also some additionnal tests:
@@ -65,7 +65,7 @@ Aternatively there is an other test:
 |===
 | Key                           | Default                                                            | Notes
 |===
-| *Dataset resource: input_url* | URL pointing to an archive of data files (comes from the data Catalog)
+| *Dataset resource: input_url* | URL pointing to an archive of data files (comes from the data Catalog) | 
 |===
 | *execfile*                    | `feelpp_hfm_thermoelectric_model_3D_V1T1_N1`                       | Valid values are:
 |                               |                                                                    |  `feelpp_hfm_thermoelectric_model_3D_V1T1_N1`
@@ -116,7 +116,7 @@ https://raw.githubusercontent.com/Trophime/cloudify-hpc-plugin/add_checks/plugin
 ** coupledcartmodel: +bmap (without magnetostatic)
 *** execfile: feelpp_hfm_coupledcartmodel_3DP1N1
 *** cfgfile: HL-31_cart_boomeramg.cfg
-*** dataset: hl-31
+*** dataset: hl-31, ressource HL-31.tgz 
 *** stokes params: stokes, n 32
 
 * LowFieldBench
