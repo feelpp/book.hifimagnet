@@ -93,23 +93,23 @@ Note that you may reveive some harmless warnings like that:
 ====
 
 
-To run the image:
+To run {salome} from the image:
 
 ```
-singularity shell [--nv] "./salome-$VERSION-$DIST-$TAG.simg"
+singularity shell [--nv] "./salome-$VERSION-$DIST-$TAG.simg salome"
 ```
-
+or
 ```
 singularity run [--nv] "./salome-$VERSION-$DIST-$TAG.simg"
 ```
 
-`--nv` option is only valid for 2.4.1 and later.
+`--nv` to use nvidia driver for host (option is only valid for 2.4.1 and later).
 
-= TODO
+// = TODO
 
-* generate def file from requested version and os
-* eventually build requested version is not available
-* is graphic driver really needed with latest singularity version?
+// * generate def file from requested version and os
+// * eventually build requested version is not available
+// * is graphic driver really needed with latest singularity version?
 
  
 

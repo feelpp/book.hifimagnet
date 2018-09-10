@@ -1,4 +1,8 @@
 === Axisymetrical Magnetic Field Maps
+:toc: macro
+include::{partialsdir}/header-macro.adoc[]
+include::{partialsdir}/header-uri.adoc[]
+include::{partialsdir}/mso4sc-uri.adoc[]
 
 Use *AxiMagMap* to get Magnetic Field Map in a stem:[\[r_0,r_1\]\times[z_0,z_1]] interval
 The resulting Field Map file could be saved and uploaded to data catalogue.
@@ -8,10 +12,8 @@ The resulting Field Map file could be saved and uploaded to data catalogue.
 [options="header,footer"]
 |===
 | Key                           | Default           | Notes
-|===
 | *Dataset resource: model*     |                   | dataset mode from the data Catalog
 | *Output dataset: outputs_at*  |                   | 
-|===
 | magnetcfg                     |                   | name of the magnet cfg file without extension
 | option                        | ''
 | Helix_current                 | 0                 |

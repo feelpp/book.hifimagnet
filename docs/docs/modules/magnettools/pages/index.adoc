@@ -27,20 +27,20 @@ and to analyze some Transient Analysis.
 [[qs_installation]]
 == Getting {magnetttools}
 
-Using {magnettools} inside container, either {https://www.docker.com/what-docker}[Docker] or Singularity based,
+Using {magnettools} inside container, either https://www.docker.com/what-docker[Docker] or Singularity based,
 is the recommended and fastest way. If your system support singularity containers we recommend to use them instead of Docker ones.
 
 === from sregistry
 
 {magnettools} are included in {hifimagnet} singularity image.
-To get {hifimagnet} singularity image see xref:user/index.adoc[singularity]
+To get {hifimagnet} singularity image see this xref:user/index.adoc#singularity[section]
 
 === from dockerhub
 
 {magnettools} are included in {hifimagnet} docker image.
-To get {hifimagnet} docker image see xref:user/index.adoc[dockerhub]
+To get {hifimagnet} docker image see xref:user/index.adoc#dockerhub[section]
 
-=== Install from {lncmi} Debian repository
+=== from {lncmi} Debian repository
 
 On Debian/Ubuntu system you can install {magnettools} from the local {lncmi} packages repository.
 To do so:
@@ -86,7 +86,7 @@ include::Optimization.adoc[leveloffset=+2]
 [[installation_prerequis]]
 === Prerequis
 
-{MagnetTools} relies on the following software : 
+{magnettools} relies on the following software : 
 
 ** `popt`,
 ** `gsl`, `freesteam`,
@@ -95,8 +95,6 @@ include::Optimization.adoc[leveloffset=+2]
 ** `yamlcpp`, `json-spirit`
 ** `nag` (only required for Optimization)
 
-[[installation_repository]]
-=== Repository
-
+[[installation_scratch]]
 === From scratch
 

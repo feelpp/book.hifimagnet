@@ -1,0 +1,70 @@
+= Full Insert 3D Model
+
+In this test case we will simulate a full insert.
+
+== Running the case
+
+As the CAD generation is time consuming, the mesh is provided but will eventually need to be partitionned.
+However if you ever want to rebuild the CAD and Mesh you will find detailled instructions bellow.
+
+To run this example on MSO4SC portal see this section.
+
+=== Create the geometry:
+
+[source,sh]
+----
+salome -t $HIFIMAGNET_SALOME_DIR/HIFIMAGNET_Cmd.py args:--cfg=HL-31.yaml
+salome -t $HIFIMAGNET_SALOME_DIR/HIFIMAGNET_Cmd.py args:--cfg=HL-31.yaml,--air
+----
+
+WARNING: Creating the geometry from scratch takes at least 4 days...
+
+=== Generate the mesh
+
+[source,sh]
+----
+salome -t $HIFIMAGNET_SALOME_DIR//HIFIMAGNET_Cmd.py args:--insert=HL-31.yaml,--air,--mesh,--groupCoolingChannels
+----
+
+=== Partitionning the mesh:
+
+[source,sh]
+----
+gmsh -3 -bin HL-31.med -o HL-31.msh
+feelpp_mesh_partitioner --ifile HL-31.msh [--ofile HL-31_p32] --part 32  --nochdir
+----
+
+=== Running the model (here couplecartmodel):
+
+[source,sh]
+----
+mpirun -np 32 feelpp_hfm_coupledcartmodel_3DP1N1 --config-file HL-31.cfg
+----
+
+== Data files
+
+=== Geometry files
+=== Mesh files
+
+
+=== Model files
+
+* HL-31.cfg
+
+== Outputs
+
+* some metrics
+
+== Notes
+
+the executables must be in the path or should be prefixed with appropriate directories.
+
+For instance on Lncmi server:
+```
+FEELPP_MESH_APPS_DIR=$FEELPP_BUILD_DIR/applications/mesh/
+HIFIMAGNET_APPS_DIR=~/feelpp_build/new_Json/research/hifimagnet/applications
+HIFIMAGNET_SALOME_DIR=~/SALOME-8.3.0-DB9.5/INSTALL/HIFIMAGNET/bin/salome
+```
+
+The coupledcart model is in ```$HIFIMAGNET_APPS_DIR/CoupledCartModel/```
+

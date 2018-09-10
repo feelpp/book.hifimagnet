@@ -1,3 +1,11 @@
+:cesga: Cesga
+:lncmi: Lncmi
+:singularity: Singularity
+:docker: Docker
+:sregistry: Sregistry
+:hifimagnet: HiFiMagnet
+:meshgems: MeshGems
+:salome: Salome
 :feelpp: Feel++
 :feelppdb: $HOME/feel
 :crbdb: crbdb
