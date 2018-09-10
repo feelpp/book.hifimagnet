@@ -1,7 +1,8 @@
 = {hifimagnet} PostProcessing documentation
-// :page-feelpp_book_cover: true
-// include::{partialsdir}/header-uri.adoc[]
-// include::{partialsdir}/header-levels.adoc[]
+:toc: macro
+include::{partialsdir}/header-macro.adoc[]
+include::{partialsdir}/header-uri.adoc[]
+include::{partialsdir}/mso4sc-uri.adoc[]
 
 Welcome to {hifimagnet} processing documentation!
 

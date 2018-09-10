@@ -1,6 +1,8 @@
 = {hifimagnet} user manual
-// include::{partialsdir}/header-uri.adoc[]
-// include::{partialsdir}/header-levels.adoc[]
+:toc: macro
+include::{partialsdir}/header-macro.adoc[]
+include::{partialsdir}/header-uri.adoc[]
+include::{partialsdir}/mso4sc-uri.adoc[]
 
 Welcome to {hifimagnet} manual documentation!
 
@@ -171,6 +173,12 @@ The data settings consist in writting json files for each physical model involve
 providing connection between CAD/Mesh entities to respectively Material and Boundary conditions.
 
 == Data structure
+
+{hifimagnet} simulations parameters are defined througth configuration file `.cfg`
+and `json` files defining the model per physic and eventually some other `json` files
+for the physical properties of the materials. 
+
+In this section we will give details about these different files.
 
 === Config Files
 
