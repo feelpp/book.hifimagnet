@@ -1,0 +1,10 @@
+!<Ring>
+BPside: false
+angle: 35
+fillets: false
+n: 8
+name: Ring-H2H3
+r: [25.1, 30.7, 31.6, 38.1]
+z: [0, 20]
+orientation: 0
+material:

@@ -1,0 +1,10 @@
+!<Ring>
+BPside: true
+angle: 32
+fillets: false
+n: 8
+name: Ring-H3H4
+r: [31.6, 38.1, 39, 46.3]
+z: [0, 20]
+orientation: 0
+material:
