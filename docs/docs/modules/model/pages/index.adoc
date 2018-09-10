@@ -174,9 +174,11 @@ with stem:[Re] the Reynolds number, stem:[Pr] the Prandlt number and stem:[D_h] 
 These quantities are defined by cooling channels:
 [stem]
 ++++
-R_e &= \displaystyle \frac{\rho u}{\mu},\\
-P_r &= \displaystyle \frac{\mu C_p}{{k}, \\
-D_h &= 2 (r^{(n+1)}_1 - r^{(n)}_2).
+{
+ (R_e &= \displaystyle \frac{\rho u}{\mu}),
+ (P_r &= \displaystyle \frac{\mu C_p}{{k}),
+ (D_h &= 2 (r^{(n+1)}_1 - r^{(n)}_2)
+:}
 ++++
 
 Note that stem:[\mu] stands here for the viscosity of water.
