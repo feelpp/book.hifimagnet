@@ -1,0 +1,10 @@
+!<Ring>
+BPside: true
+angle: 46
+fillets: false
+n: 6
+name: Ring-H1H2
+r: [19.3, 24.2, 25.1, 30.7]
+z: [0, 20]
+orientation: 0
+material:

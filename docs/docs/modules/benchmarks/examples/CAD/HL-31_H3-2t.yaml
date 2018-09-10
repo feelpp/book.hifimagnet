@@ -1,0 +1,30 @@
+!<Helix>
+name: HL-31_H3-2t
+odd: true
+r:
+  - 31.6
+  - 38.1
+z:
+  - -108.0
+  - 125.0
+dble: true
+cutwidth: 0.22
+axi: !<ModelAxi>
+  name: "HL-31.d"
+  h: 95
+  turns:
+    - 10
+  pitch:
+    - 19
+m3d: !<Model3D>
+  cad: "HL-31-206MC"
+  with_shapes: false
+  with_channels: false
+shape: !<Shape>
+  name: ""
+  length: 0
+  profile: ""
+  angle: 0
+  onturns: 0
+  position: ABOVE
+material:

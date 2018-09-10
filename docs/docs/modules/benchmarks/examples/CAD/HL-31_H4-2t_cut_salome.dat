@@ -1,0 +1,11 @@
+# Fichier de decoupe Salome V7.3.0
+# Fichier d'Optimisation [Aubert] : HL-31_H4_.d
+# author: trophime
+# date : Tue Sep 30 13:32:59 2014
+#
+# Orientation : droite
+
+#theta[rad] 	Shape_id[]	Z[mm]
+#
+0.00000000e+00	           0	1.09000000e+02
+-6.28318530e+01	           0	-1.09000000e+02

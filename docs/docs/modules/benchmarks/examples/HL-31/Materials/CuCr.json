@@ -1,0 +1,14 @@
+{
+    "name":"CuCr",
+    "sigma0":"14.9e+3",
+    "T0":"293",
+    "k0":"0.107",
+    "alpha":"1.8e-3",
+    "sigma":"sigma0/(1+alpha*(T-T0)):sigma0:alpha:T:T0",
+    "k":"k0*T/((1+alpha*(T-T0))*T0):k0:T:alpha:T0",
+    "E":"131e+9",
+    "nu":"0.3",
+    "alphaT":"17e-6",
+    "rho":"10.e-6",
+    "mu":"1"
+}
