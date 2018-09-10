@@ -18,7 +18,7 @@ High Field Magnets modeling relies on a coupled nonlinear multiphysic model that
 
 The nonlinearity arise from the dependencies of the physical properties of the copper alloy materials
 that compose the insert (ie. the so-called helices). Indeed the electrical and thermal conductivity
-depends on the temperature field following the {https://en.wikipedia.org/wiki/Wiedemann%E2%80%93Franz_law}[Wiedemann-Frantz law]:
+depends on the temperature field following the https://en.wikipedia.org/wiki/Wiedemann%E2%80%93Franz_law[Wiedemann-Frantz law]:
 stem:[\frac{k(T)}{\sigma(T)\,T} = L], where stem:[L] is a material dependent constant.
 
 The coupling of each physics is sketched in the chart bellow.
@@ -38,7 +38,7 @@ include::_partials/MathNotations.adoc[leveloffset=+1]
 [[magneto]]
 === Electromagnetic
 
-The starting point of the electromagnetic model is the {https://en.wikipedia.org/wiki/Maxwell%27s_equations}[Maxwell equations].
+The starting point of the electromagnetic model is the https://en.wikipedia.org/wiki/Maxwell%27s_equations[Maxwell equations].
 Using a classical approach we rewritte the equations by introducing the gauged magnetic and electric potentials, namely stem:[\mathbf{A}] and stem:[V].
 This leads to the following equation:
 

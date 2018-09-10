@@ -1,3 +1,5 @@
+:lncmi: Lncmi
+:magnettools: MagnetTools
 :feelpp: Feel++
 :feelppdb: $HOME/feel
 :crbdb: crbdb

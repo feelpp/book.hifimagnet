@@ -1,4 +1,8 @@
 === 3D Simulations
+:toc: macro
+include::{partialsdir}/header-macro.adoc[]
+include::{partialsdir}/header-uri.adoc[]
+include::{partialsdir}/mso4sc-uri.adoc[]
 
 Use *MagSim* this app to run simulations of High Field Magnets for:
 
@@ -64,14 +68,11 @@ Aternatively there is an other test:
 [options="header,footer"]
 |===
 | Key                           | Default                                                            | Notes
-|===
 | *Dataset resource: input_url* | URL pointing to an archive of data files (comes from the data Catalog) | 
-|===
 | *execfile*                    | `feelpp_hfm_thermoelectric_model_3D_V1T1_N1`                       | Valid values are:
 |                               |                                                                    |  `feelpp_hfm_thermoelectric_model_3D_V1T1_N1`
 |                               |                                                                    |  `feelpp_hfm_coupledmodel_3DP1N1`
 |                               |                                                                    |  `feelpp_hfm_coupledcartmodel_3DP1N1`
-|===
 | *Dataset resource: model*     |                                                                    | dataset mode from the data Catalog
 | *cfgfile*                     | `quarter-turn3D.cfg`                                               | cfg file need to be in the dataset
 | *Output dataset: outputs_at*  |                                                                    | optional

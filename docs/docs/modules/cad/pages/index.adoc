@@ -64,6 +64,7 @@ card you should have a look at the
 link:https://raw.githubusercontent.com/feelpp/hifimagnet/develop/docker/salome/build_salome.sh?token=ABP6f83LtdGN4ApDyGYlwkle_5jZeSy0ks5aeEu2wA%3D%3D[scripts] generating the images.
 ====
 
+[[singularity]]
 === from sregistry
 
 To get the {salome} singularity image you need first to get you token on a valid sregistry:
@@ -95,6 +96,7 @@ You can eventually rename the image using:
 sregistry rename hifimagnet/salome:8.3.0 salome-8.3.0.simg
 ```
 
+[[dockerhub]]
 === from dockerhub
 
 You need to be member of {feelpp} team on link:https://hub.docker.com/[dockerhub] to be able to download the image.
@@ -155,9 +157,11 @@ Note the `--nv` flag is mandatory to run in GUI mode and is only supported by nv
 
 ```
 xhost local:root
-docker run -ti --rm -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix \
-   -v $HOME/.Xauthority:/home/feelpp/.Xauthority --net=host --pid=host --ipc=host \
+docker run -ti --rm -e DISPLAY \
+   --net=host --pid=host --ipc=host \
    --env QT_X11_NO_MITSHM=1 \
+   -v /tmp/.X11-unix:/tmp/.X11-unix \
+   -v $HOME/.Xauthority:/home/feelpp/.Xauthority \
    -v /opt/DISTENE/DLim:/opt/DISTENE/DLim \
    feelpp/salome:8.3.0-nvidia salome [-t -b] ...
 ```
@@ -172,7 +176,7 @@ See this http://files.salome-platform.org/Salome/Common/SUD2018/08_Containers.pd
 
 We will omit the part of the command related to the use of {singularity} or {docker} to only give
 the {salome} command. If you plan to run these commands from a {singularity} or {docker} image,
-just start the container (see <<here, qs_reference>>, watch out to not forget to enable the display
+just start the container (see <<qs_reference, here>>, watch out to not forget to enable the display
 if you want to use the GUI mode).
 
 The structure of the `yaml` file describing the geometry and mesh be generated will
@@ -513,7 +517,7 @@ singularity exec \
   --pwd /home/$USER/Salome \
   -B $STORE/Distene/:/opt/DISTENE/DLim \
   salome.simg \
-  $SALOMEDIR/salome -t ghs3d_demo.py
+  salome -t ghs3d_demo.py
 ```
 where:
 
@@ -528,7 +532,7 @@ singularity exec \
   --pwd /home/$USER/Salome \
   -B $STORE/Distene/:/opt/DISTENE/DLim \
   salome.simg \
-  $SALOMEDIR/salome -t testcube_mesh.py
+  salome -t testcube_mesh.py
 ```
 
 [TIP]
