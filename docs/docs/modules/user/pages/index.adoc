@@ -282,12 +282,12 @@ This will create new files `mesh-np4.json` and `mesh-np4.h5` ready for running.
 
 // include::installation/README.adoc[]
 
-include::installation/PREREQUISITES.adoc[leveloffset=+1]
-include::installation/lncmi-repository.adoc[leveloffset=+1]
-include::installation/container.adoc[leveloffset=+1]
+// include::installation/PREREQUISITES.adoc[leveloffset=+1]
+// include::installation/lncmi-repository.adoc[leveloffset=+1]
+// include::installation/container.adoc[leveloffset=+1]
 
-[[installation_scratch]]
-include::installation/from-scratch.adoc[leveloffset=+1]
+// [[installation_scratch]]
+// include::installation/from-scratch.adoc[leveloffset=+1]
 
 [[references]]
 = Quick Reference
