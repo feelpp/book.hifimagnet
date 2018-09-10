@@ -8,6 +8,7 @@
 **** xref:index.adoc#data[Uploading to DataCatalogue]
 **** xref:index.adoc#running[Running an app]
 **** xref:index.adoc#post[Viewing results]
+**** xref:index.adoc#offering_setup[Available apps]
 
 *** xref:index.adoc#registerapp[DevUser]
 **** xref:index.adoc#registerapp[Validate an *EndUser*]

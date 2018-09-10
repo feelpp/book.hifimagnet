@@ -1,5 +1,9 @@
 [[magnettools]]
 = {magnettools} user manual
+:toc: macro
+include::{partialsdir}/header-macro.adoc[]
+include::{partialsdir}/header-uri.adoc[]
+include::{partialsdir}/mso4sc-uri.adoc[]
 
 Welcome to {magnettools} manual documentation!
 

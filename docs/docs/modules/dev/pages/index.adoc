@@ -1,6 +1,7 @@
 = {hifimagnet} Developper documentation
-:page-feelpp_book_cover: true
+:toc: macro
+include::{partialsdir}/header-macro.adoc[]
 include::{partialsdir}/header-uri.adoc[]
-include::{partialsdir}/header-levels.adoc[]
+include::{partialsdir}/mso4sc-uri.adoc[]
 
 Welcome to {hifimagnet} Developper documentation!

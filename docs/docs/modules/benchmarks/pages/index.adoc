@@ -1,7 +1,9 @@
 [[examples]]
 = {hifimagnet} Examples and Benchmarks documentation
+:toc: macro
 include::{partialsdir}/header-uri.adoc[]
 include::{partialsdir}/header-levels.adoc[]
+include::{partialsdir}/mso4sc-uri.adoc[]
 
 Welcome to {hifimagnet} Examples and Benchmarks documentation!
 
