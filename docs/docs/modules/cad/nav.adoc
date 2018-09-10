@@ -5,4 +5,4 @@
 **** xref:index.adoc#qs_reference[Running {salome}]
 *** xref:index.adoc#data[Data Structure]
 *** xref:index.adoc#usage[Usage]
-*** xref:index.adoc#installation[Installation]
+// *** xref:index.adoc#installation[Installation]

@@ -10,7 +10,7 @@
 **** xref:index.adoc#post[Viewing results]
 **** xref:index.adoc#offering_setup[Available apps]
 
-*** xref:index.adoc#registerapp[DevUser]
-**** xref:index.adoc#registerapp[Validate an *EndUser*]
-**** xref:index.adoc#registerapp[Register App]
-**** xref:index.adoc#validorder[Validate an order]
+// *** xref:index.adoc#registerapp[DevUser]
+// **** xref:index.adoc#registerapp[Validate an *EndUser*]
+// **** xref:index.adoc#registerapp[Register App]
+// **** xref:index.adoc#validorder[Validate an order]
