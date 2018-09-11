@@ -1,158 +1,81 @@
-[[devuser]]
-== *DevUser* role
+[[create_app]]
+== Creating an App in MSO Portal
 
-=== Becoming *DevUser*
+An application for {mso4sc} portal is basically a workflow
+described using TOSCA. The application atually consists in:
 
-Once registered in the portal, you  are a *EndUser*.
-To be granted *DevUser* rights, just email to Portal Admins (actually Victor or Javi).
+* a blueprint file, describing the workflow
+* some scripts to perform specific operations at bootstrap and end
 
-[[registerapp]]
-===  Register an {hifimagnet} application
+An helper script is also provided to:
 
-To register an application you need to be *DevUSer*
-The process is split into several part:
+* package the app for the portal,
+* ...
 
-* add the app and create an offer in the {uri-msoportal-market-www}[*Marketplace*]:
-** go to *My stock/Catalogue*
-** go to *My stock/Product*
-** go to *My stock/Offering*
+=== blueprint: workflow TOSCA
 
-Then you need to perform the following steps in *Experiments*:
 
-* go to *RegisterApp*
-** select your *Offering* in the sliding menu *New Products*
-** give the app a meaningful name
-** Choose a package file to load.
+=== Running in the orchestrator CLI
 
-[NOTE]
-====
-The package file is an gzipped archive holding the formal description of the app.
-It's actually a directory which contains :
+* Create a `local-blueprint-inputs.yaml` from the template file.
+** Define the HPC ressource you are planning to use.
+** Enter your credentials (`user/passwd`)
+** Setup <<inputs, input parameters>>
 
-* a `blueprint.yml` TOSCA file that describes the workflow
-* a `scripts` sub-directory holding the scripts required to deploy and undeploy the app
-
-In this https://github.com/MSO4SC/resources/tree/master/blueprint/feelpp/hifimagnet_test[git repository]
-you will find the actual application corresponding to the {hifimagnet} basic demonstrator.
-
-To actually build the app, use: ```./deploy pkg```
-====
-
-[IMPORTANT]
-====
-An app can only be registered once. It means that once you have gone througth the registration process 
-your only choice is to *RemoveApp*.
-
-As a consequence, to upgrade your app package you have first to remove the app and go back to re-register your app.
-====
-
-[[validorder]]
-=== Validate an {hifimagnet} application purchase order
-
-Once the app has been registered in the *Marketplace* (actually it means that an offering has been defined) you will be *owner* of this app. Any *EndUser* may purchase your app.
-To check if you have any order:
-
-* go to *My Inventory*
-* go to *My Inventory/Product Orders*
-* check *Recibibas* menu
-* if any new message, you need to:
-** click to validate the order
-** click again to finalize the order
-
-The *EndUser* may now proceed to perform *Experiments* with you product
-
-[IMPORTANT]
-====
-Do not forget to notify the user that he/she has to connect once to:
-
-* {uri-sregistry-cesga}[{sregistry} service]
-* {uri-msoportal-ckan-www}[*DataCatalogue*]
-
-and eventually to :
-
-* {uri-girder-unistras}[{girder} service]
-
-This steps are mandatory for smooth operation of the app since the user has to be included
-into {hifimagnet} user group. Fortunately this need to be done only once for any {hifimagnet} app.
-
-Unfortunately the management of user has to be carried out manually by the *DevUser* in charge of the app
-and cannot be performed from the portal.
-====
-
-[[sregistry_add_to_team]]
-=== Adding an *EndUser* to {sregistry} team
-
-For app like {hifimagnet} apps that require an private singularity image, you must grant *EndUser* access to the {sregistry} {hifimagnet} team.
-To do so follow these instructions:
-
-* Logged in to your {uri-sregistry-cesga},
-* Click on *Teams* menu then select your *team*
-
-image::sregistry_team.png[ex: {hifimagnet} {sregistry} team]
-
-* As in the image above, click on *Invite Users*
-* Copy the link (display in blue) and send it to your new *EndUser*
-
-See https://singularityhub.github.io/sregistry/credentials[sregistry docs]
-
-Once the *EndUser* will validate the invitation, his/her name will be display in the list
-of members. You can also make him/her *owner* of the team by clicking on the *Make Owner* button.
-
-To grant the *EndUser* access to the images in the {hifimagnet} collection, you need to proceed as follows:
-
-* click on the *Collections* menu on the top left
-* click on the link to the {hifimagnet} collections in the collections list
-* once the list of images contained in the {hifimagnet} collection is display, you have to click *settings* button
-
-A list of *owners* and *contributorsllaborators* appears in the top right part of the page. Bellow are lists of user 
-that are nor part of *owners* nor *contributors*. 
-
-* To grant *owner* or *contributor* role to a given user select his/her name
-* finaly simply click on the red *save* button 
-
-The previously selected user shall  not be show in the appropriate list according to your choice.
-
-[[sregistry_add_to_collection]]
-=== Adding an new image into {sregistry} {hifimagnet} collection
-
-To upload `salome-8.4.0.simg` newest image on {sregistry} {hifimagnet} collection
-from your local machine you can type the following commands:
-
-[source,sh]
+* Connect to the cloudify client via docker:
+[source]
 ----
-export SREGISTRY_CLIENT=registry
-export SREGISTRY_CLIENT_SECRETS=~/.sregistry
-[export SREGISTRY_STORAGE=...]
-
-sregistry push --name hifimagnet/salome --tag 8.4.0 salome-8.4.0.simg 
+docker pull mso4sc/msoorchestrator-cli
+docker run -it --rm \
+    -v $HOME/MSO4SC/resources:/resources \
+     mso4sc/msoorchestrator-cli
 ----
 
-The `.sregistry` holds the {sregistry} *TOKEN* (to get the *TOKEN* see this <<section, using_sregistry>>).
+* Within the docker:
+[source]
+----
+cfy profiles use  ORCHESTRATOR_IP -t  default_tenant -u USER -p PASSWD
+----
 
-[NOTE]
+Then you can simply deploy your application using:
+[source]
+----
+./deploy up
+----
+
+To undeploy on the orchestrator, just:
+[source]
+----
+./deploy down
+----
+
+NOTE: If the application fails during one step of the deploy up process, you'll have to
+force cancel execution by hands. `cfy executions list`, `cfy executions cancel -f <id>`
+in the orchestrator client (*docker).
+
+[TIP]
 ====
-You need to install {https://singularityhub.github.io/sregistry-cli}[sregistry-cli] to get this working.
+Some useful commands :
+
+* `cfy status`
+* `cfy deployment list`
+* `cfy deployment delete -f <name>`
+* `cfy execution list`
+* `cfy execution cancel -f <id>
+* `cfy deployment delete -f <name>`
+* `cfy blueprint list`
+* `cfy blueprint delete <name>`
+
 ====
 
-[[girder_add_to_team]]
-=== Adding an *EndUser* to {girder}
+See https://github.com/MSO4SC/MSOOrchestrator-CLI/blob/master/README.adoc#remote-mode for details
 
-[[ckan_dev]]
-=== Data Catalogue
 
-As a *DevUser* you can create *Organization* in {uri-msoportal-ckan-www}[*Data Catalogue*]
+=== Package workflow for {mso4sc} portal
 
-* click on *Organizations*
-* click on *Add Organization*
-
-You, then, need to fill the form and finalize the creation by clicking on the *create organization* button.
-
-You have then to manage user that are allowed to be part of your organization.
-They may the following role:
-
-* *admin* : can view/add dataset, add user and manage role
-* *editor* : can add dataset
-* *member* : can view dataset
-
-NOTE: *EndUser* has to connect at least once to *Data Catalogue* before you can grant them a role in your organization.
+To package the workflow for latter use in the portal, just create a gzipped archive using :
+[source]
+----
+./deploy pkg
+----
 
