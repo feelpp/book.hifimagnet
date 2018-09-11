@@ -104,13 +104,13 @@ To grant the *EndUser* access to the images in the {hifimagnet} collection, you 
 * click on the link to the {hifimagnet} collections in the collections list
 * once the list of images contained in the {hifimagnet} collection is display, you have to click *settings* button
 
-A list of *owners* and *contributorsllaborators* appears in the top right part of the page. Bellow are lists of user 
+A list of *owners* and *contributors* appears in the top right part of the page. Bellow are lists of user 
 that are nor part of *owners* nor *contributors*. 
 
 * To grant *owner* or *contributor* role to a given user select his/her name
 * finaly simply click on the red *save* button 
 
-The previously selected user shall  not be show in the appropriate list according to your choice.
+The previously selected user shall not be shown in the appropriate list according to your choice.
 
 [[sregistry_add_to_collection]]
 === Adding an new image into {sregistry} {hifimagnet} collection

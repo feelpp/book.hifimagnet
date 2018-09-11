@@ -14,8 +14,8 @@ This document will provide basic information:
 
 and it defines the role of
 
-* <<devuser, *DevUser*>>
-* <<enduser, *EndUser*>>
+* xref::dev.adoc[*DevUser*]
+* xref::user.adoc[*EndUser*]
 
 An overview of the main portal functionalities is given in this <<overview,section>>.
 This is followed by a brief description of the {hifimagnet} apps available and on the over-whole workflow
@@ -127,7 +127,7 @@ For the new user we recommend to read this guide. The impatient may go directly 
 
 == Synopsis of the {hifimagnet} Offering
 
-The {hifimagnet} offering is created by *DevUser* as described in this <<registerapp, section>>.
+The {hifimagnet} offering is created by *DevUser* as described in this xref::dev.adoc#registerapp[section].
 Any *EndUser* may purchase the offering following the <<purchase, generic procedure>>. Then,
 he or she can run the purchased offering provided that some fields are filled properly as in this <<running, example>>.
 Details for setup each offering will be giving in the <<offering_setup, next section>>.
