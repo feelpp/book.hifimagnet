@@ -253,7 +253,7 @@ Basically the procedure is the same as <<running, above>>. The only difference h
 
 You should at the end have something like in the following image.
 
-image::portal_running_dataset.png[Selecting a dataset]
+image::portal_running_dataset.png: {Selecting a dataset}
 
 
 [NOTE]
