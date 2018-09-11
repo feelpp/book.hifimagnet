@@ -159,7 +159,7 @@ As for {girder} ...
 ====
 
 include::user.adoc[]
-// include::dev.adoc[]
+include::dev.adoc[]
 
 == References
 
