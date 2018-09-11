@@ -1,3 +1,4 @@
+[[user_manual]]
 = {hifimagnet} user manual
 :toc: macro
 include::{partialsdir}/header-macro.adoc[]

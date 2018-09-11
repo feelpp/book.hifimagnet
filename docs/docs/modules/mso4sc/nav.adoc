@@ -1,4 +1,4 @@
-** MSOPortal
+** xref:index.adoc#msoportal[MSOPortal]
 *** xref:index.adoc#msoportal[Introduction]
 *** xref:index.adoc#connect[Create an account]
 *** xref:index.adoc#overview[OverView of the Portal]

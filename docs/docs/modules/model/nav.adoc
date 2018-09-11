@@ -1,4 +1,4 @@
-** Physical Modelling
+** xref:index.adoc#model[Physical Modelling]
 *** xref:index.adoc#introduction[Introduction]
 *** xref:index.adoc#coupled3d[Coupled Model]
 **** xref:index.adoc#thermoelec[ThermoElectric Model]
@@ -7,4 +7,4 @@
 **** xref:index.adoc#cooling[ThermoHydraulics Model]
 *** xref:index.adoc#coupledaxi[Axisymetrical Model]
 *** xref:index.adoc#optim[Axisymetrical Optimization]
-*** xref:index.adoc#todo[TODO]
+// *** xref:index.adoc#todo[TODO]

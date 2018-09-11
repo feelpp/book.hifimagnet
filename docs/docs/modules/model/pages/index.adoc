@@ -1,3 +1,4 @@
+[[model]]
 = {hifimagnet} model manual
 :toc: macro
 include::{partialsdir}/header-macro.adoc[]
