@@ -1,5 +1,9 @@
 [[devuser]]
 == *DevUser* role
+:toc: macro
+include::{partialsdir}/header-macro.adoc[]
+include::{partialsdir}/header-uri.adoc[]
+include::{partialsdir}/mso4sc-uri.adoc[]
 
 === Becoming *DevUser*
 
