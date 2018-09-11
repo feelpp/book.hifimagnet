@@ -1,4 +1,4 @@
-** Developper Manual
+** xref:index.adoc#dev_manual[Developper Manual]
 *** xref:index.adoc#install_salome[{hifimagnet} {salome} plugin]
 *** xref:index.adoc#install_magnettools[{magnettools}]
 *** xref:index.adoc#install_hifimagnet[{hifimagnet}]

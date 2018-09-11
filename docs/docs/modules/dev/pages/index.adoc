@@ -1,3 +1,4 @@
+[[dev_manual]]
 = {hifimagnet} Developper documentation
 :toc: macro
 include::{partialsdir}/header-macro.adoc[]

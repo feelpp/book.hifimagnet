@@ -1,4 +1,4 @@
-** User Manual
+** xref:index.adoc#user_manual[User Manual]
 *** xref:index.adoc#quickstart[Quick Start]
 *** xref:index.adoc#usage[Usage]
 *** xref:index.adoc#usage_hifimagnet[Using {hifimagnet}]
