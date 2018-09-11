@@ -44,12 +44,12 @@ xref:HR/README.adoc[HR]
 [[verifications]]
 == LowField Benchmark
 
-xref::LowFieldBench/README.adoc[LowField]
+xref:LowFieldBench/README.adoc[LowField]
 
 == Insert
 
-xref::HL-31/README.adoc[HL-31]
+xref:HL-31/README.adoc[HL-31]
 
 == Other Magnetic structures
 
-xref::SEISM/README.adoc[SEISM: an ECR ion source]
+xref:SEISM/README.adoc[SEISM: an ECR ion source]

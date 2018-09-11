@@ -13,7 +13,7 @@ Right now its the only such service (see key `sregistry_url` in blueprints) avai
 To purchase an application from the *Marketplace* you can either be *DevUser*
 or a simple *EndUser*. The process is the following:
 
-* connect to the {uri-msoportal-ckan-www}[*Marketplace*], in *Home* (top left Marketplace page) you will find all available apps (*All categories*).
+* connect to the {uri-msoportal-market-www}[*Marketplace*], in *Home* (top left Marketplace page) you will find all available apps (*All categories*).
 * Click on *Add to Cart* to purchase the app you want.
 * Click on *Shopping Cart* and *Checkout* to go on
 ** fill the required forms for *shipping address*

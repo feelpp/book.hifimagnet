@@ -29,8 +29,8 @@ used mostly for quick calculations and optimzation.
 image:Model.png[model]
 
 :leveloffset=+1:
-include::_partials/Notations.adoc[leveloffset=+1]
-include::_partials/MathNotations.adoc[leveloffset=+1]
+include::{partialsdir}/Notations.adoc[leveloffset=+1]
+include::{partialsdir}/MathNotations.adoc[leveloffset=+1]
 
 [[coupled3d]]
 == Coupled Model
