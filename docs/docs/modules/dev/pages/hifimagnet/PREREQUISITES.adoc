@@ -6,7 +6,7 @@
 ** toolbox:
 ** RB framework:
 
-* {Salome}: for GUI/TUI CAD and Meshing features
+* {salome}: for GUI/TUI CAD and Meshing features
 
-* gmsh:
-* {MeshGems}: for Meshing features
+* gmsh: for converting Mesh format
+* {meshgems}: for Meshing features
