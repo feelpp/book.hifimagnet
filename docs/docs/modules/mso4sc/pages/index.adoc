@@ -1,3 +1,4 @@
+[[msoportal]]
 = Using the **MSO4SC Portal**
 :toc: macro
 include::{partialsdir}/header-macro.adoc[]
@@ -157,9 +158,8 @@ to setup the {sregistry} client.
 As for {girder} ...
 ====
 
-include::user.adoc[]
-
-include::dev.adoc[]
+// include::user.adoc[]
+// include::dev.adoc[]
 
 == References
 
