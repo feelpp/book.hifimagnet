@@ -20,9 +20,9 @@ In particular see the followings directory:
 * singularity: same for singularity
 * package: for all debian/ubuntu packaging questions
 
-include:cad/officialbinary.adoc[leveloffset=+1]
-include:cad/scratch.adoc[leveloffset=+1]
-include:cad/singularity.adoc[leveloffset=+1]
+include::cad/officialbinary.adoc[leveloffset=+1]
+include::cad/scratch.adoc[leveloffset=+1]
+include::cad/singularity.adoc[leveloffset=+1]
 
 [[install_magnettools]]
 = {magnettools}
@@ -43,18 +43,18 @@ include:cad/singularity.adoc[leveloffset=+1]
 [[install_hifimagnet]]
 = {hifimagnet}
 
-include:hifimagnet/PREREQUISITES.adoc[leveloffset=+1]
+include::hifimagnet/PREREQUISITES.adoc[leveloffset=+1]
 
 == Using containers
 
-include:hifimagnet/docker.adoc[leveloffset=+1]
-include:hifimagnet/singularity.adoc[leveloffset=+1]
+include::hifimagnet/docker.adoc[leveloffset=+1]
+include::hifimagnet/singularity.adoc[leveloffset=+1]
 
 == From scratch
 
-//include:hifimagnet/from-scratch.adoc[leveloffset=+1]
+//include::hifimagnet/from-scratch.adoc[leveloffset=+1]
 
 [[mso4sc]]
 = {mso4sc} Portal
 
-include:mso4sc/dev.adoc[leveloffset=+1]
+include::mso4sc/dev.adoc[leveloffset=+1]
