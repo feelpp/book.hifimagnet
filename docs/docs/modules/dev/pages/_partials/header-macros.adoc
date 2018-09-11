@@ -4,6 +4,7 @@
 :docker: Docker
 :sregistry: Sregistry
 :hifimagnet: HiFiMagnet
+:magnettools: MagnetTools
 :meshgems: MeshGems
 :salome: Salome
 :feelpp: Feel++

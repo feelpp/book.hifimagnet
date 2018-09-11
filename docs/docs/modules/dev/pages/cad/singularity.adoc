@@ -39,7 +39,7 @@ include::{examplesdir}/cad/build_singularity.sh[]
 (eg on cesga Ubuntu 18.04 LTS images won't run, same for Debian buster)
 ====
 
-The obtained singularity images may be pushed to a {sregsitry} service like link:https://sregistry.srv.cesga.es/[cesga registry]:
+The obtained singularity images may be pushed to a {sregistry} service like link:https://sregistry.srv.cesga.es/[cesga registry]:
 
 ```
 export SREGISTRY_CLIENT=registry
