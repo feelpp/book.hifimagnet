@@ -22,15 +22,15 @@ DIST=$(docker run -it --rm trophime/salome-$VERSION:$TAG lsb_release -cs)
 sudo -E singularity -vvv build --force --notest [--writable] "./salome-$VERSION-$DIST-$TAG.simg" "./salome-docker.def"
 ```
 
-An alternative is to build the image using the {salome} binairies, for details see link:{examplesdir}/stretch.def[stretch.def] recipe:
+An alternative is to build the image using the {salome} binairies, for details see link:{examplesdir}/cad/stretch.def[stretch.def] recipe:
 ```
 sudo -E singularity -vvv build --force --notest [--writable] "./salome-$VERSION-$TAG.simg" "./stretch.def"
 ```
 
-We also provide a link:examples/build_singularity.sh[bash script] to automate the creation of {salome} singularity image:
+We also provide a link:examples/cad/build_singularity.sh[bash script] to automate the creation of {salome} singularity image:
 [source,sh]
 ----
-include::{examplesdir}/build_singularity.sh[]
+include::{examplesdir}/cad/build_singularity.sh[]
 ----
 
 [[IMPORTANT]]
