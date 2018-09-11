@@ -14,7 +14,6 @@ This document will provide basic information:
 
 and it defines the role of
 
-// * xref:dev:mso4sc/dev.adoc[*DevUser*]
 * <<devuser, *DevUser*>>
 * <<enduser, *EndUser*>>
 
@@ -159,6 +158,7 @@ As for {girder} ...
 ====
 
 include::user.adoc[]
+
 include::dev.adoc[]
 
 == References
