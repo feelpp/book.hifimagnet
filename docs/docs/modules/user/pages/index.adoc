@@ -31,6 +31,12 @@ It consists in a set of tools including:
 ** multiphics models: {feelpp} toolboxes
 ** post-processing: EnSight, ParaView
 
+When using containers, note that the tools are distributed into 3 differents containers:
+
+* one for pre-processing (see xref:cad:index.adoc#qs_getting[here]),
+* one for running simulations (see respectively xref:magnettools:index.adoc#qs_installation[here for Axi] and xref:user:index.adoc#qs_installation[here for 3D]),
+* one for post-processing (see xref:post:index.adoc[here]).
+
 [TIP]
 ====
 link:http://www.ensight.com[EnSight (recommended)]:: is a commercial multi-platform data analysis and visualization application.

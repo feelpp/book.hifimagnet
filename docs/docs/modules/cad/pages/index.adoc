@@ -40,6 +40,8 @@ and give examples for most common operations.
 
 Custom installation, eg. for native installation, is detailed in the xref:dev:index.adoc#install_salome[dev section].
 
+include:ROOT:convention.adoc[]
+
 [[qs_getting]]
 == Getting {hifimagnet} Salome plugin
 
@@ -136,8 +138,11 @@ Before running just install a X11 server. We recommend MobaXterm 10.9 or latter.
 [[qs_reference]]
 == Running {hifimagnet} Salome plugin
 
-`-t` option may be used to switch to the TUI mode.
-`-b` option to the use TUI in batch mode.
+{hifimagnet} Salome plugin can be run either in *GUI* or *TUI* mode.
+*TUI* stands for Terminal User Interface.
+
+To switch to *TUI* mode, use `-t` option.
+Add `-b` option to the use TUI in batch mode.
 
 === from Singularity container
 
@@ -150,6 +155,7 @@ singularity exec [--nv] \
   salome.simg \
   salome [-t -b] ...
 ```
+
 Note the `--nv` flag is mandatory to run in GUI mode and is only supported by nvidia drivers.
 
 
@@ -168,7 +174,34 @@ docker run -ti --rm -e DISPLAY \
 
 [TIP]
 ====
-On Windows and MacOs X you would need a running X11 server.
+On Windows:
+
+* Start https://mobaxterm.mobatek.net/[MobaXterm] (that provides a running X11 server)
+* Then run:
+
+[source,sh]
+----
+docker run -it --rm -e DISPLAY :0 feelpp/salome-8.3.0:nvidia
+----
+
+On MacOs X:
+
+* start https://www.xquartz.org/[XQuartz]
+* In XQuartz: `defaults write org.macosforge.xquartz.X11 enable_iglx -bool true`
+* Restart XQuartz
+* Then run:
+
+[source,sh]
+----
+ip=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
+xhost +$ip
+docker run -it --rm -e DISPLAY $ip:0 feelpp/salome-8.3.0:nvidia
+----
+
+You may need to adapt the line to get the working `ip` of your machine depending
+on your internet connection.
+====
+
 See this http://files.salome-platform.org/Salome/Common/SUD2018/08_Containers.pdf[presentation] for details
 ====
 
