@@ -1,7 +1,7 @@
 [[model]]
 = {hifimagnet} model manual
 :toc: macro
-include::{partialsdir}/header-macro.adoc[]
+include::{partialsdir}/header-macros.adoc[]
 include::{partialsdir}/header-uri.adoc[]
 include::{partialsdir}/mso4sc-uri.adoc[]
 
@@ -149,7 +149,7 @@ To account for the thermal expansion of the material we add to the stress tensor
 ++++
 with stem:[{\bar{\bar{I}}}] the identity tensor, and stem:[T_0] is a reference temperature.
 
-
+[[cooling]]
 === ThermoHydraulics
 
 Cooling the magnet is mandatory to evacuate Joules losses and to keep magnet temperature bellow some
@@ -202,11 +202,11 @@ stem:[P_{in}] and stem:[P_{out}] are additionnal hydraulic pressure drop at the 
 
 In practice...
 
-[[coupledaxi]]
-== A simplified model: Axisymetrical Geometry
+// [[coupledaxi]]
+// == A simplified model: Axisymetrical Geometry
 
-[[optim]]
-== Optimization: Axisymetrical Geometry
+// [[optim]]
+// == Optimization: Axisymetrical Geometry
 
 // [[todo]]
 // == TODO
