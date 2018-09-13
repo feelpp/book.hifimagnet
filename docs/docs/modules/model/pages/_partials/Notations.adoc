@@ -41,9 +41,15 @@ We will consider the usual notation for the space coordinates in   stem:[\mathbf
 |stem:[\sigma] |electrical conductivity |stem:[S.m^{-1}]
 |stem:[\alpha] |thermal resistivity coefficient |
 |===
+
+|===
+^|Notation ^|Quantity ^|Unit
 |stem:[\mu]    | magnetic permeability |
 |stem:[\epsilon] | electric permeability |
 |===
+
+|===
+^|Notation ^|Quantity ^|Unit
 |stem:[\alpha_T] |thermal expansion coefficient |
 |stem:[Y]      |Young modulus |stem:[W.m^{-1} .K^{-1}]
 |stem:[\nu]    |Poisson ratio |]

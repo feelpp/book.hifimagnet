@@ -1,4 +1,12 @@
+:mso4sc: MSO4SC
+:cesga: Cesga
 :lncmi: Lncmi
+:singularity: Singularity
+:docker: Docker
+:sregistry: Sregistry
+:hifimagnet: HiFiMagnet
+:meshgems: MeshGems
+:salome: Salome
 :magnettools: MagnetTools
 :feelpp: Feel++
 :feelppdb: $HOME/feel

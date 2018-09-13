@@ -1,7 +1,7 @@
 = {hifimagnet} documentation
 :page-feelpp_book_cover: true
-include::_partials/header-macro.adoc[]
-include::_partials/header-uri.adoc[]
+include::{partialsdir}/header-macro.adoc[]
+include::{partialsdir}/header-uri.adoc[]
 include::{partialsdir}/mso4sc-uri.adoc[]
 
 
