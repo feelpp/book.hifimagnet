@@ -1,7 +1,7 @@
-[[magnettools]]
+[[magnettools_manual]]
 = {magnettools} user manual
 :toc: macro
-include::{partialsdir}/header-macro.adoc[]
+include::{partialsdir}/header-macros.adoc[]
 include::{partialsdir}/header-uri.adoc[]
 include::{partialsdir}/mso4sc-uri.adoc[]
 
@@ -33,12 +33,12 @@ is the recommended and fastest way. If your system support singularity container
 === from sregistry
 
 {magnettools} are included in {hifimagnet} singularity image.
-To get {hifimagnet} singularity image see this xref:user/index.adoc#singularity[section]
+To get {hifimagnet} singularity image see this xref:user:index.adoc#singularity[section]
 
 === from dockerhub
 
 {magnettools} are included in {hifimagnet} docker image.
-To get {hifimagnet} docker image see xref:user/index.adoc#dockerhub[section]
+To get {hifimagnet} docker image see xref:user:index.adoc#dockerhub[section]
 
 === from {lncmi} Debian repository
 

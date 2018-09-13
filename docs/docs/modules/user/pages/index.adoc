@@ -1,7 +1,7 @@
 [[user_manual]]
 = {hifimagnet} user manual
 :toc: macro
-include::{partialsdir}/header-macro.adoc[]
+include::{partialsdir}/header-macros.adoc[]
 include::{partialsdir}/header-uri.adoc[]
 include::{partialsdir}/mso4sc-uri.adoc[]
 

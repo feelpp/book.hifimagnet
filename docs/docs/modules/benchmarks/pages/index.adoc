@@ -1,14 +1,15 @@
 [[main_examples]]
 = {hifimagnet} Examples and Benchmarks documentation
 :toc: macro
-include::{partialsdir}/header-macro.adoc[]
+include::{partialsdir}/header-macros.adoc[]
 include::{partialsdir}/header-uri.adoc[]
 include::{partialsdir}/mso4sc-uri.adoc[]
 
 Welcome to {hifimagnet} Examples and Benchmarks documentation!
 
 [[examples]]
-== CAD generation and Meshing
+== Examples
+=== CAD generation and Meshing
 
 xref:CAD/README.adoc[insert with 4 helices]
 
@@ -16,44 +17,47 @@ xref:CAD/README.adoc[insert with 4 helices]
 // == Bitter Magnet
 // include::Bitter/README.adoc
 
-== Helix Magnet
+=== Helix Magnet
 
 xref:HL/README.adoc[HL] 
 xref:HR/README.adoc[HR] 
 
-== Insert
+=== Insert
 
 xref:HL-31/README.adoc[HL-31]
 
-== Other Magnetic structures
+=== Other Magnetic structures
 
 xref:SEISM/README.adoc[SEISM: an ECR ion source]
 
 
 [[validations]]
-== Cross rectangular Section Torus
+== Validations
+=== Cross rectangular Section Torus
 
-=== ThermoElecModel
+==== ThermoElecModel
 
 // from feelpp/toolbox
 xref:quarterturn/thermoelec.adoc[quarterturn]
 
-=== Magnetostatic
+==== Magnetostatic
 
 xref:quarterturn/magneto.adoc[quarterturn]
 
-=== Elasticity
+==== Elasticity
 
 xref:quarterturn/elasticity.adoc[quarterturn]
 
-=== Coupled Models
+==== Coupled Models
 
 xref:quarterturn/coupled.adoc[quarterturn]
 
 [[benchmarks]]
+== BenchMarks
 
 [[verifications]]
-== LowField Benchmark
+== Verifications
+=== LowField Benchmark
 
 xref:LowFieldBench/README.adoc[LowField]
 
