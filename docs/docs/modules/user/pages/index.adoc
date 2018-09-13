@@ -8,9 +8,9 @@ include::{partialsdir}/mso4sc-uri.adoc[]
 Welcome to {hifimagnet} manual documentation!
 
 NOTE: The {hifimagnet} manual documentation introduces the process to build and run an application.
-New user should begin with the xref:user:ROOT:index.adoc[{feelpp} User Manual].
+New user should begin with the xref:ROOT:index.adoc[{feelpp} User Manual].
 
-IMPORTANT: You wish to contribute? Please consult the xref:docs:ROOT:index.adoc#contribute[contribute] section to learn how to proceed!
+IMPORTANT: You wish to contribute? Please consult the xref:ROOT:index.adoc#contribute[contribute] section to learn how to proceed!
 
 [[introduction]]
 = Introduction to {hifimagnet}

@@ -1,4 +1,4 @@
-[[examples]]
+[[main_examples]]
 = {hifimagnet} Examples and Benchmarks documentation
 :toc: macro
 include::{partialsdir}/header-uri.adoc[]
@@ -32,6 +32,7 @@ xref:quarterturn/elasticity.adoc[quarterturn]
 
 xref:quarterturn/coupled.adoc[quarterturn]
 
+[[benchmarks]]
 // [[bitter]]
 // == Bitter Magnet
 // include::Bitter/README.adoc
@@ -40,6 +41,10 @@ xref:quarterturn/coupled.adoc[quarterturn]
 
 xref:HL/README.adoc[HL] 
 xref:HR/README.adoc[HR] 
+
+== Other Magnetic structures
+
+xref:SEISM/README.adoc[SEISM: an ECR ion source]
 
 [[verifications]]
 == LowField Benchmark
@@ -50,6 +55,3 @@ xref:LowFieldBench/README.adoc[LowField]
 
 xref:HL-31/README.adoc[HL-31]
 
-== Other Magnetic structures
-
-xref:SEISM/README.adoc[SEISM: an ECR ion source]

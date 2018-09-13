@@ -1,1 +1,5 @@
-** xref:index.adoc[Examples and Benchmarks]
+** xref:index.adoc#main_examples[Examples and Benchmarks]
+*** xref:index.adoc#examples[Examples]
+*** xref:index.adoc#examples[Benchmarks]
+*** xref:index.adoc#validations[Validations]
+*** xref:index.adoc#verifications[Verifications]
