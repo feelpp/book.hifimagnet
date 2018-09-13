@@ -1,8 +1,8 @@
 [[main_examples]]
 = {hifimagnet} Examples and Benchmarks documentation
 :toc: macro
+include::{partialsdir}/header-macro.adoc[]
 include::{partialsdir}/header-uri.adoc[]
-include::{partialsdir}/header-levels.adoc[]
 include::{partialsdir}/mso4sc-uri.adoc[]
 
 Welcome to {hifimagnet} Examples and Benchmarks documentation!
@@ -11,6 +11,24 @@ Welcome to {hifimagnet} Examples and Benchmarks documentation!
 == CAD generation and Meshing
 
 xref:CAD/README.adoc[insert with 4 helices]
+
+// [[bitter]]
+// == Bitter Magnet
+// include::Bitter/README.adoc
+
+== Helix Magnet
+
+xref:HL/README.adoc[HL] 
+xref:HR/README.adoc[HR] 
+
+== Insert
+
+xref:HL-31/README.adoc[HL-31]
+
+== Other Magnetic structures
+
+xref:SEISM/README.adoc[SEISM: an ECR ion source]
+
 
 [[validations]]
 == Cross rectangular Section Torus
@@ -33,25 +51,10 @@ xref:quarterturn/elasticity.adoc[quarterturn]
 xref:quarterturn/coupled.adoc[quarterturn]
 
 [[benchmarks]]
-// [[bitter]]
-// == Bitter Magnet
-// include::Bitter/README.adoc
-
-== Helix Magnet
-
-xref:HL/README.adoc[HL] 
-xref:HR/README.adoc[HR] 
-
-== Other Magnetic structures
-
-xref:SEISM/README.adoc[SEISM: an ECR ion source]
 
 [[verifications]]
 == LowField Benchmark
 
 xref:LowFieldBench/README.adoc[LowField]
 
-== Insert
-
-xref:HL-31/README.adoc[HL-31]
 
