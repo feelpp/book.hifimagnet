@@ -61,6 +61,14 @@ The goals are twofold:
 Models have been implemented with the finite element library {uri-feelpp-sources}[Feel++]
  and the {feelpp} toolboxes.
 
+Actually {hifimagnet} is a software chain for High Field Magnets that consist mostly in a set of 3 tools:
+
+* one for pre-processing,
+* one for running simulations,
+* one for post-processing.
+
+These tools are described in the manuals bellow.
+
 [[manuals]]
 == Manuals references
 

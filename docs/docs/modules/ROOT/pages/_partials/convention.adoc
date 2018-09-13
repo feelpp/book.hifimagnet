@@ -1,0 +1,6 @@
+[IMPORTANT]
+====
+The command lines reproduced in the document are bash script using standard UNIX conventions
+
+[...]: indicate an optional parameter
+====
