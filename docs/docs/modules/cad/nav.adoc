@@ -1,4 +1,4 @@
-** xref:index.adoc#salome_plugin[CAD: {salome} plugin]
+** xref:index.adoc#salome_plugin[HifiMagnet Salome plugin]
 *** xref:index.adoc#introduction[Introduction]
 *** xref:index.adoc#quickstart[Quickstart]
 **** xref:index.adoc#qs_getting[Getting {salome}]

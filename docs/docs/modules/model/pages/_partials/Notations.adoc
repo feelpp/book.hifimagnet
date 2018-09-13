@@ -33,6 +33,8 @@ We will consider the usual notation for the space coordinates in   stem:[\mathbf
 
 = Physical Properties
 
+* Thermal Properties:
+
 |===
 ^|Notation ^|Quantity ^|Unit
 |stem:[\rho] |material's density |stem:[kg.m^{-3}]
@@ -42,11 +44,15 @@ We will consider the usual notation for the space coordinates in   stem:[\mathbf
 |stem:[\alpha] |thermal resistivity coefficient |
 |===
 
+* Magnetic Properties:
+
 |===
 ^|Notation ^|Quantity ^|Unit
 |stem:[\mu]    | magnetic permeability |
 |stem:[\epsilon] | electric permeability |
 |===
+
+* Mechanics Properties:
 
 |===
 ^|Notation ^|Quantity ^|Unit
@@ -55,8 +61,40 @@ We will consider the usual notation for the space coordinates in   stem:[\mathbf
 |stem:[\nu]    |Poisson ratio |]
 |===
 
+= Physical Quantities
+
+Thermics:
 
 |===
+^|Notation ^|Quantity ^|Unit
 |stem:[h] |heat transfer coefficient |stem:[W.m^{-2} .K^{-1}]
+|stem:[T_w] |water temperature |stem:[K]
+|stem:[T_o] |water temperature |stem:[K]
 |===
 
+Electromagnetism:
+
+|===
+^|Notation ^|Quantity ^|Unit
+|stem:[\matbh j] |current density |stem:[A.m^{-2}]
+|stem:[V] |electric potential |stem:[V]
+|stem:[\mathbf{A}] |magnetic potential |stem:[T.m^{-1}]
+|stem:[\mathbf{B}] |magnetic induction |stem:[T]
+|stem:[\mathbf{H} = \mu \mathbf {B}] |magnetic field |stem:[A.m]
+|===
+
+[NOTE]
+====
+By abuse, we often refer to stem:[\mathbf B] as the magnetic field.
+The relationship
+====
+
+Mechanics:
+
+|===
+^|Notation ^|Quantity ^|Unit
+| stem:[P] | pressure |stem:[Pa]
+| stem:[{\bar{\bar{\sigma}}}] | stress |stem:[Pa]
+| stem:[{\bar{\bar{\sigma}}}] | strain |-
+| stem:[\mathbf U] | displacement vector |m] 
+|===

@@ -68,8 +68,8 @@ The final system of EDP to be solved is:
 
 [stem]
 ++++
-\sigma \frac{\partial \mathbf{A}}{\partial t} - \sigma \mathbf{u} \times (\nabla \times \mathbf{A}) + \nabla \times (\frac{1}{\mu} \nabla \times \mathbf{A}) = -\sigma \nabla V in \mathbf{R}^3
-\nabla \cdot \left( \sigma ( -\nabla V + \mathbf{u} \times (\nabla \times \mathbf{A}) \right) = 0 in \Omega.
+\sigma \frac{\partial \mathbf{A}}{\partial t} - \sigma \mathbf{u} \times (\nabla \times \mathbf{A}) + \nabla \times (\frac{1}{\mu} \nabla \times \mathbf{A}) = -\sigma \nabla V \qquad in \mathbf{R}^3
+\nabla \cdot \left( \sigma ( -\nabla V + \mathbf{u} \times (\nabla \times \mathbf{A}) \right) = 0 \qquad in \Omega.
 ++++
 
 
@@ -180,7 +180,7 @@ R_e = \frac{\rho u}{\mu},
 
 [stem]
 ++++
-P_r = \frac{\mu C_p}{{k},
+P_r = \frac{\mu C_p}{k},
 ++++
 
 [stem]
