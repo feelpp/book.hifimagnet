@@ -120,4 +120,12 @@ https://raw.githubusercontent.com/Trophime/cloudify-hpc-plugin/add_checks/plugin
 *** dataset: hl-31, ressource HL-31.tgz 
 *** stokes params: stokes, n 32
 
+* fullinsert
+** coupledcartmode:
+*** execfile: feelpp_hfm_coupledcartmodel_3DP1N1
+*** cfgfile: HL-31-Leads-air_nl_cart_256_json.cfg
+*** dataset: insertfull
+*** cesga params: thinnodes, n 256
+
+
 * LowFieldBench
