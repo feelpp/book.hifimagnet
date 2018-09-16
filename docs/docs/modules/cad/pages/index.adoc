@@ -212,8 +212,10 @@ the {salome} command. If you plan to run these commands from a {singularity} or 
 just start the container (see <<qs_reference, here>>, watch out to not forget to enable the display
 if you want to use the GUI mode).
 
+Examples files may be found https://github.com/feelpp/hifimagnet/tree/Salome_8.3.0/singularity/salome/test[here].
+
 The structure of the `yaml` file describing the geometry and mesh be generated will
-be described in the <<data, data structure section>>.
+be described in the <<data, data structure section>>. 
 
 [[helix-cad]]
 [source,sh]

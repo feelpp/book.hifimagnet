@@ -92,7 +92,7 @@ https://raw.githubusercontent.com/Trophime/cloudify-hpc-plugin/add_checks/plugin
 *** execfile: feelpp_hfm_thermoelectric_model_3D_V1T1_N1
 *** dataset: thermoelec-test
 *** stokes params: stokes
-*** cesga params: thinnodes
+*** cesga params: thin-shared
 
 *** Lncmi HPC:
 *** cesga 
@@ -111,7 +111,8 @@ https://raw.githubusercontent.com/Trophime/cloudify-hpc-plugin/add_checks/plugin
 *** execfile: feelpp_hfm_coupledcartmodel_3DP1N1
 *** cfgfile: H1H4_cart.cfg
 *** dataset: insert-test
-*** stokes params: stokes, n 32
+*** stokes params: H1H4-cart.tar.gz, stokes, n 32
+*** cesga_params: H1H4-cart-p144.tar.gz, thinnodes, N 6, ntasks-per-node=24, n 144
 
 * HL-31
 ** coupledcartmodel: +bmap (without magnetostatic)
@@ -119,13 +120,14 @@ https://raw.githubusercontent.com/Trophime/cloudify-hpc-plugin/add_checks/plugin
 *** cfgfile: HL-31_cart_boomeramg.cfg
 *** dataset: hl-31, ressource HL-31.tgz 
 *** stokes params: stokes, n 32
+*** cesga params: thinnodes, N 4, ntasks-per-node=8, n 32 (to be checked)
 
 * fullinsert
 ** coupledcartmode:
 *** execfile: feelpp_hfm_coupledcartmodel_3DP1N1
 *** cfgfile: HL-31-Leads-air_nl_cart_256_json.cfg
 *** dataset: insertfull
-*** cesga params: thinnodes, n 256
+*** cesga params: thinnodes, N 16, ntasks-per-node=16, n 256 (not working???)
 
 
 * LowFieldBench
