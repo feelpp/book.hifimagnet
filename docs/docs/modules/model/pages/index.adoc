@@ -129,9 +129,18 @@ thermal expansion and to the pressure of the water flow used for the cooling, we
 
 [stem]
 ++++
-\nabla \cdot {\bar{\bar{\sigma}}} + \mathbf{j} \times \mathbf{b} = \rho \frac{\partial^2 \mathbf{u}}{\partial t^2} - \rho \nabla P
+\nabla \cdot {\bar{\bar{\sigma}}} + \mathbf{j} \times \mathbf{b} = \rho \frac{\partial^2 \mathbf{u}}{\partial t^2} - \rho \nabla P,
+++++
+
+[stem]
+++++
 {\bar{\bar{\epsilon}}} = \frac{1}{2} (\nabla \mathbf{u} + \nabla \mathbf{u}^T )
-{\bar{\bar{\sigma}}} = C : {\bar{\bar{\sigma}}} 
+{\bar{\bar{\sigma}}} = C : {\bar{\bar{\sigma}}}, 
+++++
+
+[stem]
+++++
+{\bar{\bar{\sigma}}} = C : {\bar{\bar{\sigma}}}. 
 ++++
 
 In testbooks the latest equation is referred as the Hooke law which represents the constitutive equation for linear material.
