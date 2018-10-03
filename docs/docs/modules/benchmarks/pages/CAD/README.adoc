@@ -78,7 +78,7 @@ Definition of the helical cut per helix:
 
 == Outputs
 
-include::CAD/ex_CAD_Insert_Air.png[Insert with surrounding air]
+image::CAD/ex_CAD_Insert_Air.png[Insert with surrounding air]
 
 The outputs will consist in a set of a `brep` and `xao` files for each component of the insert
 and for the assembly:
@@ -102,7 +102,7 @@ To get this information within {salome}:
 * From File/Import/Med menu select the mesh
 * From Mesh/Mesh Information menu print the mesh characteristics
 
-include::CAD/ex_Mesh_Insert.png[Mesh (with Air) characteristics]
+image::CAD/ex_Mesh_Insert.png[Mesh (with Air) characteristics]
 
 [NOTE]
 ====
