@@ -48,8 +48,8 @@ TIP: do not check *gravatar* bug as it is buggy right now.
 Then you have to validate your account by following the instructions send
 by the portal to your email address.
 
-NOTE: Right now the portal *is not* using https protocol. As a consequence, the credentials `user/password` are
-sent in clear. So be careful.
+// NOTE: Right now the portal *is not* using https protocol. As a consequence, the credentials `user/password` are
+// sent in clear. So be careful.
 
 [NOTE]
 ====
