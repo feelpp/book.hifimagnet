@@ -8,6 +8,12 @@ include::{partialsdir}/mso4sc-uri.adoc[]
 TIP: when running into some strange portal behavior, first try to `logout/login` from the portal
 before reporting an issue.
 
+An *EndUser* can:
+
+* <<purchase, purchase>> an application from the *MarketPlace*
+* <<data, manage>> datasets and Organisations in the *Data Catalogue*
+* <<running, run>> application in *Experiments*
+
 [[purchase]]
 === Purchase an application
 
@@ -45,7 +51,31 @@ This will allow you to access {himagnet} singularity images and datasets.
 
 * Connect to {uri-msoportal-ckan-www}[*Data Catalogue*]
 * Select or Create an organization
-* Add a dataset. if you are assigned the role of *editor*
+** Make it public or private
+** Define Members
+** Grant role to Members
+* Add a dataset (requires *Editor* role for private organization)
+** Make it public or private
+
+To use private Organization and/or Dataset you would need to enter
+*Data Catalogue key* in the *Settings* menu:
+
+* To get the key:
+** Connect to {uri-msoportal-ckan-www}[*Data Catalogue*]
+** Click on *View Profile*
+
+image::ckan_view_profile.png[*Data Catalogue* user profile]
+
+** Scroll dow to view you *API key* on left side
+
+image::ckan_apikey.png[Getting *Data Catalogue key*]
+
+* Copy the key
+* Connect to {uri-msoportal-experiment-www}[*Experiments*]
+** Select "Settings"
+** Paste or Enter your *Data Catalogue key*
+
+image::setting_ckanapikey.png[Adding *Data Catalogue key* in *Settings*]
 
 NOTE: To add a dataset to an existing organization, you may need to ask the *Admin* of the organization to be granted the role of *Editor* to do so. In our case it is the owner/seller of {hifimagnet} app.
 
@@ -110,12 +140,16 @@ an alternative consists in:
 /opt/forticlient-sslvpn/64bit/forticlientsslvpn_cli --server gateway.cesga.es:443 --vpnuser user_email
 ```
 
+[[using_licenses]]
+=== Uploading license keys
+
 ====
 
 [[running]]
 === Running an {hifimagnet} application in *Experiments*
 
-* Select *Create App Instance*
+* Go to {uri-msoportal-experiment-www}[*Experiments*]
+* Select *Instances*
 ** define an ID
 ** select a registered app in the menu
 

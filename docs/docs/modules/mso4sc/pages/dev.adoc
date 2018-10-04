@@ -10,23 +10,44 @@ include::{partialsdir}/mso4sc-uri.adoc[]
 Once registered in the portal, you  are a *EndUser*.
 To be granted *DevUser* rights, just email to Portal Admins (actually Victor or Javi).
 
+A *DevUser* can:
+
+* <<registerapp, register>>/<<removeapp, remove>> apps
+* <<validorder, validate>> *EndUser* purchased order: this step is mandatory to grant user rights to run purchased app
+* <<sregistry_add_to_team, admin {sregistry}>> private collections
+
+
 [[registerapp]]
 ===  Register an {hifimagnet} application
 
-To register an application you need to be *DevUSer*
-The process is split into several part:
+There is actually two routes to register an app:
 
-* add the app and create an offer in the {uri-msoportal-market-www}[*Marketplace*]:
-** go to *My stock/Catalogue*
-** go to *My stock/Product*
-** go to *My stock/Offering*
+* for all user
+* using the *MarketPlace*
 
-Then you need to perform the following steps in *Experiments*:
+The recommended way is to use the <<marketplace, *MarketPlace*>>. However to speed up the tests,
+the *DevUser* may register more easily his/her app for <<free_app, all users>>. Note that this
+app will be available to every user of the platform.
 
-* go to *RegisterApp*
-** select your *Offering* in the sliding menu *New Products*
-** give the app a meaningful name
-** Choose a package file to load.
+[IMPORTANT]
+====
+An app can only be registered once. It means that once you have gone througth the registration process 
+your only choice is to *RemoveApp*.
+
+As a consequence, to upgrade your app package you have first to remove the app and go back to re-register your app.
+====
+
+[[free_app]]
+==== For all users
+
+To register an application for every user of the platform:
+
+* Go to {uri-msoportal-experiment-www}[*Experiments*],
+* Select *Applications*
+* Enter a new *Application Name*
+* Choose a package file to load.
+
+image::PortalMSO4SC_RegisterApp.png[Register App in MSOPortal]
 
 [NOTE]
 ====
@@ -42,13 +63,33 @@ you will find the actual application corresponding to the {hifimagnet} basic dem
 To actually build the app, use: ```./deploy pkg```
 ====
 
-[IMPORTANT]
-====
-An app can only be registered once. It means that once you have gone througth the registration process 
-your only choice is to *RemoveApp*.
 
-As a consequence, to upgrade your app package you have first to remove the app and go back to re-register your app.
-====
+[[marketplace]]
+==== In the *Marketplace*
+
+To register an application you need to be *DevUSer*
+The process is split into several part:
+
+* add the app and create an offer in the {uri-msoportal-market-www}[*Marketplace*]:
+** go to *My stock/Catalogue*
+** go to *My stock/Product*
+** go to *My stock/Offering*
+
+Then you need to perform the following steps in {uri-msoportal-experiment-www}[*Experiments*],:
+
+* go to *Applications*
+** select your *Offering* in the sliding menu *New Products*
+** give the app a meaningful name
+** Choose a package file to load.
+
+[[removeapp]]
+==== Remove an app
+
+* Go to {uri-msoportal-experiment-www}[*Experiments*],
+* Select *Applications*
+* In the top sliding menu, select the app to be removed
+* Click on *Remove*
+
 
 [[validorder]]
 === Validate an {hifimagnet} application purchase order
@@ -82,6 +123,8 @@ into {hifimagnet} user group. Fortunately this need to be done only once for any
 Unfortunately the management of user has to be carried out manually by the *DevUser* in charge of the app
 and cannot be performed from the portal.
 ====
+
+
 
 [[sregistry_add_to_team]]
 === Adding an *EndUser* to {sregistry} team

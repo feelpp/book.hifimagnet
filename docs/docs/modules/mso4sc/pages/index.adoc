@@ -19,8 +19,8 @@ of actually running apps within the portal.
 The user that have already an account on {uri-msoportal-www}[Portal] may skip the next section
 and go directly to the section related to his/her role:
 
-* xref::dev.adoc[*DevUser*]
-* xref::user.adoc[*EndUser*]
+* xref::dev.adoc#devuser[*DevUser*]
+* xref::user.adoc#enduser[*EndUser*]
 
 NOTE: The main difference between *EndUser* and *DevUser* is that the latter can register an {hifimagnet} application.
 
@@ -71,6 +71,9 @@ the portal is split into several services:
 * *Data Catalogue*, where you can add and/or retrieve data
 * *Experiments*, where the app is setup and the simulation is launched
 * *Visualization*, to access a Remote desktop to pre and/or post-processes your simulations
+* *Q & A*, to access the Community tools for asking/answering specific questions
+* *Docs*, to access the general documentation for MSO4SC project
+* *Feedback*, to answer the questionnaire for MSO4SC project
 
 more details on:
 
@@ -126,8 +129,9 @@ For new user we recommend to read this guide. The impatient may go directly to t
 == Synopsis of the {hifimagnet} Offering
 
 The {hifimagnet} offering is created by *DevUser* as described in this xref::dev.adoc#registerapp[section].
-Any *EndUser* may purchase the offering following the <<purchase, generic procedure>>. Then,
-he or she can run the purchased offering provided that some fields are properly filled as in this xref::user.adoc#running [example].
+Any *EndUser* may purchase the offering following the <<purchase, generic procedure>> or use an app available
+for every user. Then, he or she can run the selected purchased offering or app provided that some fields are
+properly filled as in this xref::user.adoc#running [example].
 
 
 [NOTE]
