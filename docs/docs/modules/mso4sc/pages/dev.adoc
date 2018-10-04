@@ -40,6 +40,8 @@ As a consequence, to upgrade your app package you have first to remove the app a
 [[free_app]]
 ==== For all users
 
+image::PortalMSO4SC_RegisterApp.png[*Experiments* menu for *DevUser*]
+
 To register an application for every user of the platform:
 
 * Go to {uri-msoportal-experiment-www}[*Experiments*],
@@ -47,7 +49,7 @@ To register an application for every user of the platform:
 * Enter a new *Application Name*
 * Choose a package file to load.
 
-image::PortalMSO4SC_RegisterApp.png[Register App in MSOPortal]
+image::PortalMSO4SC_RegisterApp_Apps.png[Register App in MSOPortal]
 
 [NOTE]
 ====
@@ -63,6 +65,11 @@ you will find the actual application corresponding to the {hifimagnet} basic dem
 To actually build the app, use: ```./deploy pkg```
 ====
 
+[TIP]
+====
+To debug an app, it may be convenient to use the Portal *orchestrator CLI*.
+see https://github.com/MSO4SC/resources/blob/master/blueprint/feelpp/hifimagnet_test/README.adoc[this file] for details
+====
 
 [[marketplace]]
 ==== In the *Marketplace*
@@ -174,32 +181,13 @@ export SREGISTRY_CLIENT_SECRETS=~/.sregistry
 sregistry push --name hifimagnet/salome --tag 8.4.0 salome-8.4.0.simg 
 ----
 
-The `.sregistry` holds the {sregistry} *TOKEN* (to get the *TOKEN* see this <<section, using_sregistry>>).
+The `.sregistry` holds the {sregistry} *TOKEN* (to get the *TOKEN* see xref::user.adoc#using_sregistry[this]).
 
 [NOTE]
 ====
 You need to install {https://singularityhub.github.io/sregistry-cli}[sregistry-cli] to get this working.
 ====
 
-[[girder_add_to_team]]
-=== Adding an *EndUser* to {girder}
-
-[[ckan_dev]]
-=== Data Catalogue
-
-As a *DevUser* you can create *Organization* in {uri-msoportal-ckan-www}[*Data Catalogue*]
-
-* click on *Organizations*
-* click on *Add Organization*
-
-You, then, need to fill the form and finalize the creation by clicking on the *create organization* button.
-
-You have then to manage user that are allowed to be part of your organization.
-They may the following role:
-
-* *admin* : can view/add dataset, add user and manage role
-* *editor* : can add dataset
-* *member* : can view dataset
-
-NOTE: *EndUser* has to connect at least once to *Data Catalogue* before you can grant them a role in your organization.
+// [[girder_add_to_team]]
+// === Adding an *EndUser* to {girder}
 
