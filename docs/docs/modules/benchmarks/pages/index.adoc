@@ -17,14 +17,14 @@ xref:MagnetTools/Bmap/README.adoc[HL-31]
 
 xref:CAD/README.adoc[insert with 4 helices]
 
-// [[bitter]]
-// == Bitter Magnet
-// include::Bitter/README.adoc
+== Bitter Magnet
+
+xref:Bitter/README.adoc
 
 === Helix Magnet
 
-xref:HL/README.adoc[HL] 
-xref:HR/README.adoc[HR] 
+* xref:HL/README.adoc[HL] 
+* xref:HR/README.adoc[HR] 
 
 === Insert
 

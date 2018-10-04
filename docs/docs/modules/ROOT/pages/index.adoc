@@ -67,7 +67,22 @@ Actually {hifimagnet} is a software chain for High Field Magnets that consist mo
 * one for running simulations,
 * one for post-processing.
 
-These tools are described in the manuals bellow.
+These tools are described in the <<manuals, manuals>> bellow.
+
+{hifimagnet} is currently available:
+
+* natively on Debian/Ubuntu Os,
+* throught https://docs.microsoft.com/en-us/windows/wsl/install-win10[WSL on Windows 10],
+* as private Docker and Singularity images,
+* as applications from the https://portal.mso4sc.eu[MSO Portal]
+
+The recommended and easiest way to use {hifimagnet} is throught the portal.
+The impatient reader could directly go this xref::mso4c#msoportal[section] for pratical details and
+some examples.
+
+For the other readers, ....
+
+== Typical workflow
 
 [[manuals]]
 == Manuals references
