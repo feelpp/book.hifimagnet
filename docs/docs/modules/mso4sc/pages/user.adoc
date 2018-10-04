@@ -10,9 +10,16 @@ before reporting an issue.
 
 An *EndUser* can:
 
-* <<purchase, purchase>> an application from the *MarketPlace*
-* <<data, manage>> datasets and Organisations in the *Data Catalogue*
+* <<purchase, purchase>> an application from the *MarketPlace*,
+* <<data, manage>> datasets and Organizations in the *Data Catalogue*,
 * <<running, run>> application in *Experiments*
+
+[IMPORTANT]
+====
+Before going to the * {uri-msoportal-experiment-www}[*Experiments*]
+it is mandatory to connect to {uri-msoportal-market-www}[*Marketplace*] 
+and to the {uri-msoportal-ckan-www}[*Data Catalogue*].
+====
 
 [[purchase]]
 === Purchase an application
@@ -47,17 +54,35 @@ This will allow you to access {himagnet} singularity images and datasets.
 // NOTE: The use of {uri-girder-unistras}[{girder} is optional.
 
 [[data]]
-=== Upload Data to *Data Catalogue*
+=== Data Catalogue
+
+Any user of the platform can create and manage *Organization* in the {uri-msoportal-ckan-www}[*Data Catalogue*]
+to deal with private datasets.
+
+==== Create and Manage *Organization*
 
 * Connect to {uri-msoportal-ckan-www}[*Data Catalogue*]
-* Select or Create an organization
-** Make it public or private
-** Define Members
-** Grant role to Members
+* click on *Organizations*
+* click on *Add Organization*
+
+You, then, need to fill the form and finalize the creation by clicking on the *create organization* button.
+
+You have then to manage user that are allowed to be part of your organization.
+They may the following role:
+
+* *Admin* : can view/add dataset, add user and manage role
+* *Editor* : can add dataset
+* *Member* : can view dataset
+
+NOTE: User has to connect at least once to *Data Catalogue* before you can grant them a role in your organization.
+
+==== Upload Data
+
+* Connect to {uri-msoportal-ckan-www}[*Data Catalogue*]
 * Add a dataset (requires *Editor* role for private organization)
 ** Make it public or private
 
-To use private Organization and/or Dataset you would need to enter
+To latter use private Organization and/or Dataset you would need to enter
 *Data Catalogue key* in the *Settings* menu:
 
 * To get the key:
@@ -115,6 +140,7 @@ image::sregistry_apitoken.png[ex: {Display {sregistry} token]
 * copy the token into a file `.sregistry`
 * copy `.sregistry` on the HPC resource, see <<hpc_setting, previously defined>>, into your home directory
 
+[[note_sregistry_secret]]
 [NOTE]
 ====
 To copy the file to the HPC resource you can use `scp .sregistry username@host:.`
@@ -139,21 +165,28 @@ an alternative consists in:
 ```
 /opt/forticlient-sslvpn/64bit/forticlientsslvpn_cli --server gateway.cesga.es:443 --vpnuser user_email
 ```
+====
 
 [[using_licenses]]
 === Uploading license keys
 
-====
+If you wish to perform pre and processing, you may need to upload license keys on the hpc ressource
+you plan to use.
+
+To do so you may proceed for each license key as in the <<note_sregistry_secret, note>> above for {sregistry} secret.
+
 
 [[running]]
 === Running an {hifimagnet} application in *Experiments*
 
+image::PortalMSO4SC_Exp_User.png[*Experiments* *Instances* main menu for *EndUSer*]
+
 * Go to {uri-msoportal-experiment-www}[*Experiments*]
 * Select *Instances*
 ** define an ID
-** select a registered app in the menu
+** select a registered app in the sliding menu
 
-At this point you should have a page with all the options that need to be filled before moving to *Deploy Instance*
+At this point you should have a page with all the options that need to be filled.
 
 image::Portal_HifiMagApp.png[ex: Main {hifimagnet} app `3DSim`]
 
@@ -177,8 +210,9 @@ The others fields are designed for more advanced users.
 |===
 | Key                        | Description              | Default          | Notes
 | *email_user*               | email address            |                  |
-| *email_type*               | type of notifications    |                  | workload_manager dependant (for `slurm`: `ALL,END,FAIL`)
 |===
+
+//| *email_type*               | type of notifications    |                  | workload_manager dependant (for `slurm`: `ALL,END,FAIL`)
 
 .List of keys specs for running simulations
 [options="header,footer"]
@@ -237,26 +271,21 @@ The others fields are designed for more advanced users.
 HPC settings for local {lncmi} ressources are specificied xref::lncmi-hpc.adoc[here]
 ====
 
-Once filled, click on *Create Instance*.
-This will result in the executions on the selected HPC resource of the bootstrap script included in the app definition.
+Once filled, click on *Create New Instance*.
 
-TIP: Any error will result in a message at the top of the page, bellow the menus.
+TIP: While creating a new app instance, any error will result in a popup message.
 
-The next step is to *Deploy Instance*:
+The next step is to to launch the app:
 
-* select the *ID*, you defined in the previous step, in the *App instance * menu
-* click on *Deploy*, wait until the button in blue turns green
+* select the *ID*, you defined in the previous step,
+* click on *Run*, wait until the button in blue turns green
 
-To *Run Instance*, the procedure is similar:
-
-* select the *ID*, you defined in the previous step, in the *App instance* menu
-* click on *RUN*
 
 [TIP]
 ====
-These step may take some minutes to be performed. A red button will indicates an error.
-Check the message in the frame bellow the status button. To have more details about the actual error
-is more tricky; we recommend to:
+A red button will indicates an error.
+Check the message in the frame bellow the status button.
+To have more details about the actual error is more tricky; we recommend to:
 
 * make sure you have unchecked the cleanup option
 * connect to the HPC resource
@@ -265,21 +294,15 @@ is more tricky; we recommend to:
 
 `base_dir`, `working_prefix` are filled within the portal *Experiments*.
 The `<id>` is a random character generated by the deployment.
-
-An other option is to run the app using the *orchestrator CLI*.
-see https://github.com/MSO4SC/resources/blob/master/blueprint/feelpp/hifimagnet_test/README.adoc[this file] for details
-
 ====
 
-You may cleanup your working by
+Finaly to destroy your instance, just click on:
 
-* UnDeploy your Instance
-** select the *ID*, you defined in the previous step, in the *App instance * menu
-** click on *UnDeploy*
+* *Destroy Instance!*
+* or *Force Destroy*
 
-* Destroy your Instance
-** select the *ID*, you defined in the previous step, in the *App instance * menu
-** click on *Destroy*
+This will remove your *ID* from the instance list.
+
 
 [[running_dataset]]
 === Running an {hifimagnet} application in *Experiments* using datasets from *DataCatalogue*

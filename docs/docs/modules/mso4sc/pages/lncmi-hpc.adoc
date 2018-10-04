@@ -1,4 +1,8 @@
-= HPC setting for local {lcnmi} ressources
+= HPC setting for local {lncmi} ressources
+:toc: macro
+include::{partialsdir}/header-macros.adoc[]
+include::{partialsdir}/header-uri.adoc[]
+include::{partialsdir}/mso4sc-uri.adoc[]
 
 Local {lncmi} computationnal ressources have been configured to be used within **MSO4SC Portal**.
 To use these ressources you need an account on {lncmi} SI.
