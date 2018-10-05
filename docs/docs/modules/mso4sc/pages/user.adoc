@@ -450,10 +450,10 @@ In the remote desktop to get {ensight} running:
 
 Available apps in **MSO4SC Portal** are:
 
-* MagnetTools: xref::bmap.adoc[AxiMagMap], 
+* MagnetTools: xref::bmap.adoc[MagMapAxi], 
 * Preprocessing: xref::MagCAD.adoc[MagCAD],
 * Simulations:
-** direct models: xref::3Dsim.adoc[MagSim]
+** direct models: xref::MagThel.adoc[MagThel],MagFull[MagFull],
 ** CRB:
 // * Postprocessing:
 

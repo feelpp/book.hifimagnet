@@ -4,7 +4,7 @@ include::{partialsdir}/header-macros.adoc[]
 include::{partialsdir}/header-uri.adoc[]
 include::{partialsdir}/mso4sc-uri.adoc[]
 
-Use *AxiMagMap* to get Magnetic Field Map in a stem:[[r_0,r_1]\times[z_0,z_1]] interval
+Use *MagMapAxi* to get Magnetic Field Map in a stem:[[r_0,r_1]\times[z_0,z_1]] interval
 The resulting Field Map file could be saved and uploaded to data catalogue.
 
 ==== Set up in *Experiments*:
@@ -13,18 +13,12 @@ The resulting Field Map file could be saved and uploaded to data catalogue.
 |===
 | Key                           | Default           | Notes
 | *Dataset resource: model*     |                   | dataset mode from the data Catalog
-| *Output dataset: outputs_at*  |                   | 
-| magnetcfg                     |                   | name of the magnet cfg file without extension
-| option                        | ''
-| Helix_current                 | 0                 |
-| Bitter_current                | 0                 |
-| Supra_current                 | 0                 |
-| R_max                         | 0                 | stem:[r_0]
-| R_min                         | 0                 | stem:[r_1]
-| N_R                           | 1                 |
-| Z_max                         | 0                 | stem:[z_0]
-| Z_min                         | 0                 | stem:[z_1]
-| N_Z                           | 1                 |
+| *Output dataset: outputs_at*  |                   | output data Catalog
+| DataCfg                       |                   | name of the magnet cfg file without extension
+| DataOptions                   | ''                |
+| DataCurrentst                 | [31000:31000:0]   |
+| DataR                         | 0                 | stem:[r_0:r_1:Nr]
+| DataZ                         | 0                 | stem:[z_0:z_1:Nz]
 |===
 
 ==== Examples and Benchmarks
