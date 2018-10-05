@@ -69,7 +69,7 @@ Thermics:
 ^|Notation ^|Quantity ^|Unit
 |stem:[h] |heat transfer coefficient |stem:[W.m^{-2} .K^{-1}]
 |stem:[T_w] |water temperature |stem:[K]
-|stem:[T_o] |water temperature |stem:[K]
+|stem:[T_o] |reference temperature |stem:[K]
 |===
 
 Electromagnetism:
