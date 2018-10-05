@@ -1,0 +1,87 @@
+= Magnetic Field Map (Axisymetric geom)
+
+In this example, we will compute the "ideal" magnetic field produced by a test insert
+described using {magnettools} format.
+
+== Running the case
+
+To run this example on MSO4SC portal see this xref:mso4sc:bmap.adoc[section].
+
+=== Magnet Geometry
+
+[source,sh]
+----
+B_map HL-31.d
+----
+
+
+=== Magnet Field
+
+To compute the magnetic field:
+
+[source,sh]
+----
+B_map --interactive HL-31.d
+----
+
+then enter the data for:
+
+* Helix input current,
+* Bitter input current,
+* and eventually Supra outsert input current.
+
+and set the ranges for the plot:
+
+* stem:[r_0]
+* stem:[r_1]
+* stem:[z_0]
+* stem:[z_1]
+
+and the
+
+* stem:[n_r]
+* stem:[n_z]
+
+[IMPORTANT]
+====
+Watchout units is set to *meter* for the position range.
+====
+
+The result is stored in `HL-31_FieldMap.dat`.
+
+[NOTE]
+====
+On first run, you will need to enter some more parameters before entering the currents and plot ranges data
+if you don't have an `eps_params.dat` file in your directory.
+
+On {mso4sc} Data Catalogue this file is already included in the dataset. 
+====
+
+For instance using the default current params, you get the following magnetic field stem:[B_z] profile along stem:[Oz] axis.
+
+There are others usefull options to carry out calculation on list of points and so on...
+See this xref:magnetools#xxx[section] for details.
+
+== Data files
+
+The data files may be retreived from {uri-msoportal-ckan-www}[*Data Catalogue*].
+See the dataset *HL-31* in {lncmi} collection.
+
+The gzipped archive tarball http://193.144.35.207/dataset/hl-31/resource/aef05e31-9712-48fb-8de1-56bb1098fd86[`HL-31-ana.tgz`] contains all the files needed.
+
+=== Magnet Cfg file
+
+* HL-31.d
+
+== Outputs
+
+The value of Magnetic Field in cylindrical coordinates at stem:[(r=0,z=0)] is: stem:[(0,37.8622880853634)]
+
+To view the result with `gnuplot` in the remote desktop, type the following command:
+
+[source,sh]
+----
+plot "HL-31_FieldMap.dat" using 2:4
+----
+
+image:HL-31/Bz_axi.png[stem:[B_z] profile on stem:[Oz] axis]
