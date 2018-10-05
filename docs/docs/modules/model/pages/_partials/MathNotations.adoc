@@ -12,5 +12,5 @@
 
 * stem:[L_{2}(\Omega)] : stem:[\{f  \mid \int_\Omega \|f\|^{2} < \infty\}]
 * stem:[H_{1}(\Omega)] : stem:[\{f \in L_{2}(\Omega) \mid \nabla f \in L_{2}(\Omega)\}]
-* stem:[H_{div}(\Omega)] : stem:[\{\mathbf{f}\in [L^{2} (\Omega)] | \nabla \cdot \mathbf{f} \in L^{2}(\Omega)\}]
-* stem:[H_{curl}(\Omega)] : stem:[\{\mathbf{f}\in [L^{2} (\Omega)] | \nabla \times \mathbf{f} \in [L^{2} (\Omega)\}]
+* stem:[H_{div}(\Omega)] : stem:[\{\mathbf{f}\in L^{2} (\Omega) | \nabla \cdot \mathbf{f} \in L^{2}(\Omega)\}]
+* stem:[H_{curl}(\Omega)] : stem:[\{\mathbf{f}\in L^{2} (\Omega) | \nabla \times \mathbf{f} \in [L^{2} (\Omega)\}]
