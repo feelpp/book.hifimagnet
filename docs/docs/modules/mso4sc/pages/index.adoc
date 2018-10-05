@@ -29,7 +29,7 @@ NOTE: The main difference between *EndUser* and *DevUser* is that the latter can
 
 Connect to {uri-msoportal-www}[MSOPortal]
 
-image::PortalMSO4SC_login.png[login page MSOPortal]
+image::PortalMSO4SC.png[login page MSOPortal]
 
 * Click on *login*
 
@@ -63,7 +63,7 @@ image::add_service_IDM.png[Register new compnent to IDM MSOPortal]
 [[overview]]
 == Overview of the Portal
 
-image::PortalMSO4SC.png[Main page for MSOPortal]
+image::PortalMSO4SC_login.png[Main page for MSOPortal]
 
 the portal is split into several services:
 
