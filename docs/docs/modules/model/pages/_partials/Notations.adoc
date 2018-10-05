@@ -2,8 +2,8 @@
 
 In this document we will use the following convention:
 
-* scalar number or function will be in plain, eg stem:[f]
-* vector will be in **bold**, stem:[\mathbf{f}]
+* scalar number or function will be in plain, e.g. stem:[f]
+* vector will be in **bold**, e.g. stem:[\mathbf{f}]
 
 All the units used are derived from the https://en.wikipedia.org/wiki/International_System_of_Units[SI system].
 
