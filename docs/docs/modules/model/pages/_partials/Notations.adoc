@@ -76,7 +76,7 @@ Electromagnetism:
 
 |===
 ^|Notation ^|Quantity ^|Unit
-|stem:[\mathbh{j}] |current density |stem:[A.m^{-2}]
+|stem:[\mathbf{j}] |current density |stem:[A.m^{-2}]
 |stem:[V] |electric potential |stem:[V]
 |stem:[\mathbf{A}] |magnetic potential |stem:[T.m^{-1}]
 |stem:[\mathbf{B}] |magnetic induction |stem:[T]
