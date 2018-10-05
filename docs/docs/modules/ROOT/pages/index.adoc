@@ -77,7 +77,7 @@ These tools are described in the <<manuals, manuals>> bellow.
 * as applications from the https://portal.mso4sc.eu[MSO Portal]
 
 The recommended and easiest way to use {hifimagnet} is throught the portal.
-The impatient reader could directly go this xref::mso4c#msoportal[section] for pratical details and
+The impatient reader could directly go this xref::mso4sc#msoportal[section] for pratical details and
 some examples.
 
 For the other readers, ....
