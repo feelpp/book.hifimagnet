@@ -4,7 +4,7 @@ In this example, we will create the geometry for an insert with 4 helices and me
 
 == Running the case
 
-To run this example on MSO4SC portal see this section.
+To run this example on MSO4SC portal see this xref:mso4sc:MagCAD.adoc[section].
 
 === Create the geometry:
 
@@ -45,7 +45,6 @@ For singularity, do not forget to mount the directory holding the {meshgems} lic
 ```
 singularity shell -B /opt/DISTENE/DLim:/opt/DISTENE/DLim:ro salome-8.4.0-stretch.simg 
 ````
-
 ====
 
 == Data files
