@@ -110,7 +110,6 @@ They are grouped into 4 categories:
 * Preprocessing:
 * Simulations:
 * Postprocessing:
-* Bundles:
 
 .Available {hifimagnet} apps
 [options="header,footer"]
