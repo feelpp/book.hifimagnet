@@ -115,10 +115,13 @@ They are grouped into 4 categories:
 .Available {hifimagnet} apps
 [options="header,footer"]
 |===
-| Offering                   | Description        | Category      | Notes
-| xref::3Dsim.adoc[MagSim]   | direct models      | Simulations   |
-| xref::bmap.adoc[AxiMagMap] |                    | MagnetTools   |
-| xref::MagCAD.adoc[MagCAD]  |                    | Preprocessing |
+| Offering                    | Description           | Category      | Notes
+| xref::MagThel.adoc[MagThel] | thermoelectric models | Simulations   |
+| xref::MagFull.adoc[MagFull] | fully coupled models  | Simulations   |
+| xref::3Dsim.adoc[MagSim]    | direct models         | Simulations   | more generic app 
+| xref::bmap.adoc[MagMapAxi]  |                       | MagnetTools   |
+| xref::MagCAD.adoc[MagCAD]   |                       | Preprocessing | generate CAD files and mesh (MED format)
+| xref::MagMesh.adoc[MagMesh] |                       | Preprocessing | partition mesh
 |===
 
 For details about app setup, please click on the corresponding app.

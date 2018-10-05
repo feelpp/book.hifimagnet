@@ -40,7 +40,7 @@ and give examples for most common operations.
 
 Custom installation, eg. for native installation, is detailed in the xref:dev:index.adoc#install_salome[dev section].
 
-include:ROOT:convention.adoc[]
+include:ROOT:{partialsdir}/convention.adoc[]
 
 [[qs_getting]]
 == Getting {hifimagnet} Salome plugin
@@ -48,23 +48,6 @@ include:ROOT:convention.adoc[]
 They are several way to use {hifimagnet} Salome plugin. The easiest way
 is to use container, either Docker based or Singularity based. If your system support
 singularity containers we recommend to use them instead of Docker ones.
-
-You can download docker images from link:https://hub.docker.com/r/feelpp/salome/[feelpp/salome dockerhub].
-Note that the images are private for the moment.
-
-[NOTE]
-====
-if you do no need {hifimagnet} {salome} plugin you can use a public version of {salome} docker image
-that you may find in link:https://hub.docker.com/r/trophime/[dockerhub].
-====
-
-[TIP]
-====
-To use Salome in GUI mode the docker container should contain appropriate graphics drivers.
-Actually only nvidia graphic cards are supported. To custom the images for you graphics
-card you should have a look at the
-link:https://raw.githubusercontent.com/feelpp/hifimagnet/develop/docker/salome/build_salome.sh?token=ABP6f83LtdGN4ApDyGYlwkle_5jZeSy0ks5aeEu2wA%3D%3D[scripts] generating the images.
-====
 
 [[singularity]]
 === from sregistry
@@ -111,15 +94,25 @@ docker pull feelpp/salome:8.3.0-nvidia
 
 Check the existing docker images on link:https://hub.docker.com/r/feelpp/salome/[feelpp/salome dockerhub]
 
+[NOTE]
+====
+
+ * Supported {salome} versions are: 8.3.0, 8.4.0 and 8.5.0.
+ * If you do no need {hifimagnet} {salome} plugin you can use a public version of {salome} docker image
+that you may find in link:https://hub.docker.com/r/trophime/[dockerhub].
+
+====
+
 [IMPORTANT]
 ====
+To use Salome in GUI mode the docker container should contain appropriate graphics drivers.
+Actually only nvidia graphic cards are supported. To custom the images for you graphics
+card you should have a look at the
+link:https://raw.githubusercontent.com/feelpp/hifimagnet/develop/docker/salome/build_salome.sh?token=ABP6f83LtdGN4ApDyGYlwkle_5jZeSy0ks5aeEu2wA%3D%3D[scripts] generating the images.
+
 For system without Nvidia graphic card, we recommend to `fellpp/salome:8.3.0-mesa` instead
 ====
 
-[NOTE]
-====
-Supported {salome} versions are: 8.3.0, 8.4.0 and 8.5.0.
-====
 
 === Install from {lncmi} Salome_Packages
 
@@ -200,7 +193,6 @@ docker run -it --rm -e DISPLAY $ip:0 feelpp/salome-8.3.0:nvidia
 
 You may need to adapt the line to get the working `ip` of your machine depending
 on your internet connection.
-====
 
 See this http://files.salome-platform.org/Salome/Common/SUD2018/08_Containers.pdf[presentation] for details
 ====
@@ -217,41 +209,41 @@ Examples files may be found https://github.com/feelpp/hifimagnet/tree/Salome_8.3
 The structure of the `yaml` file describing the geometry and mesh be generated will
 be described in the <<data, data structure section>>. 
 
-[[helix-cad]]
-[source,sh]
-.Generation of an Helix
-----
-salome [-m GEOM,SMESH,HIFIMAGNET] [-t -b] \
-   ${HIFIMAGNET}/HIFIMAGNET_Cmd.py \
-   args:--cfg=HL-31-H1.yaml[,--mesh]
-----
+// [[helix-cad]]
+// [source,sh]
+// .Generation of an Helix
+// ----
+// salome [-m GEOM,SMESH,HIFIMAGNET] [-t -b] \
+//    ${HIFIMAGNET}/HIFIMAGNET_Cmd.py \
+//    args:--cfg=HL-31-H1.yaml[,--mesh]
+// ----
 
-[[ring-cad]]
-[source,sh]
-.Generation of an connection Ring
-----
-salome [-m GEOM,SMESH,HIFIMAGNET] [-t -b] \
-   ${HIFIMAGNET}/HIFIMAGNET_Cmd.py \
-   args:--cfg=Ring-H1H2.yaml[,--mesh]
-----
+// [[ring-cad]]
+// [source,sh]
+// .Generation of an connection Ring
+// ----
+// salome [-m GEOM,SMESH,HIFIMAGNET] [-t -b] \
+//    ${HIFIMAGNET}/HIFIMAGNET_Cmd.py \
+//    args:--cfg=Ring-H1H2.yaml[,--mesh]
+// ----
 
-[[ilead-cad]]
-[source,sh]
-.Generation of an inner current Lead
-----
-salome [-m GEOM,SMESH,HIFIMAGNET] [-t -b] \
-   ${HIFIMAGNET}/HIFIMAGNET_Cmd.py \
-   args:--cfg=inner.yaml,--inner[,--mesh]
-----
+// [[ilead-cad]]
+// [source,sh]
+// .Generation of an inner current Lead
+// ----
+// salome [-m GEOM,SMESH,HIFIMAGNET] [-t -b] \
+//    ${HIFIMAGNET}/HIFIMAGNET_Cmd.py \
+//    args:--cfg=inner.yaml,--inner[,--mesh]
+// ----
 
-[[olead-cad]]
-[source,sh]
-.Generation of an outer current Lead
-----
-salome [-m GEOM,SMESH,HIFIMAGNET] [-t -b] \
-   ${HIFIMAGNET}/HIFIMAGNET_Cmd.py \
-   args:--cfg=outer.yaml,--outer[,--mesh]
-----
+// [[olead-cad]]
+// [source,sh]
+// .Generation of an outer current Lead
+// ----
+// salome [-m GEOM,SMESH,HIFIMAGNET] [-t -b] \
+//    ${HIFIMAGNET}/HIFIMAGNET_Cmd.py \
+//    args:--cfg=outer.yaml,--outer[,--mesh]
+// ----
 
 [[insert-cad]]
 [source,sh]
@@ -259,23 +251,12 @@ salome [-m GEOM,SMESH,HIFIMAGNET] [-t -b] \
 ----
 salome [-m GEOM,SMESH,HIFIMAGNET] [-t -b] \
    ${HIFIMAGNET}/HIFIMAGNET_Cmd.py \
-   args:--cfg=HL-31.yaml[,--air[,--infty_Rratio=2,--infty_ZRatio=1.5],--mesh]
+   args:--cfg=Insert-H1H4-Leads-2t.yaml[,--air[,--infty_Rratio=2,--infty_ZRatio=1.5],--mesh]
 ----
 
 `${HIFIMAGNET}` is the install directory of {hifimagnet} {salome} plugin, eg `/opt/SALOME-8.3.0-Debian-DB9.5/BINARIES-DB9.5/HIFIMAGNET/bin/salome`.
 
-[TIP]
-====
-On a remote desktop (`novnc` + `virtualgl`), to launch Salome in GUI mode you have to use
-to benefit from hardware acceleration.
-
-[source,sh]
-----
-vglrun salome [...]
-----
-
-====
-
+NOTE: `Insert-H1H4-Leads-2t.yaml` can be found in `/usr/local/share/salome/H1H4` in  singularity images.
 
 [[salome_on_remotedesktop]]
 === On Remote desktop
@@ -289,6 +270,18 @@ vglrun salome [...]
 ----
 include::{examplesdir}/run_salome.sh[]
 ----
+
+[TIP]
+====
+On a remote desktop (`novnc` + `virtualgl`), to launch Salome in GUI mode you have to use
+to benefit from hardware acceleration.
+
+[source,sh]
+----
+vglrun salome [...]
+----
+
+====
 
 [[data]]
 = Data Structure
