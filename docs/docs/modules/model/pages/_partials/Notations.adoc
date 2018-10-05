@@ -16,7 +16,7 @@ We will consider the usual notation for the space coordinates in   stem:[\mathbf
 
 |===
 ^|Notation ^|Quantity ^|Unit
-|stem:[\mu_0]      |vacuum magnetic permeabilty             |m
+|stem:[\mu_0]      |vacuum magnetic permeabilty             |stem:[V.s.A^{-1}.m^{-1}]
 |===
 
 = Fields
@@ -41,15 +41,15 @@ We will consider the usual notation for the space coordinates in   stem:[\mathbf
 |stem:[C_p]   |thermal capacity   |stem:[J.K^{-1}]
 |stem:[k]      |thermal conductivity |stem:[W.m^{-1} .K^{-1}]
 |stem:[\sigma] |electrical conductivity |stem:[S.m^{-1}]
-|stem:[\alpha] |thermal resistivity coefficient |
+|stem:[\alpha] |thermal resistivity coefficient |-
 |===
 
 * Magnetic Properties:
 
 |===
 ^|Notation ^|Quantity ^|Unit
-|stem:[\mu]    | magnetic permeability |
-|stem:[\epsilon] | electric permeability |
+|stem:[\mu]    | magnetic permeability |stem:[V.s.A^{-1}.m^{-1}]
+|stem:[\epsilon] | electric permittivity |stem:[F.m^{-1}]
 |===
 
 * Mechanics Properties:
@@ -58,7 +58,7 @@ We will consider the usual notation for the space coordinates in   stem:[\mathbf
 ^|Notation ^|Quantity ^|Unit
 |stem:[\alpha_T] |thermal expansion coefficient |
 |stem:[Y]      |Young modulus |stem:[W.m^{-1} .K^{-1}]
-|stem:[\nu]    |Poisson ratio |]
+|stem:[\nu]    |Poisson ratio |-
 |===
 
 = Physical Quantities
@@ -76,11 +76,11 @@ Electromagnetism:
 
 |===
 ^|Notation ^|Quantity ^|Unit
-|stem:[\matbh j] |current density |stem:[A.m^{-2}]
+|stem:[\mathbh{j}] |current density |stem:[A.m^{-2}]
 |stem:[V] |electric potential |stem:[V]
 |stem:[\mathbf{A}] |magnetic potential |stem:[T.m^{-1}]
 |stem:[\mathbf{B}] |magnetic induction |stem:[T]
-|stem:[\mathbf{H} = \mu \mathbf {B}] |magnetic field |stem:[A.m]
+|stem:[\mathbf{H} = \mu \mathbf {B}] |magnetic field |stem:[A.m^{-1}]
 |===
 
 [NOTE]
@@ -96,5 +96,5 @@ Mechanics:
 | stem:[P] | pressure |stem:[Pa]
 | stem:[{\bar{\bar{\sigma}}}] | stress |stem:[Pa]
 | stem:[{\bar{\bar{\sigma}}}] | strain |-
-| stem:[\mathbf U] | displacement vector |m] 
+| stem:[\mathbf U] | displacement vector |m 
 |===
