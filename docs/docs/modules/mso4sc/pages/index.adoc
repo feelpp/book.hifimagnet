@@ -110,7 +110,6 @@ They are grouped into 4 categories:
 * Preprocessing:
 * Simulations:
 * Postprocessing:
-* Bundles:
 
 .Available {hifimagnet} apps
 [options="header,footer"]
@@ -136,25 +135,6 @@ Any *EndUser* may purchase the offering following the <<purchase, generic proced
 for every user. Then, he or she can run the selected purchased offering or app provided that some fields are
 properly filled as in this xref::user.adoc#running [example].
 
-
-[NOTE]
-====
-For app that requires some additional services like:
-
-* {sregistry}: a registry holding singularity images,
-// * {girder}: a data management system
-
-that requires additional settings (like credentials).
-
-It is important to notify the *EndUser* that he has to get an account on these services.
-
-For {sregistry} see this https://singularityhub.github.io/sregistry/credentials[manual]
-
-For managing the account and this https://singularityhub.github.io/sregistry/client[note]
-to setup the {sregistry} client.
-
-// As for {girder} ...
-====
 
 == References
 
