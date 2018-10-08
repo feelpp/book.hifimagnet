@@ -27,7 +27,7 @@ It consists in a set of tools including:
 * {magnettools}
 * {hifimagnet}
 ** cad tools: {uri-gmsh-www}[gmsh], {uri-salome-www}[{salome}]
-** meshing: {uri-gmsh-www}[gmsh}, netgen, {uri-meshgems-www}[{meshgems}]
+** meshing: {uri-gmsh-www}[gmsh}], {uri-netgen-www}[netgen], {uri-meshgems-www}[{meshgems}]
 ** multiphics models: {feelpp} toolboxes
 ** post-processing: {uri-ensight-www}[EnSight], {uri-paraview-www}[ParaView]
 
