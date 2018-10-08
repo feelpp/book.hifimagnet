@@ -11,7 +11,7 @@ Welcome to {hifimagnet} Examples and Benchmarks documentation!
 == Examples
 === Magnetic Field Map
 
-xref:MagnetTools/Bmap/README.adoc[HL-31]
+xref:MagnetTools/Bmap/README.adoc[HL-31: Axi Bmap]
 
 === CAD generation and Meshing
 

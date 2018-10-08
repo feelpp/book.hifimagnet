@@ -58,7 +58,7 @@ The goals are twofold:
   ultimately to provide safety operational controls.
 
 Models have been implemented with the finite element library {uri-feelpp-sources}[Feel++]
- and the {feelpp} toolboxes.
+ and the {uri-feelpp-toolboxes}[{feelpp} toolboxes].
 
 Actually {hifimagnet} is a software chain for High Field Magnets that consist mostly in a set of 3 tools:
 
@@ -76,12 +76,20 @@ These tools are described in the <<manuals, manuals>> bellow.
 * as applications from the https://portal.mso4sc.eu[MSO Portal]
 
 The recommended and easiest way to use {hifimagnet} is through the portal.
-The impatient reader could directly go this xref::mso4c#msoportal[section] for pratical details and
+The impatient reader could directly go this xref:mso4c:index.adoc#msoportal[section] for pratical details and
 some examples.
 
-For the other readers, ....
-
 == Typical workflow
+
+{hifimagnet} use follows this scenario:
+
+* define an axisymetrical magnet design with xref:magnettools:index.adoc#magnettools_manual[{magnettools}], a in-house software for Axi configuration,
+* create the 3D geometry of the magnet from axisymetrical design with xref:cad:index.adoc#salome_plugin[{hifimagnet} {salome} plugin],
+* simulate the 3D behaviour of of the magnet with xref:user:index.adoc#user_manual[{hifimagnet}].
+
+The reader is encouraged to read the manuals in the next section starting with the  xref:model:index.adoc[Model manual]
+that gives details about the physical modelling considered.
+ 
 
 [[manuals]]
 == Manuals references

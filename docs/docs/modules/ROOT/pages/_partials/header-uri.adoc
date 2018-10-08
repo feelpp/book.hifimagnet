@@ -27,6 +27,7 @@ endif::[]
 :uri-feelpp-sources: {uri-github}feelpp/feelpp/
 :uri-feelpp-issues: {uri-github}/feelpp/feelpp/issues
 :uri-feelpp-benchmarks: {uri-feelpp-book}/benchmarks/
+:uri-feelpp-toolboxes: {uri-github}feelpp/feelpp/toolbox/
 :hbranch: develop
 :uri-source: https://raw.githubusercontent.com/feelpp/hifimagnet/{hbranch}/
 :uri-issues: {uri-repo}/issues

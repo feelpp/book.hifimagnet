@@ -11,6 +11,9 @@
 == Space Functions
 
 * stem:[L_{2}(\Omega)] : stem:[\{f  \mid \int_\Omega \|f\|^{2} < \infty\}]
-* stem:[H_{1}(\Omega)] : stem:[\{f \in L_{2}(\Omega) \mid \nabla f \in L_{2}(\Omega)\}]
-* stem:[H_{div}(\Omega)] : stem:[\{\mathbf{f}\in L^{2} (\Omega) | \nabla \cdot \mathbf{f} \in L^{2}(\Omega)\}]
-* stem:[H_{curl}(\Omega)] : stem:[\{\mathbf{f}\in L^{2} (\Omega) | \nabla \times \mathbf{f} \in [L^{2} (\Omega)\}]
+* stem:[L_{2}(\Omega^d)] : stem:[\{\mathbf{f}  \mid \int_\Omega \|\mathbf{f}\|^{2} < \infty\}]
+* stem:[H_{1}(\Omega)] : stem:[\{f \in L_{2}(\Omega) \mid \nabla f \in L_{2}(\Omega^d)\}]
+* stem:[H_{div}(\Omega)] : stem:[\{\mathbf{f}\in L_{2} (\Omega^d) | \nabla \cdot \mathbf{f} \in L_{2}(\Omega^d)\}]
+* stem:[H_{curl}(\Omega)] : stem:[\{\mathbf{f}\in L_{2} (\Omega^d) | \nabla \times \mathbf{f} \in [L_{2} (\Omega^d)\}]
+
+By abuse we will use only stem:[L_{2}(\Omega)] and not stem:[L_{2}(\Omega^d)]

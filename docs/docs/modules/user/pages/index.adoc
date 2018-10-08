@@ -8,7 +8,7 @@ include::{partialsdir}/mso4sc-uri.adoc[]
 Welcome to {hifimagnet} manual documentation!
 
 NOTE: The {hifimagnet} manual documentation introduces the process to build and run an application.
-New user should begin with the xref:ROOT:index.adoc[{feelpp} User Manual].
+New user shall read the xref:ROOT:index.adoc[{hifimagnet} introduction] to have a global view.
 
 IMPORTANT: You wish to contribute? Please consult the xref:ROOT:index.adoc#contribute[contribute] section to learn how to proceed!
 
@@ -26,21 +26,21 @@ It consists in a set of tools including:
 
 * {magnettools}
 * {hifimagnet}
-** cad tools: gmsh, {salome}
-** meshing: gmsh, netgen, {meshgems}
+** cad tools: {uri-gmsh-www}[gmsh], {uri-salome-www}[{salome}]
+** meshing: {uri-gmsh-www}[gmsh}, netgen, {uri-meshgems-www}[{meshgems}]
 ** multiphics models: {feelpp} toolboxes
-** post-processing: EnSight, ParaView
+** post-processing: {uri-ensight-www}[EnSight], {uri-paraview-www}[ParaView]
 
 When using containers, note that the tools are distributed into 3 differents containers:
 
 * one for pre-processing (see xref:cad:index.adoc#qs_getting[here]),
-* one for running simulations (see respectively xref:magnettools:index.adoc#qs_installation[here for Axi] and xref:user:index.adoc#qs_installation[here for 3D]),
+* one for running simulations (see respectively here for xref:magnettools:index.adoc#qs_installation[Axi] and here for xref:user:index.adoc#qs_installation[3D]),
 * one for post-processing (see xref:post:index.adoc[here]).
 
 [TIP]
 ====
-link:http://www.ensight.com[EnSight (recommended)]:: is a commercial multi-platform data analysis and visualization application.
-link:http://www.paraview.org[ParaView]:: is an open-source, multi-platform data analysis and visualization application.
+link:{uri-ensight-www}[EnSight (recommended)]:: is a commercial multi-platform data analysis and visualization application.
+link:{uri-paraview-www}[ParaView]:: is an open-source, multi-platform data analysis and visualization application.
 link:https://wci.llnl.gov/simulation/computer-codes/visit[Visit]:: is a distributed, parallel visualization and graphical analysis tool for data defined on two- and three-dimensional (2D and 3D) meshes
 ====
 
@@ -261,11 +261,13 @@ where `part` denotes the number of processors (4 in our example) you want to use
 This will create new files `mesh-np4.json` and `mesh-np4.h5` ready for running.
 
 === Define Cfg, Model and Materials files
-
 === Running 3D simulations
 === Postprocessing results
 
 == Examples
+
+* xref:benchmarks:HL/README.adoc[HL] 
+* xref:benchmarks:HL-31/README.adoc[HL-31]
 
 // include::learning/README.adoc[]
 
@@ -296,7 +298,7 @@ This will create new files `mesh-np4.json` and `mesh-np4.h5` ready for running.
 // [[installation_scratch]]
 // include::installation/from-scratch.adoc[leveloffset=+1]
 
-[[references]]
-= Quick Reference
+// [[references]]
+// = Quick Reference
 
-include::quickref/README.adoc[]
+// include::quickref/README.adoc[]

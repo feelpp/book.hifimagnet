@@ -37,6 +37,7 @@ endif::[]
 :uri-emfl-www: http://www.emfl.eu/home.html
 :uri-salome-www: http://www.salome-platform.org/
 :uri-meshgems-www: http://meshgems.com/meshgems-products.html
+:uri-netgen-www: https://ngsolve.org/
 :uri-ensight-www: http://www.ensight.com/
 :uri-paraview-www: http://www.paraview.org/
 :uri-visit-www: https://wci.llnl.gov/simulation/computer-codes/visit/
