@@ -18,7 +18,7 @@ Two ressources are available:
 | Key                        | *stokes*                            | *euler*                     | cesga
 | hpc_basedir                | ${HOME}                             | ${HOME}                     | ${LUSTRE}
 | hpc_feelpp                 | ${HOME}/feel                        | ${HOME}/feel                | ${LUSTRE}/feel
-| hpc_modules                | -                                   | -                           | [gcc/6.3.0, openmpi/2.0.2, singularity/2.4.2] |
+| hpc_modules                | -                                   | -                           | [gcc/6.3.0, openmpi/2.0.2, singularity/2.4.2]
 | hpc_volumes                | ${HOME}/feel:/feel                  | ${HOME}/feel:/feel          | /scratch,/mnt,${LUSTRE}/feel:/feel
 | *hpc_partition*            | "stokes"                            | "euler"                     | "thin-node, thin-shared,..." 
 | hpc_reservation            | N/A                                 | N/A                         | optional
