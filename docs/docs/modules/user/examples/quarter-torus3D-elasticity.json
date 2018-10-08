@@ -1,11 +1,11 @@
 {
-    "Name": "CoupledCart",
+    "Name": "CoupledCart", <1>
     "ShortName":"MSC",
-    "Models":
+    "Models":, <2> 
     {
         "equations": "Elasticity"
     },
-    "Materials":
+    "Materials":, <3>
     {
         "coil":
         {
@@ -16,7 +16,7 @@
             "rho":"10.e-6"
         }
     },
-    "BoundaryConditions":
+    "BoundaryConditions":, <4>
     {
         "displacement_z":
         {
@@ -53,73 +53,7 @@
             }
         }
     },
-    "magnetic_potential":
-    {
-        "Dirichlet":
-        {
-            "Border":
-            {
-                "expr":"{0,0,0}:x:y:z"
-            }
-        },
-        "DirichletY":
-        {
-            "OYOZ":
-            {
-                "expr":"0:x:y:z"
-            }
-        },
-        "DirichletY":
-        {
-            "V1":
-            {
-                "expr":"0:x:y:z"
-            }
-        },
-        "DirichletZ":
-        {
-            "OYOZ":
-            {
-                "expr":"0:x:y:z"
-            }
-        },
-        "DirichletZ":
-        {
-            "V1":
-            {
-                "expr":"0:x:y:z"
-            }
-        },
-        "DirichletX":
-        {
-            "OXOZ":
-            {
-                "expr":"0:x:y:z"
-            }
-        },
-        "DirichletX":
-        {
-            "V0":
-            {
-                "expr":"0:x:y:z"
-            }
-        },
-        "DirichletZ":
-        {
-            "OXOZ":
-            {
-                "expr":"0:x:y:z"
-            }
-        },
-        "DirichletZ":
-        {
-            "V0":
-            {
-                "expr":"0:x:y:z"
-            }
-        }
-    },
-    "PostProcess":
+    "PostProcess":, <5>
     {
         "Exports":
         {

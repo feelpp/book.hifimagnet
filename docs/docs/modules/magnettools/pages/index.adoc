@@ -27,7 +27,7 @@ and to analyze some Transient Analysis.
 [[qs_installation]]
 == Getting {magnettools}
 
-Using {magnettools} inside container, either https://www.docker.com/what-docker[Docker] or Singularity based,
+Using {magnettools} inside container, either Docker or Singularity based,
 is the recommended and fastest way. If your system support singularity containers we recommend to use them instead of Docker ones.
 
 === from sregistry
@@ -45,7 +45,7 @@ To get {hifimagnet} docker image see xref:user:index.adoc#dockerhub[section]
 On Debian/Ubuntu system you can install {magnettools} from the local {lncmi} packages repository.
 To do so:
 
-* you need access to the {lncmi} repository
+* you need to have access to the {lncmi} repository
 * add a `lncmi.lst` into your `/etc/apt/sources.list.d` directory:
 
 [source,txt]
@@ -57,10 +57,11 @@ deb-src http://euler/~trophime/debian/ testing main
 
 Then run:
 
-```
+[source,csh]
+----
 sudo apt update
-sudo apt install magnettools
-```
+sudo apt install hifimagnet
+----
 
 [NOTE]
 ====
