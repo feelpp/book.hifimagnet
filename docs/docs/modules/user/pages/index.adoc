@@ -52,7 +52,7 @@ link:https://wci.llnl.gov/simulation/computer-codes/visit[Visit]:: is a distribu
 == Getting {hifimagnet}
 
 
-Using {hifimagnet} inside container, either {https://www.docker.com/what-docker}[Docker] or Singularity based,
+Using {hifimagnet} inside container, either Docker or Singularity based,
 is the recommended and fastest way. If your system support singularity containers we recommend to use them instead of Docker ones.
 
 
@@ -122,24 +122,6 @@ from Microsoft App Store. Then apply the same procedure as above to install the 
 [[qs_usage]]
 == Running {hifimagnet}
 
-=== from command line
-
-To perform a 3D fully coupled multi-physics simulation:
-
-[source,sh]
-----
-feelpp_hfm_coupledmodel_3DP1N1 --config coupled_3D_P1_N1_singular_cvg.cfg
-----
-
-The `coupled_3D_P1_N1_singular_cvg.cfg` configuration file holds all the information
-to specify what calculations are performed
-
-[source,cfg]
-----
-include::{examplesdir}/coupled_3D_P1_N1_singular_cvg.cfg[]
-----
-
-The configuration files are fully described in this <<section,>>
 
 === from Singularity container
 
@@ -150,6 +132,9 @@ Assuming we use `hifimagnet.simg` singularity image:
 singularity run -it -v $HOME/feel:/feel feelpp/hifimagnet feelpp_hfm_coupledmodel_3DP1N1 --config  ...
 ----
 
+The `coupled_3D_P1_N1_singular_cvg.cfg` configuration file holds all the information
+to specify what calculations are performed. The configuration files are fully described in this <<section,>>
+
 === from Docker container
 
 Start the Docker container `feelpp/hifimagnet` as follows
@@ -157,6 +142,15 @@ Start the Docker container `feelpp/hifimagnet` as follows
 [source,sh]
 ----
 docker run -it -v $HOME/feel:/feel feelpp/hifimagnet feelpp_hfm_coupledmodel_3DP1N1 --config  ...
+----
+
+=== from command line
+
+To perform a 3D fully coupled multi-physics simulation:
+
+[source,sh]
+----
+feelpp_hfm_coupledmodel_3DP1N1 --config coupled_3D_P1_N1_singular_cvg.cfg
 ----
 
 [[usage]]
