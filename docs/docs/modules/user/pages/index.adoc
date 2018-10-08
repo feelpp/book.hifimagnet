@@ -253,12 +253,22 @@ Then you have eventually to partition the mesh to use it on HPC:
 
 [source,sh]
 ----
-feelpp_mesh_partitioner --ifile mesh.msh -ofile mesh-np4 --part 4 --nochdir
+feelpp_mesh_partitioner [--gmsh.scale=0.001] --ifile mesh.msh -ofile mesh-np4 --part 4 --nochdir
 ----
 
 where `part` denotes the number of processors (4 in our example) you want to use.
+The option `--gmsh.scale=0.001` enables to rescale the mesh file.
 
 This will create new files `mesh-np4.json` and `mesh-np4.h5` ready for running.
+
+[NOTE]
+=====
+{hifimagnet} {salome} CAD geometries are defined in `mm`.
+The mesh file generated is also in `mm`. 
+
+As a consequence, **do not forget to rescale the mesh** before running simulation.
+Use `--gmsh.scale=0.001` to rescale the mesh.
+=====
 
 === Define Cfg, Model and Materials files
 === Running 3D simulations
