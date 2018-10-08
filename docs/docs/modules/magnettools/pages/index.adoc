@@ -46,7 +46,14 @@ On Debian/Ubuntu system you can install {magnettools} from the local {lncmi} pac
 To do so:
 
 * you need access to the {lncmi} repository
-* add a lncmi.lst into your `/etc/apt/sources.list.d` directory:
+* add a `lncmi.lst` into your `/etc/apt/sources.list.d` directory:
+
+[source,txt]
+.`lncmi.lst` for Debian Testing distribution
+----
+deb http://euler/~trophime/debian/ testing main 
+deb-src http://euler/~trophime/debian/ testing main 
+----
 
 Then run:
 
@@ -67,7 +74,7 @@ Just enable WSL feature and download Debian Stretch or Ubuntu Xenial (aka 16.04 
 from Microsoft App Store. Then apply the same procedure as above to install the package.
 ====
 
-=== Install from scratch
+// === Install from scratch
 
 [[usage]]
 == Using {magnettools}

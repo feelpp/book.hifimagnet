@@ -1,3 +1,4 @@
+[[post_manual]]
 = {hifimagnet} PostProcessing documentation
 :toc: macro
 include::{partialsdir}/header-macros.adoc[]

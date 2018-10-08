@@ -5,8 +5,11 @@
 :docker: Docker
 :sregistry: Sregistry
 :hifimagnet: HiFiMagnet
+:magnettools: MagnetTools
 :meshgems: MeshGems
 :salome: Salome
+:ensight: EnSight
+:paraview: ParaView
 :girder: Girder
 :feelpp: Feel++
 :feelppdb: $HOME/feel
