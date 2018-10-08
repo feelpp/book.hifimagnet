@@ -1,26 +1,21 @@
 {
-    "Name": "CoupledCart",
+    "Name": "CoupledCart", <1>
     "ShortName":"MSC",
-    "Models":
+    "Models":, <2>
     {
         "equations": "thermoelectric-linear"
     },
-    "Materials":
+    "Materials":, <3>
     {
         "coil":
         {
             "name":"copper",
-            "alpha":"3.35e-3",
-            "T0":"293",
-            "sigma0":"58e+3",
-            "k0":"0.38",
-            "sigma":"sigma0/(1+alpha*(T-T0)):sigma0:alpha:T:T0",
-            "k":"k0*T/((1+alpha*(T-T0))*T0):k0:T:alpha:T0"
+            "filename":"$cfgdir/Cu.json"
         }
     },
-    "BoundaryConditions":
+    "BoundaryConditions":, <3>
     {
-        "potential":
+        "potential":, <4>
         {
             "Dirichlet":
             {
@@ -36,7 +31,7 @@
                 }
             }
         },
-        "temperature":
+        "temperature":, <5>
         {
             "Robin":
             {
@@ -52,7 +47,7 @@
                 }
             }
         }    },
-    "PostProcess":
+    "PostProcess":, <6>
     {
         "Exports":
         {

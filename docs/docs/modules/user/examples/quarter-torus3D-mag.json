@@ -1,11 +1,11 @@
 {
-    "Name": "CoupledCart",
+    "Name": "CoupledCart", <1>
     "ShortName":"MSC",
-    "Models":
+    "Models":, <2>
     {
         "equations": "magnetostatic-regularized"
     },
-    "Materials":
+    "Materials":, <3>
     {
         "coil":
         {
@@ -18,7 +18,7 @@
             "mu_mag": "1"
         }
     },
-    "BoundaryConditions":
+    "BoundaryConditions":, <4>
     {
         "magnetic_potential":
         {
@@ -47,7 +47,7 @@
             }
         }
     },
-    "PostProcess":
+    "PostProcess":, <5>
     {
         "Exports":
         {
