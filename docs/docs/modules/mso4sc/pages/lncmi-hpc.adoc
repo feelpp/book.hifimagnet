@@ -20,7 +20,7 @@ Two ressources are available:
 | hpc_feelpp                 | ${HOME}/feel                        | ${HOME}/feel                | ${LUSTRE}/feel
 | hpc_modules                | -                                   | -                           | [gcc/6.3.0, openmpi/2.0.2, singularity/2.4.2] |
 | hpc_volumes                | ${HOME}/feel:/feel                  | ${HOME}/feel:/feel          | /scratch,/mnt,${LUSTRE}/feel:/feel
-| *hpc_partition*            | "stokes"                            | "euler"                     | "thin-node, thin-shared,..." (use `command` or see {file:///home/LNCMI-G/trophime/Downloads/FTII_Quick_start_guide.pdf}[doc] for details)
+| *hpc_partition*            | "stokes"                            | "euler"                     | "thin-node, thin-shared,..." 
 | hpc_reservation            | N/A                                 | N/A                         | optional
 | sregistry_storage          | ${HOME}/singularity_images          | ${HOME}/singularity_images  | `${LUSTRE}/singularity_images`
 |===
