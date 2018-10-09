@@ -1,15 +1,16 @@
-=== Creating Insert CAD and Generate Mesh
+=== Partition Mesh for HPC
 :toc: macro
 include::{partialsdir}/header-macros.adoc[]
 include::{partialsdir}/header-uri.adoc[]
 include::{partialsdir}/mso4sc-uri.adoc[]
 
-Use this app *MagCAD* to create CAD geometry and mesh for High Field Magnets
+Use this app *MagMesh* to partition a mesh for High Field Magnets
 
 ==== To test the app
 
 To check the app, just change the following values:
 
-
-* Insert H1-H4
-*** dataset: cad-insert-h4
+[options="header,footer"]
+|===
+| Testcase          | DataSet	                   | HPC settings (partition, ...)                     | Notes
+|===

@@ -57,7 +57,7 @@ We will consider the usual notation for the space coordinates in   stem:[\mathbf
 |===
 ^|Notation ^|Quantity ^|Unit
 |stem:[\alpha_T] |thermal expansion coefficient |
-|stem:[Y]      |Young modulus |stem:[W.m^{-1} .K^{-1}]
+|stem:[Y]      |Young modulus |stem:[Pa]
 |stem:[\nu]    |Poisson ratio |-
 |===
 
