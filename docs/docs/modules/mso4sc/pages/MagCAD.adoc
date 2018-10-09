@@ -11,5 +11,9 @@ Use this app *MagCAD* to create CAD geometry and mesh for High Field Magnets
 To check the app, just change the following values:
 
 
-* Insert H1-H4
-*** dataset: cad-insert-h4, Insert-H1H4.tgz
+[options="header,footer"]
+|===
+| Testcase          | DataSet	                     | HPC settings (partition, ...)                     | Notes
+| *Insert H1-H4*    | cad-insert-h4, Insert-H1H4.tgz | lncmi: `stokes`                                   |
+|                   |                                | cesga: `thinnodes`                                ||===
+|===

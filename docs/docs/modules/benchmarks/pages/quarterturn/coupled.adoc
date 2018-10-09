@@ -1,14 +1,15 @@
 = QuarterTurn
 
-In this example, we will estimate the rise in temperature due to Joules losses in a stranded conductor. An electrical potential stem:[V_0] is applied to the entry/exit of the conductor which is also cooled by a force flow. +
-The geometry of the conductor is choosen as to have an analytical expression for the temperature.
+In this example, we will model a stranded conductor.
+ An electrical potential stem:[V_0] is applied to the entry/exit of the conductor which is also cooled by a force flow.
+
+We will compute the temperature field and the magnetic field generated.
+The geometry of the conductor is chosen such that we can derive the analytical expression for both the temperature
+ and the magnetic fields.
 
 == Geometry
 
-The conductor consists in a rectangular cross section torus which is somehow "cut" to allow for applying electrical potential. The conductor is cooled with a force flow along its cylindrical faces.+
-In 2D, the geometry is as follow:
-image:quarterturn/quarterturn-geo.png[geometry,50%] +
-In 3D, this is the same geometry, but extruded along the z axis.
+The conductor consists in a 1/4th of a rectangular cross section torus.
 
 == Input parameters
 
@@ -27,9 +28,10 @@ In 3D, this is the same geometry, but extruded along the z axis.
 
 === Model & Toolbox
 
-- This problem is fully described by a Thermo-Electric model, namely a poisson equation for the electrical potential stem:[V] and a standard heat equation for the temperature field stem:[T] with Joules losses as a source term.
+This problem is fully described by a fully coupled model involving:
 
-- **toolbox**:  thermoelectric
+* thermoelectric model,
+* magnetostatic model.
 
 === Materials
 
@@ -62,15 +64,15 @@ As for the heat equation, the forced water cooling is modeled by robin boundary 
 | V0, V1, top*, bottom* | Neumann | 0 |
 |===
 
-*: only in 3D
+For the Magnetostatic model, the boundary conditions are given below:
+- stem:[\mathbf{A} = \mathbf{0}] at the infinity
+- stem:[\mathbf{A} \times \mathbf{n} = 0 ] on symetry plane
 
 == Outputs
 
-The main fields of concern are the electric potential stem:[V], the temperature stem:[T] and the current density stem:[\mathbf{j}] or the electric field stem:[\mathbf{E}]. // presented in the following figure.
-
 == Verification Benchmark
 
-The analytical solutions are given by:
+The analytical solutions for the termoelectric problem are given by:
 
 [stem]
 ++++
@@ -89,24 +91,20 @@ D&=2\delta^2k(h_eh_ir_er_i\log(r_e) - h_eh_ir_er_i\log(r_i) + h_ekr_e + h_ikr_i)
 \end{align*}
 ++++
 
-We will check if the approximations converge at the appropriate rate:
+For simple conductor geometry, analytical expressions of the magnetic field along the Z-Axis may be found in physics textbooks.
+The expression of the magnetic field in stem:[\mathbb{R}^3] is more difficult to derive but may be found in several papers, like \cite{Jackson99}. +
+As a classical result, we consider only the magnetic field along the Z-Axis, which analytical expression is given bellow:
+[stem]
+++++
+\begin{equation*}
+  B_z(z)=\frac{1}{2} \mu_0 J(r_i)  \left[\left[log(r^2+t^2)\right]_{r=r_1}^{r=r_2}\right]_{t=z-H}^{t=z+H}
+\end{equation*}
+++++
 
-- k+1 for the stem:[L_2] norm for stem:[V] and stem:[T]
-- k for the stem:[H_1] norm for stem:[V] and stem:[T]
-- k for the stem:[L_2] norm for stem:[\mathbf{E}] and stem:[\mathbf{j}]
-- k-1 for the stem:[H_1] norm for stem:[\mathbf{E}] and stem:[\mathbf{j}]
+with:
+[stem]
+++++
+J(r_i) = -\frac{\sigma} \frac{4*V_D}/{2\,\pi\,r_i}.
+++++
 
-.Temperature 2D and 3D
-|===
-| image:quarterturn/cvg_T_2D.png[temperature 2D,100%] | image:quarterturn/cvg_T_3D.png[potential 2D,100%]
-|===
-
-.Electric potential 2D and 3D
-|===
-| image:quarterturn/cvg_V_2D.png[potential 2D,100%] | image:quarterturn/cvg_V_3D.png[potential 3D,100%]
-|===
-
-.Electric field 2D and 3D
-|===
-| image:quarterturn/cvg_E_2D.png[electric field 2D,100%] | image:quarterturn/cvg_E_3D.png[electric field 3D,100%]
-|===
+The factor stem:[4] stems from the geometry as we are considering only 1/4th of the torus.

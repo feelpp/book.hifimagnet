@@ -1,13 +1,12 @@
-=== 3D Simulations
+=== 3D ThermoElectric Model
 :toc: macro
 include::{partialsdir}/header-macros.adoc[]
 include::{partialsdir}/header-uri.adoc[]
 include::{partialsdir}/mso4sc-uri.adoc[]
 
-Use *MagSim* this app to run simulations of High Field Magnets for:
+Use *MagTherm* this app to run simulations of High Field Magnets for:
 
 * ThermoElectric
-* CoupledCartModel
 
 ==== To test the app
 
@@ -18,44 +17,9 @@ To check the app, just change the following values:
 [options="header,footer"]
 |===
 | Key         | Value                                                            
-| *execfile*  | `feelpp_hfm_thermoelectric_model_3D_V1T1_N1`                       
 | *cfgfile*   | `/usr/share/doc/hifimagnet/ThermoElectricModel/quarter-turn3D.cfg` 
 |===
 
-* CoupledModel
-
-[options="header,footer"]
-|===
-| Key         | Value                                                            
-| *execfile*  | `feelpp_hfm_coupledmodel_3DP1N1`                       
-| *cfgfile*   | `/usr/share/doc/hifimagnet/CoupledModel/quarter-torus3D.cfg` 
-|===
-
-Alternatively the are also some additionnal tests:
-
-* `/usr/share/doc/hifimagnet/CoupledModel/quarter-torus3D-reg.cfg`
-* `/usr/share/doc/hifimagnet/CoupledModel/quarter-torus3D-saddle.cfg`
-* `/usr/share/doc/hifimagnet/CoupledModel/quarter-torus3D-singular.cfg`
-
-[options="header,footer"]
-|===
-| Key         | Value                                                            
-| *execfile*  | `feelpp_hfm_coupledcartmodel_3DP1N1`                       
-| *cfgfile*   | `/usr/share/doc/hifimagnet/CoupledCartModel/quarter-torus3D_bmap.cfg` 
-|===
-
-* CoupledCartModel
-
-[options="header,footer"]
-|===
-| Key         | Value                                                            
-| *execfile*  | `feelpp_hfm_coupledcartmodel_3DP1N1`                       
-| *cfgfile*   | `/usr/share/doc/hifimagnet/CoupledCartModel/quarter-torus3D.cfg` 
-|===
-
-Aternatively there is an other test:
-
-* `/usr/share/doc/hifimagnet/CoupledCartModel/quarter-torus3D_bmap.cfg` 
 
 ==== Prepare your simulation
 
@@ -69,13 +33,9 @@ Aternatively there is an other test:
 |===
 | Key                           | Default                                                            | Notes
 | *Dataset resource: input_url* | URL pointing to an archive of data files (comes from the data Catalog) | 
-| *execfile*                    | `feelpp_hfm_thermoelectric_model_3D_V1T1_N1`                       | Valid values are:
-|                               |                                                                    |  `feelpp_hfm_thermoelectric_model_3D_V1T1_N1`
-|                               |                                                                    |  `feelpp_hfm_coupledmodel_3DP1N1`
-|                               |                                                                    |  `feelpp_hfm_coupledcartmodel_3DP1N1`
 | *Dataset resource: model*     |                                                                    | dataset mode from the data Catalog
 | *cfgfile*                     | `quarter-turn3D.cfg`                                               | cfg file need to be in the dataset
-| *Output dataset: outputs_at*  |                                                                    | optional
+| *Output dataset: outputs_at*  |                                                                    | Data Catalog where outpus will be uploaded
 |===
 
 
@@ -87,47 +47,13 @@ Use a modified verion of the canary {mso4sc} hpc-plugin:
 https://raw.githubusercontent.com/Trophime/cloudify-hpc-plugin/add_checks/plugin.yaml
 ====
 
-* quarter-turn:
-** thermoelectric model:
-*** execfile: feelpp_hfm_thermoelectric_model_3D_V1T1_N1
-*** dataset: thermoelec-test
-*** stokes params: stokes
-*** cesga params: thin-shared
-
-*** Lncmi HPC:
-*** cesga 
-
-* HL:
-** thermoelectric model:
-*** execfile: feelpp_hfm_thermoelectric_model_3D_V1T1_N1
-*** dataset: hl-test
-*** cfg: HL-31_H1_boomeramg_p32.cfg
-*** stokes params: stokes, n 32
-*** cesga params: thinnodes, N 4, ntasks-per-node=8, n 32
+[options="header,footer"]
+|===
+| Testcase          | DataSet	                   | HPC settings (partition, ...)                     | Notes
+| *quarter-turn*    | `thermoelec-test`            | lncmi: `stokes`                                   |
+|                   |                              | cesga: `thinnodes`                                |
+| *HL*              | `hl-test`                    | lncmi: `stokes`,`n=32`                            | HL-31_H1_boomeramg_p32.cfg
+|                   |                              | cesga: `thinnodes`,`32`                           |
+|===
 
 
-* Insert H1H4
-** coupledcartmodel:
-*** execfile: feelpp_hfm_coupledcartmodel_3DP1N1
-*** cfgfile: H1H4_cart.cfg
-*** dataset: insert-test
-*** stokes params: H1H4-cart.tar.gz, stokes, n 32
-*** cesga_params: H1H4-cart-p144.tar.gz, thinnodes, N 6, ntasks-per-node=24, n 144
-
-* HL-31
-** coupledcartmodel: +bmap (without magnetostatic)
-*** execfile: feelpp_hfm_coupledcartmodel_3DP1N1
-*** cfgfile: HL-31_cart_boomeramg.cfg
-*** dataset: hl-31, ressource HL-31.tgz 
-*** stokes params: stokes, n 32
-*** cesga params: thinnodes, N 4, ntasks-per-node=8, n 32 (to be checked)
-
-* fullinsert
-** coupledcartmode:
-*** execfile: feelpp_hfm_coupledcartmodel_3DP1N1
-*** cfgfile: HL-31-Leads-air_nl_cart_256_json.cfg
-*** dataset: insertfull
-*** cesga params: thinnodes, N 16, ntasks-per-node=16, n 256 (not working???)
-
-
-* LowFieldBench
