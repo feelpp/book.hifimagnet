@@ -15,7 +15,8 @@ To run this example on MSO4SC portal see this xref:mso4sc:bmap.adoc[section].
 image::HL-31/geom_axi.png[A 14 helices insert with 2 external bitter magnets]
 
 [TIP]
-===
+====
+
 To get the geometry, you can use:
 
 [source,sh]
@@ -40,7 +41,7 @@ gnuplot> set xrange [0:0.7]
 gnuplot> set yrange [-0.4:0.4]
 ----
 
-===
+====
 
 === Magnet Field
 
@@ -84,7 +85,7 @@ On {mso4sc} Data Catalogue this file is already included in the dataset.
 For instance using the default current params, you get the following magnetic field stem:[B_z] profile along stem:[Oz] axis.
 
 There are others usefull options to carry out calculation on list of points and so on...
-See this xref:magnetools:Bmap.adoc#bmap[section] for details.
+See xref:magnetools:Bmap.adoc#bmap[here] for details.
 
 == Data files
 
