@@ -1,4 +1,7 @@
 = Magnetic Field Map (Axisymetric geom)
+include::{partialsdir}/header-macros.adoc[]
+include::{partialsdir}/header-uri.adoc[]
+include::{partialsdir}/mso4sc-uri.adoc[]
 
 In this example, we will compute the "ideal" magnetic field produced by a test insert
 described using {magnettools} format.
@@ -9,11 +12,35 @@ To run this example on MSO4SC portal see this xref:mso4sc:bmap.adoc[section].
 
 === Magnet Geometry
 
+image::HL-31/geom_axi.png[A 14 helices insert with 2 external bitter magnets]
+
+[TIP]
+===
+To get the geometry, you can use:
+
 [source,sh]
 ----
-B_map HL-31.d
+B_map  --gnuplot HL-31.d > geom.dat
 ----
 
+Edit `geom.dat` and keep only lines between:
+```
+PolyHelices data for HL-31.d ...
+...
+UnifMagnets data for HL-31.d ...
+```
+
+Plot the geometry with `gnuplot'
+[source,sh]
+----
+gnuplot> set size ratio -1
+gnuplot> set style data li
+gnuplot> plot "HL-31-geom.dat" title "PolyHelices", "HL-31-Bitter-geom.dat" title "Bitters"
+gnuplot> set xrange [0:0.7]
+gnuplot> set yrange [-0.4:0.4]
+----
+
+===
 
 === Magnet Field
 
@@ -32,19 +59,16 @@ then enter the data for:
 
 and set the ranges for the plot:
 
-* stem:[r_0]
-* stem:[r_1]
-* stem:[z_0]
-* stem:[z_1]
+* stem:[r_0], stem:[r_1],
+* stem:[z_0], stem:[z_1]
 
-and the
+and the number of points in each direction
 
-* stem:[n_r]
-* stem:[n_z]
+* stem:[n_r], stem:[n_z]
 
 [IMPORTANT]
 ====
-Watchout units is set to *meter* for the position range.
+Watchout default unit is set to *meter* for the position range.
 ====
 
 The result is stored in `HL-31_FieldMap.dat`.
@@ -60,7 +84,7 @@ On {mso4sc} Data Catalogue this file is already included in the dataset.
 For instance using the default current params, you get the following magnetic field stem:[B_z] profile along stem:[Oz] axis.
 
 There are others usefull options to carry out calculation on list of points and so on...
-See this xref:magnetools#xxx[section] for details.
+See this xref:magnetools:Bmap.adoc#bmap[section] for details.
 
 == Data files
 
@@ -71,7 +95,7 @@ The gzipped archive tarball http://193.144.35.207/dataset/hl-31/resource/aef05e3
 
 === Magnet Cfg file
 
-* HL-31.d
+* `HL-31.d`
 
 == Outputs
 
