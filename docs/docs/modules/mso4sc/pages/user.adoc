@@ -16,9 +16,17 @@ An *EndUser* can:
 
 [IMPORTANT]
 ====
-Before going to the * {uri-msoportal-experiment-www}[*Experiments*]
-it is mandatory to connect to {uri-msoportal-market-www}[*Marketplace*] 
+Some apps are freely available for all portal users.
+To use these apps, you can skip the purchase step.
+Right now all {hifimagnet} apps are freely available.
+
+Before going to the {uri-msoportal-experiment-www}[*Experiments*]
+it is mandatory to connect at least to {uri-msoportal-market-www}[*Marketplace*] 
 and to the {uri-msoportal-ckan-www}[*Data Catalogue*].
+
+To use and create private datasets for storing inputs data and results,
+you have to upload your *Data Catalogue key* into the Experiments *settings*
+as described <<api_key, here>>.
 ====
 
 [[purchase]]
@@ -41,7 +49,7 @@ you order. To check the status of your order:
 * go to *My Inventory*
 * go to *Product Orders*
 
-You shall be to see your products and their status in each product form.
+You shall see your products and their status in each product form.
 
 To finalize your purchase *DO NOT FORGET* to connect to :
 
@@ -50,6 +58,11 @@ To finalize your purchase *DO NOT FORGET* to connect to :
 
 Then notify the owner/seller that you request to be part of {hifimagnet} user group.
 This will allow you to access {himagnet} singularity images and datasets.
+
+[NOTE]
+====
+To access http://docs.cemosis.fr/hifimagnet/stable/[{hifimagnet} docs] you also need to have a user/password
+====
 
 // NOTE: The use of {uri-girder-unistras}[{girder} is optional.
 
@@ -76,6 +89,7 @@ They may the following role:
 
 NOTE: User has to connect at least once to *Data Catalogue* before you can grant them a role in your organization.
 
+[[api_key]]
 ==== Upload Data
 
 * Connect to {uri-msoportal-ckan-www}[*Data Catalogue*]
@@ -91,7 +105,7 @@ To latter use private Organization and/or Dataset you would need to enter
 
 image::ckan_view_profile.png[*Data Catalogue* user profile]
 
-** Scroll dow to view you *API key* on left side
+** Scroll dow to view you *Data Catalogue key* on left side
 
 image::ckan_apikey.png[Getting *Data Catalogue key*]
 
@@ -114,6 +128,7 @@ NOTE: To add a dataset to an existing organization, you may need to ask the *Adm
 * Go to {uri-msoportal-experiment-www}[*Experiments*]
 * Select *Settings*
 * Define a HPC resource
+* Upload eventually your *Data Catalogue key* (see <<api_key, here>>)
 
 [source,txt]
 ----
@@ -143,12 +158,12 @@ image::sregistry_apitoken.png[ex: {Display {sregistry} token]
 [[note_sregistry_secret]]
 [NOTE]
 ====
-To copy the file to the HPC resource you can use `scp .sregistry username@host:.`
-or whatever method you prefer. `username` and `host` are key defined in the <<hpc_setting,HPC resource setting>>
+To copy the file to the HPC resource you can use `scp .sregistry username@hpc_host:.`
+or whatever method you prefer. `username` and `hpc_host` are key defined in the <<hpc_setting,HPC resource setting>>.
 
 You may connect to your account on HPC resource
 ```
-ssh -Y username@host
+ssh -Y username@hpc_host
 ```
 
 If you cannot connect directly to the HPC resource, you may have to use alternative.
@@ -188,7 +203,7 @@ image::PortalMSO4SC_Exp_User.png[*Experiments* *Instances* main menu for *EndUSe
 
 At this point you should have a page with all the options that need to be filled.
 
-image::Portal_HifiMagApp.png[ex: Main {hifimagnet} app `3DSim`]
+image::portal_magtherm_inputs.png[ex: {hifimagnet} app `MagTherm`]
 
 The fields to fill may be grouped into categories:
 
@@ -220,21 +235,21 @@ The others fields are designed for more advanced users.
 | Key                           | Description                                 | Default                                                            | Notes
 | *Dataset resource: model*     | dataset mode                                | `None`                                                             | comes from the data Catalog
 | *Output dataset: outputs_at*  |                                             |                                                                    |
-| *execfile*                    | executable file                             | `feelpp_hfm_thermoelectric_model_3D_V1T1_N1`                       | any exec `feelpp_hfm...`
 | *cfgfile*                     | configuration file                          | `/usr/share/doc/hifimagnet/ThermoElectricModel/quarter-turn3D.cfg` | cfg file need to be in the container, or in a mounted dir or in the dataset
 |===
 
 .List of keys to be defined for HPC settings
 [options="header,footer"]
 |===
-| Key                        | Description              | Default          | Notes
-| *HPC: primary*               | HPC settings             | "cesga"          |
-| hpc_modules | modules to load depending on the targeted machine | [gcc/6.3.0, openmpi/2.0.2, singularity/2.4.2] | shall depends on HPC and singularity image
-| hpc_volumes | volumes to be mounted on the targeted machine |  [/scratch,/mnt,${LUSTRE}/feel:/feel] | depends on HPC and singularity image
-| *hpc_partition* | select partition queue | 'thin-shared' | shall depends on batch system and HPC (TODO)
-| hpc_reservation | select reservation queue | `` | is optional
-| *parallel_tasks* |  number of tasks/processes to run in parallel | 2 |  shall depends on batch system and selected partition
-| *max_time* | maximum allowed time for run (minutes and seconds) | '00:30:00' |  shall depends on batch system and selected partition
+| Key                        | Description                                   | Default                                         | Notes
+| *HPC: primary*             | HPC settings                                  | "cesga"                                         |
+| hpc_modules                | modules to load depending on the HPC machine  | `[gcc/6.3.0, openmpi/2.0.2, singularity/2.4.2]` | depends on HPC and singularity image
+| hpc_basedir                | volume where instance is created              | `${LUSTRE}`                                     | depends on HPC and singularity image
+| hpc_volumes                | volumes to be mounted on the HPC machine      | `[/scratch,/mnt,${LUSTRE}/feel:/feel]`          | depends on HPC and singularity image
+| *hpc_partition*            | select partition queue                        | 'thin-shared'                                   | shall depends on batch system and HPC
+| hpc_reservation            | select reservation queue                      | ``                                              | optional
+| *parallel_tasks*           | number of tasks/processes to run in parallel  | 2                                               | depends on batch system and selected partition
+| *max_time*                 | maximum allowed time                          | '00:30:00'                                      | hours, minutes and seconds
 |===
 
 .List of keys specs for retrieving singularity images
@@ -275,6 +290,8 @@ Once filled, click on *Create New Instance*.
 
 TIP: While creating a new app instance, any error will result in a popup message.
 
+image::portal_magtherm_running.png[ex: Running {hifimagnet} `MagTherm`]
+
 The next step is to to launch the app:
 
 * select the *ID*, you defined in the previous step,
@@ -288,12 +305,13 @@ Check the message in the frame bellow the status button.
 To have more details about the actual error is more tricky; we recommend to:
 
 * make sure you have unchecked the cleanup option
-* connect to the HPC resource
-* move to the selected `base_dir/working_prefix<id>`
+* connect to the HPC resource using for instance the <<RemoteDesktop, *Remote Desktop*>>
+* move to the selected `<hpc_basedir>/<hpc_working_prefix>_<date>_<id>`
 * check the logs
 
-`base_dir`, `working_prefix` are filled within the portal *Experiments*.
-The `<id>` is a random character generated by the deployment.
+`<hpc_basedir>` is given as inputs of the experiment (see above). 
+`<hpc_working_prefix>` is set by default by the app (eg: `hifimagnet` for `M̀agTherm` app).
+The `<id>` is a random character generated when creating the instance.
 ====
 
 Finaly to destroy your instance, just click on:
@@ -310,12 +328,12 @@ This will remove your *ID* from the instance list.
 Basically the procedure is the same as <<running, above>>. The only difference here is that you need:
 
 * to select a dataset in the *DataSet* sliding menu
-* to validate your choice 
+* to select a ressource within the *DataSet* 
 * to enter the name of the `<cfgfile> you will use
 
 You should at the end have something like in the following image.
 
-image::portal_running_dataset.png: {Selecting a dataset}
+image::portal_running_dataset.png[Selecting a dataset]
 
 
 [NOTE]
@@ -332,7 +350,7 @@ The format of the files in a dataset are respectively described in:
 
 * for {hifimagnet} simulation 
 * for mesh and cad format
-* for {magnettoools}
+* for {magnettools}
 
 ====
 
@@ -348,6 +366,7 @@ The format of the files in a dataset are respectively described in:
 include::{examplesdir}/remotedesktop.txt[]
 ----
 
+[[RemoteDesktop]]
 === Running an Remote Desktop resource in *Visualization*
 
 * Go to *Visualization*
@@ -408,21 +427,13 @@ This directory holds:
 and the files coming from the dataset.
 ====
 
-[TIP]
-====
-From a computer that is allowed to access HPC resources (if not use a *VPN* client):
-
-* start a terminal,
-* connect to the HPC resource with `ssh -Y <username>@<hpc_host>`,
-* run `ls -lrt <hpc_basedir>` to find the actual name of the working directory which may appears as the last output of this command.
-====
 
 * start a post-processing GUI:
 ** either by loading {uri-paraview-www}[{paraview}]
 ** or using singularity {uri-ensight-www}[{ensight}] image
 * to quit just click on `Menu/logout` (top left)
 
-For more details on using {paraview} or {ensight} please check XXXX.
+For more details on using {paraview} or {ensight} please check this xref:post:index.adoc#post_manual[section].
 
 [NOTE]
 ====
@@ -434,7 +445,7 @@ In the remote desktop to get {paraview} running:
 
 [NOTE]
 ====
-For {ensight} you would need to have:
+For {ensight} you would need to have:
 
 * a valid license stored in you account on the HPC resource 
 * access to {ensight} singularity image from {hifimagnet} {sregistry} private collection.
@@ -442,7 +453,7 @@ For {ensight} you would need to have:
 In the remote desktop to get {ensight} running:
 
 * open a terminal
-* use the following script (see {ensight} doc in {hifimagnet} docs).
+* use the following script (see [xref:post:index.adoc#ensight{ensight} docs]).
 ====
 
 [[offering_setup]]
@@ -453,7 +464,7 @@ Available apps in **MSO4SC Portal** are:
 * MagnetTools: xref::bmap.adoc[MagMapAxi], 
 * Preprocessing: xref::MagCAD.adoc[MagCAD], xref::MagMesh.adoc[MagMesh]
 * Simulations:
-** direct models: xref::MagThel.adoc[MagThel], xref::MagFull[MagFull],
+** direct models: xref::MagThel.adoc[MagThel], xref::MagFull.adoc[MagFull], xref::3DSim.adoc[3DSim],
 ** CRB:
 // * Postprocessing:
 
