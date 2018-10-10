@@ -1,4 +1,7 @@
 = Insert Geometry and Mesh
+include::{partialsdir}/header-macros.adoc[]
+include::{partialsdir}/header-uri.adoc[]
+include::{partialsdir}/mso4sc-uri.adoc[]
 
 In this example, we will create the geometry for an insert with 4 helices and mesh it
 
@@ -89,7 +92,7 @@ Definition of the helical cut per helix:
 
 == Outputs
 
-image::CAD/ex_CAD_Insert_Air.png[Insert with surrounding air]
+image::CAD/ex_CAD_Insert.png[Insert with surrounding air]
 
 The outputs will consist in a set of a `brep` and `xao` files for each component of the insert
 and for the assembly:
