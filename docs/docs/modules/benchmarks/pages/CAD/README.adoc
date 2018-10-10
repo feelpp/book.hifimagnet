@@ -92,8 +92,6 @@ Definition of the helical cut per helix:
 
 == Outputs
 
-image::CAD/ex_CAD_Insert.png[Insert with surrounding air]
-
 The outputs will consist in a set of a `brep` and `xao` files for each component of the insert
 and for the assembly:
 
@@ -101,6 +99,8 @@ and for the assembly:
 * `xao` file hold the definition of groups into the correspond CAD and point to the correspodning `brep` file
 
 The obtained geometry should be similar to the image bellow:
+
+image::CAD/ex_CAD_Insert.png[Insert without surrounding air]
 
 The mesh is in `med` format. For the case with air, its main characteristics are:
 
