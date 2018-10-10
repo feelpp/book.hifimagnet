@@ -24,19 +24,18 @@ Aternatively there is an other test:
 
 ==== Prepare your simulation
 
-* provide appropiate configuration, model and materials (see <<here, >> for details)
+* provide appropiate configuration, model and materials (see xref:user:index.adoc#data[here] for details)
 * create an tar gzipped archive of these files
-* upload the data on CKAN  (see <<here, >> for details)
+* upload the data on CKAN  (see xref:mso4sc:user.adoc#data [here] for details)
 
 ==== Set up the simulation in *Experiments*:
  
 [options="header,footer"]
 |===
-| Key                           | Default                                                            | Notes
-| *Dataset resource: input_url* | URL pointing to an archive of data files (comes from the data Catalog) | 
-| *Dataset resource: model*     |                                                                    | dataset mode from the data Catalog
-| *cfgfile*                     | `quarter-turn3D.cfg`                                               | cfg file need to be in the dataset
-| *Output dataset: outputs_at*  |                                                                    | optional
+| Key                           | Default                                                             | Notes
+| *Dataset resource: model*     |                                                                     | dataset mode from the data Catalog
+| *Output dataset: outputs_at*  |                                                                     | output data Catalog
+| *cfgfile*                     | `/usr/share/doc/hifimagnet/CoupledCartModel/quarter-turn3D.cfg`     | cfg file need to be in the dataset
 |===
 
 
@@ -44,14 +43,16 @@ Aternatively there is an other test:
 
 [options="header,footer"]
 |===
-| Testcase          | DataSet	                   | HPC settings (partition, ...)                     | Notes
-| *quarter-turn*    | `coupled-test`               | lncmi: `stokes`                                   |
-|                   |                              | cesga: `thinnodes`                                |
-| *Insert H1H4*     | `insert-test`                | lncmi: `stokes`,`n=32`                            | H1H4_cart.cfg
-|                   |                              | cesga: `thinnodes`,`144`                          |
-| *HL-31*           | hl-31, ressource HL-31.tgz   | lncmi: `stokes`,`n=32`                            | HL-31_cart_boomeramg.cfg
-|                   |                              | cesga: `thinnodes`,`144`                          |
-| *fullinsert*      | insertfull                   | lncmi: N/A                                        | HL-31-Leads-air_nl_cart_256_json.cfg
-|                   |                              | cesga: `thinnodes`,`256`  (not working???         |
+| Testcase                                                          | DataSet                                                              | cfgfile	                             | HPC settings (partition, ...)     | Notes
+| xref:benchmarks:quarterturn/coupled.adoc[*quarter-turn*]          | http://193.144.35.207/dataset/coupled-test[`coupled-test`]           |                                         | lncmi: `stokes`                   |
+|                                                                   |                                                                      |                                         | cesga: `thinnodes`                |
+| xref:benchmarks:H1H4/README.adoc[*Insert H1H4*]                   | http://193.144.35.207/dataset/insert-test[`insert-test`]             | `H1H4_cart.cfg`                         | lncmi: `stokes`,`n=32`            | 
+|                                                                   |                                                                      |                                         | cesga: `thinnodes`,`144`          |
 |===
+
+// TODO:
+// | xref:benchmarks:HL-31/README.adoc[*HL-31*]                        | http://193.144.35.207/dataset/hl-31[`hl-31`], ressource: `HL-31.tgz` | `HL-31_cart_boomeramg.cfg`              | lncmi: `stokes`,`n=32`            | 
+// |                                                                   |                                                                      |                                         | cesga: `thinnodes`,`n=144`        |
+// | xref:benchmarks:fullinsert/README.adoc[*fullinsert*]              | http://193.144.35.207/dataset/fullinsert[`insertfull`]               | `HL-31-Leads-air_nl_cart_256_json.cfg`  | lncmi: N/A                        | 
+// |                                                                   |                                                                      |                                         | cesga: `thinnodes`,`256`          |  not working???
 

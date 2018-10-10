@@ -1,0 +1,66 @@
+= Full Insert 3D Model
+
+In this test case we will simulate a full insert of 4 helices.
+
+== Running the case
+
+As the CAD generation is time consuming, the mesh is provided but will eventually need to be partitionned.
+However if you ever want to rebuild the CAD and Mesh you will find detailled instructions bellow.
+Otherwise you can directly skip these sections.
+
+To run this example on MSO4SC portal see this xref:mso4sc:MagFull.adoc[section].
+
+=== Convert the mesh
+
+The mesh may be converted into an another format using `gmsh` compiled with proper `med` support
+
+[source,sh]
+----
+gmsh -3 -bin HL-31-H1H2H3H4-Leads_air.med -o HL-31-H1H2H3H4-Leads-air.msh
+----
+
+[IMPORTANT]
+====
+The resulting mesh is in **mm**
+====
+
+=== Partitionning the mesh:
+
+[source,sh]
+----
+feelpp_mesh_partitioner --gmsh.scale=0.001 --ifile HL-31-H1H4-Leads-air.msh [--ofile H1H4_p144] --part 144
+----
+
+The option `--gmsh.scale=0.001` enables to force the use of **meter** for the partitionned mesh.
+
+== Data files
+
+The data files may be retreived from {uri-msoportal-ckan-www}[*Data Catalogue*].
+See the dataset *A 4 Helices insert* in {lncmi} collection.
+
+The gzipped archive tarball http://193.144.35.207/dataset/insert-test/resource/8d78d359-e3eb-4189-bcba-f748dd406166[`H1H4-cart.tar.gz`] contains all the files needed.
+
+=== Mesh files
+
+* HL-31-H1H2H3H4-Leads-air.med
+* HL-31-H1H2H3H4-Leads-air.msh
+
+=== Simulation cfg file
+
+* H1H4_cart.cfg
+
+=== Model files
+
+* H1H4_thermoelec.json
+* H1H4_magcart.json
+// * H1H4_elasticity.json
+
+=== Materials files
+
+Materials are stored in a dedicated repository Materials
+
+== Outputs
+
+* some metrics
+
+
