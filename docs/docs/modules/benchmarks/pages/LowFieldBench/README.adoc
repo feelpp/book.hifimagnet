@@ -1,4 +1,7 @@
 = LowFieldBench
+include::{partialsdir}/header-macros.adoc[]
+include::{partialsdir}/header-uri.adoc[]
+include::{partialsdir}/mso4sc-uri.adoc[]
 
 In this test case, we consider a polyhelix magnet consisting of 2 helices operated at a low current.
 The simulations are compared with experimental results, more precisely with magnetic field measurements

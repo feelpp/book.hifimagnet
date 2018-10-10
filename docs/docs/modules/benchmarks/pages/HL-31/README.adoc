@@ -1,4 +1,7 @@
 = Full Insert 3D Model
+include::{partialsdir}/header-macros.adoc[]
+include::{partialsdir}/header-uri.adoc[]
+include::{partialsdir}/mso4sc-uri.adoc[]
 
 In this test case we will simulate a full insert.
 

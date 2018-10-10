@@ -4,13 +4,31 @@ include::{partialsdir}/header-macros.adoc[]
 include::{partialsdir}/header-uri.adoc[]
 include::{partialsdir}/mso4sc-uri.adoc[]
 
-Use this app *MagMesh* to partition a mesh for High Field Magnets
+Use this app *MagMesh* to partition a mesh for High Field Magnets.
+This app will create a partitionned mesh which consist in:
 
-==== To test the app
+* `json` file
+* `h5` file
 
-To check the app, just change the following values:
+These files may be uploaded to a dataset in the {uri-msoportal-ckan-www}[*Data Catalogue*]
+
+==== Set up in *Experiments*:
 
 [options="header,footer"]
 |===
-| Testcase          | DataSet	                   | HPC settings (partition, ...)                     | Notes
+| Key                           | Default           | Notes
+| *Dataset resource: model*     | `None`            | dataset mode from the data Catalog
+| *Output dataset: outputs_at*  | `None`            | output data Catalog
+| cadmsh                        |                   | input mesh file (`msh` or `med` are supported)
+| mshfile                       |                   | output partitionned mesh without extensions
+|===
+
+==== Examples and Benchmarks
+
+
+[options="header,footer"]
+|===
+| Testcase                                | DataSet	                                     | cadmsh        | HPC settings (partition, ...) | Notes
+| xref:benchmarks:PMesh/README.adoc[*HL*] | http://193.144.35.207/dataset/hl-test[`hl-test`] | HL-31_H1.med  |                               | mesh in **mm** (`--gmshsh.scale=0.001` has not effect??)  
+|                                         |                                                  | HL-31_H1.msh  |                               | mesh **m**
 |===

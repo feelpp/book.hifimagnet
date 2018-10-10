@@ -1,0 +1,34 @@
+= A longitudinally cooled helix
+include::{partialsdir}/header-macros.adoc[]
+include::{partialsdir}/header-uri.adoc[]
+include::{partialsdir}/mso4sc-uri.adoc[]
+
+In this example, we will partition the mesh of an helix
+
+== Running the case
+
+To run this example on MSO4SC portal see this xref:mso4sc:MagMesh.adoc[section].
+
+=== Partitionning the mesh:
+
+[source,sh]
+----
+feelpp_mesh_partitioner --gmsh.scale=0.001 --ifile HL-31_H1.msh [--ofile HL-31_H1_p32] --part 32
+----
+
+The option `--gmsh.scale=0.001` enables to force the use of **meter** for the partitionned mesh.
+
+== Data files
+
+The data files may be retreived from {uri-msoportal-ckan-www}[*Data Catalogue*].
+See the dataset *A test helix* in {lncmi} collection.
+
+The gzipped archive tarball http://193.144.35.207/dataset/hl-test/resource/bfaea07c-75b5-4104-a730-5fb1a1c25650[`HL-31_H1.tgz`] contains all the files needed.
+
+
+=== Mesh input data
+
+* HL-31-H1.msh
+
+== Outputs
+
