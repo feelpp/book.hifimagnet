@@ -312,6 +312,18 @@ To have more details about the actual error is more tricky; we recommend to:
 `<hpc_basedir>` is given as inputs of the experiment (see above). 
 `<hpc_working_prefix>` is set by default by the app (eg: `hifimagnet` for `M̀agTherm` app).
 The `<id>` is a random character generated when creating the instance.
+
+The `<hpc_basedir>/<hpc_workdir_prefix>_<date>_<id>` directory remains present
+only if `<do_not_delete_workdir>` is set to `true`.
+
+This directory holds:
+
+* `*.script`
+* `slurm-*.out`
+* `mso*.err`
+* `mso*.out`
+
+and eventually the files coming from the dataset.
 ====
 
 Finaly to destroy your instance, just click on:
@@ -412,22 +424,6 @@ Reading /usr/share/doc/hifimagnet/ThermoElectricModel/quarter-turn3D.cfg...
 It means that the actual simulation results are store in `${LUSTRE}/feel/hifimagnet/ThermoElectricModel/quarter-turn3D.geo/thermoelectric-linear_V1T1_N1/np_2/exports/ensightgold/`
 ====
 
-[NOTE]
-====
-The `<hpc_basedir>/<hpc_workdir_prefix>_<date>_<id>` directory remains present only if you have set `<do_not_delete_workdir>` to `true`.
-The `<id>` field is a random number ...
-
-This directory holds:
-
-* `*.script`
-* `slurm-*.out`
-* `mso*.err`
-* `mso*.out`
-
-and the files coming from the dataset.
-====
-
-
 * start a post-processing GUI:
 ** either by loading {uri-paraview-www}[{paraview}]
 ** or using singularity {uri-ensight-www}[{ensight}] image
@@ -435,26 +431,6 @@ and the files coming from the dataset.
 
 For more details on using {paraview} or {ensight} please check this xref:post:index.adoc#post_manual[section].
 
-[NOTE]
-====
-In the remote desktop to get {paraview} running:
-
-* open a terminal,
-* type: `module load gcc/6.4.0 openmpi/2.1.1 paraview/5.4.0`
-====
-
-[NOTE]
-====
-For {ensight} you would need to have:
-
-* a valid license stored in you account on the HPC resource 
-* access to {ensight} singularity image from {hifimagnet} {sregistry} private collection.
-
-In the remote desktop to get {ensight} running:
-
-* open a terminal
-* use the following script (see [xref:post:index.adoc#ensight{ensight} docs]).
-====
 
 [[offering_setup]]
 == To go further
@@ -464,7 +440,7 @@ Available apps in **MSO4SC Portal** are:
 * MagnetTools: xref::bmap.adoc[MagMapAxi], 
 * Preprocessing: xref::MagCAD.adoc[MagCAD], xref::MagMesh.adoc[MagMesh]
 * Simulations:
-** direct models: xref::MagThel.adoc[MagThel], xref::MagFull.adoc[MagFull], xref::3DSim.adoc[3DSim],
+** direct models: xref::MagThel.adoc[MagThel], xref::MagFull.adoc[MagFull], xref::3Dsim.adoc[3DSim]
 ** CRB:
 // * Postprocessing:
 
