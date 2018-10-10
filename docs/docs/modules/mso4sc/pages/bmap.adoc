@@ -25,6 +25,6 @@ The resulting Field Map file could be saved and uploaded to data catalogue.
 
 [options="header,footer"]
 |===
-| Test case                                            | Dataset                                                                    | Notes
+| Test case                                               | Dataset                                                                    | Notes
 | xref:benchmarks:MagnetTools_ex/Bmap/README.adoc[HL-31]  | link:http://193.144.35.207/dataset/hl-31[hl-31], ressource: HL-31-ana.tgz  |
 |===

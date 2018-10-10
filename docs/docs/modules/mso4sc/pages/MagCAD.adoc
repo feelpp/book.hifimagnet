@@ -4,16 +4,36 @@ include::{partialsdir}/header-macros.adoc[]
 include::{partialsdir}/header-uri.adoc[]
 include::{partialsdir}/mso4sc-uri.adoc[]
 
-Use this app *MagCAD* to create CAD geometry and mesh for High Field Magnets
+Use *MagCAD* to create CAD geometry and mesh for High Field Magnets
 
-==== To test the app
-
-To check the app, just change the following values:
-
+==== Set up in *Experiments*:
 
 [options="header,footer"]
 |===
-| Testcase          | DataSet	                     | HPC settings (partition, ...)                     | Notes
-| *Insert H1-H4*    | cad-insert-h4, Insert-H1H4.tgz | lncmi: `stokes`                                   |
-|                   |                                | cesga: `thinnodes`                                ||===
+| Key                           | Default           | Notes
+| *Dataset resource: model*     |                   | dataset mode from the data Catalog
+| *Output dataset: outputs_at*  |                   | output data Catalog
+| cadcfg                        |                   | the yaml cfg file describing the polyhelices insert
+| cadoption                     | ''                | to add Air: `--air[,--infty_Rratio=2,--infty_ZRatio=1.5]`
+| meshoption                    |                   | to hide insulators: `--hideIsolant`
+|                               |                   | to group insulator per helix: `--groupIsolant`
+|                               |                   | to create a BC per cooleing channel: `--groupCoolingChannels` 
+|===
+
+[IMPORTANT]
+====
+Check that the directory containing the {meshgems} license is listed in `hpc_volumes` list: eg `${HOME}/MeshGems:/opt/DISTENE/DLim:ro`.
+====
+
+The outputs will consist in a set of CAD files for each component and for the assembly
+plus a mesh. The outputs may be uploaded to {uri-msoportal-ckan-www}[*Data Catalogue*]
+as an tar gzipped archive.
+
+==== Examples and Benchmarks
+
+[options="header,footer"]
+|===
+| Testcase                                          | DataSet	                                                                                  | cadcfg                      | HPC settings (partition, ...)  | Notes
+| xref:benchmarks:CAD/REAME.adoc[*Insert H1-H4*]    | http://193.144.35.207/dataset/cad-insert-h4[`cad-insert-h4`] , ressource: `Insert-H1H4.tgz` | `Insert-H1H4-Leads-2t.yaml` | lncmi: `stokes`                |
+|                                                   |                                                                                             |                             | cesga: `thinnodes`             |
 |===

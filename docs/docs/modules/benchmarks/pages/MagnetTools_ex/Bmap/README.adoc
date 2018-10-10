@@ -31,7 +31,8 @@ PolyHelices data for HL-31.d ...
 UnifMagnets data for HL-31.d ...
 ```
 
-Plot the geometry with `gnuplot'
+Plot the geometry with `gnuplot`:
+
 [source,sh]
 ----
 gnuplot> set size ratio -1
@@ -84,8 +85,9 @@ On {mso4sc} Data Catalogue this file is already included in the dataset.
 
 For instance using the default current params, you get the following magnetic field stem:[B_z] profile along stem:[Oz] axis.
 
-There are others usefull options to carry out calculation on list of points and so on...
-See xref:magnetools:Bmap.adoc#bmap[here] for details.
+There are others usefull options to carry out calculation on list of points and so on.
+
+See xref:magnettools:Bmap.adoc#bmap[here] for details.
 
 == Data files
 

@@ -22,7 +22,7 @@ For the magnetostic model, we need to add some air surrounding the insert. To do
 
 [source,sh]
 ----
-salome -t -b -m GEOM,SMESH,HIFIMAGNET $HIFIMAGNET/HIFIMAGNET_Cmd.py args:--cfg=Insert-H1H4-Leads-2t.yaml,--air
+salome -t -b -m GEOM,SMESH,HIFIMAGNET $HIFIMAGNET/HIFIMAGNET_Cmd.py args:--cfg=Insert-H1H4-Leads-2t.yaml,--air[,--infty_Rratio=2,--infty_ZRatio=1.5]
 ----
 
 === Generate the mesh
@@ -37,14 +37,21 @@ The mesh may be converted into an another format using `gmsh` compiled with prop
 gmsh -3 -bin HL-31-H1H4-Leads-2t[_withAir].med -o HL-31-H1H4-Leads-2t[_withAir].msh
 ----
 
+[IMPORTANT]
+====
+The resulting mesh is in **mm**
+====
+
 [NOTE]
 ====
-When running this example you need to have a valid {meshgems} license.
-For singularity, do not forget to mount the directory holding the {meshgems} license key into the container, eg:
+When running this example you need to have a valid {meshgems} license:
 
-```
+* For singularity, do not forget to mount the directory holding the {meshgems} license key into the container, eg:
+
+[source,sh]
+----
 singularity shell -B /opt/DISTENE/DLim:/opt/DISTENE/DLim:ro salome-8.4.0-stretch.simg 
-````
+----
 ====
 
 == Data files
@@ -101,18 +108,22 @@ The mesh is in `med` format. For the case with air, its main characteristics are
 
 To get this information within {salome}:
 
-* start {salome} in GUI with only the `SMESH` module: `salome -m SMESH`
+* start {salome} in GUI,
+* Active the SMESH module,
 * From File/Import/Med menu select the mesh
 * From Mesh/Mesh Information menu print the mesh characteristics
 
 image::CAD/ex_Mesh_Insert.png[Mesh (with Air) characteristics]
 
+Alternatively, type `print mesh.Dump()` in the python console bellow the mesh view.
+
 [NOTE]
 ====
 When using singularity, do not forget to add the `--nv` flag to get GUI, eg:
 
-```
+[source,sh]
+----
 singularity shell --nv -B /opt/DISTENE/DLim:/opt/DISTENE/DLim:ro salome-8.4.0-stretch.simg 
-````
+----
 
 ====
