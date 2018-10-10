@@ -4,7 +4,7 @@ include::{partialsdir}/header-macros.adoc[]
 include::{partialsdir}/header-uri.adoc[]
 include::{partialsdir}/mso4sc-uri.adoc[]
 
-Use *MagMapAxi* to get Magnetic Field Map in a stem:[\[r_0,r_1\]\times\[z_0,z_1\]] interval.
+Use *MagMapAxi* to get Magnetic Field Map in a stem:[[r_0,r_1\]\times[z_0,z_1\]] interval.
 The resulting Field Map file could be saved and uploaded to data catalogue.
 
 ==== Set up in *Experiments*:
