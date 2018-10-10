@@ -33,6 +33,7 @@ salome -t -b -m GEOM,SMESH,HIFIMAGNET $HIFIMAGNET/HIFIMAGNET_Cmd.py args:--cfg=I
 ----
 
 The mesh may be converted into an another format using `gmsh` compiled with proper `med` support
+[source,sh]
 ----
 gmsh -3 -bin HL-31-H1H4-Leads-2t[_withAir].med -o HL-31-H1H4-Leads-2t[_withAir].msh
 ----
@@ -57,7 +58,7 @@ singularity shell -B /opt/DISTENE/DLim:/opt/DISTENE/DLim:ro salome-8.4.0-stretch
 == Data files
 
 The data files may be retreived from {uri-msoportal-ckan-www}[*Data Catalogue*].
-See the dataset *A 4 Helices insert* in {lncmi} collection.
+See the dataset *A test insert* in {lncmi} collection.
 
 The gzipped archive tarball http://193.144.35.207/dataset/cad-insert-h4/resource/0c541e65-6f6d-4f52-9682-a072f44c8fa8[`Insert-H1H4.tgz`] contains all the files needed.
 

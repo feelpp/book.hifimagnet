@@ -12,7 +12,7 @@ The resulting Field Map file could be saved and uploaded to data catalogue.
 [options="header,footer"]
 |===
 | Key                           | Default           | Notes
-| *Dataset resource: model*     |                   | dataset mode from the data Catalog
+| *Dataset resource: model*     |                   | dataset model from the data Catalog
 | *Output dataset: outputs_at*  |                   | output data Catalog
 | DataCfg                       |                   | name of the magnet cfg file without extension
 | DataOptions                   | ''                |
