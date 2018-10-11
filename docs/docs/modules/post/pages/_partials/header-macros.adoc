@@ -8,6 +8,8 @@
 :meshgems: MeshGems
 :salome: Salome
 :magnettools: MagnetTools
+:paraview: ParaView
+:ensight: EnSight
 :feelpp: Feel++
 :feelppdb: $HOME/feel
 :crbdb: crbdb
