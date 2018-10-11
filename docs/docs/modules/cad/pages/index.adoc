@@ -256,6 +256,8 @@ salome [-m GEOM,SMESH,HIFIMAGNET] [-t -b] \
 
 `${HIFIMAGNET}` is the install directory of {hifimagnet} {salome} plugin, eg `/opt/SALOME-8.3.0-Debian-DB9.5/BINARIES-DB9.5/HIFIMAGNET/bin/salome`.
 
+image::ex_CAD_Insert_Air.png[A 4 helix insert with sourring air (in transparent red)]
+
 NOTE: `Insert-H1H4-Leads-2t.yaml` can be found in `/usr/local/share/salome/H1H4` in  singularity images.
 
 [[salome_on_remotedesktop]]
@@ -315,6 +317,8 @@ include::{examplesdir}/H_struct.yaml[]
 <7> the corresponding axi model.
 <8> the ............  3d model.
 <9> definition of the shape added along the helical path
+
+image::ex_CAD_H.png[A longitudinally cooled helix]
 
 === `axi` structure
 
@@ -394,6 +398,8 @@ include::{examplesdir}/R.yaml[]
 <4> the axial dimension in *mm*.
 <5> indicates the presence or the absence of cylindrical slot
 
+image::ex_CAD_R.png[A connection ring]
+
 == CurrentLeads
 
 === Inner Lead
@@ -404,6 +410,8 @@ include::{examplesdir}/R.yaml[]
 include::{examplesdir}/inner.yaml[]
 ----
 
+image::ex_CAD_Inner.png[An inner current lead]
+
 === Outer Lead
 
 [[outer]]
@@ -411,6 +419,8 @@ include::{examplesdir}/inner.yaml[]
 ----
 include::{examplesdir}/outer.yaml[]
 ----
+
+image::ex_CAD_Outer.png[A outer current lead composed of 6 bars]
 
 == insert
 
@@ -586,11 +596,13 @@ singularity exec \
 * rename the boundary ...
 
 * select the geometry to save and export in your favorite CAD format
-* dump the python script
+* dump the history to a python script `script.py`
 * save the study 
 
-note on replaying the python script
-non on reloading the study
+To replay the python script: `salome script.py`
+To reload the study: `salome study.hdf` or load the study from main *File* menu
+
+see this video::cad.mp4[video] for details.
 
 === Loading a CAD in `GUI` mode
 
@@ -599,18 +611,21 @@ non on reloading the study
 * import the geometry using the File/Import menu
 * select the proper format
 
+We recommend to use whever possible the `XAO` file format that provides:
+
+* a CAD file in `BREP`,
+* a json file containing extra informations on `Groups`.
+
+This is very handy for defining CAD region (aka `Groups`) that will be latter used for Boundary Conditions.
+
 === Create a simple mesh in `GUI` mode
 
 * start `salome`
 * activate the *Mesh* module by clicking on the proper icon or selecting it in the dropdown menu
-* ...
 
-// === Create a ring in `GUI` mode
-// === Create an helix in `GUI` mode
-// === Create an insert in `GUI` mode
+see this video::netgen-mesh.png[video] for details
 
-// [[installation]]
-// = Detailed Installation
+To create a mesh using {meshgems} see this video::meshgem-mesh.png[video].
 
 
 
