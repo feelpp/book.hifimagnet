@@ -96,7 +96,7 @@ To use private Organization and/or Dataset you would need to enter
 *Data Catalogue key* in the *Settings* menu. For instructions see xref::index.adoc#setup_api_key[here].
 
 NOTE: To add a dataset to an existing organization, you may need to ask the *Admin* of the organization to be granted the role of *Editor* to do so. In our case it is the owner/seller of {hifimagnet} app.
-
+to set <hpc_feelpp> to a specific directory for each instance.
 // [[using_girder]]
 // === Upload Data to {girder} service
 
@@ -215,9 +215,12 @@ The next step is to launch the app:
 ====
 The result are stored in `<hpc_feelpp>`. Make sure that `<hpc_volumes>` bindmount list option contains this field: eg `<hpc_feelpp>:/feel` on cesga where `<hpc_feelpp>=$LUSTRE/feel`.
 
-As a best practice, we highly recommend the user to set `<hpc_feelpp>` to a specific directory for each instance.
+As a best practice, we **highly recommend** the user to set `<hpc_feelpp>` to a specific directory for each instance.
 
-It means that the actual simulation results are stored in `<hpc_feelpp>/hifimagnet/ThermoElectricModel/<geofile>/thermoelectric-linear_V1T1_N1/np_<parallel_tasks>` for MagThel app.
+It means that the actual simulation results are stored in:
+
+* `<hpc_feelpp>/hifimagnet/ThermoElectricModel/<geofile>/thermoelectric-linear_V1T1_N1/np_<parallel_tasks>` for MagThel app.
+
 `<geofile>` correspond to the input with the same name in the <cfgfile>.
 
 When running the instance *ID*:
