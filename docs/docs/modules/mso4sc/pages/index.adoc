@@ -100,6 +100,112 @@ For *DevUser* using the {uri-msoportal-dev-www}[portal dev version] the ports to
 
 ====
 
+[[mso_setup]]
+=== Setup your account
+
+You need to proceed to the following steps to setup your account properly.
+The configuration for {sregistry} and the uploading of licenses key is optional
+for most user except for the {hifimagnet} ones.
+
+[[hpc_setting]]
+==== Setting up an HPC resource in *Experiments*
+
+* Go to {uri-msoportal-experiment-www}[*Experiments*]
+* Select *Settings*
+* Define a HPC resource
+* Upload eventually your *Data Catalogue key* (see <<api_key, here>>)
+
+[source,txt]
+----
+include::{examplesdir}/hpc.txt[]
+----
+
+[[setup_post]]
+==== Setting up an Remote Desktop resource in *Visualization*
+
+* Go to {uri-msoportal-visu-www}[*Visualization*]
+* Select *Settings*
+* Define a Remote Desktop resource
+
+[source,txt]
+----
+include::{examplesdir}/remotedesktop.txt[]
+----
+
+[[setup_api_key]]
+==== Setting up *Data Catalogue key*
+
+* Connect to {uri-msoportal-ckan-www}[*Data Catalogue*]
+** Click on *View Profile*
+
+image::ckan_view_profile.png[*Data Catalogue* user profile]
+
+** Scroll dow to view you *Data Catalogue key* on left side
+
+image::ckan_apikey.png[Getting *Data Catalogue key*]
+
+* Copy the key
+* Connect to {uri-msoportal-experiment-www}[*Experiments*]
+** Select "Settings"
+** Paste or Enter your *Data Catalogue key*
+
+image::setting_ckanapikey.png[Adding *Data Catalogue key* in *Settings*]
+
+[[using_sregistry]]
+==== Setting up {sregistry} service
+
+Before proceeding to the setup of the app, you need to make sure, at least for {hifimagnet}
+ app (or more generally for apps requiring access to a private singularity image) that you have
+ been granted the proper right on {hifimagnet} {sregistry} team.
+
+One more step consists in retrieving the *TOKEN* and storing it into your home directory on the HPC resource.
+ This *TOKEN* is needed to download programmatically the {singularity} image :
+
+* connect to {uri-sregistry-cesga}[{sregistry}] using {fiware} authentification
+* go to your account (top right button)
+* select *Token*
+
+image::sregistry_token.png[ex: {Get {sregistry} token]
+image::sregistry_apitoken.png[ex: {Display {sregistry} token]
+
+* copy the token into a file `.sregistry`
+* copy `.sregistry` on the HPC resource, see <<hpc_setting, previously defined>>, into your home directory
+
+[[note_sregistry_secret]]
+[NOTE]
+====
+To copy the file to the HPC resource you can use `scp .sregistry username@hpc_host:.`
+or whatever method you prefer. `username` and `hpc_host` are key defined in the <<hpc_setting,HPC resource setting>>.
+
+You may connect to your account on HPC resource
+```
+ssh -Y username@hpc_host
+```
+
+If you cannot connect directly to the HPC resource, you may have to use alternative.
+On cesga, you can either:
+
+* connect to https://portalusuarios.cesga.es/auth[cesga user portal] with your credentials,
+* click on *Create a new Desktop* to get a remote desktop
+* in a *terminal* try to `scp user@yourmachine/.sregistry  $HOME`
+
+an alternative consists in:
+
+* a *VPN* solution: use cesga *fortisvpn client*
+
+```
+/opt/forticlient-sslvpn/64bit/forticlientsslvpn_cli --server gateway.cesga.es:443 --vpnuser user_email
+```
+====
+
+[[using_licenses]]
+=== Uploading license keys
+
+If you wish to perform pre and processing, you may need to upload license keys on the hpc ressource
+you plan to use.
+
+To do so you may proceed for each license key as in the <<note_sregistry_secret, note>> above for {sregistry} secret.
+
 [[hifimagnet_offerings]]
 == {hifimagnet} Offerings in *Marketplace*
 
