@@ -16,7 +16,7 @@ The resulting Field Map file could be saved and uploaded to data catalogue.
 | *Output dataset: outputs_at*  |                   | output data Catalog
 | DataCfg                       |                   | name of the magnet cfg file without extension
 | DataOptions                   | ''                |
-| DataCurrentst                 | [31000:31000:0]   |
+| DataCurrents                  | [31000:31000:0]   |
 | DataR                         | 0                 | stem:[r_0:r_1:Nr]
 | DataZ                         | 0                 | stem:[z_0:z_1:Nz]
 |===
