@@ -17,6 +17,7 @@ In the {cesga} remote desktop to get {paraview} running:
 
 * open a terminal,
 * type: `module load gcc/6.4.0 openmpi/2.1.1 paraview/5.4.0`
+* run `paraview
 
 [[ensight]]
 = Using {ensight}
@@ -24,9 +25,28 @@ In the {cesga} remote desktop to get {paraview} running:
 [[ensight_on_remotedesktop]]
 === On Remote desktop
 
-* copy {ensight} licence file on your account in the Visu resource 
-* grab {ensight} {hifimagnet} image from {sregistry}
-* use `run_ensight.sh`
+* copy {ensight} licence file on your account in the Visu resource in `${LICDIR}` directory
+* pull {ensight} {hifimagnet} image from {sregistry}
+
+[source,sh]
+----
+export SREGISTRY_CLIENT=registry
+export SREGISTRY_CLIENT_SECRETS=$HOME/.sregistry
+export SREGISTRY_STORAGE=$LUSTRE/singularity_images
+module load singularity
+singularity run -B /mnt shub://sregistry.srv.cesga.es/mso4sc/sregistry --quiet pull hifimagnet/ensight:10.2.3c
+singularity run -B /mnt shub://sregistry.srv.cesga.es/mso4sc/sregistry rename hifimagnet/ensight:10.2.3c ensight-10.2.3c.simg
+----
+
+* run `ensight102`
+
+[source,sh]
+----
+module load singularity
+singularity run --nv -B ${LICDIR}:/opt/licenses:ro --app ensight ${SREGISTRY_STORAGE}/ensight-10.2.3c.simg  
+----
+
+Alternatively you can also use `run_ensight.sh`
 
 [source,sh]
 .A script to run {ensight} smoothly 

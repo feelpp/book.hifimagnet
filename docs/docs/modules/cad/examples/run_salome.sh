@@ -15,8 +15,8 @@ usage(){
    echo "-t             Activate Salome TUI mode"
    echo "-s             Specify python script to be used (only valid when TUI is on)"
    echo "-a             Specifiy parameters of the python script (only valid in combination with -s, optional)"
-   echo "-i             Change singularity image (default: feelpp_salome-mso4sc.simg)"
-   echo "-r             Change singularity image directory (default: $LUSTRE/singularity_images)"
+   echo "-i             Change singularity image (default: salome-8.4.0.simg)"
+   echo "-r             Change singularity image directory (default: $SREGISTRY_STORAGE)"
    echo "-l             Specify directory holding MeshGems license key (default: $STORE/Distene)"
    echo "-d             Activate debug mode"
    echo ""
@@ -46,16 +46,22 @@ done
 shift $((OPTIND - 1))
 
 # Optionally set VERSION and others if none is defined. 
-: ${IMAGE=feelpp_salome-mso4sc.simg}
+: ${IMAGE=salome-8.4.0.simg}
 : ${TUI=0}
 : ${SCRIPT=""}
 : ${SCRIPT_ARGS=""}
 : ${KEYDIR=$STORE/Distene}
 
-: ${SINGULARITY_DIR=$LUSTRE/singularity_images}
+: ${SINGULARITY_DIR=$SREGISTRY_STORAGE}
+
+if [ ! -z $SINGULARITY_DIR ]; then
+    echo "SREGISTRY_STORAGE not defined"
+    echo "please setup SREGISTRY_STORAGE to point to your local sregistry repository"
+    echo "ex: export SREGISTRY_STORAGE=$LUSTRE/singularity_images"
+    exit 1
+fi
 
 if [ $TUI = "1" ]; then
-
     if [ -z $SCRIPT ]; then
 	echo "Trying to run salome in TUI mode without a script"
 	echo "you need to define a python script"
@@ -75,7 +81,7 @@ if [ $TUI = "1" ]; then
 	    -H $HOME:/home/$USER \
 	    -B /mnt \
 	    -B /scratch \
-	    -B $STORE/Distene:/opt/DISTENE/DLim \
+	    -B $KEYDIR:/opt/DISTENE/DLim \
 	    $SINGULARITY_DIR/$IMAGE \
 	    salome -t $SCRIPT args:$SCRIPT_ARGS
     fi 
@@ -84,7 +90,7 @@ else
 	-H $HOME:/home/$USER \
 	-B /mnt \
 	-B /scratch \
-	-B $STORE/Distene:/opt/DISTENE/DLim \
+	-B $KEYDIR:/opt/DISTENE/DLim \
 	$SINGULARITY_DIR/$IMAGE \
 	vglrun salome 
 fi

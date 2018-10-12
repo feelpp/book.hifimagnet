@@ -3,8 +3,8 @@
 * {magnetTools}: for Optimization and Analytical calc. 
 * {feelpp}: for Numerical Axi and 3D Modeling
 
-** toolbox:
-** RB framework:
+** toolbox: CSM
+** RB framework
 
 * {salome}: for GUI/TUI CAD and Meshing features
 

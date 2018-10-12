@@ -1,7 +1,6 @@
 == Docker
 
 :leveloffset=+1:
-include::../hifimagnet/docker/salome-containers.adoc[leveloffset=+1]
 include::../hifimagnet/docker/feelpp-containers.adoc[leveloffset=+1]
 include::../hifimagnet/docker/hifimagnet-containers.adoc[leveloffset=+1]
 

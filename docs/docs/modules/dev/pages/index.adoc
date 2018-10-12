@@ -55,7 +55,8 @@ include::hifimagnet/singularity.adoc[leveloffset=+1]
 
 //include::hifimagnet/from-scratch.adoc[leveloffset=+1]
 
-[[mso4sc]]
+[[mso4sc-dev]]
 = {mso4sc} Portal
 
 include::mso4sc/dev.adoc[leveloffset=+1]
+include::mso4sc/portal.adoc[leveloffset=+1]

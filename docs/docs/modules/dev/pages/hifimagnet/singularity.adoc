@@ -1,7 +1,6 @@
 == Singularity
 
 :leveloffset=+1:
-include::../hifimagnet/singularity/salome-containers.adoc[leveloffset=+1]
 include::../hifimagnet/singularity/feelpp-containers.adoc[leveloffset=+1]
 include::../hifimagnet/singularity/hifimagnet-containers.adoc[leveloffset=+1]
 
