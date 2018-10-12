@@ -4,13 +4,11 @@ include::{partialsdir}/header-macros.adoc[]
 include::{partialsdir}/header-uri.adoc[]
 include::{partialsdir}/mso4sc-uri.adoc[]
 
-Use *MagFull* this app to run simulations of High Field Magnets for:
+Use *MagFull* to run fully coupled simulations of High Field Magnets.
 
-==== To test the app
+==== Validation
 
 To check the app, just change the following values:
-
-* CoupledCartModel
 
 [options="header,footer"]
 |===
@@ -43,7 +41,8 @@ Aternatively there is an other test:
 
 [options="header,footer"]
 |===
-| Testcase                                                          | DataSet                                                              | cfgfile	                             | HPC settings (partition, ...)     | Notes
+| Testcase                                                          | DataSet                                                              | cfgfile	                             | HPC settings                      | Notes
+|                                                                   |                                                                      |        	                             | (partition, ...)                  | Notes
 | xref:benchmarks:quarterturn/coupled.adoc[*quarter-turn*]          | http://193.144.35.207/dataset/coupled-test[`coupled-test`]           |                                         | lncmi: `stokes`                   |
 |                                                                   |                                                                      |                                         | cesga: `thinnodes`                |
 | xref:benchmarks:H1H4/README.adoc[*Insert H1H4*]                   | http://193.144.35.207/dataset/insert-test[`insert-test`]             | `H1H4_cart.cfg`                         | lncmi: `stokes`,`n=32`            | 

@@ -596,7 +596,7 @@ singularity exec \
 * rename the boundary ...
 * select the geometry to save and export in your favorite CAD format
 
-video::cad.mp4[video]
+video::cad.mp4[]
 
 You can also:
 
@@ -628,10 +628,10 @@ This is very handy for defining CAD region (aka `Groups`) that will be latter us
 
 To create a mesh using {netgen} take a look a the video bellow.
 
-video::netgen-mesh.mp4[video]
+video::netgen-mesh.mp4[]
 
 To create a mesh using {meshgems} take a look a the video bellow.
 
-video::meshgems-mesh.mp4[video]
+video::meshgems-mesh.mp4[]
 
 

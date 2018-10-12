@@ -68,66 +68,32 @@ Aternatively there is an other test:
 [options="header,footer"]
 |===
 | Key                           | Default                                                            | Notes
-| *Dataset resource: input_url* | URL pointing to an archive of data files (comes from the data Catalog) | 
 | *execfile*                    | `feelpp_hfm_thermoelectric_model_3D_V1T1_N1`                       | Valid values are:
 |                               |                                                                    |  `feelpp_hfm_thermoelectric_model_3D_V1T1_N1`
 |                               |                                                                    |  `feelpp_hfm_coupledmodel_3DP1N1`
 |                               |                                                                    |  `feelpp_hfm_coupledcartmodel_3DP1N1`
-| *Dataset resource: model*     |                                                                    | dataset mode from the data Catalog
 | *cfgfile*                     | `quarter-turn3D.cfg`                                               | cfg file need to be in the dataset
+| *Dataset resource: model*     |                                                                    | dataset mode from the data Catalog
 | *Output dataset: outputs_at*  |                                                                    | optional
 |===
 
 
 ==== Examples and Benchmarks
 
-[NOTE]
-====
-Use a modified verion of the canary {mso4sc} hpc-plugin:
-https://raw.githubusercontent.com/Trophime/cloudify-hpc-plugin/add_checks/plugin.yaml
-====
-
-* quarter-turn:
-** thermoelectric model:
-*** execfile: feelpp_hfm_thermoelectric_model_3D_V1T1_N1
-*** dataset: thermoelec-test
-*** stokes params: stokes
-*** cesga params: thin-shared
-
-*** Lncmi HPC:
-*** cesga 
-
-* HL:
-** thermoelectric model:
-*** execfile: feelpp_hfm_thermoelectric_model_3D_V1T1_N1
-*** dataset: hl-test
-*** cfg: HL-31_H1_boomeramg_p32.cfg
-*** stokes params: stokes, n 32
-*** cesga params: thinnodes, N 4, ntasks-per-node=8, n 32
+[options="header,footer"]
+|===
+| Testcase                                                    | excefile                                   | DataSet         | cfgfile                              | HPC settings            | Notes
+|                                                             |                                            |                 |                                      | (partition, ...)        | 
+| xref:benchmarks:quarterturn/thermoelec.adoc[*quarter-turn*] | feelpp_hfm_thermoelectric_model_3D_V1T1_N1 | thermoelec-test |                                      | lncmi: `stokes`         |
+|                                                             |                                            |                 |                                      | cesga: `thin-shared`    |
+| xref:benchmarks:HL/README.adoc[*HL*]                        | feelpp_hfm_thermoelectric_model_3D_V1T1_N1 | hl-test         | HL-31_H1_boomeramg_p32.cfg           | lncmi: stokes, n=32     |
+|                                                             |                                            |                 |                                      | cesga: thinnodes, n=32  |
+| xref:benchmarks:H1H4/README.adoc[*Insert H1H4*]Insert H1H4  | feelpp_hfm_coupledcartmodel_3DP1N1         | insert-test     | H1H4_cart.cfg                        | lncmi: stokes, n=32     |
+|                                                             |                                            |                 |                                      | cesga: thinnodes, n=144 |
+| xref:benchmarks:HL-31/README.adoc[*HL-31*]                  | feelpp_hfm_coupledcartmodel_3DP1N1         | hl-31           | HL-31_cart_boomeramg.cfg             | lncmi: N/A              | not enougth RAM
+|                                                             |                                            |                 |                                      | cesga: thinnodes, n=256 | not working??
+| fullinsert                                                  | feelpp_hfm_coupledcartmodel_3DP1N1         | insertfull      | HL-31-Leads-air_nl_cart_256_json.cfg | lncmi: N/A              | not enougth RAM
+|                                                             |                                            |                 |                                      | cesga: thinnodes, n=256 | not working??
+|===
 
 
-* Insert H1H4
-** coupledcartmodel:
-*** execfile: feelpp_hfm_coupledcartmodel_3DP1N1
-*** cfgfile: H1H4_cart.cfg
-*** dataset: insert-test
-*** stokes params: H1H4-cart.tar.gz, stokes, n 32
-*** cesga_params: H1H4-cart-p144.tar.gz, thinnodes, N 6, ntasks-per-node=24, n 144
-
-* HL-31
-** coupledcartmodel: +bmap (without magnetostatic)
-*** execfile: feelpp_hfm_coupledcartmodel_3DP1N1
-*** cfgfile: HL-31_cart_boomeramg.cfg
-*** dataset: hl-31, ressource HL-31.tgz 
-*** stokes params: stokes, n 32
-*** cesga params: thinnodes, N 4, ntasks-per-node=8, n 32 (to be checked)
-
-* fullinsert
-** coupledcartmode:
-*** execfile: feelpp_hfm_coupledcartmodel_3DP1N1
-*** cfgfile: HL-31-Leads-air_nl_cart_256_json.cfg
-*** dataset: insertfull
-*** cesga params: thinnodes, N 16, ntasks-per-node=16, n 256 (not working???)
-
-
-* LowFieldBench
