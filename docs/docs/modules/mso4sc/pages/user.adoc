@@ -5,7 +5,7 @@ include::{partialsdir}/header-macros.adoc[]
 include::{partialsdir}/header-uri.adoc[]
 include::{partialsdir}/mso4sc-uri.adoc[]
 
-TIP: when running into some strange portal behavior, first try to `logout/login` from the portal
+TIP: When running into some strange portal behavior, first try to `logout/login` from the portal
 before reporting an issue.
 
 An *EndUser* can:
@@ -36,12 +36,12 @@ To purchase an application from the *Marketplace* you can either be *DevUser*
 or a simple *EndUser*. The process is the following:
 
 * connect to the {uri-msoportal-market-www}[*Marketplace*], in *Home* (top left Marketplace page) you will find all available apps (*All categories*).
-* Click on *Add to Cart* to purchase the app you want.
-* Click on *Shopping Cart* and *Checkout* to go on
+* click on *Add to Cart* to purchase the app you want.
+* click on *Shopping Cart* and *Checkout* to go on
 ** fill the required forms for *shipping address*
 ** provide a *shipping address* if not already defined
 ** provide a *billing address* if not already defined
-** Finalize your order by clicking on *Checkout*
+** finalize your order by clicking on *Checkout*
 
 To use the app, you will have to wait that the owner/seller of the app validate
 you order. To check the status of your order:
@@ -57,11 +57,11 @@ To finalize your purchase *DO NOT FORGET* to connect to :
 * {uri-msoportal-ckan-www}[*Data Catalogue*]
 
 Then notify the owner/seller that you request to be part of {hifimagnet} user group.
-This will allow you to access {himagnet} singularity images and datasets.
+This will allow you to access {hifimagnet} singularity images and datasets.
 
 [NOTE]
 ====
-To access http://docs.cemosis.fr/hifimagnet/stable/[{hifimagnet} docs] you also need to have a user/password
+To access http://docs.cemosis.fr/hifimagnet/stable/[{hifimagnet} docs] you also need to have a user/password.
 ====
 
 // NOTE: The use of {uri-girder-unistras}[{girder} is optional.
@@ -74,26 +74,26 @@ to deal with private datasets.
 
 ==== Create and Manage *Organization*
 
-* Connect to {uri-msoportal-ckan-www}[*Data Catalogue*]
+* connect to {uri-msoportal-ckan-www}[*Data Catalogue*]
 * click on *Organizations*
 * click on *Add Organization*
 
 You, then, need to fill the form and finalize the creation by clicking on the *create organization* button.
 
 You have then to manage user that are allowed to be part of your organization.
-They may the following role:
+They may have the following roles:
 
 * *Admin* : can view/add dataset, add user and manage role
 * *Editor* : can add dataset
 * *Member* : can view dataset
 
-NOTE: User has to connect at least once to *Data Catalogue* before you can grant them a role in your organization.
+NOTE: Users have to connect at least once to *Data Catalogue* before you can grant them a role in your organization.
 
 [[api_key]]
 ==== Upload Data
 
 To use private Organization and/or Dataset you would need to enter
-*Data Catalogue key* in the *Settings* menu. For instructions see xref::index.adoc#setup_api_key[here]
+*Data Catalogue key* in the *Settings* menu. For instructions see xref::index.adoc#setup_api_key[here].
 
 NOTE: To add a dataset to an existing organization, you may need to ask the *Admin* of the organization to be granted the role of *Editor* to do so. In our case it is the owner/seller of {hifimagnet} app.
 
@@ -144,9 +144,9 @@ The others fields are designed for more advanced users.
 [options="header,footer"]
 |===
 | Key                           | Description                                 | Default                                                            | Notes
-| *Dataset resource: model*     | dataset mode                                | `None`                                                             | comes from the data Catalog
+| *Dataset resource: model*     | dataset mode                                | `None`                                                             | comes from the Data Catalog
 | *Output dataset: outputs_at*  |                                             |                                                                    |
-| *cfgfile*                     | configuration file                          | `/usr/share/doc/hifimagnet/ThermoElectricModel/quarter-turn3D.cfg` | cfg file need to be in the container, or in a mounted dir or in the dataset
+| *cfgfile*                     | configuration file                          | `/usr/share/doc/hifimagnet/ThermoElectricModel/quarter-turn3D.cfg` | cfg files need to be in the container, or in a mounted directory or in the dataset
 |===
 
 .List of keys to be defined for HPC settings
@@ -194,16 +194,16 @@ The others fields are designed for more advanced users.
 
 [IMPORTANT]
 ====
-HPC settings for local {lncmi} ressources are specificied xref::lncmi-hpc.adoc[here]
+HPC settings for local {lncmi} ressources are specificied xref::lncmi-hpc.adoc[here].
 ====
 
 Once filled, click on *Create New Instance*.
 
-TIP: While creating a new app instance, any error will result in a popup message.
+TIP: While creating a new app instance, any error will result in a pop-up message.
 
 image::portal_magtherm_running.png[ex: Running {hifimagnet} `MagTherm`]
 
-The next step is to to launch the app:
+The next step is to launch the app:
 
 * select the *ID*, you defined in the previous step,
 * click on *Run*, wait until the button in blue turns green
@@ -212,7 +212,7 @@ The next step is to to launch the app:
 [TIP]
 ====
 A red button will indicates an error.
-Check the message in the frame bellow the status button.
+Check the message in the frame below the status button.
 To have more details about the actual error is more tricky; we recommend to:
 
 * make sure you have unchecked the cleanup option
@@ -221,7 +221,7 @@ To have more details about the actual error is more tricky; we recommend to:
 * check the logs
 
 `<hpc_basedir>` is given as inputs of the experiment (see above). 
-`<hpc_working_prefix>` is set by default by the app (eg: `hifimagnet` for `M̀agTherm` app).
+`<hpc_working_prefix>` is set by default by the app (eg: `hifimagnet` for `MagTherm` app).
 The `<id>` is a random character generated when creating the instance.
 
 The `<hpc_basedir>/<hpc_workdir_prefix>_<date>_<id>` directory remains present
@@ -252,7 +252,7 @@ Basically the procedure is the same as <<running, above>>. The only difference h
 
 * to select a dataset in the *DataSet* sliding menu
 * to select a ressource within the *DataSet* 
-* to enter the name of the `<cfgfile> you will use
+* to enter the name of the `<cfgfile>` you will use
 
 You should at the end have something like in the following image.
 
@@ -285,12 +285,12 @@ The format of the files in a dataset are respectively described in:
 * Click *Desktop Available*
 ** Select your *Infrastructure* in the sliding menu
 
-NOTE: if no *Remote desktop* is defined, you will receive a warning message. Create a xref::index.adoc#post[*Setting*], then go back to this step.
+NOTE: If no *Remote desktop* is defined, you will receive a warning message. Create a xref::index.adoc#post[*Setting*], then go back to this step.
 
 ** Click on *Create*
 ** Click either on *Desktop* or *View Only*
 
-it should start a web page within your browser.
+It should start a web page within your browser.
 In this page you should be able to:
 
 * start a 'terminal' and check the output of your simulation
@@ -333,7 +333,7 @@ For more details on using {paraview} or {ensight} please check this xref:post:in
 
 [NOTE]
 ====
-You can also perform some pre-processing GUI with {salome] {hifimagnet} plugin. See xref:cad:index.adoc#salome_on_remotedesktop[here] for details
+You can also perform some pre-processing GUI with {salome} {hifimagnet} plugin. See xref:cad:index.adoc#salome_on_remotedesktop[here] for details.
 ====
 
 [[offering_setup]]
