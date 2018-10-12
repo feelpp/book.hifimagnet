@@ -4,15 +4,11 @@ include::{partialsdir}/header-macros.adoc[]
 include::{partialsdir}/header-uri.adoc[]
 include::{partialsdir}/mso4sc-uri.adoc[]
 
-Use *MagThel* this app to run simulations of High Field Magnets for:
+Use *MagThel* to run thermo-electric simulations of High Field Magnets.
 
-* ThermoElectric
-
-==== To test the app
+==== Validation
 
 To check the app, just change the following values:
-
-* ThermoElectric
 
 [options="header,footer"]
 |===
@@ -43,11 +39,12 @@ To check the app, just change the following values:
 
 [options="header,footer"]
 |===
-| Testcase                                                    | DataSet	                                                                                         | cfgfile                      | HPC settings (partition, ...)                     | Notes
-| xref:benchmarks:quarterturn/thermoelec.adoc[*quarter-turn*] | http://193.144.35.207/dataset/thermoelec-test[`thermoelec-test`], resource: `quarter-turn3D.tgz` | `quarter-turn3D.cfg`         | lncmi: `stokes`                                   |
-|                                                             |                                                                                                  |                              | cesga: `thinnodes`                                |
-| xref:benchmarks:HL/README.adoc[*HL*]                        | http://193.144.35.207/dataset/hl-test[`hl-test`]                                                 | `HL-31_H1_boomeramg_p32.cfg` | lncmi: `stokes`,`n=32`                            | 
-|                                                             |                                                                                                  |                              | cesga: `thinnodes`,``n=32`                        |
+| Testcase                                                    | DataSet	                                                                                         | cfgfile                      | HPC settings                         | Notes
+|                                                             |        	                                                                                         |                              | (partition, ...)                     | 
+| xref:benchmarks:quarterturn/thermoelec.adoc[*quarter-turn*] | http://193.144.35.207/dataset/thermoelec-test[`thermoelec-test`], resource: `quarter-turn3D.tgz` | `quarter-turn3D.cfg`         | lncmi: `stokes`                      |
+|                                                             |                                                                                                  |                              | cesga: `thinnodes`                   |
+| xref:benchmarks:HL/README.adoc[*HL*]                        | http://193.144.35.207/dataset/hl-test[`hl-test`]                                                 | `HL-31_H1_boomeramg_p32.cfg` | lncmi: `stokes`,`n=32`               | 
+|                                                             |                                                                                                  |                              | cesga: `thinnodes`,``n=32`           |
 |===
 
 

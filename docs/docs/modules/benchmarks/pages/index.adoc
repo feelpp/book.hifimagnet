@@ -9,26 +9,27 @@ Welcome to {hifimagnet} Examples and Benchmarks documentation!
 
 [[examples]]
 == Examples
-=== Magnetic Field Map
+=== {magnettools}
 
-xref:MagnetTools_ex/Bmap/README.adoc[HL-31: Axi Bmap]
+xref:MagnetTools_ex/Bmap/README.adoc[Magnetic Field Map: Axi]
 
-=== CAD generation and Meshing
+=== CAD generation and Meshing with {hifimagnet} {salome} plugin 
 
-xref:CAD/README.adoc[insert with 4 helices]
+xref:CAD/README.adoc[An insert with 4 helices]
 
 == Bitter Magnet
 
-xref:Bitter/README.adoc
+xref:Bitter/README.adoc[Bitter disk]
 
 === Helix Magnet
 
-* xref:HL/README.adoc[HL] 
-* xref:HR/README.adoc[HR] 
+* xref:HL/README.adoc[A longitudinally cooled Helix] 
+* xref:HR/README.adoc[A radially cooled Helix] 
 
 === Insert
 
-xref:HL-31/README.adoc[HL-31]
+* xref:H1H4/README.adoc[An insert with 4 helices]
+* xref:HL-31/README.adoc[An realistic insert]
 
 === Other Magnetic structures
 
@@ -39,25 +40,13 @@ xref:SEISM/README.adoc[SEISM: an ECR ion source]
 == Validations
 === Cross rectangular Section Torus
 
-==== ThermoElecModel
+* xref:quarterturn/thermoelec.adoc[ThermoElectric Model]
+* xref:quarterturn/magneto.adoc[quarterturnMagnetostatic]
+* xref:quarterturn/elasticity.adoc[Elasticity Model]
+* xref:quarterturn/coupled.adoc[Fully Coupled Models]
 
-// from feelpp/toolbox
-xref:quarterturn/thermoelec.adoc[quarterturn]
-
-==== Magnetostatic
-
-xref:quarterturn/magneto.adoc[quarterturn]
-
-==== Elasticity
-
-xref:quarterturn/elasticity.adoc[quarterturn]
-
-==== Coupled Models
-
-xref:quarterturn/coupled.adoc[quarterturn]
-
-[[benchmarks]]
-== BenchMarks
+# [[benchmarks]]
+# == BenchMarks
 
 [[verifications]]
 == Verifications
