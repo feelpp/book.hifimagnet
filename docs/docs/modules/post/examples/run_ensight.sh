@@ -46,20 +46,25 @@ shift $((OPTIND - 1))
 : ${SCRIPT_ARGS=""}
 : ${KEYDIR=$STORE/Ensight}
 
+if [ ! -z ${SREGISTRY_STORAGE} ]; then
+    echo "SREGISTRY_STORAGE not defined"
+    echo "please setup SREGISTRY_STORAGE to point to your local sregistry repository"
+    echo "ex: export SREGISTRY_STORAGE=$LUSTRE/singularity_images"
+    exit 1
+fi
+   
 if [ $TUI = "1" ]; then
-
     if [ -z $SCRIPT ]; then
 	echo "Trying to run Ensiight in BATCH in TUI mode without a script"
 	echo "you need to define either a ensight or python script"
 	usage
     fi
-
 else
 singularity exec --nv \
   -H ${HOME}:/home/$USER \
   -B /scratch \
   -B /mnt \
   -B $KEYDIR:/opt/licenses \
-  $LUSTRE/singularity_images/feelpp_ensight-mso4sc.simg \
+  $SREGISTRY_STORAGE/singularity_images/ensight-10.2.3c.simg \
   vglrun ensight102
 fi

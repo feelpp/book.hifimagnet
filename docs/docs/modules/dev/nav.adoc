@@ -2,4 +2,4 @@
 *** xref:index.adoc#install_salome[HiFimagnet Salome plugin]
 *** xref:index.adoc#install_magnettools[MagnetTools]
 *** xref:index.adoc#install_hifimagnet[Hifimagnet]
-*** xref:index.adoc#install_mso4sc[MSO4SC Portal]
+*** xref:index.adoc#mso4sc-dev[MSO4SC Portal]

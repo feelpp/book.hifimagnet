@@ -68,7 +68,7 @@ Some useful commands :
 
 ====
 
-See https://github.com/MSO4SC/MSOOrchestrator-CLI/blob/master/README.adoc#remote-mode for details
+See https://github.com/MSO4SC/MSOOrchestrator-CLI/blob/master/README.adoc#remote-mode[here] for details
 
 
 === Package workflow for {mso4sc} portal
@@ -79,3 +79,10 @@ To package the workflow for latter use in the portal, just create a gzipped arch
 ./deploy pkg
 ----
 
+=== Register App in  {mso4sc} portal
+
+To register the app, following instructions in this xref:mso4sc:dev.adoc#registerapp[section].
+Remember that you have a choice:
+
+* add the app in the {uri-msoportal-market-www}[*Marketplace*]
+* or make it available to every user of the platform

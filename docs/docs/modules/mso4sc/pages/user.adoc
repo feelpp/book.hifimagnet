@@ -431,6 +431,10 @@ It means that the actual simulation results are store in `${LUSTRE}/feel/hifimag
 
 For more details on using {paraview} or {ensight} please check this xref:post:index.adoc#post_manual[section].
 
+[NOTE]
+====
+You can also perform some pre-processing GUI with {salome] {hifimagnet} plugin. See xref:cad:index.adoc#salome_on_remotedesktop[here] for details
+====
 
 [[offering_setup]]
 == To go further
@@ -440,13 +444,10 @@ Available apps in **MSO4SC Portal** are:
 * MagnetTools: xref::bmap.adoc[MagMapAxi], 
 * Preprocessing: xref::MagCAD.adoc[MagCAD], xref::MagMesh.adoc[MagMesh]
 * Simulations:
-** direct models: xref::MagThel.adoc[MagThel], xref::MagFull.adoc[MagFull], xref::3Dsim.adoc[3DSim]
+** direct models: xref::MagThel.adoc[MagThel], xref::MagFull.adoc[MagFull], xref::3Dsim.adoc[MagSim]
 ** CRB:
 // * Postprocessing:
 
 To get more details about the app, click on it.
 This will display more information about the app and its settings.
-
-Note that we won't repeat the overwhole process described above to setup, run the app.
-We will focuss on inputs that are specific to each app.
 
