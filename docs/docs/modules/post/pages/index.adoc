@@ -7,6 +7,14 @@ include::{partialsdir}/mso4sc-uri.adoc[]
 
 Welcome to {hifimagnet} processing documentation!
 
+[IMPORTANT]
+====
+{mso4sc} Portal user shall read xref:mso4sc:user.adoc#enduser[*EndUser*] guide before trying
+to use the  {uri-msoportal-visu-www}[*Visualization*] Remote Desktop.
+
+The Remote Desktop feature requires some xref:mso4sc:user.adoc#post[specific settings].
+====
+
 [[paraview]]
 = Using {paraview}
 
@@ -17,7 +25,7 @@ In the {cesga} remote desktop to get {paraview} running:
 
 * open a terminal,
 * type: `module load gcc/6.4.0 openmpi/2.1.1 paraview/5.4.0`
-* run `paraview
+* run `paraview`
 
 [[ensight]]
 = Using {ensight}
