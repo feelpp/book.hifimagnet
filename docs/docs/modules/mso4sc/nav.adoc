@@ -2,13 +2,14 @@
 *** xref:index.adoc#msoportal[Introduction]
 *** xref:index.adoc#connect[Create an account]
 *** xref:index.adoc#overview[OverView of the Portal]
+*** xref:index.adoc#mso_setup[Setting up your account]
 
 *** xref:user.adoc#enduser[EndUser]
 **** xref:user.adoc#purchase[Purchasing an app]
 // **** xref:user.adoc#pre[Pre-processing]
 **** xref:user.adoc#data[Uploading to DataCatalogue]
 **** xref:user.adoc#running[Running an app]
-**** xref:user.adoc#post[Viewing results]
+**** xref:user.adoc#RemoteDesktop[Viewing results]
 **** xref:user.adoc#offering_setup[Available apps]
 
 *** xref:dev.adoc#devuser[DevUser]

@@ -285,7 +285,7 @@ The format of the files in a dataset are respectively described in:
 * Click *Desktop Available*
 ** Select your *Infrastructure* in the sliding menu
 
-NOTE: if no *Remote desktop* is defined, you will receive a warning message. Create a <<post, *Setting*>>, then go back to this step.
+NOTE: if no *Remote desktop* is defined, you will receive a warning message. Create a xref::index.adoc#post[*Setting*], then go back to this step.
 
 ** Click on *Create*
 ** Click either on *Desktop* or *View Only*
