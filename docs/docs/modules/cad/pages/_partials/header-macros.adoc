@@ -6,6 +6,7 @@
 :sregistry: Sregistry
 :hifimagnet: HiFiMagnet
 :meshgems: MeshGems
+:netgen: Netgen
 :salome: Salome
 :magnettools: MagnetTools
 :feelpp: Feel++
