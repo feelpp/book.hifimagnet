@@ -16,7 +16,7 @@ An overview of the main portal functionalities is given in this <<overview,secti
 This is followed by a brief description of the {hifimagnet} apps available and on the over-whole workflow
 of actually running apps within the portal.
 
-The user that have already an account on {uri-msoportal-www}[Portal] may skip the next section
+The user that have already an account on the {uri-msoportal-www}[Portal] may skip the next section
 and go directly to the section related to his/her role:
 
 * xref::dev.adoc#devuser[*DevUser*]
@@ -33,7 +33,7 @@ image::PortalMSO4SC.png[login page MSOPortal]
 
 * Click on *login*
 
-You will be forwarded to IDM component to the portal.
+You will be forwarded to IDM component of the portal.
 
 image::PortalMSO4SC_idm.png[IDM component of MSOPortal]
 
@@ -41,7 +41,7 @@ image::PortalMSO4SC_idm.png[IDM component of MSOPortal]
 
 image::PortalMSO4SC_signup.png[IDM component of MSOPortal]
 
-TIP: do not check *gravatar* bug as it is buggy right now.
+TIP: Do not check *gravatar* for your avatar as it is buggy right now.
 
 * Create an account there providing a valid email and a password.
 
@@ -83,10 +83,10 @@ more details on:
 
 [NOTE]
 ====
-For smooth operations of {uri-msoportal-www}[portal], the following ports have to *open*:
+For smooth operations of {uri-msoportal-www}[portal], the following ports have to be *open*:
 
 * `3000`: *IDM*, the service responsible for authentification 
-* `5000`: *MarkePlace*
+* `5000`: *MarketPlace*
 * `8000`: *Data Catalogue*
 
 To check, you can use `nmap -p <port> portal.mso4sc.eu`.
@@ -94,7 +94,7 @@ To check, you can use `nmap -p <port> portal.mso4sc.eu`.
 You may need to contact your system admin to check and eventually open these ports.
 
 
-For *DevUser* using the {uri-msoportal-dev-www}[portal dev version] the ports to be opended are:.
+For *DevUser* using the {uri-msoportal-dev-www}[portal dev version] the ports to be opened are:
 
 * `5050, 8080`: ...
 
@@ -209,13 +209,13 @@ To do so you may proceed for each license key as in the <<note_sregistry_secret,
 [[hifimagnet_offerings]]
 == {hifimagnet} Offerings in *Marketplace*
 
-Currently the apps available in the *Marketplace* are given in the table bellow.
+Currently the apps available in the *Marketplace* are given in the table below.
 They are grouped into 4 categories:
 
-* MagnetTools:
-* Preprocessing:
-* Simulations:
-* Postprocessing:
+* MagnetTools
+* Preprocessing
+* Simulations
+* Postprocessing
 
 .Available {hifimagnet} apps
 [options="header,footer"]
