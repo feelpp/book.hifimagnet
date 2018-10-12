@@ -594,15 +594,18 @@ singularity exec \
 * create a simple object
 * extract the boundary of the object ...
 * rename the boundary ...
-
 * select the geometry to save and export in your favorite CAD format
+
+video::cad.mp4[video]
+
+You can also:
+
 * dump the history to a python script `script.py`
 * save the study 
 
 To replay the python script: `salome script.py`
 To reload the study: `salome study.hdf` or load the study from main *File* menu
 
-see this video::cad.mp4[video] for details.
 
 === Loading a CAD in `GUI` mode
 
@@ -623,9 +626,12 @@ This is very handy for defining CAD region (aka `Groups`) that will be latter us
 * start `salome`
 * activate the *Mesh* module by clicking on the proper icon or selecting it in the dropdown menu
 
-see this video::netgen-mesh.png[video] for details
+To create a mesh using {netgen} take a look a the video bellow.
 
-To create a mesh using {meshgems} see this video::meshgem-mesh.png[video].
+video::netgen-mesh.mp4[video]
 
+To create a mesh using {meshgems} take a look a the video bellow.
+
+video::meshgems-mesh.mp4[video]
 
 
