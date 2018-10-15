@@ -12,19 +12,24 @@ The resulting Field Map file could be saved and uploaded to data catalogue.
 [options="header,footer"]
 |===
 | Key                           | Default           | Notes
-| *Dataset resource: model*     |                   | dataset model from the data Catalog
-| *Output dataset: outputs_at*  |                   | output data Catalog
+| *Dataset resource: model*     | None              | dataset model from the data Catalog - **mandatory** to choose a dataset
+| *Output dataset: outputs_at*  | None              | output data Catalog (default is None: nothing is exported)
 | DataCfg                       |                   | name of the magnet cfg file without extension
-| DataOptions                   | ''                |
-| DataCurrentst                 | [31000:31000:0]   |
-| DataR                         | 0                 | stem:[r_0:r_1:Nr]
-| DataZ                         | 0                 | stem:[z_0:z_1:Nz]
+|                               |                   | (the cfg file `.d` shall be in the dataset)
+| DataOptions                   | -                 | empty by default (see xref:magnettools:bmap.adoc[here] for details)
+| DataCurrents                  | [31000:31000:0]   | stem:[[I_{\text{Helices};I_\text{Bitters};I_\text{Supras}\]]
+| DataR                         | [0;0;1]           | stem:[[r_0:r_1:n_r\]]
+| DataZ                         | [0;0;1]           | stem:[[z_0:z_1:n_z\]]
 |===
 
 ==== Examples and Benchmarks
 
 [options="header,footer"]
 |===
-| Test case                                               | Dataset                                                                    | Notes
-| xref:benchmarks:MagnetTools_ex/Bmap/README.adoc[HL-31]  | link:http://193.144.35.207/dataset/hl-31[hl-31], ressource: HL-31-ana.tgz  |
+| Test case | Dataset | DataCfg | DataR | DataZ                                                                  | Notes
+| xref:benchmarks:MagnetTools_ex/Bmap/README.adoc[HL-31]  | link:http://193.144.35.207/dataset/hl-31[hl-31], ressource: HL-31-ana.tgz  | HL-31 | [0;0;1] | [-0.1:0.1;100] |
 |===
+
+===== References
+
+xref:magnettools:index.adoc#magnettools_manual[{magnettools}] 
