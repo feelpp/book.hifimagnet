@@ -5,7 +5,18 @@ include::{partialsdir}/mso4sc-uri.adoc[]
 
 In this test case we will simulate a longitudinaly cooled helix.
 
+== Running the case
+
+[[command-line-linear]]
+[source,sh]
+----
+mpirun -np 32 feelpp_hfm_thermoelectric --config-file HL-31_H1_boomeramg.cfg
+----
+
 To run this example on MSO4SC portal see this xref:mso4sc:MagThel.adoc[section].
+
+If you want to change the number of procs used, you need to create a proper
+partition mesh. See the next sections for a detailed guide.
 
 === Convert the mesh
 
@@ -40,10 +51,12 @@ The gzipped archive tarball http://193.144.35.207/dataset/hl-test/resource/bfaea
 === Mesh file
 
 * HL-31_H1.med
+* HL-31_H1.msh
+* HL-31_H1_p32.json, HL-31_H1_p32.h5  
 
 === Simulation cfg file
 
-* HL-31_H1_boomeramg_p32.cfg
+* HL-31_H1_boomeramg.cfg
 
 === Model files
 
@@ -53,8 +66,23 @@ The gzipped archive tarball http://193.144.35.207/dataset/hl-test/resource/bfaea
 
 Materials are stored in a dedicated repository Materials
 
+
+== Input parameters
+
+[options="header"]
+|===
+| Name | Description | Value | Unit |
+| stem:[V_D] | electrical potential | 9 | stem:[V] |
+|===
+
 == Outputs
 
-* some metrics
+[options="header"]
+|===
+| Name          | Description              | Value   | Unit     |
+| stem:[min(T)] | min of Temperature Field | 293.32  | stem:[K] |
+| stem:[max(T)] | max of Temperature Field | 400.781 | stem:[K] |
+|===
+
 
 

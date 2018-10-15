@@ -7,11 +7,17 @@ In this test case we will simulate a full insert of 4 helices.
 
 == Running the case
 
+[[command-line-linear]]
+[source,sh]
+----
+mpirun -np 32 feelpp_hfm_coupledcartmodel_3DP3N1 --config-file H1H4_cart.cfg
+----
+
+To run this example on MSO4SC portal see this xref:mso4sc:MagFull.adoc[section].
+
 As the CAD generation is time consuming, the mesh is provided but will eventually need to be partitionned.
 However if you ever want to rebuild the CAD and Mesh you will find detailled instructions bellow.
 Otherwise you can directly skip these sections.
-
-To run this example on MSO4SC portal see this xref:mso4sc:MagFull.adoc[section].
 
 === Convert the mesh
 
@@ -62,8 +68,20 @@ The gzipped archive tarball http://193.144.35.207/dataset/insert-test/resource/8
 
 Materials are stored in a dedicated repository Materials
 
+== Input parameters
+
+[options="header"]
+|===
+| Name | Description | Value | Unit |
+| stem:[V_D] | electrical potential | -35.8 | stem:[V] |
+|===
+
 == Outputs
 
-* some metrics
+[options="header"]
+|===
+| Name          | Description                      | Value               | Unit     |
+| stem:[B(O)]   | Magnetic Field at stem:[{0,0,0}] | stem:[B{0,0,6.942}] | stem:[T] |
+|===
 
 
