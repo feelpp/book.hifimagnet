@@ -96,7 +96,7 @@ To use private Organization and/or Dataset you would need to enter
 *Data Catalogue key* in the *Settings* menu. For instructions see xref::index.adoc#setup_api_key[here].
 
 NOTE: To add a dataset to an existing organization, you may need to ask the *Admin* of the organization to be granted the role of *Editor* to do so. In our case it is the owner/seller of {hifimagnet} app.
-
+to set <hpc_feelpp> to a specific directory for each instance.
 // [[using_girder]]
 // === Upload Data to {girder} service
 
@@ -156,6 +156,8 @@ The others fields are designed for more advanced users.
 | *HPC: primary*             | HPC settings                                  | "cesga"                                         |
 | hpc_modules                | modules to load depending on the HPC machine  | `[gcc/6.3.0, openmpi/2.0.2, singularity/2.4.2]` | depends on HPC and singularity image
 | hpc_basedir                | volume where instance is created              | `${LUSTRE}`                                     | depends on HPC and singularity image
+| hpc_feelpp                | volume where results will be stored              | `${LUSTRE}/feel`                                     | depends on HPC and app
+159
 | hpc_volumes                | volumes to be mounted on the HPC machine      | `[/scratch,/mnt,${LUSTRE}/feel:/feel]`          | depends on HPC and singularity image
 | *hpc_partition*            | select partition queue                        | 'thin-shared'                                   | shall depends on batch system and HPC
 | hpc_reservation            | select reservation queue                      | ``                                              | optional
@@ -205,44 +207,39 @@ image::portal_magtherm_running.png[ex: Running {hifimagnet} `MagTherm`]
 
 The next step is to launch the app:
 
-* select the *ID*, you defined in the previous step,
+* select the instance *ID*, you defined in the previous step,
 * click on *Run*, wait until the button in blue turns green
 
 
-[TIP]
+[IMPORTANT]
 ====
+The result are stored in `<hpc_feelpp>`. Make sure that `<hpc_volumes>` bindmount list option contains this field: eg `<hpc_feelpp>:/feel` on cesga where `<hpc_feelpp>=$LUSTRE/feel`.
+
+As a best practice, we **highly recommend** the user to set `<hpc_feelpp>` to a specific directory for each instance.
+
+It means that the actual simulation results are stored in:
+
+* `<hpc_feelpp>/hifimagnet/ThermoElectricModel/<geofile>/thermoelectric-linear_V1T1_N1/np_<parallel_tasks>` for MagThel app.
+
+`<geofile>` correspond to the input with the same name in the <cfgfile>.
+
+When running the instance *ID*:
+
+* a directory `<hpc_basedir>/<workdir_prefix>_<date>_<id>` will be created (`<id> is a random number);
+* the dataset will eventually be downloaded and extracted into this directory;
+* the script will be created and submitted to the queueing system of the HPC ressource.
+
 A red button will indicates an error.
-Check the message in the frame below the status button.
-To have more details about the actual error is more tricky; we recommend to:
-
-* make sure you have unchecked the cleanup option
-* connect to the HPC resource using for instance the <<RemoteDesktop, *Remote Desktop*>>
-* move to the selected `<hpc_basedir>/<hpc_working_prefix>_<date>_<id>`
-* check the logs
-
-`<hpc_basedir>` is given as inputs of the experiment (see above). 
-`<hpc_working_prefix>` is set by default by the app (eg: `hifimagnet` for `MagTherm` app).
-The `<id>` is a random character generated when creating the instance.
-
-The `<hpc_basedir>/<hpc_workdir_prefix>_<date>_<id>` directory remains present
-only if `<do_not_delete_workdir>` is set to `true`.
-
-This directory holds:
-
-* `*.script`
-* `slurm-*.out`
-* `mso*.err`
-* `mso*.out`
-
-and eventually the files coming from the dataset.
+In this event, check the output of the script (aka `slurm-<id>.out`). 
+To do so you need to have `<do_not_delete_workdir>` set to `true`.
 ====
 
-Finaly to destroy your instance, just click on:
+Finaly to destroy your instance *ID* , just click on:
 
 * *Destroy Instance!*
 * or *Force Destroy*
 
-This will remove your *ID* from the instance list.
+This will remove your instance *ID* from the instance list.
 
 
 [[running_dataset]]
@@ -296,33 +293,8 @@ In this page you should be able to:
 * start a 'terminal' and check the output of your simulation
 
 The outputs of the job (ie `slurm` jobs) are stored in the `<hpc_basedir>/<hpc_workdir_prefix>_<date>_<id>`.
-The actual results for the simulation would be stored in `<hpc_basedir>/feel` directory following {feelpp} usage.
+The actual results for the simulation would be stored in `<hpc_feelpp>` directory following {feelpp} usage.
 
-[NOTE]
-====
-The result are stored in `${LUSTRE}/feel/...` if
-you have chosen to use the `<hpc_volumes>` bindmount option: eg `${LUSTRE}/feel:/feel` on cesga.
-
-Check the output of the script (aka `slurm-<id>.out`) in `<basedir>/<workdir_prefix>_<date>_<id>`
-to see the exact name of this directory.
-
-In `slurm-<id>.out` you should see lines like that at the beginning of the files:
-
-[source,log]
-----
-Reading /usr/share/doc/hifimagnet/ThermoElectricModel/quarter-turn3D.cfg...
-[ Starting Feel++ ] application thermoelectric version 0.1 date 2018-Jun-07
- . thermoelectric files are stored in /feel/thermoelectric/np_2
- .. exports :/feel/thermoelectric/np_2/exports
- .. logfiles :/feel/thermoelectric/np_2/logs
-[modelProperties] Loading Model Properties : "/usr/share/doc/hifimagnet/ThermoElectricModel/quarter-turn3D.json"
- . thermoelectric files are stored in /feel/hifimagnet/ThermoElectricModel/quarter-turn3D.geo/thermoelectric-linear_V1T1_N1/np_2
- .. exports :/feel/hifimagnet/ThermoElectricModel/quarter-turn3D.geo/thermoelectric-linear_V1T1_N1/np_2/exports
- .. logfiles :/feel/hifimagnet/ThermoElectricModel/quarter-turn3D.geo/thermoelectric-linear_V1T1_N1/np_2/logs
-----
-
-It means that the actual simulation results are store in `${LUSTRE}/feel/hifimagnet/ThermoElectricModel/quarter-turn3D.geo/thermoelectric-linear_V1T1_N1/np_2/exports/ensightgold/`
-====
 
 * start a post-processing GUI:
 ** either by loading {uri-paraview-www}[{paraview}]
