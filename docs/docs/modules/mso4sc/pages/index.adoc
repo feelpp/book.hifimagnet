@@ -113,7 +113,6 @@ for most user except for the {hifimagnet} ones.
 * Go to {uri-msoportal-experiment-www}[*Experiments*]
 * Select *Settings*
 * Define a HPC resource
-* Upload eventually your *Data Catalogue key* (see <<api_key, here>>)
 
 [source,txt]
 ----
@@ -156,7 +155,8 @@ image::setting_ckanapikey.png[Adding *Data Catalogue key* in *Settings*]
 
 Before proceeding to the setup of the app, you need to make sure, at least for {hifimagnet}
  app (or more generally for apps requiring access to a private singularity image) that you have
- been granted the proper right on {hifimagnet} {sregistry} team.
+ been granted the proper right on {hifimagnet} {sregistry} team. You shall have received an email
+ with a link to join {hifimaget} {sregistry} team.  Remember to first log in {cesga} {sregistry} before joining the team. 
 
 One more step consists in retrieving the *TOKEN* and storing it into your home directory on the HPC resource.
  This *TOKEN* is needed to download programmatically the {singularity} image :
