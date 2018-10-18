@@ -11,15 +11,15 @@ Welcome to {hifimagnet} Examples and Benchmarks documentation!
 == Examples
 === {magnettools}
 
-xref:MagnetTools_ex/Bmap/README.adoc[Magnetic Field Map: Axi]
+* xref:MagnetTools_ex/Bmap/README.adoc[Magnetic Field Map: Axi]
 
 === CAD generation and Meshing with {hifimagnet} {salome} plugin 
 
-xref:CAD/README.adoc[An insert with 4 helices]
+* xref:CAD/README.adoc[An insert with 4 helices]
 
-== Bitter Magnet
+=== Bitter Magnet
 
-xref:Bitter/README.adoc[Bitter disk]
+* xref:Bitter/README.adoc[Bitter disk]
 
 === Helix Magnet
 
@@ -33,7 +33,7 @@ xref:Bitter/README.adoc[Bitter disk]
 
 === Other Magnetic structures
 
-xref:SEISM/README.adoc[SEISM: an ECR ion source]
+* xref:SEISM/README.adoc[SEISM: an ECR ion source]
 
 
 [[validations]]
@@ -41,17 +41,13 @@ xref:SEISM/README.adoc[SEISM: an ECR ion source]
 === Cross rectangular Section Torus
 
 * xref:quarterturn/thermoelec.adoc[ThermoElectric Model]
-* xref:quarterturn/magneto.adoc[quarterturnMagnetostatic]
+* xref:quarterturn/magneto.adoc[Magnetostatic Models]
 * xref:quarterturn/elasticity.adoc[Elasticity Model]
 * xref:quarterturn/coupled.adoc[Fully Coupled Models]
 
-# [[benchmarks]]
-# == BenchMarks
-
 [[verifications]]
 == Verifications
-=== LowField Benchmark
 
-xref:LowFieldBench/README.adoc[LowField]
+* xref:LowFieldBench/README.adoc[LowField WorkBench]
 
 
