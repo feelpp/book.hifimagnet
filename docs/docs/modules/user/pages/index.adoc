@@ -236,9 +236,9 @@ A typical iterative solver is defined as follow:
 
 Section <7> is specific to {hifimagnet}. It enables to define
 data needed to compute the "ideal" magnetic field provided by a magnet
-using xref:magnettools:bmap.adoc[]:
+using xref:magnettools:Bmap.adoc#bmap[]:
 
-* the cfg file describing the Axisymetrical model of the magnet
+* the `.d` cfg file describing the Axisymetrical model of the magnet
 * the values for the input currents in each subsets of the magnet
 
 [NOTE]
@@ -255,21 +255,21 @@ The Physic Model files are `json` files that contain informations about:
 * Boundary Conditions
 * Post-Processing quantities
 
-* thermics
+==== ThermoElctric Model file
 
 [source,cfg]
 ----
 include::{examplesdir}/quarter-torus3D-therm.json[]
 ----
 
-* magnetostatics
+==== Magnetostatics Model file
 
 [source,cfg]
 ----
 include::{examplesdir}/quarter-torus3D-mag.json[]
 ----
 
-* elasticity
+==== Elasticity Model file
 
 [source,cfg]
 ----
@@ -290,15 +290,16 @@ In the table bellow, you will find the correspondance between an entrie in the `
 defining properties for material <1> :
 
 |===
-^|Notation           ^|Quantity                           ^|Unit                     ^|Note
-| <2> stem:[\alpha]   | thermal resistivity coefficient    |-                         |
-| <3> stem:[\sigma]   | electrical conductivity            |stem:[S.m^{-1}]           | an expression of stem:[T] with references values (indiced with a stem:[_0] at stem:[T_0] 
-| <4> stem:[k]        | thermal conductivity               |stem:[W.m^{-1} .K^{-1}]   | same
-| <5> stem:[Y]        | Young modulus                      |stem:[Pa]                 |
-| <6> stem:[\nu]      | Poisson ratio                      |-                         |
-| <7> stem:[\alpha_T] | thermal expansion coefficient      |stem:[K^{-1}]             |
-| <8> stem:[\rho]     | material's density                 |stem:[kg.m^{-3}]          |
-| <9> stem:[\mu]      | magnetic permeability              |stem:[V.s.A^{-1}.m^{-1}]  |
+^|Notation             ^|Quantity                            ^|Unit                     ^|Note
+^| <2> stem:[\alpha]   ^| thermal resistivity coefficient    ^|-                         |
+^| <3> stem:[\sigma]   ^| electrical conductivity            ^|stem:[S.m^{-1}]          ^| an expression of stem:[T] 
+ |                      |                                     |                         ^| (references values,indiced with a stem:[_0], at stem:[T_0]) 
+^| <4> stem:[k]        ^| thermal conductivity               ^|stem:[W.m^{-1} .K^{-1}]  ^| same
+^| <5> stem:[Y]        ^| Young modulus                      ^|stem:[Pa]                 |
+^| <6> stem:[\nu]      ^| Poisson ratio                      ^|-                         |
+^| <7> stem:[\alpha_T] ^| thermal expansion coefficient      ^|stem:[K^{-1}]             |
+^| <8> stem:[\rho]     ^| material's density                 ^|stem:[kg.m^{-3}]          |
+^| <9> stem:[\mu]      ^| magnetic permeability              ^|stem:[V.s.A^{-1}.m^{-1}]  |
 |===
 
 == Workflow
