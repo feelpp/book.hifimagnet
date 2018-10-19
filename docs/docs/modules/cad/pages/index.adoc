@@ -337,7 +337,7 @@ include::{examplesdir}/H_shape.yaml[]
 ----
 <1> name of the shape to be added (actually it's the name of the shape file description without extension )
 <2> name of CAD profile (this name comes from the Bureau d'Etudes nomemclature to keep track of the CADs) 
-<3> angular length of the shape in *degree*)
+<3> angular length of the shape in *degree*
 <4> angular shift between 2 consecutive shapes (optionnal)
 <5> specify on wich turns the shape are disposed
 <6> orientation of the shape (values valid are ...)
