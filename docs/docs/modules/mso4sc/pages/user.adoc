@@ -162,7 +162,6 @@ The others fields are designed for more advanced users.
 | hpc_modules                | modules to load depending on the HPC machine  | `[gcc/6.3.0, openmpi/2.0.2, singularity/2.4.2]` | depends on HPC and singularity image
 | hpc_basedir                | volume where instance is created              | `${LUSTRE}`                                     | depends on HPC and singularity image
 | hpc_feelpp                | volume where results will be stored              | `${LUSTRE}/feel`                                     | depends on HPC and app
-159
 | hpc_volumes                | volumes to be mounted on the HPC machine      | `[/scratch,/mnt,${LUSTRE}/feel:/feel]`          | depends on HPC and singularity image
 | *hpc_partition*            | select partition queue                        | 'thin-shared'                                   | shall depends on batch system and HPC
 | hpc_reservation            | select reservation queue                      | ``                                              | optional
