@@ -231,11 +231,16 @@ When running the instance *ID*:
 
 * a directory `<hpc_basedir>/<workdir_prefix>_<date>_<id>` will be created (`<id> is a random number);
 * the dataset will eventually be downloaded and extracted into this directory;
-* the script will be created and submitted to the queueing system of the HPC ressource.
+* the script `<job_prefix><sid>.script` will be created and submitted to the queueing system of the HPC ressource.
+
+Upon completion two files will be created in the directory:
+
+* `<job_prefix><sid>.out`: contains the output of the script,
+* `<job_prefix><sid>.err`: contains some log and errors if any.
 
 A red button will indicates an error.
-In this event, check the output of the script (aka `slurm-<id>.out`). 
-To do so you need to have `<do_not_delete_workdir>` set to `true`.
+In this event, check the output of the script (aka `slurm-<id>.out`, the `.err` and `.out` files).
+To do so you need to have `<workdir_keep>` set to `true`.
 ====
 
 Finaly to destroy your instance *ID* , just click on:
