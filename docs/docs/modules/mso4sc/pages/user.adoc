@@ -87,6 +87,11 @@ They may have the following roles:
 * *Editor* : can add dataset
 * *Member* : can view dataset
 
+
+See the video bellow for a demo.
+
+video::Wq713I6HM2I[youtube]
+
 NOTE: Users have to connect at least once to *Data Catalogue* before you can grant them a role in your organization.
 
 [[api_key]]
@@ -241,6 +246,9 @@ Finaly to destroy your instance *ID* , just click on:
 
 This will remove your instance *ID* from the instance list.
 
+See this video for a live demo.
+
+video::_tB2aLV-_So[youtube]
 
 [[running_dataset]]
 === Running an {hifimagnet} application in *Experiments* using datasets from *DataCatalogue*
@@ -302,6 +310,9 @@ The actual results for the simulation would be stored in `<hpc_feelpp>` director
 * to quit just click on `Menu/logout` (top left)
 
 For more details on using {paraview} or {ensight} please check this xref:post:index.adoc#post_manual[section].
+See the video bellow for a live demo.
+
+video::yr27O_Ll9jk[youtube]
 
 [NOTE]
 ====

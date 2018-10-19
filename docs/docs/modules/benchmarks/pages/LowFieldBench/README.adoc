@@ -114,3 +114,6 @@ HIFIMAGNET_SALOME_DIR=~/SALOME-8.3.0-DB9.5/INSTALL/HIFIMAGNET/bin/salome
 
 The coupledcart model is in ```$HIFIMAGNET_APPS_DIR/CoupledCartModel/```
 
+== References
+
+https://hal.archives-ouvertes.fr/hal-01588678v2/document[MT25 poster: Comparative study between in-situ measurements and a 3D efficient model for the computation of magnetic fields in High Field Polyhelix magnets]
