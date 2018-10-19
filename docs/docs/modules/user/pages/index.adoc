@@ -191,6 +191,7 @@ providing connection between CAD/Mesh entities to respectively Material and Boun
 and `json` files defining the model per physic and eventually some other `json` files
 for the physical properties of the materials. 
 
+The data structure follows {feelpp} style and convention.
 In this section we will give details about these different files.
 
 === Config Files
@@ -201,22 +202,58 @@ include::{examplesdir}/coupled_3D_P1_N1_singular_cvg.cfg[]
 ----
 
 The first lines define the geometry or mesh to consider:
-<1> name of the geometry or mesh
-<2> gmsh options: scale, mesh size
-<3> list of conductor and insulator volumes
+
+* <1> name of the geometry or mesh
+* <2> gmsh options: scale (optional, the default is *meter*), mesh size
+* <3> list of conductor and insulator volumes
 
 The next section give setup the calculations to be ran:
-<4> flag to control calculations
+
+* <4> flag to control calculations
 
 This is followed by section dedicated to specific physics.
 In this example we have:
-<5> thermo-electric model
-<6> elasticity model
-<8> magnetostatic model
 
+* <5> thermo-electric model
+* <6> elasticity model
+* <8> magnetostatic model
 
+Each of this physic section contains:
+
+* name of the `json` file holding the complete description of the model (see bellow),
+* setup of the solver: eg `[electro]` and [`thermal`] for thermo-electric model
+
+Solver are specific to each physical model.
+However in general, the default solver is a direct solver.
+For large problems, we would prefer iterative solver for efficiency.
+A typical iterative solver is defined as follow:
+
+* `pc-type`: name of the preconditionner,
+* `ksp-rtol`: relative tolerance to stop iterative solver,
+* `ksp-atol`: absolute tolerance to stop iterative solver,
+* `ksp-maxit`: maximum iterations allowed to reach convergence,
+* `ksp-use-initial-guess-nonzero`: enable to start with a non null initial guess solution.
+
+Section <7> is specific to {hifimagnet}. It enables to define
+data needed to compute the "ideal" magnetic field provided by a magnet
+using xref:magnettools:bmap.adoc[]:
+
+* the cfg file describing the Axisymetrical model of the magnet
+* the values for the input currents in each subsets of the magnet
+
+[NOTE]
+====
+A magnet is composed of PolyHelices insert and eventually some external magnets either
+Bitter magnets and/or Supraconductor Magnets. 
+====
 
 === Physic Model files
+
+The Physic Model files are `json` files that contain informations about:
+
+* Materials
+* Boundary Conditions
+* Post-Processing quantities
 
 * thermics
 
@@ -241,10 +278,28 @@ include::{examplesdir}/quarter-torus3D-elasticity.json[]
 
 === Materials file
 
+Physical properties of the material are defined in a `json` file
+for each material. The properties are given in SI units.
+
 [source,cfg]
 ----
 include::{examplesdir}/Cu.json[]
 ----
+
+In the table bellow, you will find the correspondance between an entrie in the `json` file
+defining properties for material <1> :
+
+|===
+^|Notation           ^|Quantity                           ^|Unit                     ^|Note
+| <2> stem:[\alpha]   | thermal resistivity coefficient    |-                         |
+| <3> stem:[\sigma]   | electrical conductivity            |stem:[S.m^{-1}]           | an expression of stem:[T] with references values (indiced with a stem:[_0] at stem:[T_0] 
+| <4> stem:[k]        | thermal conductivity               |stem:[W.m^{-1} .K^{-1}]   | same
+| <5> stem:[Y]        | Young modulus                      |stem:[Pa]                 |
+| <6> stem:[\nu]      | Poisson ratio                      |-                         |
+| <7> stem:[\alpha_T] | thermal expansion coefficient      |stem:[K^{-1}]             |
+| <8> stem:[\rho]     | material's density                 |stem:[kg.m^{-3}]          |
+| <9> stem:[\mu]      | magnetic permeability              |stem:[V.s.A^{-1}.m^{-1}]  |
+|===
 
 == Workflow
 === Using {magnettools} to define Design
