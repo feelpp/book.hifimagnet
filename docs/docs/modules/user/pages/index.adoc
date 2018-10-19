@@ -200,23 +200,30 @@ In this section we will give details about these different files.
 ----
 include::{examplesdir}/coupled_3D_P1_N1_singular_cvg.cfg[]
 ----
+<1> name of the geometry or mesh
+<2> gmsh options: scale (optional, the default is *meter*), mesh size
+<3> list of conductor and insulator volumes
+<4> flag to control calculations
+<5> thermo-electric model
+<6> elasticity model
+<8> magnetostatic model
+<7> specific to {hifimagnet}
 
 The first lines define the geometry or mesh to consider:
 
-* <1> name of the geometry or mesh
-* <2> gmsh options: scale (optional, the default is *meter*), mesh size
-* <3> list of conductor and insulator volumes
+* name of the geometry or mesh
+* gmsh options: scale (optional, the default is *meter*), mesh size
+* list of conductor and insulator volumes
 
 The next section give setup the calculations to be ran:
 
-* <4> flag to control calculations
 
 This is followed by section dedicated to specific physics.
 In this example we have:
 
-* <5> thermo-electric model
-* <6> elasticity model
-* <8> magnetostatic model
+* thermo-electric model
+* elasticity model
+* magnetostatic model
 
 Each of this physic section contains:
 
@@ -234,9 +241,9 @@ A typical iterative solver is defined as follow:
 * `ksp-maxit`: maximum iterations allowed to reach convergence,
 * `ksp-use-initial-guess-nonzero`: enable to start with a non null initial guess solution.
 
-Section <7> is specific to {hifimagnet}. It enables to define
+Section `magnetic_field-bmap` is specific to {hifimagnet}. It enables to define
 data needed to compute the "ideal" magnetic field provided by a magnet
-using xref:magnettools:Bmap.adoc#bmap[]:
+using xref:xref:magnettools:Bmap.adoc#bmap[]:
 
 * the `.d` cfg file describing the Axisymetrical model of the magnet
 * the values for the input currents in each subsets of the magnet

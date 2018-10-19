@@ -209,42 +209,6 @@ Examples files may be found https://github.com/feelpp/hifimagnet/tree/Salome_8.3
 The structure of the `yaml` file describing the geometry and mesh be generated will
 be described in the <<data, data structure section>>. 
 
-// [[helix-cad]]
-// [source,sh]
-// .Generation of an Helix
-// ----
-// salome [-m GEOM,SMESH,HIFIMAGNET] [-t -b] \
-//    ${HIFIMAGNET}/HIFIMAGNET_Cmd.py \
-//    args:--cfg=HL-31-H1.yaml[,--mesh]
-// ----
-
-// [[ring-cad]]
-// [source,sh]
-// .Generation of an connection Ring
-// ----
-// salome [-m GEOM,SMESH,HIFIMAGNET] [-t -b] \
-//    ${HIFIMAGNET}/HIFIMAGNET_Cmd.py \
-//    args:--cfg=Ring-H1H2.yaml[,--mesh]
-// ----
-
-// [[ilead-cad]]
-// [source,sh]
-// .Generation of an inner current Lead
-// ----
-// salome [-m GEOM,SMESH,HIFIMAGNET] [-t -b] \
-//    ${HIFIMAGNET}/HIFIMAGNET_Cmd.py \
-//    args:--cfg=inner.yaml,--inner[,--mesh]
-// ----
-
-// [[olead-cad]]
-// [source,sh]
-// .Generation of an outer current Lead
-// ----
-// salome [-m GEOM,SMESH,HIFIMAGNET] [-t -b] \
-//    ${HIFIMAGNET}/HIFIMAGNET_Cmd.py \
-//    args:--cfg=outer.yaml,--outer[,--mesh]
-// ----
-
 [[insert-cad]]
 [source,sh]
 .Generation of an Insert with an air box in TUI mode
