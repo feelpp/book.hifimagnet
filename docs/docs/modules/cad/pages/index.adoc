@@ -240,7 +240,7 @@ singularity run -B /mnt shub://sregistry.srv.cesga.es/mso4sc/sregistry --quiet p
 singularity run -B /mnt shub://sregistry.srv.cesga.es/mso4sc/sregistry rename hifimagnet/salome:8.4.0 salome-8.4.0.simg
 ----
 
-* [source,sh]
+[source,sh]
 ----
 module load singularity
 singularity run --nv -B ${LICDIR}:/opt/DISTENE/DLim:ro --app salome ${SREGISTRY_STORAGE}/salome-8.4.0.simg  
