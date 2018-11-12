@@ -2,7 +2,25 @@
 = Magnetic Field Maps
 :page-partial:
 
+== Use `B_Map`
+
 `B_Map` enables axisymetrical calculation of the magnetic field and/or potential.
+
+See this xref:benchmarks:MagnetTools_ex/Bmap/README.adoc[example].
+
+[NOTE]
+====
+The first time `B_Map` (or any other {magnettools} executable) is ran, a file `eps_params.dat` is created.
+It contains default parameters for the numerical integrations that are performed.
+
+Using the default values is generally safe.
+So before entering the input currents for each part of the magnets, just press `enter` key
+to use the default values. 
+
+The `eps_params.dat` file must be included in the datasets uploaded to {mso4sc} Data Catalogue
+for safe operation of {magnettools}
+====
+
 Available options are:
 
 ```
@@ -31,9 +49,12 @@ Available options are:
  --omp_off                 turn off openm
 ```
 
+== Use `Levitation`
 
-`Levitation` compute Bz and its derivatives on Z-Axis using AD technics
+`Levitation` computes Bz and its derivatives on Z-Axis using https://en.wikipedia.org/wiki/Automatic_differentiation[AD technics].
 
+
+Available options are:
 ```
  --input=STRING                load input filename
  --order=INT                   specify order to consider (default is 6)

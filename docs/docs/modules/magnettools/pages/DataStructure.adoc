@@ -2,16 +2,98 @@
 = Data Structure
 :page-partial:
 
-* Input format:
+image::geom_axi.png[A 14 helices insert with 2 external bitter magnets]
+
+The magnets description is given in `.d` file. 
+The `.d` file is structured as follows:
+
+== A header section:
 
 [source,txt]
 ----
 include::{examplesdir}/H.d[]
 ----
+<1> Main parameters
 
-* Output format:
+* Max. electrical power available
+* Nominal Current stem:[I_o],
+* Safety ratio requested (ratio between the max. allowed stress and and the actual hoop stress).
+* A reference temperature stem:[T_{ref}]
+* A flag to indicate wether or not we consider only half of the polyhelix insert
+
+<2> Main polyhelices insert characteristics:
+
+* stem:[Helices], the number of Tubes,
+* the total number of elements for the polyhelices insert (aka stem:[N*Helices]) (optional)
+
+<3> Description of each helix:
+
+* stem:[N] 
+* stem:[R_1] inner radius
+* stem:[R_2] outer radius
+* HalfL half electrical length
+
+* The physical properties are given at stem:[T_{ref}]:
+   
+** stem:[\rho[Ohm.m\]], resistivity at stem:[T_{ref}] 
+** stem:[Alpha[1/K\]], 
+** stem:[K[W/(m.K)\]], thermal conductivity at stem:[T_{ref}]  
+
+* Cooling params:
+** stem:[h[W/(m^2.K)\]],
+** stem:[<T_W>[°C\]],
+
+* Max allowed values:
+** stem:[E_{Max}[Pa\]],
+** stem:[T_{Max}[°C\]]
+
+<4> flag to indicate the end of the polyhelices insert definition
+
+<5> Definitions of external magnets, if any
+
+== External Magnets section
+
+[source,txt]
+----
+include::{examplesdir}/background.d[]
+----
+
+<1> Number of external magnets, providing the background field
+<2> Definition of external magnet:
+
+* Type: 1 for Bitter, 0 for Supra
+* stem:[R_1, R_2, Z_1, Z_2]: dimensions of the rectangular cross section
+* J: current densitiy at stem:[r=R_1]
+* stem:[\rho]
+* stem:[N_{turn}]
+
+
+
+== Resume section:
+
+[source,txt]
+----
+include::{examplesdir}/resume.d[]
+----
+
+<1> Main characteristics:
+
+* Magnetic Field provided by the polyhelices insert (aka self field),
+* Total electrical power
+* Total Magnetic Field (aka self field + background field)
+
+<2> Contribution to the self magnetic field and power per helix
+
+== Detailed Helix section
 
 [source,txt]
 ----
 include::{examplesdir}/H_res.d[]
 ----
+
+<1> Stats per Helix: mean temperature, number of turns, IACS (ratio of ),
+
+<2> Details per element:
+
+* current densitiy at stem:[r=R_1],
+* ...

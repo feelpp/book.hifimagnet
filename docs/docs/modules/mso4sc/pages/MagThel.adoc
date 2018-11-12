@@ -21,7 +21,17 @@ To check the app, just change the following values:
 
 * provide appropiate configuration, model and materials (see xref:user:index.adoc#data[here] for details)
 * create an tar gzipped archive of these files
-* upload the data on CKAN  (see xref:mso4sc:user.adoc#data [here] for details)
+* upload the data on {uri-msoportal-ckan-www}[*Data Catalogue*] (see xref:mso4sc:user.adoc#data [here] for details)
+
+[IMPORTANT]
+====
+The `partition.sh` script has be included in each dataset uploaded to {uri-msoportal-ckan-www}[*Data Catalogue*].
+
+[source,txt]
+----
+include::{examplesdir}/partition.sh[]
+----
+====
 
 ==== Set up the simulation in *Experiments*:
  

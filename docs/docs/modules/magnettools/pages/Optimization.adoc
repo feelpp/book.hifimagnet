@@ -16,43 +16,49 @@ The unknowns may either be:
 * the current density distribution per helix: `OptHelix`,
 * the maximum temperature distribution per helix: `OptAubert`
 
-Method used: SQP programming with Nag.
-
 [source,sh]
 ----
 OptAubert ...
 ----
 
-
 NOTE: Each helix is splitted in a given number of sections stem:[S_i] along stem:[z] axis.
 
+[IMPORTANT]
+====
+Both codes relies on SQP programming with `Nag`.
+For licensing issue, they can only be ran on `calcul10` server.
+====
 
-The input and output result use the formats desribed in xref:DataStructure.adoc.
-To build the actual 3D geometry, that shall reflect, this axi current density distribution, we use
+
+The input and output result use the format described in this xref:DataStructure.adoc[section].
+To build the actual 3D geometry, that shall reflect, this axisymetrical current density distribution, we use
 the following assumption:
 
 * the nominal current is stem:[I_o],
-* each element stem:[S_i] will be represented to an helix with a pitch  stem:[p] and a number of turn stem:[n] such that
-carries the same current as the element:
+* each element stem:[S_i] will be represented by an helix with a pitch stem:[p] and a number of turn stem:[n] such that
+the helix carries the same current as the element:
 
 [stem]
 ++++
 n * I_o = \int_{S_i} \mathbf{j} \cdot \mathbf{n} \,d\Gamma
 ++++
 
-The optimization result will be used to define the helical cut thet would be machined
+The optimization result are then used to define the helical cut thet would be machined
 in each copper alloy tubes:
+
 * CAD data may be obtained for Catia and/or {salome} using:
 
 [source,sh]
 ----
-opt2cad ...
-addshape ...
-opt2yml ...
+opt2cad ... , <1>
+addshape ... , <2>
+opt2yml ... , <3>
 ----
 
-`addshape` generate file for CAD/CAM Helices with "bumps" on the helical cut shape path
-`opt2yml` generates configuration files for building Helices with {salome}.
+<1> `opt2cad` 
+<2> `addshape` generates files for CAD/CAM Helices with "bumps" on the helical cut shape path.
+<3> `opt2yml` generates configuration files for building Helices with {salome}.
+
 
 * CAM data for machining the helices are created by:
 [source,sh]
@@ -63,6 +69,20 @@ opt2cad ...
 NOTE: To create the actual 3D CAD model of an helix (abusively: tube in which an helical cut has been machined by EDM technic),
 we still need some more information...
 
+
+== Use `OptAubert`
+
+[source,sh]
+----
+OptAubert ...
+----
+
+Available options are:
+
+```
+```
+
+== Use `OptHelix`
 
 
 References:

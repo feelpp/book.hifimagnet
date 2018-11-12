@@ -1,28 +1,6 @@
-#Power[MW]	Current[A]	Safety Ratio[]	T_ref[°C]	SymetryFlag
-12.5		31000		0.8		20		Sym
-#Helices	N_Elem
-14		56
-#N   R1[m]	R2[m]      HalfL[m]    Rho[Ohm.m] Alpha[1/K] E_Max[Pa] K[W/(m.K)]   h[W/(m^2.K)] <T_W>[°C] T_Max[°C]
-#N	     		     	       T_o=20°C   T_o=20°C             T_o=10O°C 	            	             
-4    1.930e-02	2.420e-02  7.7050e-02  1.992e-08  0.00e+00   3.600e+08 3.800000e+02 8.500000e+04 3.000e+01 1.00e+02 
-...
-4    1.703e-01	1.860e-01  1.6415e-01  2.087e-08  0.00e+00   3.740e+08 3.800000e+02 8.500000e+04 3.000e+01 1.00e+02 
-0.
-#External_Magnets
-0
-
-#Bz(0)[tesla]	Power[MW]	Bz_total(0)[tesla]
-2.754479e+01	1.250000e+01	2.754479e+01
-
-  #Helice	B0_H[tesla]	Sum_B0[tesla]	Power_H[MW]	Sum_Power[MW]
-  1	       1.836561e+00	1.836561e+00	1.965246e-01	1.965246e-01
-  ...
-  14	       1.499948e+00	2.754479e+01	1.434240e+00	1.250000e+01
-
-
-  #Helix	<T>[°C]		N_Turn		IACS[%]
+  #Helix	<T>[°C]		N_Turn		IACS[%] <1>
   1	9.493052e+01	7.547479e+00	8.654981e+01
-  #Elem	J[10^8 A/m2]	Tlim[°C]	Tmax[°C]	<T>[°C]		Elim[MPa]	Emax[MPa]	Pitch[m]	Nturns
+  #Elem	J[10^8 A/m2]	Tlim[°C]	Tmax[°C]	<T>[°C]		Elim[MPa]	Emax[MPa]	Pitch[m]	Nturns <2>
   1	3.477121e+00	1.000000e+02	1.000000e+02	9.493052e+01	3.600000e+02	1.803207e+02	2.041741e-02	1.886870e+00
   2	3.477121e+00	1.000000e+02	1.000000e+02	9.493052e+01	3.600000e+02	1.854755e+02	2.041741e-02	1.886870e+00
   3	3.477121e+00	1.000000e+02	1.000000e+02	9.493052e+01	3.600000e+02	1.854755e+02	2.041741e-02	1.886870e+00

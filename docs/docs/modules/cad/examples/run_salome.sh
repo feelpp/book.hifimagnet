@@ -29,7 +29,7 @@ DEBUG=0
 #########################################################
 ## parse parameters
 ##########################################################
-while getopts "hts:a:i:d" option ; do
+while getopts "hts:a:i:r:l:d" option ; do
    case $option in
        h ) usage ;;
        t ) TUI=1 ;;
@@ -54,7 +54,7 @@ shift $((OPTIND - 1))
 
 : ${SINGULARITY_DIR=$SREGISTRY_STORAGE}
 
-if [ ! -z $SINGULARITY_DIR ]; then
+if [ -z $SINGULARITY_DIR ]; then
     echo "SREGISTRY_STORAGE not defined"
     echo "please setup SREGISTRY_STORAGE to point to your local sregistry repository"
     echo "ex: export SREGISTRY_STORAGE=$LUSTRE/singularity_images"
@@ -73,7 +73,7 @@ if [ $TUI = "1" ]; then
 	    -H $HOME:/home/$USER \
 	    -B /mnt \
 	    -B /scratch \
-	    -B $KEYDIR:/opt/DISTENE/DLim \
+	    -B $KEYDIR:/opt/DISTENE/DLim:ro \
 	    $SINGULARITY_DIR/$IMAGE \
 	    salome -t $SCRIPT
     else
@@ -81,7 +81,7 @@ if [ $TUI = "1" ]; then
 	    -H $HOME:/home/$USER \
 	    -B /mnt \
 	    -B /scratch \
-	    -B $KEYDIR:/opt/DISTENE/DLim \
+	    -B $KEYDIR:/opt/DISTENE/DLim:ro \
 	    $SINGULARITY_DIR/$IMAGE \
 	    salome -t $SCRIPT args:$SCRIPT_ARGS
     fi 
@@ -90,7 +90,7 @@ else
 	-H $HOME:/home/$USER \
 	-B /mnt \
 	-B /scratch \
-	-B $KEYDIR:/opt/DISTENE/DLim \
+	-B $KEYDIR:/opt/DISTENE/DLim:ro \
 	$SINGULARITY_DIR/$IMAGE \
 	vglrun salome 
 fi

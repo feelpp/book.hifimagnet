@@ -2,8 +2,11 @@
 = Force Field Maps
 :page-partial:
 
+== Axial Forces
+
 `Inductances` also enables the computation of Axial Forces.
 
+== Radial Forces and Torques
 
 `Forces` enables the calculations of forces and torques in case of radial misalignement of magnet axis. Available options are
 
@@ -16,6 +19,8 @@
  --grid=STRING            nr nz ntheta grid size 
  --verbose                activate verbose mode
 ```
+
+== Connection with CSM software (eg `Samcef`, `Ansys` )
 
 `F_Map`
 
