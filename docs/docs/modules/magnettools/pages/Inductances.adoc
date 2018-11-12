@@ -2,7 +2,10 @@
 = Self and Mutual Inductances
 :page-partial:
 
-`Inductances` enables calculation of self and mutual inductances. Available options are:
+`Inductances` enables calculation of self and mutual inductances.
+
+
+Available options are:
 ```
  --output=STRING        set output filename
  --print-detail         activate detailled printing mode

@@ -40,7 +40,7 @@ and give examples for most common operations.
 
 Custom installation, eg. for native installation, is detailed in the xref:dev:index.adoc#install_salome[dev section].
 
-include:ROOT:{partialsdir}/convention.adoc[]
+## include:ROOT:{partialsdir}/convention.adoc[]
 
 [[qs_getting]]
 == Getting {hifimagnet} Salome plugin
@@ -236,14 +236,13 @@ export SREGISTRY_CLIENT=registry
 export SREGISTRY_CLIENT_SECRETS=$HOME/.sregistry
 export SREGISTRY_STORAGE=$LUSTRE/singularity_images
 module load singularity
-singularity run -B /mnt shub://sregistry.srv.cesga.es/mso4sc/sregistry --quiet pull hifimagnet/salome:8.4.0
-singularity run -B /mnt shub://sregistry.srv.cesga.es/mso4sc/sregistry rename hifimagnet/salome:8.4.0 salome-8.4.0.simg
+singularity run -B /mnt shub://sregistry.srv.cesga.es/mso4sc/sregistry --quiet pull hifimagnet/salome:8.3.0
 ----
 
 * [source,sh]
 ----
 module load singularity
-singularity run --nv -B ${LICDIR}:/opt/DISTENE/DLim:ro --app salome ${SREGISTRY_STORAGE}/salome-8.4.0.simg  
+singularity run --nv -B ${LICDIR}:/opt/DISTENE/DLim:ro --app salome ${SREGISTRY_STORAGE}/salome-8.3.0.simg  
 ----
 
 Alternatively you can also use `run_salome.sh`
