@@ -1,5 +1,5 @@
 Name: cesga <1>
-Host: ft2.cesga.es <2>
+Host: ft6.cesga.es <2>
 User: [Your cesga user] 
 Password: [Your cesga password]
 timezone: <3>

@@ -7,6 +7,7 @@ image::geom_axi.png[A 14 helices insert with 2 external bitter magnets]
 The magnets description is given in `.d` file. 
 The `.d` file is structured as follows:
 
+[[header_section]]
 == A header section:
 
 [source,txt]
