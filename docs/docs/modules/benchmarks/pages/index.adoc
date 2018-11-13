@@ -12,6 +12,7 @@ Welcome to {hifimagnet} Examples and Benchmarks documentation!
 === {magnettools}
 
 * xref:MagnetTools_ex/Bmap/README.adoc[Magnetic Field Map: Axi]
+* xref:MagnetTools_ex/Levitation/README.adoc[Gradient Magnetic Field Map: Axi]
 
 === CAD generation and Meshing with {hifimagnet} {salome} plugin 
 
