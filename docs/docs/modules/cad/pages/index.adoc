@@ -68,18 +68,13 @@ export SREGISTRY_CLIENT_SECRETS=~/.sregistry-cesga
 sregistry pull --name salome-8.3.0.simg hifimagnet/salome:8.3.0
 ```
 
+The singularity image will be downloaded to a file name: `hifimagnet-salome-8.3.0.simg`.
+
 [NOTE]
 ====
 `SREGISTRY_STORAGE` enables you to specify a directory to hold the singularity images.
 By default images will be downloaded to `$HOME/.sregistry`
 ====
-
-[[rename_sing_image]]
-You can eventually rename the image using:
-
-```
-sregistry rename hifimagnet/salome:8.3.0 salome-8.3.0.simg
-```
 
 [[dockerhub]]
 === from dockerhub
@@ -89,7 +84,7 @@ To get the image:
 
 ```
 docker login
-docker pull feelpp/salome:8.3.0-nvidia
+docker pull feelpp/salome:8.4.0-nvidia
 ```
 
 Check the existing docker images on link:https://hub.docker.com/r/feelpp/salome/[feelpp/salome dockerhub]
@@ -110,7 +105,7 @@ Actually only nvidia graphic cards are supported. To custom the images for you g
 card you should have a look at the
 link:https://raw.githubusercontent.com/feelpp/hifimagnet/develop/docker/salome/build_salome.sh?token=ABP6f83LtdGN4ApDyGYlwkle_5jZeSy0ks5aeEu2wA%3D%3D[scripts] generating the images.
 
-For system without Nvidia graphic card, we recommend to `fellpp/salome:8.3.0-mesa` instead
+For system without Nvidia graphic card, we recommend to `fellpp/salome:8.4.0-mesa` instead
 ====
 
 
@@ -162,7 +157,7 @@ docker run -ti --rm -e DISPLAY \
    -v /tmp/.X11-unix:/tmp/.X11-unix \
    -v $HOME/.Xauthority:/home/feelpp/.Xauthority \
    -v /opt/DISTENE/DLim:/opt/DISTENE/DLim \
-   feelpp/salome:8.3.0-nvidia salome [-t -b] ...
+   feelpp/salome:8.4.0-nvidia salome [-t -b] ...
 ```
 
 [TIP]
@@ -174,7 +169,7 @@ On Windows:
 
 [source,sh]
 ----
-docker run -it --rm -e DISPLAY :0 feelpp/salome-8.3.0:nvidia
+docker run -it --rm -e DISPLAY :0 feelpp/salome:8.4.0-nvidia
 ----
 
 On MacOs X:
@@ -188,7 +183,7 @@ On MacOs X:
 ----
 ip=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
 xhost +$ip
-docker run -it --rm -e DISPLAY $ip:0 feelpp/salome-8.3.0:nvidia
+docker run -it --rm -e DISPLAY $ip:0 feelpp/salome-8.4.0:nvidia
 ----
 
 You may need to adapt the line to get the working `ip` of your machine depending
@@ -218,7 +213,7 @@ salome [-m GEOM,SMESH,HIFIMAGNET] [-t -b] \
    args:--cfg=Insert-H1H4-Leads-2t.yaml[,--air[,--infty_Rratio=2,--infty_ZRatio=1.5],--mesh]
 ----
 
-`${HIFIMAGNET}` is the install directory of {hifimagnet} {salome} plugin, eg `/opt/SALOME-8.3.0-Debian-DB9.5/BINARIES-DB9.5/HIFIMAGNET/bin/salome`.
+`${HIFIMAGNET}` is the install directory of {hifimagnet} {salome} plugin, eg `/opt/SALOME-8.4.0-Debian-DB9.5/BINARIES-DB9.5/HIFIMAGNET/bin/salome`.
 
 image::ex_CAD_Insert_Air.png[A 4 helix insert with sourring air (in transparent red)]
 
@@ -236,13 +231,13 @@ export SREGISTRY_CLIENT=registry
 export SREGISTRY_CLIENT_SECRETS=$HOME/.sregistry
 export SREGISTRY_STORAGE=$LUSTRE/singularity_images
 module load singularity
-singularity run -B /mnt shub://sregistry.srv.cesga.es/mso4sc/sregistry --quiet pull hifimagnet/salome:8.3.0
+singularity run -B /mnt shub://sregistry.srv.cesga.es/mso4sc/sregistry --quiet pull hifimagnet/salome:8.4.0
 ----
 
-* [source,sh]
+[source,sh]
 ----
 module load singularity
-singularity run --nv -B ${LICDIR}:/opt/DISTENE/DLim:ro --app salome ${SREGISTRY_STORAGE}/salome-8.3.0.simg  
+singularity run --nv -B ${LICDIR}:/opt/DISTENE/DLim:ro --app salome ${SREGISTRY_STORAGE}/hifimagnet-salome-8.4.0.simg  
 ----
 
 Alternatively you can also use `run_salome.sh`
@@ -543,7 +538,7 @@ singularity exec \
 ----
 where:
 
-* `SALOMEDIR` is {salome} install directory (eg. `/opt/SALOME_8.3.0_MPI-DB9.5`),
+* `SALOMEDIR` is {salome} install directory (eg. `/opt/SALOME_8.4.0_MPI-DB9.5`),
 * `$STORE/Distene` is the directory containing a valid `dlim8.key` license file.
 
 === A simple `med` mesh in `TUI` mode
