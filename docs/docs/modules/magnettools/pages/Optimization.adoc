@@ -50,21 +50,15 @@ in each copper alloy tubes:
 
 [source,sh]
 ----
-opt2cad ... , <1>
+opt2cad HL-31.d , <1>
 addshape ... , <2>
-opt2yml ... , <3>
+opt2yml HL-31.d , <3>
 ----
 
-<1> `opt2cad` 
+<1> `opt2cad`  generates files for CAD/CAM Helices
 <2> `addshape` generates files for CAD/CAM Helices with "bumps" on the helical cut shape path.
 <3> `opt2yml` generates configuration files for building Helices with {salome}.
 
-
-* CAM data for machining the helices are created by:
-[source,sh]
-----
-opt2cad ...
-----
 
 NOTE: To create the actual 3D CAD model of an helix (abusively: tube in which an helical cut has been machined by EDM technic),
 we still need some more information...
@@ -85,4 +79,44 @@ Available options are:
 == Use `OptHelix`
 
 
-References:
+== Generating CAD/CAM files
+
+To create files for CAD or CAM use `opt2cad`:
+
+[source,sh]
+----
+opt2cad [-o format] HL-31.d
+----
+
+Valid formats are:
+
+* `LNCMI`: default value, for creating file for {lncmi} CAM
+* `CATIA`: for creating files for CATIA
+* `SALOME`: for creating files for {salome}
+
+To add shapes on some helical cuts, you may use:
+
+[source,sh]
+----
+add_shape --angle="60 90 120 120" --shape_angular_length=8 --shape=HL-31-995  --format=LNCMI --position="ALTERNATE" HL-31_H4
+----
+
+In this example we had shape profile `HL-31-995` at various angles on `HL-31_H4` helical cut.
+
+[source,sh]
+.Definition of profile `HL-31-995`: `Shape_HL-31-995.dat`
+----
+include::{examplesdir}/Shape_HL-31-995.dat[]
+----
+
+note on files created...
+
+
+== Prepare Data for {hifimagnet} {salome}
+
+[source,sh]
+----
+opt2yml HL-31.d
+----
+
+== References

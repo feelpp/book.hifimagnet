@@ -1,7 +1,8 @@
-[[bmap]]
+[[fieldmaps]]
 = Magnetic Field Maps
 :page-partial:
 
+[[bmap]]
 == Use `B_Map`
 
 `B_Map` enables axisymetrical calculation of the magnetic field and/or potential.
@@ -49,6 +50,7 @@ Available options are:
  --omp_off                 turn off openm
 ```
 
+[[levitation]]
 == Use `Levitation`
 
 `Levitation` computes Bz and its derivatives on Z-Axis using https://en.wikipedia.org/wiki/Automatic_differentiation[AD technics].
