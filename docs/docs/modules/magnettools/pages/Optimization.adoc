@@ -6,8 +6,8 @@ The goal of the Axisymetric optimization is to provide an maximum magnetic field
 under constraints:
 
 * total electric power
-* critical temperature per helix
-* critical elastic limit per helix
+* maximal allowed temperature per helix
+* maximal allowed stress per helix
 
 for a given insert geometry.
 
@@ -18,10 +18,18 @@ The unknowns may either be:
 
 [source,sh]
 ----
-OptAubert ...
+OptAubert HL-31.dat
 ----
 
-NOTE: Each helix is splitted in a given number of sections stem:[S_i] along stem:[z] axis.
+[NOTE]
+====
+Each helix is splitted in a given number of sections stem:[S_i] along stem:[z] axis.
+The result of the optimization is the vector stem[{j_i}] (aka the current density stem:[j_i] value on the inner radius of
+all sections stem:[S_i]) for `optaubert`. 
+
+The stress in each section is approximated by the **Hoop stress**, namely stem:[r j_{\theta}(r) \cdot b_z(r)] for stem:[r=r_i]
+with stem:[r_i] the inner radius of section stem:[S_i].
+====
 
 [IMPORTANT]
 ====
@@ -30,7 +38,10 @@ For licensing issue, they can only be ran on `calcul10` server.
 ====
 
 
-The input and output result use the format described in this xref:DataStructure.adoc[section].
+The input file corresponds to the xref::DataStructure.adoc#header_section[**header section**] of the `.d` magnet description file.
+The output is a `.d` file.
+
+
 To build the actual 3D geometry, that shall reflect, this axisymetrical current density distribution, we use
 the following assumption:
 
@@ -56,8 +67,8 @@ opt2yml HL-31.d , <3>
 ----
 
 <1> `opt2cad`  generates files for CAD/CAM Helices
-<2> `addshape` generates files for CAD/CAM Helices with "bumps" on the helical cut shape path.
-<3> `opt2yml` generates configuration files for building Helices with {salome}.
+<2> `addshape` generates files for CAD/CAM Helices with "bumps" on the helical cut shape path; this is optional.
+<3> `opt2yml` generates configuration files for building Helices with {hifimagnet} {salome} plugin.
 
 
 NOTE: To create the actual 3D CAD model of an helix (abusively: tube in which an helical cut has been machined by EDM technic),
@@ -68,16 +79,65 @@ we still need some more information...
 
 [source,sh]
 ----
-OptAubert ...
+optaubert HL-31.dat
+----
+
+Available options to control the optimization are:
+
+```
+--majorprint=INT                specify nag major print level (default is 10)
+--minorprint=INT                specify nag major print level (default is 0)
+--major_iteration_limit=INT     specify nag major iterations_limit (default is controlled by nag)
+--minor_iteration_limit=INT     specify nag minor iterations_limit (default is controlled by nag)
+--tolerance=DOUBLE              specify Optimaly tolerance (default is 1.0e-15)
+--function_precision=DOUBLE     specify Function precision (default is 4.38e-15)
+--feasibility=DOUBLE            specify nonlinear feasibility tolerance (default is 1.0e-15)
+--check                         activate nag checks
+--random                        initiliaze with random numbers
+--init=STRING                   initialize solution from 
+--verbose                       activate verbose mode
+--log                           activate nag logging mode
+--recursive                     activate recursive mode
+```
+
+Other options are:
+
+--gmsh                          activate gmsh output
+--num_integ=INT                 specify num_integ size (default 100)
+--num_eval=INT                  specify num_eval size (default 100)
+--gsl-error-handler             deactivate gsl error handler (default is on)
+```
+
+== Use `OptHelix`
+
+[source,sh]
+----
+opthelix --stress --temp [--cooling] [--geom] HL-31.dat
 ----
 
 Available options are:
 
 ```
+--majorprint=INT                specify nag major print level (default is 10)
+--minorprint=INT                specify nag major print level (default is 0)
+--major_iteration_limit=INT     specify nag major iterations_limit (default is controlled by nag)
+--minor_iteration_limit=INT     specify nag minor iterations_limit (default is controlled by nag)
+--tolerance=DOUBLE              specify Optimaly tolerance (default is 1.0e-15)
+--feasibility=DOUBLE            specify nonlinear feasibility tolerance (default is 1.0e-15)
+--geom                          activate geometry optimization
+--check                         activate nag checks
+--temp                          activate temperature constraints
+--stress                        activate stress constraints
+--random                        initiliaze with random numbers
+--gmsh                          activate gmsh output
+--init=STRING                   initialize solution from 
+--verbose                       activate verbose mode
+--log                           activate nag logging mode
+--recursive                     activate recursive mode
+--cooling                       activate cooling modeling
+--num_integ=INT                 specify num_integ size (default 100)
+--num_eval=INT                  specify num_eval size (default 100)
 ```
-
-== Use `OptHelix`
-
 
 == Generating CAD/CAM files
 
@@ -109,7 +169,10 @@ In this example we had shape profile `HL-31-995` at various angles on `HL-31_H4`
 include::{examplesdir}/Shape_HL-31-995.dat[]
 ----
 
-note on files created...
+This command will generate 2 files:
+
+* `HL-31_H4_cut_with_shapes.iso`: CAM file for the EDM machining,
+* `HL-31_H4_cut_with_shapes.xls`: CAD file for CATIA (the file needs to be converted to a real Excell file with the script `write_excel.py`)
 
 
 == Prepare Data for {hifimagnet} {salome}
@@ -118,5 +181,16 @@ note on files created...
 ----
 opt2yml HL-31.d
 ----
+
+This command generates `.yaml` cfg files for Helices.
+These files are, somehow, incomplete.
+Some information has to be added to be complete, eg the dimension of the tube correspond to the actual helix.
+
+[NOTE]
+====
+To add shapes on some helical cuts, you may use `add_shape` as above with additional option `--format=SALOME`.
+This will create the `HL-31_H4_cut_with_shapes_salome.dat` file for {hifimagnet} {salome} plugin.
+====
+
 
 == References
