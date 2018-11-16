@@ -1,0 +1,7 @@
+== Running {salome} smoothly
+
+[source,sh]
+.A script to run {salome} smoothly
+----
+include::{examplesdir}/run_salome.sh[]
+----
