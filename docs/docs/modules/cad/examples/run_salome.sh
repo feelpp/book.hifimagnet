@@ -46,7 +46,7 @@ done
 shift $((OPTIND - 1))
 
 # Optionally set VERSION and others if none is defined. 
-: ${IMAGE=salome-8.4.0.simg}
+: ${IMAGE=salome-mesa-8.4.0.simg}
 : ${TUI=0}
 : ${SCRIPT=""}
 : ${SCRIPT_ARGS=""}
@@ -58,6 +58,13 @@ if [ -z $SINGULARITY_DIR ]; then
     echo "SREGISTRY_STORAGE not defined"
     echo "please setup SREGISTRY_STORAGE to point to your local sregistry repository"
     echo "ex: export SREGISTRY_STORAGE=$LUSTRE/singularity_images"
+    exit 1
+fi
+
+if [ ! -f  $SINGULARITY_DIR/$IMAGE ]; then
+    echo "$SINGULARITY_DIR/$IMAG: no such image found"
+    echo "please pull the image first"
+    echo "ex: sregistry pull hifimagnet/URI_NAME"
     exit 1
 fi
 
@@ -92,5 +99,5 @@ else
 	-B /scratch \
 	-B $KEYDIR:/opt/DISTENE/DLim:ro \
 	$SINGULARITY_DIR/$IMAGE \
-	vglrun salome 
+	GALLIUM_DRIVER=llvmpipe salome 
 fi
