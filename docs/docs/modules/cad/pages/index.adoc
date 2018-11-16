@@ -65,15 +65,21 @@ export SREGISTRY_CLIENT=registry
 export SREGISTRY_CLIENT_SECRETS=~/.sregistry-cesga
 [export SREGISTRY_STORAGE=...]
 
-sregistry pull --name salome-8.3.0.simg hifimagnet/salome:8.3.0
+sregistry pull --name salome-8.4.0.simg hifimagnet/salome:8.4.0
 ```
 
-The singularity image will be downloaded to a file name: `hifimagnet-salome-8.3.0.simg`.
+The singularity image will be downloaded to a file name: `hifimagnet-salome-8.4.0.simg`.
 
 [NOTE]
 ====
 `SREGISTRY_STORAGE` enables you to specify a directory to hold the singularity images.
 By default images will be downloaded to `$HOME/.sregistry`
+====
+
+[IMPORTANT]
+====
+On some systems (eg without NVidia graphic video card), it may be more convenient to use `hifimagnet/salome-mesa:8.4.0`
+image instead of the standard one. See <<salome_on_remotedesktop, here>> for details.
 ====
 
 [[dockerhub]]
@@ -223,7 +229,7 @@ NOTE: `Insert-H1H4-Leads-2t.yaml` can be found in `/usr/local/share/salome/H1H4`
 === On Remote desktop
 
 * copy {meshgems} licence file on your account in the Visu resource in `${LICDIR}` directory 
-* pull {salome} {hifimagnet} image from {sregistry}
+* pull {salome} {hifimagnet} image with Mesa support from {sregistry}.
 
 [source,sh]
 ----
@@ -231,32 +237,54 @@ export SREGISTRY_CLIENT=registry
 export SREGISTRY_CLIENT_SECRETS=$HOME/.sregistry
 export SREGISTRY_STORAGE=$LUSTRE/singularity_images
 module load singularity
-singularity run -B /mnt shub://sregistry.srv.cesga.es/mso4sc/sregistry --quiet pull hifimagnet/salome:8.4.0
+singularity run -B /mnt shub://sregistry.srv.cesga.es/mso4sc/sregistry --quiet pull hifimagnet/salome-mesa:8.4.0
 ----
+
+Then to run {salome} type:
 
 [source,sh]
 ----
 module load singularity
-singularity run --nv -B ${LICDIR}:/opt/DISTENE/DLim:ro --app salome ${SREGISTRY_STORAGE}/hifimagnet-salome-8.4.0.simg  
+singularity run --nv -B ${LICDIR}:/opt/DISTENE/DLim:ro --app salome ${SREGISTRY_STORAGE}/hifimagnet-salome-mesa-8.4.0.simg  
 ----
 
-Alternatively you can also use `run_salome.sh`
-
-[source,sh]
-.A script to run {salome} smoothly
-----
-include::{examplesdir}/run_salome.sh[]
-----
-
-[TIP]
-====
-On a remote desktop (`novnc` + `virtualgl`), to launch Salome in GUI mode you have to use
-to benefit from hardware acceleration.
+You can also start the container:
 
 [source,sh]
 ----
-vglrun salome [...]
+singularity exec -B ${LICDIR}:/opt/DISTENE/DLim:ro -${SREGISTRY_STORAGE}/hifimagnet-salome-mesa-8.4.0.simg
+-----
+
+and run type the following command within the container:
+
+[source,sh]
 ----
+GALLIUM_DRIVER=llvmpipe salome
+----
+
+Alternatively you can also use xref::run_salome.adoc[`run_salome.sh`]:
+
+[source,sh]
+----
+./run_salome.sh -l ${LICDIR} [-i [${SREGISTRY_STORAGE}/]hifimagnet-salome-mesa-8.4.0.simg]
+-----
+
+
+
+////////////////////////////////////////////////////
+comment out this block as vglrun salome fails (crash when trying to load MESH module
+
+// [TIP]
+// ====
+// On a remote desktop (`novnc` + `virtualgl`), to launch Salome in GUI mode you have to use
+// to benefit from hardware acceleration.
+
+// [source,sh]
+// ----
+// vglrun salome [...]
+// ----
+
+////////////////////////////////////////////////////
 
 ====
 

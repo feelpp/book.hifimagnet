@@ -43,7 +43,6 @@ export SREGISTRY_CLIENT_SECRETS=$HOME/.sregistry
 export SREGISTRY_STORAGE=$LUSTRE/singularity_images
 module load singularity
 singularity run -B /mnt shub://sregistry.srv.cesga.es/mso4sc/sregistry --quiet pull hifimagnet/ensight:10.2.3c
-singularity run -B /mnt shub://sregistry.srv.cesga.es/mso4sc/sregistry rename hifimagnet/ensight:10.2.3c ensight-10.2.3c.simg
 ----
 
 * run `ensight102`
