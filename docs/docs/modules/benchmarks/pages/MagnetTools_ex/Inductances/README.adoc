@@ -1,0 +1,90 @@
+= Sefl and Mutual Inductances (Axisymetric geom)
+include::{partialsdir}/header-macros.adoc[]
+include::{partialsdir}/header-uri.adoc[]
+include::{partialsdir}/mso4sc-uri.adoc[]
+
+In this example, we will compute the "ideal" self and mutual inductances for a test insert
+described using {magnettools} format.
+
+== Running the case
+
+To run this example on MSO4SC portal see this xref:mso4sc:inductance.adoc[section].
+
+=== Magnet Geometry
+
+image::HL-31/geom_axi.png[A 14 helices insert with 2 external bitter magnets]
+
+[TIP]
+====
+
+To get the geometry, you can use:
+
+[source,sh]
+----
+B_map  --gnuplot HL-31.d > geom.dat
+----
+
+Edit `geom.dat` and keep only lines between:
+```
+PolyHelices data for HL-31.d ...
+...
+UnifMagnets data for HL-31.d ...
+```
+
+Plot the geometry with `gnuplot`:
+
+[source,sh]
+----
+gnuplot> set size ratio -1
+gnuplot> set style data li
+gnuplot> plot "HL-31-geom.dat" title "PolyHelices", "HL-31-Bitter-geom.dat" title "Bitters"
+gnuplot> set xrange [0:0.7]
+gnuplot> set yrange [-0.4:0.4]
+----
+
+====
+
+=== Inductances
+
+To compute the inductances:
+
+[source,sh]
+----
+Inductances HL-31.d
+----
+
+then enter the data for:
+
+* Helix input current,
+* Bitter input current,
+* and eventually Supra outsert input current.
+
+[NOTE]
+====
+On first run, you will need to enter some more parameters before entering the currents and plot ranges data
+if you don't have an `eps_params.dat` file in your directory.
+
+On {mso4sc} Data Catalogue this file is already included in the dataset. 
+====
+
+== Outputs
+
+The inductance matrix is directly displayed in the main output:
+
+[source,txt]
+----
+Computing Inductances [Henry]
+
+		Helix			Bitter				
+Helix		2.3195642547e-03	2.3391491498e-03	
+Bitter		_			1.4224707838e-02	
+----
+
+The code also computes the resistances:
+
+[source,txt]
+----
+Computing Resistances [Ohm]
+Helix	Bitter		
+    0.013106	   0.0095641	
+----
