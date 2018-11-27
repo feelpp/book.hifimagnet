@@ -8,7 +8,7 @@ include::{partialsdir}/mso4sc-uri.adoc[]
 
 This document will provide basic informations for *EndUsers* :
 
-* to connect to the {uri-msoportal-www}[Portal],
+* to connect to the {uri-msoportal-dev-www}[Canary Portal],
 * to purchase an {hifimagnet} application,
 * to run an {hifimagnet} application.
 
@@ -16,7 +16,7 @@ An overview of the main portal functionalities is given in this <<overview,secti
 This is followed by a brief description of the {hifimagnet} apps available and on the over-whole workflow
 of actually running apps within the portal.
 
-The user that have already an account on the {uri-msoportal-www}[Portal] may skip the next section
+The user that have already an account on the {uri-msoportal-dev-www}[Canary Portal] may skip the next section
 and go directly to the section related to his/her role:
 
 * xref::dev.adoc#devuser[*DevUser*]
@@ -25,21 +25,21 @@ and go directly to the section related to his/her role:
 NOTE: The main difference between *EndUser* and *DevUser* is that the latter can register an {hifimagnet} application.
 
 [[connect]]
-== Get an account on *MSO4SC Portal*
+== Get an account on *MSO4SC Canary Portal*
 
-Connect to {uri-msoportal-www}[MSOPortal]
+Connect to {uri-msoportal-dev-www}[Canary MSOPortal]
 
-image::PortalMSO4SC.png[login page MSOPortal]
+image::CanaryMSO4SC.png[login page Canary MSOPortal]
 
 * Click on *login*
 
 You will be forwarded to IDM component of the portal.
 
-image::PortalMSO4SC_idm.png[IDM component of MSOPortal]
+image::PortalMSO4SC_idm.png[IDM component of Canary MSOPortal]
 
 * *Sign up* to get an account
 
-image::PortalMSO4SC_signup.png[IDM component of MSOPortal]
+image::PortalMSO4SC_signup.png[IDM component of Canary MSOPortal]
 
 TIP: Do not check *gravatar* for your avatar as it is buggy right now.
 
@@ -63,17 +63,25 @@ image::add_service_IDM.png[Register new compnent to IDM MSOPortal]
 [[overview]]
 == Overview of the Portal
 
-image::PortalMSO4SC_login.png[Main page for MSOPortal]
+image::CanaryMSO4SC_login.png[Main page for Canary MSOPortal]
 
-the portal is split into several services:
+the canary portal is split into several services:
 
-* *Marketplace*, where you can add and/or purchase applications
-* *Data Catalogue*, where you can add and/or retrieve data
 * *Experiments*, where the app is setup and the simulation is launched
 * *Visualization*, to access a Remote desktop to pre and/or post-processes your simulations
+* *Data*, to access the data transfert tools (aka globus)
+* *Source*, to access to {uri-gitlab-cesga}[cesga gitlab]
+* *Containers*, to access to the {uri-sregistry-cesga}[cesga sregistry]
 * *Q & A*, to access the Community tools for asking/answering specific questions
 * *Docs*, to access the general documentation for MSO4SC project
 * *Feedback*, to answer the questionnaire for MSO4SC project
+
+The following services are not available from the Canary MSOPortal:
+
+* *Marketplace*, where you can add and/or purchase applications
+* *Data Catalogue*, where you can add and/or retrieve data
+
+You have to connect to the main MSOPortal if you ever want to access these services.
 
 more details on:
 
@@ -81,22 +89,18 @@ more details on:
 * https://business-api-ecosystem.readthedocs.io/en/v5.4.1/user-programmer-guide.html[*Marketplace* User manual]
 * https://ckan.org/documentation-and-api/[*Data Catalogue* docs]
 
+
 [NOTE]
 ====
-For smooth operations of {uri-msoportal-www}[portal], the following ports have to be *open*:
+For smooth operations of {uri-msoportal-dev-www}[portal], the following ports have to be *open*:
 
 * `3000`: *IDM*, the service responsible for authentification 
-* `5000`: *MarketPlace*
-* `8000`: *Data Catalogue*
+* `5050`: *MarketPlace*
+* `8080`: *Data Catalogue*
 
 To check, you can use `nmap -p <port> portal.mso4sc.eu`.
 
 You may need to contact your system admin to check and eventually open these ports.
-
-
-For *DevUser* using the {uri-msoportal-dev-www}[portal dev version] the ports to be opened are:
-
-* `5050, 8080`: ...
 
 ====
 
@@ -161,7 +165,7 @@ Before proceeding to the setup of the app, you need to make sure, at least for {
 One more step consists in retrieving the *TOKEN* and storing it into your home directory on the HPC resource.
  This *TOKEN* is needed to download programmatically the {singularity} image :
 
-* connect to {uri-sregistry-cesga}[{sregistry}] using {fiware} authentification
+* click on *Container* main menu to access to {cesga} {sregistry}
 * go to your account (top right button)
 * select *Token*
 
@@ -223,10 +227,8 @@ They are grouped into 4 categories:
 | Offering                    | Description           | Category      | Notes
 | xref::MagThel.adoc[MagThel] | thermoelectric models | Simulations   |
 | xref::MagFull.adoc[MagFull] | fully coupled models  | Simulations   |
-| xref::3Dsim.adoc[MagSim]    | direct models         | Simulations   | more generic app 
 | xref::bmap.adoc[MagMapAxi]  |                       | MagnetTools   |
 | xref::MagCAD.adoc[MagCAD]   |                       | Preprocessing | generate CAD files and mesh (MED format)
-| xref::MagMesh.adoc[MagMesh] |                       | Preprocessing | partition mesh
 |===
 
 For details about app setup, please click on the corresponding app.
@@ -244,5 +246,5 @@ properly filled as in this xref::user.adoc#running [example].
 
 == References
 
-* https://github.com/MSO4SC/MSOPortal/blob/master/portal/README.adoc#visualization--pre--post-tool[portal usage]
-* https://raw.githubusercontent.com/MSO4SC/resources/master/blueprint/feelpp/hifimagnet_test/upload/blueprint.yaml[blueprints examples]
+* https://github.com/MSO4SC/MSOPortal/blob/canary/portal/README.adoc#visualization--pre--post-tool[portal usage]
+* https://raw.githubusercontent.com/MSO4SC/resources/canary/blueprint/feelpp/hifimagnet_gen/upload/blueprint.yaml[blueprints examples]

@@ -8,10 +8,8 @@ include::{partialsdir}/mso4sc-uri.adoc[]
 TIP: When running into some strange portal behavior, first try to `logout/login` from the portal
 before reporting an issue.
 
-An *EndUser* can:
+In the Canary Portal, an *EndUser* can only:
 
-* <<purchase, purchase>> an application from the *MarketPlace*,
-* <<data, manage>> datasets and Organizations in the *Data Catalogue*,
 * <<running, run>> application in *Experiments*
 
 [IMPORTANT]
@@ -20,7 +18,7 @@ Some apps are freely available for all portal users.
 To use these apps, you can skip the purchase step.
 Right now all {hifimagnet} apps are freely available.
 
-Before going to the {uri-msoportal-experiment-www}[*Experiments*]
+Before going to the {uri-msoportal-experiment-dev-www}[*Experiments*]
 it is mandatory to connect at least to {uri-msoportal-market-www}[*Marketplace*] 
 and to the {uri-msoportal-ckan-www}[*Data Catalogue*].
 
@@ -29,97 +27,22 @@ you have to upload your *Data Catalogue key* into the Experiments *settings*
 as described <<api_key, here>>.
 ====
 
-[[purchase]]
-=== Purchase an application
-
-To purchase an application from the *Marketplace* you can either be *DevUser*
-or a simple *EndUser*. The process is the following:
-
-* connect to the {uri-msoportal-market-www}[*Marketplace*], in *Home* (top left Marketplace page) you will find all available apps (*All categories*).
-* click on *Add to Cart* to purchase the app you want.
-* click on *Shopping Cart* and *Checkout* to go on
-** fill the required forms for *shipping address*
-** provide a *shipping address* if not already defined
-** provide a *billing address* if not already defined
-** finalize your order by clicking on *Checkout*
-
-To use the app, you will have to wait that the owner/seller of the app validate
-you order. To check the status of your order:
-
-* go to *My Inventory*
-* go to *Product Orders*
-
-You shall see your products and their status in each product form.
-
-To finalize your purchase *DO NOT FORGET* to connect to :
-
-* {uri-sregistry-cesga}[{sregistry}]
-* {uri-msoportal-ckan-www}[*Data Catalogue*]
-
-Then notify the owner/seller that you request to be part of {hifimagnet} user group.
-This will allow you to access {hifimagnet} singularity images and datasets.
-
-[NOTE]
-====
-To access http://docs.cemosis.fr/hifimagnet/stable/[{hifimagnet} docs] you also need to have a user/password.
-====
-
-// NOTE: The use of {uri-girder-unistras}[{girder} is optional.
-
-[[data]]
-=== Data Catalogue
-
-Any user of the platform can create and manage *Organization* in the {uri-msoportal-ckan-www}[*Data Catalogue*]
-to deal with private datasets.
-
-==== Create and Manage *Organization*
-
-* connect to {uri-msoportal-ckan-www}[*Data Catalogue*]
-* click on *Organizations*
-* click on *Add Organization*
-
-You, then, need to fill the form and finalize the creation by clicking on the *create organization* button.
-
-You have then to manage user that are allowed to be part of your organization.
-They may have the following roles:
-
-* *Admin* : can view/add dataset, add user and manage role
-* *Editor* : can add dataset
-* *Member* : can view dataset
-
-
-See the video bellow for a demo.
-
-video::Wq713I6HM2I[youtube]
-
-NOTE: Users have to connect at least once to *Data Catalogue* before you can grant them a role in your organization.
-
-[[api_key]]
-==== Upload Data
-
-To use private Organization and/or Dataset you would need to enter
-*Data Catalogue key* in the *Settings* menu. For instructions see xref::index.adoc#setup_api_key[here].
-
-NOTE: To add a dataset to an existing organization, you may need to ask the *Admin* of the organization to be granted the role of *Editor* to do so. In our case it is the owner/seller of {hifimagnet} app.
-to set <hpc_feelpp> to a specific directory for each instance.
-// [[using_girder]]
-// === Upload Data to {girder} service
-
-
+If you ever have need to access *Data Catalogue* or *Market Place*
+use the {uri-msoportal-www}[main MSOPortal]
 
 [[running]]
 === Running an {hifimagnet} application in *Experiments*
 
-image::PortalMSO4SC_Exp_User.png[*Experiments* *Instances* main menu for *EndUSer*]
+image::CanaryMSO4SC_Exp_User.png[*Experiments* *Instances* main menu for *EndUSer*]
 
-* Go to {uri-msoportal-experiment-www}[*Experiments*]
-* Select *Instances*
+* Go to {uri-msoportal-experiment-dev-www}[*Experiments*]
+* Select *Add a new instance*
 ** define an ID
 ** select a registered app in the sliding menu
 
 At this point you should have a page with all the options that need to be filled.
 
-image::portal_magtherm_inputs.png[ex: {hifimagnet} app `MagTherm`]
+image::CanaryMagThel.png[ex: {hifimagnet} app `MagTherm`]
 
 The fields to fill may be grouped into categories:
 
@@ -159,14 +82,14 @@ The others fields are designed for more advanced users.
 |===
 | Key                        | Description                                   | Default                                         | Notes
 | *HPC: primary*             | HPC settings                                  | "cesga"                                         |
-| hpc_modules                | modules to load depending on the HPC machine  | `[gcc/6.3.0, openmpi/2.0.2, singularity/2.4.2]` | depends on HPC and singularity image
-| hpc_basedir                | volume where instance is created              | `${LUSTRE}`                                     | depends on HPC and singularity image
-| hpc_feelpp                | volume where results will be stored              | `${LUSTRE}/feel`                                     | depends on HPC and app
-| hpc_volumes                | volumes to be mounted on the HPC machine      | `[/scratch,/mnt,${LUSTRE}/feel:/feel]`          | depends on HPC and singularity image
-| *hpc_partition*            | select partition queue                        | 'thin-shared'                                   | shall depends on batch system and HPC
-| hpc_reservation            | select reservation queue                      | ``                                              | optional
-| *parallel_tasks*           | number of tasks/processes to run in parallel  | 2                                               | depends on batch system and selected partition
-| *max_time*                 | maximum allowed time                          | '00:30:00'                                      | hours, minutes and seconds
+| resource_hpc_modules       | modules to load depending on the HPC machine  | `[gcc/6.3.0, openmpi/2.0.2, singularity/2.4.2]` | depends on HPC and singularity image
+| resource_hpc_basedir       | volume where instance is created              | `${LUSTRE}`                                     | depends on HPC and singularity image
+| hpc_feelpp                 | volume where results will be stored              | `${LUSTRE}/feel`                                     | depends on HPC and app
+| resource_hpc_volumes       | volumes to be mounted on the HPC machine      | `[/scratch,/mnt,${LUSTRE}/feel:/feel]`          | depends on HPC and singularity image
+| *resource_hpc_partition*   | select partition queue                        | 'thin-shared'                                   | shall depends on batch system and HPC
+| resource_hpc_reservation   | select reservation queue                      | ``                                              | optional
+| *resource_parallel_tasks*  | number of tasks/processes to run in parallel  | 2                                               | depends on batch system and selected partition
+| *resource_max_time*        | maximum allowed time                          | '00:30:00'                                      | hours, minutes and seconds
 |===
 
 .List of keys specs for retrieving singularity images
@@ -207,29 +130,32 @@ Once filled, click on *Create New Instance*.
 
 TIP: While creating a new app instance, any error will result in a pop-up message.
 
-image::portal_magtherm_running.png[ex: Running {hifimagnet} `MagTherm`]
 
 The next step is to launch the app:
 
 * select the instance *ID*, you defined in the previous step,
 * click on *Run*, wait until the button in blue turns green
 
+You can check the application logs, if any where defined, by clicking on the *Application Logs* button.
+To go back to the main view, just click on *execution logs*
+
+image::CanaryMagThel_monitoring.png[ex: Application logs for {hifimagnet} app `MagTherm`]
 
 [IMPORTANT]
 ====
-The result are stored in `<hpc_feelpp>`. Make sure that `<hpc_volumes>` bindmount list option contains this field: eg `<hpc_feelpp>:/feel` on cesga where `<hpc_feelpp>=$LUSTRE/feel`.
+The result are stored in `<resource_hpc_basedir>/<hpc_feelpp>`. Make sure that `<hpc_volumes>` bindmount list option contains this field: eg ``<resource_hpc_basedir>/<hpc_feelpp>:/feel` on cesga where `<hpc_feelpp>=$LUSTRE/feel`.
 
 As a best practice, we **highly recommend** the user to set `<hpc_feelpp>` to a specific directory for each instance.
 
 It means that the actual simulation results are stored in:
 
-* `<hpc_feelpp>/hifimagnet/ThermoElectricModel/<geofile>/thermoelectric-linear_V1T1_N1/np_<parallel_tasks>` for MagThel app.
+* `<resource_hpc_basedir>/<hpc_feelpp>/hifimagnet/ThermoElectricModel/<geofile>/thermoelectric-linear_V1T1_N1/np_<parallel_tasks>` for MagThel app.
 
 `<geofile>` correspond to the input with the same name in the <cfgfile>.
 
 When running the instance *ID*:
 
-* a directory `<hpc_basedir>/<workdir_prefix>_<date>_<id>` will be created (`<id> is a random number);
+* a directory `<resource_hpc_basedir>/<workdir_prefix>_<date>_<id>` will be created (`<id> is a random number);
 * the dataset will eventually be downloaded and extracted into this directory;
 * the script `<job_prefix><sid>.script` will be created and submitted to the queueing system of the HPC ressource.
 
@@ -261,6 +187,7 @@ Basically the procedure is the same as <<running, above>>. The only difference h
 
 * to select a dataset in the *DataSet* sliding menu
 * to select a ressource within the *DataSet* 
+* to select an output dataset in the *Output DataSet* sliding menu
 * to enter the name of the `<cfgfile>` you will use
 
 You should at the end have something like in the following image.
