@@ -7,7 +7,7 @@ In this test case, we consider a polyhelix magnet consisting of 2 helices operat
 The simulations are compared with experimental results, more precisely with magnetic field measurements
 with a 3D hall probe in the zone of interest for researchers.
 
-include:BancMesure/setup_lowres.jpg[Experimental Setup for Low field Measurements on a Workbench]
+include::BancMesure/setup_lowres.jpg[Experimental Setup for Low field Measurements on a Workbench]
 
 The magnetic field produced  will be computed on a zone of interest namely a cylinder along the helicesZ-Axis.
 
@@ -40,10 +40,10 @@ salome -t $HIFIMAGNET_SALOME_DIR/HIFIMAGNET_Cmd.py args:--insert=BancMesure_H3H4
 gmsh -3 -bin BancMesure_H3H4_with_shapes-biotsavart_z_wo_glue.geo -o BancMesure_H3H4_with_shapes_wo_isolant.msh
 ----
 
-Note that the dimension of the box may be changed in the geo:
+The dimensions of the box may be changed in the geo:
 
 [source,geo]
----
+----
 Merge "BancMesure_H3H4_with_shapes.med";
 
 hs=5;
@@ -51,7 +51,8 @@ rbox = 10;
 zbox0 = -45;
 zbox1 = 185;
 Include "createbox.geo";
----
+----
+
 
 === Partitionning the mesh:
 
