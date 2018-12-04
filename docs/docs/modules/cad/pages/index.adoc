@@ -283,10 +283,10 @@ comment out this block as vglrun salome fails (crash when trying to load MESH mo
 // ----
 // vglrun salome [...]
 // ----
+// ====
 
 ////////////////////////////////////////////////////
 
-====
 
 [[data]]
 = Data Structure
