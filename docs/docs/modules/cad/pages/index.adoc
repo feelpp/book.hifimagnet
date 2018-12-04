@@ -40,7 +40,7 @@ and give examples for most common operations.
 
 Custom installation, eg. for native installation, is detailed in the xref:dev:index.adoc#install_salome[dev section].
 
-## include:ROOT:{partialsdir}/convention.adoc[]
+// include:ROOT:{partialsdir}/convention.adoc[]
 
 [[qs_getting]]
 == Getting {hifimagnet} Salome plugin
@@ -253,7 +253,7 @@ You can also start the container:
 [source,sh]
 ----
 singularity exec -B ${LICDIR}:/opt/DISTENE/DLim:ro -${SREGISTRY_STORAGE}/hifimagnet-salome-mesa-8.4.0.simg
------
+----
 
 and run type the following command within the container:
 
@@ -267,7 +267,7 @@ Alternatively you can also use xref::run_salome.adoc[`run_salome.sh`]:
 [source,sh]
 ----
 ./run_salome.sh -l ${LICDIR} [-i [${SREGISTRY_STORAGE}/]hifimagnet-salome-mesa-8.4.0.simg]
------
+----
 
 
 
