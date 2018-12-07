@@ -8,7 +8,7 @@ include::{partialsdir}/mso4sc-uri.adoc[]
 
 This document will provide basic informations for *EndUsers* :
 
-* to connect to the {uri-msoportal-dev-www}[Canary Portal],
+* to connect to the {uri-msoportal-www}[Portal],
 * to purchase an {hifimagnet} application,
 * to run an {hifimagnet} application.
 
@@ -16,7 +16,7 @@ An overview of the main portal functionalities is given in this <<overview,secti
 This is followed by a brief description of the {hifimagnet} apps available and on the over-whole workflow
 of actually running apps within the portal.
 
-The user that have already an account on the {uri-msoportal-dev-www}[Canary Portal] may skip the next section
+The user that have already an account on the {uri-msoportal-www}[Portal] may skip the next section
 and go directly to the section related to his/her role:
 
 * xref::dev.adoc#devuser[*DevUser*]
@@ -25,21 +25,21 @@ and go directly to the section related to his/her role:
 NOTE: The main difference between *EndUser* and *DevUser* is that the latter can register an {hifimagnet} application.
 
 [[connect]]
-== Get an account on *MSO4SC Canary Portal*
+== Get an account on *MSO4SC Portal*
 
-Connect to {uri-msoportal-dev-www}[Canary MSOPortal]
+Connect to {uri-msoportal-www}[MSOPortal]
 
-image::CanaryMSO4SC.png[login page Canary MSOPortal]
+image::PortalMSO4SC.png[login page MSOPortal]
 
 * Click on *login*
 
 You will be forwarded to IDM component of the portal.
 
-image::PortalMSO4SC_idm.png[IDM component of Canary MSOPortal]
+image::PortalMSO4SC_idm.png[IDM component of MSOPortal]
 
 * *Sign up* to get an account
 
-image::PortalMSO4SC_signup.png[IDM component of Canary MSOPortal]
+image::PortalMSO4SC_signup.png[IDM component of MSOPortal]
 
 TIP: Do not check *gravatar* for your avatar as it is buggy right now.
 
@@ -63,10 +63,12 @@ image::add_service_IDM.png[Register new compnent to IDM MSOPortal]
 [[overview]]
 == Overview of the Portal
 
-image::CanaryMSO4SC_login.png[Main page for Canary MSOPortal]
+image::PortalMSO4SC_login.png[Main page for MSOPortal]
 
-the canary portal is split into several services:
+the portal is split into several services:
 
+* *Marketplace*, where you can add and/or purchase applications
+* *Data Catalogue*, where you can add and/or retrieve data
 * *Experiments*, where the app is setup and the simulation is launched
 * *Visualization*, to access a Remote desktop to pre and/or post-processes your simulations
 * *Data*, to access the data transfert tools (aka globus)
@@ -76,27 +78,19 @@ the canary portal is split into several services:
 * *Docs*, to access the general documentation for MSO4SC project
 * *Feedback*, to answer the questionnaire for MSO4SC project
 
-The following services are not available from the Canary MSOPortal:
-
-* *Marketplace*, where you can add and/or purchase applications
-* *Data Catalogue*, where you can add and/or retrieve data
-
-You have to connect to the main MSOPortal if you ever want to access these services.
-
 more details on:
 
 * https://github.com/MSO4SC/MSOPortal/blob/master/portal/README.adoc[MSO4SC Front-end & Experiments Tool]
 * https://business-api-ecosystem.readthedocs.io/en/v5.4.1/user-programmer-guide.html[*Marketplace* User manual]
 * https://ckan.org/documentation-and-api/[*Data Catalogue* docs]
 
-
 [NOTE]
 ====
-For smooth operations of {uri-msoportal-dev-www}[portal], the following ports have to be *open*:
+For smooth operations of {uri-msoportal-www}[portal], the following ports have to be *open*:
 
 * `3000`: *IDM*, the service responsible for authentification 
-* `5050`: *MarketPlace*
-* `8080`: *Data Catalogue*
+* `5000`: *MarketPlace*
+* `8000`: *Data Catalogue*
 
 To check, you can use `nmap -p <port> portal.mso4sc.eu`.
 
@@ -115,13 +109,22 @@ for most user except for the {hifimagnet} ones.
 ==== Setting up an HPC resource in *Experiments*
 
 * Go to {uri-msoportal-experiment-www}[*Experiments*]
-* Select *Settings*
-* Define a HPC resource
+* Select *User Infrastructure*
+* From the sliding menu, select a predefined  HPC resource
+* Enter a *Name*
+* Enter your credentials
 
-[source,txt]
-----
-include::{examplesdir}/hpc.txt[]
-----
+**Add an image here**
+
+// [source,txt]
+// ----
+// include::{examplesdir}/hpc.txt[]
+// ----
+
+To enter a new HPC resource
+
+* Select *User Infrastructure*
+
 
 [[setup_post]]
 ==== Setting up an Remote Desktop resource in *Visualization*
@@ -149,7 +152,7 @@ image::ckan_apikey.png[Getting *Data Catalogue key*]
 
 * Copy the key
 * Connect to {uri-msoportal-experiment-www}[*Experiments*]
-** Select "Settings"
+** Select "Data repositories"
 ** Paste or Enter your *Data Catalogue key*
 
 image::setting_ckanapikey.png[Adding *Data Catalogue key* in *Settings*]
@@ -165,9 +168,12 @@ Before proceeding to the setup of the app, you need to make sure, at least for {
 One more step consists in retrieving the *TOKEN* and storing it into your home directory on the HPC resource.
  This *TOKEN* is needed to download programmatically the {singularity} image :
 
-* click on *Container* main menu to access to {cesga} {sregistry}
+* click on *Container* main menu to connect to {uri-sregistry-cesga}[{cesga} {sregistry}]
+* click on *Sign In with FiWare* to enter the service
 * go to your account (top right button)
 * select *Token*
+
+// * connect to {uri-sregistry-cesga}[{sregistry}] using {fiware} authentification
 
 image::sregistry_token.png[ex: {Get {sregistry} token]
 image::sregistry_apitoken.png[ex: {Display {sregistry} token]
@@ -227,8 +233,10 @@ They are grouped into 4 categories:
 | Offering                    | Description           | Category      | Notes
 | xref::MagThel.adoc[MagThel] | thermoelectric models | Simulations   |
 | xref::MagFull.adoc[MagFull] | fully coupled models  | Simulations   |
+| xref::3Dsim.adoc[MagSim]    | direct models         | Simulations   | more generic app 
 | xref::bmap.adoc[MagMapAxi]  |                       | MagnetTools   |
 | xref::MagCAD.adoc[MagCAD]   |                       | Preprocessing | generate CAD files and mesh (MED format)
+| xref::MagMesh.adoc[MagMesh] |                       | Preprocessing | partition mesh
 |===
 
 For details about app setup, please click on the corresponding app.
@@ -246,5 +254,5 @@ properly filled as in this xref::user.adoc#running [example].
 
 == References
 
-* https://github.com/MSO4SC/MSOPortal/blob/canary/portal/README.adoc#visualization--pre--post-tool[portal usage]
-* https://raw.githubusercontent.com/MSO4SC/resources/canary/blueprint/feelpp/hifimagnet_gen/upload/blueprint.yaml[blueprints examples]
+* https://github.com/MSO4SC/MSOPortal/blob/master/portal/README.adoc#visualization--pre--post-tool[portal usage]
+* https://raw.githubusercontent.com/MSO4SC/resources/master/blueprint/feelpp/hifimagnet_test/upload/blueprint.yaml[blueprints examples]
