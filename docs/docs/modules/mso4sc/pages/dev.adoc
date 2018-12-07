@@ -10,9 +10,10 @@ include::{partialsdir}/mso4sc-uri.adoc[]
 Once registered in the portal, you  are a *EndUser*.
 To be granted *DevUser* rights, just email to Portal Admins (actually Victor or Javi).
 
-In he Canary Portal, A *DevUser* can only:
+A *DevUser* can:
 
 * <<registerapp, register>>/<<removeapp, remove>> apps
+* <<validorder, validate>> *EndUser* purchased order: this step is mandatory to grant user rights to run purchased app
 * <<sregistry_add_to_team, admin {sregistry}>> private collections
 
 
@@ -39,9 +40,11 @@ As a consequence, to upgrade your app package you have first to remove the app a
 [[free_app]]
 ==== For all users
 
+image::PortalMSO4SC_RegisterApp.png[*Experiments* menu for *DevUser*]
+
 To register an application for every user of the platform:
 
-* Go to {uri-msoportal-experiment-dev-www}[*Experiments*],
+* Go to {uri-msoportal-experiment-www}[*Experiments*],
 * Select *Applications*
 * Enter a new *Application Name*
 * Choose a package file to load.
@@ -56,7 +59,7 @@ It's actually a directory which contains :
 * a `blueprint.yml` TOSCA file that describes the workflow
 * a `scripts` sub-directory holding the scripts required to deploy and undeploy the app
 
-In this https://github.com/MSO4SC/resources/tree/canary/blueprint/feelpp/hifimagnet_test[git repository]
+In this https://github.com/MSO4SC/resources/tree/staging/blueprint/feelpp/hifimagnet_test[git repository]
 you will find the actual application corresponding to the {hifimagnet} basic demonstrator.
 
 To actually build the app, use: ```./deploy pkg```
@@ -65,16 +68,69 @@ To actually build the app, use: ```./deploy pkg```
 [TIP]
 ====
 To debug an app, it may be convenient to use the Portal *orchestrator CLI*.
-see https://github.com/MSO4SC/resources/blob/canary/blueprint/feelpp/hifimagnet_test/README.adoc[this file] for details
+see https://github.com/MSO4SC/resources/blob/staging/blueprint/feelpp/hifimagnet_test/README.adoc[this file] for details
 ====
+
+[[marketplace]]
+==== In the *Marketplace*
+
+To register an application you need to be *DevUSer*
+The process is split into several part:
+
+* add the app and create an offer in the {uri-msoportal-market-www}[*Marketplace*]:
+** go to *My stock/Catalogue*
+** go to *My stock/Product*
+** go to *My stock/Offering*
+
+Then you need to perform the following steps in {uri-msoportal-experiment-www}[*Experiments*],:
+
+* go to *Applications*
+** select your *Offering* in the sliding menu *New Products*
+** give the app a meaningful name
+** Choose a package file to load.
 
 [[removeapp]]
 ==== Remove an app
 
-* Go to {uri-msoportal-experiment-dev-www}[*Experiments*],
+* Go to {uri-msoportal-experiment-www}[*Experiments*],
 * Select *Applications*
 * In the top sliding menu, select the app to be removed
 * Click on *Remove*
+
+
+[[validorder]]
+=== Validate an {hifimagnet} application purchase order
+
+Once the app has been registered in the *Marketplace* (actually it means that an offering has been defined) you will be *owner* of this app. Any *EndUser* may purchase your app.
+To check if you have any order:
+
+* go to *My Inventory*
+* go to *My Inventory/Product Orders*
+* check *Recibibas* menu
+* if any new message, you need to:
+** click to validate the order
+** click again to finalize the order
+
+The *EndUser* may now proceed to perform *Experiments* with you product
+
+[IMPORTANT]
+====
+Do not forget to notify the user that he/she has to connect once to:
+
+* {uri-sregistry-cesga}[{sregistry} service]
+* {uri-msoportal-ckan-www}[*DataCatalogue*]
+
+and eventually to :
+
+* {uri-girder-unistras}[{girder} service]
+
+This steps are mandatory for smooth operation of the app since the user has to be included
+into {hifimagnet} user group. Fortunately this need to be done only once for any {hifimagnet} app.
+
+Unfortunately the management of user has to be carried out manually by the *DevUser* in charge of the app
+and cannot be performed from the portal.
+====
+
 
 
 [[sregistry_add_to_team]]
@@ -84,6 +140,7 @@ For app like {hifimagnet} apps that require an private singularity image, you mu
 To do so follow these instructions:
 
 * Click on *Container* main menu,
+* Logged in to your {uri-sregistry-cesga} using *FiWare*,
 * Click on *Teams* menu then select your *team*
 
 image::sregistry_team.png[ex: {hifimagnet} {sregistry} team]
