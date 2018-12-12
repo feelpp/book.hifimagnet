@@ -21,7 +21,7 @@ To get the geometry, you can use:
 
 [source,sh]
 ----
-B_map  --gnuplot HL-31.d > geom.dat
+B_Map  --gnuplot HL-31.d > geom.dat
 ----
 
 Edit `geom.dat` and keep only lines between:
