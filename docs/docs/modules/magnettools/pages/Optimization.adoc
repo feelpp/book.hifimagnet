@@ -102,6 +102,7 @@ Available options to control the optimization are:
 
 Other options are:
 
+```
 --gmsh                          activate gmsh output
 --num_integ=INT                 specify num_integ size (default 100)
 --num_eval=INT                  specify num_eval size (default 100)
