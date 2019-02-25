@@ -1,0 +1,193 @@
+[[monitoring]]
+= Magnets Monitoring
+
+In this paragraph we present the main principle of the magnet monitoring.
+
+As previously present, High Field Magnets are electromagnets made of copper alloys tubes
+- connected into series be so-called ring - powered with up to 31 kA to deliver up to 37 tesla.
+To dissipate the electric powered the magnet are cooled by a water forced flow (up to 140 l:m³
+with a pressure drop of 25 bars). Therefore the magnets are actually set into a housing.
+
+Such environment (water and high pressure) make it difficult to instrument the magnets.
+The only available measures come from:
+
+* voltage taps on the connection ring between consecutive tube,
+* water temperature probes at the inlet and outlet of the cooling circuit,
+* flow rate sensor.
+
+In addition to these data, we also have access to:
+
+* the total voltage drop stem:[V],
+* the total electric power stem:[P],
+* and the field factor stem:[f], ie. the ratio of the magnetic field stem:[B_z(0)] at the magnetic
+center over the input current stem:[I]. stem:[f] is experimentally obtained by measuring the magnetic
+field profile along the magnet stem:[Oz] axis at a given current. Note that this actually relies on
+the hypothesis of linear dependency of stem:[ß] versus stem:[I].
+
+The magnet is actually operated by setting the input current stem:[I]. In practice, the user request
+a value of stem:[B_z(0)] on a console which, in turn, send an order to power supply to deliver a
+current stem:[I=\frac{B_z(0)}{f}]. During this operation, the monitoring system receive data from
+the voltage taps stem:[U_i], water temperatures probes (stem:[Ti, To]) and flow rate stem:[Q] sensor.
+
+[[NOTE]]
+====
+
+[source,data]
+----
+09:57:20
+Magnet Power : 5.413 MW   Power : 5.75 MW Tout : 12.6607 C   BP : 4.12411 bar
+MagFld : 18.78089 Tesla
+Ti1 : 9.1 C   dPf1 : 0.516406 mbar   dPm1 : 4.77497 bar   Q1 : 74.7052 l/s   HP1 : 8.89908 bar
+Ti2 : 8.9 C   dPf2 : 5.10766 mbar    dPm2 : 6.78515 bar   Q2 : 81.2275 l/s   HP2 : 10.9093 bar
+Tin eau brute : 8.1 C   Tout eau brute : 9.8 C   Debit eau brute : 1193m3/h
+Coil  I(A)      U(V)   P(kW)   R0(mOhms)  dR0(%)  T(C)
+1     15240.41	9.54   145.32  0.60       2.91   56.26
+2     15240.41	14.44  220.00  0.91       2.77   56.24
+3     15240.41	18.83  286.91  1.19       2.53   47.83
+4     15240.41	24.71  376.57  1.56       2.10   45.58
+5     15240.41	31.25  476.25  1.97       1.66   41.80
+6     15240.41	35.70  544.14  2.25       2.05   38.32
+7     15240.41	34.78  530.01  2.19       1.91   30.30
+8     0.0       0.00   0.00    0.00       0.00    0.00
+9     0.0       0.00   0.00    0.00       0.00    0.00
+10    0.0       0.00   0.00    0.00       0.00    0.00
+11    0.0       0.00   0.00    0.00       0.00    0.00
+12    0.0       0.00   0.00    0.00       0.00    0.00
+13    0.0       0.00   0.00    0.00       0.00    0.00
+14    0.0       0.00   0.00    0.00       0.00    0.00
+15    15992.52	123.33 1972.32 7.39       1.66   23.36
+16    15992.52	53.88  861.70  3.23        0.78  21.89
+----
+
+In this example, the magnet consists in 2 "tranches" operating at 9h57
+and providing a 18.8 tesla magnetic field:
+
+* tranche 1:  a 14 PolyHelices insert
+* tranche 2:  2 external Bitter magnets.
+
+Coils 1 to 7 correspond to the PolyHelix insert (one per couple of helices);
+Coils 15 and 16 to the Bitters.
+
+
+Data specific to each "tranche" is appended with the tranche index.
+
+stem:[dPm] denote the pressure drop from HP and BP side
+where HP, BP stand respectively for High and Low ("Basse" in french) Pressure.
+
+stem:[T_i] denote the estimated mean temperature in Coil stem:[i].
+See bellow for more details.
+====
+
+[[control]]
+= Magnets Control
+
+The control system relies on these data to determine if the operating magnet is safe or not.
+More precisely it checks the deviation stem:[dR0_i] of the resistance measured for each voltage tap
+(ie stem:[R0_i = \frac{U_i}{I}]) from a reference value. An heuristic threshold of 3% is considered
+as an indicator of a wrong behavior. Once this threshold is reached, a signal is send to
+power supply leading to a controlled power shutdown. This means that stem:[I] is driven to 0
+in a controlled manner (typically in roughly a tenth of second).
+
+The reference values for stem:[R0_i] are determined during the magnet commissioning following
+this process:
+
+* For stem:[I_n]
+* Measure stem:[U] per helix (or couple of helices)
+* Compute stem:[R=\frac{U}{I}]
+* Repeat for new stem:[I_n+1] until 30 kA is reached
+
+Then, a fit for each stem:[R] as a 2nd order polynomial of stem:[I] is computed.
+This fit will also be usefull to have an estimate of the mean temperature stem:[<T>] of the helix (or couple of helices):
+
+[[stem]]
+====
+R=R(I=0)\,(1+\alpha (<T>-T_0))
+====
+with stem:[T_0] a reference temperature (generally 20C).
+
+[[NOTE]]
+====
+* These experiments have to be carried out carefully to get proper estimates of the resistance.
+Indeed, we have stem:[U = R I + M\,\frac{dI}{dt}] with stem:[M] the inductance matrix. So if no estimate
+of the inductance is available (either from calculations or experiments), we have to wait to reach
+steady state before measuring stem:[U].
+
+* In normal operation, the flow rate stem:[Q] and Pressure drop stem:[dPm] are functions of stem:[I].
+As a consequence the heat exchange coefficient  stem:[h] per cooling channels will also be function of stem:[I].
+
+// Ivar = 28.e+03; //in A
+//	Vpump = (I>Ivar) ? 2840 : 1000 + 840*(I/Ivar)^2; //in rpm/mm
+//	Flowpump = 140 * 1.e-3 * Vpump/2840.; //in m3/s
+// Pressure = 20 * (Vpump/2840)*(Vpump/2840); //in bar !!!  1bar=10^5 Pa !!!
+
+++++
+<div id="myDiv"></div>
+  <script type="text/javascript">
+
+    var VPump = function (I, Ivar) {
+	var V0 = 1000;
+	var V = V0 + 1930*(I/Ivar)**2;
+	if (I>=Ivar) V=V0+1930;
+	return V;
+    };
+    var FlowRate = function (I, Ivar) {
+	var VMax = VPump(Ivar, Ivar);
+	var res = 140 * VPump(I, Ivar);
+	return res;
+    };
+    var Pressure = function (I, Ivar) {
+	var VMax = VPump(Ivar, Ivar);
+	var res =  20 * ( VPump(I, Ivar) )**2;
+	return res;
+    };
+
+    var Ivar = 28000;
+    I=[]; V=[]; Q=[]; P=[];
+    for(i=0;i<35;i++)
+    {
+	var I_ = i*1000;
+	I.push(i);
+
+	var V_ = VPump(I_, Ivar) / VPump(Ivar, Ivar);
+	V.push(V_);
+
+	var Q_ = FlowRate(I_, Ivar) / FlowRate(Ivar, Ivar);
+	Q.push(Q_);
+
+	var P_ = Pressure(I_, Ivar) / Pressure(Ivar, Ivar);
+	P.push(P_);
+    }
+
+    var pump = {
+	x: I,
+	y: V,
+	mode: 'markers',
+	name: 'V pump'
+    };
+    var flow = {
+	x: I,
+	y: Q,
+	mode: 'lines',
+	name: 'Flowrate'
+    };
+    var pressure = {
+	x: I,
+	y: P,
+	mode: 'lines+markers',
+	name: 'Pressure drop'
+    };
+
+    var data = [pump, flow, pressure];
+
+    var layout = {
+	title: 'Distribution vs Input Current',
+	xaxis: {
+	    title: 'kA'
+	}
+    };
+
+    Plotly.newPlot('myDiv', data, layout, {responsive: true});
+  </script>
+++++
+
+====
