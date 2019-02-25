@@ -1,0 +1,77 @@
+<head>
+  <!-- Plotly.js -->
+  <!-- <script src="https://unpkg.com/mathjs@5.4.2/dist/math.min.js"></script> -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body>
+  
+  <div id="myDiv"></div>
+  <script type="text/javascript">
+
+    var VPump = function (I, Ivar) {
+	var V0 = 1000;
+	var V = V0 + 1930*(I/Ivar)**2;
+	if (I>=Ivar) V=V0+1930;
+	return V;
+    };
+    var FlowRate = function (I, Ivar) {
+	var VMax = VPump(Ivar, Ivar);
+	var res = 140 * VPump(I, Ivar);
+	return res;
+    };
+    var Pressure = function (I, Ivar) {
+	var VMax = VPump(Ivar, Ivar);
+	var res =  20 * ( VPump(I, Ivar) )**2;
+	return res;
+    };
+
+    var Ivar = 28000;
+    I=[]; V=[]; Q=[]; P=[];
+    for(i=0;i<35;i++)
+    {
+	var I_ = i*1000; 
+	I.push(i);
+    
+	var V_ = VPump(I_, Ivar) / VPump(Ivar, Ivar); 
+	V.push(V_);
+
+	var Q_ = FlowRate(I_, Ivar) / FlowRate(Ivar, Ivar); 
+	Q.push(Q_);
+    
+	var P_ = Pressure(I_, Ivar) / Pressure(Ivar, Ivar); 
+	P.push(P_);
+    }
+    
+    var pump = {
+	x: I,
+	y: V,
+	mode: 'markers',
+	name: 'V pump'
+    };
+    var flow = {
+	x: I,
+	y: Q,
+	mode: 'lines',
+	name: 'Flowrate'
+    };
+    var pressure = {
+	x: I,
+	y: P,
+	mode: 'lines+markers',
+	name: 'Pressure drop'
+    };
+
+    var data = [pump, flow, pressure];
+
+    var layout = {
+	title: 'Characteristics vs Input Current',
+	xaxis: {
+	    title: 'kA'
+	}
+    };
+
+    Plotly.newPlot('myDiv', data, layout, {responsive: true});
+  </script>
+
+</body>
