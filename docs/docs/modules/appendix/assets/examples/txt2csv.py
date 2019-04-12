@@ -31,8 +31,8 @@ def cp(bar, celsius):
 import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument("--input_file", help="input txt file (ex. HL31_2018.04.13.txt)")
-parser.add_argument("--plot_vs_time", help="select key(s) to plot (ex. Field)")
-parser.add_argument("--plot_key_vs_key", help="select pair(s) of keys to plot (ex. Field;Icoil1)")
+parser.add_argument("--plot_vs_time", help="select key(s) to plot (ex. \"Field[;Ucoil1]\")")
+parser.add_argument("--plot_key_vs_key", help="select pair(s) of keys to plot (ex. \"Field;Icoil1#)")
 args = parser.parse_args()
 
 input_file = args.input_file
@@ -40,6 +40,15 @@ output_file = input_file.replace(".txt", ".cvs")
 
 # Import Dataset
 df = pd.read_csv(input_file, sep='\s+', engine='python', skiprows=1)
+
+# Get Name of columns
+keys = df.columns.values.tolist()
+#print "keys=", len(keys)
+
+# Drop empty columns
+df = df.loc[:, (df != 0.0).any(axis=0)]
+keys = df.columns.values.tolist()
+#print "keys=", len(keys)
 
 # Add some more columns
 # Helix Magnet
@@ -87,15 +96,16 @@ keys = df.columns.values.tolist()
 if args.plot_vs_time:
     ax = plt.gca()
     # split into keys
-    items = args.plot_vs_time.split(';')    
+    items = args.plot_vs_time.split(';')
+    print "items=", items
     # loop over key
     for key in items:
         if key in keys:
             df.plot(x='Time', y=key, ax=ax)
         else:
-            print "unknown key: %s" % args.plot_vs_time
+            print "unknown key: %s" % key
             print "valid keys: ", keys
-            exit
+            exit(1)
     plt.show()
 
 if args.plot_key_vs_key:
@@ -119,8 +129,8 @@ if args.plot_key_vs_key:
 
 
 #rhocp = lambda bar, celsius: st.steam_pT(bar * 1e+5, celsius+273.).rho * st.steam_pT(bar * 1e+5, celsius+273.).cp
-T = np.arange(10, 40, 1)
-P = np.arange(5,  25, 5)
+T = np.arange(min(df['Tin1'].min(),df['Tin2'].min()), df['Tout'].max(), 1)
+P = np.arange(df['BP'].min(), max(df['HP1'].max(),df['HP2'].max()), 1)
 
 # for p in P:
 #     plt.plot(T, [cp(p, x) for x in T], label='%d bar' % p)
