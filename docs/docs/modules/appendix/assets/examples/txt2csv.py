@@ -33,10 +33,12 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--input_file", help="input txt file (ex. HL31_2018.04.13.txt)")
 parser.add_argument("--plot_vs_time", help="select key(s) to plot (ex. \"Field[;Ucoil1]\")")
 parser.add_argument("--plot_key_vs_key", help="select pair(s) of keys to plot (ex. \"Field;Icoil1#)")
+parser.add_argument("--output_time", help="output key(s) for time")
+parser.add_argument("--output_key", help="output key(s) for time")
 args = parser.parse_args()
 
 input_file = args.input_file
-output_file = input_file.replace(".txt", ".cvs")
+output_file = input_file.replace(".txt", ".csv")
 
 # Import Dataset
 df = pd.read_csv(input_file, sep='\s+', engine='python', skiprows=1)
@@ -127,6 +129,13 @@ if args.plot_key_vs_key:
             exit 
     plt.show()
 
+if args.output_time:
+    times = args.output_time.split(";")
+    if args.output_key:
+        keys = args.output_key.split(";")
+        print df[df['Time'].isin(times)][keys]
+    else:
+        print df[df['Time'].isin(times)]
 
 #rhocp = lambda bar, celsius: st.steam_pT(bar * 1e+5, celsius+273.).rho * st.steam_pT(bar * 1e+5, celsius+273.).cp
 T = np.arange(min(df['Tin1'].min(),df['Tin2'].min()), df['Tout'].max(), 1)
