@@ -1,0 +1,190 @@
+FROM salome-9.0.0-mpi:stretch
+MAINTAINER Feel++ Support <support@feelpp.org>
+
+ARG DEBUG=1
+
+ARG GRAPHICS=nvidia
+ARG DIST=stretch
+ARG isTesting=0
+ARG isDebian=1
+ARG SALOME_PACKAGE=SALOME-8.3.0-MPI-DB9.4.tgz
+ARG SALOME_INSTALLDIR=SALOME-8.3.0-MPI-DB9.4/BINARIES-DB9.4
+
+ARG NUMTHREADS=1
+ARG GPGKEY=535D3508
+ARG TERM=linux
+ARG DEBIAN_FRONTEND=noninteractive
+
+USER root
+
+# Add contrib and non-free section (should check if updates and backports exist)
+RUN if [ "$isDebian" = "1" ]; then \
+       if [ "$isTesting" != "1" ]; then \
+          echo "deb http://ftp.debian.org/debian $DIST-updates main" >> /etc/apt/sources.list; \
+          echo "deb http://ftp.debian.org/debian $DIST-backports main" >> /etc/apt/sources.list; \
+       fi ; \
+       perl -p -i'.bak' -e "s| main| main contrib non-free|g" /etc/apt/sources.list;  \
+    fi && \   
+    if [ $isDebian = "1" ]; then \
+       perl -p -i'.bak' -e "s| universe| restricted universe multiverse|g" /etc/apt/sources.list; \
+    fi
+ 
+# Add LNCMI Ubuntu repository and install MagnetTools prerequisites
+RUN apt-get -qq update && \
+    apt-get -y upgrade && \
+    apt-get -y --force-yes install gnupg curl && \
+    gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv $GPGKEY && \
+    gpg --export --armor $GPGKEY | apt-key add -
+
+# at the beginning
+RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
+
+# General requirements
+RUN apt-get -qq update && \
+    apt-get -y upgrade && \
+    apt-get install -y \
+      python-minimal libxss1 \
+      bash-completion \
+      emacs vim nano \
+      lsb-release wget curl \
+      lshw \
+      firefox-esr \
+      sudo gosu \
+      mesa-utils binutils kmod iputils-ping net-tools \
+      libxmu6 libglu1-mesa libxft2 && \
+    apt-get -y clean  
+
+# Use Lncmi repository for Salome specific packages:
+# add specific build for mpi salome version:
+#    OCE, Paraview, gmsh-tetgen, scotch, mumps, petsc, slepc, med-fichier, netgen, hdf5-1.8
+#    !!! Depends on VERSION !!!
+#    for 7.8 qt4, oce
+#    for 8.x qt5, opencascade7.x (7.0 for 8.2, 7.1 for 8.3, 7.2 for 8.4)
+RUN mkdir -p /etc/apt/sources.list.d/ && \
+    echo "deb http://euler/~trophime/debian/ $DIST main" > /etc/apt/sources.list.d/lncmi.list && \
+    apt-get -qq update && \
+    apt-get -y upgrade && \
+    apt-get install -y \
+       libcos4-1 \
+       omniidl omniidl-python omniorb-idl omniorb-nameserver python-omniorb python-omniorb-omg \
+       paraview-python \
+       netgen libnglib-5.3.1 \
+       gmsh-tetgen libpastix-dev \
+       libqwt-qt5-6 \
+       libopencascade-visualization-dev libopencascade-ocaf-dev \
+       libqt5xml5 libqt5test5 libqt5sensors5 libqt5positioning5 libqt5multimediawidgets5 libqt5webengine5 libqt5webenginewidgets5 \
+       libboost-filesystem1.62.0 libboost-regex1.62.0 libboost-signals1.62.0 libboost-thread1.62.0 libboost-date-time1.62.0 libboost-chrono1.62.0 libboost-atomic1.62.0 \
+       python-sip python-pyqt5 \
+       graphviz \
+       valgrind \
+       python-psutil \
+       python-memory-profiler && \
+    apt-get -y clean  
+
+
+# # Alternative:
+# wget http://us.download.nvidia.com/XFree86/Linux-x86_64/384.98/NVIDIA-Linux-x86_64-384.98.run -O /tmp/NVIDIA-DRIVER.run; \
+# sh /tmp/NVIDIA-DRIVER.run -a -N --ui=none --no-kernel-module; \
+# rm /tmp/NVIDIA-DRIVER.run; \
+
+RUN lshw -c video | grep configuration | grep configuration | awk  '{print $2}' | perl -pe 's|driver=||' && \
+    if [ x$GRAPHICS = xnvidia ]; then \
+       if [ $isDebian = "1" ]; then \
+          apt-get -t stretch-backports -y --force-yes install nvidia-driver nvidia-smi; \
+       else \
+          apt-get -y --force-yes install nvidia-375 nvidia-smi; \
+       fi ; \
+    fi && \
+    if [ x$GRAPHICS = xintelhd ]; then \
+       echo "should install intelhd driver"; \
+    fi && \
+    if [ x$GRAPHICS = xati ]; then \
+       echo "should install ati driver"; \
+    fi && \
+    if [ x$GRAPHICS = xradeon ]; then \
+       echo "should install xradeon driver"; \
+    fi
+
+# # install intelhd driver
+# # see https://01.org/linuxgraphics/downloads/intel-graphics-update-tool-linux-os-v2.0.2
+# COPY intel-graphics-update-tool_2.0.2_amd64.deb /tmp/
+# COPY intelhd.key /tmp/
+# RUN apt-key add /tmp/intelhd.key && \
+#     apt-get update && \
+#     apt-get upgrade -y && \
+#     apt-get install -y fonts-symbola gir1.2-packagekitglib-1.0 libpackagekit-glib2-16 python3-aptdaemon python3-aptdaemon.pkcompat python3-dbus && \
+#     apt-get install -y fonts-ancient-scripts ttf-ancient-fonts && \
+#     dpkg -i /tmp/intel-graphics-update-tool_2.0.2_amd64.deb && \
+
+# install ati driver
+# install radeon driver
+
+# alternative use Salome Universal binaries
+COPY ${SALOME_PACKAGE} /tmp/${SALOME_PACKAGE}
+RUN mkdir -p /opt &&  \
+    cd /opt && \
+    tar zxf /tmp/${SALOME_PACKAGE} && \
+    rm -f /tmp/${SALOME_PACKAGE}
+#RUN cd /opt/${SALOME_INSTALLDIR}/ && ./sat launcher ${SALOME_CONFIGPY}
+
+# A better solution would be to mount /opt/DISTENE as /opt/DISTENE...?
+RUN mkdir -p /opt/DISTENE/DLim
+ENV DISTENE_LICENSE_FILE /opt/DISTENE/DLim/dlim8.key
+
+# Clean up
+RUN  apt-get -y autoremove \
+    && apt-get clean \
+    && if [ x$DEBUG = x0 ]; then rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*; fi
+
+# Our helper scripts
+COPY start-salome.sh /usr/local/bin/start.sh
+#RUN perl -pi -e "s|||g" /usr/local/bin/start.sh
+
+# #set up user so that we do not run as root
+# # Changing the password does not work on certain OS and is not needed
+# # echo "feelpp:docker" | chpasswd && \
+# RUN useradd -m -s /bin/bash -G sudo,video feelpp && \
+#     mkdir -p  /etc/sudoers.d/ && \
+#     echo "feelpp ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/feelpp
+
+# Define user
+USER feelpp
+ENV HOME /home/feelpp 
+ENV PATH /opt/${SALOME_INSTALLDIR}/:$PATH
+#
+# LD_LIBRARY_PATH shall not be changed - A quick and dirty hack to fix salome
+ENV LD_LIBRARY_PATH /usr/lib/paraview:$LD_LIBRARY_PATH
+WORKDIR $HOME
+
+COPY WELCOME-$DIST /etc/motd
+
+# set alias
+RUN echo "alias cp='cp -i'" > $HOME/.bash_aliases && \
+    echo "alias egrep='egrep --color=auto'" >> $HOME/.bash_aliases && \
+    echo "alias fgrep='fgrep --color=auto'" >> $HOME/.bash_aliases && \
+    echo "alias grep='grep --color=auto'" >> $HOME/.bash_aliases && \
+    echo "alias ls='ls --color=auto'" >> $HOME/.bash_aliases && \
+    echo "alias mv='mv -i'" >> $HOME/.bash_aliases && \
+    echo "alias rm='rm -i'" >> $HOME/.bash_aliases
+
+# set OpenMP Threads
+RUN echo "export OMP_NUM_THREADS=${NUMTHREADS}" >> $HOME/.bashrc
+
+# OpenBLAS threads should be 1 to ensure performance
+RUN echo "export OPENBLAS_NUM_THREADS=${NUMTHREADS}" >> $HOME/.bashrc && \
+    echo "export OPENBLAS_VERBOSE=0" >> $HOME/.bashrc
+
+# at the end
+RUN echo 'debconf debconf/frontend select Dialog' | sudo debconf-set-selections
+
+# to run
+# xhost local:root
+# docker run -ti --rm -e DISPLAY \
+#    -v /tmp/.X11-unix:/tmp/.X11-unix \
+#    -v $HOME/.Xauthority:/home/developer/.Xauthority \
+#    -v /opt/DISTENE/DLim:/opt/DISTENE/DLim:ro \
+#    --net=host --pid=host --ipc=host \
+#    salome-${VERSION}:nvidia [salome]
+
+USER root
+CMD ["/usr/local/bin/start.sh"]
