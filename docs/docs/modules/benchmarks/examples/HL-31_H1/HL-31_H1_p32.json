@@ -1,0 +1,19 @@
+{
+    "mesh": {
+        "h5": "HL-31_H1_p32.h5",
+        "partition": {
+            "n": "32"
+        },
+        "physicals": {
+            "Cu": "2 3",
+            "Glue": "1 3",
+            "Interface": "9 2",
+            "Rext": "3 2",
+            "Rint": "4 2",
+            "V0": "6 2",
+            "V1": "5 2",
+            "iRext": "7 2",
+            "iRint": "8 2"
+        }
+    }
+}
