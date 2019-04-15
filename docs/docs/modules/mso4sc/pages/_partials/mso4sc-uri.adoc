@@ -22,5 +22,6 @@
 :uri-msoportal-visu-www: {uri-msoportal-www}visualization/
 :uri-msoportal-visu-dev-www: {uri-msoportal-dev-www}visualization/
 :uri-girder-unistras: https://girder.math.unistra.fr/
+:uri-ckan-data: http://193.144.35.147:5000
 :fiware: FiWare
 //ifndef::imagesdir[:imagesdir: /images]

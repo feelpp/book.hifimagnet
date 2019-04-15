@@ -4,17 +4,20 @@
 
 In this tutorial, we will model a round wire carrying a given current.
 
-The wire will designed in `Salome` as a cylinder.
+The wire will be designed in `Salome` as a cylinder.
 We will distinct:
 
-* the plane circles on which will be applied some electric potential
-* the cylindrical surface on whic we will apply some cooling boundary conditions.
+* the plane circles (V0 and V1) on which will be applied some electric potential
+* the cylindrical surface (Bord) on which we will apply some cooling boundary conditions.
 
 
 The thermoelectric model will be used to model the electrical potential
 distribution and the temperature field.
 
 == Data
+
+The cylinder is defined by its radius stem:[R], its heigth stem:[H].
+The cylinder symetry axis is stem:[Oz].
 
 .Geometrical Data
 |=========================================================
@@ -32,13 +35,14 @@ distribution and the temperature field.
 .Input Data
 |=========================================================
 | Boundary | stem:[h] [ stem:[K/W/m^2] ]| stem:[T_w] [ stem:[K] ]
-| R | 8.e+4 | 293
+| Bord | 8.e+4 | 293
 | V1 | 0.05
 |=========================================================
 
 == Prerequisites
 
 * Linux OS,
+* Basic knowledge of unix commands,
 * `Nvidia` Graphic video card,
 * `singularity`
 
@@ -48,7 +52,7 @@ distribution and the temperature field.
 * Create a directory to hold the study
 * Move to the created directory
 
-* Create an `STORAGE` environment variable to point to the directory holding singularity images:
+* Create an `STORAGE` environment variable pointing to the directory holding singularity images:
 
 [source,bash]
 ----
@@ -187,7 +191,7 @@ ksp-use-initial-guess-nonzero=1
 }
 ----
 
-* a material json file that defines the physical properties:
+* a `json` file that defines the physical properties of the material:
 
 [source, json]
 ----
@@ -221,7 +225,15 @@ singularity exec -B ${PWD}/Linear:/feel \
 
 [NOTE]
 ====
-Checkout the output of the above command...
+Checkout the output of the above command for any errors.
+You can save the output to a file `log` using the redirection:
+
+[source,bash]
+----
+singularity exec -B ${PWD}/Linear:/feel \
+ ${STORAGE}/hifimagnet-hifimagnet_v0.105.img \
+  feelpp_hfm_thermoelectric_model_3D_V1T1_N1 --config-file cylinder.cfg > log 2>&1 
+----
 
 ====
 
@@ -238,19 +250,20 @@ cd Linear/.../exports/ensightgold
 * Load the electric case
 * Load the thermoelectric case
 
-* Check the value of the total current,
-* Plot the electric potential distribution along the wire axis,
-* Plot the temperature distribution along the wire radial axis.
-
+* Check the value of the total current:
 
 [stem]
 ++++
 (V1-V0) = R I \text{where} R = \frac{1}{sigma} \frac{H}{\pi R^2}
 ++++
 
+* Plot the electric potential distribution along the wire axis,
+* Plot the temperature distribution along the wire radial axis.
+
+
 == To go further
 
-In this final section, we will move to more realistic models and simuations use cases:
+In this final section, we will move to more realistic models and simulations use cases:
 
 * In a first section we will see how to perform **nonlinear** simulation.
 * Then we will see how to run simulation with an **imposed total current**.
@@ -301,7 +314,7 @@ ksp-use-initial-guess-nonzero=1
 
 [NOTE]
 ====
-To control the non linear algorithm, you can add the following lines in the `cfg` file after
+To control the non linear algorithm, you can add the following lines in the `cfg` file **after**
 the definition of the *resolution* method to be used:
 
 [source, txt]
@@ -313,7 +326,7 @@ eps_temperature=1.e-4
 
 ====
 
-* use a new `json` model file: `nl-thermoelec.json`
+* Create a new `json` model file: `nl-thermoelec.json`
 
 The new  `nl-thermoelec.json` is almost similar to `thermoelec.json` except for the line
 defining the **equations** :

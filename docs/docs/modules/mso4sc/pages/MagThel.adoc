@@ -51,9 +51,9 @@ include::{examplesdir}/partition.sh[]
 |===
 | Testcase                                                    | DataSet	                                                                                         | cfgfile                      | HPC settings                         | Notes
 |                                                             |        	                                                                                         |                              | (partition, ...)                     | 
-| xref:benchmarks:quarterturn/thermoelec.adoc[*quarter-turn*] | http://193.144.35.207/dataset/thermoelec-test[`thermoelec-test`], resource: `quarter-turn3D.tgz` | `quarter-turn3D.cfg`         | lncmi: `stokes`                      |
+| xref:benchmarks:quarterturn/thermoelec.adoc[*quarter-turn*] | {uri-ckan-data}/dataset/thermoelec-test[`thermoelec-test`], resource: `quarter-turn3D-v105.tgz` | `quarter-turn3D.cfg`         | lncmi: `stokes`                      |
 |                                                             |                                                                                                  |                              | cesga: `thinnodes`                   |
-| xref:benchmarks:HL/README.adoc[*HL*]                        | http://193.144.35.207/dataset/hl-test[`hl-test`]                                                 | `HL-31_H1_boomeramg_p32.cfg` | lncmi: `stokes`,`n=32`               | 
+| xref:benchmarks:HL/README.adoc[*HL*]                        | {uri-ckan-data}/dataset/hl-test[`hl-test`], resource: `HL-31_H1-v0.105`                                                 | `HL-31_H1_boomeramg_p32.cfg` | lncmi: `stokes`,`n=32`               | 
 |                                                             |                                                                                                  |                              | cesga: `thinnodes`,``n=32`           |
 |===
 

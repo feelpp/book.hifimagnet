@@ -53,15 +53,15 @@ include::{examplesdir}/partition.sh[]
 |===
 | Testcase                                                          | DataSet                                                              | cfgfile	                             | HPC settings                      | Notes
 |                                                                   |                                                                      |        	                             | (partition, ...)                  | Notes
-| xref:benchmarks:quarterturn/coupled.adoc[*quarter-turn*]          | http://193.144.35.207/dataset/coupled-test[`coupled-test`]           |                                         | lncmi: `stokes`                   |
+| xref:benchmarks:quarterturn/coupled.adoc[*quarter-turn*]          | {uri-ckan-data}/dataset/coupled-test[`coupled-test`], resource 'coupled-quarter-turn-v105.tgz           |                                         | lncmi: `stokes`                   |
 |                                                                   |                                                                      |                                         | cesga: `thinnodes`                |
-| xref:benchmarks:H1H4/README.adoc[*Insert H1H4*]                   | http://193.144.35.207/dataset/insert-test[`insert-test`]             | `H1H4_cart.cfg`                         | lncmi: `stokes`,`n=32`            | 
+| xref:benchmarks:H1H4/README.adoc[*Insert H1H4*]                   | {uri-ckan-data}/dataset/insert-test[`insert-test`], ressource: `H1H4-cart-v105.tgz`             | `H1H4_cart.cfg`                         | lncmi: `stokes`,`n=32`            | 
 |                                                                   |                                                                      |                                         | cesga: `thinnodes`,`144`          |
 |===
 
 // TODO:
-// | xref:benchmarks:HL-31/README.adoc[*HL-31*]                        | http://193.144.35.207/dataset/hl-31[`hl-31`], ressource: `HL-31.tgz` | `HL-31_cart_boomeramg.cfg`              | lncmi: `stokes`,`n=32`            | 
+// | xref:benchmarks:HL-31/README.adoc[*HL-31*]                        | {uri-ckan-data}/dataset/hl-31[`hl-31`], ressource: `HL-31-v105.tgz` | `HL-31_cart_boomeramg.cfg`              | lncmi: `stokes`,`n=32`            | 
 // |                                                                   |                                                                      |                                         | cesga: `thinnodes`,`n=144`        |
-// | xref:benchmarks:fullinsert/README.adoc[*fullinsert*]              | http://193.144.35.207/dataset/fullinsert[`insertfull`]               | `HL-31-Leads-air_nl_cart_256_json.cfg`  | lncmi: N/A                        | 
+// | xref:benchmarks:fullinsert/README.adoc[*fullinsert*]              | {uri-ckan-data}/dataset/fullinsert[`insertfull`], ressource: `fullinsert-v105.tgz`           | `HL-31-Leads-air_nl_cart_256_json.cfg`  | lncmi: N/A                        | 
 // |                                                                   |                                                                      |                                         | cesga: `thinnodes`,`256`          |  not working???
 
