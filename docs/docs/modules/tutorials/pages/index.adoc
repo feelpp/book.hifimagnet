@@ -1,0 +1,16 @@
+[[tutorials]]
+= Tutorials
+:toc: macro
+include::{partialsdir}/header-macros.adoc[]
+include::{partialsdir}/header-uri.adoc[]
+include::{partialsdir}/mso4sc-uri.adoc[]
+
+Welcome to {hifimagnet} tutorials documentation!
+
+This section includes some materials to help the user.
+The goal is to give infrmations on how to setup a simulation
+and define the `json` model files that represents the actual physical model.
+
+* xref:thermoelectric.adoc[TherModElectric]
+* xref:magnetostatic.adoc[Magnetostatic (H1)]
+* xref:elasticity.adoc[Elasticity]
