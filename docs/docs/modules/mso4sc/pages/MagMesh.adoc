@@ -29,6 +29,6 @@ These files may be uploaded to a dataset in the {uri-msoportal-ckan-www}[*Data C
 [options="header,footer"]
 |===
 | Testcase                                | DataSet	                                     | cadmsh        | HPC settings (partition, ...) | Notes
-| xref:benchmarks:PMesh/README.adoc[*HL*] | http://193.144.35.207/dataset/hl-test[`hl-test`] | HL-31_H1.med  |                               | mesh in **mm** (`--gmshsh.scale=0.001` has not effect??)  
+| xref:benchmarks:PMesh/README.adoc[*HL*] | {uri-ckan-data}/dataset/hl-test[`hl-test`] | HL-31_H1.med  |                               | mesh in **mm** (`--gmshsh.scale=0.001` has not effect??)  
 |                                         |                                                  | HL-31_H1.msh  |                               | mesh **m**
 |===

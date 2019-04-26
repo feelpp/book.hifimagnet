@@ -113,7 +113,7 @@ to set <hpc_feelpp> to a specific directory for each instance.
 image::PortalMSO4SC_Exp_User.png[*Experiments* *Instances* main menu for *EndUSer*]
 
 * Go to {uri-msoportal-experiment-www}[*Experiments*]
-* Select *Instances*
+* Select *Add a new instance*
 ** define an ID
 ** select a registered app in the sliding menu
 
@@ -212,7 +212,12 @@ image::portal_magtherm_running.png[ex: Running {hifimagnet} `MagTherm`]
 The next step is to launch the app:
 
 * select the instance *ID*, you defined in the previous step,
-* click on *Run*, wait until the button in blue turns green
+* click on *Run*, wait until the button in blue turns green.
+
+Then you have access to:
+
+* the *execution logs*: monitor the workflow (deploying the instance, running the boostrap/revert script and executing the tasks), 
+* the *applications logs*: monitor specific logs for the instance ran.
 
 
 [IMPORTANT]
