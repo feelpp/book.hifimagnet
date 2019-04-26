@@ -49,14 +49,15 @@ The cylinders symetry axis are stem:[Oz].
 |=========================================================
 | Boundary | stem:[h] [ stem:[K/W/m^2] ]| stem:[T_w] [ stem:[K] ]
 | Bord | 8.e+4 | 293
-| V1 | 0.05
 |=========================================================
 
 .Magnetostatic Boundary conditions
 |=========================================================
-| Inf |
-| Sym0 |
-| Sym1 |
+| Inf | stem:[\mathbf{A}=\mathbf{0}]
+| Sym0 | stem:[\mathbf{A}_X =0], stem:[\mathbf{A}_Y =0] 
+| V0 | stem:[\mathbf{A}_X =0], stem:[\mathbf{A}_Y =0] 
+| Sym1 | stem:[\mathbf{A}_X =0], stem:[\mathbf{A}_Y =0] 
+| V1 | stem:[\mathbf{A}_X =0], stem:[\mathbf{A}_Y =0] 
 |=========================================================
 
 == Prerequisites
@@ -126,7 +127,7 @@ for the thermoelectric model.
 
 In a first step, we consider the linear thermoelectric problem.
 
-=== `cfg` file defintion
+=== `cfg` file definition
 
 In the `cfg` we need to specify that we wil run the thermoelectric and magnetostic problem.
 To do so, we need to:
@@ -242,6 +243,19 @@ For the thermoelectric model we use the same `thermoelec.json` as in the previou
 }
 ----
 
+[TIP]
+====
+Do not forget to verify that the `json` file are correct.
+To do so use for instance:
+
+[source, bash, highlight=6]
+----
+jsonlint-php thermoelec.json
+----
+
+====
+
+
 === `json` model for Magnetostatic
 
 * a `json` model file that defines the material and boundary conditions:
@@ -261,7 +275,7 @@ For the thermoelectric model we use the same `thermoelec.json` as in the previou
         {
             "name":"Copper",
             "filename":"$cfgdir/Cu.json"
-        }
+        },
         "Air_1":
         {
             "name":"Air",
@@ -274,24 +288,45 @@ For the thermoelectric model we use the same `thermoelec.json` as in the previou
         {
             "Dirichlet":
             {
-                "Inf":
+                "R_inf":
                 {
                     "expr":"{0,0,0}:x:y:z"
                 }
 	    },	
-            "DirichletZ":
-            {
-                "OXOZ":
-                {
-                    "expr":"0:x:y:z"
-                },
-            "DirichletZ":
+            "DirichletX":
             {
                 "Sym0":
                 {
                     "expr":"0:x:y:z"
                 },
                 "Sym1":
+                {
+                    "expr":"0:x:y:z"
+                },
+                "V0":
+                {
+                    "expr":"0:x:y:z"
+                },
+                "V1":
+                {
+                    "expr":"0:x:y:z"
+                }
+	    },
+            "DirichletY":
+            {
+                "Sym0":
+                {
+                    "expr":"0:x:y:z"
+                },
+                "Sym1":
+                {
+                    "expr":"0:x:y:z"
+                },
+                "V0":
+                {
+                    "expr":"0:x:y:z"
+                },
+                "V1":
                 {
                     "expr":"0:x:y:z"
                 }
@@ -321,8 +356,8 @@ or material. In each file we also have to define the relative magnetic permeabil
     "T0":"293",
     "alpha":"3.4e-3",
     "sigma":"sigma0/(1+alpha*(T-T0)):sigma0:alpha:T:T0",
-    "k":"k0*T/((1+alpha*(T-T0))*T0):k0:T:alpha:T0"
-    "mu": "1"
+    "k":"k0*T/((1+alpha*(T-T0))*T0):k0:T:alpha:T0",
+    "mu_mag": "1"
 }
 ----
 
@@ -330,6 +365,7 @@ or material. In each file we also have to define the relative magnetic permeabil
 ----
 {
     "name":"Air",
+    "mu_mag": "1"
 }
 ----
 
