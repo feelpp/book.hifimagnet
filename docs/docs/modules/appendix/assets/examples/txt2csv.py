@@ -32,7 +32,7 @@ import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument("--input_file", help="input txt file (ex. HL31_2018.04.13.txt)")
 parser.add_argument("--plot_vs_time", help="select key(s) to plot (ex. \"Field[;Ucoil1]\")")
-parser.add_argument("--plot_key_vs_key", help="select pair(s) of keys to plot (ex. \"Field;Icoil1#)")
+parser.add_argument("--plot_key_vs_key", help="select pair(s) of keys to plot (ex. \"Field-Icoil1")
 parser.add_argument("--output_time", help="output key(s) for time")
 parser.add_argument("--output_key", help="output key(s) for time")
 args = parser.parse_args()
