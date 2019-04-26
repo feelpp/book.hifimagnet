@@ -1,11 +1,11 @@
 {
     "Name": "CoupledCart", <1>
     "ShortName":"MSC",
-    "Models":, <2> 
+    "Models": <2> 
     {
         "equations": "Elasticity"
     },
-    "Materials":, <3>
+    "Materials": <3>
     {
         "coil":
         {
@@ -16,7 +16,7 @@
             "rho":"10.e-6"
         }
     },
-    "BoundaryConditions":, <4>
+    "BoundaryConditions": <4>
     {
         "displacement_z":
         {
@@ -53,7 +53,7 @@
             }
         }
     },
-    "PostProcess":, <5>
+    "PostProcess": <5>
     {
         "Exports":
         {
