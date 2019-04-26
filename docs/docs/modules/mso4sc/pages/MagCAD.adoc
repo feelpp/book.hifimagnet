@@ -35,6 +35,6 @@ as an tar gzipped archive.
 [options="header,footer"]
 |===
 | Testcase                                          | DataSet	                                                                                  | cadcfg                      | HPC settings (partition, ...)  | Notes
-| xref:benchmarks:CAD/README.adoc[*Insert H1-H4*]   | http://193.144.35.207/dataset/cad-insert-h4[`cad-insert-h4`] , ressource: `Insert-H1H4.tgz` | `Insert-H1H4-Leads-2t.yaml` | lncmi: `stokes`                |
+| xref:benchmarks:CAD/README.adoc[*Insert H1-H4*]   | {uri-ckan-data}/dataset/cad-insert-h4[`cad-insert-h4`] , ressource: `Insert-H1H4.tgz` | `Insert-H1H4-Leads-2t.yaml` | lncmi: `stokes`                |
 |                                                   |                                                                                             |                             | cesga: `thinnodes`             |
 |===

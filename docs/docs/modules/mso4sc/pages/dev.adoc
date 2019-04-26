@@ -59,7 +59,7 @@ It's actually a directory which contains :
 * a `blueprint.yml` TOSCA file that describes the workflow
 * a `scripts` sub-directory holding the scripts required to deploy and undeploy the app
 
-In this https://github.com/MSO4SC/resources/tree/master/blueprint/feelpp/hifimagnet_test[git repository]
+In this https://github.com/MSO4SC/resources/tree/staging/blueprint/feelpp/hifimagnet_test[git repository]
 you will find the actual application corresponding to the {hifimagnet} basic demonstrator.
 
 To actually build the app, use: ```./deploy pkg```
@@ -68,7 +68,7 @@ To actually build the app, use: ```./deploy pkg```
 [TIP]
 ====
 To debug an app, it may be convenient to use the Portal *orchestrator CLI*.
-see https://github.com/MSO4SC/resources/blob/master/blueprint/feelpp/hifimagnet_test/README.adoc[this file] for details
+see https://github.com/MSO4SC/resources/blob/staging/blueprint/feelpp/hifimagnet_test/README.adoc[this file] for details
 ====
 
 [[marketplace]]
@@ -139,7 +139,8 @@ and cannot be performed from the portal.
 For app like {hifimagnet} apps that require an private singularity image, you must grant *EndUser* access to the {sregistry} {hifimagnet} team.
 To do so follow these instructions:
 
-* Logged in to your {uri-sregistry-cesga},
+* Click on *Container* main menu,
+* Logged in to your {uri-sregistry-cesga} using *FiWare*,
 * Click on *Teams* menu then select your *team*
 
 image::sregistry_team.png[ex: {hifimagnet} {sregistry} team]

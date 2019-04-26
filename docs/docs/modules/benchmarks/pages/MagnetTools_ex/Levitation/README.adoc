@@ -82,7 +82,7 @@ See xref:magnettools:Bmap.adoc#leviation[here] for details.
 The data files may be retreived from {uri-msoportal-ckan-www}[*Data Catalogue*].
 See the dataset *HL-31* in {lncmi} collection.
 
-The gzipped archive tarball http://193.144.35.207/dataset/hl-31/resource/aef05e31-9712-48fb-8de1-56bb1098fd86[`HL-31-ana.tgz`] contains all the files needed.
+The gzipped archive tarball {uri-ckan-data}/dataset/hl-31/resource/aef05e31-9712-48fb-8de1-56bb1098fd86[`HL-31-ana.tgz`] contains all the files needed.
 
 === Magnet Cfg file
 

@@ -63,7 +63,7 @@ singularity shell -B /opt/DISTENE/DLim:/opt/DISTENE/DLim:ro salome-8.4.0-stretch
 The data files may be retreived from {uri-msoportal-ckan-www}[*Data Catalogue*].
 See the dataset *A test insert* in {lncmi} collection.
 
-The gzipped archive tarball http://193.144.35.207/dataset/cad-insert-h4/resource/0c541e65-6f6d-4f52-9682-a072f44c8fa8[`Insert-H1H4.tgz`] contains all the files needed.
+The gzipped archive tarball {uri-ckan-data}/dataset/cad-insert-h4/resource/0c541e65-6f6d-4f52-9682-a072f44c8fa8[`Insert-H1H4.tgz`] contains all the files needed.
 
 === Geometry files
 

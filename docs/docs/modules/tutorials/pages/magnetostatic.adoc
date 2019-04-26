@@ -1,0 +1,427 @@
+= Tutorial
+:source-highlighter: pygments
+:stem: latexmath
+
+In this tutorial, we will model the magnetic field created by a round wire carrying a given current.
+The geometry will be splitted into 2 parts:
+
+* the wire, represented by a cylinder,
+* the air region also represented by a cylinder.
+
+The geometry will be designed in `Salome`.
+
+We will distinct:
+
+* the plane circles (V0 and V1) on which will be applied some electric potential
+* the cylindrical surface (Bord) on which we will apply some cooling boundary conditions.
+
+and for the air:
+
+* the plane circles (Sym0 and Sym1) on which will be applied some symetry boundary condition for the magnetostatic problem,
+* the cylindrical surface of the air region (Inf) on which we will apply infinity boundary condition for the magnetostatic problem.
+
+
+The thermoelectric model will be used to model the electrical potential
+distribution, the temperature field and the current distribution stem:[\mathbf j].
+
+Once stem:[\mathbf j] known, we can compute the magnetic field.
+
+== Data
+
+The "wire" cylinder is defined by its radius stem:[R], its heigth stem:[H].
+The "air" cylinder is defined by its outer radius stem:[R_{inf}] and its inner radius stem:[R], its heigth stem:[H].
+The cylinders symetry axis are stem:[Oz].
+
+.Geometrical Data
+|=========================================================
+| stem:[R_{inf}] [ stem:[m] ] | R [ stem:[m] ] | H [ stem:[m] ]
+| 32e-3 | 8.e-3 | 16.e3
+|=========================================================
+
+.Input Data
+|=========================================================
+| Boundary | stem:[V]
+| V0 | 0
+| V1 | 0.05
+|=========================================================
+
+.Cooling Input Data
+|=========================================================
+| Boundary | stem:[h] [ stem:[K/W/m^2] ]| stem:[T_w] [ stem:[K] ]
+| Bord | 8.e+4 | 293
+|=========================================================
+
+.Magnetostatic Boundary conditions
+|=========================================================
+| Inf | stem:[\mathbf{A}=\mathbf{0}]
+| Sym0 | stem:[\mathbf{A}_X =0], stem:[\mathbf{A}_Y =0] 
+| V0 | stem:[\mathbf{A}_X =0], stem:[\mathbf{A}_Y =0] 
+| Sym1 | stem:[\mathbf{A}_X =0], stem:[\mathbf{A}_Y =0] 
+| V1 | stem:[\mathbf{A}_X =0], stem:[\mathbf{A}_Y =0] 
+|=========================================================
+
+== Prerequisites
+
+* Linux OS,
+* Basic knowledge of unix commands,
+* `Nvidia` Graphic video card,
+* `singularity`
+* Thermoelectric model tutorial
+
+== Setup study
+
+* Start a terminal
+* Create a directory to hold the study
+* Move to the created directory
+
+* Create an `STORAGE` environment variable pointing to the directory holding singularity images:
+
+[source,bash]
+----
+export STORAGE=/home/singularity
+----
+
+== Create Geometry and a Mesh
+
+* Start Salome using singularity container:
+
+[source,bash]
+----
+singularity exec --nv -B /opt/DISTENE:/opt/DISTENE:ro \
+  ${STORAGE}/hifimagnet-salome:8.5.0.simg salome
+----
+
+* Select the `GEOM` module
+* Create a cylinder for the wire
+* Explode the faces of the cylinder
+* Rename the faces
+* Mark the cylinder object as selected
+* Create a cylinder for the air
+
+* Switch to the `SMESH` module
+* Create a Mesh
+* Create 2D Mesh hypothesis with `MG-CADSurf`
+* Create 3D Mesh hypothesis with `MG-Tetra`
+* Compute the mesh
+* Create Groups from geometry
+* Export the mesh in `MED` format
+
+
+* Convert `MED` mesh to `GMSH` format mesh:
+
+[source,bash]
+----
+gmsh -3 -bin cylindre.med -o cylindre.msh
+----
+
+
+== Prepare Cfg and Json files
+
+Now we need to setup the files that define the simulation.
+As before we would need a `cfg` file to define the simulation,
+2 `json` model files to respectively defines the thermoelectric and magnetostatic problem
+and finally 2 `json` files for the material properties (respectively for the wire and the air).
+
+We will use and eventually modify the files used in the previous tutorial
+for the thermoelectric model.
+
+In a first step, we consider the linear thermoelectric problem.
+
+=== `cfg` file definition
+
+In the `cfg` we need to specify that we wil run the thermoelectric and magnetostic problem.
+To do so, we need to:
+
+* set the **compute_magnetism** flag to *true*,
+* add a section (namely **|magnetostatic]**) for the Magnetostatic model definition,
+* add a section (namely **[ms]**) for the  Magnetostatic solver definition.
+
+[source, txt , highlight=15..15]
+----
+dim=3
+geofile=cylindre.msh
+geofile-path=$cfgdir
+
+conductor_volume=Cylinder_1
+
+compute_magnetism=true
+compute_bg_magfield=false
+compute_bg_magfield_bmap=false
+compute_elasticity=false
+
+[thermoelectric]
+model_json=$cfgdir/thermoelec.json
+weakdir=false
+resolution=linear
+
+[electro]
+pc-type=boomeramg #gamg
+#ksp-monitor=true
+ksp-rtol=1e-7
+ksp-atol=1e-5
+ksp-maxit=2000
+ksp-use-initial-guess-nonzero=1
+
+[thermal]
+pc-type=boomeramg #gamg
+#ksp-monitor=true
+ksp-rtol=1e-8
+ksp-atol=1e-6
+ksp-use-initial-guess-nonzero=1
+
+[magnetostatic]
+model_json=$cfgdir/magnetostatic.json
+weakdir=false
+
+[ms]
+pc-type=boomeramg #gamg
+ksp-monitor=true
+ksp-rtol=1e-7
+ksp-atol=1e-5
+ksp-use-initial-guess-nonzero=1
+
+----
+
+=== `json` model for Thermoelectric model
+
+For the thermoelectric model we use the same `thermoelec.json` as in the previous tutorial.
+
+[source, json, highlight=6]
+----
+{
+    "Name": "CoupledCart",
+    "ShortName":"MSC",
+    "Models":
+    {
+        "equations": "coupled-cart"
+    },
+    "Materials":
+    {
+        "Cylinder_1":
+        {
+            "name":"Copper",
+            "filename":"$cfgdir/Cu.json"
+        }
+    },
+    "BoundaryConditions":
+    {
+        "potential":
+        {
+            "Dirichlet":
+            {
+                "V0":
+                {
+                    "expr1":"0.",
+		    "expr2":"Cylinder_1"
+                },
+                "V1":
+                {
+                    "expr1":"0.05",
+		    "expr2":"Cylinder_1"
+                }
+            }
+        },
+        "temperature":
+        {
+            "Robin":
+            {
+                "R":
+                {
+                    "expr1":"80000",
+                    "expr2":"293"
+                }
+            }
+        }
+    },
+    "PostProcess":
+    {
+        "Exports":
+        {
+            "fields": ["temperature","potential","joules","current"]
+        }
+    }
+}
+----
+
+[TIP]
+====
+Do not forget to verify that the `json` file are correct.
+To do so use for instance:
+
+[source, bash, highlight=6]
+----
+jsonlint-php thermoelec.json
+----
+
+====
+
+
+=== `json` model for Magnetostatic
+
+* a `json` model file that defines the material and boundary conditions:
+
+[source, json, highlight=6]
+----
+{
+    "Name": "CoupledCart",
+    "ShortName":"MSC",
+    "Models":
+    {
+        "equations": "coupled-cart"
+    },
+    "Materials":
+    {
+        "Cylinder_1":
+        {
+            "name":"Copper",
+            "filename":"$cfgdir/Cu.json"
+        },
+        "Air_1":
+        {
+            "name":"Air",
+            "filename":"$cfgdir/Air.json"
+        }
+    },
+    "BoundaryConditions":
+    {
+        "magnetic_potential":
+        {
+            "Dirichlet":
+            {
+                "R_inf":
+                {
+                    "expr":"{0,0,0}:x:y:z"
+                }
+	    },	
+            "DirichletX":
+            {
+                "Sym0":
+                {
+                    "expr":"0:x:y:z"
+                },
+                "Sym1":
+                {
+                    "expr":"0:x:y:z"
+                },
+                "V0":
+                {
+                    "expr":"0:x:y:z"
+                },
+                "V1":
+                {
+                    "expr":"0:x:y:z"
+                }
+	    },
+            "DirichletY":
+            {
+                "Sym0":
+                {
+                    "expr":"0:x:y:z"
+                },
+                "Sym1":
+                {
+                    "expr":"0:x:y:z"
+                },
+                "V0":
+                {
+                    "expr":"0:x:y:z"
+                },
+                "V1":
+                {
+                    "expr":"0:x:y:z"
+                }
+        }
+    },
+    "PostProcess":
+    {
+        "Exports":
+        {
+            "fields": ["magneticPotential","magneticField"]
+        }
+    }
+}
+----
+
+=== `json` files for material physical properties
+
+In the case, we need to have one `json` material properties file per domain
+or material. In each file we also have to define the relative magnetic permeabilty stem:[\mu].
+
+[source, json]
+----
+{
+    "name":"Cu",
+    "sigma0":"50.e+6",
+    "k0":"330",
+    "T0":"293",
+    "alpha":"3.4e-3",
+    "sigma":"sigma0/(1+alpha*(T-T0)):sigma0:alpha:T:T0",
+    "k":"k0*T/((1+alpha*(T-T0))*T0):k0:T:alpha:T0",
+    "mu_mag": "1"
+}
+----
+
+[source, json]
+----
+{
+    "name":"Air",
+    "mu_mag": "1"
+}
+----
+
+== Run a Coupled Simulation
+
+* Create a directory for storing the results
+
+[source, bash]
+----
+mkdir Coupled
+----
+* Run the simulation
+
+[source,bash]
+----
+singularity exec -B ${PWD}/Coupled:/feel \
+ ${STORAGE}/hifimagnet-hifimagnet_v0.105.img \
+  feelpp_hfm_coupledcartmodel_3DP1N1 --config-file cylinder.cfg
+----
+
+[NOTE]
+====
+Checkout the output of the above command for any errors.
+You can save the output to a file `log` using the redirection:
+
+[source,bash]
+----
+singularity exec -B ${PWD}/Coupled:/feel \
+ ${STORAGE}/hifimagnet-hifimagnet_v0.105.img \
+  feelpp_hfm_coupledcartmodel_3DP1N1 --config-file cylinder.cfg > log 2>&1 
+----
+
+====
+
+== Post-processing
+
+* Move to the directory where the results are stored
+
+[source,bash]
+----
+cd Coupled/.../exports/ensightgold
+----
+
+* Start `ensight102`
+* Load the electric case
+* Load the thermoelectric case
+* Load the magnetostatic case
+
+* Check the value of the total current:
+
+[stem]
+++++
+(V1-V0) = R I \text{where} R = \frac{1}{sigma} \frac{H}{\pi R^2}
+++++
+
+* Plot the electric potential distribution along the wire axis,
+* Plot the temperature distribution along the wire radial axis.
+* Plot the magnetic field distribution along the radial axis.
+

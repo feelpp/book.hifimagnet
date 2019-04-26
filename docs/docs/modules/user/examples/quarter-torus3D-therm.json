@@ -1,11 +1,11 @@
 {
     "Name": "CoupledCart", <1>
     "ShortName":"MSC",
-    "Models":, <2>
+    "Models": <2>
     {
         "equations": "thermoelectric-linear"
     },
-    "Materials":, <3>
+    "Materials": <3>
     {
         "coil":
         {
@@ -13,9 +13,9 @@
             "filename":"$cfgdir/Cu.json"
         }
     },
-    "BoundaryConditions":, <3>
+    "BoundaryConditions": <3>
     {
-        "potential":, <4>
+        "potential": <4>
         {
             "Dirichlet":
             {
@@ -31,7 +31,7 @@
                 }
             }
         },
-        "temperature":, <5>
+        "temperature": <5>
         {
             "Robin":
             {
@@ -47,7 +47,7 @@
                 }
             }
         }    },
-    "PostProcess":, <6>
+    "PostProcess": <6>
     {
         "Exports":
         {

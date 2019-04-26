@@ -71,6 +71,9 @@ the portal is split into several services:
 * *Data Catalogue*, where you can add and/or retrieve data
 * *Experiments*, where the app is setup and the simulation is launched
 * *Visualization*, to access a Remote desktop to pre and/or post-processes your simulations
+* *Data*, to access the data transfert tools (aka globus)
+* *Source*, to access to {uri-gitlab-cesga}[cesga gitlab]
+* *Containers*, to access to the {uri-sregistry-cesga}[cesga sregistry]
 * *Q & A*, to access the Community tools for asking/answering specific questions
 * *Docs*, to access the general documentation for MSO4SC project
 * *Feedback*, to answer the questionnaire for MSO4SC project
@@ -93,11 +96,6 @@ To check, you can use `nmap -p <port> portal.mso4sc.eu`.
 
 You may need to contact your system admin to check and eventually open these ports.
 
-
-For *DevUser* using the {uri-msoportal-dev-www}[portal dev version] the ports to be opened are:
-
-* `5050, 8080`: ...
-
 ====
 
 [[mso_setup]]
@@ -111,13 +109,22 @@ for most user except for the {hifimagnet} ones.
 ==== Setting up an HPC resource in *Experiments*
 
 * Go to {uri-msoportal-experiment-www}[*Experiments*]
-* Select *Settings*
-* Define a HPC resource
+* Select *User Infrastructure*
+* From the sliding menu, select a predefined  HPC resource
+* Enter a *Name*
+* Enter your credentials
 
-[source,txt]
-----
-include::{examplesdir}/hpc.txt[]
-----
+**Add an image here**
+
+// [source,txt]
+// ----
+// include::{examplesdir}/hpc.txt[]
+// ----
+
+To enter a new HPC resource
+
+* Select *User Infrastructure*
+
 
 [[setup_post]]
 ==== Setting up an Remote Desktop resource in *Visualization*
@@ -145,7 +152,7 @@ image::ckan_apikey.png[Getting *Data Catalogue key*]
 
 * Copy the key
 * Connect to {uri-msoportal-experiment-www}[*Experiments*]
-** Select "Settings"
+** Select "Data repositories"
 ** Paste or Enter your *Data Catalogue key*
 
 image::setting_ckanapikey.png[Adding *Data Catalogue key* in *Settings*]
@@ -161,9 +168,12 @@ Before proceeding to the setup of the app, you need to make sure, at least for {
 One more step consists in retrieving the *TOKEN* and storing it into your home directory on the HPC resource.
  This *TOKEN* is needed to download programmatically the {singularity} image :
 
-* connect to {uri-sregistry-cesga}[{sregistry}] using {fiware} authentification
+* click on *Container* main menu to connect to {uri-sregistry-cesga}[{cesga} {sregistry}]
+* click on *Sign In with FiWare* to enter the service
 * go to your account (top right button)
 * select *Token*
+
+// * connect to {uri-sregistry-cesga}[{sregistry}] using {fiware} authentification
 
 image::sregistry_token.png[ex: {Get {sregistry} token]
 image::sregistry_apitoken.png[ex: {Display {sregistry} token]
