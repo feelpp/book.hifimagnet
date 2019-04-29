@@ -1,4 +1,4 @@
 ** xref:index.adoc#tutorials[Tutorials]
-*** xref:thermoelectric.adoc[TherModElectric]
+*** xref:thermoelectric.adoc[ThermoElectric]
 *** xref:magnetostatic.adoc[Magnetostatic (H1)]
 *** xref:elasticity.adoc[Elasticity]
