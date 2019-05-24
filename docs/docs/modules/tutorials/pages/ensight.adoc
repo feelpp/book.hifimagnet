@@ -1,0 +1,6 @@
+= Tutorial
+:source-highlighter: pygments
+:stem: latexmath
+
+In this tutorial, we demonstrate the standard use of {ensigth}
+to post-process results from a coupled simulation of an insert.

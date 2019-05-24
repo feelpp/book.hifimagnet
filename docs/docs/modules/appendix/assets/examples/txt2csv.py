@@ -54,8 +54,13 @@ keys = df.columns.values.tolist()
 
 # Add some more columns
 # Helix Magnet
-df['U1'] = df['Ucoil1'] + df['Ucoil2'] + df['Ucoil3'] + df['Ucoil4'] + df['Ucoil5'] + df['Ucoil6'] + df['Ucoil7']
-df['Pe1'] = df.apply(lambda row: row.U1 * row.Icoil1  / 1.e+6, axis=1)
+df['U1'] = 0
+for i in range(15):
+    ukey = "Ucoil%d" % i
+    if ukey in keys:
+        df['U1'] += df[ukey]
+    
+df['Pe1'] = df.apply(lambda row: row.U1 * row.Icoil1  / 1.e+6, axis=1) # Pmagnet-Pe2
 df['DP1'] = df['HP1'] - df['BP']
 
 # Get Water property
@@ -69,23 +74,24 @@ df['P1'] = df.apply(lambda row: (row.HP1 + row.BP)/2., axis=1)
 
 
 # Bitter
-df['U2'] = df['Ucoil15'] + df['Ucoil16']
-df['Pe2'] = df.apply(lambda row: row.U2 * row.Icoil15  / 1.e+6, axis=1)
+if 'Ucoil15' in keys:
+    df['U2'] = df['Ucoil15'] + df['Ucoil16']
+    df['Pe2'] = df.apply(lambda row: row.U2 * row.Icoil15  / 1.e+6, axis=1)
 
 # Get Water property
-df['rho2'] = df.apply(lambda row: st.steam_pT(row.BP*1e+5,row.Tin2+273.).rho / 1., axis=1)
-df['cp2'] = df.apply(lambda row: st.steam_pT(row.BP*1e+5,row.Tin2+273.).cp / 1., axis=1)
+    df['rho2'] = df.apply(lambda row: st.steam_pT(row.BP*1e+5,row.Tin2+273.).rho / 1., axis=1)
+    df['cp2'] = df.apply(lambda row: st.steam_pT(row.BP*1e+5,row.Tin2+273.).cp / 1., axis=1)
 
-df['DP2'] = df['HP2'] - df['BP']
-df['DT2'] =  df.apply(lambda row: row.Pe2*1.e+6 / ( row.rho2 * row.cp2 * row.Flow2 * 1.e-3)  if (row.Flow2 != 0) else row.Tin2, axis=1)
-df['Tout2'] = df['Tin2'] + df['DT2']
-df['Tw2'] = df.apply(lambda row: row.Tin2 + row.DT2/2., axis=1)
-df['P2'] = df.apply(lambda row: (row.HP2 + row.BP)/2., axis=1)
+    df['DP2'] = df['HP2'] - df['BP']
+    df['DT2'] =  df.apply(lambda row: row.Pe2*1.e+6 / ( row.rho2 * row.cp2 * row.Flow2 * 1.e-3)  if (row.Flow2 != 0) else row.Tin2, axis=1)
+    df['Tout2'] = df['Tin2'] + df['DT2']
+    df['Tw2'] = df.apply(lambda row: row.Tin2 + row.DT2/2., axis=1)
+    df['P2'] = df.apply(lambda row: (row.HP2 + row.BP)/2., axis=1)
 
 
 
-df['Power'] = df['Pe1'] + df['Pe2']
-df['Toutg'] = (df['rho1']*df['cp1']*df['Flow1'] * df['Tout1']+ df['rho2']*df['cp2']*df['Flow2'] * df['Tout2'])/(df['rho1']*df['cp1']*df['Flow1'] + df['rho2']*df['cp2']*df['Flow2'])
+    df['Power'] = df['Pe1'] + df['Pe2']
+    df['Toutg'] = (df['rho1']*df['cp1']*df['Flow1'] * df['Tout1']+ df['rho2']*df['cp2']*df['Flow2'] * df['Tout2'])/(df['rho1']*df['cp1']*df['Flow1'] + df['rho2']*df['cp2']*df['Flow2'])
 
 # Check data type
 # print pd.api.types.is_string_dtype(df['Icoil1'])

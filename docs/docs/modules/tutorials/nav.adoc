@@ -2,3 +2,5 @@
 *** xref:thermoelec.adoc[ThermoElectric]
 *** xref:magnetostatic.adoc[Magnetostatic (H1)]
 *** xref:elasticity.adoc[Elasticity]
+*** xref:salome.adoc[Using Salome]
+*** xref:ensight.adoc[Using Ensight]
