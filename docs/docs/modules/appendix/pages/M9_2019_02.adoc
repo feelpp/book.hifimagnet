@@ -33,7 +33,7 @@ use `txt2cvs.py` to view data: eg.
 python txt2csv.py --input_file M9_2019.02.17-15_58_42.txt --plot_vs_time "Ucoil1;Ucoil2"
 ```
 
-We will model the behaviour during the plateau.
+We will model the behavior during the plateau.
 
 |15 | M9_2019.02.15-23_02_46.txt |27953 | 14.0 | 28.7 | 23.17 | 4.6 | 137.6 |
 idem.
@@ -53,3 +53,15 @@ idem.
 | Others (Colburn,...) | run `NumModel.py` python script with appropriate data from table 2: eg.
 ```python hifimagnet/salome/HIFIMAGNET/src/HIFIMAGNET/NumModel.py Num-HL-31 --geometry HL-31 --CoolantTemp 10 --dT 11 --BP 4 --dP 10```
 |=========================================================
+
+// ensight102 [-X] -batch  -p $HOME/MSO4SC/hifimagnet-msoapps/Examples/HL-31-v105/probe_voltage.py -pyargv -i Electrics.case -o out.data [-b] -endpyargv
+// python txt2csv.py --input_file M9_2019.02.17-15_58_42.txt  --plot_vs_time "Ucoil1;Ucoil2"
+// python txt2csv.py --input_file M9_2019.02.17-15_58_42.txt  --output_time "22:55:33"  --output_key="Ucoil1;Ucoil2;Ucoil3;Ucoil4;Ucoil5;Ucoil6;Ucoil7"
+// python ~/MSO4SC/hifimagnet-msoapps/Examples/HL-31-v105/V_cmp.py --input_file V_cmp.dat --title="I = 21513 A, h=Montgomery"
+
+// python txt2csv.py --input_file M9_2019.02.15-23_02_46.txt --output_time "03:12:57" --output_key="Tin1;DT1;BP;DP1;Icoil1;Pmagnet;Pe1;Pe2;Flow1;Tout1;Flow2;Tout2;Toutg"
+// python ~/Salome_Packages/SALOME-9.3.0b2-MPI--DBtesting/BINARIES-DBtesting/HIFIMAGNET/bin/salome//NumModel.py HL-31 --geometry HL-31 --CoolantTemp 14. --dT 14.7 --BP 4.5 --dP 18.6
+// pick up correlation that provides a flowrate close to Flow1
+// ~/Salome_Packages/SALOME-9.3.0b2-MPI--DBtesting/salome \
+//        -t ~/Salome_Packages/SALOME-9.3.0b2-MPI--DBtesting/BINARIES-DBtesting/HIFIMAGNET/bin/salome//HIFIMAGNET_Cmd.py \
+//         args:--cfg=HL-31.yaml,--setup,--cooling="MeanPressure/DPressure/MeanTemperature",--correlation=colburn,--friction="constant"

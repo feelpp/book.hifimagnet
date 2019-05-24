@@ -1,0 +1,6 @@
+= Tutorial
+:source-highlighter: pygments
+:stem: latexmath
+
+In this tutorial, we demonstrate the standard use of {salome}
+to create a insert CAD and generate a mesh with {meshgems}.

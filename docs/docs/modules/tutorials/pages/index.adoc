@@ -8,9 +8,14 @@ include::{partialsdir}/mso4sc-uri.adoc[]
 Welcome to {hifimagnet} tutorials documentation!
 
 This section includes some materials to help the user.
-The goal is to give infrmations on how to setup a simulation
+The goal is to give informations on how to setup a simulation
 and define the `json` model files that represents the actual physical model.
 
 * xref:thermoelec.adoc[ThermoElectric]
 * xref:magnetostatic.adoc[Magnetostatic (H1)]
 * xref:elasticity.adoc[Elasticity]
+
+In a second section we adress the pre and post processing of a simulation
+
+* xref:salome.adoc[Creating a Insert CAD]
+* xref:ensight.adoc[Post-processing with EnSight]
