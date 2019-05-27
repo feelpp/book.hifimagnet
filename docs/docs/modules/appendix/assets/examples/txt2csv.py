@@ -50,7 +50,7 @@ keys = df.columns.values.tolist()
 # Drop empty columns
 df = df.loc[:, (df != 0.0).any(axis=0)]
 keys = df.columns.values.tolist()
-#print "keys=", len(keys)
+print "keys=", len(keys)
 
 # Add some more columns
 # Helix Magnet
@@ -60,7 +60,9 @@ for i in range(15):
     if ukey in keys:
         df['U1'] += df[ukey]
     
-df['Pe1'] = df.apply(lambda row: row.U1 * row.Icoil1  / 1.e+6, axis=1) # Pmagnet-Pe2
+# df['U1'] = df['Ucoil1'] + df['Ucoil2'] + df['Ucoil3'] + df['Ucoil4'] + df['Ucoil5'] + df['Ucoil6'] + df['Ucoil7'] \
+#            + df['Ucoil8'] + df['Ucoil9'] + df['Ucoil10'] + df['Ucoil11'] + df['Ucoil12'] + df['Ucoil13'] + df['Ucoil14']
+df['Pe1'] = df.apply(lambda row: row.U1 * row.Icoil1  / 1.e+6, axis=1)
 df['DP1'] = df['HP1'] - df['BP']
 
 # Get Water property

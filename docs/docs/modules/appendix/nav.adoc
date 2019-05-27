@@ -1,0 +1,3 @@
+*** xref:Monitoring.adoc[Monitoring]
+*** xref:M9_2017_03.adoc[DeMarinis]
+*** xref:M9_2019_02.adoc[ThermoElectric]

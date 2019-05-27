@@ -1,0 +1,337 @@
+{
+    "Name": "HL-31 with silberberg correlation (params=['9.15', '10.3', '17.4875205'])",
+    "Shortname": "HL-31",
+    "Models": {
+        "equations": "thermoelectric-nonlinear"
+    },
+    "Materials":
+    {
+	"H1_Cu":
+	{
+            "name":"Cu5Ag_H1",
+	    "filename":"$cfgdir/Materials/Cu5Ag_H1_CS.json"
+	},
+	"H2_Cu":
+        {
+            "name":"Cu5Ag_H2",
+            "filename":"$cfgdir/Materials/Cu5Ag_H2_CS.json"
+        },
+	"H3_Cu":
+        {
+            "name":"Cu5Ag_H3",
+            "filename":"$cfgdir/Materials/Cu5Ag_H3_CS.json"
+        },
+	"H4_Cu":
+        {
+            "name":"Cu5Ag_H4",
+            "filename":"$cfgdir/Materials/Cu5Ag_H4_CS.json"
+        },
+	"H5_Cu":
+        {
+            "name":"Cu5Ag_H5",
+            "filename":"$cfgdir/Materials/Cu5Ag_H5_CS.json"
+        },
+        "H6_Cu":
+        {
+            "name":"Cu5Ag_H6",
+            "filename":"$cfgdir/Materials/Cu5Ag_H6_CS.json"
+        },
+        "H7_Cu":
+        {
+            "name":"Cu5Ag_H7",
+            "filename":"$cfgdir/Materials/Cu01Ag_H7_CS.json"
+        },
+        "H8_Cu":
+        {
+            "name":"Cu5Ag_H8",
+            "filename":"$cfgdir/Materials/Cu01Ag_H8_CS.json"
+        },
+        "H9_Cu":
+        {
+            "name":"Cu5Ag_H9",
+            "filename":"$cfgdir/Materials/Cu01Ag_H9_CS.json"
+        },
+	"H10_Cu":
+        {
+            "name":"Cu5Ag_H10",
+            "filename":"$cfgdir/Materials/Cu01Ag_H10_CS.json"
+        },
+        "H11_Cu":
+        {
+            "name":"Cu5Ag_H11",
+            "filename":"$cfgdir/Materials/Cu01Ag_H11_CS.json"
+        },
+        "H12_Cu":
+        {
+            "name":"Cu5Ag_H12",
+            "filename":"$cfgdir/Materials/Cu01Ag_H12_CS.json"
+        },
+	"H13_Cu":
+	{
+            "name":"Cu5Ag_H13",
+	    "filename":"$cfgdir/Materials/Cu01Ag_H13_CS.json"
+	},
+ 	"H14_Cu":
+        {
+            "name":"Cu5Ag_14",
+            "filename":"$cfgdir/Materials/Cu01Ag_H14_CS.json"
+        },
+	"H1_Isolant":
+	{
+            "name":"Glue",
+	    "filename":"$cfgdir/Materials/glue.json"
+	},
+	"H2_Isolant":
+	{
+            "name":"Glue",
+	    "filename":"$cfgdir/Materials/glue.json"
+	},
+	"H3_Isolant":
+	{
+            "name":"Glue",
+	    "filename":"$cfgdir/Materials/glue.json"
+	},
+	"H4_Isolant":
+	{
+            "name":"Glue",
+	    "filename":"$cfgdir/Materials/glue.json"
+	},
+	"H5_Isolant":
+	{
+            "name":"Glue",
+	    "filename":"$cfgdir/Materials/glue.json"
+	},
+	"H6_Isolant":
+	{
+            "name":"Glue",
+	    "filename":"$cfgdir/Materials/glue.json"
+	},
+	"H7_Isolant":
+	{
+            "name":"Glue",
+	    "filename":"$cfgdir/Materials/glue.json"
+	},
+	"H8_Isolant":
+	{
+            "name":"Glue",
+	    "filename":"$cfgdir/Materials/glue.json"
+	},
+	"H9_Isolant":
+	{
+            "name":"Glue",
+	    "filename":"$cfgdir/Materials/glue.json"
+	},
+	"H10_Isolant":
+	{
+            "name":"Glue",
+	    "filename":"$cfgdir/Materials/glue.json"
+	},
+	"H11_Isolant":
+	{
+            "name":"Glue",
+	    "filename":"$cfgdir/Materials/glue.json"
+	},
+	"H12_Isolant":
+	{
+            "name":"Glue",
+	    "filename":"$cfgdir/Materials/glue.json"
+	},
+	"H13_Isolant":
+	{
+            "name":"Glue",
+	    "filename":"$cfgdir/Materials/glue.json"
+	},
+	"H14_Isolant":
+	{
+            "name":"Glue",
+	    "filename":"$cfgdir/Materials/glue.json"
+	},
+	"R1":
+        {
+            "name":"CuNiBe",
+            "filename":"$cfgdir/Materials/CuNiBe.json"
+        },
+	"R2":
+        {
+            "name":"CuNiBe",
+            "filename":"$cfgdir/Materials/CuNiBe.json"
+        },
+	"R3":
+        {
+            "name":"Cu5Ag",
+            "filename":"$cfgdir/Materials/CuCrZn.json"
+        },
+	"R4":
+        {
+            "name":"Cu5Ag",
+            "filename":"$cfgdir/Materials/CuCrZn.json"
+        },
+	"R5":
+        {
+            "name":"Cu5Ag",
+            "filename":"$cfgdir/Materials/CuCrZn.json"
+        },
+	"R6":
+        {
+            "name":"Cu5Ag",
+            "filename":"$cfgdir/Materials/CuCrZn.json"
+        },
+	"R7":
+        {
+            "name":"Cu5Ag",
+            "filename":"$cfgdir/Materials/CuCrZn.json"
+        },
+	"R8":
+        {
+            "name":"Cu5Ag",
+            "filename":"$cfgdir/Materials/CuCrZn.json"
+        },
+	"R9":
+        {
+            "name":"Cu5Ag",
+            "filename":"$cfgdir/Materials/CuCrZn.json"
+        },
+	"R10":
+        {
+            "name":"Cu5Ag",
+            "filename":"$cfgdir/Materials/CuCrZn.json"
+        },
+	"R11":
+        {
+            "name":"Cu5Ag",
+            "filename":"$cfgdir/Materials/CuCrZn.json"
+        },
+	"R12":
+        {
+            "name":"Cu5Ag",
+            "filename":"$cfgdir/Materials/CuCrZn.json"
+        },
+	"R13":
+	{
+	    "name":"Cu5Ag",
+	    "filename":"$cfgdir/Materials/CuCrZn.json"
+	},
+	"iL1":
+        {
+            "name":"CuCrZn",
+            "filename":"$cfgdir/Materials/CuLead.json"
+        },
+	"oL2":
+        {
+            "name":"Cu-C1",
+            "filename":"$cfgdir/Materials/CuLead.json"
+        }
+    },
+    "BoundaryConditions": {
+        "potential": {
+            "Dirichlet": {
+                "OuterL2_LV0": {
+                    "expr1": "0",
+                    "expr2": "oL2"
+                },
+                "Inner1_LV0": {
+                    "expr1": "-293.8",
+                    "expr2": "iL1"
+                }
+            }
+        },
+        "temperature": {
+            "Robin": {
+                "OuterL2_CooledSurfaces": {
+                    "expr1": "72000",
+                    "expr2": "284.15"
+                },
+                "OuterL2_R1n": {
+                    "expr1": "72000",
+                    "expr2": "284.15"
+                },
+                "OuterL2_R0n": {
+                    "expr1": "72000",
+                    "expr2": "284.15"
+                },
+                "Inner1_R1n": {
+                    "expr1": "72000",
+                    "expr2": "284.15"
+                },
+                "Inner1_R0n": {
+                    "expr1": "72000",
+                    "expr2": "284.15"
+                },
+                "R2_R0n": {
+                    "expr1": "45996.411245625306",
+                    "expr2": "284.15*(1-(z>-200e-3)) + (11.9/400.e-3*(z+200e-3)+284.15)*(z>-200e-3):z"
+                },
+                "Channel0": {
+                    "expr1": 44168.354512340564,
+                    "expr2": "284.15*(1-(z>-200e-3)) + (11.9/400.e-3*(z+200e-3)+284.15)*(z>-200e-3):z"
+                },
+                "Channel1": {
+                    "expr1": 45996.411245625306,
+                    "expr2": "284.15*(1-(z>-200e-3)) + (11.9/400.e-3*(z+200e-3)+284.15)*(z>-200e-3):z"
+                },
+                "Channel2": {
+                    "expr1": 52745.38377974813,
+                    "expr2": "284.15*(1-(z>-200e-3)) + (11.9/400.e-3*(z+200e-3)+284.15)*(z>-200e-3):z"
+                },
+                "Channel3": {
+                    "expr1": 51373.427044863776,
+                    "expr2": "284.15*(1-(z>-200e-3)) + (11.9/400.e-3*(z+200e-3)+284.15)*(z>-200e-3):z"
+                },
+                "Channel4": {
+                    "expr1": 50185.46939480281,
+                    "expr2": "284.15*(1-(z>-200e-3)) + (11.9/400.e-3*(z+200e-3)+284.15)*(z>-200e-3):z"
+                },
+                "Channel5": {
+                    "expr1": 49084.87633454164,
+                    "expr2": "284.15*(1-(z>-200e-3)) + (11.9/400.e-3*(z+200e-3)+284.15)*(z>-200e-3):z"
+                },
+                "Channel6": {
+                    "expr1": 48061.249552128415,
+                    "expr2": "284.15*(1-(z>-200e-3)) + (11.9/400.e-3*(z+200e-3)+284.15)*(z>-200e-3):z"
+                },
+                "Channel7": {
+                    "expr1": 47105.857120765686,
+                    "expr2": "284.15*(1-(z>-200e-3)) + (11.9/400.e-3*(z+200e-3)+284.15)*(z>-200e-3):z"
+                },
+                "Channel8": {
+                    "expr1": 46484.71686746809,
+                    "expr2": "284.15*(1-(z>-200e-3)) + (11.9/400.e-3*(z+200e-3)+284.15)*(z>-200e-3):z"
+                },
+                "Channel9": {
+                    "expr1": 45890.21326361471,
+                    "expr2": "284.15*(1-(z>-200e-3)) + (11.9/400.e-3*(z+200e-3)+284.15)*(z>-200e-3):z"
+                },
+                "Channel10": {
+                    "expr1": 45320.45915481859,
+                    "expr2": "284.15*(1-(z>-200e-3)) + (11.9/400.e-3*(z+200e-3)+284.15)*(z>-200e-3):z"
+                },
+                "Channel11": {
+                    "expr1": 44773.75086911238,
+                    "expr2": "284.15*(1-(z>-200e-3)) + (11.9/400.e-3*(z+200e-3)+284.15)*(z>-200e-3):z"
+                },
+                "Channel12": {
+                    "expr1": 44248.545804295085,
+                    "expr2": "284.15*(1-(z>-200e-3)) + (11.9/400.e-3*(z+200e-3)+284.15)*(z>-200e-3):z"
+                },
+                "Channel13": {
+                    "expr1": 43743.44328166606,
+                    "expr2": "284.15*(1-(z>-200e-3)) + (11.9/400.e-3*(z+200e-3)+284.15)*(z>-200e-3):z"
+                },
+                "Channel14": {
+                    "expr1": 44861.85061893132,
+                    "expr2": "284.15*(1-(z>-200e-3)) + (11.9/400.e-3*(z+200e-3)+284.15)*(z>-200e-3):z"
+                }
+            }
+        }
+    },
+    "PostProcess": {
+        "Exports": {
+            "fields": [
+                "temperature",
+                "potential",
+                "current",
+                "joules"
+            ]
+        }
+    }
+}
