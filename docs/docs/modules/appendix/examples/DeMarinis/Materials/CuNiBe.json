@@ -1,0 +1,15 @@
+{
+    "name":"CuNiBe",
+    "sigma0":"41.e+6",
+    "T0":"293",
+    "k0":"107",
+    "alpha":"3.4e-3",
+    "sigma":"sigma0/(1+alpha*(T-T0)):sigma0:alpha:T:T0",
+    "k":"k0*T/((1+alpha*(T-T0))*T0):k0:T:alpha:T0",
+    "E":"131e+9",
+    "nu":"0.3",
+    "alphaT":"17e-6",
+    "rho":"9.e+3",
+    "Re":"400",
+    "mu":"1"
+}

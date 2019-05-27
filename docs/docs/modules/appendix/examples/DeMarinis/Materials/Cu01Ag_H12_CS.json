@@ -1,0 +1,15 @@
+{
+    "name":"CuAg0.1",
+    "alpha":"3.75e-3",
+    "T0":"293",
+    "sigma0":"55.5e+6",
+    "k0":"400",
+    "sigma":"sigma0/(1+alpha*(T-T0)):sigma0:alpha:T:T0",
+    "k":"k0*T/((1+alpha*(T-T0))*T0):k0:T:alpha:T0",
+    "E":"69e+9",
+    "nu":"0.33",
+    "alphaT":"18e-6",
+    "rho":"9.e+3",
+    "Re":"450",
+    "mu":"1"
+}
