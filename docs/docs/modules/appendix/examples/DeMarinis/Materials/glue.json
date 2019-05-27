@@ -1,0 +1,14 @@
+{
+    "name":"Glue",
+    "alpha":"0",
+    "T0":"293",
+    "sigma0":"0",
+    "k0":"1.2",
+    "sigma":"sigma0/(1+alpha*(T-T0)):sigma0:alpha:T:T0",
+    "k":"k0*T/((1+alpha*(T-T0))*T0):k0:T:alpha:T0",
+    "E":"2.1e9",
+    "nu":"0.21",
+    "alphaT":"9e-6",
+    "rho":"2.e+3",
+    "mu_mag": "1"
+}
