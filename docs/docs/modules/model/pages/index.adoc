@@ -200,7 +200,7 @@ P_r = \frac{\mu C_p}{k},
 
 [stem]
 ++++
-D_h = 2 (r^{(n+1)}_1 - r^{(n)}_2.
+D_h = 2 (r^{(n+1)}_1 - r^{(n)}_2).
 ++++
 
 Note that stem:[\mu] stands here for the viscosity of water.
