@@ -44,7 +44,7 @@ The option `--gmsh.scale=0.001` enables to force the use of **meter** for the pa
 == Data files
 
 The data files may be retreived from {uri-msoportal-ckan-www}[*Data Catalogue*].
-See the dataset *A 4 Helices insert* in {lncmi} collection.
+See the dataset *A test helix* in {lncmi} collection.
 
 The gzipped archive tarball {uri-ckan-data}/dataset/hl-test/resource/ff0f4f04-45c9-4507-b98a-ee789c8bde95[`HL-31_H1-v0.105.tgz`] contains all the files needed.
 
