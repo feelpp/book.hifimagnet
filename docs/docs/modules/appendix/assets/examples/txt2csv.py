@@ -35,6 +35,7 @@ parser.add_argument("--plot_vs_time", help="select key(s) to plot (ex. \"Field[;
 parser.add_argument("--plot_key_vs_key", help="select pair(s) of keys to plot (ex. \"Field-Icoil1")
 parser.add_argument("--output_time", help="output key(s) for time")
 parser.add_argument("--output_key", help="output key(s) for time")
+parser.add_argument("--show", help="display graphs instead of saving them (png format)", action='store_true')
 args = parser.parse_args()
 
 input_file = args.input_file
@@ -116,12 +117,18 @@ if args.plot_vs_time:
             print "unknown key: %s" % key
             print "valid keys: ", keys
             exit(1)
-    plt.show()
-
+    if args.show:
+        plt.show()
+    else:
+        imagefile = input_file.replace(".txt", "")
+        plt.savefig('%s_vs_time.png' % imagefile, dpi=300 )
+    plt.close()
+        
 if args.plot_key_vs_key:
     # split pairs in key1, key2
     pairs = args.plot_key_vs_key.split(';') 
     for pair in pairs:
+        ax = plt.gca()
         #print "pair=", pair, " type=", type(pair)
         items = pair.split('-')
         if len(items) != 2:
@@ -135,7 +142,12 @@ if args.plot_key_vs_key:
             print "unknown pair of keys: %s" % pair
             print "valid keys: ", keys
             exit 
-    plt.show()
+        if args.show:
+            plt.show()
+        else:
+            imagefile = input_file.replace(".txt", "")
+            plt.savefig('%s_%s_vs_%s.png' % (imagefile, key1, key2), dpi=300 )
+        plt.close()
 
 if args.output_time:
     times = args.output_time.split(";")
@@ -166,6 +178,6 @@ P = np.arange(df['BP'].min(), max(df['HP1'].max(),df['HP2'].max()), 1)
 
 
 # Save to CSV
-df.to_csv(output_file, index=False, header=False, date_format=str)
+df.to_csv(output_file, index=False, header=True, date_format=str)
 
 
