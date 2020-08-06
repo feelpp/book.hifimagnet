@@ -1,11 +1,11 @@
 site:
   title: HiFiMagnet Documentation
   # url: /antora/build
-  start_page: stable@hifimagnet::index.adoc
+  start_page: hifimagnet::index.adoc
 content:
   sources:
-  - url: ./
-    branches: master
+  - url: https://github.com/feelpp/book.hifimagnet
+    branches: [master, staging]
     start_path: docs/docs
 #  - url: ../book.feelpp.org
 #    branches: master
