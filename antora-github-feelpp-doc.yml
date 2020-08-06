@@ -9,6 +9,9 @@ content:
   - url: https://github.com/feelpp/book.hifimagnet
     branches: master
     start_path: docs/docs
+  - url: https://github.com/feelpp/book.hifimagnet
+    branches: staging
+    start_path: docs/docs
   - url: https://github.com/feelpp/book.feelpp.org
     branches: master
     start_path: docs/user
