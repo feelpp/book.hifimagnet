@@ -1,6 +1,6 @@
 name: hifimagnet
 title: HiFiMagnet Documentation
-version: "stable"
+version: "canary"
 nav:
 - modules/ROOT/nav.adoc
 - modules/model/nav.adoc
