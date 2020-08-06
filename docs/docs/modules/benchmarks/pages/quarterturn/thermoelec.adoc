@@ -35,7 +35,7 @@ As the mesh is, by default in *mm*, we use specific units for this tests.
 
 - This problem is fully described by a Thermo-Electric model, namely a poisson equation for the electrical potential stem:[V] and a standard heat equation for the temperature field stem:[T] with Joules losses as a source term.
 
-- **toolbox**:  thermoelectric
+// - **toolbox**:  thermoelectric
 
 === Materials
 
@@ -83,18 +83,17 @@ As for the heat equation, the forced water cooling is modeled by robin boundary 
 To change the mesh size `hsize` just edit the cfg file and change the corresponding line:
 
 [source,cfg]
-++++
+----
 dim=3
 units=mm
 geofile=quarter-turn3D.geo
 geofile-path=$cfgdir
-
 ...
+
 [gmsh]
 filename=$cfgdir/quarter-turn3D.geo
 hsize=1
-
-++++
+----
 
 == Reference
 
