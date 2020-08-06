@@ -4,8 +4,8 @@ site:
   start_page: hifimagnet::index.adoc
 content:
   sources:
-  - url: https://github.com/feelpp/book.hifimagnet
-    branches: [master, staging]
+  - url: ./
+    branches: [master, canary, staging]
     start_path: docs/docs
 #  - url: ../book.feelpp.org
 #    branches: master
