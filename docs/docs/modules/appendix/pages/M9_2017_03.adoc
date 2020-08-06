@@ -30,7 +30,7 @@ in the text may be found here.
 [cols="3,^2,10",options="header"]
 |=========================================================
 | Helix | stem:[\sigma] [stem:[M\Omega/m]] | Nuance
-| 1 | 52.4 | Cu0.5Ag Cold Spray
+| 1 | 52.4 | Cu5Ag Cold Spray
 | 2 | 53.3 | "
 | 3 | 52.6 | "
 | 4 | 52.8 | "
