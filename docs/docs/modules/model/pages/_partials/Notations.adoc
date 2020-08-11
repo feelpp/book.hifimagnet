@@ -86,7 +86,6 @@ Electromagnetism:
 [NOTE]
 ====
 By abuse, we often refer to stem:[\mathbf B] as the magnetic field.
-The relationship
 ====
 
 Mechanics:
@@ -95,6 +94,6 @@ Mechanics:
 ^|Notation ^|Quantity ^|Unit
 | stem:[P] | pressure |stem:[Pa]
 | stem:[{\bar{\bar{\sigma}}}] | stress |stem:[Pa]
-| stem:[{\bar{\bar{\sigma}}}] | strain |-
+| stem:[{\bar{\bar{\epsilon}}}] | strain |-
 | stem:[\mathbf U] | displacement vector |m 
 |===
