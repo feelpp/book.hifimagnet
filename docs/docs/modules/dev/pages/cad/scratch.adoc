@@ -57,6 +57,7 @@ On Windows 10 Pro you have to:
 * install Debian/Stretch from Windows Store,
 
 To install {salome} in WSL Debian/Stretch:
+
 * start Debian
 * setup lncmi debian repository
 * install {salome} binary for Debian/Stretch in Debian WSL.
