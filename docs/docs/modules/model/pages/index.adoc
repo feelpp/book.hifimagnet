@@ -45,14 +45,14 @@ This leads to the following equation:
 
 [stem]
 ++++
-\epsilon \frac{\partial^2 \mathbf{A}}{\partial t^2} + \sigma \frac{\partial \mathbf{A}}{\partial t} - \sigma \mathbf{u} \times (\nabla \times \mathbf{A}) + \nabla \times (\frac{1}{\mu} \nabla \times \mathbf{A}) = -\sigma \nabla V  \qquad \text{in} \,  \mathbf{R}^3
+\epsilon \frac{\partial^2 \mathbf{A}}{\partial t^2} + \sigma \frac{\partial \mathbf{A}}{\partial t} - \sigma \mathbf{u} \times (\nabla \times \mathbf{A}) + \nabla \times (\frac{1}{\mu} \nabla \times \mathbf{A}) = -\sigma \nabla V - \frac{\partial}{\partial t}\left(\epsilon \nabla V\right) \qquad \text{in} \,  \mathbf{R}^3
 ++++
 
 We add the conservation of current:
 
 [stem]
 ++++
-\nabla \cdot \left( \sigma ( -\nabla V + \mathbf{u} \times (\nabla \times \mathbf{A}) \right) = 0 \qquad \text{in} \,  \Omega.
+\nabla \cdot \left( \sigma ( -\nabla V + \mathbf{u} \times (\nabla \times \mathbf{A}) - \frac{\partial \mathbf{A}}{\partial t}\right) = 0 \qquad \text{in} \,  \Omega.
 ++++
 
 [NOTE]
@@ -73,7 +73,7 @@ The final system of EDP to be solved is:
 
 [stem]
 ++++
-\nabla \cdot \left( \sigma ( -\nabla V + \mathbf{u} \times (\nabla \times \mathbf{A}) \right) = 0 \qquad \text{in} \,  \Omega.
+\nabla \cdot \left( \sigma ( -\nabla V + \mathbf{u} \times (\nabla \times \mathbf{A}) - \frac{\partial \mathbf{A}}{\partial t} \right) = 0 \qquad \text{in} \,  \Omega.
 ++++
 
 ==== Magnetostatic
