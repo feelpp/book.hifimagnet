@@ -7,7 +7,7 @@
 :hifimagnet: HiFiMagnet
 :meshgems: MeshGems
 :salome: Salome
-:magnettools: MAgnetTools
+:magnettools: MagnetTools
 :feelpp: Feel++
 :feelppdb: $HOME/feel
 :crbdb: crbdb
