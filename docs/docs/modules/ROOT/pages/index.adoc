@@ -34,13 +34,13 @@ is the so-called *PolyHelix insert* cut by EDM.
 
 The use of classical resistive materials as Copper alloys enables to reach higher magnetic field than those provided by magnets
 made out of Low Temperature Superconductor material (namely 24.5 tesla). To achieve these values the magnets are powered by 24 MW and
-some water cooling is needed to dissipate the Joules losses and keep the magnet temperature bellow some heuristic threshold.
+some water cooling is needed to dissipate the Joules losses and keep the magnet temperature below some heuristic threshold.
 
 
 == What is {hifimagnet}?
 
 {hifimagnet} is a research project carried out by the LNCMI in collaboration with
-{uri-irma-www}[Institut de Recherche Mathématique Avancée] (IRMA) and {uri-cemosis-www}[Centre for modeling and simulation in Strasbourg] (Cemosis).
+{uri-irma-www}[Institut de Recherche Mathématique Avancée] (IRMA) and {uri-cemosis-www}[Centre de modélisation et de simulation de Strasbourg] (Cemosis).
 
 The goals are twofold:
 
@@ -66,18 +66,13 @@ Actually {hifimagnet} is a software chain for High Field Magnets that consist mo
 * one for running simulations,
 * one for post-processing.
 
-These tools are described in the <<manuals, manuals>> bellow.
+These tools are described in the <<manuals, manuals>> below.
 
 {hifimagnet} is currently available:
 
 * natively on Debian/Ubuntu Os,
 * throught https://docs.microsoft.com/en-us/windows/wsl/install-win10[WSL on Windows 10],
 * as private Docker and Singularity images,
-* as applications from the https://portal.mso4sc.eu[MSO Portal]
-
-The recommended and easiest way to use {hifimagnet} is through the portal.
-The impatient reader could directly go this xref:mso4c:index.adoc#msoportal[section] for pratical details and
-some examples.
 
 == Typical workflow
 
@@ -85,7 +80,7 @@ some examples.
 
 * define an axisymetrical magnet design with xref:magnettools:index.adoc#magnettools_manual[{magnettools}], a in-house software for Axi configuration,
 * create the 3D geometry of the magnet from axisymetrical design with xref:cad:index.adoc#salome_plugin[{hifimagnet} {salome} plugin],
-* simulate the 3D behaviour of of the magnet with xref:user:index.adoc#user_manual[{hifimagnet}].
+* simulate the 3D behaviour of the magnet with xref:user:index.adoc#user_manual[{hifimagnet}].
 
 The reader is encouraged to read the manuals in the next section starting with the  xref:model:index.adoc[Model manual]
 that gives details about the physical modelling considered.
