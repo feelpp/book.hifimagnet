@@ -22,7 +22,7 @@ jobs:
         GITHUB_OAUTH: ${{ secrets.DOCS_GITHUB_KEY }}
     # Runs a single command using the runners shell
     - name: Build
-      run: node_modules/.bin/antora --fetch site.yml      
+      run: node_modules/.bin/antora --fetch antora-github-feelpp-doc.yml     
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@3.5.9
       with:
