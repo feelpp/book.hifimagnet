@@ -52,7 +52,7 @@ We add the conservation of current:
 
 [stem]
 ++++
-\nabla \cdot \left( \sigma ( -\nabla V + \mathbf{u} \times (\nabla \times \mathbf{A}) - \frac{\partial \mathbf{A}}{\partial t}\right) = 0 \qquad \text{in} \,  \Omega.
+\nabla \cdot \left( \sigma ( -\nabla V - \frac{\partial \mathbf{A}}{\partial t}  + \mathbf{u} \times (\nabla \times \mathbf{A})\right) = 0 \qquad \text{in} \,  \Omega.
 ++++
 
 [NOTE]
@@ -90,12 +90,15 @@ The steady state regime will be given by:
 \nabla \cdot \left( \sigma ( -\nabla V + \mathbf{u} \times (\nabla \times \mathbf{A}) \right) = 0 \qquad \text{in} \, \Omega.
 ++++
 
-The boundary conditions ...
+The boundary conditions are of 2 types:
 
-===== Biot-Savart law
+* stem:[\mathbf{A} = \mathbf{0]], Homogeneous Dirichlet for mimicking condition at infinity,
+* stem:[\mathbf{A} \cross \mathbf{n} = 0] on symetry plane and on boundaries of input/output current leads. 
+
+==== Biot-Savart law
 
 In the case of non magnetic materials (ie stem:[\mu=\mu_0]), we can easily derive a solution using
-the Biot Savart law:
+the Biot Savart law for the steady state regime:
 
 [stem]
 ++++
@@ -121,9 +124,9 @@ The temperature field stem:[T] is given by the classical heat equation with the 
 
 The boundary conditions associated are mainly of 3 types:
 
-* Homogeneous Neumann for ...: stem:[-k \frac{\partial T}{\partial \mathbf{n}} = 0]
-* Robin for cooled surfaces: stem:[-k \frac{\partial T}{\partial \mathbf{n}} = h (T-T_w)]
-* Radiation conditons: stem:[-k \frac{\partial T}{\partial \mathbf{n}} = \epsilon_T T^4]
+* Robin for cooled surfaces: stem:[-k \frac{\partial T}{\partial \mathbf{n}} = h (T-T_w)],
+* Radiation conditons: stem:[-k \frac{\partial T}{\partial \mathbf{n}} = \epsilon_T T^4],
+* Homogeneous Neumann for other boundaries: stem:[-k \frac{\partial T}{\partial \mathbf{n}} = 0].
 
 In the current version radiation conditions are not implemented.
 

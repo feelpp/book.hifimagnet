@@ -364,36 +364,3 @@ Use `--gmsh.scale=0.001` to rescale the mesh.
 * xref:benchmarks:HL/README.adoc[HL] 
 * xref:benchmarks:HL-31/README.adoc[HL-31]
 
-// include::learning/README.adoc[]
-
-// [[usage_cad]]
-// include::learning/Geometry.adoc[leveloffset=+2]
-
-// :leveloffset=-1:
-// [[usage_mesh]]
-// include::learning/Meshing.adoc[leveloffset=+2]
-
-// :leveloffset=-1:
-// [[usage_axi]]
-// include::learning/AxiModeling.adoc[leveloffset=+2]
-
-// :leveloffset=-1:
-// [[usage_3d]]
-// include::learning/3DModeling.adoc[leveloffset=+2]
-
-// [[installation]]
-// = Detailed Installation
-
-// include::installation/README.adoc[]
-
-// include::installation/PREREQUISITES.adoc[leveloffset=+1]
-// include::installation/lncmi-repository.adoc[leveloffset=+1]
-// include::installation/container.adoc[leveloffset=+1]
-
-// [[installation_scratch]]
-// include::installation/from-scratch.adoc[leveloffset=+1]
-
-// [[references]]
-// = Quick Reference
-
-// include::quickref/README.adoc[]
