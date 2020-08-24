@@ -45,14 +45,14 @@ This leads to the following equation:
 
 [stem]
 ++++
-\epsilon \frac{\partial^2 \mathbf{A}}{\partial t^2} + \sigma \frac{\partial \mathbf{A}}{\partial t} - \sigma \mathbf{u} \times (\nabla \times \mathbf{A}) + \nabla \times (\frac{1}{\mu} \nabla \times \mathbf{A}) = -\sigma \nabla V  \qquad \text{in} \,  \mathbf{R}^3
+\epsilon \frac{\partial^2 \mathbf{A}}{\partial t^2} + \sigma \frac{\partial \mathbf{A}}{\partial t} - \sigma \mathbf{u} \times (\nabla \times \mathbf{A}) + \nabla \times (\frac{1}{\mu} \nabla \times \mathbf{A}) = -\sigma \nabla V - \frac{\partial}{\partial t}\left(\epsilon \nabla V\right) \qquad \text{in} \,  \mathbf{R}^3
 ++++
 
 We add the conservation of current:
 
 [stem]
 ++++
-\nabla \cdot \left( \sigma ( -\nabla V + \mathbf{u} \times (\nabla \times \mathbf{A}) \right) = 0 \qquad \text{in} \,  \Omega.
+\nabla \cdot \left( \sigma ( -\nabla V + \mathbf{u} \times (\nabla \times \mathbf{A}) - \frac{\partial \mathbf{A}}{\partial t}\right) = 0 \qquad \text{in} \,  \Omega.
 ++++
 
 [NOTE]
@@ -73,7 +73,7 @@ The final system of EDP to be solved is:
 
 [stem]
 ++++
-\nabla \cdot \left( \sigma ( -\nabla V + \mathbf{u} \times (\nabla \times \mathbf{A}) \right) = 0 \qquad \text{in} \,  \Omega.
+\nabla \cdot \left( \sigma ( -\nabla V + \mathbf{u} \times (\nabla \times \mathbf{A}) - \frac{\partial \mathbf{A}}{\partial t} \right) = 0 \qquad \text{in} \,  \Omega.
 ++++
 
 ==== Magnetostatic
@@ -168,7 +168,7 @@ with stem:[{\bar{\bar{I}}}] the identity tensor, and stem:[T_0] is a reference t
 === ThermoHydraulics
 
 Cooling the magnet is mandatory to evacuate Joules losses and to keep magnet temperature bellow some
-heuristic limit as some copper alloys can have poorer mechanical behavior at high temperature. The cooling
+heuristic limit as some copper alloys can have poor mechanical behavior at high temperature. The cooling
 is ensured by a forced water flow with a volumic flow rate stem:[Q] up to 150 l/s.
 
 The total heat elevation in the water stem:[\Delta T_w] may be easily estimated from the electrical power stem:[P_e] dissipated
@@ -215,7 +215,13 @@ u = \sqrt{\displaystyle \frac{2 \Delta P}{\rho \left[P_{in}+P_{out} + c \frac{L}
 where stem:[\Delta P] is the pressure drop applied to force the flow (typically 25 bar),
 stem:[P_{in}] and stem:[P_{out}] are additionnal hydraulic pressure drop at the input and output of the magnet.
 
-In practice...
+In practice, an alternative correlation named after B. Montgomery,
+who has been a pionnering engineer in the field of Magnet design, is commonly used:
+
+[stem]
+++++
+h = 1426*(1+1.5e-2 T_w) u^{0.8} / D_h^{0.2}.
+++++
 
 // [[coupledaxi]]
 // == A simplified model: Axisymetrical Geometry
