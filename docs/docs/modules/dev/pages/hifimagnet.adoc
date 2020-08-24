@@ -1,0 +1,13 @@
+[[install_hifimagnet]]
+= {hifimagnet}
+
+include::hifimagnet/PREREQUISITES.adoc[leveloffset=+1]
+
+== Using containers
+
+include::hifimagnet/docker.adoc[leveloffset=+1]
+include::hifimagnet/singularity.adoc[leveloffset=+1]
+
+== From scratch
+
+//include::hifimagnet/from-scratch.adoc[leveloffset=+1]

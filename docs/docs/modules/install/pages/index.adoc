@@ -1,0 +1,35 @@
+[[infrastructure]]
+== {infrastructure}
+
+* Lncmi
+* Grenoble Mesocentre
+* Cemosis
+* MSOPortal
+
+[[matrix]]
+== {hifimagnet matrix}
+
+[cols="6*"]
+|===
+|Package       | Debian | Windows | Docker Container | Singularity Container | Category
+|{magnettools} |        |         |                  |                       |
+|{salome}      |        |         |                  |                       | 
+|{getdp}       |        |         |                  |                       | 
+|{hifimagnet}  |        |         |                  |                       | 
+|{ensight}     |        |         |                  |                       | 
+|{paraview}    |        |         |                  |                       | 
+|===
+
+
+[[debian]]
+== Debian/Ubuntu platform
+
+[[windows]]
+== Windows 10 platform
+
+[[containers]]
+== Containers
+
+=== Docker
+=== Singularity
+

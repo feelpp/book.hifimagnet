@@ -1,0 +1,16 @@
+[[install_magnettools]]
+= {magnettools}
+
+=== Prerequis
+
+{magnettools} relies on the following software : 
+
+** `popt`,
+** `gsl`, `freesteam`,
+** `spherepack, expokit`,
+** `sundials`,
+** `yamlcpp`, `json-spirit`
+** `nag` (only required for Optimization)
+
+=== From scratch
+

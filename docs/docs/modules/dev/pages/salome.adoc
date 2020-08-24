@@ -1,0 +1,18 @@
+[[install_salome]]
+= {hifimagnet} {salome} plugin
+
+This section describes {hifimagnet} {salome} Plugin installation from scratch. You can also use official {salome} binairies to build the plugin but this will not be detailed. 
+
+Building {salome} from scratch is performed within a docker image to avoid any conflitcs with pre-existing configuration. The obtained binaries will exported at the end of the build process if successful as a compressed archive. The archive will be later used when creating the containers. 
+
+All the scripts and docker or singularity recipes may be found in http://github.com/hifimagnet/[{hifimagnet} github repository].
+In particular see the followings directory:
+
+* docker: for all docker related stuff
+* singularity: same for singularity
+* package: for all debian/ubuntu packaging questions
+
+include::cad/officialbinary.adoc[leveloffset=+1]
+include::cad/scratch.adoc[leveloffset=+1]
+include::cad/singularity.adoc[leveloffset=+1]
+
