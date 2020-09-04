@@ -1,5 +1,8 @@
 ** xref:index.adoc#user_manual[HiFiMagnet Manual]
 *** xref:index.adoc#quickstart[Quick Start]
-*** xref:index.adoc#usage[Usage]
-*** xref:index.adoc#usage_hifimagnet[Using {hifimagnet}]
+**** xref:index.adoc#qs_getting[Getting {hifimagnet}]
+**** xref:index.adoc#qs_reference[Running {hifimagnet}]
+## *** xref:index.adoc#usage[Usage]
+*** xref:index.adoc#data[Data Structure]
+*** xref:index.adoc#workflow[Using {hifimagnet}]
 

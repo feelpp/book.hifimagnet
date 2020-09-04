@@ -1,17 +1,41 @@
-[[infrastructure]]
-== {infrastructure}
+[[install]]
+= Installation
+:toc: macro
+include::{partialsdir}/header-macros.adoc[]
+include::{partialsdir}/header-uri.adoc[]
+include::{partialsdir}/mso4sc-uri.adoc[]
 
-* Lncmi
-* Grenoble Mesocentre
-* Cemosis
-* MSOPortal
+Welcome to {hifimagnet} installation documentation!
+
+This section describe how to quickly install {hifimagnet} tools
+on your plaform. If you wish to install the toolchain from scratch,
+you'd move to the xref:dev:index.adoc[developper section].
+
+[[infrastructure]]
+== Infrastructure
+
+[cols="5*"]
+|===
+| Infrastructure | Native | Docker Container | singularity Container | Notes
+
+
+| Lncmi - laptop      | ✓ |   |   | use WSL
+| Lncmi - workstation | ✓ |   |   | Debian/Ubuntu
+| Lncmi - euler       |   | ✓ | ✓ | singularity 3.2
+| Lncmi - stokes      |   | ✓ | ✓ | singularity 2.6
+| Grenoble Mesocentre |   |   | ✓ |
+| Cemosis             |   |   | ✓ |
+|===
+
+// MSOPortal
 
 [[matrix]]
-== {hifimagnet matrix}
+== {hifimagnet} matrix
 
 [cols="6*"]
 |===
 |Package       | Debian | Windows | Docker Container | Singularity Container | Category
+
 |{magnettools} |        |         |                  |                       |
 |{salome}      |        |         |                  |                       | 
 |{getdp}       |        |         |                  |                       | 
@@ -24,12 +48,107 @@
 [[debian]]
 == Debian/Ubuntu platform
 
+On Debian/Ubuntu system you can install {hifimagnet} toolchain from the local {lncmi} packages repository.
+To do so:
+
+* you need to have access to the {lncmi} repository
+* add a `lncmi.lst` into your `/etc/apt/sources.list.d` directory:
+
+[source,txt]
+.`lncmi.lst` for Debian Testing distribution
+----
+deb http://euler/~trophime/debian/ testing main 
+deb-src http://euler/~trophime/debian/ testing main 
+----
+
+Then for instance, to install {hifimagnet} run:
+
+[source,csh]
+----
+sudo apt update
+sudo apt install hifimagnet
+----
+
+[NOTE]
+====
+Supported linux distributions:
+
+[cols="4*"]
+|===
+|        | Min     | Recommended | Max
+| Debian | Stretch | Buster      | Bullseye
+| Ubuntu | Xenial  | Focal       | Focal
+|===
+
+This procedure requires that you have root access on your system
+and that you have access to the Debian/Ubuntu {lncmi} repository.
+====
+
 [[windows]]
 == Windows 10 platform
+
+On Windows 10 Pro you can also install {hifimagnet} without much effort.
+Just enable WSL feature and download a Debian/Ubuntu distribution
+from Microsoft App Store. Then apply the same procedure as above to install the package.
+
+We recommend using latest Ubuntu LTS distribution (aka Focal).
+
+[NOTE]
+====
+For full Focal support, you need to upgrade to WSL2.
+====
 
 [[containers]]
 == Containers
 
+[[docker]]
 === Docker
+
+[[dockerhub]]
+==== from dockerhub
+
+{hifimagnet} are available from dockerhub
+
+You need to be member of {feelpp} team on link:https://hub.docker.com/[dockerhub] to be able to download the image.
+To get the image:
+
+[source,csh]
+----
+docker login
+docker pull feelpp/hifimagnet
+----
+
+Check the existing docker images on link:https://hub.docker.com/r/feelpp/hifimagnet/[feelpp/hifimagnet dockerhub]
+and link:https://hub.docker.com/r/feelpp/salome/[feelpp/salome dockerhub].
+
+[[singularity]]
 === Singularity
+
+
+==== from {girder}
+==== from {sregistry}
+
+To get the {hifimagnet} singularity image you need first to get you token on a valid sregistry:
+
+* connect to the {sregistry} service (eg link:https://sregistry.srv.cesga.es/[cesga sregistry] use the {fiware} authentification}
+* in the top right scrolling menu with your user id, select *Token*
+* copy the line to a `.sregistry` in your home directory
+
+The {hifimagnet} singularity images are stored in a private collection.
+To download the images you have to be granted access to the {hifimagnet} team.
+Once this is done, from a terminal:
+
+[source,csh]
+----
+export SREGISTRY_CLIENT=registry
+export SREGISTRY_CLIENT_SECRETS=~/.sregistry-cesga
+[export SREGISTRY_STORAGE=...]
+
+sregistry pull --name hifimagnet-v108.simg hifimagnet/hifimagnet:v0.108
+----
+
+==== from {lncmi}
+==== from Grenoble Mesocentre
+==== from Cemosis
+
 

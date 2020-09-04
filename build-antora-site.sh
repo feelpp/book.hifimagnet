@@ -2,5 +2,5 @@
 
 antora antora-local-feelpp-doc.yml
 echo "INFO: File generated in 'build/site/feelpp-doc/'"
-npm i -g serve
-serve build/site
+npm i -g live-server
+live-server build/site

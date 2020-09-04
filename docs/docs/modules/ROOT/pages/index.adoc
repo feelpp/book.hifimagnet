@@ -14,6 +14,12 @@ Already informed users may skip directly to xref:user:index.adoc[User Manual].
 IMPORTANT: This documentation is based on http://www.antora.org[antora].
 You wish to contribute? Please consult the <<contribute, contribute>> section to learn how to proceed!
 
+TIP: If you find errors or omissions in this document, please don’t hesitate to
+link:https://github.com/feelpp/book.hifimagnet/issues[submit an issue or open a pull
+request] with a fix. We also encourage you to ask questions and discuss any
+aspects of the project on the link:http://gitter.im/feelpp/hifimagnet[{hifimagnet}
+Gitter forum]. New contributors are always welcome!
+
 [[introduction]]
 == Introduction
 

@@ -1,6 +1,8 @@
 [[magnettools_manual]]
 = {magnettools} user manual
 :toc: macro
+:icons: font
+
 include::{partialsdir}/header-macros.adoc[]
 include::{partialsdir}/header-uri.adoc[]
 include::{partialsdir}/mso4sc-uri.adoc[]
@@ -24,93 +26,84 @@ In {magnettools}, magnets are defined as a set of:
 
 * PolyHelices,
 * Bitter Magnets,
-* and eventually Supraconductor Magnets.
+* and eventually Superconductor Magnets.
 
 All magnets are torus of rectangular cross sections.
 
 [[quickstart]]
 = Quick Starts
 
+[[matrix]]
+== {magnettools} matrix
+
+[caption=]
+.A Tools availability
+[cols="4*"]
+|===
+|                    | Native | Containers | Note
+
+| Optimization       |✓|                 | Only on {lncmi} infrastructure
+| Magnetic Field Map |✓|✓|
+| Inductances        |✓|✓|
+| Forces             |✓|✓|
+| Transient          |✓|✓
+|===
+
+
+[caption=]
+.B Actual supported versions
+[cols="4*"]
+|===
+| Native         | Docker Container         | Singularity Container  | Note
+
+| Debian Buster  |                          |                        | Only available from {lncmi}
+| Ubuntu 18.04   |                          |                        | Only available from {lncmi}
+| Ubuntu 20.04   |                          |                        | Only available from {lncmi}
+|                | feelpp/hifimagnet:v0.108 |                        | 
+|                |                          | hifimagnet-v0.108.sif  | for singularity 3.2 and later
+|                |                          | hifimagnet-v0.108.simg | for singularity 2.6
+|===
 
 [[qs_installation]]
 == Getting {magnettools}
 
 Using {magnettools} inside container, either Docker or Singularity based,
-is the recommended and fastest way. If your system support singularity containers we recommend to use them instead of Docker ones.
+is the recommended and fastest way. If your system support singularity containers
+we recommend to use them instead of Docker ones.
 
-=== from sregistry
+[[qs_reference]]
+== Running {magnettools}
+=== from Singularity container
 
-{magnettools} are included in {hifimagnet} singularity image.
-To get {hifimagnet} singularity image see this xref:user:index.adoc#singularity[section]
+Assuming we use `hifimagnet.simg` singularity image:
+```
+singularity exec [--nv] \
+  -H $HOME:/home/$USER \
+  -B $STORE/Distene/:/opt/DISTENE/DLim \
+  hifimagnet-v0.108.simg \
+  B_Map ...
+```
 
-=== from dockerhub
+=== from Docker container
 
-{magnettools} are included in {hifimagnet} docker image.
-To get {hifimagnet} docker image see xref:user:index.adoc#dockerhub[section]
-
-=== from {lncmi} Debian repository
-
-On Debian/Ubuntu system you can install {magnettools} from the local {lncmi} packages repository.
-To do so:
-
-* you need to have access to the {lncmi} repository
-* add a `lncmi.lst` into your `/etc/apt/sources.list.d` directory:
-
-[source,txt]
-.`lncmi.lst` for Debian Testing distribution
-----
-deb http://euler/~trophime/debian/ testing main 
-deb-src http://euler/~trophime/debian/ testing main 
-----
-
-Then run:
-
-[source,csh]
-----
-sudo apt update
-sudo apt install hifimagnet
-----
-
-[NOTE]
-====
-Supported Debian/Ubuntu distributions:
-
-* Stretch
-* Xenial
-
-On Windows 10 Pro you can also install {hifimagnet} without much effort.
-Just enable WSL feature and download Debian Stretch or Ubuntu Xenial (aka 16.04 LST)
-from Microsoft App Store. Then apply the same procedure as above to install the package.
-====
-
-// === Install from scratch
+```
+docker run -ti --rm -e DISPLAY \
+   --net=host --pid=host --ipc=host \
+   --env QT_X11_NO_MITSHM=1 \
+   -v /tmp/.X11-unix:/tmp/.X11-unix \
+   -v $HOME/.Xauthority:/home/feelpp/.Xauthority \
+   feelpp/hifimagnet:v0.108 B_Map ...
+```
 
 [[usage]]
-== Using {magnettools}
+= Using {magnettools}
 
-include::DataStructure.adoc[leveloffset=+2]
-include::Bmap.adoc[leveloffset=+2]
-include::Inductances.adoc[leveloffset=+2]
-include::Fmap.adoc[leveloffset=+2]
-include::Transient.adoc[leveloffset=+2]
-include::Optimization.adoc[leveloffset=+2]
+include::DataStructure.adoc[leveloffset=+1]
+include::Bmap.adoc[leveloffset=+1]
+include::Inductances.adoc[leveloffset=+1]
+include::Fmap.adoc[leveloffset=+1]
+include::Transient.adoc[leveloffset=+1]
+include::Optimization.adoc[leveloffset=+1]
 
 
-// [[installation]]
-// == Detailed  Installation
-
-// [[installation_prerequis]]
-// === Prerequis
-
-// {magnettools} relies on the following software : 
-
-// ** `popt`,
-// ** `gsl`, `freesteam`,
-// ** `spherepack, expokit`,
-// ** `sundials`,
-// ** `yamlcpp`, `json-spirit`
-// ** `nag` (only required for Optimization)
-
-// [[installation_scratch]]
-// === From scratch
 

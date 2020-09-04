@@ -5,7 +5,7 @@ site:
 content:
   sources:
   - url: ./
-    branches: [master, canary, staging]
+    branches: master
     start_path: docs/docs
 #  - url: ../book.feelpp.org
 #    branches: master

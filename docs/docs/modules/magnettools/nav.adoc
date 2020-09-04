@@ -1,5 +1,7 @@
 ** xref:index.adoc#magnettools_manual[MagnetTools]
-*** xref:index.adoc#installation[Installation]
+*** xref:index.adoc#matrix[Quickstart]
+**** xref:index.adoc#qs_getting[Getting MagnetTools]
+**** xref:index.adoc#qs_reference[Running MagnetTools]
 *** xref:DataStructure.adoc[Data]
 *** xref:Bmap.adoc[Magnetic Field Map]
 // *** xref:Inductances.adoc[leveloffset=+2]

@@ -1,9 +1,11 @@
 [[enduser]]
-== *EndUser* role
+= *EndUser* role
 :toc: macro
+
 include::{partialsdir}/header-macros.adoc[]
 include::{partialsdir}/header-uri.adoc[]
 include::{partialsdir}/mso4sc-uri.adoc[]
+
 
 TIP: When running into some strange portal behavior, first try to `logout/login` from the portal
 before reporting an issue.
@@ -67,12 +69,12 @@ To access http://docs.cemosis.fr/hifimagnet/stable/[{hifimagnet} docs] you also 
 // NOTE: The use of {uri-girder-unistras}[{girder} is optional.
 
 [[data]]
-=== Data Catalogue
+= Data Catalogue
 
 Any user of the platform can create and manage *Organization* in the {uri-msoportal-ckan-www}[*Data Catalogue*]
 to deal with private datasets.
 
-==== Create and Manage *Organization*
+== Create and Manage *Organization*
 
 * connect to {uri-msoportal-ckan-www}[*Data Catalogue*]
 * click on *Organizations*
@@ -95,7 +97,7 @@ video::Wq713I6HM2I[youtube]
 NOTE: Users have to connect at least once to *Data Catalogue* before you can grant them a role in your organization.
 
 [[api_key]]
-==== Upload Data
+== Upload Data
 
 To use private Organization and/or Dataset you would need to enter
 *Data Catalogue key* in the *Settings* menu. For instructions see xref::index.adoc#setup_api_key[here].
@@ -108,7 +110,7 @@ to set <hpc_feelpp> to a specific directory for each instance.
 
 
 [[running]]
-=== Running an {hifimagnet} application in *Experiments*
+= Running an {hifimagnet} application in *Experiments*
 
 image::PortalMSO4SC_Exp_User.png[*Experiments* *Instances* main menu for *EndUSer*]
 
@@ -260,7 +262,7 @@ See this video for a live demo.
 video::_tB2aLV-_So[youtube]
 
 [[running_dataset]]
-=== Running an {hifimagnet} application in *Experiments* using datasets from *DataCatalogue*
+= Running an {hifimagnet} application in *Experiments* using datasets from *DataCatalogue*
 
 Basically the procedure is the same as <<running, above>>. The only difference here is that you need:
 
@@ -293,7 +295,7 @@ The format of the files in a dataset are respectively described in:
 
 
 [[RemoteDesktop]]
-=== Running an Remote Desktop resource in *Visualization*
+= Running an Remote Desktop resource in *Visualization*
 
 * Go to *Visualization*
 * Click *Desktop Available*
@@ -329,7 +331,7 @@ You can also perform some pre-processing GUI with {salome} {hifimagnet} plugin.
 ====
 
 [[offering_setup]]
-== To go further
+= To go further
 
 Available apps in **MSO4SC Portal** are:
 

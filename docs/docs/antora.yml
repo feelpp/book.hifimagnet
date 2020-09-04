@@ -10,5 +10,7 @@ nav:
 - modules/post/nav.adoc
 - modules/benchmarks/nav.adoc
 # - modules/mso4sc/nav.adoc
-- modules/dev/nav.adoc
 - modules/tutorials/nav.adoc
+- modules/install/nav.adoc
+- modules/dev/nav.adoc
+- modules/appendix/nav.adoc

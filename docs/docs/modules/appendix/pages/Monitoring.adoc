@@ -99,13 +99,13 @@ this process:
 Then, a fit for each stem:[R] as a 2nd order polynomial of stem:[I] is computed.
 This fit will also be usefull to have an estimate of the mean temperature stem:[<T>] of the helix (or couple of helices):
 
-[[stem]]
-====
+[stem]
+++++
 R=R(I=0)\,(1+\alpha (<T>-T_0))
-====
+++++
 with stem:[T_0] a reference temperature (generally 20C).
 
-[[NOTE]]
+[NOTE]
 ====
 * These experiments have to be carried out carefully to get proper estimates of the resistance.
 Indeed, we have stem:[U = R I + M\,\frac{dI}{dt}] with stem:[M] the inductance matrix. So if no estimate

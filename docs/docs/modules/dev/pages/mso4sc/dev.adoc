@@ -1,3 +1,5 @@
+include::{partialsdir}/header-macros.adoc[]
+
 [[create_app]]
 == Creating an App in MSO Portal
 

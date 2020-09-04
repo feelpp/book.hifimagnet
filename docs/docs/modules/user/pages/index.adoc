@@ -7,128 +7,55 @@ include::{partialsdir}/mso4sc-uri.adoc[]
 
 Welcome to {hifimagnet} manual documentation!
 
-NOTE: The {hifimagnet} manual documentation introduces the process to build and run an application.
+NOTE: The {hifimagnet} manual documentation introduces the process to install and run an application.
 New user shall read the xref:ROOT:index.adoc[{hifimagnet} introduction] to have a global view.
 
-IMPORTANT: You wish to contribute? Please consult the xref:ROOT:index.adoc#contribute[contribute] section to learn how to proceed!
-
-[[introduction]]
-= Introduction to {hifimagnet}
-
-.Discuss and Contribute
-TIP: Use {uri-feelpp-issues}/858[Issue 858] to drive development of this
-section. Your contributions make a difference. No contribution is too small.
-
-= What is {hifimagnet}?
 
 {hifimagnet} is a software chain that allows to design and model High Field Magnets.
 It consists in a set of tools including:
 
 * {magnettools}
-* {hifimagnet}
-** cad tools: {uri-gmsh-www}[gmsh], {uri-salome-www}[{salome}]
-** meshing: {uri-gmsh-www}[gmsh], {uri-netgen-www}[netgen], {uri-meshgems-www}[{meshgems}]
-** multiphics models: {feelpp} toolboxes
-** post-processing: {uri-ensight-www}[EnSight], {uri-paraview-www}[ParaView]
+* {hifimagnet}, multiphics models:
+** {feelpp} toolboxes,
+** {hifimagnet} coupled models,
+** {feelpp} mqs
 
-When using containers, note that the tools are distributed into 3 differents containers:
-
-* one for pre-processing (see xref:cad:index.adoc#qs_getting[here]),
-* one for running simulations (see respectively here for xref:magnettools:index.adoc#qs_installation[Axi] and here for xref:user:index.adoc#qs_installation[3D]),
-* one for post-processing (see xref:post:index.adoc[here]).
-
-[TIP]
-====
-link:{uri-ensight-www}[EnSight (recommended)]:: is a commercial multi-platform data analysis and visualization application.
-link:{uri-paraview-www}[ParaView]:: is an open-source, multi-platform data analysis and visualization application.
-link:https://wci.llnl.gov/simulation/computer-codes/visit[Visit]:: is a distributed, parallel visualization and graphical analysis tool for data defined on two- and three-dimensional (2D and 3D) meshes
-====
 
 [[quickstart]]
 = Quick Starts
 
+[[matrix]]
+== {hifimagnet} plugin matrix
+
+[caption=]
+.A For 3D static analysis:
+[cols="4*"]
+|===
+| Native         | Docker Container          | Singularity Container  | Note
+| Ubuntu 20.04   |                           |                        | On Windows 10 requires MobaXterm for *GUI* mode
+|                | feelpp/feelpp::v0.108     |                        | For CG and/or HDG thermo-electric models only
+|                | feelpp/hifimagnet:v0.108  |                        | 
+|                |                           | hifimagnet-v0.108.sif  | for singularity 3.2 and later
+|                |                           | hifimagnet-v0.108.simg | for singularity 2.6
+|===
+
+[caption=]
+.B For transient analysis:
+[cols="4*"]
+|===
+| Native         | Docker Container          | Singularity Container  | Note
+| Ubuntu 20.04   |                           |                        | On Windows 10 requires MobaXterm for *GUI* mode
+|                | feelpp/hifimagnet:mqs     |                        | 
+|                |                           | hifimagnet-mqs.sif     | for singularity 3.2 and later
+|                |                           | hifimagnet-mqs.simg    | for singularity 2.6
+|===
 
 [[qs_installation]]
 == Getting {hifimagnet}
 
-
 Using {hifimagnet} inside container, either Docker or Singularity based,
 is the recommended and fastest way. If your system support singularity containers we recommend to use them instead of Docker ones.
 
-
-[[singularity]]
-=== from sregistry
-
-To get the {hifimagnet} singularity image you need first to get you token on a valid sregistry:
-
-* connect to the {sregistry} service (eg link:https://sregistry.srv.cesga.es/[cesga sregistry] use the {fiware} authentification}
-* in the top right scrolling menu with your user id, select *Token*
-* copy the line to a `.sregistry` in your home directory
-
-The {hifimagnet} singularity images are stored in a private collection.
-To download the images you have to be granted access to the {hifimagnet} team.
-Once this is done, from a terminal:
-
-[source,csh]
-----
-export SREGISTRY_CLIENT=registry
-export SREGISTRY_CLIENT_SECRETS=~/.sregistry-cesga
-[export SREGISTRY_STORAGE=...]
-
-sregistry pull --name hifimagnet-stretch.simg hifimagnet/hifimagnet:stretch
-----
-
-
-[[dockerhub]]
-=== from dockerhub
-
-You need to be member of {feelpp} team on link:https://hub.docker.com/[dockerhub] to be able to download the image.
-To get the image:
-
-[source,csh]
-----
-docker login
-docker pull feelpp/hifimagnet
-----
-
-Check the existing docker images on link:https://hub.docker.com/r/feelpp/salome/[feelpp/hifimagnet dockerhub]
-
-=== Install from {lncmi} Debian repository
-
-On Debian/Ubuntu system you can install {hifimagnet} from the local {lncmi} packages repository.
-To do so:
-
-* you need to have access to the {lncmi} repository
-* add a lncmi.lst into your `/etc/apt/sources.list.d` directory:
-
-[source,txt]
-.`lncmi.lst` for Debian Testing distribution
-----
-deb http://euler/~trophime/debian/ testing main 
-deb-src http://euler/~trophime/debian/ testing main 
-----
-
-Then run:
-
-[source,csh]
-----
-sudo apt update
-sudo apt install hifimagnet
-----
-
-[NOTE]
-====
-Supported Debian/Ubuntu distributions:
-
-* Stretch
-* Xenial
-
-On Windows 10 Pro you can also install {hifimagnet} without much effort.
-Just enable WSL feature and download Debian Stretch or Ubuntu Xenial (aka 16.04 LST)
-from Microsoft App Store. Then apply the same procedure as above to install the package.
-====
-
-// === Install from scratch
 
 [[qs_usage]]
 == Running {hifimagnet}
@@ -140,7 +67,7 @@ Assuming we use `hifimagnet.simg` singularity image:
 
 [source,sh]
 ----
-singularity run -it -v $HOME/feel:/feel feelpp/hifimagnet feelpp_hfm_coupledmodel_3DP1N1 --config  ...
+singularity run -it -v $HOME/feel:/feel hifimagnet.simg feelpp_hfm_coupledmodel_3DP1N1 --config coupled_3D_P1_N1_singular_cvg.cfg
 ----
 
 The `coupled_3D_P1_N1_singular_cvg.cfg` configuration file holds all the information
@@ -152,7 +79,7 @@ Start the Docker container `feelpp/hifimagnet` as follows
 
 [source,sh]
 ----
-docker run -it -v $HOME/feel:/feel feelpp/hifimagnet feelpp_hfm_coupledmodel_3DP1N1 --config  ...
+docker run -it -v $HOME/feel:/feel feelpp/hifimagnet feelpp_hfm_coupledmodel_3DP1N1 --config coupled_3D_P1_N1_singular_cvg.cfg
 ----
 
 === from command line
@@ -167,7 +94,7 @@ feelpp_hfm_coupledmodel_3DP1N1 --config coupled_3D_P1_N1_singular_cvg.cfg
 [[usage]]
 = Using {hifimagnet}
 
-As stated in introduction {hifimagnet} per se provides tools to simulation High Field Magnets.
+As stated in introduction {hifimagnet} per se provides tools for High Field Magnets simulation.
 More precisely we can model:
 
 * thermo-electric behavior,
@@ -262,7 +189,7 @@ The Physic Model files are `json` files that contain informations about:
 * Boundary Conditions
 * Post-Processing quantities
 
-==== ThermoElctric Model file
+==== ThermoElectric Model file
 
 [source,cfg]
 ----
@@ -309,6 +236,7 @@ defining properties for material <1> :
 ^| <9> stem:[\mu]      ^| magnetic permeability              ^|stem:[V.s.A^{-1}.m^{-1}]  |
 |===
 
+[[workflow]]
 == Workflow
 === Using {magnettools} to define Design
 
@@ -331,18 +259,18 @@ So before running any simulation you have to convert the mesh to `gmsh V2` forma
 
 [source,sh]
 ----
-gmsh -bin -3 mesh.med -o mesh.msh
+gmsh -bin -0 mesh.med -o mesh.msh
 ----
 
 Then you have eventually to partition the mesh to use it on HPC:
 
 [source,sh]
 ----
-feelpp_mesh_partitioner [--gmsh.scale=0.001] --ifile mesh.msh -ofile mesh-np4 --part 4 --nochdir
+feelpp_mesh_partitioner [--msh.scale=0.001] --ifile mesh.msh -ofile mesh-np4 --part 4 --nochdir
 ----
 
 where `part` denotes the number of processors (4 in our example) you want to use.
-The option `--gmsh.scale=0.001` enables to rescale the mesh file.
+The option `--msh.scale=0.001` enables to rescale the mesh file.
 
 This will create new files `mesh-np4.json` and `mesh-np4.h5` ready for running.
 
@@ -359,6 +287,7 @@ Use `--gmsh.scale=0.001` to rescale the mesh.
 === Running 3D simulations
 === Postprocessing results
 
+[[examples]]
 == Examples
 
 * xref:benchmarks:HL/README.adoc[HL] 

@@ -10,37 +10,57 @@ Welcome to {hifimagnet} Salome Plugin documentation!
 NOTE: The {hifimagnet} Salome Plugin documentation describes its installation, its features, its uses  and
 provides some references.
 
-TIP: If you find errors or omissions in this document, please don’t hesitate to
-link:https://github.com/feelpp/hifimagnet/issues[submit an issue or open a pull
-request] with a fix. We also encourage you to ask questions and discuss any
-aspects of the project on the link:http://gitter.im/feelpp/hifimagnet[{hifimagnet}
-Gitter forum]. New contributors are always welcome!
 
 [[introduction]]
 = Introduction
 
 The {hifimagnet} Salome Plugin allows to easily:
 
-* define CAD geometry for Solenoidal High Field Magnet
-* mesh these geometries.
+* define CAD geometry for Solenoidal High Field Magnet,
+* mesh these geometries,
+* provide a template for {hifimagnet} simulation setup.
 
 In a near future, the plugin will also provides tools:
 
-* to define files required for running simulations,
 * to run calculations either locally or remotely,
 * to analyze the results
 
-The meshing features require a license to http://www.meshgems.com/[{meshgems} suite].
+
+[NOTE]
+====
+
+ * Supported {salome} versions are: from 9.2.0 to 9.5.0
+ * The meshing features require a license to http://www.meshgems.com/[{meshgems} suite].
+ * {salome} docker image without {hifimagnet} plugin can be found on this link:https://hub.docker.com/r/trophime/[dockerhub].
+
+====
+
+[IMPORTANT]
+====
+To use Salome in GUI mode the docker container should contain appropriate graphics drivers.
+====
+
 
 [[quickstart]]
 = Quick Starts
-
 This document will illustrate how to simply use {hifimagnet} Salome plugin
 and give examples for most common operations.
 
 Custom installation, eg. for native installation, is detailed in the xref:dev:index.adoc#install_salome[dev section].
 
 // include:ROOT:{partialsdir}/convention.adoc[]
+
+[[matrix]]
+== Salome plugin matrix
+
+[cols="4*"]
+|===
+| Native         | Docker Container     | Singularity Container | Note
+| Ubuntu 16.04   |                      |                       | On Windows 10 requires MobaXterm for *GUI* mode
+|                | feelpp/salome:9.5.0  |                       | 
+|                |                      | salome-9.5.0.sif      | for singularity 3.2 and later
+|                |                      | salome-9.5.0.simg     | for singularity 2.6
+|===
 
 [[qs_getting]]
 == Getting {hifimagnet} Salome plugin
@@ -49,85 +69,6 @@ They are several way to use {hifimagnet} Salome plugin. The easiest way
 is to use container, either Docker based or Singularity based. If your system support
 singularity containers we recommend to use them instead of Docker ones.
 
-[[singularity]]
-=== from sregistry
-
-To get the {salome} singularity image you need first to get you token on a valid sregistry:
-
-* connect to the {sregistry} service (eg link:https://sregistry.srv.cesga.es/[cesga sregistry] use the {fiware} authentification}
-* in the top right scrolling menu with your user id, select *Token*
-* copy the line to a `.sregistry` in your home directory
-
-Then from a terminal:
-
-```
-export SREGISTRY_CLIENT=registry
-export SREGISTRY_CLIENT_SECRETS=~/.sregistry-cesga
-[export SREGISTRY_STORAGE=...]
-
-sregistry pull --name salome-8.4.0.simg hifimagnet/salome:8.4.0
-```
-
-The singularity image will be downloaded to a file name: `hifimagnet-salome-8.4.0.simg`.
-
-[NOTE]
-====
-`SREGISTRY_STORAGE` enables you to specify a directory to hold the singularity images.
-By default images will be downloaded to `$HOME/.sregistry`
-====
-
-[IMPORTANT]
-====
-On some systems (eg without NVidia graphic video card), it may be more convenient to use `hifimagnet/salome-mesa:8.4.0`
-image instead of the standard one. See <<salome_on_remotedesktop, here>> for details.
-====
-
-[[dockerhub]]
-=== from dockerhub
-
-You need to be member of {feelpp} team on link:https://hub.docker.com/[dockerhub] to be able to download the image.
-To get the image:
-
-```
-docker login
-docker pull feelpp/salome:8.4.0-nvidia
-```
-
-Check the existing docker images on link:https://hub.docker.com/r/feelpp/salome/[feelpp/salome dockerhub]
-
-[NOTE]
-====
-
- * Supported {salome} versions are: 8.3.0, 8.4.0 and 8.5.0.
- * If you do no need {hifimagnet} {salome} plugin you can use a public version of {salome} docker image
-that you may find in link:https://hub.docker.com/r/trophime/[dockerhub].
-
-====
-
-[IMPORTANT]
-====
-To use Salome in GUI mode the docker container should contain appropriate graphics drivers.
-Actually only nvidia graphic cards are supported. To custom the images for you graphics
-card you should have a look at the
-link:https://raw.githubusercontent.com/feelpp/hifimagnet/develop/docker/salome/build_salome.sh?token=ABP6f83LtdGN4ApDyGYlwkle_5jZeSy0ks5aeEu2wA%3D%3D[scripts] generating the images.
-
-For system without Nvidia graphic card, we recommend to `fellpp/salome:8.4.0-mesa` instead
-====
-
-
-=== Install from {lncmi} Salome_Packages
-
-You can also download the binaries for you platform and the corresponding installation script.
-Supported platforms are:
-
-* Debian/Stretch
-* Ubuntu/Xenial (aka 16.04 LST)
-
-[NOTE]
-====
-On Windows 10 Pro with WSL enabled, you can also follow this procedure to install {hifimagnet} {salome} plugin.
-Before running just install a X11 server. We recommend MobaXterm 10.9 or latter. 
-====
 
 [[qs_reference]]
 == Running {hifimagnet} Salome plugin
@@ -147,11 +88,13 @@ singularity exec [--nv] \
   -H $HOME:/home/$USER \
   -B $STORE/Distene/:/opt/DISTENE/DLim \
   salome.simg \
-  salome [-t -b] ...
+  salome -w1 [-t -b] ...
 ```
 
-Note the `--nv` flag is mandatory to run in GUI mode and is only supported by nvidia drivers.
+NOTE: the `--nv` flag is mandatory to run in GUI mode and is only supported by nvidia drivers.
+For other graphic video card, use `mesa_salome` instead of `salome`
 
+TIP: to check your graphic video card on Debian/Ubuntu you may use `inxi -G`.
 
 === from Docker container
 
@@ -205,7 +148,7 @@ the {salome} command. If you plan to run these commands from a {singularity} or 
 just start the container (see <<qs_reference, here>>, watch out to not forget to enable the display
 if you want to use the GUI mode).
 
-Examples files may be found https://github.com/feelpp/hifimagnet/tree/Salome_8.3.0/singularity/salome/test[here].
+Examples files may be found https://github.com/trophime/singularity-salome/test[here].
 
 The structure of the `yaml` file describing the geometry and mesh be generated will
 be described in the <<data, data structure section>>. 
@@ -219,73 +162,11 @@ salome [-m GEOM,SMESH,HIFIMAGNET] [-t -b] \
    args:--cfg=Insert-H1H4-Leads-2t.yaml[,--air[,--infty_Rratio=2,--infty_ZRatio=1.5],--mesh]
 ----
 
-`${HIFIMAGNET}` is the install directory of {hifimagnet} {salome} plugin, eg `/opt/SALOME-8.4.0-Debian-DB9.5/BINARIES-DB9.5/HIFIMAGNET/bin/salome`.
+`${HIFIMAGNET}` is the install directory of {hifimagnet} {salome} plugin, eg `/opt/SALOME-9.5.0-UB18.04/INSTALL/HIFIMAGNET/bin/salome`.
 
 image::ex_CAD_Insert_Air.png[A 4 helix insert with sourring air (in transparent red)]
 
 NOTE: `Insert-H1H4-Leads-2t.yaml` can be found in `/usr/local/share/salome/H1H4` in  singularity images.
-
-[[salome_on_remotedesktop]]
-=== On Remote desktop
-
-* copy {meshgems} licence file on your account in the Visu resource in `${LICDIR}` directory 
-* pull {salome} {hifimagnet} image with Mesa support from {sregistry}.
-
-[source,sh]
-----
-export SREGISTRY_CLIENT=registry
-export SREGISTRY_CLIENT_SECRETS=$HOME/.sregistry
-export SREGISTRY_STORAGE=$LUSTRE/singularity_images
-module load singularity
-singularity run -B /mnt shub://sregistry.srv.cesga.es/mso4sc/sregistry --quiet pull hifimagnet/salome-mesa:8.4.0
-----
-
-Then to run {salome} type:
-
-[source,sh]
-----
-module load singularity
-singularity run --nv -B ${LICDIR}:/opt/DISTENE/DLim:ro --app salome ${SREGISTRY_STORAGE}/hifimagnet-salome-mesa-8.4.0.simg  
-----
-
-You can also start the container:
-
-[source,sh]
-----
-singularity exec -B ${LICDIR}:/opt/DISTENE/DLim:ro -${SREGISTRY_STORAGE}/hifimagnet-salome-mesa-8.4.0.simg
-----
-
-and run type the following command within the container:
-
-[source,sh]
-----
-GALLIUM_DRIVER=llvmpipe salome
-----
-
-Alternatively you can also use xref::run_salome.adoc[`run_salome.sh`]:
-
-[source,sh]
-----
-./run_salome.sh -l ${LICDIR} [-i [${SREGISTRY_STORAGE}/]hifimagnet-salome-mesa-8.4.0.simg]
-----
-
-
-
-////////////////////////////////////////////////////
-comment out this block as vglrun salome fails (crash when trying to load MESH module
-
-// [TIP]
-// ====
-// On a remote desktop (`novnc` + `virtualgl`), to launch Salome in GUI mode you have to use
-// to benefit from hardware acceleration.
-
-// [source,sh]
-// ----
-// vglrun salome [...]
-// ----
-// ====
-
-////////////////////////////////////////////////////
 
 
 [[data]]
@@ -566,7 +447,7 @@ singularity exec \
 ----
 where:
 
-* `SALOMEDIR` is {salome} install directory (eg. `/opt/SALOME_8.4.0_MPI-DB9.5`),
+* `SALOMEDIR` is {salome} install directory (eg. `/opt/SALOME-9.5.0-UB18.04`),
 * `$STORE/Distene` is the directory containing a valid `dlim8.key` license file.
 
 === A simple `med` mesh in `TUI` mode

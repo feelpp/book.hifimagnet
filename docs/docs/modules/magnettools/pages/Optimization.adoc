@@ -27,7 +27,7 @@ OptAubert HL-31.dat
 [NOTE]
 ====
 Each helix is splitted in a given number of sections stem:[S_i] along stem:[z] axis.
-The result of the optimization is the vector stem[{j_i}] (aka the current density stem:[j_i] value on the inner radius of
+The result of the optimization is the vector stem:[{j_i}] (aka the current density stem:[j_i] value on the inner radius of
 all sections stem:[S_i]) for `optaubert`. 
 
 The stress in each section is approximated by the **Hoop stress**, namely stem:[r j_{\theta}(r) \cdot b_z(r)] for stem:[r=r_i]

@@ -15,7 +15,7 @@
 :feelppdb: $HOME/feel
 :crbdb: crbdb
 :docker: Docker
-:toto: Toto
+//:lustre: Lustre
 :cpp: C++
 :y: icon:check[role="green"]
 :n: icon:times[role="red"]

@@ -1,11 +1,13 @@
 [[devuser]]
-== *DevUser* role
+= *DevUser* role
 :toc: macro
+
 include::{partialsdir}/header-macros.adoc[]
 include::{partialsdir}/header-uri.adoc[]
 include::{partialsdir}/mso4sc-uri.adoc[]
 
-=== Becoming *DevUser*
+
+= Becoming *DevUser*
 
 Once registered in the portal, you  are a *EndUser*.
 To be granted *DevUser* rights, just email to Portal Admins (actually Victor or Javi).
@@ -18,7 +20,7 @@ A *DevUser* can:
 
 
 [[registerapp]]
-===  Register an {hifimagnet} application
+=  Register an {hifimagnet} application
 
 There is actually two routes to register an app:
 
@@ -38,7 +40,7 @@ As a consequence, to upgrade your app package you have first to remove the app a
 ====
 
 [[free_app]]
-==== For all users
+== For all users
 
 image::PortalMSO4SC_RegisterApp.png[*Experiments* menu for *DevUser*]
 
@@ -72,7 +74,7 @@ see https://github.com/MSO4SC/resources/blob/staging/blueprint/feelpp/hifimagnet
 ====
 
 [[marketplace]]
-==== In the *Marketplace*
+== In the *Marketplace*
 
 To register an application you need to be *DevUSer*
 The process is split into several part:
@@ -90,7 +92,7 @@ Then you need to perform the following steps in {uri-msoportal-experiment-www}[*
 ** Choose a package file to load.
 
 [[removeapp]]
-==== Remove an app
+== Remove an app
 
 * Go to {uri-msoportal-experiment-www}[*Experiments*],
 * Select *Applications*
@@ -99,7 +101,7 @@ Then you need to perform the following steps in {uri-msoportal-experiment-www}[*
 
 
 [[validorder]]
-=== Validate an {hifimagnet} application purchase order
+= Validate an {hifimagnet} application purchase order
 
 Once the app has been registered in the *Marketplace* (actually it means that an offering has been defined) you will be *owner* of this app. Any *EndUser* may purchase your app.
 To check if you have any order:
@@ -134,7 +136,7 @@ and cannot be performed from the portal.
 
 
 [[sregistry_add_to_team]]
-=== Adding an *EndUser* to {sregistry} team
+= Adding an *EndUser* to {sregistry} team
 
 For app like {hifimagnet} apps that require an private singularity image, you must grant *EndUser* access to the {sregistry} {hifimagnet} team.
 To do so follow these instructions:
@@ -168,7 +170,7 @@ that are nor part of *owners* nor *contributors*.
 The previously selected user shall not be shown in the appropriate list according to your choice.
 
 [[sregistry_add_to_collection]]
-=== Adding an new image into {sregistry} {hifimagnet} collection
+= Adding an new image into {sregistry} {hifimagnet} collection
 
 To upload `salome-8.4.0.simg` newest image on {sregistry} {hifimagnet} collection
 from your local machine you can type the following commands:
