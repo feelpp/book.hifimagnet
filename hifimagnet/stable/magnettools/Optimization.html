@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Optimization :: HiFiMagnet Documentation</title>
+    <link rel="canonical" href="https://book.hifimagnet.cemosis.fr/hifimagnet/stable/magnettools/Optimization.html">
+    <meta name="keywords" content="Feel++, partial differential equations, finite element method,">
+    <meta name="generator" content="Antora 2.3.3">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <link rel="icon" href="../../../_/img/favicon.ico" type="image/x-icon">    
+    <script>!function(l,p){if(l.protocol!==p&&l.host=="docs.antora.org"){l.protocol=p}else if(/\.gitlab\.io$/.test(l.host)){l.replace(p+"//docs.antora.org"+l.pathname.substr(l.pathname.indexOf("/",1))+l.search+l.hash)}}(location,"https:")</script>
+
+    <link rel="stylesheet" type="text/css" href="/_/css/style.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-65761593-2"></script>
+    <script>function gtag(){dataLayer.push(arguments)};window.dataLayer=window.dataLayer||[];gtag('js',new Date());gtag('config','UA-65761593-2')</script>
+  </head>
+  <body class="article">
+<header class="header" role="banner">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <div class="navbar-item">
+         <!--  <a href="https://book.hifimagnet.org">HiFiMagnet Documentation</a> -->
+                         
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-link">Books</div>
+          <div class="navbar-dropdown">
+            <div class="navbar-item"><strong>Main</strong></div>
+
+            <!-- this code allow to manage ordering of navbar item -->
+               
+              <a class="navbar-item" href="/user/0.109/index.html"> Feel++ User Manual </a>
+                             
+
+                            
+
+                
+
+            <hr class="navbar-divider">
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-link">Projects</div>
+          <div class="navbar-dropdown">
+            <div class="navbar-item"><strong>Core</strong></div>
+            <a class="navbar-item" href="http://github.com/feelpp/hifimagnet">Repository</a>
+            <a class="navbar-item" href="http://github.com/feelpp/hifimagnet/issues">Issue Tracker</a>
+            <hr class="navbar-divider">
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-link">Community</div>
+          <div class="navbar-dropdown is-right">
+            <a class="navbar-item" href="https://feelpp.slack.com/messages/G6L3X3C94">Slack Chat</a>
+            <a class="navbar-item" href="https://gitter.im/feelpp/hifimagnet">Gitter chat (Users)</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="hifimagnet" data-version="stable">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">HiFiMagnet Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html#manuals">Manuals</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html#help">Help</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html#contribute">Contribute</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html#copyright">Licenses</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html#authors">Authors</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../model/index.html#model">Physical Modelling</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../model/index.html#introduction">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../model/index.html#coupled3d">Coupled Model</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../model/index.html#thermoelec">ThermoElectric Model</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../model/index.html#magneto">Magnetostatic Model</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../model/index.html#meca">ELasticity Model</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../model/index.html#cooling">ThermoHydraulics Model</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html#magnettools_manual">MagnetTools</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html#matrix">Quickstart</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="index.html#qs_getting">Getting MagnetTools</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="index.html#qs_reference">Running MagnetTools</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="DataStructure.html">Data</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Bmap.html">Magnetic Field Map</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Transient.html">Transient Analysis</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="Optimization.html">Optimization</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../cad/index.html#salome_plugin">Salome plugin</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../cad/index.html#introduction">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../cad/index.html#quickstart">Quickstart</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cad/index.html#qs_getting">Getting Salome</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cad/index.html#qs_reference">Running Salome</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../cad/index.html#data">Data Structure</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../cad/index.html#usage">Usage</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../user/index.html#user_manual">HiFiMagnet Manual</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../user/index.html#quickstart">Quick Start</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../user/index.html#qs_getting">Getting HiFiMagnet</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../user/index.html#qs_reference">Running HiFiMagnet</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user/index.html#data">Data Structure</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user/index.html#workflow">Using HiFiMagnet</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../post/index.html#post_manual">Post-Processing</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../post/index.html#paraview">Paraview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../post/index.html#ensight">Ensight</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../benchmarks/index.html#main_examples">Examples and Benchmarks</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../benchmarks/index.html#examples">Examples</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../benchmarks/index.html#examples">Benchmarks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../benchmarks/index.html#validations">Validations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../benchmarks/index.html#verifications">Verifications</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../tutorials/index.html#tutorials">Tutorials</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/thermoelec.html">ThermoElectric</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/magnetostatic.html">Magnetostatic (H1)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/elasticity.html">Elasticity</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/salome.html">Using Salome</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/ensight.html">Using Ensight</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../install/index.html#install">Installation</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../install/index.html#matrix">Matrix</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../install/index.html#debian">Debian/Ubuntu</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../install/index.html#windows">Windows 10</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../install/index.html#containers">Containers</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../install/index.html#docker">Docker</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../install/index.html#singularity">Singularity</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../dev/index.html#dev_manual">Developper Manual</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../dev/magnettools.html#install_magnettools">MagnetTools</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../dev/salome.html#install_salome">Salome plugin</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../dev/hifimagnet.html#install_hifimagnet">HiFiMagnet</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#index.adoc">Appendix</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/Monitoring.html">Monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/M9_2017_03.html">DeMarinis</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/M9_2019_02.html">ThermoElectric</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">HiFiMagnet Documentation</span>
+    <span class="version">stable</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <span class="title">Feel++ User Manual</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../user/0.109/index.html">0.109-alpha.1</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <span class="title">HiFiMagnet Documentation</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">stable</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">HiFiMagnet Documentation</a></li>
+    <li><a href="index.html#magnettools_manual">MagnetTools</a></li>
+    <li><a href="Optimization.html">Optimization</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/feelpp/book.hifimagnet/edit/master/docs/docs/modules/magnettools/pages/Optimization.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Optimization</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The goal of the Axisymetric optimization is to provide an maximum magnetic field at the center of the insert
+under constraints:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>total electric power</p>
+</li>
+<li>
+<p>maximal allowed temperature per helix</p>
+</li>
+<li>
+<p>maximal allowed stress per helix</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>for a given insert geometry.</p>
+</div>
+<div class="paragraph">
+<p>The unknowns may either be:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the current density distribution per helix: <code>OptHelix</code>,</p>
+</li>
+<li>
+<p>the maximum temperature distribution per helix: <code>OptAubert</code></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">OptAubert HL-31.dat</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Each helix is splitted in a given number of sections \(S_i\) along \(z\) axis.
+The result of the optimization is the vector \({j_i}\) (aka the current density \(j_i\) value on the inner radius of
+all sections \(S_i\)) for <code>optaubert</code>.</p>
+</div>
+<div class="paragraph">
+<p>The stress in each section is approximated by the <strong>Hoop stress</strong>, namely \(r j_{\theta}(r) \cdot b_z(r)\) for \(r=r_i\)
+with \(r_i\) the inner radius of section \(S_i\).</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Both codes relies on SQP programming with <code>Nag</code>.
+For licensing issue, they can only be ran on <code>calcul10</code> server.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The input file corresponds to the <a href="DataStructure.html#header_section" class="page"><strong>header section</strong></a> of the <code>.d</code> magnet description file.
+The output is a <code>.d</code> file.</p>
+</div>
+<div class="paragraph">
+<p>To build the actual 3D geometry, that shall reflect, this axisymetrical current density distribution, we use
+the following assumption:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the nominal current is \(I_o\),</p>
+</li>
+<li>
+<p>each element \(S_i\) will be represented by an helix with a pitch \(p\) and a number of turn \(n\) such that
+the helix carries the same current as the element:</p>
+</li>
+</ul>
+</div>
+<div class="stemblock">
+<div class="content">
+\[n * I_o = \int_{S_i} \mathbf{j} \cdot \mathbf{n} \,d\Gamma\]
+</div>
+</div>
+<div class="paragraph">
+<p>The optimization result are then used to define the helical cut thet would be machined
+in each copper alloy tubes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>CAD data may be obtained for Catia and/or Salome using:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">opt2cad HL-31.d , <i class="conum" data-value="1"></i><b>(1)</b>
+addshape ... , <i class="conum" data-value="2"></i><b>(2)</b>
+opt2yml HL-31.d , <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td><code>opt2cad</code>  generates files for CAD/CAM Helices</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td><code>addshape</code> generates files for CAD/CAM Helices with "bumps" on the helical cut shape path; this is optional.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td><code>opt2yml</code> generates configuration files for building Helices with HiFiMagnet Salome plugin.</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+To create the actual 3D CAD model of an helix (abusively: tube in which an helical cut has been machined by EDM technic),
+we still need some more information&#8230;&#8203;
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_use_optaubert"><a class="anchor" href="#_use_optaubert"></a>1. Use <code>OptAubert</code></h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">optaubert HL-31.dat</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Available options to control the optimization are:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>--majorprint=INT                specify nag major print level (default is 10)
+--minorprint=INT                specify nag major print level (default is 0)
+--major_iteration_limit=INT     specify nag major iterations_limit (default is controlled by nag)
+--minor_iteration_limit=INT     specify nag minor iterations_limit (default is controlled by nag)
+--tolerance=DOUBLE              specify Optimaly tolerance (default is 1.0e-15)
+--function_precision=DOUBLE     specify Function precision (default is 4.38e-15)
+--feasibility=DOUBLE            specify nonlinear feasibility tolerance (default is 1.0e-15)
+--check                         activate nag checks
+--random                        initiliaze with random numbers
+--init=STRING                   initialize solution from
+--verbose                       activate verbose mode
+--log                           activate nag logging mode
+--recursive                     activate recursive mode</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Other options are:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>--gmsh                          activate gmsh output
+--num_integ=INT                 specify num_integ size (default 100)
+--num_eval=INT                  specify num_eval size (default 100)
+--gsl-error-handler             deactivate gsl error handler (default is on)</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_use_opthelix"><a class="anchor" href="#_use_opthelix"></a>2. Use <code>OptHelix</code></h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">opthelix --stress --temp [--cooling] [--geom] HL-31.dat</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Available options are:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>--majorprint=INT                specify nag major print level (default is 10)
+--minorprint=INT                specify nag major print level (default is 0)
+--major_iteration_limit=INT     specify nag major iterations_limit (default is controlled by nag)
+--minor_iteration_limit=INT     specify nag minor iterations_limit (default is controlled by nag)
+--tolerance=DOUBLE              specify Optimaly tolerance (default is 1.0e-15)
+--feasibility=DOUBLE            specify nonlinear feasibility tolerance (default is 1.0e-15)
+--geom                          activate geometry optimization
+--check                         activate nag checks
+--temp                          activate temperature constraints
+--stress                        activate stress constraints
+--random                        initiliaze with random numbers
+--gmsh                          activate gmsh output
+--init=STRING                   initialize solution from
+--verbose                       activate verbose mode
+--log                           activate nag logging mode
+--recursive                     activate recursive mode
+--cooling                       activate cooling modeling
+--num_integ=INT                 specify num_integ size (default 100)
+--num_eval=INT                  specify num_eval size (default 100)</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_generating_cadcam_files"><a class="anchor" href="#_generating_cadcam_files"></a>3. Generating CAD/CAM files</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To create files for CAD or CAM use <code>opt2cad</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">opt2cad [-o format] HL-31.d</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Valid formats are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>LNCMI</code>: default value, for creating file for Lncmi CAM</p>
+</li>
+<li>
+<p><code>CATIA</code>: for creating files for CATIA</p>
+</li>
+<li>
+<p><code>SALOME</code>: for creating files for Salome</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To add shapes on some helical cuts, you may use:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">add_shape --angle="60 90 120 120" --shape_angular_length=8 --shape=HL-31-995  --format=LNCMI --position="ALTERNATE" HL-31_H4</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this example we had shape profile <code>HL-31-995</code> at various angles on <code>HL-31_H4</code> helical cut.</p>
+</div>
+<div class="listingblock">
+<div class="title">Definition of profile <code>HL-31-995</code>: <code>Shape_HL-31-995.dat</code></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">#Shape : HL-31-995 pour H4
+#N_i
+20
+#X_i F_i
+-3.24	0
+-3.05	0.04
+-2.88	0.15
+-2.78	0.31
+-2.74	0.5
+-2.74	1.3
+-2.7	1.49
+-2.59	1.65
+-2.43	1.76
+-2.24	1.8
+ 2.24	1.8
+ 2.43	1.76
+ 2.59	1.65
+ 2.7	1.49
+ 2.74	1.3
+ 2.74	0.5
+ 2.78	0.31
+ 2.88	0.15
+ 3.05	0.04
+ 3.24	0</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This command will generate 2 files:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>HL-31_H4_cut_with_shapes.iso</code>: CAM file for the EDM machining,</p>
+</li>
+<li>
+<p><code>HL-31_H4_cut_with_shapes.xls</code>: CAD file for CATIA (the file needs to be converted to a real Excell file with the script <code>write_excel.py</code>)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_prepare_data_for_hifimagnet_salome"><a class="anchor" href="#_prepare_data_for_hifimagnet_salome"></a>4. Prepare Data for HiFiMagnet Salome</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">opt2yml HL-31.d</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This command generates <code>.yaml</code> cfg files for Helices.
+These files are, somehow, incomplete.
+Some information has to be added to be complete, eg the dimension of the tube correspond to the actual helix.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>To add shapes on some helical cuts, you may use <code>add_shape</code> as above with additional option <code>--format=SALOME</code>.
+This will create the <code>HL-31_H4_cut_with_shapes_salome.dat</code> file for HiFiMagnet Salome plugin.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_references"><a class="anchor" href="#_references"></a>5. References</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Copyright (C) 2017-2018 <a href="https://opendevise.com">OpenDevise Inc.</a> and the <a href="http://www.feelpp.org">HiFiMagnet Contorsium.</a></p>
+  <p>Generated using antora</p>
+  <p>Use of this software, including the UI, is granted under the terms of the <a href="https://www.mozilla.org/en-US/MPL/2.0/">Mozilla Public License Version 2.0</a> (MPL-2.0).</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script src="../../../_/js/vendor/highlight.js"></script>
+<script>hljs.initHighlighting()</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  messageStyle: "none",
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]],
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  },
+
+  TeX: {
+      Macros: {
+      RR: "{\\mathbb R}",
+      NN: "{\\mathbb N}",
+      Nso: "{N_{\\mathrm{so}}}",
+      Nma: "{N_{\\mathrm{ma}}}",
+      Nno: "{N_{\\mathrm{no}}}",
+      Ne: "{N_{\\mathrm{e}}}",
+      Ilag: ["{\\mathcal{I}^{\\mathrm{lag}}_{#1}}",1],
+      calTh: "{\\mathcal{T}_h}",
+      Ck: ["{\\mathcal{C}^{#1}}",1],
+      Pk: ["{\\mathcal{P}^{#1}}",1],
+      Qk: ["{\\mathcal{Q}^{#1}}",1],
+      Pch: ["{P^{#1}_{c,h}}",1],
+      Pcho: ["{P^{#1}_{c,h,0}}",1],
+      Qch: ["{Q^{#1}_{c,h}}",1],
+      Ich: ["{\\mathcal{I}^{#1}_{c,h}#2}",2],
+      poly: ["{\\mathbb{#1}}",1],
+      nf: "{n_f}",
+      normal: "{\\mathbf{n}}",
+      ngeo: "{n_{\\mathrm{geo}}}",
+      geo: "{\\mathrm{geo}}",
+      card: ["{\\operatorname{card}(#1)}",1],
+      dim: ["{\\operatorname{dim}(#1)}",1],
+      opdim: "{\\operatorname{dim}}",
+      card: ["{\\operatorname{card}(#1)}",1],
+      poly: ["{\\mathbb{#1}}",1],
+      R: ["{\\mathbb{R}^{#1}}",1],
+      set: ["{\\left\\{#1\\right\\}}",1],
+      diam: "{\\operatorname{diam}}",
+      jump: ["{[\\![ #1 ]\\!]}",1],
+      Next: "{\\mathrm{n}}",
+      essinf: "{\\operatorname{ess}\\, \\operatorname{inf}}",
+      tr: "{\\operatorname{tr}}",
+      Id: "{\\mathcal{I}}",
+      disp: ["{\\mathbf{#1}}",1],
+      stresst: ["{\\mathbf{\\sigma(#1)}}",1],
+      deformt: ["{\\mathbf{\\varepsilon(#1)}}",1],
+      domain: "{\\Omega}",
+      prect: ["{\\left\\(#1\\right\\)}",1],
+      ds: "",
+      bold: ["{\\bf #1}",1]
+  },
+  extensions: ["mhchem.js"] }
+});
+</script>
+<!--<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML"></script>-->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>-->
+
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js" integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq" crossorigin="anonymous"></script>-->
+  </body>
+</html>

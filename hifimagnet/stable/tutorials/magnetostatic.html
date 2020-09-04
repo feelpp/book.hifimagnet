@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Tutorial :: HiFiMagnet Documentation</title>
+    <link rel="canonical" href="https://book.hifimagnet.cemosis.fr/hifimagnet/stable/tutorials/magnetostatic.html">
+    <meta name="generator" content="Antora 2.3.3">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <link rel="icon" href="../../../_/img/favicon.ico" type="image/x-icon">    
+    <script>!function(l,p){if(l.protocol!==p&&l.host=="docs.antora.org"){l.protocol=p}else if(/\.gitlab\.io$/.test(l.host)){l.replace(p+"//docs.antora.org"+l.pathname.substr(l.pathname.indexOf("/",1))+l.search+l.hash)}}(location,"https:")</script>
+
+    <link rel="stylesheet" type="text/css" href="/_/css/style.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-65761593-2"></script>
+    <script>function gtag(){dataLayer.push(arguments)};window.dataLayer=window.dataLayer||[];gtag('js',new Date());gtag('config','UA-65761593-2')</script>
+  </head>
+  <body class="article">
+<header class="header" role="banner">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <div class="navbar-item">
+         <!--  <a href="https://book.hifimagnet.org">HiFiMagnet Documentation</a> -->
+                         
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-link">Books</div>
+          <div class="navbar-dropdown">
+            <div class="navbar-item"><strong>Main</strong></div>
+
+            <!-- this code allow to manage ordering of navbar item -->
+               
+              <a class="navbar-item" href="/user/0.109/index.html"> Feel++ User Manual </a>
+                             
+
+                            
+
+                
+
+            <hr class="navbar-divider">
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-link">Projects</div>
+          <div class="navbar-dropdown">
+            <div class="navbar-item"><strong>Core</strong></div>
+            <a class="navbar-item" href="http://github.com/feelpp/hifimagnet">Repository</a>
+            <a class="navbar-item" href="http://github.com/feelpp/hifimagnet/issues">Issue Tracker</a>
+            <hr class="navbar-divider">
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-link">Community</div>
+          <div class="navbar-dropdown is-right">
+            <a class="navbar-item" href="https://feelpp.slack.com/messages/G6L3X3C94">Slack Chat</a>
+            <a class="navbar-item" href="https://gitter.im/feelpp/hifimagnet">Gitter chat (Users)</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="hifimagnet" data-version="stable">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">HiFiMagnet Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html#manuals">Manuals</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html#help">Help</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html#contribute">Contribute</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html#copyright">Licenses</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html#authors">Authors</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../model/index.html#model">Physical Modelling</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../model/index.html#introduction">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../model/index.html#coupled3d">Coupled Model</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../model/index.html#thermoelec">ThermoElectric Model</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../model/index.html#magneto">Magnetostatic Model</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../model/index.html#meca">ELasticity Model</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../model/index.html#cooling">ThermoHydraulics Model</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../magnettools/index.html#magnettools_manual">MagnetTools</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../magnettools/index.html#matrix">Quickstart</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../magnettools/index.html#qs_getting">Getting MagnetTools</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../magnettools/index.html#qs_reference">Running MagnetTools</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../magnettools/DataStructure.html">Data</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../magnettools/Bmap.html">Magnetic Field Map</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../magnettools/Transient.html">Transient Analysis</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../magnettools/Optimization.html">Optimization</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../cad/index.html#salome_plugin">Salome plugin</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../cad/index.html#introduction">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../cad/index.html#quickstart">Quickstart</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cad/index.html#qs_getting">Getting Salome</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cad/index.html#qs_reference">Running Salome</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../cad/index.html#data">Data Structure</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../cad/index.html#usage">Usage</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../user/index.html#user_manual">HiFiMagnet Manual</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../user/index.html#quickstart">Quick Start</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../user/index.html#qs_getting">Getting HiFiMagnet</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../user/index.html#qs_reference">Running HiFiMagnet</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user/index.html#data">Data Structure</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user/index.html#workflow">Using HiFiMagnet</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../post/index.html#post_manual">Post-Processing</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../post/index.html#paraview">Paraview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../post/index.html#ensight">Ensight</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../benchmarks/index.html#main_examples">Examples and Benchmarks</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../benchmarks/index.html#examples">Examples</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../benchmarks/index.html#examples">Benchmarks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../benchmarks/index.html#validations">Validations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../benchmarks/index.html#verifications">Verifications</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html#tutorials">Tutorials</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="thermoelec.html">ThermoElectric</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="magnetostatic.html">Magnetostatic (H1)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="elasticity.html">Elasticity</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="salome.html">Using Salome</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="ensight.html">Using Ensight</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../install/index.html#install">Installation</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../install/index.html#matrix">Matrix</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../install/index.html#debian">Debian/Ubuntu</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../install/index.html#windows">Windows 10</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../install/index.html#containers">Containers</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../install/index.html#docker">Docker</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../install/index.html#singularity">Singularity</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../dev/index.html#dev_manual">Developper Manual</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../dev/magnettools.html#install_magnettools">MagnetTools</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../dev/salome.html#install_salome">Salome plugin</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../dev/hifimagnet.html#install_hifimagnet">HiFiMagnet</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#index.adoc">Appendix</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/Monitoring.html">Monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/M9_2017_03.html">DeMarinis</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/M9_2019_02.html">ThermoElectric</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">HiFiMagnet Documentation</span>
+    <span class="version">stable</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <span class="title">Feel++ User Manual</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../user/0.109/index.html">0.109-alpha.1</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <span class="title">HiFiMagnet Documentation</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">stable</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">HiFiMagnet Documentation</a></li>
+    <li><a href="index.html#tutorials">Tutorials</a></li>
+    <li><a href="magnetostatic.html">Magnetostatic (H1)</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/feelpp/book.hifimagnet/edit/master/docs/docs/modules/tutorials/pages/magnetostatic.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Tutorial</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>In this tutorial, we will model the magnetic field created by a round wire carrying a given current.
+The geometry will be splitted into 2 parts:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the wire, represented by a cylinder,</p>
+</li>
+<li>
+<p>the air region also represented by a cylinder.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The geometry will be designed in <code>Salome</code>.</p>
+</div>
+<div class="paragraph">
+<p>We will distinct:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the plane circles (V0 and V1) on which will be applied some electric potential</p>
+</li>
+<li>
+<p>the cylindrical surface (Bord) on which we will apply some cooling boundary conditions.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>and for the air:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the plane circles (Sym0 and Sym1) on which will be applied some symetry boundary condition for the magnetostatic problem,</p>
+</li>
+<li>
+<p>the cylindrical surface of the air region (Inf) on which we will apply infinity boundary condition for the magnetostatic problem.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The thermoelectric model will be used to model the electrical potential
+distribution, the temperature field and the current distribution \(\mathbf j\).</p>
+</div>
+<div class="paragraph">
+<p>Once \(\mathbf j\) known, we can compute the magnetic field.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_data"><a class="anchor" href="#_data"></a>1. Data</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The "wire" cylinder is defined by its radius \(R\), its heigth \(H\).
+The "air" cylinder is defined by its outer radius \(R_{inf}\) and its inner radius \(R\), its heigth \(H\).
+The cylinders symetry axis are \(Oz\).</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Geometrical Data</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(R_{inf}\) [ \(m\) ]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">R [ \(m\) ]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">H [ \(m\) ]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32e-3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8.e-3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16.e3</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Input Data</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boundary</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(V\)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">V0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">V1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.05</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. Cooling Input Data</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boundary</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(h\) [ \(K/W/m^2\) ]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(T_w\) [ \(K\) ]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bord</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8.e+4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">293</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 4. Magnetostatic Boundary conditions</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inf</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(\mathbf{A}=\mathbf{0}\)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sym0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(\mathbf{A}_X =0\), \(\mathbf{A}_Y =0\)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">V0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(\mathbf{A}_X =0\), \(\mathbf{A}_Y =0\)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sym1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(\mathbf{A}_X =0\), \(\mathbf{A}_Y =0\)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">V1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(\mathbf{A}_X =0\), \(\mathbf{A}_Y =0\)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_prerequisites"><a class="anchor" href="#_prerequisites"></a>2. Prerequisites</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Linux OS,</p>
+</li>
+<li>
+<p>Basic knowledge of unix commands,</p>
+</li>
+<li>
+<p><code>Nvidia</code> Graphic video card,</p>
+</li>
+<li>
+<p><code>singularity</code></p>
+</li>
+<li>
+<p>Thermoelectric model tutorial</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_setup_study"><a class="anchor" href="#_setup_study"></a>3. Setup study</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Start a terminal</p>
+</li>
+<li>
+<p>Create a directory to hold the study</p>
+</li>
+<li>
+<p>Move to the created directory</p>
+</li>
+<li>
+<p>Create an <code>STORAGE</code> environment variable pointing to the directory holding singularity images:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">export STORAGE=/home/singularity</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_create_geometry_and_a_mesh"><a class="anchor" href="#_create_geometry_and_a_mesh"></a>4. Create Geometry and a Mesh</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Start Salome using singularity container:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">singularity exec --nv -B /opt/DISTENE:/opt/DISTENE:ro \
+  ${STORAGE}/hifimagnet-salome:8.5.0.simg salome</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Select the <code>GEOM</code> module</p>
+</li>
+<li>
+<p>Create a cylinder for the wire</p>
+</li>
+<li>
+<p>Explode the faces of the cylinder</p>
+</li>
+<li>
+<p>Rename the faces</p>
+</li>
+<li>
+<p>Mark the cylinder object as selected</p>
+</li>
+<li>
+<p>Create a cylinder for the air</p>
+</li>
+<li>
+<p>Switch to the <code>SMESH</code> module</p>
+</li>
+<li>
+<p>Create a Mesh</p>
+</li>
+<li>
+<p>Create 2D Mesh hypothesis with <code>MG-CADSurf</code></p>
+</li>
+<li>
+<p>Create 3D Mesh hypothesis with <code>MG-Tetra</code></p>
+</li>
+<li>
+<p>Compute the mesh</p>
+</li>
+<li>
+<p>Create Groups from geometry</p>
+</li>
+<li>
+<p>Export the mesh in <code>MED</code> format</p>
+</li>
+<li>
+<p>Convert <code>MED</code> mesh to <code>GMSH</code> format mesh:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">gmsh -3 -bin cylindre.med -o cylindre.msh</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_prepare_cfg_and_json_files"><a class="anchor" href="#_prepare_cfg_and_json_files"></a>5. Prepare Cfg and Json files</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Now we need to setup the files that define the simulation.
+As before we would need a <code>cfg</code> file to define the simulation,
+2 <code>json</code> model files to respectively defines the thermoelectric and magnetostatic problem
+and finally 2 <code>json</code> files for the material properties (respectively for the wire and the air).</p>
+</div>
+<div class="paragraph">
+<p>We will use and eventually modify the files used in the previous tutorial
+for the thermoelectric model.</p>
+</div>
+<div class="paragraph">
+<p>In a first step, we consider the linear thermoelectric problem.</p>
+</div>
+<div class="sect2">
+<h3 id="_cfg_file_definition"><a class="anchor" href="#_cfg_file_definition"></a>5.1. <code>cfg</code> file definition</h3>
+<div class="paragraph">
+<p>In the <code>cfg</code> we need to specify that we wil run the thermoelectric and magnetostic problem.
+To do so, we need to:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>set the <strong>compute_magnetism</strong> flag to <strong>true</strong>,</p>
+</li>
+<li>
+<p>add a section (namely <strong>|magnetostatic]</strong>) for the Magnetostatic model definition,</p>
+</li>
+<li>
+<p>add a section (namely <strong>[ms]</strong>) for the  Magnetostatic solver definition.</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-txt hljs" data-lang="txt">dim=3
+geofile=cylindre.msh
+geofile-path=$cfgdir
+
+conductor_volume=Cylinder_1
+
+compute_magnetism=true
+compute_bg_magfield=false
+compute_bg_magfield_bmap=false
+compute_elasticity=false
+
+[thermoelectric]
+model_json=$cfgdir/thermoelec.json
+weakdir=false
+resolution=linear
+
+[electro]
+pc-type=boomeramg #gamg
+#ksp-monitor=true
+ksp-rtol=1e-7
+ksp-atol=1e-5
+ksp-maxit=2000
+ksp-use-initial-guess-nonzero=1
+
+[thermal]
+pc-type=boomeramg #gamg
+#ksp-monitor=true
+ksp-rtol=1e-8
+ksp-atol=1e-6
+ksp-use-initial-guess-nonzero=1
+
+[magnetostatic]
+model_json=$cfgdir/magnetostatic.json
+weakdir=false
+
+[ms]
+pc-type=boomeramg #gamg
+ksp-monitor=true
+ksp-rtol=1e-7
+ksp-atol=1e-5
+ksp-use-initial-guess-nonzero=1</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_json_model_for_thermoelectric_model"><a class="anchor" href="#_json_model_for_thermoelectric_model"></a>5.2. <code>json</code> model for Thermoelectric model</h3>
+<div class="paragraph">
+<p>For the thermoelectric model we use the same <code>thermoelec.json</code> as in the previous tutorial.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+    "Name": "CoupledCart",
+    "ShortName":"MSC",
+    "Models":
+    {
+        "equations": "coupled-cart"
+    },
+    "Materials":
+    {
+        "Cylinder_1":
+        {
+            "name":"Copper",
+            "filename":"$cfgdir/Cu.json"
+        }
+    },
+    "BoundaryConditions":
+    {
+        "potential":
+        {
+            "Dirichlet":
+            {
+                "V0":
+                {
+                    "expr1":"0.",
+		    "expr2":"Cylinder_1"
+                },
+                "V1":
+                {
+                    "expr1":"0.05",
+		    "expr2":"Cylinder_1"
+                }
+            }
+        },
+        "temperature":
+        {
+            "Robin":
+            {
+                "R":
+                {
+                    "expr1":"80000",
+                    "expr2":"293"
+                }
+            }
+        }
+    },
+    "PostProcess":
+    {
+        "Exports":
+        {
+            "fields": ["temperature","potential","joules","current"]
+        }
+    }
+}</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Do not forget to verify that the <code>json</code> file are correct.
+To do so use for instance:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">jsonlint-php thermoelec.json</code></pre>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_json_model_for_magnetostatic"><a class="anchor" href="#_json_model_for_magnetostatic"></a>5.3. <code>json</code> model for Magnetostatic</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>a <code>json</code> model file that defines the material and boundary conditions:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+    "Name": "CoupledCart",
+    "ShortName":"MSC",
+    "Models":
+    {
+        "equations": "coupled-cart"
+    },
+    "Materials":
+    {
+        "Cylinder_1":
+        {
+            "name":"Copper",
+            "filename":"$cfgdir/Cu.json"
+        },
+        "Air_1":
+        {
+            "name":"Air",
+            "filename":"$cfgdir/Air.json"
+        }
+    },
+    "BoundaryConditions":
+    {
+        "magnetic_potential":
+        {
+            "Dirichlet":
+            {
+                "R_inf":
+                {
+                    "expr":"{0,0,0}:x:y:z"
+                }
+	    },
+            "DirichletX":
+            {
+                "Sym0":
+                {
+                    "expr":"0:x:y:z"
+                },
+                "Sym1":
+                {
+                    "expr":"0:x:y:z"
+                },
+                "V0":
+                {
+                    "expr":"0:x:y:z"
+                },
+                "V1":
+                {
+                    "expr":"0:x:y:z"
+                }
+	    },
+            "DirichletY":
+            {
+                "Sym0":
+                {
+                    "expr":"0:x:y:z"
+                },
+                "Sym1":
+                {
+                    "expr":"0:x:y:z"
+                },
+                "V0":
+                {
+                    "expr":"0:x:y:z"
+                },
+                "V1":
+                {
+                    "expr":"0:x:y:z"
+                }
+        }
+    },
+    "PostProcess":
+    {
+        "Exports":
+        {
+            "fields": ["magneticPotential","magneticField"]
+        }
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_json_files_for_material_physical_properties"><a class="anchor" href="#_json_files_for_material_physical_properties"></a>5.4. <code>json</code> files for material physical properties</h3>
+<div class="paragraph">
+<p>In the case, we need to have one <code>json</code> material properties file per domain
+or material. In each file we also have to define the relative magnetic permeabilty \(\mu\).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+    "name":"Cu",
+    "sigma0":"50.e+6",
+    "k0":"330",
+    "T0":"293",
+    "alpha":"3.4e-3",
+    "sigma":"sigma0/(1+alpha*(T-T0)):sigma0:alpha:T:T0",
+    "k":"k0*T/((1+alpha*(T-T0))*T0):k0:T:alpha:T0",
+    "mu_mag": "1"
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+    "name":"Air",
+    "mu_mag": "1"
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_run_a_coupled_simulation"><a class="anchor" href="#_run_a_coupled_simulation"></a>6. Run a Coupled Simulation</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Create a directory for storing the results</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mkdir Coupled</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Run the simulation</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">singularity exec -B ${PWD}/Coupled:/feel \
+ ${STORAGE}/hifimagnet-hifimagnet_v0.105.img \
+  feelpp_hfm_coupledcartmodel_3DP1N1 --config-file cylinder.cfg</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Checkout the output of the above command for any errors.
+You can save the output to a file <code>log</code> using the redirection:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">singularity exec -B ${PWD}/Coupled:/feel \
+ ${STORAGE}/hifimagnet-hifimagnet_v0.105.img \
+  feelpp_hfm_coupledcartmodel_3DP1N1 --config-file cylinder.cfg &gt; log 2&gt;&amp;1</code></pre>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_post_processing"><a class="anchor" href="#_post_processing"></a>7. Post-processing</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Move to the directory where the results are stored</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd Coupled/.../exports/ensightgold</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Start <code>ensight102</code></p>
+</li>
+<li>
+<p>Load the electric case</p>
+</li>
+<li>
+<p>Load the thermoelectric case</p>
+</li>
+<li>
+<p>Load the magnetostatic case</p>
+</li>
+<li>
+<p>Check the value of the total current:</p>
+</li>
+</ul>
+</div>
+<div class="stemblock">
+<div class="content">
+\[(V1-V0) = R I \text{where} R = \frac{1}{sigma} \frac{H}{\pi R^2}\]
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Plot the electric potential distribution along the wire axis,</p>
+</li>
+<li>
+<p>Plot the temperature distribution along the wire radial axis.</p>
+</li>
+<li>
+<p>Plot the magnetic field distribution along the radial axis.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Copyright (C) 2017-2018 <a href="https://opendevise.com">OpenDevise Inc.</a> and the <a href="http://www.feelpp.org">HiFiMagnet Contorsium.</a></p>
+  <p>Generated using antora</p>
+  <p>Use of this software, including the UI, is granted under the terms of the <a href="https://www.mozilla.org/en-US/MPL/2.0/">Mozilla Public License Version 2.0</a> (MPL-2.0).</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script src="../../../_/js/vendor/highlight.js"></script>
+<script>hljs.initHighlighting()</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  messageStyle: "none",
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]],
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  },
+
+  TeX: {
+      Macros: {
+      RR: "{\\mathbb R}",
+      NN: "{\\mathbb N}",
+      Nso: "{N_{\\mathrm{so}}}",
+      Nma: "{N_{\\mathrm{ma}}}",
+      Nno: "{N_{\\mathrm{no}}}",
+      Ne: "{N_{\\mathrm{e}}}",
+      Ilag: ["{\\mathcal{I}^{\\mathrm{lag}}_{#1}}",1],
+      calTh: "{\\mathcal{T}_h}",
+      Ck: ["{\\mathcal{C}^{#1}}",1],
+      Pk: ["{\\mathcal{P}^{#1}}",1],
+      Qk: ["{\\mathcal{Q}^{#1}}",1],
+      Pch: ["{P^{#1}_{c,h}}",1],
+      Pcho: ["{P^{#1}_{c,h,0}}",1],
+      Qch: ["{Q^{#1}_{c,h}}",1],
+      Ich: ["{\\mathcal{I}^{#1}_{c,h}#2}",2],
+      poly: ["{\\mathbb{#1}}",1],
+      nf: "{n_f}",
+      normal: "{\\mathbf{n}}",
+      ngeo: "{n_{\\mathrm{geo}}}",
+      geo: "{\\mathrm{geo}}",
+      card: ["{\\operatorname{card}(#1)}",1],
+      dim: ["{\\operatorname{dim}(#1)}",1],
+      opdim: "{\\operatorname{dim}}",
+      card: ["{\\operatorname{card}(#1)}",1],
+      poly: ["{\\mathbb{#1}}",1],
+      R: ["{\\mathbb{R}^{#1}}",1],
+      set: ["{\\left\\{#1\\right\\}}",1],
+      diam: "{\\operatorname{diam}}",
+      jump: ["{[\\![ #1 ]\\!]}",1],
+      Next: "{\\mathrm{n}}",
+      essinf: "{\\operatorname{ess}\\, \\operatorname{inf}}",
+      tr: "{\\operatorname{tr}}",
+      Id: "{\\mathcal{I}}",
+      disp: ["{\\mathbf{#1}}",1],
+      stresst: ["{\\mathbf{\\sigma(#1)}}",1],
+      deformt: ["{\\mathbf{\\varepsilon(#1)}}",1],
+      domain: "{\\Omega}",
+      prect: ["{\\left\\(#1\\right\\)}",1],
+      ds: "",
+      bold: ["{\\bf #1}",1]
+  },
+  extensions: ["mhchem.js"] }
+});
+</script>
+<!--<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML"></script>-->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>-->
+
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js" integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq" crossorigin="anonymous"></script>-->
+  </body>
+</html>

@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Untitled :: HiFiMagnet Documentation</title>
+    <link rel="canonical" href="https://book.hifimagnet.cemosis.fr/hifimagnet/stable/user/learning/ThermoElectric/Validity.html">
+    <meta name="generator" content="Antora 2.3.3">
+    <link rel="stylesheet" href="../../../../../_/css/site.css">
+    <link rel="icon" href="../../../../../_/img/favicon.ico" type="image/x-icon">    
+    <script>!function(l,p){if(l.protocol!==p&&l.host=="docs.antora.org"){l.protocol=p}else if(/\.gitlab\.io$/.test(l.host)){l.replace(p+"//docs.antora.org"+l.pathname.substr(l.pathname.indexOf("/",1))+l.search+l.hash)}}(location,"https:")</script>
+
+    <link rel="stylesheet" type="text/css" href="/_/css/style.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-65761593-2"></script>
+    <script>function gtag(){dataLayer.push(arguments)};window.dataLayer=window.dataLayer||[];gtag('js',new Date());gtag('config','UA-65761593-2')</script>
+  </head>
+  <body class="article">
+<header class="header" role="banner">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <div class="navbar-item">
+         <!--  <a href="https://book.hifimagnet.org">HiFiMagnet Documentation</a> -->
+                         
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-link">Books</div>
+          <div class="navbar-dropdown">
+            <div class="navbar-item"><strong>Main</strong></div>
+
+            <!-- this code allow to manage ordering of navbar item -->
+               
+              <a class="navbar-item" href="/user/0.109/index.html"> Feel++ User Manual </a>
+                             
+
+                            
+
+                
+
+            <hr class="navbar-divider">
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-link">Projects</div>
+          <div class="navbar-dropdown">
+            <div class="navbar-item"><strong>Core</strong></div>
+            <a class="navbar-item" href="http://github.com/feelpp/hifimagnet">Repository</a>
+            <a class="navbar-item" href="http://github.com/feelpp/hifimagnet/issues">Issue Tracker</a>
+            <hr class="navbar-divider">
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-link">Community</div>
+          <div class="navbar-dropdown is-right">
+            <a class="navbar-item" href="https://feelpp.slack.com/messages/G6L3X3C94">Slack Chat</a>
+            <a class="navbar-item" href="https://gitter.im/feelpp/hifimagnet">Gitter chat (Users)</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="hifimagnet" data-version="stable">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../../index.html">HiFiMagnet Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../../index.html#manuals">Manuals</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../../index.html#help">Help</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../../index.html#contribute">Contribute</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../../index.html#copyright">Licenses</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../../index.html#authors">Authors</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../../model/index.html#model">Physical Modelling</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../model/index.html#introduction">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../../model/index.html#coupled3d">Coupled Model</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../model/index.html#thermoelec">ThermoElectric Model</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../model/index.html#magneto">Magnetostatic Model</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../model/index.html#meca">ELasticity Model</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../model/index.html#cooling">ThermoHydraulics Model</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../../magnettools/index.html#magnettools_manual">MagnetTools</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../../magnettools/index.html#matrix">Quickstart</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../magnettools/index.html#qs_getting">Getting MagnetTools</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../magnettools/index.html#qs_reference">Running MagnetTools</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../magnettools/DataStructure.html">Data</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../magnettools/Bmap.html">Magnetic Field Map</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../magnettools/Transient.html">Transient Analysis</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../magnettools/Optimization.html">Optimization</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../../cad/index.html#salome_plugin">Salome plugin</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../cad/index.html#introduction">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../../cad/index.html#quickstart">Quickstart</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../cad/index.html#qs_getting">Getting Salome</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../cad/index.html#qs_reference">Running Salome</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../cad/index.html#data">Data Structure</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../cad/index.html#usage">Usage</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../index.html#user_manual">HiFiMagnet Manual</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../index.html#quickstart">Quick Start</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../index.html#qs_getting">Getting HiFiMagnet</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../index.html#qs_reference">Running HiFiMagnet</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../index.html#data">Data Structure</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../index.html#workflow">Using HiFiMagnet</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../../post/index.html#post_manual">Post-Processing</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../post/index.html#paraview">Paraview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../post/index.html#ensight">Ensight</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../../benchmarks/index.html#main_examples">Examples and Benchmarks</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../benchmarks/index.html#examples">Examples</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../benchmarks/index.html#examples">Benchmarks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../benchmarks/index.html#validations">Validations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../benchmarks/index.html#verifications">Verifications</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../../tutorials/index.html#tutorials">Tutorials</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../tutorials/thermoelec.html">ThermoElectric</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../tutorials/magnetostatic.html">Magnetostatic (H1)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../tutorials/elasticity.html">Elasticity</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../tutorials/salome.html">Using Salome</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../tutorials/ensight.html">Using Ensight</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../../install/index.html#install">Installation</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../install/index.html#matrix">Matrix</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../install/index.html#debian">Debian/Ubuntu</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../install/index.html#windows">Windows 10</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../../install/index.html#containers">Containers</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../install/index.html#docker">Docker</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../install/index.html#singularity">Singularity</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../../dev/index.html#dev_manual">Developper Manual</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../dev/magnettools.html#install_magnettools">MagnetTools</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../dev/salome.html#install_salome">Salome plugin</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../dev/hifimagnet.html#install_hifimagnet">HiFiMagnet</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#index.adoc">Appendix</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../appendix/Monitoring.html">Monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../appendix/M9_2017_03.html">DeMarinis</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../appendix/M9_2019_02.html">ThermoElectric</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">HiFiMagnet Documentation</span>
+    <span class="version">stable</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <span class="title">Feel++ User Manual</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../../user/0.109/index.html">0.109-alpha.1</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <span class="title">HiFiMagnet Documentation</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../../index.html">stable</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/feelpp/book.hifimagnet/edit/master/docs/docs/modules/user/pages/learning/ThermoElectric/Validity.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<article class="doc">
+<div class="paragraph">
+<p>In this example, we approximate the magnet with an axisymmetric copper torus.Thus we can consider only a quarter of this torus for our study.
+The torus is modeled thanks to the file geo, which also name the volume (<code>omega</code>) and each surface.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="/images/learning/thermoelectric/quarter-turn3D.png" alt="quarter of a torus" width="300" height="200">
+</div>
+<div class="title">Figure 1. Model of the quarter of torus on <code>Gmsh</code></div>
+</div>
+<div class="sect4">
+<h5 id="_equations"><a class="anchor" href="#_equations"></a>Equations</h5>
+<div class="paragraph">
+<p>First of all, we start with the standard heat equation, with the heat from the Joule effect :
+\[
+\rho C_{p}\frac{\partial T}{\partial t} - \nabla.(k \nabla T)=\sigma(\frac{U}{2\pi r})^{2}
+\]</p>
+</div>
+<div class="paragraph">
+<p>Coefficients $\sigma$ and k are in fact, temperature-dependent, shown in this equations :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>$\sigma=\frac{\sigma_ {0}}{1 + \alpha(T-T_{ref})}$</p>
+</li>
+<li>
+<p>$k=k_{0}\frac{T}{(1+\alpha(T-T_{ref}))T_{ref}}$</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>But, for the next, we consider that $\alpha=0$ and T=T<sub>ref</sub>.
+Thereby, we are in a linear problem that we can solve with the <code>thermoelectric-linear</code> model in the Json file.</p>
+</div>
+<div class="paragraph">
+<p>In our case, we consider that T only depends on the radius, so $\frac{\partial T}{\partial t}=0$.
+We can now consider this equation :
+\[
+T=A\log(r)-\frac{\sigma}{2k}(\frac{U}{2\pi})^{2} \log^{2}(r)+B
+\]</p>
+</div>
+<div class="paragraph">
+<p>The constants A and B are determined by the boundary conditions (Dirichlet and Robin).</p>
+</div>
+<div class="paragraph">
+<p>Finally, we have this equation :
+\[
+T=-a \log(\frac{r}{r_{0}})^{2} + T_{max}
+\]</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>$T_{max}=\frac{2ak}{h_{1}r_{1}h_{2}r_{2}}\log(\frac{r_{2}}{r_{1}})\frac{h_{1}r_{1}T_{w1}h_{2}r_{2}T_{w2}}{h_{1}r_{1}+h_{2}r_{2}} a\frac{h_{1}r_{1}log(\frac{r_{1}}{r_{0}})^{2} +h_{2}r_{2}log(\frac{r_{2}}{r_{0}})^{2}}{h_{1}r_{1}+h_{2}r_{2}}$</p>
+</li>
+<li>
+<p>$r_{0}=e^{\frac{\frac{T_{w2}-T_{w1}}{b}+\frac{ac}{b}}{2a}}$</p>
+</li>
+<li>
+<p>$a=\frac{\sigma_{0}}{2k}(\frac{U}{2\pi})^{2}$</p>
+</li>
+<li>
+<p>$b=k(\frac{1}{h_{1}r_{1}}\frac{1}{h_{2}r_{2}})\log(\frac{r_{2}}{r_{1}})$</p>
+</li>
+<li>
+<p>$c=\log(\frac{r_{2}}{r_{1}})\log(r_{1}r_{2}) + 2k (\frac{\log(r_{1})}{h_{1}r_{1}}+\frac{\log(r_{2})}{h_{2}r_{2}})$</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>r<sub>0</sub> is the radius for which the temperature is at its maximum.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_parameters"><a class="anchor" href="#_parameters"></a>Parameters</h5>
+<div class="paragraph">
+<p>In our case, we choose the parameters like this :</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content spread">
+<caption class="title">Table 1. Fixed and variable parameters</caption>
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">Name</th>
+<th class="tableblock halign-center valign-top">Description</th>
+<th class="tableblock halign-center valign-top">Range</th>
+<th class="tableblock halign-center valign-top">Nominal Value</th>
+<th class="tableblock halign-center valign-top">Unit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$\sigma_{0}$</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">electrical conductivity at T<sub>0</sub></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">$[52.10^{6}; 58.10^{6}]$</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">$58.10^{6}$</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$S.m^{-1}$</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">k</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">thermal conductivity</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">[360;380]</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">380</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$W.m^{-1} .K^{-1}$</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">r<sub>1</sub></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">internal radius</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">$1.10^{-3}$</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">$1.10^{-3}$</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">m</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">r<sub>2</sub></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">internal radius</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">$2.10^{-3}$</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">$2.10^{-3}$</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">m</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T<sub>w1</sub></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">water cooling temperature on radius r<sub>1</sub></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">[293;310]</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">293</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">K</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T<sub>w2</sub></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">water cooling temperature on radius r<sub>2</sub></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">[293;310]</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">293</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">K</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">h<sub>2</sub></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">heat transfer coefficient</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">[70000;90000]</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">80000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$W.m^{-2} .K^{-1}$</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">h<sub>1</sub></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">heat transfer coefficient</p></td>
+<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock">$h_{1}=h_{2}\frac{r_{2}}{r_{1}}$</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$W.m^{-2} .K^{-1}$</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">V<sub>0</sub></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">electrical potential</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">0.3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">V</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_conditions"><a class="anchor" href="#_conditions"></a>Conditions</h5>
+<div class="paragraph">
+<p>We set 2 conditions :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Dirichlet for the potential : V<sub>in</sub>=0 V  and  $V_{out}=V_{0}\frac{1}{4}=0.075  V$ <em>because we consider only one quarter of the torus</em>.</p>
+</li>
+<li>
+<p>Robin for the temperature :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>On r<sub>int</sub> : $h_{1}=80000\frac{r_{2}}{r_{1}}=160000 W.m^{-2} .K^{-1}$  and  T<sub>w1</sub>=293 K</p>
+</li>
+<li>
+<p>On r<sub>ext</sub> : h<sub>2</sub>=80000 $W.m^{-2} .K^{-1}$  and  T<sub>w2</sub>= 293 K</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_results"><a class="anchor" href="#_results"></a>Results</h5>
+<div class="imageblock left">
+<div class="content">
+<img src="/images/learning/thermoelectric/Temperature_paraview.png" alt="Temperature_paraview" width="500" height="300">
+</div>
+<div class="title">Figure 2. Temperature&#8217;s repartition on paraview</div>
+</div>
+<div class="imageblock right">
+<div class="content">
+<img src="/images/learning/thermoelectric/TemperatureTH.png" alt="TemperatureTH" width="450" height="300">
+</div>
+<div class="title">Figure 3. Theorical and numerical temperature</div>
+</div>
+<div class="paragraph">
+<p>We can vary the degree of the finite element from 1 (linear) to 2 (quadratic).<br>
+To prove the convergence towards the theory, we plot the difference between L<sub>2</sub>/H<sub>1</sub> and the theoretical formulas for T and V.
+The scale is logarithmic, to see directly the slope and note that it is directly linked to the degree of the finite element used.</p>
+</div>
+<div class="paragraph">
+<p>\[
+T=-a \log(\frac{r}{r_{0}})^{2} + T_{max}
+\]</p>
+</div>
+<div class="paragraph">
+<p>\[
+V=\frac{0.3*atan2(x,y)}{2\pi}
+\]</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>For L2, we have directly the output on the table obtained whether for T or for V</p>
+</li>
+<li>
+<p>For H1, we need to do a quadratical mean between the H1 and L2 of the table ($\sqrt{H1^{2} +L2^{2}}$) for T and V</p>
+</li>
+</ul>
+</div>
+<div class="imageblock left">
+<div class="content">
+<img src="/images/learning/thermoelectric/L2V.png" alt="L2(V)" width="475" height="400">
+</div>
+<div class="title">Figure 4. Electrical potential convergence study for L2</div>
+</div>
+<div class="imageblock right">
+<div class="content">
+<img src="/images/learning/thermoelectric/H1V.png" alt="H1(V)" width="475" height="400">
+</div>
+<div class="title">Figure 5. Electrical potential convergence study for H1</div>
+</div>
+<div class="imageblock left">
+<div class="content">
+<img src="/images/learning/thermoelectric/L2T.png" alt="L2(T)" width="475" height="400">
+</div>
+<div class="title">Figure 6. Temperature convergence study for L2</div>
+</div>
+<div class="imageblock right">
+<div class="content">
+<img src="/images/learning/thermoelectric/H1T.png" alt="H1(T)" width="475" height="400">
+</div>
+<div class="title">Figure 7. Temperature convergence study for H1</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_code"><a class="anchor" href="#_code"></a>Code</h5>
+<div class="paragraph">
+<p>For the modelisation of the quarter of torus, we create the geometry and the mesh on <code>Salome</code> and export the file in <code>.geo</code></p>
+</div>
+<div class="listingblock">
+<div class="title">quarter-turn3D.geo</div>
+<div class="content">
+<pre>// Define Main params
+Unit = 1.e-3;
+lc = 1*Unit;
+lc_ext = 3*lc;
+lc_inf = 1*lc;
+
+h=0.2;
+r1=1;
+r2=2;
+L=2*r2;
+
+
+
+Mesh.ElementOrder = 1;
+Point(1) = {0, 0, -L, h};
+Point(2) = {r1, 0, -L, h};
+Point(3) = {r2, 0, -L, h};
+Point(4) = {0, r1, -L, h};
+Point(5) = {0, r2, -L, h};
+Circle(1) = {2, 1, 4};
+Circle(2) = {3, 1, 5};
+Line(3) = {4, 5};
+Line(4) = {2, 3};
+Line Loop(5) = {3, -2, -4, 1};
+Plane Surface(1) = {5};
+
+out[] = Extrude {0,0,L} {Surface{1};};
+
+Physical Volume("omega") = {out[1]};
+Physical Surface("top") = {out[0]};
+Physical Surface("bottom") = {1};
+Physical Surface("Rint") = {out[5]};
+Physical Surface("Rext") = {out[3]};
+Physical Surface("in") = {out[2]};
+Physical Surface("out") = {out[4]};</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Next step is to create a file.json which define the model we will use, the material and sets the conditions.</p>
+</div>
+<div class="listingblock">
+<div class="title">quarter-turn3D.json</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+    "Name": "ThermoElectric",
+    "ShortName":"TE",
+    "Model":"thermoelectric-linear",
+
+    "Materials":
+    {
+        "omega":
+        {
+            "name":"copper",
+            "alpha":"3.35e-3",
+            "T0":"293",
+            "sigma0":"58e+3",
+            "k0":"0.38",
+            "sigma":"sigma0/(1+alpha*(T-T0)):sigma0:alpha:T:T0",
+            "k":"k0*T/((1+alpha*(T-T0))*T0):k0:T:alpha:T0"
+        }
+    },
+    "BoundaryConditions":
+    {
+        "potential":
+        {
+            "Dirichlet":
+            {
+                "in":
+                {
+                    "expr1":"0",
+		    "expr2":"omega"
+                },
+                "out":
+                {
+                    "expr1":"0.3/4.", //since we only consider a quarter of the torus
+		    "expr2":"omega"
+                }
+        },
+        "temperature":
+        {
+            "Robin":
+            {
+                "Rext":
+                {
+                    "expr1":"0.08",
+                    "expr2":"293"
+                },
+                "Rint":
+                {
+                    "expr1":"0.08*(2./1.)",
+                    "expr2":"293"
+                }
+            }
+        }
+    },
+    "PostProcess":
+    {
+        "Fields":["temperature","potential","current"]
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Lastly, we create a file.cfg to configure what we will calculate.</p>
+</div>
+<div id="example_file.cfg" class="literalblock">
+<div class="title">thermoelectric\_3D\_V1T1\_N1\_cvg.cfg (for the T1V1 model)</div>
+<div class="content">
+<pre>dim=3
+geofile=quarter-turn3D.geo
+geofile-path=$cfgdir
+gmsh.hsize=0.2
+
+conductor_volume=omega
+
+[convergence]
+max_iter=5
+
+[functions]
+#V_exact
+f=0.3*atan2(x,y)/(2*pi):x:y:z
+#T_exact
+g=600.312-58.e+3/(2*0.38)*(0.3/(2*pi))^2*log(sqrt(x*x+y*y)/sqrt(1*2))^2:x:y:z
+
+[thermoelectric]
+model_json=$cfgdir/quarter-turn3D.json
+weakdir=false
+
+[electro]
+pc-type=gamg
+#ksp-monitor=true
+ksp-rtol=1e-7
+ksp-atol=1e-5
+ksp-maxit=2000
+ksp-use-initial-guess-nonzero=1
+
+[thermal]
+pc-type=gamg
+#ksp-monitor=true
+ksp-rtol=1e-8
+ksp-atol=1e-6
+ksp-use-initial-guess-nonzero=1</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Finally, to execute our program, run this command :</p>
+</div>
+<div class="literalblock">
+<div class="title">to study the convergence</div>
+<div class="content">
+<pre>mpirun -np 4 feelpp_test_convergence_3D_V1T1_N1  --config-file thermoelectric_3D_V1T1_N1_cvg.cfg</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It will create a table with all the informations you need. For our example, we showed the convergence using L2 and H1 (in section <a href="#_results">Results</a>).</p>
+</div>
+<div class="literalblock">
+<div class="title">to apply for a real case (theory not known)</div>
+<div class="content">
+<pre>mpirun -np 4 feelpp_hfm_thermoelectric_model_3D_V1T1_N1 --config-file thermoelectric_3D_V1T1_N1_cvg.cfg</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This command will create files in <code>~/feel/hifimagnet/ThermoElectricModel/&#8230;&#8203;</code> . You can see the results with Paraview or Ensight opening <code>Thermics.case</code> or <code>Electrics.case</code> in the software of your choice.</p>
+</div>
+</div>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Copyright (C) 2017-2018 <a href="https://opendevise.com">OpenDevise Inc.</a> and the <a href="http://www.feelpp.org">HiFiMagnet Contorsium.</a></p>
+  <p>Generated using antora</p>
+  <p>Use of this software, including the UI, is granted under the terms of the <a href="https://www.mozilla.org/en-US/MPL/2.0/">Mozilla Public License Version 2.0</a> (MPL-2.0).</p>
+</footer>
+<script src="../../../../../_/js/site.js"></script>
+<script src="../../../../../_/js/vendor/highlight.js"></script>
+<script>hljs.initHighlighting()</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  messageStyle: "none",
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]],
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  },
+
+  TeX: {
+      Macros: {
+      RR: "{\\mathbb R}",
+      NN: "{\\mathbb N}",
+      Nso: "{N_{\\mathrm{so}}}",
+      Nma: "{N_{\\mathrm{ma}}}",
+      Nno: "{N_{\\mathrm{no}}}",
+      Ne: "{N_{\\mathrm{e}}}",
+      Ilag: ["{\\mathcal{I}^{\\mathrm{lag}}_{#1}}",1],
+      calTh: "{\\mathcal{T}_h}",
+      Ck: ["{\\mathcal{C}^{#1}}",1],
+      Pk: ["{\\mathcal{P}^{#1}}",1],
+      Qk: ["{\\mathcal{Q}^{#1}}",1],
+      Pch: ["{P^{#1}_{c,h}}",1],
+      Pcho: ["{P^{#1}_{c,h,0}}",1],
+      Qch: ["{Q^{#1}_{c,h}}",1],
+      Ich: ["{\\mathcal{I}^{#1}_{c,h}#2}",2],
+      poly: ["{\\mathbb{#1}}",1],
+      nf: "{n_f}",
+      normal: "{\\mathbf{n}}",
+      ngeo: "{n_{\\mathrm{geo}}}",
+      geo: "{\\mathrm{geo}}",
+      card: ["{\\operatorname{card}(#1)}",1],
+      dim: ["{\\operatorname{dim}(#1)}",1],
+      opdim: "{\\operatorname{dim}}",
+      card: ["{\\operatorname{card}(#1)}",1],
+      poly: ["{\\mathbb{#1}}",1],
+      R: ["{\\mathbb{R}^{#1}}",1],
+      set: ["{\\left\\{#1\\right\\}}",1],
+      diam: "{\\operatorname{diam}}",
+      jump: ["{[\\![ #1 ]\\!]}",1],
+      Next: "{\\mathrm{n}}",
+      essinf: "{\\operatorname{ess}\\, \\operatorname{inf}}",
+      tr: "{\\operatorname{tr}}",
+      Id: "{\\mathcal{I}}",
+      disp: ["{\\mathbf{#1}}",1],
+      stresst: ["{\\mathbf{\\sigma(#1)}}",1],
+      deformt: ["{\\mathbf{\\varepsilon(#1)}}",1],
+      domain: "{\\Omega}",
+      prect: ["{\\left\\(#1\\right\\)}",1],
+      ds: "",
+      bold: ["{\\bf #1}",1]
+  },
+  extensions: ["mhchem.js"] }
+});
+</script>
+<!--<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML"></script>-->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>-->
+
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js" integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq" crossorigin="anonymous"></script>-->
+  </body>
+</html>
