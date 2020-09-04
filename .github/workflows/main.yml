@@ -1,0 +1,31 @@
+name: Build and Deploy
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2.3.1
+    - name: Install Antora
+      run: |
+        npm i @antora/cli @antora/site-generator-default asciidoctor-kroki
+        node_modules/.bin/antora -v
+        echo https://$GITHUB_OAUTH:@github.com > $HOME/.git-credentials
+      env:
+        GITHUB_OAUTH: ${{ secrets.DOCS_GITHUB_KEY }}
+    # Runs a single command using the runners shell
+    - name: Build
+      run: node_modules/.bin/antora  --stacktrace generate --fetch antora-github-feelpp-doc.yml     
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@3.5.9
+      with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages # The branch the action should deploy to.
+          FOLDER: build/site # The folder the action should deploy.
