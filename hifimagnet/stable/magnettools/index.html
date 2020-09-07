@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>MagnetTools user manual :: HiFiMagnet Documentation</title>
     <link rel="canonical" href="https://book.hifimagnet.cemosis.fr/hifimagnet/stable/magnettools/index.html">
+    <meta name="keywords" content="Feel++, partial differential equations, finite element method,">
     <meta name="generator" content="Antora 2.3.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../_/img/favicon.ico" type="image/x-icon">    
@@ -584,7 +585,7 @@ we recommend to use them instead of Docker ones.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>singularity exec [--nv] \
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">singularity exec [--nv] \
   -H $HOME:/home/$USER \
   -B $STORE/Distene/:/opt/DISTENE/DLim \
   hifimagnet-v0.108.simg \
@@ -596,7 +597,7 @@ we recommend to use them instead of Docker ones.</p>
 <h3 id="_from_docker_container"><a class="anchor" href="#_from_docker_container"></a>3.2. from Docker container</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>docker run -ti --rm -e DISPLAY \
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">docker run -ti --rm -e DISPLAY \
    --net=host --pid=host --ipc=host \
    --env QT_X11_NO_MITSHM=1 \
    -v /tmp/.X11-unix:/tmp/.X11-unix \
@@ -923,7 +924,7 @@ for safe operation of MagnetTools</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code> --points=STRING           points on which b field is to be computed (x0,y0,z0,...)
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh"> --points=STRING           points on which b field is to be computed (x0,y0,z0,...)
  --points_file=STRING      file containing points on which b field is to be computed (x0,y0,z0,...)
  --innerbore=INNERBORE     mesh on which b field is to be computed
  --potential               enable magnetic potential calculation / exclude magnetic field
@@ -959,7 +960,7 @@ for safe operation of MagnetTools</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code> --input=STRING                load input filename
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh"> --input=STRING                load input filename
  --order=INT                   specify order to consider (default is 6)
  --verbose                     activate verbose mode
  --no_ensight                  disable output for ensight
@@ -995,7 +996,7 @@ for safe operation of MagnetTools</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code> --output=STRING        set output filename
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh"> --output=STRING        set output filename
  --print-detail         activate detailled printing mode
  --num-int              activate numerical integration
  --log                  activate logging mode
@@ -1024,7 +1025,7 @@ for safe operation of MagnetTools</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code> --output=STRING          set output filename
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh"> --output=STRING          set output filename
  --input=STRING           load input filename
  --save=STRING            save input data to filename
  --rotation=STRING        OxOz angle between z-axis (in deg)
@@ -1041,7 +1042,7 @@ for safe operation of MagnetTools</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code> -f, --input_format=INPUT_FORMAT     input mesh format (eg, .dat)
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh"> -f, --input_format=INPUT_FORMAT     input mesh format (eg, .dat)
  --density=DOUBLE                specify density (default is nan)
  --verbose                       activate verbose mode
  --mm                            force switch to mm as default units
@@ -1090,7 +1091,7 @@ for safe operation of MagnetTools</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code> --init=STRING            set init_current filename
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh"> --init=STRING            set init_current filename
  --output=STRING          set output filename
  --input=STRING           load input filename
  --save=STRING            save input data to filename
@@ -1282,7 +1283,7 @@ we still need some more information&#8230;&#8203;
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>--majorprint=INT                specify nag major print level (default is 10)
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">--majorprint=INT                specify nag major print level (default is 10)
 --minorprint=INT                specify nag major print level (default is 0)
 --major_iteration_limit=INT     specify nag major iterations_limit (default is controlled by nag)
 --minor_iteration_limit=INT     specify nag minor iterations_limit (default is controlled by nag)
@@ -1302,7 +1303,7 @@ we still need some more information&#8230;&#8203;
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>--gmsh                          activate gmsh output
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">--gmsh                          activate gmsh output
 --num_integ=INT                 specify num_integ size (default 100)
 --num_eval=INT                  specify num_eval size (default 100)
 --gsl-error-handler             deactivate gsl error handler (default is on)</code></pre>
@@ -1321,7 +1322,7 @@ we still need some more information&#8230;&#8203;
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>--majorprint=INT                specify nag major print level (default is 10)
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">--majorprint=INT                specify nag major print level (default is 10)
 --minorprint=INT                specify nag major print level (default is 0)
 --major_iteration_limit=INT     specify nag major iterations_limit (default is controlled by nag)
 --minor_iteration_limit=INT     specify nag minor iterations_limit (default is controlled by nag)

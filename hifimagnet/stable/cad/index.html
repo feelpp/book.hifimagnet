@@ -485,7 +485,8 @@ provides some references.
 </td>
 <td class="content">
 <div class="paragraph">
-<p>To use Salome in GUI mode the docker container should contain appropriate graphics drivers.</p>
+<p>To use Salome in GUI mode the docker container should contain appropriate graphics drivers
+supporting OpenGL 4.5.</p>
 </div>
 </td>
 </tr>
@@ -565,6 +566,19 @@ singularity containers we recommend to use them instead of Docker ones</strong>.
 <p>To switch to <strong>TUI</strong> mode, use <code>-t</code> option.
 Add <code>-b</code> option to the use TUI in batch mode.</p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+In the sequel, we use the classical <strong>Unix</strong> notation for command.
+In peculiar <code>[&#8230;&#8203;]</code> denotes optional argument.
+</td>
+</tr>
+</table>
+</div>
 <div class="sect2">
 <h3 id="_from_singularity_container"><a class="anchor" href="#_from_singularity_container"></a>3.1. from Singularity container</h3>
 <div class="paragraph">
@@ -572,12 +586,22 @@ Add <code>-b</code> option to the use TUI in batch mode.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>singularity exec [--nv] \
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">singularity exec [--nv] \
   -H $HOME:/home/$USER \
   -B $STORE/Distene/:/opt/DISTENE/DLim \
   salome.simg \
   salome -w1 [-t -b] ...</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>where:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>$STORE/Distene</code> is the directory containing a valid <code>dlim8.key</code> license file.</p>
+</li>
+</ul>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -609,15 +633,25 @@ to check your graphic video card on Debian/Ubuntu you may use <code>inxi -G</cod
 <h3 id="_from_docker_container"><a class="anchor" href="#_from_docker_container"></a>3.2. from Docker container</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>xhost local:root
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">xhost local:root
 docker run -ti --rm -e DISPLAY \
    --net=host --pid=host --ipc=host \
    --env QT_X11_NO_MITSHM=1 \
    -v /tmp/.X11-unix:/tmp/.X11-unix \
    -v $HOME/.Xauthority:/home/feelpp/.Xauthority \
-   -v /opt/DISTENE/DLim:/opt/DISTENE/DLim \
+   -v $STORE/DISTENE/DLim:/opt/DISTENE/DLim \
    feelpp/salome:9.5.1 salome [-t -b] ...</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>where:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>$STORE/Distene</code> is the directory containing a valid <code>dlim8.key</code> license file.</p>
+</li>
+</ul>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -701,12 +735,12 @@ be described in the <a href="#data">data structure section</a>.</p>
 <div class="title">Generation of an Insert with an air box in TUI mode</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">salome [-m GEOM,SMESH,HIFIMAGNET] [-t -b] \
-   ${HIFIMAGNET}/HIFIMAGNET_Cmd.py \
+   $HIFIMAGNET/HIFIMAGNET_Cmd.py \
    args:--cfg=Insert-H1H4-Leads-2t.yaml[,--air[,--infty_Rratio=2,--infty_ZRatio=1.5],--mesh]</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p><code>$HiFiMagnet</code> is the install directory of HiFiMagnet Salome plugin, eg <code>/opt/SALOME-9.5.0-UB18.04/INSTALL/HIFIMAGNET/bin/salome</code>.</p>
+<p><code>$HIFIMAGNET</code> is the install directory of HiFiMagnet Salome plugin, eg <code>/opt/SALOME-9.5.0-UB18.04/INSTALL/HIFIMAGNET/bin/salome</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -983,7 +1017,9 @@ the coordinates of the cut in developed form which will be mapped onto the outer
 </div>
 </div>
 </div>
-<h1 id="_ring" class="sect0"><a class="anchor" href="#_ring"></a>ring</h1>
+<div class="sect1">
+<h2 id="_ring"><a class="anchor" href="#_ring"></a>2. Ring</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>A ring ensure the electrical and mechanical connection between 2 consecutive helices.
 It is a cylinder eventually with \(n\) cylindrical slots, disposed at regular angular interval \(angle\) in it to ensure a proper cooling of the connected helices.</p>
@@ -1029,11 +1065,13 @@ angle: 46</code></pre>
 <img src="_images/ex_CAD_R.png" alt="A connection ring">
 </div>
 </div>
+</div>
+</div>
 <div class="sect1">
-<h2 id="_currentleads"><a class="anchor" href="#_currentleads"></a>1. CurrentLeads</h2>
+<h2 id="_currentleads"><a class="anchor" href="#_currentleads"></a>3. CurrentLeads</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_inner_lead"><a class="anchor" href="#_inner_lead"></a>1.1. Inner Lead</h3>
+<h3 id="_inner_lead"><a class="anchor" href="#_inner_lead"></a>3.1. Inner Lead</h3>
 <div id="inner" class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">!&lt;InnerCurrentLead&gt;
@@ -1051,7 +1089,7 @@ r: [19.3, 24.2]</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_outer_lead"><a class="anchor" href="#_outer_lead"></a>1.2. Outer Lead</h3>
+<h3 id="_outer_lead"><a class="anchor" href="#_outer_lead"></a>3.2. Outer Lead</h3>
 <div id="outer" class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">!&lt;OuterCurrentLead&gt;
@@ -1071,7 +1109,7 @@ r: [19.3, 24.2]</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_insert"><a class="anchor" href="#_insert"></a>2. insert</h2>
+<h2 id="_insert"><a class="anchor" href="#_insert"></a>4. insert</h2>
 <div class="sectionbody">
 <div id="insert" class="listingblock">
 <div class="content">
@@ -1131,7 +1169,7 @@ RAngles:, <i class="conum" data-value="8"></i><b>(8)</b></code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_mesh"><a class="anchor" href="#_mesh"></a>3. mesh</h2>
+<h2 id="_mesh"><a class="anchor" href="#_mesh"></a>5. mesh</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The mesh is generated from the command line when the option <code>--mesh</code> is passed to salome.
@@ -1304,10 +1342,11 @@ The smaller this distance is, the closer the mesh is to the exact surface (only 
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p>There is a
-== advanced mesh options</p>
 </div>
+</div>
+<div class="sect1">
+<h2 id="_advanced_mesh_options"><a class="anchor" href="#_advanced_mesh_options"></a>6. advanced mesh options</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>The mesh can customized using the yaml cgf file presented above. There are also some options to reduce the number of surfacic meshes that will be latter use to apply boundary conditions:</p>
 </div>
@@ -1361,7 +1400,7 @@ For instance, to create a cube and mesh it:</p>
 </div>
 </div>
 <div class="paragraph">
-<p><code>-t</code> option is used to switch to the TUI (eg. batch) mode.</p>
+<p><code>-t</code> option is used to switch to the TUI (eg. command line) mode.</p>
 </div>
 <div class="paragraph">
 <p>For detailed use of Salome, see:</p>
@@ -1423,6 +1462,10 @@ for Salome and  HiFiMagnet. For sake of simplicity the images are been named:</p
 </div>
 <div class="sect2">
 <h3 id="_check_meshgems_installation"><a class="anchor" href="#_check_meshgems_installation"></a>1.1. Check MeshGems installation</h3>
+<div class="paragraph">
+<p>Assuming that your home directory contains a <code>Salome</code> directory with the python script <code>ghs3d_demo.py</code>.
+You can test your installation by running:</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">singularity exec \
@@ -1439,9 +1482,6 @@ for Salome and  HiFiMagnet. For sake of simplicity the images are been named:</p
 <div class="ulist">
 <ul>
 <li>
-<p><code>SALOMEDIR</code> is Salome install directory (eg. <code>/opt/SALOME-9.5.0-UB18.04</code>),</p>
-</li>
-<li>
 <p><code>$STORE/Distene</code> is the directory containing a valid <code>dlim8.key</code> license file.</p>
 </li>
 </ul>
@@ -1449,6 +1489,10 @@ for Salome and  HiFiMagnet. For sake of simplicity the images are been named:</p
 </div>
 <div class="sect2">
 <h3 id="_a_simple_med_mesh_in_tui_mode"><a class="anchor" href="#_a_simple_med_mesh_in_tui_mode"></a>1.2. A simple <code>med</code> mesh in <code>TUI</code> mode</h3>
+<div class="paragraph">
+<p>Assuming that your home directory contains a <code>Salome</code> directory with the python script <code>testcube_mesh.py</code>.
+You can test your installation by running:</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">singularity exec \
@@ -1468,7 +1512,7 @@ for Salome and  HiFiMagnet. For sake of simplicity the images are been named:</p
 <td class="content">
 <div class="paragraph">
 <p>The default mesh format generated by Salome is <code>med</code>. This mesh format may not be supported
-by Feel++. You can convert a med mesh into a gmsh mesh:</p>
+by Feel++. You can convert a <code>med</code> mesh into a gmsh mesh (<code>msh</code>):</p>
 </div>
 <div class="listingblock">
 <div class="content">
