@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Computing Infrastructure :: HiFiMagnet Documentation</title>
     <link rel="canonical" href="https://book.hifimagnet.cemosis.fr/hifimagnet/stable/appendix/Infrastructure.html">
+    <meta name="keywords" content="Feel++, partial differential equations, finite element method,">
     <meta name="generator" content="Antora 2.3.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../_/img/favicon.ico" type="image/x-icon">    
@@ -428,7 +429,7 @@ Here we describe in more details how to:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>{lncmi}</p>
+<p>Lncmi</p>
 </li>
 <li>
 <p>Gricad</p>
@@ -444,10 +445,10 @@ Here we describe in more details how to:</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_lncmi"><a class="anchor" href="#_lncmi"></a>1. {lncmi}</h2>
+<h2 id="_lncmi"><a class="anchor" href="#_lncmi"></a>1. Lncmi</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To use {lncmi} ressources you need a {lncmi} account.
+<p>To use Lncmi ressources you need a Lncmi account.
 To run HiFiMagnet you can use either:</p>
 </div>
 <div class="ulist">
@@ -465,14 +466,115 @@ To run HiFiMagnet you can use either:</p>
 </div>
 <div class="sect2">
 <h3 id="_workstation"><a class="anchor" href="#_workstation"></a>1.1. workstation</h3>
-
+<div class="sect3">
+<h4 id="_on_linux_workstation"><a class="anchor" href="#_on_linux_workstation"></a>1.1.1. On Linux workstation</h4>
+<div class="paragraph">
+<p>On Linux workstation you can use singularity images without problem. However keep in mind that you
+will be limited by the RAM memory installed on the machine you are using.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_on_windows_10_workstation"><a class="anchor" href="#_on_windows_10_workstation"></a>1.1.2. On Windows 10 workstation</h4>
+<div class="paragraph">
+<p>On Windows 10 worstation you have to install first WSL2, then Ubuntu 18.04 from Microsoft store.
+Finally to run applications in grapic mode, you will need MobaXterm.</p>
+</div>
+<div class="paragraph">
+<p>To install HiFiMagnet, you can use:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>WSL2</p>
+</li>
+<li>
+<p>Docker</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To run HiFiMagnet when using WSL:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>eventually start MobaXterm to start the X11 server</p>
+</li>
+<li>
+<p>launch Ubuntu</p>
+</li>
+<li>
+<p>Within Ubuntu LTS just run HiFiMagnet app you want</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_servers"><a class="anchor" href="#_servers"></a>1.2. servers</h3>
 <div class="paragraph">
-<p>On {lncmi} servers, we recommend to use singularity containers images which shall be
+<p>On Lncmi servers, we recommend to use singularity containers images which shall be
 store on <code>/home/singularity</code> directory. Depending on the server singularity version,
 use either a <code>.sif</code> or <code>.simg</code> image.</p>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+When connecting to the serveur, <strong>Do not forget</strong> to add <code>-Y</code> ssh option when you want to run graphical apps like Salome.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_connect"><a class="anchor" href="#_connect"></a>1.2.1. Connect</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ssh [-Y] stokes</code></pre>
+</div>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+When connecting to the serveur, <strong>Do not forget</strong> to add <code>-Y</code> ssh option when you want to run graphical apps like Salome in GUI mode.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_run_hifimagnet"><a class="anchor" href="#_run_hifimagnet"></a>1.2.2. Run HiFiMagnet</h4>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+As HiFiMagnet apps can run for a while, you are adviced to use <code>screen</code>. That is: 1st start <code>screen</code> then run the app within <code>screen</code>.
+Then you can detach the <code>screen</code> process with Ctrl-A Ctrl-D. To latter re-attach the <code>screen</code> process, run <code>screen -ls</code> to get the screen-idyour screen session
+and re-attached it with <code>screen -rd screen-id</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Running HiFiMagnet on Lncmi server relies on <code>singularity</code>.
+Depending on the server, <code>singularity</code> version is different. Please check which version is installed before running any singularity command.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_retreivesend_data"><a class="anchor" href="#_retreivesend_data"></a>1.2.3. Retreive/Send Data</h4>
+<div class="paragraph">
+<p>Use either <code>scp</code> or <code>rsync</code> over <code>ssh</code>.</p>
+</div>
 </div>
 </div>
 </div>
@@ -488,7 +590,7 @@ use either a <code>.sif</code> or <code>.simg</code> image.</p>
 </ul>
 </div>
 <div class="sect2">
-<h3 id="_connect"><a class="anchor" href="#_connect"></a>2.1. connect</h3>
+<h3 id="_connect_2"><a class="anchor" href="#_connect_2"></a>2.1. connect</h3>
 
 </div>
 <div class="sect2">
@@ -500,7 +602,7 @@ use either a <code>.sif</code> or <code>.simg</code> image.</p>
 
 </div>
 <div class="sect2">
-<h3 id="_retreivesend_data"><a class="anchor" href="#_retreivesend_data"></a>2.4. retreive/send data</h3>
+<h3 id="_retreivesend_data_2"><a class="anchor" href="#_retreivesend_data_2"></a>2.4. retreive/send data</h3>
 
 </div>
 </div>

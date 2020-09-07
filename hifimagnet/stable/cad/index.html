@@ -518,10 +518,16 @@ and give examples for most common operations.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Note</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ubuntu 18.04</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SALOME-9.5.0-UB20.04.tgz</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">On Windows 10 requires MobaXterm for <strong>GUI</strong> mode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Designed for Ubuntu 20.04</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">On Windows 10 requires WSL2 Ubuntu 20.04 and MobaXterm for <strong>GUI</strong> mode</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
@@ -588,7 +594,7 @@ In peculiar <code>[&#8230;&#8203;]</code> denotes optional argument.
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">singularity exec [--nv] \
   -H $HOME:/home/$USER \
-  -B $STORE/Distene/:/opt/DISTENE/DLim \
+  -B $STORE/DISTENE/DLim:/opt/DISTENE/DLim:ro \
   salome.simg \
   salome -w1 [-t -b] ...</code></pre>
 </div>
@@ -599,22 +605,12 @@ In peculiar <code>[&#8230;&#8203;]</code> denotes optional argument.
 <div class="ulist">
 <ul>
 <li>
-<p><code>$STORE/Distene</code> is the directory containing a valid <code>dlim8.key</code> license file.</p>
+<p><code>$STORE/DISTENE/DLim</code> is the directory on the host containing a valid <code>dlim8.key</code> license file.
+You need to adapt this to your configuration.
+NOTE: the <code>--nv</code> flag is mandatory to run in GUI mode and is only supported by nvidia drivers.
+For other graphic video card, use <code>mesa_salome</code> instead of <code>salome</code></p>
 </li>
 </ul>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-the <code>--nv</code> flag is mandatory to run in GUI mode and is only supported by nvidia drivers.
-For other graphic video card, use <code>mesa_salome</code> instead of <code>salome</code>
-</td>
-</tr>
-</table>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -639,7 +635,7 @@ docker run -ti --rm -e DISPLAY \
    --env QT_X11_NO_MITSHM=1 \
    -v /tmp/.X11-unix:/tmp/.X11-unix \
    -v $HOME/.Xauthority:/home/feelpp/.Xauthority \
-   -v $STORE/DISTENE/DLim:/opt/DISTENE/DLim \
+   -v $STORE/DISTENE/DLim:/opt/DISTENE/DLim:ro \
    feelpp/salome:9.5.1 salome [-t -b] ...</code></pre>
 </div>
 </div>
@@ -649,7 +645,7 @@ docker run -ti --rm -e DISPLAY \
 <div class="ulist">
 <ul>
 <li>
-<p><code>$STORE/Distene</code> is the directory containing a valid <code>dlim8.key</code> license file.</p>
+<p><code>$STORE/DISTENE/DLim</code> is the directory containing a valid <code>dlim8.key</code> license file.</p>
 </li>
 </ul>
 </div>
@@ -725,7 +721,7 @@ just start the container (see <a href="#qs_reference">here</a>, watch out to not
 if you want to use the GUI mode).</p>
 </div>
 <div class="paragraph">
-<p>Examples files may be found <a href="https://github.com/trophime/singularity-salome/test">here</a>.</p>
+<p>Examples files may be found <a href="https://github.com/Trophime/singularity-salome/tree/develop/test">here</a>.</p>
 </div>
 <div class="paragraph">
 <p>The structure of the <code>yaml</code> file describing the geometry and mesh be generated will
@@ -1471,7 +1467,7 @@ You can test your installation by running:</p>
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">singularity exec \
   -H $HOME:/home/$USER \
   --pwd /home/$USER/Salome \
-  -B $STORE/Distene/:/opt/DISTENE/DLim:ro \
+  -B $STORE/DISTENE/DLim:/opt/DISTENE/DLim:ro \
   salome.simg \
   salome -t ghs3d_demo.py</code></pre>
 </div>
@@ -1482,7 +1478,7 @@ You can test your installation by running:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>$STORE/Distene</code> is the directory containing a valid <code>dlim8.key</code> license file.</p>
+<p><code>$STORE/DISTENE/DLim</code> is the directory containing a valid <code>dlim8.key</code> license file.</p>
 </li>
 </ul>
 </div>
@@ -1498,7 +1494,7 @@ You can test your installation by running:</p>
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">singularity exec \
   -H $HOME:/home/$USER \
   --pwd /home/$USER/Salome \
-  -B $STORE/Distene/:/opt/DISTENE/DLim:ro \
+  -B $STORE/DISTENE/DLim:/opt/DISTENE/DLim:ro \
   salome.simg \
   salome -t testcube_mesh.py</code></pre>
 </div>
