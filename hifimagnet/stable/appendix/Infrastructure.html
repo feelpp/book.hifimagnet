@@ -344,6 +344,15 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="M9_2017_03.html">Plateau simulation</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Commissiong.html">Commissioning simulation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Transient.html">Transient simulation</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="Infrastructure.html">Computing Infrastructure</a>
+  </li>
 </ul>
   </li>
 </ul>
@@ -385,6 +394,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">HiFiMagnet Documentation</a></li>
+    <li><a href="index.html">Appendix</a></li>
     <li><a href="Infrastructure.html">Computing Infrastructure</a></li>
   </ul>
 </nav>
@@ -426,6 +436,9 @@ Here we describe in more details how to:</p>
 <li>
 <p>Cemosis</p>
 </li>
+<li>
+<p>other ressources</p>
+</li>
 </ul>
 </div>
 </div>
@@ -433,19 +446,78 @@ Here we describe in more details how to:</p>
 <div class="sect1">
 <h2 id="_lncmi"><a class="anchor" href="#_lncmi"></a>1. {lncmi}</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>To use {lncmi} ressources you need a {lncmi} account.
+To run HiFiMagnet you can use either:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>workstation: only for CAD/Meshing and eventually simulation of one helix; need MobaXterm if running on Windows 10</p>
+</li>
+<li>
+<p>servers: for CAD/Meshing of an insert, static simulation of an insert except for fully 3D coupled,</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For large simulation you shall consider Gricad or Cemosis.</p>
+</div>
+<div class="sect2">
+<h3 id="_workstation"><a class="anchor" href="#_workstation"></a>1.1. workstation</h3>
 
+</div>
+<div class="sect2">
+<h3 id="_servers"><a class="anchor" href="#_servers"></a>1.2. servers</h3>
+<div class="paragraph">
+<p>On {lncmi} servers, we recommend to use singularity containers images which shall be
+store on <code>/home/singularity</code> directory. Depending on the server singularity version,
+use either a <code>.sif</code> or <code>.simg</code> image.</p>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_gricad"><a class="anchor" href="#_gricad"></a>2. Gricad</h2>
 <div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>{dahu}</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_connect"><a class="anchor" href="#_connect"></a>2.1. connect</h3>
 
+</div>
+<div class="sect2">
+<h3 id="_run_hifimagnet_in_parallel"><a class="anchor" href="#_run_hifimagnet_in_parallel"></a>2.2. run HiFiMagnet in parallel</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_submit_hifimagnet_jobs"><a class="anchor" href="#_submit_hifimagnet_jobs"></a>2.3. submit HiFiMagnet jobs</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_retreivesend_data"><a class="anchor" href="#_retreivesend_data"></a>2.4. retreive/send data</h3>
+
+</div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_cemosis"><a class="anchor" href="#_cemosis"></a>3. Cemosis</h2>
 <div class="sectionbody">
-
+<div class="ulist">
+<ul>
+<li>
+<p>{Atlas}</p>
+</li>
+<li>
+<p>{AlsaCalcul}</p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </article>

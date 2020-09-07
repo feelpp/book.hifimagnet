@@ -345,6 +345,15 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../appendix/M9_2017_03.html">Plateau simulation</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/Commissiong.html">Commissioning simulation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/Transient.html">Transient simulation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/Infrastructure.html">Computing Infrastructure</a>
+  </li>
 </ul>
   </li>
 </ul>
@@ -508,27 +517,27 @@ and give examples for most common operations.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Note</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ubuntu 16.04</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ubuntu 18.04</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">On Windows 10 requires MobaXterm for <strong>GUI</strong> mode</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">feelpp/salome:9.5.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">feelpp/salome:9.5.1</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">salome-9.5.0.sif</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">for singularity 3.2 and later</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">salome-hifimagnet-9.5.1.sif</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">singularity 3.2 and later</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">salome-9.5.0.simg</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">salome-hifimagnet-9.5.1.simg</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">for singularity 2.6</p></td>
 </tr>
 </tbody>
@@ -540,8 +549,8 @@ and give examples for most common operations.</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p>They are several way to use HiFiMagnet Salome plugin. The easiest way
-is to use container, either Docker based or Singularity based. If your system support
-singularity containers we recommend to use them instead of Docker ones.</p>
+is to use container, either Docker based or Singularity based. <strong>If your system support
+singularity containers we recommend to use them instead of Docker ones</strong>.</p>
 </div>
 </div>
 </div>
@@ -607,7 +616,7 @@ docker run -ti --rm -e DISPLAY \
    -v /tmp/.X11-unix:/tmp/.X11-unix \
    -v $HOME/.Xauthority:/home/feelpp/.Xauthority \
    -v /opt/DISTENE/DLim:/opt/DISTENE/DLim \
-   feelpp/salome:8.4.0-nvidia salome [-t -b] ...</code></pre>
+   feelpp/salome:9.5.1 salome [-t -b] ...</code></pre>
 </div>
 </div>
 <div class="admonitionblock tip">
@@ -632,7 +641,7 @@ docker run -ti --rm -e DISPLAY \
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">docker run -it --rm -e DISPLAY :0 feelpp/salome:8.4.0-nvidia</code></pre>
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">docker run -it --rm -e DISPLAY :0 feelpp/salome:9.5.1</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -658,7 +667,7 @@ docker run -ti --rm -e DISPLAY \
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">ip=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
 xhost +$ip
-docker run -it --rm -e DISPLAY $ip:0 feelpp/salome-8.4.0:nvidia</code></pre>
+docker run -it --rm -e DISPLAY $ip:0 feelpp/salome-9.5.1</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1360,7 +1369,7 @@ For instance, to create a cube and mesh it:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="http://salome-platform.org/user-section/documentation/current-release/current-release-gui">SALOME 8.4.0 Documentation</a></p>
+<p><a href="http://salome-platform.org/user-section/documentation/current-release/current-release-gui">SALOME 9.5.0 Documentation</a></p>
 </li>
 <li>
 <p><a href="http://salome-platform.org/user-section/salome-tutorials/copy_of_salome-tutorial">Tutorial</a></p>
@@ -1458,7 +1467,7 @@ for Salome and  HiFiMagnet. For sake of simplicity the images are been named:</p
 </td>
 <td class="content">
 <div class="paragraph">
-<p>The default mesh format generated by Salome is med. This mesh format may not be supported
+<p>The default mesh format generated by Salome is <code>med</code>. This mesh format may not be supported
 by Feel++. You can convert a med mesh into a gmsh mesh:</p>
 </div>
 <div class="listingblock">
@@ -1466,9 +1475,8 @@ by Feel++. You can convert a med mesh into a gmsh mesh:</p>
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">singularity exec \
   -H $HOME:/home/$USER \
   --pwd /home/$USER/Salome \
-  -B $STORE/Distene/:/opt/DISTENE/DLim:ro \
    hifimagnet.simg \
-   gmsh -3 -bin testcube.med -o testcube.msh</code></pre>
+   gmsh -0 -bin testcube.med -o testcube.msh</code></pre>
 </div>
 </div>
 </td>
