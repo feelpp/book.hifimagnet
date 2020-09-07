@@ -1,4 +1,8 @@
 ** xref:index.adoc[Appendix]
 *** xref:Monitoring.adoc[Monitoring]
 *** xref:M9_2017_03.adoc[Plateau simulation]
+*** xref:Commissiong.adoc[Commissioning simulation]
+*** xref:Transient.adoc[Transient simulation]
+*** xref:Infrastructure.adoc[Computing Infrastructure]
+
 # *** xref:M9_2019_02.adoc[ThermoElectric]

@@ -13,9 +13,36 @@ Available ressources are:
 * {lncmi}
 * Gricad
 * Cemosis
+* other ressources
 
 == {lncmi}
 
+To use {lncmi} ressources you need a {lncmi} account.
+To run {hifimagnet} you can use either:
+
+* workstation: only for CAD/Meshing and eventually simulation of one helix; need MobaXterm if running on Windows 10
+* servers: for CAD/Meshing of an insert, static simulation of an insert except for fully 3D coupled,
+
+For large simulation you shall consider Gricad or Cemosis.
+
+=== workstation
+=== servers
+
+On {lncmi} servers, we recommend to use singularity containers images which shall be
+store on `/home/singularity` directory. Depending on the server singularity version,
+use either a `.sif` or `.simg` image. 
+
 == Gricad
 
+* {dahu}
+
+=== connect
+=== run {hifimagnet} in parallel
+=== submit {hifimagnet} jobs
+=== retreive/send data
+
 == Cemosis
+
+* {Atlas}
+* {AlsaCalcul}
+
