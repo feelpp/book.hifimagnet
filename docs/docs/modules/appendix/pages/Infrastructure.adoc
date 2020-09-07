@@ -1,5 +1,9 @@
 [[infrastructure]]
 = Computing Infrastructure
+:toc: macro
+include::{partialsdir}/header-macros.adoc[]
+include::{partialsdir}/header-uri.adoc[]
+include::{partialsdir}/mso4sc-uri.adoc[]
 
 {hifimagnet} is available on various computing ressources.
 Here we describe in more details how to:
@@ -26,11 +30,57 @@ To run {hifimagnet} you can use either:
 For large simulation you shall consider Gricad or Cemosis.
 
 === workstation
+
+==== On Linux workstation
+
+On Linux workstation you can use singularity images without problem. However keep in mind that you
+will be limited by the RAM memory installed on the machine you are using.
+
+==== On Windows 10 workstation
+
+On Windows 10 worstation you have to install first WSL2, then Ubuntu 18.04 from Microsoft store.
+Finally to run applications in grapic mode, you will need MobaXterm.
+
+To install {hifimagnet}, you can use:
+
+* WSL2
+* Docker
+
+To run {hifimagnet} when using WSL:
+
+* eventually start MobaXterm to start the X11 server
+* launch Ubuntu
+* Within Ubuntu LTS just run {hifimagnet} app you want
+
 === servers
 
 On {lncmi} servers, we recommend to use singularity containers images which shall be
 store on `/home/singularity` directory. Depending on the server singularity version,
-use either a `.sif` or `.simg` image. 
+use either a `.sif` or `.simg` image.
+
+CAUTION: When connecting to the serveur, *Do not forget* to add `-Y` ssh option when you want to run graphical apps like {salome}.
+
+==== Connect
+
+[source,bash]
+----
+ssh [-Y] stokes
+----
+
+CAUTION: When connecting to the serveur, *Do not forget* to add `-Y` ssh option when you want to run graphical apps like {salome} in GUI mode.
+
+==== Run {hifimagnet}
+
+TIP: As {hifimagnet} apps can run for a while, you are adviced to use `screen`. That is: 1st start `screen` then run the app within `screen`.
+Then you can detach the `screen` process with Ctrl-A Ctrl-D. To latter re-attach the `screen` process, run `screen -ls` to get the screen-idyour screen session
+and re-attached it with `screen -rd screen-id`.
+
+Running {hifimagnet} on {lncmi} server relies on `singularity`.
+Depending on the server, `singularity` version is different. Please check which version is installed before running any singularity command.
+
+==== Retreive/Send Data
+
+Use either `scp` or `rsync` over `ssh`.
 
 == Gricad
 
