@@ -11,7 +11,8 @@
 
 `transient_ida` enables simulations of transients (ie. power failure) using Sundials IDA lib. Available options are 
  
-```
+[source,sh]
+----
  --init=STRING            set init_current filename
  --output=STRING          set output filename
  --input=STRING           load input filename
@@ -34,6 +35,6 @@
  --num_eval=INT           specify num_eval size (default 100)
  --no_ensight             disable output for ensight
  --omp_off                turn off openm
-```
+----
 
 * critical scenario: bitter burnout

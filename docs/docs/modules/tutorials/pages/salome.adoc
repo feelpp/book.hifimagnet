@@ -1,6 +1,9 @@
 = Tutorial
 :source-highlighter: pygments
 :stem: latexmath
+include::{partialsdir}/header-macros.adoc[]
+include::{partialsdir}/header-uri.adoc[]
+include::{partialsdir}/mso4sc-uri.adoc[]
 
 In this tutorial, we demonstrate the standard use of {salome}
 to create a insert CAD and generate a mesh with {meshgems}.

@@ -10,7 +10,8 @@
 
 `Forces` enables the calculations of forces and torques in case of radial misalignement of magnet axis. Available options are
 
-```
+[source,sh]
+----
  --output=STRING          set output filename
  --input=STRING           load input filename
  --save=STRING            save input data to filename
@@ -18,13 +19,14 @@
  --translation=STRING     translations between Magnetic Center and Origin
  --grid=STRING            nr nz ntheta grid size 
  --verbose                activate verbose mode
-```
+----
 
 == Connection with CSM software (eg `Samcef`, `Ansys` )
 
 `F_Map`
 
-```
+[source,sh]
+----
  -f, --input_format=INPUT_FORMAT     input mesh format (eg, .dat)
  --density=DOUBLE                specify density (default is nan)
  --verbose                       activate verbose mode
@@ -37,4 +39,4 @@
  --num_integ=INT                 specify num_integ size (default 100)
  --num_eval=INT                  specify num_eval size (default 100)
  --gsl-error-handler             deactivate gsl error handler (default is
-```
+----

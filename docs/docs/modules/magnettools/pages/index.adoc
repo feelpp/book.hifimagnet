@@ -1,11 +1,11 @@
+include::{partialsdir}/header-macros.adoc[]
+include::{partialsdir}/header-uri.adoc[]
+include::{partialsdir}/mso4sc-uri.adoc[]
+
 [[magnettools_manual]]
 = {magnettools} user manual
 :toc: macro
 :icons: font
-
-include::{partialsdir}/header-macros.adoc[]
-include::{partialsdir}/header-uri.adoc[]
-include::{partialsdir}/mso4sc-uri.adoc[]
 
 Welcome to {magnettools} manual documentation!
 
@@ -76,24 +76,27 @@ we recommend to use them instead of Docker ones.
 === from Singularity container
 
 Assuming we use `hifimagnet.simg` singularity image:
-```
+
+[source,sh]
+----
 singularity exec [--nv] \
   -H $HOME:/home/$USER \
   -B $STORE/Distene/:/opt/DISTENE/DLim \
   hifimagnet-v0.108.simg \
   B_Map ...
-```
+----
 
 === from Docker container
 
-```
+[source,sh]
+----
 docker run -ti --rm -e DISPLAY \
    --net=host --pid=host --ipc=host \
    --env QT_X11_NO_MITSHM=1 \
    -v /tmp/.X11-unix:/tmp/.X11-unix \
    -v $HOME/.Xauthority:/home/feelpp/.Xauthority \
    feelpp/hifimagnet:v0.108 B_Map ...
-```
+----
 
 [[usage]]
 = Using {magnettools}

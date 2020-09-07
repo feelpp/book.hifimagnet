@@ -6,7 +6,9 @@
 
 
 Available options are:
-```
+
+[source,sh]
+----
  --output=STRING        set output filename
  --print-detail         activate detailled printing mode
  --num-int              activate numerical integration
@@ -16,4 +18,4 @@ Available options are:
  --tolerance=STRING     z tolerances
  --ntol=STRING          ntol tolerances case
  --grid=STRING          ni nj grid size
-```
+----

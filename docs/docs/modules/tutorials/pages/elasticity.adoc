@@ -39,7 +39,7 @@ The cylinders symmetry axis are stem:[Oz].
 .Geometrical Data
 |=========================================================
 | stem:[R_{inf}] [ stem:[m] ] | R [ stem:[m] ] | H [ stem:[m] ]
-| 32e-3 | 8.e-3 | 16.e3
+| 32e-3 | 8.e-3 | 16.e-3
 |=========================================================
 
 .Input Data

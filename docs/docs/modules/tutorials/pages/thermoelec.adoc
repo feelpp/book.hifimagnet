@@ -22,7 +22,7 @@ The cylinder symetry axis is stem:[Oz].
 .Geometrical Data
 |=========================================================
 | R [ stem:[m] ] | H [ stem:[m] ]
-| 8.e-3 | 16.e3
+| 8.e-3 | 16.e-3
 |=========================================================
 
 .Input Data
@@ -66,7 +66,7 @@ export STORAGE=/home/singularity
 [source,bash]
 ----
 singularity exec --nv -B /opt/DISTENE:/opt/DISTENE:ro \
-  ${STORAGE}/hifimagnet-salome:8.5.0.simg salome
+  ${STORAGE}/salome-hifimagnet:9.5.0.simg salome
 ----
 
 * Select the `GEOM` module

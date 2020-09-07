@@ -87,7 +87,8 @@ optaubert HL-31.dat
 
 Available options to control the optimization are:
 
-```
+[source,sh]
+----
 --majorprint=INT                specify nag major print level (default is 10)
 --minorprint=INT                specify nag major print level (default is 0)
 --major_iteration_limit=INT     specify nag major iterations_limit (default is controlled by nag)
@@ -101,16 +102,17 @@ Available options to control the optimization are:
 --verbose                       activate verbose mode
 --log                           activate nag logging mode
 --recursive                     activate recursive mode
-```
+----
 
 Other options are:
 
-```
+[source,sh]
+----
 --gmsh                          activate gmsh output
 --num_integ=INT                 specify num_integ size (default 100)
 --num_eval=INT                  specify num_eval size (default 100)
 --gsl-error-handler             deactivate gsl error handler (default is on)
-```
+----
 
 == Use `OptHelix`
 
@@ -121,7 +123,8 @@ opthelix --stress --temp [--cooling] [--geom] HL-31.dat
 
 Available options are:
 
-```
+[source,sh]
+----
 --majorprint=INT                specify nag major print level (default is 10)
 --minorprint=INT                specify nag major print level (default is 0)
 --major_iteration_limit=INT     specify nag major iterations_limit (default is controlled by nag)
@@ -141,7 +144,7 @@ Available options are:
 --cooling                       activate cooling modeling
 --num_integ=INT                 specify num_integ size (default 100)
 --num_eval=INT                  specify num_eval size (default 100)
-```
+----
 
 == Generating CAD/CAM files
 

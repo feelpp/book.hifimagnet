@@ -24,7 +24,8 @@ for safe operation of {magnettools}
 
 Available options are:
 
-```
+[source,sh]
+----
  --points=STRING           points on which b field is to be computed (x0,y0,z0,...)
  --points_file=STRING      file containing points on which b field is to be computed (x0,y0,z0,...)
  --innerbore=INNERBORE     mesh on which b field is to be computed
@@ -48,7 +49,7 @@ Available options are:
  --num_eval=INT            specify num_eval size (default 100)
  --gsl-error-handler       deactivate gsl error handler (default is on)
  --omp_off                 turn off openm
-```
+----
 
 [[levitation]]
 == Use `Levitation`
@@ -57,7 +58,9 @@ Available options are:
 
 
 Available options are:
-```
+
+[source,sh]
+----
  --input=STRING                load input filename
  --order=INT                   specify order to consider (default is 6)
  --verbose                     activate verbose mode
@@ -78,4 +81,4 @@ Available options are:
  --num_eval=INT                specify num_eval size (default 100)
  --ascii                       ascii write mode for ensight
  --omp_off                     turn off openm
-```
+----
