@@ -1,0 +1,21 @@
+[[infrastructure]]
+= Computing Infrastructure
+
+{hifimagnet} is available on various computing ressources.
+Here we describe in more details how to:
+
+* connect to these ressources,
+* launch {hifimagnet} on these ressources,
+* transfer (if needed) data to/from these ressources.
+
+Available ressources are:
+
+* {lncmi}
+* Gricad
+* Cemosis
+
+== {lncmi}
+
+== Gricad
+
+== Cemosis
