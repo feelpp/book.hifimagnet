@@ -1,4 +1,4 @@
-= DeMarinis experiment
+= Simulation of a Plateau
 :toc: macro
 
 ifdef::backend-pdf[]
@@ -15,7 +15,7 @@ include::{partialsdir}/header-uri.adoc[]
 image::{imagesdir}/M9_10_03_2k17.png[Temperature and Magnetic Field profile during experiment]
 
 In this example we will try to reproduce the behaviour of an 14 Helices insert
-operated on March 2017. More precisely, we will compare:
+operated on March 2017 during a *Plateau* . More precisely, we will compare:
 
 * the voltage tap measurements on HP and BP sides (ie on tap per helix)
 * the temperature measurement in the rings H2H3 and H3H4.
@@ -28,7 +28,7 @@ in the text may be found here.
 
 .Electrical Conductivity per helix
 [cols="3,^2,10",options="header"]
-|=========================================================
+|====
 | Helix | stem:[\sigma] [stem:[M\Omega/m]] | Nuance
 | 1 | 52.4 | Cu5Ag Cold Spray
 | 2 | 53.3 | "
@@ -45,27 +45,27 @@ in the text may be found here.
 | 13 | 55.1 | "
 | 14 | 55.4 | "
 
-|=========================================================
+|====
 
 
 .Operating conditions
 [cols="^2,^2,^2,^2,^2,^2,10",options="header"]
-|=========================================================
+|====
 |Icoil1 [A] |Tin1 [C] |Tout [C] |HP1 [bar] |BP [bar] |Flow1 [stem:[l/s]] |Notes
 | 22148.2 | 11.0 |  22.9 | 14.3 | 4.0 | 105.3 |
 use `txt2cvs.py` to view data: eg.
 
 ```python txt2csv.py --input_file M9_2017.03.10-02_46_10.txt --output_time "03:52:51"  --output_key="Icoil1;Tin1;Tout;HP1;BP;Flow1"```
 
-|=========================================================
+|====
 
 .Heat exchange coefficients
-|=========================================================
+|====
 |Model | Notes
 | Montgomery | see excelsheet `MagnetTools/docs/TemperatureField/Cooling-Coeff.xls` table "14H (version3)"
 | Others (Colburn,...) | run `NumModel.py` python script with appropriate data from table 2: eg.
 ```python hifimagnet/salome/HIFIMAGNET/src/HIFIMAGNET/NumModel.py Num-HL-31 --geometry HL-31 --CoolantTemp 11 --dT 11.9 --BP 4 --dP 10.3```
-|=========================================================
+|====
 
 For computed heat exchange coefficients, we will select the dataset that gives an estimate flow rate which is
 the closest to the measured one:
@@ -85,7 +85,7 @@ with `cooling="9.15/10.3/17.4875205"`
 
 == Simulations
 
-|=========================================================
+|====
 | Sim  | Correlation | Tw            | cfg
 |Cst   | cst         | Tin1          | HL-31_DeMarinis-cst.cfg
 |Grad  | cst         | Tw=Tin1+DT1*z | HL-31_DeMarinis.cfg
@@ -94,7 +94,7 @@ with `cooling="9.15/10.3/17.4875205"`
 |Cgrd  | Colburn     | Tw=Tin1+DT1*z | HL-31_DeMarinis-colburn-grad.cfg
 |Dgrd  | Dittus      | Tw=Tin1+DT1*z | HL-31_DeMarinis-dittus-grad.cfg
 |Sgrd  | Silberberg  | Tw=Tin1+DT1*z | HL-31_DeMarinis-silberberg-grad.cfg
-|=========================================================
+|====
 
 == Voltage taps
 
@@ -111,7 +111,7 @@ To get the measured values:
 python txt2csv.py --input_file M9_2017.03.10-02_46_10.txt  --output_time "03:52:51"  --output_key="Ucoil1;...;Ucoil14"
 ```
 
-|=========================================================
+|====
 |      |U1      |U2       |U3     |U4           |U5       |U6       |U7       |U8       |U9       |U10      |U11      |U12      |U13      |U14
 |Exp   |6.7     |8.1      |NA     |22.6         |13.2     |16.0     |17.7     |20.3     |22.9     |25.1     |27.1     |28.6     |26.1     |24.2
 |Cst   |6.48    |8.02     |9.99   |12.57        |13.17    |15.79    |17.51    |20.53    |22.69    |25.99    |28.09    |28.49    |27.32    |24.32
@@ -121,7 +121,7 @@ python txt2csv.py --input_file M9_2017.03.10-02_46_10.txt  --output_time "03:52:
 |Cgrd  |7.16    |8.63     |10.56  |13.28        |13.87    |16.60    |18.29    |21.40    |23.60    |27.01    |29.11    |29.40    |27.96    |24.62
 |Dgrd  |6.77    |8.22     |10.12  |12.75        |13.40    |16.06    |17.72    |20.77    |22.94    |26.28    |28.37    |28.72    |27.42    |24.25
 |Sgrd  |7.01    |8.45     |10.36  |13.05        |13.67    |16.38    |18.06    |21.14    |23.34    |26.72    |28.82    |29.14    |27.75    |24.47
-|=========================================================
+|====
 
 [NOTE]
 ====
@@ -145,7 +145,7 @@ ensight102 [-X] -batch  -p probe_temp.py -pyargv -i Thermics.case -o out.data -b
 Obviously, we will only consider simulations where `Tw` is defined as a gradient
 for each cooling channel:
 
-|=========================================================
+|====
 |       |HP [K]  |BP [K]
 |Exp    |287.95  |305.35
 |Grad   |286.967 |294.296
@@ -153,7 +153,7 @@ for each cooling channel:
 |Cgrd   |287.145 |294.413
 |Dgrd   |287.139 |294.351 
 |Sgrd   |287.101 |294.386
-|=========================================================
+|====
 
 == Helices Mean Temperature
 
@@ -170,7 +170,7 @@ To get the "measured" values in Celsius:
 python txt2csv.py --input_file M9_2017.03.10-02_46_10.txt  --output_time "03:52:51"  --output_key="Tcal1;...;Tcal14"
 ```
 
-|=========================================================
+|====
 |      |T1       |T2        |T3      |T4         |T5     |T6     |T7     |T8     |T9     |T10    |T11     |T12     |T13     |T14
 |Exp   |70.3     |73.2      |NA      |74.1       |65.5   |61.3   |63.2   |61.2   |59.6   |57.5   |55.6    |58.9    |46.2    |39.2
 |Cst   |46.87    |60.77     |58.78   |57.87      |52.32  |51.79  |49.14  |48.59  |47.18  |46.93  |45.52   |42.94   |39.59   |35.61
@@ -180,4 +180,4 @@ python txt2csv.py --input_file M9_2017.03.10-02_46_10.txt  --output_time "03:52:
 |Cgrd  |58.30    |77.70     |71.00   |70.19      |62.14  |61.38  |57.79  |56.76  |54.72  |54.18  |52.10   |47.89   |42.87   |36.59
 |Dgrd  |49.07    |65.28     |60.43   |59.88      |53.73  |53.26  |50.50  |49.77  |48.24  |47.87  |46.29   |42.86   |38.77   |33.50
 |Sgrd  |54.82    |72.41     |66.36   |65.75      |58.59  |58.00  |54.80  |53.94  |52.13  |51.68  |49.83   |45.94   |41.30   |35.36
-|=========================================================
+|====
