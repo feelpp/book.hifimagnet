@@ -3,3 +3,4 @@
 *** xref:salome.adoc#install_salome[{salome} plugin]
 *** xref:hifimagnet.adoc#install_hifimagnet[{hifimagnet}]
 # *** xref:mso4sc.adoc#mso4sc-dev[MSO4SC Portal]
+*** xref:crb.adoc[CRB apps]
