@@ -17,13 +17,14 @@ The geometry also contains an external domain which is an approximation of stem:
 
 The current density stem:[\mathbf{j}], in stem:[A/m^2]can be viewed as an input parameter, or given by the thermoelectric model. +
 The boundary conditions are given below:
+
 - stem:[\mathbf{A} = \mathbf{0}] at the infinity
 - stem:[\mathbf{A} \times \mathbf{n} = 0 ] on symetry plane
 
 == Results
 
 For simple conductor geometry, analytical expressions of the magnetic field along the Z-Axis may be found in physics textbooks.
-The expression of the magnetic field in stem:[\mathbb{R}^3] is more difficult to derive but may be found in several papers, like \cite{Jackson99}. +
+The expression of the magnetic field in stem:[\mathbb{R}^3] is more difficult to derive but may be found in several papers, like <<Jackson99>>. +
 As a classical result, we consider only the magnetic field along the Z-Axis, which analytical expression is given bellow:
 [stem]
 ++++

@@ -4,48 +4,51 @@ The torus is modeled thanks to the file geo, which also name the volume (`omega`
 .Model of the quarter of torus on `Gmsh`
 image::/images/learning/thermoelectric/quarter-turn3D.png[quarter of a torus,300,200,align="center"]
 
-===== Equations
+== Equations
 
 First of all, we start with the standard heat equation, with the heat from the Joule effect :
-\[
+[stem]
+++++
 \rho C_{p}\frac{\partial T}{\partial t} - \nabla.(k \nabla T)=\sigma(\frac{U}{2\pi r})^{2}
-\]
+++++
 
-Coefficients $\sigma$ and k are in fact, temperature-dependent, shown in this equations :
+Coefficients stem:[\sigma] and k are in fact, temperature-dependent, shown in this equations :
 
-* $\sigma=\frac{\sigma_ {0}}{1 + \alpha(T-T_{ref})}$
+* stem:[\sigma=\frac{\sigma_ {0}}{1 + \alpha(T-T_{ref})}]
 
-* $k=k_{0}\frac{T}{(1+\alpha(T-T_{ref}))T_{ref}}$
+* stem:[k=k_{0}\frac{T}{(1+\alpha(T-T_{ref}))T_{ref}}]
 
-But, for the next, we consider that $\alpha=0$ and T=T~ref~.
+But, for the next, we consider that stem:[\alpha=0] and T=T~ref~.
 Thereby, we are in a linear problem that we can solve with the `thermoelectric-linear` model in the Json file.
 
-In our case, we consider that T only depends on the radius, so $\frac{\partial T}{\partial t}=0$.
+In our case, we consider that T only depends on the radius, so stem:[\frac{\partial T}{\partial t}=0].
 We can now consider this equation :
-\[
+[stem]
+++++
 T=A\log(r)-\frac{\sigma}{2k}(\frac{U}{2\pi})^{2} \log^{2}(r)+B
-\]
+++++
 
 The constants A and B are determined by the boundary conditions (Dirichlet and Robin).
 
 Finally, we have this equation :
-\[
+[stem]
+++++
 T=-a \log(\frac{r}{r_{0}})^{2} + T_{max}
-\]
+++++
 
-- $T_{max}=\frac{2ak}{h_{1}r_{1}+h_{2}r_{2}}\log(\frac{r_{2}}{r_{1}})+\frac{h_{1}r_{1}T_{w1}+h_{2}r_{2}T_{w2}}{h_{1}r_{1}+h_{2}r_{2}}+ a\frac{h_{1}r_{1}log(\frac{r_{1}}{r_{0}})^{2} +h_{2}r_{2}log(\frac{r_{2}}{r_{0}})^{2}}{h_{1}r_{1}+h_{2}r_{2}}$
+- stem:[T_{max}=\frac{2ak}{h_{1}r_{1}+h_{2}r_{2}}\log(\frac{r_{2}}{r_{1}})+\frac{h_{1}r_{1}T_{w1}+h_{2}r_{2}T_{w2}}{h_{1}r_{1}+h_{2}r_{2}}+ a\frac{h_{1}r_{1}log(\frac{r_{1}}{r_{0}})^{2} +h_{2}r_{2}log(\frac{r_{2}}{r_{0}})^{2}}{h_{1}r_{1}+h_{2}r_{2}}]
 
-- $r_{0}=e^{\frac{\frac{T_{w2}-T_{w1}}{b}+\frac{ac}{b}}{2a}}$
+- stem:[r_{0}=e^{\frac{\frac{T_{w2}-T_{w1}}{b}+\frac{ac}{b}}{2a}}]
 
-- $a=\frac{\sigma_{0}}{2k}(\frac{U}{2\pi})^{2}$
+- stem:[a=\frac{\sigma_{0}}{2k}(\frac{U}{2\pi})^{2}]
 
-- $b=k(\frac{1}{h_{1}r_{1}}+\frac{1}{h_{2}r_{2}})+\log(\frac{r_{2}}{r_{1}})$
+- stem:[b=k(\frac{1}{h_{1}r_{1}}+\frac{1}{h_{2}r_{2}})+\log(\frac{r_{2}}{r_{1}})]
 
-- $c=\log(\frac{r_{2}}{r_{1}})\log(r_{1}r_{2}) + 2k (\frac{\log(r_{1})}{h_{1}r_{1}}+\frac{\log(r_{2})}{h_{2}r_{2}})$
+- stem:[c=\log(\frac{r_{2}}{r_{1}})\log(r_{1}r_{2}) + 2k (\frac{\log(r_{1})}{h_{1}r_{1}}+\frac{\log(r_{2})}{h_{2}r_{2}})]
 
 r~0~ is the radius for which the temperature is at its maximum.
 
-===== Parameters
+== Parameters
 
 In our case, we choose the parameters like this :
 
@@ -54,28 +57,28 @@ In our case, we choose the parameters like this :
 |===
 ^|Name ^|Description ^|Range ^|Nominal Value ^|Unit
 
-|$\sigma_{0}$
+|stem:[\sigma_{0}]
 |electrical conductivity at T~0~
-^|$[52.10^{6}; 58.10^{6}]$
-^|$58.10^{6}$
-|$S.m^{-1}$
+^|stem:[[52.10^{6}; 58.10^{6}]]
+^|stem:[58.10^{6}]
+|stem:[S.m^{-1}]
 
 |k
 |thermal conductivity
 ^|[360;380]
 ^|380
-|$W.m^{-1} .K^{-1}$
+|stem:[W.m^{-1} .K^{-1}]
 
 |r~1~
 |internal radius
-^|$1.10^{-3}$
-^|$1.10^{-3}$
+^|stem:[1.10^{-3}]
+^|stem:[1.10^{-3}]
 |m
 
 |r~2~
 |internal radius
-^|$2.10^{-3}$
-^|$2.10^{-3}$
+^|stem:[2.10^{-3}]
+^|stem:[2.10^{-3}]
 |m
 
 |T~w1~
@@ -94,12 +97,12 @@ In our case, we choose the parameters like this :
 |heat transfer coefficient
 ^|[70000;90000]
 ^|80000
-|$W.m^{-2} .K^{-1}$
+|stem:[W.m^{-2} .K^{-1}]
 
 |h~1~
 |heat transfer coefficient
-2+^|$h_{1}=h_{2}\frac{r_{2}}{r_{1}}$
-|$W.m^{-2} .K^{-1}$
+2+^|stem:[h_{1}=h_{2}\frac{r_{2}}{r_{1}}]
+|stem:[W.m^{-2} .K^{-1}]
 
 |V~0~
 |electrical potential
@@ -109,20 +112,20 @@ In our case, we choose the parameters like this :
 
 |===
 
-===== Conditions
+== Conditions
 
 We set 2 conditions :
 
-* Dirichlet for the potential : V~in~=0 V  and  $V_{out}=V_{0}\frac{1}{4}=0.075  V$ _because we consider only one quarter of the torus_.
+* Dirichlet for the potential : V~in~=0 V  and  stem:[V_{out}=V_{0}\frac{1}{4}=0.075  V] _because we consider only one quarter of the torus_.
 
 * Robin for the temperature :
 
-** On r~int~ : $h_{1}=80000\frac{r_{2}}{r_{1}}=160000 W.m^{-2} .K^{-1}$  and  T~w1~=293 K
+** On r~int~ : stem:[h_{1}=80000\frac{r_{2}}{r_{1}}=160000 W.m^{-2} .K^{-1}]  and  T~w1~=293 K
 
-** On r~ext~ : h~2~=80000 $W.m^{-2} .K^{-1}$  and  T~w2~= 293 K
+** On r~ext~ : h~2~=80000 stem:[W.m^{-2} .K^{-1}]  and  T~w2~= 293 K
 
 
-===== Results
+== Results
 
 .Temperature's repartition on paraview
 image::/images/learning/thermoelectric/Temperature_paraview.png[Temperature_paraview,500,300,float="left"]
@@ -136,16 +139,18 @@ We can vary the degree of the finite element from 1 (linear) to 2 (quadratic). +
 To prove the convergence towards the theory, we plot the difference between L~2~/H~1~ and the theoretical formulas for T and V.
 The scale is logarithmic, to see directly the slope and note that it is directly linked to the degree of the finite element used.
 
-\[
+[stem]
+++++
 T=-a \log(\frac{r}{r_{0}})^{2} + T_{max}
-\]
+++++
 
-\[
+[stem]
+++++
 V=\frac{0.3*atan2(x,y)}{2\pi}
-\]
+++++
 
 * For L2, we have directly the output on the table obtained whether for T or for V
-* For H1, we need to do a quadratical mean between the H1 and L2 of the table ($\sqrt{H1^{2} +L2^{2}}$) for T and V
+* For H1, we need to do a quadratical mean between the H1 and L2 of the table (stem:[\sqrt{H1^{2} +L2^{2}}]) for T and V
 
 .Electrical potential convergence study for L2
 image::/images/learning/thermoelectric/L2V.png[L2(V),475,400,float="left"]
@@ -156,7 +161,7 @@ image::/images/learning/thermoelectric/L2T.png[L2(T),475,400,float="left"]
 .Temperature convergence study for H1
 image::/images/learning/thermoelectric/H1T.png[H1(T),475,400,float="right"]
 
-===== Code
+== Code
 
 For the modelisation of the quarter of torus, we create the geometry and the mesh on `Salome` and export the file in `.geo`
 

@@ -3,8 +3,10 @@ The Finite Element Methid is detailed in the chapter link:http://book.feelpp.org
 
 In our case, the variational formulation consists in resolve :
 
-\[
+[stem]
+++++
 \frac{E}{1+\nu}\int_{\Omega}Tr\lgroup\frac{1}{2}(\nabla\textbf{u}+\nabla\textbf{u}^{T})\rgroup+\frac{E\nu}{(1+\nu)(1-2\nu)}\int_{\Omega}(\nabla.\textbf{u})(\nabla.\varphi)=\int_{\Omega}\textbf{f}.\varphi+\int_{\partial\Omega_{P}}\textbf{g}.\varphi+\int_{\Omega}\frac{E\alpha_{T}}{1-2\nu}(T-T_{0})(\nabla.\varphi)
-\]
-for all $\varphi\in H_{1,\varphi}^{d}(\Omega)$
-With $\circ$ the element-wise product.
+++++
+
+for all stem:[\varphi\in H_{1,\varphi}^{d}(\Omega)]
+With stem:[\circ] the element-wise product.

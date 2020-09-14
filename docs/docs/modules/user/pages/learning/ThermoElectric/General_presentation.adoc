@@ -8,16 +8,16 @@ mpirun -np "number_of_processor_you_have_chosen_in_the_partition"
 feelpp_hfm_thermoelectric_model_3D_V1T1_N1 --config-file "name_of_your_file.cfg"
 ----
 
-==== Material
+== Material
 
 .Correspondence between parameters and symbols in JSon files
 |===
 ^|Parameter ^|Symbol
 
-|$\alpha$
+|stem:[\alpha]
 |alpha
 
-|$\sigma_{0}$ / $\sigma$
+|stem:[\sigma_{0}] / stem:[\sigma]
 |sigma0 / sigma
 
 |k~0~ / k
@@ -140,7 +140,7 @@ verbosity=2
 
 We can define the current I using the Ohm's law, defining the voltage ine the `json` file.
 
-==== Condition
+== Condition
 
 There are three type of conditions :
 

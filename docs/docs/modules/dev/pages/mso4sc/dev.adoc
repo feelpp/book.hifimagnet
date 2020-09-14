@@ -1,7 +1,7 @@
 include::{partialsdir}/header-macros.adoc[]
 
 [[create_app]]
-== Creating an App in MSO Portal
+= Creating an App in MSO Portal
 
 An application for {mso4sc} portal is basically a workflow
 described using TOSCA. The application atually consists in:
@@ -14,10 +14,10 @@ An helper script is also provided to:
 * package the app for the portal,
 * ...
 
-=== blueprint: workflow TOSCA
+== blueprint: workflow TOSCA
 
 
-=== Running in the orchestrator CLI
+== Running in the orchestrator CLI
 
 * Create a `local-blueprint-inputs.yaml` from the template file.
 ** Define the HPC ressource you are planning to use.
@@ -73,7 +73,7 @@ Some useful commands :
 See https://github.com/MSO4SC/MSOOrchestrator-CLI/blob/master/README.adoc#remote-mode[here] for details
 
 
-=== Package workflow for {mso4sc} portal
+== Package workflow for {mso4sc} portal
 
 To package the workflow for latter use in the portal, just create a gzipped archive using :
 [source]
@@ -81,7 +81,7 @@ To package the workflow for latter use in the portal, just create a gzipped arch
 ./deploy pkg
 ----
 
-=== Register App in  {mso4sc} portal
+== Register App in  {mso4sc} portal
 
 To register the app, following instructions in this xref:mso4sc:dev.adoc#registerapp[section].
 Remember that you have a choice:

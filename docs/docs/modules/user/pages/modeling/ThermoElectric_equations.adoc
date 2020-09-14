@@ -2,32 +2,35 @@
 
 First of all, we start with the standart heat equation:
 
-\[
+[stem]
+++++
 \rho C_{p}\frac{\partial T}{\partial t} - \nabla.(k \nabla T)=P
-\]
+++++
 
 The only source of heat considered is the Joule effect, expressed by :
 
-\[
+[stem]
+++++
 P=\textbf{j.E}
-\]
+++++
 
-where $\textbf{j}=\sigma\textbf{E}$ (from the Ohm's law).
-But $\exists V | \textbf{E}=-\nabla V$
+where stem:[\textbf{j}=\sigma\textbf{E}] (from the Ohm's law).
+But stem:[\exists V | \textbf{E}=-\nabla V]
 
 NOTE: To see more details, link:http://book.feelpp.org/toolbox/thermoelectric[Thermo-Electric Toolbox]
 
 We also consider that T is time independent, so, finally, we have :
 
-\[
+[stem]
+++++
 - \nabla.(k \nabla T)=\sigma\nabla V . \nabla V
-\]
+++++
 
-Coefficients $\sigma$ and k are temperature-dependent as shown in this equations :
+Coefficients stem:[\sigma] and k are temperature-dependent as shown in this equations :
 
-* $\sigma=\frac{\sigma_ {0}}{1 + \alpha(T-T_{ref})}$
+* stem:[\sigma=\frac{\sigma_ {0}}{1 + \alpha(T-T_{ref})}]
 
-* $k=k_{0}\frac{T}{(1+\alpha(T-T_{ref}))T_{ref}}$
+* stem:[k=k_{0}\frac{T}{(1+\alpha(T-T_{ref}))T_{ref}}]
 
 ==== Finite Element
 
@@ -43,10 +46,10 @@ The current is due to a difference of potential. We model this with the Dirichle
 We consider the air and the cooling water as they are electrically insulating.
 On other surfaces we impose homogeneous Neumann conditions as no current "flows" out these surfaces (*j.n*=0).
 
-$-\sigma(T)\nabla V.n=0$ for all surfaces except V~in~ and V~out~
+stem:[-\sigma(T)\nabla V.n=0] for all surfaces except V~in~ and V~out~
 
 On the cooled surfaces, we set the heat transfer coefficient _h_, determined as follow :
 
-$h=\frac{k(T)N_{u}}{D_{h}}$ with N~u~ the Nusselt number and D~h~ the hydraulic diameter.
+stem:[h=\frac{k(T)N_{u}}{D_{h}}] with N~u~ the Nusselt number and D~h~ the hydraulic diameter.
 
 NOTE: To see some examples (with the code behind), see the chapter link:/examples[Examples]

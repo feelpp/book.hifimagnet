@@ -1,5 +1,5 @@
 [[salome_plugin]]
-= {hifimagnet} Salome Plugin
+== {hifimagnet} Salome Plugin
 :toc: macro
 include::{partialsdir}/header-macros.adoc[]
 include::{partialsdir}/header-uri.adoc[]
@@ -12,7 +12,7 @@ provides some references.
 
 
 [[introduction]]
-= Introduction
+== Introduction
 
 The {hifimagnet} Salome Plugin allows to easily:
 
@@ -43,7 +43,7 @@ supporting OpenGL 4.5.
 
 
 [[quickstart]]
-= Quick Starts
+== Quick Starts
 This document will illustrate how to simply use {hifimagnet} Salome plugin
 and give examples for most common operations.
 
@@ -52,7 +52,7 @@ Custom installation, eg. for native installation, is detailed in the xref:dev:in
 // include:ROOT:{partialsdir}/convention.adoc[]
 
 [[matrix]]
-== Salome plugin matrix
+=== Salome plugin matrix
 
 [cols="4*"]
 |===
@@ -65,7 +65,7 @@ Custom installation, eg. for native installation, is detailed in the xref:dev:in
 |===
 
 [[qs_getting]]
-== Getting {hifimagnet} Salome plugin
+=== Getting {hifimagnet} Salome plugin
 
 They are several way to use {hifimagnet} Salome plugin. The easiest way
 is to use container, either Docker based or Singularity based. *If your system support
@@ -73,7 +73,7 @@ singularity containers we recommend to use them instead of Docker ones*.
 
 
 [[qs_reference]]
-== Running {hifimagnet} Salome plugin
+=== Running {hifimagnet} Salome plugin
 
 {hifimagnet} Salome plugin can be run either in *GUI* or *TUI* mode.
 *TUI* stands for Terminal User Interface.
@@ -84,7 +84,7 @@ Add `-b` option to the use TUI in batch mode.
 NOTE: In the sequel, we use the classical *Unix* notation for command.
 In peculiar `[...]` denotes optional argument.
 
-=== from Singularity container
+==== from Singularity container
 
 Assuming we use `salome.simg` singularity image:
 
@@ -106,7 +106,7 @@ For other graphic video card, use `mesa_salome` instead of `salome`
 
 TIP: to check your graphic video card on Debian/Ubuntu you may use `inxi -G`.
 
-=== from Docker container
+==== from Docker container
 
 [source,sh]
 ----
@@ -156,7 +156,7 @@ on your internet connection.
 See this http://files.salome-platform.org/Salome/Common/SUD2018/08_Containers.pdf[presentation] for details
 ====
 
-=== Main commands
+==== Main commands
 
 We will omit the part of the command related to the use of {singularity} or {docker} to only give
 the {salome} command. If you plan to run these commands from a {singularity} or {docker} image,
@@ -185,7 +185,7 @@ NOTE: `Insert-H1H4-Leads-2t.yaml` can be found in `/usr/local/share/salome/H1H4`
 
 
 [[data]]
-= Data Structure
+== Data Structure
 
 An insert consists in a set of:
 
@@ -197,7 +197,7 @@ and eventually an inner and an outer currentLead.
 Each structure is defined as a `yaml` file.
 
 
-== helix structure
+=== helix structure
 
 An helix is actually a cylindrical tube which exhibit a single or double helical cut made by EDM.
 The path of the helical cut is provided in a separate file `*_cut_salome.dat`.
@@ -219,7 +219,7 @@ include::{examplesdir}/H_struct.yaml[]
 
 image::ex_CAD_H.png[A longitudinally cooled helix]
 
-=== `axi` structure
+==== `axi` structure
 
 The `axi` structure defines the helical cut along with the file `*_cut_salome.dat` 
 
@@ -231,11 +231,11 @@ include::{examplesdir}/H_axi.yaml[]
 <1> name of the axisymetrical description of the magnet (see magnettools)
 <2> half electrical length; stem:[2h] corresponds to the axial length of the helical path centered on the origin.
 <3> list of pitch stem:[p_i]
-<3> list of turns stem:[n_i]
+<4> list of turns stem:[n_i]
 
 The helical path consists in a set of stem:[i] helices with a pitch stem:[p_i] and a number of turns stem:[n_i]
 
-=== `m3d` structure
+==== `m3d` structure
 
 [[helix_m3d]]
 [source,yml]
@@ -246,7 +246,7 @@ include::{examplesdir}/H_m3d.yaml[]
 <2> indicates wether shapes are added or not on the helical path
 <3> indicates wether micro-cooling channels are added (only for radial helices)
 
-=== `shape` structure
+==== `shape` structure
 
 [[helix_shape]]
 [source,yml]
@@ -268,7 +268,7 @@ The shape file description is a simple `.dat` file that defines the number of po
 include::{examplesdir}/Shape.dat[]
 ----
 
-=== `helical cut` structure
+==== `helical cut` structure
 
 The geometry of the `helical cut` is computed using {magnettools}. It provides
 the coordinates of the cut in developed form which will be mapped onto the outer cylinder boundary of an helix.
@@ -278,10 +278,10 @@ the coordinates of the cut in developed form which will be mapped onto the outer
 ----
 include::{examplesdir}/H_cut_salome.dat[]
 ----
-<0> header
-<1> `theta`, `Z_i` defines the coordinates of the point in a 2D cartesian frame (note: stem:[\text{theta} \in [0,2\pi*n_{turns}]] with stem:[n_{turns}] the total number of turn of the path) and `Shape_id` indicates the precense or absence of shape and eventually of micro-cooling channel
+<1> header
+<2> `theta`, `Z_i` defines the coordinates of the point in a 2D cartesian frame (note: stem:[\text{theta} \in [0,2\pi*n_{turns}]] with stem:[n_{turns}] the total number of turn of the path) and `Shape_id` indicates the precense or absence of shape and eventually of micro-cooling channel
 
-== Ring
+=== Ring
 
 A ring ensure the electrical and mechanical connection between 2 consecutive helices.
 It is a cylinder eventually with stem:[n] cylindrical slots, disposed at regular angular interval stem:[angle] in it to ensure a proper cooling of the connected helices.
@@ -299,9 +299,9 @@ include::{examplesdir}/R.yaml[]
 
 image::ex_CAD_R.png[A connection ring]
 
-== CurrentLeads
+=== CurrentLeads
 
-=== Inner Lead
+==== Inner Lead
 
 [[inner]]
 [source,yml]
@@ -311,7 +311,7 @@ include::{examplesdir}/inner.yaml[]
 
 image::ex_CAD_Inner.png[An inner current lead]
 
-=== Outer Lead
+==== Outer Lead
 
 [[outer]]
 [source,yml]
@@ -321,7 +321,7 @@ include::{examplesdir}/outer.yaml[]
 
 image::ex_CAD_Outer.png[A outer current lead composed of 6 bars]
 
-== insert
+=== insert
 
 [[insert]]
 [source,yml]
@@ -337,7 +337,7 @@ include::{examplesdir}/Insert.yaml[]
 <7> angular orientation of helices (optionnal)
 <8> angular orientation of rings (optionnal)
 
-== mesh
+=== mesh
 
 The mesh is generated from the command line when the option `--mesh` is passed to salome.
 The first time the mesh is generated, a file , namely `Insert_meshdata.yaml` where `Insert.yaml` is
@@ -353,18 +353,18 @@ Here is an example of the yaml cfg file:
 ----
 include::{examplesdir}/Insert_meshdata.yaml[]
 ----
-<0> name of the CAD geometry without extension
-<1> basename of the output mesh
-<2> mesh algorithm used for surfacic meshes
-<3> mesh algorithm used for volumic meshes
-<4> maximum ratio between the lengths of two adjacent edges.
-<5> allows checking input and output files of MG-Tetra software, while usually these files are removed after the launch of the mesher. The log file (if any) is also kept if this option is `1`.
-<6> allows grouping volumes into domains
-<7> allows choosing the required optimization level (higher level of optimization provides better mesh, but can be time-consuming); values are 1: none, 2: light, 3: medium (standard), 4: standard+, 5: strong
+<1> name of the CAD geometry without extension
+<2> basename of the output mesh
+<3> mesh algorithm used for surfacic meshes
+<4> mesh algorithm used for volumic meshes
+<5> maximum ratio between the lengths of two adjacent edges.
+<6> allows checking input and output files of MG-Tetra software, while usually these files are removed after the launch of the mesher. The log file (if any) is also kept if this option is `1`.
+<7> allows grouping volumes into domains
+<8> allows choosing the required optimization level (higher level of optimization provides better mesh, but can be time-consuming); values are 1: none, 2: light, 3: medium (standard), 4: standard+, 5: strong
 
-<8> removes or not files upon mesh completion 
-<9> launches MG-Tetra software with work space limited to the specified amount of RAM, in Mbytes. If this option is checked off, the software will be launched with 7O% of the total RAM space. 
-<10> list of input data for the surfacic mesher provided for each boundary group defined in the CAD geometry 
+<9> removes or not files upon mesh completion 
+<10> launches MG-Tetra software with work space limited to the specified amount of RAM, in Mbytes. If this option is checked off, the software will be launched with 7O% of the total RAM space. 
+<11> list of input data for the surfacic mesher provided for each boundary group defined in the CAD geometry 
 
 The input data for the surfacic mesher (or hypothesys in {salome} formalism) are defined as follows:
 
@@ -390,7 +390,7 @@ The smaller this distance is, the closer the mesh is to the exact surface (only 
 ====
 
  
-== advanced mesh options
+=== advanced mesh options
 
 The mesh can customized using the yaml cgf file presented above. There are also some options to reduce the number of surfacic meshes that will be latter use to apply boundary conditions:
 
@@ -404,7 +404,7 @@ and there is also an `--coarse` option to generate a quite coarse mesh.
 These options are available in the main command line:
 
 [[usage]]
-= Using {salome}
+== Using {salome}
 
 {salome} is an open-source generic platform for Pre- and Post-Processing for numerical simulation.
 Its key features are:
@@ -438,7 +438,7 @@ you may found then here:
 * link:examples/ghs3d_demo.py[`ghs3d_demo.py`]
 ====
 
-== Basic examples
+=== Basic examples
 
 In the following examples we assume that you have pulled a singularity image from a {sregistry} service
 for {salome} and  {hifimagnet}. For sake of simplicity the images are been named:
@@ -449,7 +449,7 @@ for {salome} and  {hifimagnet}. For sake of simplicity the images are been named
 You shall adapt the scripts to the actual names of the images or rename the images (see <<rename_sing_image, above>>)
 
 
-=== Check {meshgems} installation
+==== Check {meshgems} installation
 
 Assuming that your home directory contains a `Salome` directory with the python script `ghs3d_demo.py`.
 You can test your installation by running:
@@ -468,7 +468,7 @@ where:
 
 * `$STORE/DISTENE/DLim` is the directory containing a valid `dlim8.key` license file.
 
-=== A simple `med` mesh in `TUI` mode
+==== A simple `med` mesh in `TUI` mode
 
 Assuming that your home directory contains a `Salome` directory with the python script `testcube_mesh.py`.
 You can test your installation by running:
@@ -498,7 +498,7 @@ singularity exec \
 ----
 ====
 
-=== Create a simple object in `GUI` mode
+==== Create a simple object in `GUI` mode
 
 * start `salome`
 * activate the *Geometry* module by clicking on the proper icon or selecting it in the dropdown menu
@@ -517,7 +517,7 @@ To reload the study: `salome study.hdf` or load the study from main *File* menu
 
 A video tutorial for creating and using python script is available https://youtu.be/0pmq8GjBONg[here].
 
-=== Loading a CAD in `GUI` mode
+==== Loading a CAD in `GUI` mode
 
 * start `salome`
 * activate the *Geometry* module by clicking on the proper icon or selecting it in the dropdown menu
@@ -531,7 +531,7 @@ We recommend to use whever possible the `XAO` file format that provides:
 
 This is very handy for defining CAD region (aka `Groups`) that will be latter used for Boundary Conditions.
 
-=== Create a simple mesh in `GUI` mode
+==== Create a simple mesh in `GUI` mode
 
 * start `salome`
 * activate the *Mesh* module by clicking on the proper icon or selecting it in the dropdown menu

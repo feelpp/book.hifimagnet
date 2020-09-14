@@ -14,7 +14,7 @@ biotsavart\_num::   same than biotsavart but use the thermoelectric program to c
 
 You either set the dimension (1, 2 or 3D) of the box inside the conductor.
 
-==== Material
+== Material
 
 There is no json file for the magnetostatic studies (except for the biotsavart\_num which use the termoelectric program).
 Instead, the configuration file (`.cfg`) use a `.d` file, which define the geometry and the material of the conductor, like this :

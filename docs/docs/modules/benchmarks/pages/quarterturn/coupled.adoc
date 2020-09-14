@@ -92,7 +92,7 @@ D&=2\delta^2k(h_eh_ir_er_i\log(r_e) - h_eh_ir_er_i\log(r_i) + h_ekr_e + h_ikr_i)
 ++++
 
 For simple conductor geometry, analytical expressions of the magnetic field along the Z-Axis may be found in physics textbooks.
-The expression of the magnetic field in stem:[\mathbb{R}^3] is more difficult to derive but may be found in several papers, like \cite{Jackson99}. +
+The expression of the magnetic field in stem:[\mathbb{R}^3] is more difficult to derive but may be found in several papers, like <<Jackson99>>. +
 As a classical result, we consider only the magnetic field along the Z-Axis, which analytical expression is given bellow:
 [stem]
 ++++

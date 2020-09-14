@@ -5,5 +5,5 @@ include::{partialsdir}/header-macros.adoc[]
 include::{partialsdir}/header-uri.adoc[]
 include::{partialsdir}/mso4sc-uri.adoc[]
 
-In this tutorial, we demonstrate the standard use of {ensigth}
+In this tutorial, we demonstrate the standard use of {ensight}
 to post-process results from a coupled simulation of an insert.

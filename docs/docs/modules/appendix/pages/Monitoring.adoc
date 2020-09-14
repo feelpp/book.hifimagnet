@@ -1,5 +1,5 @@
 [[monitoring]]
-= Magnets Monitoring
+== Magnets Monitoring
 
 In this paragraph we present the main principle of the magnet monitoring.
 
@@ -79,7 +79,7 @@ See bellow for more details.
 ====
 
 [[control]]
-= Magnets Control
+== Magnets Control
 
 The control system relies on these data to determine if the operating magnet is safe or not.
 More precisely it checks the deviation stem:[dR0_i] of the resistance measured for each voltage tap
