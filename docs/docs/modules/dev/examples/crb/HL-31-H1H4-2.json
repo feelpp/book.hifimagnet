@@ -1,0 +1,185 @@
+{
+    "Name": "Thermoelectric",
+    "ShortName": "Thermoelectric",
+    "Model": "thermoelectric-crb",
+    "Parameters":
+    {
+        "pA":
+        {
+            "min":-3.14,
+            "max":3.14,
+            "value":0
+        },
+        "pB":
+        {
+            "min":-3.14,
+            "max":3.14,
+            "value":0
+        },
+        "pC":
+        {
+            "min":-3.14,
+            "max":3.14,
+            "value":0
+        },
+        "pD":
+        {
+            "min":-3.14,
+            "max":3.14,
+            "value":0
+        },
+        "pE":
+        {
+            "min":-3.14,
+            "max":3.14,
+            "value":0
+        },
+        "pF":
+        {
+            "min":-3.14,
+            "max":3.14,
+            "value":0
+        },
+        "pG":
+        {
+            "min":-3.14,
+            "max":3.14,
+            "value":0
+        },
+        "pH":
+        {
+            "min":-3.14,
+            "max":3.14,
+            "value":0
+        },
+        "pI":
+        {
+            "min":-3.14,
+            "max":3.14,
+            "value":0
+        },
+        "pJ":
+        {
+            "min":-3.14,
+            "max":3.14,
+            "value":0
+        },
+        "pK":
+        {
+            "min":-3.14,
+            "max":3.14,
+            "value":0
+        },
+        "pL":
+        {
+            "min":-3.14,
+            "max":3.14,
+            "value":0
+        },
+        "pM":
+        {
+            "min":-3.14,
+            "max":3.14,
+            "value":0
+        },
+        "pN":
+        {
+            "min":-3.14,
+            "max":3.14,
+            "value":0
+        },
+        "pO":
+        {
+            "min":-3.14,
+            "max":3.14,
+            "value":0
+        },
+        "pP":
+        {
+            "min":-3.14,
+            "max":3.14,
+            "value":0
+        }
+    },
+    "Materials":
+    {
+        "H1_Cu":
+        {
+            "physics":"electric-geo",
+            "sigma":58e6,
+            "zmin":-0.08651,
+            "zmax":0.08651,
+            "params":["pA","pB","pC","pD","pE","pF","pG","pH"]
+        },
+        "H2_Cu":
+        {
+            "physics":"electric-geo",
+            "sigma":58e6,
+            "zmin":-0.0917,
+            "zmax":0.0917,
+            "params":["pI","pJ","pK","pL","pM","pN","pO","pP"]
+        },
+        "H3_Cu":
+        {
+            "physics":"electric-geo",
+            "sigma":58e6
+        },
+        "H4_Cu":
+        {
+            "physics":"electric-geo",
+            "sigma":58e6
+        },
+        "R1":
+        {
+            "physics":"electric-geo",
+            "sigma":58e6
+        },
+        "R2":
+        {
+            "physics":"electric-geo",
+            "sigma":58e6
+        },
+        "R3":
+        {
+            "physics":"electric-geo",
+            "sigma":58e6
+        },
+        "box":
+        {
+            "physics":"magnetic"
+        }
+    },
+    "BoundaryConditions":
+    {
+        "potential":
+        {
+            "Dirichlet":
+            {
+                "H1_V0":
+                {
+                    "expr":"0",
+                    "material":"H1_Cu"
+                },
+                "H4_V0":
+                {
+                    "expr":"-35",
+                    "material":"H4_Cu"
+                }
+            }
+        }// ,
+        // "electric-potential":
+        // {
+        //     "Dirichlet":
+        //     {
+        //         "H2_V0":
+        //         {
+        //             "expr":"-16"
+        //         },
+        //         "H4_V0":
+        //         {
+        //             "expr":"-35"
+        //         }
+        //     }
+        // }
+    }
+}

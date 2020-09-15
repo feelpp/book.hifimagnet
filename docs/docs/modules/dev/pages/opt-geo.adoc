@@ -1,0 +1,182 @@
+== Geometric Optimization
+
+This application generates reduced basis for a electric and biot-savart problem and does geometric optimization.
+
+=== Problem
+
+In the context of high field magnets, we want to optimize the cuts of a magnet in order to reach a better homogeneity H:
+[stem]
+++++
+H(\mathbf{B}) = \frac{\max_{\mathbf{x}\in\Omega_M} \mathbf{B}_z(\mathbf{x})}{\min_{\mathbf{x}\in\Omega_M} \mathbf{B}_z(\mathbf{x})} - 1
+++++
+
+For this we want to parametrize the geometry with the following geometrical transformation:
+[stem]
+++++
+\phi_\mu\begin{pmatrix} x\\y\\z\end{pmatrix} =
+  \begin{pmatrix}
+    x\cos(\alpha_{\mu}(z))+y\sin(\alpha_{\mu}(z))\\
+    -x\sin(\alpha_{\mu}(z))+y\cos(\alpha_{\mu}(z))\\
+    z
+  \end{pmatrix}
+++++
+
+where stem:[\alpha] is a Bezier curve which control points are the parameters stem:[\mu]:
+[stem]
+++++
+\alpha_\mu(t) = \sum_{k=0}^n B_k^n(t) \mu_k = \sum_{k=0}^n C_n^k t^k(1-t)^{n-k} \mu_k
+++++
+with stem:[\mu_0=\mu_n=0] to impose continuity.
+
+Then the magnetic field stem:[\mathbf{B}] and the electric potential stem:[V] depends on the parameters stem:[\mu].
+Using a reference domain, where all control points are zero, we can write the weak formulation for the electric problem as:
+[stem]
+++++
+\begin{aligned}
+  \int_{\Omega} \sigma\left(\nabla{V}\cdot J_{\phi_{\mu}}^{-1}\right)&\cdot\left(\nabla{\varphi_V}\cdot J_{\phi_{\mu}}^{-1}\right)\left|J_{\phi_{\mu}}\right|
+  - \int_{\Gamma_D} \sigma \left(\left(\nabla{V}\cdot J_{\phi_{\mu}}^{-1}\cdot\mathbf{n}\right)\varphi_V + \left(\nabla{\varphi_V}\cdot J_{\phi_{\mu}}^{-1}\cdot\mathbf{n}\right)V\right)\left|J_{\phi_{\mu}}\right|
+    - \int_{\Gamma_D} \sigma\frac{\gamma}{h_F}V\varphi_V\left|J_{\phi_{\mu}}\right| \nonumber\\
+  =& - \int_{\Gamma_O} \sigma V_D \left(\nabla{\varphi_V}\cdot J_{\phi_{\mu}}^{-1}\cdot\mathbf{n}\right)\left|J_{\phi_{\mu}}\right| + \int_{\Gamma_O} \sigma V_D \frac{\gamma}{h_F} \varphi_V\left|J_{\phi_{\mu}}\right| \qquad\qquad (1)
+\end{aligned}
+++++
+
+and the following formulation for the Biot-Savart law:
+[stem]
+++++
+  \mathbf{B}(\mathbf{x},\mu) = \frac{\mu_0}{4\pi}\int_{\Omega_C} \frac{-\sigma\nabla{V}\cdot J_{\phi_{\mu}}^{-1}\times (\phi_{{\mu}}(\mathbf{x})-\mathbf{r})}{|\phi_{{\mu}}(\mathbf{x})-\mathbf{r}|^3}\left|J_{\phi_{\mu}}\right|d\mathbf{r}  \qquad\qquad (2)
+++++
+where stem:[V] is solution of problem (1).
+
+Thus the optimization problem is to find the parameters stem:[\bar{\mu}] such that:
+[stem]
+++++
+\bar{\mu} = \text{arg }\min_\mu H(\mathbf{B}(\mu))
+++++
+
+The domain stem:[\Omega] can be decomposed into three type of materials:
+
+- where the optimization takes place and is actually deformed (the helices)
+- where the optimization takes place but with no deformation (the rings)
+- where no optimization takes place, used for background field
+
+=== Options
+
+The applicaiton can be piloted via a set of options, the more important are:
+
+`thermoelectric.filename`:: path of the model file in json format, see the following section
+`thermoelectric.deim-size`:: size of the trainset for DEIM of right hand side
+`thermoelectric.mdeim-size`:: size of the trainset for DEIM of left hand side
+`thermoelectric.db.base`:: the name of the database for the electric problem
+`toolbox.filename`:: path of the model file for the background field, can be the same as `thermoelectric.filename`
+`toolbox.mesh.filename`:: path of the geometry
+`electric.crb.error-type`:: error type (0: residual, 1: residual with scm, 2: random, 3: empirical)
+`electric.crb.dimension-max`:: maximum dimension of the reduced basis
+`electric.crb.rebuild-database`:: boolean to rebuild the electric RB database
+`vec.deim.dimension-max`:: maximum dimension of the RHS DEIM basis
+`vec.deim.rebuild-database`:: boolean to rebuild the RHS DEIM database
+`mat.deim.dimension-max`:: maximum dimension of the LHS DEIM basis
+`mat.deim.rebuild-database`:: boolean to rebuild the LHS DEIM database
+`biotsavart.filename`:: path of the model file for biotsavart, can be the same as `thermoelectric.filename`
+`biotsavart.db.base`:: the name of the database for BiotSavart
+`biotsavart.trainset-deim-size`:: size of the trainset for DEIM of BiotSavart
+`bs.deim.dimension-max`:: maximum dimension of the BiotSavart DEIM basis
+`bs.deim.rebuild-database`:: boolean to rebuild the BiotSavart DEIM database
+`biotsavart.do-opt`:: boolean to do optimization or else convergence
+`biotsavart.use-bg-field`:: boolean to use or not a background field
+`nlopt.algo`:: algorithm to use for the optimization
+`nlopt.maxeval`:: maximume number of iterations for the optimization
+
+=== Model file
+
+The model to use, parameters, materials and boundary conditions, is set via a model file with the following sections.
+
+.Parameters
+[source,json,indent=0]
+----
+    "Parameters": // <1>
+    {
+        "pA": // <2>
+        {
+            "min":-3.14, // <3>
+            "max":3.14, // <4>
+            "value":0 // <5>
+        },
+----
+- <1>: name of the section
+- <2>: name of the parameter
+- <3>: minimum of the parameter
+- <4>: maximum of the parameter
+- <5>: value of the parameter, might be used as default parameter
+
+.Materials
+[source,json,indent=0]
+----
+    "Materials": // <1>
+    {
+        "H1_Cu": // <2>
+        {
+            "physics":"electric-geo", // <3>
+            "sigma":58e6, // <4>
+            "zmin":-0.08651, // <5>
+            "zmax":0.08651, // <6>
+            "params":["pA","pB","pC","pD","pE","pF","pG","pH"] // <7>
+        }
+        "H3_Cu":
+        {
+            "physics":"electric-geo",
+            "sigma":58e6
+        },
+        "Copper":
+        {
+            "physics":"electric", // <8>
+            "markers": // <9>
+            {
+                "name":["H%1%_Cu","R%2%"],
+                "index1":"3:5",
+                "index2":"2:4"
+            },
+            "sigma":"58e6"
+        },
+----
+- <1>: name of the section
+- <2>: marker of the material
+- <3>: `electric-geo` means the optimization takes place in this material
+- <4>: electric conductivity
+- <5>: z minimum from where the deformation begins, if not present, do not deform
+- <6>: z maximum to where the deformation ends, if not present, do not deform
+- <7>: list of parameters to use for this material, if not present, do not deform
+- <8>: `electric` means background field
+- <9>: markers and parameters can be used as in the toolbox
+
+.Boundary conditions
+[source,json,indent=0]
+----
+    "BoundaryConditions": // <1>
+    {
+        "potential": // <2>
+        {
+            "Dirichlet": // <3>
+            {
+                "H1_V0": // <4>
+                {
+                    "expr":"0", // <5>
+                    "material":"H1_Cu" // <6>
+                },
+            }
+        },
+        "electric-potential": // <7>
+        {
+            "Dirichlet":
+            {
+                "H2_V0":
+                {
+                    "expr":"-16"
+                },
+----
+- <1>: name of the section
+- <2>: electric potential in materials with deformation
+- <3>: type of the condition, for now only Dirichlet
+- <4>: marker of the condition
+- <5>: expression of the condition
+- <6>: name of the material to use for weak Dirichlet conditions
+- <7>: `electric-potential` for boundary conditions of the background field, same as in toolbox
