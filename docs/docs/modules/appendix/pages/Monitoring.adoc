@@ -1,5 +1,6 @@
 [[monitoring]]
 = Magnets Monitoring
+:page-plotly: true
 
 In this paragraph we present the main principle of the magnet monitoring.
 
