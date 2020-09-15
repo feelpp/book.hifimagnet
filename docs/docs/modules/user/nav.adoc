@@ -2,7 +2,7 @@
 *** xref:index.adoc#quickstart[Quick Start]
 **** xref:index.adoc#qs_getting[Getting {hifimagnet}]
 **** xref:index.adoc#qs_reference[Running {hifimagnet}]
-## *** xref:index.adoc#usage[Usage]
+// *** xref:index.adoc#usage[Usage]
 *** xref:index.adoc#data[Data Structure]
 *** xref:index.adoc#workflow[Using {hifimagnet}]
 

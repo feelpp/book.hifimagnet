@@ -1,8 +1,12 @@
 [[Appendix]]
-= Appendixn
+= Appendix
 :toc: macro
 include::{partialsdir}/header-macros.adoc[]
 include::{partialsdir}/header-uri.adoc[]
 include::{partialsdir}/mso4sc-uri.adoc[]
 
 This section contains some more detailled examples.
+
+* xref:Monitoring.adoc[Monitoring]
+* xref:M9_2017_03.adoc[Plateau]
+* xref:Commissiong.adoc[Commissioning]
