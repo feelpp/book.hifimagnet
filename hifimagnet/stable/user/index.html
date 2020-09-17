@@ -470,7 +470,7 @@ It consists in a set of tools including:</p>
 <div class="sect2">
 <h3 id="matrix"><a class="anchor" href="#matrix"></a>2.1. HiFiMagnet plugin matrix</h3>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">A For 3D static analysis:</caption>
+<caption class="title">For 3D static analysis:</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -485,7 +485,19 @@ It consists in a set of tools including:</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Note</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ubuntu 20.04</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hifimagnet</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">On Debian/Ubuntu Lncmi repository</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Recommanded dist: Ubuntu 20.04</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">On Windows 10 requires MobaXterm for <strong>GUI</strong> mode</p></td>
@@ -517,7 +529,7 @@ It consists in a set of tools including:</p>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">B For transient analysis:</caption>
+<caption class="title">For transient analysis:</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -532,10 +544,10 @@ It consists in a set of tools including:</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Note</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ubuntu 20.04</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NA</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">On Windows 10 requires MobaXterm for <strong>GUI</strong> mode</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
@@ -614,52 +626,128 @@ to specify what calculations are performed. The configuration files are fully de
 <p>As stated in introduction HiFiMagnet per se provides tools for High Field Magnets simulation.
 More precisely we can model:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>thermo-electric behavior,</p>
-</li>
-<li>
-<p>magnetic field produced:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>everywhere</p>
-</li>
-<li>
-<p>only in a zone of interest from a user perspective</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>mechanical behavior accounting for:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>an axisymetrical estimation of the magnetic field</p>
-</li>
-<li>
-<p>the magnetic field produced</p>
-</li>
-<li>
-<p>thermal dilation</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>fully coupled behavior</p>
-</li>
-</ul>
-</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. CG Models (<strong>* to be completed </strong>*):</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Model/Behavior</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Executable</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Features/Comments</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">thermo-electric</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Magnetostatic</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">everywhere</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">only in a zone of interest from a user perspective</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mechanics (CSM)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fully-Coupled</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lorentz forces computed from an axisymetrical estimation of the magnetic field</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3D Lorentz forces</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">account for thermal dilation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Transient</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no CSM, do not account for deformation</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. DG Models (<strong>* to do </strong>*):</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Model/Behavior</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Executable</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Features/Comments</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. CRB Models (<strong>* to do </strong>*:</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Model/Behavior</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Executable</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Features/Comments</p></td>
+</tr>
+</tbody>
+</table>
 <div class="paragraph">
 <p>The kind of calculation performed is specified in a configuration <code>cfg</code> file.
 The data settings consist in writting json files for each physical model involved,
 providing connection between CAD/Mesh entities to respectively Material and Boundary conditions.</p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>In <a href="#cad.adoc#setup" class="page unresolved">Salome HiFiMagnet plugin</a> section, we have shown how to generate templates for the <code>cfg</code> and <code>json</code> files.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 <div class="sect2">
-<h3 id="data"><a class="anchor" href="#data"></a>3.1. Data structure</h3>
+<h3 id="mesh"><a class="anchor" href="#mesh"></a>3.1. Mesh for HiFiMagnet</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>generate mesh with Salome HiFiMagnet plugin</p>
+</li>
+<li>
+<p>convert med to msh format</p>
+</li>
+<li>
+<p>eventually partition mesh</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="data"><a class="anchor" href="#data"></a>3.2. Data structure</h3>
 <div class="paragraph">
 <p>HiFiMagnet simulations parameters are defined througth configuration file <code>.cfg</code>
 and <code>json</code> files defining the model per physic and eventually some other <code>json</code> files
@@ -670,156 +758,107 @@ for the physical properties of the materials.</p>
 In this section we will give details about these different files.</p>
 </div>
 <div class="sect3">
-<h4 id="_config_files"><a class="anchor" href="#_config_files"></a>3.1.1. Config Files</h4>
+<h4 id="_config_files"><a class="anchor" href="#_config_files"></a>3.2.1. Config Files</h4>
+<div class="paragraph">
+<p>The main configuration file is a <code>cfg</code> file (actually an <strong>ini</strong> file).
+It contains all information about the mesh, the models involved etc
+All information is stored in a <code>[section]</code> except for a few main parameters.
+An exemple for a full coupled model is given below:</p>
+</div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-cfg hljs" data-lang="cfg">dim=3
-geofile=quarter-torus3D.geo <i class="conum" data-value="1"></i><b>(1)</b>
-geofile-path=$cfgdir
-gmsh.scale=0.001 <i class="conum" data-value="2"></i><b>(2)</b>
-gmsh.hsize=5
+<pre class="highlightjs highlight"><code class="language-cfg hljs" data-lang="cfg">directory=full/HL-31/P1 <i class="conum" data-value="1"></i><b>(1)</b>
 
-conductor_volume=coil <i class="conum" data-value="3"></i><b>(3)</b>
-#insulator_volume=glue
+case.discretization=P1 <i class="conum" data-value="2"></i><b>(2)</b>
+
+model-file=$cfgdir/M19061901_full.json <i class="conum" data-value="3"></i><b>(3)</b>
 
 compute_magnetism=true <i class="conum" data-value="4"></i><b>(4)</b>
-compute_bg_magfield=false
-compute_bg_magfield_bmap=false
-compute_elasticity=false
+compute_bg_magfield_bmap=true
+compute_biotsavart=false
+compute_elasticity=true
 
-[convergence]
-max_iter=1
+[gmsh] <i class="conum" data-value="5"></i><b>(5)</b>
+filename=$cfgdir/HL-31_withAir_p.json
+partition=0
 
-[functions]
-j={58.e+3*(0.5/(2*Pi))*y/(x^2+y^2),-58.e+3*(0.5/(2*Pi))*x/(x^2+y^2),0}:x:y:z
-v=0.5*atan2(y,x)/(2*Pi)*(atan2(y,x)&gt;0)+(0.5*(atan2(y,x)+2*Pi)/(2*Pi))*(atan2(y,x)&lt;0):x:y:z
-t=362.156146169164-58.e+3/(2*0.38)*(0.5/(2*Pi))^2*log(sqrt(x*x+y*y)/39.4354779237947 )^2:x:y:z
-
-[thermoelectric] <i class="conum" data-value="5"></i><b>(5)</b>
-model_json=$cfgdir/quarter-torus3D-therm.json
-weakdir=false
-
-[electro]
-pc-type=boomeramg #gamg
-#ksp-monitor=true
-ksp-rtol=1e-7
-ksp-atol=1e-5
-ksp-maxit=2000
-ksp-use-initial-guess-nonzero=1
-
-[thermal]
-pc-type=boomeramg #gamg
-#ksp-monitor=true
-ksp-rtol=1e-8
-ksp-atol=1e-6
-ksp-use-initial-guess-nonzero=1
-
-[elasticity] <i class="conum" data-value="6"></i><b>(6)</b>
-filename=$cfgdir/quarter-torus3D-elasticity.json
-on.type=elimination_symmetric
-lorentz_forces=true
-thermal_dilatation=false
-# # precondtioner config
-pc-type=boomeramg #gamg #lu,gasm,ml
-ksp-monitor=true
-# ksp-converged-reason=1
+[thermo-electric] <i class="conum" data-value="6"></i><b>(6)</b>
+solver=Newton
+solver-newton.initial-guess.use-linear-electric=1
+verbose_solvertimer=1
+error-if-solver-not-converged=1
+...
 
 [magnetic_field-bmap] <i class="conum" data-value="7"></i><b>(7)</b>
-geo-data=torus3D.d
-geo-path=$cfgdir
-helix-intensity=0
-bitter-intensity=11767.7
-supra-intensity=0
+geo-data=HL-31.d
+...
 
-[magnetostatic] <i class="conum" data-value="8"></i><b>(8)</b>
-model_json=$cfgdir/quarter-torus3D-mag.json
-weakdir=false
-eps-coeff=0
-# print-info=1
+[biot_savart] <i class="conum" data-value="8"></i><b>(8)</b>
+box=Box
+...
 
-[ms]
-pc-type=ams
-#
-# pc-hypre-ams options
-# see : http://www.mcs.anl.gov/petsc/petsc-dev/src/ksp/pc/impls/hypre/hypre.c.html
-#
-# when ams is used as a preconditionner
-# use ams-cycle-type : 2,4,6,8,12,14
-#
-# relax-type:
-# 1 weighted Jacobi relaxation,
-# 2 a hybrid Gauss-Seidel / Jacobi relaxation scheme,
-# 3 a symmetric hybrid Gauss-Seidel / Jacobi relaxation scheme,
-# 4 l1-Gauss-Seidel or Jacobi,
-# 5 Chebyshev smoothers,
-# 6 hybrid block and Schwarz smoothers [36],
-# 7 ILU and approximate inverse smoothers.
-#
-# when ksp-type=cg
-# use a symmetric smoother such as
-# weighted Jacobi or hybrid symmetric Gauss-Seidel
-pc-hypre-ams-max-iter=15
-pc-hypre-ams-print-level=2
-pc-hypre-ams-cycle-type=13
-pc-hypre-ams-tol=1.e-6
-pc-hypre-ams-relax-type=4
-pc-hypre-ams-relax-times=4
-pc-hypre-ams-relax-weight=0.8
-pc-hypre-ams-omega=0.8
-#
-pc-view=1
-ksp-type=preonly #cg
-ksp-monitor=1
-ksp-atol=2e-3
-ksp-rtol=1e-7
-ksp-verbose=1
-ksp-view=0
-show-preconditioner-options=1
-#ksp-use-initial-guess-nonzero=1
+[magnetostatic] <i class="conum" data-value="9"></i><b>(9)</b>
+model_json=$cfgdir/M19061901_full.json
+...
 
-# in json:    "Model": "MagnetoStatic-singular"
-[ts]
-steady=true</code></pre>
+
+[elasticity] <i class="conum" data-value="10"></i><b>(10)</b>
+filename=$cfgdir/M19061901_full.json
+...</code></pre>
 </div>
 </div>
 <div class="colist arabic">
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>name of the geometry or mesh</td>
+<td>directory:</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>gmsh options: scale (optional, the default is <strong>meter</strong>), mesh size</td>
+<td>case.discretization:</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>list of conductor and insulator volumes</td>
+<td>model-file:</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="4"></i><b>4</b></td>
-<td>flag to control calculations</td>
+<td>compute options</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="5"></i><b>5</b></td>
-<td>thermo-electric model</td>
+<td><code>[gmsh]</code> section</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="6"></i><b>6</b></td>
-<td>elasticity model</td>
+<td><code>[thermo-electric]</code> section</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="7"></i><b>7</b></td>
-<td>specific to HiFiMagnet</td>
+<td><code>[magnetic_field-bmap]</code> section</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="8"></i><b>8</b></td>
-<td>magnetostatic model</td>
+<td><code>[biot_savart]</code> section</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="9"></i><b>9</b></td>
+<td><code>[magnetostatic]</code> section</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="10"></i><b>10</b></td>
+<td><code>[elasticity]</code> section</td>
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p>The first lines define the geometry or mesh to consider:</p>
+<div class="sect4">
+<h5 id="_gmsh_section"><a class="anchor" href="#_gmsh_section"></a><code>[gmsh]</code> section</h5>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cfg hljs" data-lang="cfg">[gmsh]
+filename=$cfgdir/HL-31_withAir_p.json
+partition=0</code></pre>
+</div>
 </div>
 <div class="ulist">
 <ul>
@@ -829,43 +868,45 @@ steady=true</code></pre>
 <li>
 <p>gmsh options: scale (optional, the default is <strong>meter</strong>), mesh size</p>
 </li>
-<li>
-<p>list of conductor and insulator volumes</p>
-</li>
 </ul>
 </div>
-<div class="paragraph">
-<p>The next section give setup the calculations to be ran:</p>
 </div>
-<div class="paragraph">
-<p>This is followed by section dedicated to specific physics.
-In this example we have:</p>
+<div class="sect4">
+<h5 id="_thermo_electric_section"><a class="anchor" href="#_thermo_electric_section"></a><code>[thermo-electric]</code> section</h5>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cfg hljs" data-lang="cfg">[thermo-electric]
+solver=Newton
+solver-newton.initial-guess.use-linear-electric=1
+verbose_solvertimer=1
+error-if-solver-not-converged=1
+ksp-monitor=1
+snes-monitor=1
+snes-rtol=1.e-10
+snes-maxit=100
+snes-ksp-rtol=1.e-3
+snes-ksp-maxit=4000
+
+# Fieldsplit
+pc-type=fieldsplit
+fieldsplit-type=additive #additive, multiplicative, symmetric-multiplicative
+[thermo-electric.fieldsplit-0]
+pc-type=gamg
+[thermo-electric.fieldsplit-1]
+pc-type=gamg
+
+[thermo-electric.heat]
+initial-solution.temperature=290
+#verbose=1
+verbose_solvertimer=1
+pc-type=gamg
+ksp-monitor=1
+
+[thermo-electric.electric]
+verbose_solvertimer=1
+pc-type=gamg
+ksp-monitor=1</code></pre>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>thermo-electric model</p>
-</li>
-<li>
-<p>elasticity model</p>
-</li>
-<li>
-<p>magnetostatic model</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Each of this physic section contains:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>name of the <code>json</code> file holding the complete description of the model (see bellow),</p>
-</li>
-<li>
-<p>setup of the solver: eg <code>[electro]</code> and [<code>thermal</code>] for thermo-electric model</p>
-</li>
-</ul>
 </div>
 <div class="paragraph">
 <p>Solver are specific to each physical model.
@@ -892,10 +933,55 @@ A typical iterative solver is defined as follow:</p>
 </li>
 </ul>
 </div>
+</div>
+<div class="sect4">
+<h5 id="_magnetostatic_section"><a class="anchor" href="#_magnetostatic_section"></a><code>[magnetostatic]</code> section</h5>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cfg hljs" data-lang="cfg">[magnetostatic]
+model_json=$cfgdir/M19061901_full.json
+weakdir=false
+#eps-coeff = 1.e-7
+
+[ms]
+pc-type=gamg  #boomeramg
+pc-view=true
+ksp-monitor=1
+ksp-rtol=1e-5
+ksp-maxit=2000
+#ksp-use-initial-guess-nonzero=1
+ksp-converged-reason=1
+error-if-solver-not-converged=1</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_biot_savart_section"><a class="anchor" href="#_biot_savart_section"></a><code>[biot_savart]</code> section</h5>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cfg hljs" data-lang="cfg">[biot_savart]
+box=Box
+boxdim=3</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_magnetic_field_bmap_section"><a class="anchor" href="#_magnetic_field_bmap_section"></a><code>[magnetic_field-bmap]</code> section</h5>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cfg hljs" data-lang="cfg">[magnetic_field-bmap]
+geo-data=HL-31.d
+geo-path=$cfgdir
+helix-intensity=0
+# helix-auto-intensity=true # mean(I_Helix = (fabs(I0) + fabs(I1))/2.)
+bitter-intensity=30000
+supra-intensity=0</code></pre>
+</div>
+</div>
 <div class="paragraph">
 <p>Section <code>magnetic_field-bmap</code> is specific to HiFiMagnet. It enables to define
 data needed to compute the "ideal" magnetic field provided by a magnet
-using <a href="#xref:magnettools:Bmap.adoc#bmap" class="page unresolved">xref:magnettools:Bmap.adoc#bmap</a>:</p>
+using <a href="#xref:magnettools:Bmap.adoc#bmap" class="page unresolved">B_Map</a>:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -923,8 +1009,29 @@ Bitter magnets and/or Supraconductor Magnets.</p>
 </table>
 </div>
 </div>
+<div class="sect4">
+<h5 id="_elasticity_section"><a class="anchor" href="#_elasticity_section"></a><code>[elasticity]</code> section</h5>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cfg hljs" data-lang="cfg">[elasticity]
+filename=$cfgdir/M19061901_full.json
+on.type=elimination_symmetric
+lorentz_forces=true
+thermal_dilatation=true
+# # precondtioner config
+pc-view=true
+pc-type=gamg #boomeramg #lu,gasm,ml
+ksp-maxit=2000
+ksp-rtol=1e-5
+ksp-monitor=1
+ksp-converged-reason=1
+error-if-solver-not-converged=1</code></pre>
+</div>
+</div>
+</div>
+</div>
 <div class="sect3">
-<h4 id="_physic_model_files"><a class="anchor" href="#_physic_model_files"></a>3.1.2. Physic Model files</h4>
+<h4 id="_physic_model_files"><a class="anchor" href="#_physic_model_files"></a>3.2.2. Physic Model files</h4>
 <div class="paragraph">
 <p>The Physic Model files are <code>json</code> files that contain informations about:</p>
 </div>
@@ -941,221 +1048,531 @@ Bitter magnets and/or Supraconductor Magnets.</p>
 </li>
 </ul>
 </div>
-<div class="sect4">
-<h5 id="_thermoelectric_model_file"><a class="anchor" href="#_thermoelectric_model_file"></a>ThermoElectric Model file</h5>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-cfg hljs" data-lang="cfg">{
-    "Name": "CoupledCart", <i class="conum" data-value="1"></i><b>(1)</b>
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+    "Name": "CoupledCart",
     "ShortName":"MSC",
-    "Models": <i class="conum" data-value="2"></i><b>(2)</b>
+    "Models":
     {
-        "equations": "thermoelectric-linear"
-    },
-    "Materials": <i class="conum" data-value="3"></i><b>(3)</b>
-    {
-        "coil":
+	"use-model-name":1,
+	"solid":
+	{
+	    "equations":"Elasticity"
+	},
+        "maxwell":
         {
-            "name":"copper",
-            "filename":"$cfgdir/Cu.json"
+	    "equations":"magnetostatic-cart"
+	}
+    },
+    "Parameters":
+    {
+	"T0":"293.",
+
+	"U0":"-482.411",
+	"Tin":"293.15",
+	"h":"85870.2",
+	"dTw":"24.23",
+	"Tw":"306.746",
+	...
+    },
+    "Materials":
+    {
+	"H1":
+	{
+	    "markers":"H1_Cu",
+	    "physics":["heat","electric","solid","maxwell"],
+	    "alpha":"3.6e-3",
+	    "sigma0":"52.4e+6",
+	    "k0":"380",
+	    "sigma":"sigma0/(1+alpha*(heat_T-T0)):sigma0:alpha:heat_T:T0",
+	    "k":"k0*heat_T/((1+alpha*(heat_T-T0))*T0):k0:heat_T:alpha:T0",
+	    "E":"117e+9",
+	    "nu":"0.33",
+	    "alphaT":"18e-6",
+	    "rho":"9e+3",
+            "mu_mag": "1"
+	},
+	"H2":
+        {
+	    ...
+        }
+	...,
+	"R1":
+        {
+	    "markers":"R1",
+	    "physics":["heat","electric","solid","maxwell"],
+	},
+	...,
+	"Isolant1":
+	{
+	    "markers":"H1_Isolant",
+	    "physics":["heat","solid","maxwell"],
+	    ...
+	},
+	...,
+        "biotbox":
+        {
+            "markers":"BiotBox",
+	    "physics":["biot"],
+            "mu_mag": "1"
+        },
+        "Air":
+        {
+            "markers":"Air",
+	    "physics":["maxwell"],
+            "mu_mag": "1"
         }
     },
-    "BoundaryConditions": <i class="conum" data-value="3"></i><b>(3)</b>
+    "BoundaryConditions":
     {
-        "potential": <i class="conum" data-value="4"></i><b>(4)</b>
-        {
+	"electric-potential":
+	{
             "Dirichlet":
             {
-                "V0":
-                {
-                    "expr1":"0.5/4.",
-		    "expr2":"coil"
-                },
-                "V1":
-                {
-                    "expr1":"0",
-		    "expr2":"coil"
-                }
+		...
             }
-        },
-        "temperature": <i class="conum" data-value="5"></i><b>(5)</b>
-        {
+	},
+	"temperature":
+	{
             "Robin":
             {
-                "Rext":
-                {
-                    "expr1":"80000",
-                    "expr2":"293"
-                },
-                "Rint":
-                {
-                    "expr1":"80000",
-                    "expr2":"293"
-                }
+		...
             }
-        }    },
-    "PostProcess": <i class="conum" data-value="6"></i><b>(6)</b>
-    {
-        "Exports":
-        {
-            "fields":["temperature","potential","joules","current"]
-        }
-    }
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_magnetostatics_model_file"><a class="anchor" href="#_magnetostatics_model_file"></a>Magnetostatics Model file</h5>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-cfg hljs" data-lang="cfg">{
-    "Name": "CoupledCart", <i class="conum" data-value="1"></i><b>(1)</b>
-    "ShortName":"MSC",
-    "Models": <i class="conum" data-value="2"></i><b>(2)</b>
-    {
-        "equations": "magnetostatic-regularized"
-    },
-    "Materials": <i class="conum" data-value="3"></i><b>(3)</b>
-    {
-        "coil":
-        {
-            "name":"copper",
-            "mu_mag": "1"
-        },
-        "air":
-        {
-            "name":"air",
-            "mu_mag": "1"
-        }
-    },
-    "BoundaryConditions": <i class="conum" data-value="4"></i><b>(4)</b>
-    {
+	},
         "magnetic_potential":
         {
+            "Dirichlet_Biot":
+            {
+                "A1_InfR1": {}
+            },
+            "DirichletY":
+            {
+                ...
+            }
+        },
+	"displacement":
+	{
             "Dirichlet":
             {
-                "Border":
-                {
-                    "expr":"{0,0,0}:x:y:z"
-                },
-                "OYOZ":
-                {
-                    "expr":"0:x:y:z"
-                },
-                "V1":
-                {
-                    "expr":"0:x:y:z"
-                },
-                "OXOZ":
-                {
-                    "expr":"0:x:y:z"
-                },
-                "V0":
-                {
-                    "expr":"0:x:y:z"
-                }
-            }
-        }
-    },
-    "PostProcess":, <i class="conum" data-value="5"></i><b>(5)</b>
-    {
-        "Exports":
-        {
-            "fields":["magneticPotential","magneticField","currentDensity"]
-        }
-    }
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_elasticity_model_file"><a class="anchor" href="#_elasticity_model_file"></a>Elasticity Model file</h5>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-cfg hljs" data-lang="cfg">{
-    "Name": "CoupledCart", <i class="conum" data-value="1"></i><b>(1)</b>
-    "ShortName":"MSC",
-    "Models": <i class="conum" data-value="2"></i><b>(2)</b>
-    {
-        "equations": "Elasticity"
-    },
-    "Materials": <i class="conum" data-value="3"></i><b>(3)</b>
-    {
-        "coil":
-        {
-            "name":"copper",
-            "E":"2.1e6",
-            "nu":"0.33",
-            "alphaT":"18e-6",
-            "rho":"10.e-6"
-        }
-    },
-    "BoundaryConditions": <i class="conum" data-value="4"></i><b>(4)</b>
-    {
+		...
+	    }
+	},
         "displacement_z":
         {
             "Dirichlet":
             {
-                "HP":
-                {
-                    "expr":"0"
-                },
-                "BP":
-                {
-                    "expr":"0"
-                }
+                "R1_BP": { "expr":"0" },
+                ...
             }
-        },
-        "displacement_y":
-        {
-            "Dirichlet":
-            {
-                "V0":
-                {
-                    "expr":"0"
-                }
-            }
-        },
-        "displacement_x":
-        {
-            "Dirichlet":
-            {
-                "V1":
-                {
-                    "expr":"0"
-                }
-            }
-        }
+	}
     },
-    "PostProcess": <i class="conum" data-value="5"></i><b>(5)</b>
+    "PostProcess":
     {
-        "Exports":
-        {
-            "fields":["displacement","Von-Mises","tresca","principal-stresses"]
-        }
+        "use-model-name":1,
+	"maxwell":
+	{
+	    "Exports":
+	    {
+		"fields":["magneticPotential","magneticField"]
+	    }
+	},
+        "solid":
+	{
+            "Exports":
+            {
+		"fields":["displacement","Von-Mises","tresca","principal-stresses","material-properties"]
+	    }
+	},
+        "thermo-electric":
+	{
+            "Exports":
+            {
+		"fields":["heat.temperature","electric.electric-potential","electric.current-density"]
+	    }
+	},
+        "electric":
+	{
+	    "Save":
+	    {
+		"Fields":
+		{
+		    "names":["electric-potential"]
+		}
+	    },
+	    "Measures":
+	    {
+		"Points":
+		{
+		    "%1_1%":
+		    {
+			"coord":"%1_2%",
+			"fields":"electric-potential",
+			"index1": [ ["V0", "{-21.75e-3,0.e-3,-421.15e-3}"],
+                		    ...
+				  ]
+		    }
+		},
+		"Statistics":
+		{
+		    "Intensity0":
+		    {
+			"type":"integrate",
+			"expr":"-electric_iL1_sigma*electric_dnP:electric_iL1_sigma:electric_dnP",
+			"markers":"Inner1_LV0"
+		    },
+		    "Intensity1":
+		    {
+			"type":"integrate",
+			"expr":"-electric_oL2_sigma*electric_dnP:electric_oL2_sigma:electric_dnP",
+			"markers":"OuterL2_LV0"
+		    },
+                    "Power_%1_1%":
+                    {
+                        "type":"integrate",
+                        "expr":"electric_%1_1%_sigma*(electric_dxP^2+electric_dyP^2+electric_dzP^2):electric_%1_1%_sigma:electric_dxP:electric_dyP:electric_dzP",
+                        "markers":"%1_2%",
+			"index1":[ ["H1", "H1_Cu"],
+				   ...
+                                 ]
+                    }
+		}
+	    }
+	},
+	"heat":
+	{
+	    "Save":
+	    {
+		"Fields":
+		{
+		    "names":["temperature"]
+		}
+	    },
+	    "Measures":
+	    {
+		"Points":
+		{
+		    "%1_1%":
+		    {
+			"coord":"%1_2%",
+			"fields":"temperature",
+			"index1": [ ["T0", "{-3.554e-3,-33.8174e-3,-118e-3}"],
+                		    ["T1","{-5.4752e-3,34.5691e-3,135e-3}"]
+				  ]
+		    }
+		},
+		"Statistics":
+		{
+		    "MeanT":
+		    {
+			"type":["min","max","mean"],
+			"field":"temperature"
+		    },
+		    "MeanT_%1_1%":
+		    {
+			"type":["min","max","mean"],
+			"field":"temperature",
+			"markers":["%1_2%","%1_3%","%1_4%"],
+			"index1":[ ["Couple1", "H1_Cu", "R1", "H2_Cu" ],
+				   ...
+				 ]
+		    },
+		    "MeanT_%1_1%":
+		    {
+			"type":["min","max","mean"],
+			"field":"temperature",
+			"markers":"%1_2%",
+			"index1":[ ["H1", "H1_Cu"],
+				   ...
+				 ]
+		    },
+		    "Flux_%1_1%":
+		    {
+			"type":"integrate",
+			"expr":"%1_2%*(heat_T-(%1_3%+%1_4%/2.)):heat_T:%1_2%:%1_3%:%1_4%",
+			"markers":"%1_1%",
+			"index1":[ ["Channel0", "h0", "Tin", "dTw0"],
+				   ...
+				 ]
+		    }
+		}
+	    }
+	}
     }
 }</code></pre>
 </div>
 </div>
 </div>
+<div class="sect3">
+<h4 id="_models_section"><a class="anchor" href="#_models_section"></a>3.2.3. Models section</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">    "Name": "CoupledCart",
+    "ShortName":"MSC",
+    "Models":
+    {
+	"use-model-name":1,
+	"solid":
+	{
+	    "equations":"Elasticity"
+	},
+        "maxwell":
+        {
+	    "equations":"magnetostatic-cart"
+	}
+    },</code></pre>
+</div>
+</div>
 </div>
 <div class="sect3">
-<h4 id="_materials_file"><a class="anchor" href="#_materials_file"></a>3.1.3. Materials file</h4>
+<h4 id="_parameters"><a class="anchor" href="#_parameters"></a>3.2.4. Parameters</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">    "Parameters":
+    {
+	"T0":"293.",
+
+	"U0":"-482.411",
+	"Tin":"293.15",
+	"h":"85870.2",
+	"dTw":"24.23",
+	"Tw":"306.746",
+	...
+    },</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_materials"><a class="anchor" href="#_materials"></a>3.2.5. Materials</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">    "Materials":
+    {
+	"H1":
+	{
+	    "markers":"H1_Cu",
+	    "physics":["heat","electric","solid","maxwell"],
+	    "alpha":"3.6e-3",
+	    "sigma0":"52.4e+6",
+	    "k0":"380",
+	    "sigma":"sigma0/(1+alpha*(heat_T-T0)):sigma0:alpha:heat_T:T0",
+	    "k":"k0*heat_T/((1+alpha*(heat_T-T0))*T0):k0:heat_T:alpha:T0",
+	    "E":"117e+9",
+	    "nu":"0.33",
+	    "alphaT":"18e-6",
+	    "rho":"9e+3",
+            "mu_mag": "1"
+	},
+	"H2":
+        {</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_boundaryconditions"><a class="anchor" href="#_boundaryconditions"></a>3.2.6. BoundaryConditions</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">    "BoundaryConditions":
+    {
+	"electric-potential":
+	{
+            "Dirichlet":
+            {
+		...
+            }
+	},
+	"temperature":
+	{
+            "Robin":
+            {
+		...
+            }
+	},
+        "magnetic_potential":
+        {
+            "Dirichlet_Biot":
+            {
+                "A1_InfR1": {}
+            },
+            "DirichletY":
+            {
+                ...
+            }
+        },
+	"displacement":
+	{
+            "Dirichlet":
+            {
+		...
+	    }
+	},
+        "displacement_z":
+        {
+            "Dirichlet":
+            {
+                "R1_BP": { "expr":"0" },
+                ...
+            }
+	}
+    },</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_postprocess"><a class="anchor" href="#_postprocess"></a>3.2.7. PostProcess</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">    "PostProcess":
+    {
+        "use-model-name":1,
+	"maxwell":
+	{
+	    "Exports":
+	    {
+		"fields":["magneticPotential","magneticField"]
+	    }
+	},
+        "solid":
+	{
+            "Exports":
+            {
+		"fields":["displacement","Von-Mises","tresca","principal-stresses","material-properties"]
+	    }
+	},
+        "thermo-electric":
+	{
+            "Exports":
+            {
+		"fields":["heat.temperature","electric.electric-potential","electric.current-density"]
+	    }
+	},
+        "electric":
+	{
+	    "Save":
+	    {
+		"Fields":
+		{
+		    "names":["electric-potential"]
+		}
+	    },
+	    "Measures":
+	    {
+		"Points":
+		{
+		    "%1_1%":
+		    {
+			"coord":"%1_2%",
+			"fields":"electric-potential",
+			"index1": [ ["V0", "{-21.75e-3,0.e-3,-421.15e-3}"],
+                		    ...
+				  ]
+		    }
+		},
+		"Statistics":
+		{
+		    "Intensity0":
+		    {
+			"type":"integrate",
+			"expr":"-electric_iL1_sigma*electric_dnP:electric_iL1_sigma:electric_dnP",
+			"markers":"Inner1_LV0"
+		    },
+		    "Intensity1":
+		    {
+			"type":"integrate",
+			"expr":"-electric_oL2_sigma*electric_dnP:electric_oL2_sigma:electric_dnP",
+			"markers":"OuterL2_LV0"
+		    },
+                    "Power_%1_1%":
+                    {
+                        "type":"integrate",
+                        "expr":"electric_%1_1%_sigma*(electric_dxP^2+electric_dyP^2+electric_dzP^2):electric_%1_1%_sigma:electric_dxP:electric_dyP:electric_dzP",
+                        "markers":"%1_2%",
+			"index1":[ ["H1", "H1_Cu"],
+				   ...
+                                 ]
+                    }
+		}
+	    }
+	},
+	"heat":
+	{
+	    "Save":
+	    {
+		"Fields":
+		{
+		    "names":["temperature"]
+		}
+	    },
+	    "Measures":
+	    {
+		"Points":
+		{
+		    "%1_1%":
+		    {
+			"coord":"%1_2%",
+			"fields":"temperature",
+			"index1": [ ["T0", "{-3.554e-3,-33.8174e-3,-118e-3}"],
+                		    ["T1","{-5.4752e-3,34.5691e-3,135e-3}"]
+				  ]
+		    }
+		},
+		"Statistics":
+		{
+		    "MeanT":
+		    {
+			"type":["min","max","mean"],
+			"field":"temperature"
+		    },
+		    "MeanT_%1_1%":
+		    {
+			"type":["min","max","mean"],
+			"field":"temperature",
+			"markers":["%1_2%","%1_3%","%1_4%"],
+			"index1":[ ["Couple1", "H1_Cu", "R1", "H2_Cu" ],
+				   ...
+				 ]
+		    },
+		    "MeanT_%1_1%":
+		    {
+			"type":["min","max","mean"],
+			"field":"temperature",
+			"markers":"%1_2%",
+			"index1":[ ["H1", "H1_Cu"],
+				   ...
+				 ]
+		    },
+		    "Flux_%1_1%":
+		    {
+			"type":"integrate",
+			"expr":"%1_2%*(heat_T-(%1_3%+%1_4%/2.)):heat_T:%1_2%:%1_3%:%1_4%",
+			"markers":"%1_1%",
+			"index1":[ ["Channel0", "h0", "Tin", "dTw0"],
+				   ...
+				 ]
+		    }
+		}
+	    }
+	}
+    }</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_materials_file"><a class="anchor" href="#_materials_file"></a>3.2.8. Materials file</h4>
 <div class="paragraph">
-<p>Physical properties of the material are defined in a <code>json</code> file
+<p>Physical properties of the material may be defined in a separate <code>json</code> file
 for each material. The properties are given in SI units.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-cfg hljs" data-lang="cfg">{
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
     "name":"Cu", <i class="conum" data-value="1"></i><b>(1)</b>
     "sigma0":"50.e+6",
     "k0":"330",
     "T0":"293",
     "alpha":"3.4e-3", <i class="conum" data-value="2"></i><b>(2)</b>
-    "sigma":"sigma0/(1+alpha*(T-T0)):sigma0:alpha:T:T0", <i class="conum" data-value="3"></i><b>(3)</b>
-    "k":"k0*T/((1+alpha*(T-T0))*T0):k0:T:alpha:T0", <i class="conum" data-value="4"></i><b>(4)</b>
+    "sigma":"sigma0/(1+alpha*(heat_T-T0)):sigma0:alpha:heat_T:T0", <i class="conum" data-value="3"></i><b>(3)</b>
+    "k":"k0*heat_T/((1+alpha*(heat_T-T0))*T0):k0:heat_T:alpha:T0", <i class="conum" data-value="4"></i><b>(4)</b>
     "E":"120.e+9", <i class="conum" data-value="5"></i><b>(5)</b>
     "nu":"0.35", <i class="conum" data-value="6"></i><b>(6)</b>
     "alphaT":"18e-6", <i class="conum" data-value="7"></i><b>(7)</b>
@@ -1241,9 +1658,9 @@ defining properties for material &lt;1&gt; :</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="workflow"><a class="anchor" href="#workflow"></a>3.2. Workflow</h3>
+<h3 id="workflow"><a class="anchor" href="#workflow"></a>3.3. Workflow</h3>
 <div class="sect3">
-<h4 id="_using_magnettools_to_define_design"><a class="anchor" href="#_using_magnettools_to_define_design"></a>3.2.1. Using MagnetTools to define Design</h4>
+<h4 id="_using_magnettools_to_define_design"><a class="anchor" href="#_using_magnettools_to_define_design"></a>3.3.1. Using MagnetTools to define Design</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1256,7 +1673,7 @@ defining properties for material &lt;1&gt; :</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_using_hifimagnet_salome_plugin_to_create_cad_and_generate_meshes"><a class="anchor" href="#_using_hifimagnet_salome_plugin_to_create_cad_and_generate_meshes"></a>3.2.2. Using HiFiMagnet Salome Plugin to create CAD and generate meshes</h4>
+<h4 id="_using_hifimagnet_salome_plugin_to_create_cad_and_generate_meshes"><a class="anchor" href="#_using_hifimagnet_salome_plugin_to_create_cad_and_generate_meshes"></a>3.3.2. Using HiFiMagnet Salome Plugin to create CAD and generate meshes</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1278,7 +1695,7 @@ defining properties for material &lt;1&gt; :</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_prepare_the_mesh_for_hpc"><a class="anchor" href="#_prepare_the_mesh_for_hpc"></a>3.2.3. Prepare the mesh for HPC</h4>
+<h4 id="_prepare_the_mesh_for_hpc"><a class="anchor" href="#_prepare_the_mesh_for_hpc"></a>3.3.3. Prepare the mesh for HPC</h4>
 <div class="paragraph">
 <p>The mesh created with HiFiMagnet Salome is in <code>med</code> format.
 Depending on the version of Feel++ used this format may not be supported.
@@ -1325,20 +1742,20 @@ Use <code>--gmsh.scale=0.001</code> to rescale the mesh.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_define_cfg_model_and_materials_files"><a class="anchor" href="#_define_cfg_model_and_materials_files"></a>3.2.4. Define Cfg, Model and Materials files</h4>
+<h4 id="_define_cfg_model_and_materials_files"><a class="anchor" href="#_define_cfg_model_and_materials_files"></a>3.3.4. Define Cfg, Model and Materials files</h4>
 
 </div>
 <div class="sect3">
-<h4 id="_running_3d_simulations"><a class="anchor" href="#_running_3d_simulations"></a>3.2.5. Running 3D simulations</h4>
+<h4 id="_running_3d_simulations"><a class="anchor" href="#_running_3d_simulations"></a>3.3.5. Running 3D simulations</h4>
 
 </div>
 <div class="sect3">
-<h4 id="_postprocessing_results"><a class="anchor" href="#_postprocessing_results"></a>3.2.6. Postprocessing results</h4>
+<h4 id="_postprocessing_results"><a class="anchor" href="#_postprocessing_results"></a>3.3.6. Postprocessing results</h4>
 
 </div>
 </div>
 <div class="sect2">
-<h3 id="examples"><a class="anchor" href="#examples"></a>3.3. Examples</h3>
+<h3 id="examples"><a class="anchor" href="#examples"></a>3.4. Examples</h3>
 <div class="ulist">
 <ul>
 <li>
