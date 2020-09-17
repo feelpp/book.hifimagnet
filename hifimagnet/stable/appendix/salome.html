@@ -3,8 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Untitled :: HiFiMagnet Documentation</title>
-    <link rel="canonical" href="https://book.hifimagnet.cemosis.fr/hifimagnet/stable/mso4sc/dev.html">
+    <title>Using Salome :: HiFiMagnet Documentation</title>
+    <link rel="canonical" href="https://book.hifimagnet.cemosis.fr/hifimagnet/stable/appendix/salome.html">
+    <meta name="keywords" content="Feel++, partial differential equations, finite element method,">
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../_/img/favicon.ico" type="image/x-icon">    
@@ -348,25 +349,25 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../appendix/index.html">Appendix</a>
+    <a class="nav-link" href="index.html">Appendix</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../appendix/Monitoring.html">Monitoring</a>
+    <a class="nav-link" href="Monitoring.html">Monitoring</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../appendix/M9_2017_03.html">Plateau simulation</a>
+    <a class="nav-link" href="M9_2017_03.html">Plateau simulation</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../appendix/Commissiong.html">Commissioning simulation</a>
+    <a class="nav-link" href="Commissiong.html">Commissioning simulation</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../appendix/Transient.html">Transient simulation</a>
+    <a class="nav-link" href="Transient.html">Transient simulation</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../appendix/Infrastructure.html">Computing Infrastructure</a>
+    <a class="nav-link" href="Infrastructure.html">Computing Infrastructure</a>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../appendix/salome.html">Using Salome</a>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="salome.html">Using Salome</a>
   </li>
 </ul>
   </li>
@@ -407,109 +408,58 @@
 <button class="nav-toggle"></button>
   <a href="../index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">HiFiMagnet Documentation</a></li>
+    <li><a href="index.html">Appendix</a></li>
+    <li><a href="salome.html">Using Salome</a></li>
+  </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/feelpp/book.hifimagnet/edit/master/docs/docs/modules/mso4sc/pages/dev.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/feelpp/book.hifimagnet/edit/master/docs/docs/modules/appendix/pages/salome.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <article class="doc">
-<div class="sect1">
-<h2 id="devuser"><a class="anchor" href="#devuser"></a>1. <strong>DevUser</strong> role</h2>
-<div class="sectionbody">
-
-</div>
-</div>
-<div class="sect1">
-<h2 id="_becoming_devuser"><a class="anchor" href="#_becoming_devuser"></a>2. Becoming <strong>DevUser</strong></h2>
+<h1 class="page">Using Salome</h1>
+<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Once registered in the portal, you  are a <strong>EndUser</strong>.
-To be granted <strong>DevUser</strong> rights, just email to Portal Admins (actually Victor or Javi).</p>
-</div>
-<div class="paragraph">
-<p>A <strong>DevUser</strong> can:</p>
+<p>Salome is an open-source generic platform for Pre- and Post-Processing for numerical simulation.
+Its key features are:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#registerapp">register</a>/<a href="#removeapp">remove</a> apps</p>
+<p>Supports interoperability between CAD modeling and computation software (CAD-CAE link).</p>
 </li>
 <li>
-<p><a href="#validorder">validate</a> <strong>EndUser</strong> purchased order: this step is mandatory to grant user rights to run purchased app</p>
-</li>
-<li>
-<p><a href="#sregistry_add_to_team">admin Sregistry</a> private collections</p>
-</li>
-</ul>
-</div>
-<div class="sect2">
-<h3 id="registerapp"><a class="anchor" href="#registerapp"></a>2.1. Register an HiFiMagnet application</h3>
-<div class="paragraph">
-<p>There is actually two routes to register an app:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>for all user</p>
-</li>
-<li>
-<p>using the <strong>MarketPlace</strong></p>
+<p>Provides access to all functionalities via the integrated Python console.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>The recommended way is to use the <a href="#marketplace"><strong>MarketPlace</strong></a>. However to speed up the tests,
-the <strong>DevUser</strong> may register more easily his/her app for <a href="#free_app">all users</a>. Note that this
-app will be available to every user of the platform.</p>
+<p>This latter feature is especially convenient. You can easily build a CAD model and save all
+the performed operations within a python script. This script may be later run either in TUI (eg. batch) or GUI mode.
+For instance, to create a cube and mesh it:</p>
 </div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>An app can only be registered once. It means that once you have gone througth the registration process
-your only choice is to <strong>RemoveApp</strong>.</p>
-</div>
-<div class="paragraph">
-<p>As a consequence, to upgrade your app package you have first to remove the app and go back to re-register your app.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="free_app"><a class="anchor" href="#free_app"></a>2.2. For all users</h3>
-<div class="imageblock">
+<div class="listingblock">
 <div class="content">
-<img src="_images/PortalMSO4SC_RegisterApp.png" alt="*Experiments* menu for *DevUser*">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">salome -w1 [-t] testcube_mesh.py</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>To register an application for every user of the platform:</p>
+<p><code>-t</code> option is used to switch to the TUI (eg. command line) mode.</p>
+</div>
+<div class="paragraph">
+<p>For detailed use of Salome, see:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Go to <a href="http://portal.mso4sc.eu/experimentstool/"><strong>Experiments</strong></a>,</p>
+<p><a href="http://salome-platform.org/user-section/documentation/current-release/current-release-gui">SALOME 9.5.0 Documentation</a></p>
 </li>
 <li>
-<p>Select <strong>Applications</strong></p>
-</li>
-<li>
-<p>Enter a new <strong>Application Name</strong></p>
-</li>
-<li>
-<p>Choose a package file to load.</p>
+<p><a href="http://salome-platform.org/user-section/salome-tutorials/copy_of_salome-tutorial">Tutorial</a></p>
 </li>
 </ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/PortalMSO4SC_RegisterApp_Apps.png" alt="Register App in MSOPortal">
-</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -519,29 +469,87 @@ your only choice is to <strong>RemoveApp</strong>.</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>The package file is an gzipped archive holding the formal description of the app.
-It&#8217;s actually a directory which contains :</p>
+<p>If the test python scripts are not available in your Docker or Singularity images
+you may found then here:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>a <code>blueprint.yml</code> TOSCA file that describes the workflow</p>
+<p><a href="examples/testcube_mesh.py"><code>testcube_mesh.py</code></a></p>
 </li>
 <li>
-<p>a <code>scripts</code> sub-directory holding the scripts required to deploy and undeploy the app</p>
+<p><a href="examples/ghs3d_demo.py"><code>ghs3d_demo.py</code></a></p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p>In this <a href="https://github.com/MSO4SC/resources/tree/staging/blueprint/feelpp/hifimagnet_test">git repository</a>
-you will find the actual application corresponding to the HiFiMagnet basic demonstrator.</p>
-</div>
-<div class="paragraph">
-<p>To actually build the app, use: <code><code>./deploy pkg</code></code></p>
 </div>
 </td>
 </tr>
 </table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_basic_examples"><a class="anchor" href="#_basic_examples"></a>1. Basic examples</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In the following examples we assume that you have pulled a singularity image from a Sregistry service
+for Salome and  HiFiMagnet. For sake of simplicity the images are been named:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>salome.simg</code></p>
+</li>
+<li>
+<p><code>hifimagnet.simg</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You shall adapt the scripts to the actual names of the images.</p>
+</div>
+<div class="sect2">
+<h3 id="_check_meshgems_installation"><a class="anchor" href="#_check_meshgems_installation"></a>1.1. Check MeshGems installation</h3>
+<div class="paragraph">
+<p>Assuming that your home directory contains a <code>Salome</code> directory with the python script <code>ghs3d_demo.py</code>.
+You can test your installation by running:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">singularity exec \
+  [-H $HOME:/home/$USER] \
+  [--pwd /home/$USER/Salome] \
+  -B $STORE/DISTENE/DLim:/opt/DISTENE/DLim:ro \
+  salome.simg \
+  salome -w1 -t ghs3d_demo.py</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>$STORE/DISTENE/DLim</code> is the directory containing a valid <code>dlim8.key</code> license file.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_a_simple_med_mesh_in_tui_mode"><a class="anchor" href="#_a_simple_med_mesh_in_tui_mode"></a>1.2. A simple <code>med</code> mesh in <code>TUI</code> mode</h3>
+<div class="paragraph">
+<p>Assuming that your home directory contains a <code>Salome</code> directory with the python script <code>testcube_mesh.py</code>.
+You can test your installation by running:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">singularity exec \
+  [-H $HOME:/home/$USER] \
+  [--pwd /home/$USER/Salome] \
+  -B $STORE/DISTENE/DLim:/opt/DISTENE/DLim:ro \
+  salome.simg \
+  salome -w1 -t testcube_mesh.py</code></pre>
+</div>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -551,274 +559,147 @@ you will find the actual application corresponding to the HiFiMagnet basic demon
 </td>
 <td class="content">
 <div class="paragraph">
-<p>To debug an app, it may be convenient to use the Portal <strong>orchestrator CLI</strong>.
-see <a href="https://github.com/MSO4SC/resources/blob/staging/blueprint/feelpp/hifimagnet_test/README.adoc">this file</a> for details</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="marketplace"><a class="anchor" href="#marketplace"></a>2.3. In the <strong>Marketplace</strong></h3>
-<div class="paragraph">
-<p>To register an application you need to be <strong>DevUSer</strong>
-The process is split into several part:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>add the app and create an offer in the <a href="http://portal.mso4sc.eu/marketplace/"><strong>Marketplace</strong></a>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>go to <strong>My stock/Catalogue</strong></p>
-</li>
-<li>
-<p>go to <strong>My stock/Product</strong></p>
-</li>
-<li>
-<p>go to <strong>My stock/Offering</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Then you need to perform the following steps in <a href="http://portal.mso4sc.eu/experimentstool/"><strong>Experiments</strong></a>,:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>go to <strong>Applications</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>select your <strong>Offering</strong> in the sliding menu <strong>New Products</strong></p>
-</li>
-<li>
-<p>give the app a meaningful name</p>
-</li>
-<li>
-<p>Choose a package file to load.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="removeapp"><a class="anchor" href="#removeapp"></a>2.4. Remove an app</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Go to <a href="http://portal.mso4sc.eu/experimentstool/"><strong>Experiments</strong></a>,</p>
-</li>
-<li>
-<p>Select <strong>Applications</strong></p>
-</li>
-<li>
-<p>In the top sliding menu, select the app to be removed</p>
-</li>
-<li>
-<p>Click on <strong>Remove</strong></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="validorder"><a class="anchor" href="#validorder"></a>3. Validate an HiFiMagnet application purchase order</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Once the app has been registered in the <strong>Marketplace</strong> (actually it means that an offering has been defined) you will be <strong>owner</strong> of this app. Any <strong>EndUser</strong> may purchase your app.
-To check if you have any order:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>go to <strong>My Inventory</strong></p>
-</li>
-<li>
-<p>go to <strong>My Inventory/Product Orders</strong></p>
-</li>
-<li>
-<p>check <strong>Recibibas</strong> menu</p>
-</li>
-<li>
-<p>if any new message, you need to:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>click to validate the order</p>
-</li>
-<li>
-<p>click again to finalize the order</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>The <strong>EndUser</strong> may now proceed to perform <strong>Experiments</strong> with you product</p>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Do not forget to notify the user that he/she has to connect once to:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://sregistry.srv.cesga.es/">Sregistry service</a></p>
-</li>
-<li>
-<p><a href="http://portal.mso4sc.eu/datacatalogue/"><strong>DataCatalogue</strong></a></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>and eventually to :</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://girder.math.unistra.fr/">Girder service</a></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>This steps are mandatory for smooth operation of the app since the user has to be included
-into HiFiMagnet user group. Fortunately this need to be done only once for any HiFiMagnet app.</p>
-</div>
-<div class="paragraph">
-<p>Unfortunately the management of user has to be carried out manually by the <strong>DevUser</strong> in charge of the app
-and cannot be performed from the portal.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="sregistry_add_to_team"><a class="anchor" href="#sregistry_add_to_team"></a>4. Adding an <strong>EndUser</strong> to Sregistry team</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>For app like HiFiMagnet apps that require an private singularity image, you must grant <strong>EndUser</strong> access to the Sregistry HiFiMagnet team.
-To do so follow these instructions:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Click on <strong>Container</strong> main menu,</p>
-</li>
-<li>
-<p>Logged in to your <a href="https://sregistry.srv.cesga.es/" class="bare">sregistry.srv.cesga.es/</a> using <strong>FiWare</strong>,</p>
-</li>
-<li>
-<p>Click on <strong>Teams</strong> menu then select your <strong>team</strong></p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/sregistry_team.png" alt="ex: HiFiMagnet Sregistry team">
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>As in the image above, click on <strong>Invite Users</strong></p>
-</li>
-<li>
-<p>Copy the link (display in blue) and send it to your new <strong>EndUser</strong></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>See <a href="https://singularityhub.github.io/sregistry/credentials">sregistry docs</a></p>
-</div>
-<div class="paragraph">
-<p>Once the <strong>EndUser</strong> will validate the invitation, his/her name will be display in the list
-of members. You can also make him/her <strong>owner</strong> of the team by clicking on the <strong>Make Owner</strong> button.</p>
-</div>
-<div class="paragraph">
-<p>To grant the <strong>EndUser</strong> access to the images in the HiFiMagnet collection, you need to proceed as follows:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>click on the <strong>Collections</strong> menu on the top left</p>
-</li>
-<li>
-<p>click on the link to the HiFiMagnet collections in the collections list</p>
-</li>
-<li>
-<p>once the list of images contained in the HiFiMagnet collection is display, you have to click <strong>settings</strong> button</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>A list of <strong>owners</strong> and <strong>contributors</strong> appears in the top right part of the page. Bellow are lists of user
-that are nor part of <strong>owners</strong> nor <strong>contributors</strong>.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>To grant <strong>owner</strong> or <strong>contributor</strong> role to a given user select his/her name</p>
-</li>
-<li>
-<p>finaly simply click on the red <strong>save</strong> button</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>The previously selected user shall not be shown in the appropriate list according to your choice.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="sregistry_add_to_collection"><a class="anchor" href="#sregistry_add_to_collection"></a>5. Adding an new image into Sregistry HiFiMagnet collection</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>To upload <code>salome-8.4.0.simg</code> newest image on Sregistry HiFiMagnet collection
-from your local machine you can type the following commands:</p>
+<p>The default mesh format generated by Salome is <code>med</code>. This mesh format may not be supported
+by Feel++. You can convert a <code>med</code> mesh into a gmsh mesh (<code>msh</code>):</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">export SREGISTRY_CLIENT=registry
-export SREGISTRY_CLIENT_SECRETS=~/.sregistry
-[export SREGISTRY_STORAGE=...]
-
-sregistry push --name hifimagnet/salome --tag 8.4.0 salome-8.4.0.simg</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">singularity exec \
+  [-H $HOME:/home/$USER] \
+  [--pwd /home/$USER/Salome] \
+   hifimagnet.simg \
+   gmsh -0 -bin testcube.med -o testcube.msh</code></pre>
 </div>
-</div>
-<div class="paragraph">
-<p>The <code>.sregistry</code> holds the Sregistry <strong>TOKEN</strong> (to get the <strong>TOKEN</strong> see <a href="user.html#using_sregistry" class="page">this</a>).</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>You need to install {https://singularityhub.github.io/sregistry-cli}[sregistry-cli] to get this working.</p>
 </div>
 </td>
 </tr>
 </table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_create_a_simple_object_in_gui_mode"><a class="anchor" href="#_create_a_simple_object_in_gui_mode"></a>1.3. Create a simple object in <code>GUI</code> mode</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>start <code>salome</code></p>
+</li>
+<li>
+<p>activate the <strong>Geometry</strong> module by clicking on the proper icon or selecting it in the dropdown menu</p>
+</li>
+<li>
+<p>create a simple object</p>
+</li>
+<li>
+<p>extract the boundary of the object &#8230;&#8203;</p>
+</li>
+<li>
+<p>rename the boundary &#8230;&#8203;</p>
+</li>
+<li>
+<p>select the geometry to save and export in your favorite CAD format</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You can also:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>dump the history to a python script <code>script.py</code></p>
+</li>
+<li>
+<p>save the study</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To replay the python script: <code>salome script.py</code>
+To reload the study: <code>salome study.hdf</code> or load the study from main <strong>File</strong> menu</p>
+</div>
+<div class="paragraph">
+<p>A video tutorial for creating and using python script is available <a href="https://youtu.be/0pmq8GjBONg">here</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="salome_viewcad"><a class="anchor" href="#salome_viewcad"></a>1.4. Loading a CAD in <code>GUI</code> mode</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>start <code>salome</code></p>
+</li>
+<li>
+<p>activate the <strong>Geometry</strong> module by clicking on the proper icon or selecting it in the dropdown menu</p>
+</li>
+<li>
+<p>import the geometry using the File/Import menu</p>
+</li>
+<li>
+<p>select the proper format</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>We recommend to use whever possible the <code>XAO</code> file format that provides:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>a CAD file in <code>BREP</code>,</p>
+</li>
+<li>
+<p>a json file containing extra informations on <code>Groups</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This is very handy for defining CAD region (aka <code>Groups</code>) that will be latter used for Boundary Conditions.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_create_a_simple_mesh_in_gui_mode"><a class="anchor" href="#_create_a_simple_mesh_in_gui_mode"></a>1.5. Create a simple mesh in <code>GUI</code> mode</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>start <code>salome</code></p>
+</li>
+<li>
+<p>activate the <strong>Mesh</strong> module by clicking on the proper icon or selecting it in the dropdown menu</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Click on the links bellow to see a live demo for creating a mesh with:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://youtu.be/dqf4wNHFF-o">Netgen</a>.</p>
+</li>
+<li>
+<p><a href="https://youtu.be/iPwi8eRsZ2g">MeshGems</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="salome_viewmesh"><a class="anchor" href="#salome_viewmesh"></a>1.6. Loading a simple mesh in <code>GUI</code> mode</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>start <code>salome</code></p>
+</li>
+<li>
+<p>activate the <strong>Mesh</strong> module by clicking on the proper icon or selecting it in the dropdown menu</p>
+</li>
+<li>
+<p>import the mesh using the File/Import menu</p>
+</li>
+<li>
+<p>select the proper format</p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>

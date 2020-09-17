@@ -194,7 +194,10 @@
     <a class="nav-link" href="../cad/index.html#data">Data Structure</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../cad/index.html#usage">Usage</a>
+    <a class="nav-link" href="../cad/index.html#setup">Simu Septup</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../cad/index.html#checking">Salome Usage</a>
   </li>
 </ul>
   </li>
@@ -362,6 +365,9 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../appendix/Infrastructure.html">Computing Infrastructure</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/salome.html">Using Salome</a>
+  </li>
 </ul>
   </li>
 </ul>
@@ -421,23 +427,7 @@ to electromagnetic constraints and thermal dilatation due to
 Joules losses</p>
 </div>
 <div class="paragraph">
-<p>The geometry is the same as in the magnetostic tutorial; ie splitted into 2 parts:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>the wire, represented by a cylinder,</p>
-</li>
-<li>
-<p>the air region also represented by a cylinder.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>The geometry will be designed in <code>Salome</code>.</p>
-</div>
-<div class="paragraph">
-<p>We will distinct:</p>
+<p>The geometry is the same as in the thermo-electric tutorial. We will recall:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -446,19 +436,6 @@ Joules losses</p>
 </li>
 <li>
 <p>the cylindrical surface (Bord) on which we will apply some cooling boundary conditions.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>and for the air:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>the plane circles (Sym0 and Sym1) on which will be applied some symmetry boundary condition for the magnetostatic problem,</p>
-</li>
-<li>
-<p>the cylindrical surface of the air region (Inf) on which we will apply infinity boundary condition for the magnetostatic problem.</p>
 </li>
 </ul>
 </div>
@@ -472,111 +449,8 @@ This is transparent for the user.</p>
 <div class="sect1">
 <h2 id="_data"><a class="anchor" href="#_data"></a>1. Data</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>The "wire" cylinder is defined by its radius \(R\), its height \(H\).
-The "air" cylinder is defined by its outer radius \(R_{inf}\) and its inner radius \(R\), its height \(H\).
-The cylinders symmetry axis are \(Oz\).</p>
-</div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1. Geometrical Data</caption>
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\(R_{inf}\) [ \(m\) ]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">R [ \(m\) ]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">H [ \(m\) ]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">32e-3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">8.e-3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">16.e-3</p></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 2. Input Data</caption>
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Boundary</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\(V\)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">V0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">V1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0.05</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>As a reminder, we recall the boundary conditions for the thermoelectric and magnetostatic
-problem:</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 3. Cooling Input Data</caption>
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Boundary</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\(h\) [ \(K/W/m^2\) ]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\(T_w\) [ \(K\) ]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Bord</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">8.e+4</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">293</p></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 4. Magnetostatic Boundary conditions</caption>
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Inf</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\(\mathbf{A}=\mathbf{0}\)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sym0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\(\mathbf{A}_X =0\), \(\mathbf{A}_Y =0\)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">V0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\(\mathbf{A}_X =0\), \(\mathbf{A}_Y =0\)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sym1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\(\mathbf{A}_X =0\), \(\mathbf{A}_Y =0\)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">V1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\(\mathbf{A}_X =0\), \(\mathbf{A}_Y =0\)</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>To these boundary conditions, we have to add the specific boundary conditions for the
-elasticity problem. Namely:</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 5. Elasticity Boundary conditions</caption>
+<caption class="title">Table 1. Elasticity Boundary conditions</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -618,6 +492,9 @@ we block the displacement along the \(Z\) axis on V1.</p>
 <li>
 <p>Thermoelectric model tutorial</p>
 </li>
+<li>
+<p>Magentostatic model tutorial</p>
+</li>
 </ul>
 </div>
 </div>
@@ -649,15 +526,7 @@ we block the displacement along the \(Z\) axis on V1.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_create_geometry_and_a_mesh"><a class="anchor" href="#_create_geometry_and_a_mesh"></a>4. Create Geometry and a Mesh</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>See previous magnetostatic tutorial for generating the geometry and mesh.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_prepare_cfg_and_json_files"><a class="anchor" href="#_prepare_cfg_and_json_files"></a>5. Prepare Cfg and Json files</h2>
+<h2 id="_prepare_cfg_and_json_files"><a class="anchor" href="#_prepare_cfg_and_json_files"></a>4. Prepare Cfg and Json files</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>As before we have to define a <code>cfg ` configuration file for the simulation and
@@ -665,10 +534,9 @@ add a `json</code> model file for specifying the elasticity problem. For the oth
 we can use the previous <code>json</code> model files.</p>
 </div>
 <div class="sect2">
-<h3 id="_cfg_file_definition"><a class="anchor" href="#_cfg_file_definition"></a>5.1. <code>cfg</code> file definition</h3>
+<h3 id="_cfg_file_definition"><a class="anchor" href="#_cfg_file_definition"></a>4.1. <code>cfg</code> file definition</h3>
 <div class="paragraph">
-<p>Compared to the previous magnetostatic tutorial, we can use the same <code>cfg</code> file
-except that we have to:</p>
+<p>We use the same <code>cfg</code> file as before. Now we:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -736,7 +604,7 @@ ksp-converged-reason=1</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_json_model_for_elasticity_model"><a class="anchor" href="#_json_model_for_elasticity_model"></a>5.2. <code>json</code> model for Elasticity model</h3>
+<h3 id="_json_model_for_elasticity_model"><a class="anchor" href="#_json_model_for_elasticity_model"></a>4.2. <code>json</code> model for Elasticity model</h3>
 <div class="paragraph">
 <p>For the considered elasticity boundary conditions, the model file will be:</p>
 </div>
@@ -812,7 +680,7 @@ To do so use for instance:</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_run_the_simulation"><a class="anchor" href="#_run_the_simulation"></a>6. Run the Simulation</h2>
+<h2 id="_run_the_simulation"><a class="anchor" href="#_run_the_simulation"></a>5. Run the Simulation</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -865,7 +733,7 @@ You can save the output to a file <code>log</code> using the redirection:</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_post_processing"><a class="anchor" href="#_post_processing"></a>7. Post-processing</h2>
+<h2 id="_post_processing"><a class="anchor" href="#_post_processing"></a>6. Post-processing</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>

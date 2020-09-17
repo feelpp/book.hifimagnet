@@ -194,7 +194,10 @@
     <a class="nav-link" href="../cad/index.html#data">Data Structure</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../cad/index.html#usage">Usage</a>
+    <a class="nav-link" href="../cad/index.html#setup">Simu Septup</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../cad/index.html#checking">Salome Usage</a>
   </li>
 </ul>
   </li>
@@ -362,6 +365,9 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../appendix/Infrastructure.html">Computing Infrastructure</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/salome.html">Using Salome</a>
+  </li>
 </ul>
   </li>
 </ul>
@@ -415,11 +421,11 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>In this tutorial, we will model a round wire carrying a given current.</p>
+<p>In this tutorial, we will model a round wire carrying a given current.
+The geometry has been introduced <a href="geometry.html" class="page">here</a>.</p>
 </div>
 <div class="paragraph">
-<p>The wire will be designed in <code>Salome</code> as a cylinder.
-We will distinct:</p>
+<p>We recall the following definitions:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -440,29 +446,8 @@ distribution and the temperature field.</p>
 <div class="sect1">
 <h2 id="_data"><a class="anchor" href="#_data"></a>1. Data</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>The cylinder is defined by its radius \(R\), its heigth \(H\).
-The cylinder symetry axis is \(Oz\).</p>
-</div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1. Geometrical Data</caption>
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">R [ \(m\) ]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">H [ \(m\) ]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">8.e-3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">16.e-3</p></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 2. Input Data</caption>
+<caption class="title">Table 1. Electrical Boundary Conditions</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -483,7 +468,7 @@ The cylinder symetry axis is \(Oz\).</p>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 3. Input Data</caption>
+<caption class="title">Table 2. Thermic Boundary Conditions</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -521,6 +506,9 @@ The cylinder symetry axis is \(Oz\).</p>
 <li>
 <p><code>singularity</code></p>
 </li>
+<li>
+<p>Geometry</p>
+</li>
 </ul>
 </div>
 </div>
@@ -552,73 +540,7 @@ The cylinder symetry axis is \(Oz\).</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_create_geometry_and_a_mesh"><a class="anchor" href="#_create_geometry_and_a_mesh"></a>4. Create Geometry and a Mesh</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Start Salome using singularity container:</p>
-</li>
-</ul>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">singularity exec --nv -B /opt/DISTENE:/opt/DISTENE:ro \
-  ${STORAGE}/salome-hifimagnet:9.5.0.simg salome</code></pre>
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Select the <code>GEOM</code> module</p>
-</li>
-<li>
-<p>Create a cylinder</p>
-</li>
-<li>
-<p>Explode the faces of the cylinder</p>
-</li>
-<li>
-<p>Rename the faces</p>
-</li>
-<li>
-<p>Mark the cylinder object as selected</p>
-</li>
-<li>
-<p>Switch to the <code>SMESH</code> module</p>
-</li>
-<li>
-<p>Create a Mesh</p>
-</li>
-<li>
-<p>Create 2D Mesh hypothesis with <code>MG-CADSurf</code></p>
-</li>
-<li>
-<p>Create 3D Mesh hypothesis with <code>MG-Tetra</code></p>
-</li>
-<li>
-<p>Compute the mesh</p>
-</li>
-<li>
-<p>Create Groups from geometry</p>
-</li>
-<li>
-<p>Export the mesh in <code>MED</code> format</p>
-</li>
-<li>
-<p>Convert <code>MED</code> mesh to <code>GMSH</code> format mesh:</p>
-</li>
-</ul>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">gmsh -3 -bin cylindre.med -o cylindre.msh</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_prepare_cfg_and_json_files"><a class="anchor" href="#_prepare_cfg_and_json_files"></a>5. Prepare Cfg and Json files</h2>
+<h2 id="_prepare_cfg_and_json_files"><a class="anchor" href="#_prepare_cfg_and_json_files"></a>4. Prepare Cfg and Json files</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Now we need to setup the files that define the simulation:</p>
@@ -751,7 +673,7 @@ ksp-use-initial-guess-nonzero=1</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_run_a_linear_thermoelectric_simulation"><a class="anchor" href="#_run_a_linear_thermoelectric_simulation"></a>6. Run a <strong>linear</strong> ThermoElectric Simulation</h2>
+<h2 id="_run_a_linear_thermoelectric_simulation"><a class="anchor" href="#_run_a_linear_thermoelectric_simulation"></a>5. Run a <strong>linear</strong> ThermoElectric Simulation</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -804,7 +726,7 @@ You can save the output to a file <code>log</code> using the redirection:</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_post_processing"><a class="anchor" href="#_post_processing"></a>7. Post-processing</h2>
+<h2 id="_post_processing"><a class="anchor" href="#_post_processing"></a>6. Post-processing</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -852,7 +774,7 @@ You can save the output to a file <code>log</code> using the redirection:</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_to_go_further"><a class="anchor" href="#_to_go_further"></a>8. To go further</h2>
+<h2 id="_to_go_further"><a class="anchor" href="#_to_go_further"></a>7. To go further</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>In this final section, we will move to more realistic models and simulations use cases:</p>
@@ -871,7 +793,7 @@ You can save the output to a file <code>log</code> using the redirection:</p>
 </ul>
 </div>
 <div class="sect2">
-<h3 id="_run_a_nonlinear_thermoelectric_simulation"><a class="anchor" href="#_run_a_nonlinear_thermoelectric_simulation"></a>8.1. Run a <strong>nonlinear</strong> ThermoElectric Simulation</h3>
+<h3 id="_run_a_nonlinear_thermoelectric_simulation"><a class="anchor" href="#_run_a_nonlinear_thermoelectric_simulation"></a>7.1. Run a <strong>nonlinear</strong> ThermoElectric Simulation</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1042,7 +964,7 @@ defining the <strong>equations</strong> :</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_enforcing_the_total_current"><a class="anchor" href="#_enforcing_the_total_current"></a>8.2. Enforcing the <strong>total current</strong></h3>
+<h3 id="_enforcing_the_total_current"><a class="anchor" href="#_enforcing_the_total_current"></a>7.2. Enforcing the <strong>total current</strong></h3>
 <div class="paragraph">
 <p>One may want to force the total current \(I\) in the wire.
 To do so:</p>
@@ -1091,7 +1013,7 @@ eps_intensity=5.e-3</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_run_a_parallel_thermoelectric_simulation"><a class="anchor" href="#_run_a_parallel_thermoelectric_simulation"></a>8.3. Run a <strong>parallel</strong> ThermoElectric Simulation</h3>
+<h3 id="_run_a_parallel_thermoelectric_simulation"><a class="anchor" href="#_run_a_parallel_thermoelectric_simulation"></a>7.3. Run a <strong>parallel</strong> ThermoElectric Simulation</h3>
 <div class="paragraph">
 <p>For large mesh size, it may be convenient to run the simulation in parallel.
 As an example, we will prepare the data to run on <strong>4</strong> procs.</p>
