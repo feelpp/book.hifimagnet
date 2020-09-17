@@ -10,3 +10,14 @@ This section contains some more detailled examples.
 * xref:Monitoring.adoc[Monitoring]
 * xref:M9_2017_03.adoc[Plateau]
 * xref:Commissiong.adoc[Commissioning]
+* xref:Transient.adoc[Transient Simulations]
+
+It also contains more practical informations on software:
+
+* xref:salome.adoc[Salome]
+
+And finaly, practical informations related to computational ressources:
+
+* xref:Infrastructure.adoc[Computing Infrastructure]
+
+

@@ -91,7 +91,7 @@ Assuming we use `salome.simg` singularity image:
 [source,sh]
 ----
 singularity exec [--nv] \
-  -H $HOME:/home/$USER \
+  [-H $HOME:/home/$USER] \
   -B $STORE/DISTENE/DLim:/opt/DISTENE/DLim:ro \
   salome.simg \
   salome -w1 [-t -b] ...
@@ -101,8 +101,15 @@ where:
 
 * `$STORE/DISTENE/DLim` is the directory on the host containing a valid `dlim8.key` license file.
 You need to adapt this to your configuration.
-NOTE: the `--nv` flag is mandatory to run in GUI mode and is only supported by nvidia drivers.
+
+[NOTE]
+====
+
+* the `--nv` flag is mandatory to run in GUI mode and is only supported by nvidia drivers.
 For other graphic video card, use `mesa_salome` instead of `salome`
+* On {lncmi} server option `-H $HOME:/home/$USER` may be dropped
+
+====
 
 [TIP]
 ====
@@ -225,6 +232,16 @@ and eventually an inner and an outer currentLead.
 
 Each structure is defined as a `yaml` file.
 
+[NOTE]
+====
+The `yaml` files for helices are generated from the insert optimized geometry `insert.d` by running `opt2yml`.
+Similarily, the helical cut files are obtained by running `opt2cad`. Please refer to xref:magnettools:Optimization.adoc#cadcam[here] for details.
+
+The generated files still need some user intervention to be complete - namely dimension of the cylnder tube
+has to be added manually. Check with the Bureau d'etudes for these dimensions
+
+As for Rings and CurrentLeads, the files must be generated manually.
+====
 
 === helix structure
 
@@ -407,7 +424,7 @@ include::{examplesdir}/Insert.yaml[]
 <8> angular orientation of rings (optionnal)
 
 
-=== mesh
+=== Mesh
 
 The mesh is generated from the command line when the option `--mesh` is passed to salome.
 The first time the mesh is generated, a file , namely `Insert_meshdata.yaml` where `Insert.yaml` is
@@ -460,7 +477,7 @@ The smaller this distance is, the closer the mesh is to the exact surface (only 
 ====
 
  
-=== advanced mesh options
+=== Advanced mesh options
 
 The mesh can customized using the yaml cgf file presented above. There are also some options to reduce the number of surfacic meshes that will be latter use to apply boundary conditions:
 
@@ -473,142 +490,21 @@ and there is also an `--coarse` option to generate a quite coarse mesh.
 
 These options are available in the main command line:
 
-[[usage]]
-== Using {salome}
+[[setup]]
+== Generate Templates setup for {hifimagnet} simulations
+
+Add `-setup` option to the command line to generate template files required
+for the setup of {hifimagnet} simulations.
+
+[[checking]]
+== Using {salome} for Checking and/or Debugging
 
 {salome} is an open-source generic platform for Pre- and Post-Processing for numerical simulation.
-Its key features are:
+More details can be found in xref:appendix:salome.adoc#usage[basis {salome} usage].
 
-* Supports interoperability between CAD modeling and computation software (CAD-CAE link).
-* Provides access to all functionalities via the integrated Python console.
+To view:
 
-This latter feature is especially convenient. You can easily build a CAD model and save all
-the performed operations within a python script. This script may be later run either in TUI (eg. batch) or GUI mode.
-For instance, to create a cube and mesh it:
+* the generated CAD, just follow instructions in this xref:appendix:salome.adoc#salome_viewcad[section],
+* the generate mesh, just follow instructions in this xref:appendix:salome.adoc#salome_viewmesh[section],
 
-[source,bash]
-----
-salome [-t] testcube_mesh.py
-----
-
-`-t` option is used to switch to the TUI (eg. command line) mode.  
-
-
-For detailed use of {salome}, see:
-
-* http://salome-platform.org/user-section/documentation/current-release/current-release-gui[SALOME 9.5.0 Documentation]
-* http://salome-platform.org/user-section/salome-tutorials/copy_of_salome-tutorial[Tutorial]
-
-[NOTE]
-====
-If the test python scripts are not available in your {docker} or {singularity} images
-you may found then here:
-
-* link:examples/testcube_mesh.py[`testcube_mesh.py`] 
-* link:examples/ghs3d_demo.py[`ghs3d_demo.py`]
-====
-
-=== Basic examples
-
-In the following examples we assume that you have pulled a singularity image from a {sregistry} service
-for {salome} and  {hifimagnet}. For sake of simplicity the images are been named:
-
-* `salome.simg`
-* `hifimagnet.simg`
-
-You shall adapt the scripts to the actual names of the images or rename the images (see <<rename_sing_image, above>>)
-
-
-==== Check {meshgems} installation
-
-Assuming that your home directory contains a `Salome` directory with the python script `ghs3d_demo.py`.
-You can test your installation by running:
-
-[source,bash]
-----
-singularity exec \
-  -H $HOME:/home/$USER \
-  --pwd /home/$USER/Salome \
-  -B $STORE/DISTENE/DLim:/opt/DISTENE/DLim:ro \
-  salome.simg \
-  salome -t ghs3d_demo.py
-----
-
-where:
-
-* `$STORE/DISTENE/DLim` is the directory containing a valid `dlim8.key` license file.
-
-==== A simple `med` mesh in `TUI` mode
-
-Assuming that your home directory contains a `Salome` directory with the python script `testcube_mesh.py`.
-You can test your installation by running:
-
-[source,bash]
-----
-singularity exec \
-  -H $HOME:/home/$USER \
-  --pwd /home/$USER/Salome \
-  -B $STORE/DISTENE/DLim:/opt/DISTENE/DLim:ro \
-  salome.simg \
-  salome -t testcube_mesh.py
-----
-
-[TIP]
-====
-The default mesh format generated by {salome} is `med`. This mesh format may not be supported
-by {feelpp}. You can convert a `med` mesh into a gmsh mesh (`msh`):
-
-[source,bash]
-----
-singularity exec \
-  -H $HOME:/home/$USER \
-  --pwd /home/$USER/Salome \
-   hifimagnet.simg \
-   gmsh -0 -bin testcube.med -o testcube.msh
-----
-====
-
-==== Create a simple object in `GUI` mode
-
-* start `salome`
-* activate the *Geometry* module by clicking on the proper icon or selecting it in the dropdown menu
-* create a simple object
-* extract the boundary of the object ...
-* rename the boundary ...
-* select the geometry to save and export in your favorite CAD format
-
-You can also:
-
-* dump the history to a python script `script.py`
-* save the study 
-
-To replay the python script: `salome script.py`
-To reload the study: `salome study.hdf` or load the study from main *File* menu
-
-A video tutorial for creating and using python script is available https://youtu.be/0pmq8GjBONg[here].
-
-==== Loading a CAD in `GUI` mode
-
-* start `salome`
-* activate the *Geometry* module by clicking on the proper icon or selecting it in the dropdown menu
-* import the geometry using the File/Import menu
-* select the proper format
-
-We recommend to use whever possible the `XAO` file format that provides:
-
-* a CAD file in `BREP`,
-* a json file containing extra informations on `Groups`.
-
-This is very handy for defining CAD region (aka `Groups`) that will be latter used for Boundary Conditions.
-
-==== Create a simple mesh in `GUI` mode
-
-* start `salome`
-* activate the *Mesh* module by clicking on the proper icon or selecting it in the dropdown menu
-
-Click on the links bellow to see a live demo for creating a mesh with:
-
-* https://youtu.be/dqf4wNHFF-o[{netgen}].
-* https://youtu.be/iPwi8eRsZ2g[{meshgems}].
-
-
+To debug: **to be done**
