@@ -69,7 +69,7 @@ docker pull antora/antora:2.2.0
 ```
 Then simply start the docker image:
 ```
-docker run -it --rm --entrypoint ash -v `pwd`:/antora/hifimagnet -v $HOME/book.feelpp.org:/antora/book.feelpp.org  -p 8080:8000 antora/antora:2.2.0
+docker run -it --rm --entrypoint ash -v `pwd`:/antora/hifimagnet -v $HOME/book.feelpp.org:/antora/book.feelpp.org  -p 80:8080 antora/antora:latest
 ```
 the `pwd` shall be the source dir of the book and `$HOME/book.feelpp.org` the source dir of feelpp book.
 
@@ -81,23 +81,23 @@ antora antora-local-feelpp-doc.yml
 
 To start and serve the documentation:
 ```
-npm i -g node-srv@3.0.2
-node-srv build/site
+npm i -g live-server
+live-server build/site
 ```
 
 To view the documentation in a web browser, this time you will simply:
 ```
-firefox http://localhost:8080/
+firefox http://localhost/
 ```
-If the *host* is accessible from internet (and the port 8080 is open), you can also access the documentation
+If the *host* is accessible from internet (and the port 80 is open), you can also access the documentation
 from any place: 
 ```
-firefox http://host_ip:8080/
+firefox http://host_ip/
 ```
 
-TIP: this won't work if any http server is already running on port 8080 on you `host_ip`.
+TIP: this won't work if any http server is already running on port 80 on you `host_ip`.
 Make sure to shutdown the http server before running the above commands.
  
-TIP: you can use `nmap -p 8000 host_ip` to check if http port is open on `host_ip`
+TIP: you can use `nmap -p 80 host_ip` to check if http port is open on `host_ip`
 
 
