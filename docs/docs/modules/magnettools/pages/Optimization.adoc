@@ -146,6 +146,7 @@ Available options are:
 --num_eval=INT                  specify num_eval size (default 100)
 ----
 
+[[cadcam]]
 == Generating CAD/CAM files
 
 To create files for CAD or CAM use `opt2cad`:

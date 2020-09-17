@@ -104,7 +104,13 @@ You need to adapt this to your configuration.
 NOTE: the `--nv` flag is mandatory to run in GUI mode and is only supported by nvidia drivers.
 For other graphic video card, use `mesa_salome` instead of `salome`
 
-TIP: to check your graphic video card on Debian/Ubuntu you may use `inxi -G`.
+[TIP]
+====
+
+* To check your graphic video card on Debian/Ubuntu you may use `inxi -G`.
+* You may use a relative or absolute path for the image `salome.simg`.
+
+====
 
 ==== from Docker container
 
@@ -123,6 +129,8 @@ docker run -ti --rm -e DISPLAY \
 where:
 
 * `$STORE/DISTENE/DLim` is the directory containing a valid `dlim8.key` license file.
+
+IMPORTANT: You have to be a member of *feelpp team* in dockerhub to have access to the docker image.
 
 [TIP]
 ====
@@ -170,19 +178,40 @@ be described in the <<data, data structure section>>.
 
 [[insert-cad]]
 [source,sh]
-.Generation of an Insert with an air box in TUI mode
+.Generation of an Insert CAD with eventually an air box in TUI mode
 ----
 salome [-m GEOM,SMESH,HIFIMAGNET] [-t -b] \
    $HIFIMAGNET/HIFIMAGNET_Cmd.py \
-   args:--cfg=Insert-H1H4-Leads-2t.yaml[,--air[,--infty_Rratio=2,--infty_ZRatio=1.5],--mesh]
+   args:--cfg=Insert-H1H4-Leads-2t.yaml[,--air,--infty_Rratio=2,--infty_ZRatio=1.5][,--mesh]
 ----
+++++
+<button class="btn" data-clipboard-target="#insert-cad">
+Copy command line to clipboard
+</button>
+++++
 
 `$HIFIMAGNET` is the install directory of {hifimagnet} {salome} plugin, eg `/opt/SALOME-9.5.0-UB18.04/INSTALL/HIFIMAGNET/bin/salome`.
 
 image::ex_CAD_Insert_Air.png[A 4 helix insert with sourring air (in transparent red)]
 
-NOTE: `Insert-H1H4-Leads-2t.yaml` can be found in `/usr/local/share/salome/H1H4` in  singularity images.
+[NOTE]
+====
 
+* An example `Insert-H1H4-Leads-2t.yaml` can be found in `/usr/local/share/salome/H1H4` in  singularity images.
+* If you are using containers, the shell command above is to be executed within the container. The container shall
+be launched from the directory that holds the `yaml` file you will use in the shell command.
+
+====
+
+[TIP]
+====
+Building CAD for an insert may require a long long time and a large amount of RAM.
+Thus it is adviced to run the CAD generation within a `screen` session on an appropriate machine
+(eg. {lncmi} servers for {lncmi} user).
+
+Moreover, it is also adviced to run first the CAD generation for the insert, then add the air and finally mesh.
+Avoid trying to build CAD and Mesh at once.
+====
 
 [[data]]
 == Data Structure
@@ -200,22 +229,26 @@ Each structure is defined as a `yaml` file.
 === helix structure
 
 An helix is actually a cylindrical tube which exhibit a single or double helical cut made by EDM.
-The path of the helical cut is provided in a separate file `*_cut_salome.dat`.
+The path of the helical cut is provided in a separate file: `*_cut_salome.dat` if no shapes are added
+to the helical cut, or  `*_cut_with_shapes_salome.dat` otherwise.
+The `*_cut[_with_shapes]_salome.dat` file are generated from the optimized geofile `.d`
+describing the axisymetrical geometry using `opt2cad` and eventually `add_shape`.
+See xref:magnettools:Optimization.adoc#cadcam[here] for details. 
 
 [[helix]]
 [source,yml]
 ----
 include::{examplesdir}/H_struct.yaml[]
 ----
-<1> name of the CAD to be created (it corresponds to the name in the {lncmi} Bureau d'Etudes nomemclature).
+<1> name of the CAD to be created (must begin with an "H").
 <2> specify if the helix is single or double (ie. helical cut).
 <3> specify if the helix is odd or even (the helical cut patch orientation changes from one helix to the other).
 <4> the radial dimension in *mm*.
 <5> the axial dimension in *mm*.
 <6> the width of the helical cut.
-<7> the corresponding axi model.
-<8> the ............  3d model.
-<9> definition of the shape added along the helical path
+<7> the corresponding <<helix_axi, axi model section>>.
+<8> the ............  <<helix_m3d, 3d model section>>.
+<9> definition of the <<helix_shape, shape>> added along the helical path
 
 image::ex_CAD_H.png[A longitudinally cooled helix]
 
@@ -253,11 +286,11 @@ include::{examplesdir}/H_m3d.yaml[]
 ----
 include::{examplesdir}/H_shape.yaml[]
 ----
-<1> name of the shape to be added (actually it's the name of the shape file description without extension )
-<2> name of CAD profile (this name comes from the Bureau d'Etudes nomemclature to keep track of the CADs) 
-<3> angular length of the shape in *degree*
-<4> angular shift between 2 consecutive shapes (optionnal)
-<5> specify on wich turns the shape are disposed
+<1> name of the shape to be added
+<2> name of CAD profile (Actually the name of the shape file description without extension aka `.dat`; the name is build as `Shape_CADID` where `CADID` comes from the Bureau d'Etudes nomemclature to keep track of the CADs; ) 
+<3> list of angular length of the shape in *degree*
+<4> list of angular shift between 2 consecutive shapes (optionnal)
+<5> list of turn number on which the shape are disposed
 <6> orientation of the shape (values valid are ...)
 
 The shape file description is a simple `.dat` file that defines the number of points of the shape and theirs coordinates in a local cartesian frame:
@@ -267,6 +300,13 @@ The shape file description is a simple `.dat` file that defines the number of po
 ----
 include::{examplesdir}/Shape.dat[]
 ----
+
+[NOTE]
+====
+Data in this section are just given for the records. They are not used for building the helical cut of the attached *helix*.
+In future versions, it is planned to use these data to eventually build the helical cut if needed. So please kind the data
+synced with the actual configuration.
+====
 
 ==== `helical cut` structure
 
@@ -291,7 +331,8 @@ It is a cylinder eventually with stem:[n] cylindrical slots, disposed at regular
 ----
 include::{examplesdir}/R.yaml[]
 ----
-<1> name of the CAD to be created (it corresponds to the name in the {lncmi} Bureau d'Etudes nomemclature).
+<1> name of the CAD to be created (must begin with "R")
+// (it corresponds to the name in the {lncmi} Bureau d'Etudes nomemclature).
 <2> specifiy the position of the ring: either on Low pressure (eg `BPside=true`) or High Pressure side (eg `BPside=false`)
 <3> the radial dimension in *mm*.
 <4> the axial dimension in *mm*.
@@ -303,25 +344,53 @@ image::ex_CAD_R.png[A connection ring]
 
 ==== Inner Lead
 
+In general, the inner current lead is made of a cylinder in which stem:[n_holes] rectangular windows
+are cut. If the dimensions of the first helix and the inner lead do not match, there is an additional
+part to make the connection between the current lead and the helix. For sake of simplicity, this part
+, refered as *support*, has been "incorporated" into the lead.
+
 [[inner]]
 [source,yml]
 ----
 include::{examplesdir}/inner.yaml[]
 ----
+<1> name of the CAD to be created (must begin with an "I")
+<2> list of radius (inner, outer)
+<3> height of the current lead
+<4> indicator for building fillet (0 for false, 1 for true)
+<5> characteristic for fixing holes ([H_Holes, Shift_from_Top, Angle_Zero, Angle, Angular_Position, stem:[n_holes]])
+<6> characteristic for the support ([R2, DZ])
 
 image::ex_CAD_Inner.png[An inner current lead]
 
 ==== Outer Lead
+
+Outer current lead consists in an assembly of an connection ring and 2 sets of 3 bars
+with rectangular cross-section stem:[dx \times dy]. The support correspond to the small part that make the
+connection between the ring and the bars. The support is made of 6 parallelepiped disposed at regular angular
+interval stem:[d\alpha]
 
 [[outer]]
 [source,yml]
 ----
 include::{examplesdir}/outer.yaml[]
 ----
+<1> name of the CAD to be created (must begin with an "O")
+<2> list of radius (inner, outer)
+<3> height of the current lead
+<4> characteristic of the support (DX0, DZ, stem:[d\alpha], stem:[\alpha_0] the angular shift)
+<5> characteristic of the bar (R, stem:[dx], stem:[dy], stem:[L] the length of the bar)
 
 image::ex_CAD_Outer.png[A outer current lead composed of 6 bars]
 
-=== insert
+[IMPORTANT]
+====
+There are some requirements on the total length of the inner and outer current lead.
+Indeed, when the CAD for the insert we arbitrary requires that the bottom of the inner and outer lead
+have the same `z` coordinates.
+====
+
+=== Insert
 
 [[insert]]
 [source,yml]
@@ -336,6 +405,7 @@ include::{examplesdir}/Insert.yaml[]
 <6> radius of the external tube holding the helices insert
 <7> angular orientation of helices (optionnal)
 <8> angular orientation of rings (optionnal)
+
 
 === mesh
 
