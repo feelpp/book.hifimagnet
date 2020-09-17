@@ -390,7 +390,7 @@ The option `--msh.scale=0.001` enables to rescale the mesh file.
 
 This will create new files `mesh-np4.json` and `mesh-np4.h5` ready for running.
 
-[NOTE]
+[IMPORTANT]
 =====
 {hifimagnet} {salome} CAD geometries are defined in `mm`.
 The mesh file generated is also in `mm`. 
