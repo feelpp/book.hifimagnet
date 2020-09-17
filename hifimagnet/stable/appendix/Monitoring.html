@@ -3,15 +3,32 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Magnets Monitoring :: HiFiMagnet Documentation</title>
+    <title>Magnets Monitoring and Control :: HiFiMagnet Documentation</title>
     <link rel="canonical" href="https://book.hifimagnet.cemosis.fr/hifimagnet/stable/appendix/Monitoring.html">
-    <meta name="generator" content="Antora 2.3.3">
+    <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../_/img/favicon.ico" type="image/x-icon">    
     <script>!function(l,p){if(l.protocol!==p&&l.host=="docs.antora.org"){l.protocol=p}else if(/\.gitlab\.io$/.test(l.host)){l.replace(p+"//docs.antora.org"+l.pathname.substr(l.pathname.indexOf("/",1))+l.search+l.hash)}}(location,"https:")</script>
 
     <link rel="stylesheet" type="text/css" href="/_/css/style.css">
 
+
+
+
+          <script type="text/javascript" src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+          <script type="text/javascript">
+              function feelpp_unpack(rows, key) {
+                return rows.map(function(row) { return row[key] });
+              }
+              function feelpp_add_redimensionable_plot(plot) {
+                var oldResize = window.onresize;
+                window.onresize = function() {
+                  if(typeof oldResize === 'function')
+                    oldResize();
+                  Plotly.Plots.resize(plot);
+                };
+              }
+          </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-65761593-2"></script>
     <script>function gtag(){dataLayer.push(arguments)};window.dataLayer=window.dataLayer||[];gtag('js',new Date());gtag('config','UA-65761593-2')</script>
   </head>
@@ -149,6 +166,12 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../magnettools/Bmap.html">Magnetic Field Map</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../magnettools/Inductances.html">Self/Mutual</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../magnettools/Fmap.html">Net Forces</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../magnettools/Transient.html">Transient Analysis</a>
@@ -402,8 +425,9 @@
   </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">Magnets Monitoring</h1>
-<div id="preamble">
+<h1 class="page">Magnets Monitoring and Control</h1>
+<div class="sect1">
+<h2 id="monitoring"><a class="anchor" href="#monitoring"></a>1. Magnets Monitoring</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>In this paragraph we present the main principle of the magnet monitoring.</p>
@@ -456,8 +480,13 @@ a value of \(B_z(0)\) on a console which, in turn, send an order to power supply
 current \(I=\frac{B_z(0)}{f}\). During this operation, the monitoring system receive data from
 the voltage taps \(U_i\), water temperatures probes (\(Ti, To\)) and flow rate \(Q\) sensor.</p>
 </div>
-<div id="NOTE" class="exampleblock">
-<div class="content">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-data hljs" data-lang="data">09:57:20
@@ -507,18 +536,22 @@ Coils 15 and 16 to the Bitters.</p>
 <p>Data specific to each "tranche" is appended with the tranche index.</p>
 </div>
 <div class="paragraph">
-<p>\(dPm\) denote the pressure drop from HP and BP side
+<p>\(dPm1\) denote the pressure drop from HP and BP side on tranche 1
 where HP, BP stand respectively for High and Low ("Basse" in french) Pressure.</p>
 </div>
 <div class="paragraph">
 <p>\(T_i\) denote the estimated mean temperature in Coil \(i\).
 See bellow for more details.</p>
 </div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
-</div>
-<h1 id="control" class="sect0"><a class="anchor" href="#control"></a>Magnets Control</h1>
+<div class="sect1">
+<h2 id="control"><a class="anchor" href="#control"></a>2. Magnets Control</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>The control system relies on these data to determine if the operating magnet is safe or not.
 More precisely it checks the deviation \(dR0_i\) of the resistance measured for each voltage tap
@@ -650,6 +683,8 @@ As a consequence the heat exchange coefficient  \(h\) per cooling channels will 
 </td>
 </tr>
 </table>
+</div>
+</div>
 </div>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">

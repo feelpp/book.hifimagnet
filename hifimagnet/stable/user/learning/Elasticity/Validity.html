@@ -5,12 +5,15 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Untitled :: HiFiMagnet Documentation</title>
     <link rel="canonical" href="https://book.hifimagnet.cemosis.fr/hifimagnet/stable/user/learning/Elasticity/Validity.html">
-    <meta name="generator" content="Antora 2.3.3">
+    <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../../../_/css/site.css">
     <link rel="icon" href="../../../../../_/img/favicon.ico" type="image/x-icon">    
     <script>!function(l,p){if(l.protocol!==p&&l.host=="docs.antora.org"){l.protocol=p}else if(/\.gitlab\.io$/.test(l.host)){l.replace(p+"//docs.antora.org"+l.pathname.substr(l.pathname.indexOf("/",1))+l.search+l.hash)}}(location,"https:")</script>
 
     <link rel="stylesheet" type="text/css" href="/_/css/style.css">
+
+
+
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-65761593-2"></script>
     <script>function gtag(){dataLayer.push(arguments)};window.dataLayer=window.dataLayer||[];gtag('js',new Date());gtag('config','UA-65761593-2')</script>
@@ -149,6 +152,12 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../magnettools/Bmap.html">Magnetic Field Map</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../magnettools/Inductances.html">Self/Mutual</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../magnettools/Fmap.html">Net Forces</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../magnettools/Transient.html">Transient Analysis</a>
@@ -409,18 +418,18 @@ We admit that there is only a radial expansion.</p>
 <div class="paragraph">
 <p>Taking back the equations in the <a href="/math.adoc">Maths for Hifimagnet</a>, we consider :</p>
 </div>
-<div class="paragraph">
-<p>\[
-div\sigma+\textbf{j}\times\textbf{b}=0
-\]</p>
+<div class="stemblock">
+<div class="content">
+\[div\sigma+\textbf{j}\times\textbf{b}=0\]
+</div>
 </div>
 <div class="paragraph">
 <p>With the conditions set in the previous section, we have :</p>
 </div>
-<div class="paragraph">
-<p>\[
--\sigma_{\theta}+\frac{\partial}{\partial r}(r\sigma_{r})=-rj_{\theta}b_{z}
-\]</p>
+<div class="stemblock">
+<div class="content">
+\[-\sigma_{\theta}+\frac{\partial}{\partial r}(r\sigma_{r})=-rj_{\theta}b_{z}\]
+</div>
 </div>
 </div>
 <div class="sect4">
@@ -448,32 +457,32 @@ div\sigma+\textbf{j}\times\textbf{b}=0
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">$E$</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(E\)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Young modulus</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">$[124.10^{9} ;128.10^{9}]$</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">$128.10^{9}$</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">$Pa=kg.m^{-1} .s^{-2}$</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">\([124.10^{9} ;128.10^{9}\)]</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">\(128.10^{9}\)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(Pa=kg.m^{-1} .s^{-2}\)</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">$\nu$</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(\nu\)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Poisson&#8217;s ratio</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">0.33</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">0.33</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">$\alpha_{T}$</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(\alpha_{T}\)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">linear dilatation coefficient</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">$[16,6.10^{-6} ;18.10^{-6}]$</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">$18.10^{-6}$</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">$K^{-1}$</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">\([16,6.10^{-6} ;18.10^{-6}\)]</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">\(18.10^{-6}\)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(K^{-1}\)</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">$\rho$</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(\rho\)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">density</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">$[8920;8960]$</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">$8950$</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">$kg.m^{-3}$</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">\([8920;8960\)]</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">\(8950\)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(kg.m^{-3}\)</p></td>
 </tr>
 </tbody>
 </table>

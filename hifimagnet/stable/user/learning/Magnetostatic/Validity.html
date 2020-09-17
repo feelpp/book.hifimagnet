@@ -5,12 +5,15 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Untitled :: HiFiMagnet Documentation</title>
     <link rel="canonical" href="https://book.hifimagnet.cemosis.fr/hifimagnet/stable/user/learning/Magnetostatic/Validity.html">
-    <meta name="generator" content="Antora 2.3.3">
+    <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../../../_/css/site.css">
     <link rel="icon" href="../../../../../_/img/favicon.ico" type="image/x-icon">    
     <script>!function(l,p){if(l.protocol!==p&&l.host=="docs.antora.org"){l.protocol=p}else if(/\.gitlab\.io$/.test(l.host)){l.replace(p+"//docs.antora.org"+l.pathname.substr(l.pathname.indexOf("/",1))+l.search+l.hash)}}(location,"https:")</script>
 
     <link rel="stylesheet" type="text/css" href="/_/css/style.css">
+
+
+
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-65761593-2"></script>
     <script>function gtag(){dataLayer.push(arguments)};window.dataLayer=window.dataLayer||[];gtag('js',new Date());gtag('config','UA-65761593-2')</script>
@@ -149,6 +152,12 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../magnettools/Bmap.html">Magnetic Field Map</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../magnettools/Inductances.html">Self/Mutual</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../magnettools/Fmap.html">Net Forces</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../magnettools/Transient.html">Transient Analysis</a>
@@ -408,66 +417,71 @@ This torus is modeled with a file <code>.geo</code>, which name the volume of th
 </div>
 <div class="title">Figure 1. Model of the torus with the 3D box</div>
 </div>
-<div class="sect4">
-<h5 id="_equations"><a class="anchor" href="#_equations"></a>Equations</h5>
+<div class="sect1">
+<h2 id="_equations"><a class="anchor" href="#_equations"></a>1. Equations</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>We use the Biot \&amp; Savart&#8217;s law to prove the validity.
-First, we need to set the conditions to use this law, $\Omega_{cond}\cap\Omega_{mgn}=\emptyset$,
-with $\Omega_{cond}$ the conductor in which the current is passing and
-$\Omega_{mgn}$ the domain in which we want to know the magnetic field.
+First, we need to set the conditions to use this law, \(\Omega_{cond}\cap\Omega_{mgn}=\emptyset\),
+with \(\Omega_{cond}\) the conductor in which the current is passing and
+\(\Omega_{mgn}\) the domain in which we want to know the magnetic field.
 With this, using the magnetostatic equation, we can write the magnetic potential <strong>A</strong> as</p>
 </div>
-<div class="paragraph">
-<p>\[
-\nabla^{2}\textbf{A}=-\mu\textbf{j}
-\]</p>
+<div class="stemblock">
+<div class="content">
+\[\nabla^{2}\textbf{A}=-\mu\textbf{j}\]
+</div>
 </div>
 <div class="paragraph">
 <p>The general solution of this equation is :</p>
 </div>
-<div class="paragraph">
-<p>\[
-A(\textbf{r})=-\mu\int_{\Omega_{cond}}G(\textbf{r},\textbf{r'})\textbf{j}(\textbf{r'})
-\]</p>
+<div class="stemblock">
+<div class="content">
+\[A(\textbf{r})=-\mu\int_{\Omega_{cond}}G(\textbf{r},\textbf{r'})\textbf{j}(\textbf{r'})\]
+</div>
 </div>
 <div class="paragraph">
-<p>with $G(\textbf{r},\textbf{r'})$ the Green&#8217;s function defined as :</p>
+<p>with \(G(\textbf{r},\textbf{r'})\) the Green&#8217;s function defined as :</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[G(\textbf{r},\textbf{r'})=\frac{-1}{4\pi}\frac{1}{|\textbf{r}-\textbf{r'}|}\]
+</div>
 </div>
 <div class="paragraph">
-<p>\[
-G(\textbf{r},\textbf{r'})=\frac{-1}{4\pi}\frac{1}{|\textbf{r}-\textbf{r'}|}
-\]</p>
-</div>
-<div class="paragraph">
-<p>with $\textbf{r}\in\Omega_{mgn}$ and $\textbf{r'}\in\Omega_{cond}$</p>
+<p>with \(\textbf{r}\in\Omega_{mgn}\) and \(\textbf{r'}\in\Omega_{cond}\)</p>
 </div>
 <div class="paragraph">
 <p>Then we rewrite the expression of the magnetic potential <strong>A</strong> :</p>
 </div>
-<div class="paragraph">
-<p>\[
-A(\textbf{r})=\frac{\mu_{0}}{4\pi}\int_{\Omega_{cond}}\frac{\textbf{j}(\textbf{r'})}{|\textbf{r}-\textbf{r'}|} d\textbf{r'}\;\;\;\;\;\;\;\textbf{r}\in\Omega_{mgn}
-\]</p>
+<div class="stemblock">
+<div class="content">
+\[A(\textbf{r})=\frac{\mu_{0}}{4\pi}\int_{\Omega_{cond}}\frac{\textbf{j}(\textbf{r'})}{|\textbf{r}-\textbf{r'}|} d\textbf{r'}\;\;\;\;\;\;\;\textbf{r}\in\Omega_{mgn}\]
+</div>
 </div>
 <div class="paragraph">
 <p>As <strong>B</strong> is defined as the curl of <strong>A</strong>, we can write the so called Biot \&amp; Savart&#8217;s law :</p>
 </div>
-<div class="paragraph">
-<p>\[
-\textbf{B}(\textbf{r})=\frac{\mu_{0}}{4\pi}\int_{\Omega_{cond}}\frac{\textbf{j}(\textbf{r'})\times(\textbf{r}-\textbf{r'})}{|\textbf{r}-\textbf{r'}|^{3}} d\textbf{r'}\;\;\;\;\;\;\;\textbf{r}\in\Omega_{mgn}
-\]</p>
+<div class="stemblock">
+<div class="content">
+\[\textbf{B}(\textbf{r})=\frac{\mu_{0}}{4\pi}\int_{\Omega_{cond}}\frac{\textbf{j}(\textbf{r'})\times(\textbf{r}-\textbf{r'})}{|\textbf{r}-\textbf{r'}|^{3}} d\textbf{r'}\;\;\;\;\;\;\;\textbf{r}\in\Omega_{mgn}\]
 </div>
 </div>
-<div class="sect4">
-<h5 id="_parameters"><a class="anchor" href="#_parameters"></a>Parameters</h5>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_parameters"><a class="anchor" href="#_parameters"></a>2. Parameters</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>We use here the same parameters as in the ThermoElectric section for the .json file.
 We select the biter-intensity (shown in <a href="#example.cfg">biotsavart\_num\_box3D\_3D\_V1T1\_N1\_cvg.cfg</a>)
 We also need a file <code>.d</code> to define the characteristics of the conductors.</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_results"><a class="anchor" href="#_results"></a>Results</h5>
+</div>
+<div class="sect1">
+<h2 id="_results"><a class="anchor" href="#_results"></a>3. Results</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>On the next figure, the current is represented by the white arrow in the torus, the color of the torus corresponding to the potential.
 The box3D (the sphere inside the torus) is represented with the magnetic induction&#8217;s vector (<strong>B</strong>).</p>
@@ -487,8 +501,10 @@ The box3D (the sphere inside the torus) is represented with the magnetic inducti
 The scale and the direction of the magnetic field (<strong>B</strong>) are coherent.</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_code"><a class="anchor" href="#_code"></a>Code</h5>
+</div>
+<div class="sect1">
+<h2 id="_code"><a class="anchor" href="#_code"></a>4. Code</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>For the modelisation of the the torus and his box inside, we create the geometry with this file <code>.geo</code></p>
 </div>
@@ -772,6 +788,7 @@ ksp-use-initial-guess-nonzero=1</code></pre>
         "Fields":["temperature","potential","current"]
     }
 }</code></pre>
+</div>
 </div>
 </div>
 </div>

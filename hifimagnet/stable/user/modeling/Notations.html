@@ -5,12 +5,15 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Untitled :: HiFiMagnet Documentation</title>
     <link rel="canonical" href="https://book.hifimagnet.cemosis.fr/hifimagnet/stable/user/modeling/Notations.html">
-    <meta name="generator" content="Antora 2.3.3">
+    <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="icon" href="../../../../_/img/favicon.ico" type="image/x-icon">    
     <script>!function(l,p){if(l.protocol!==p&&l.host=="docs.antora.org"){l.protocol=p}else if(/\.gitlab\.io$/.test(l.host)){l.replace(p+"//docs.antora.org"+l.pathname.substr(l.pathname.indexOf("/",1))+l.search+l.hash)}}(location,"https:")</script>
 
     <link rel="stylesheet" type="text/css" href="/_/css/style.css">
+
+
+
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-65761593-2"></script>
     <script>function gtag(){dataLayer.push(arguments)};window.dataLayer=window.dataLayer||[];gtag('js',new Date());gtag('config','UA-65761593-2')</script>
@@ -149,6 +152,12 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../magnettools/Bmap.html">Magnetic Field Map</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../magnettools/Inductances.html">Self/Mutual</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../magnettools/Fmap.html">Net Forces</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../magnettools/Transient.html">Transient Analysis</a>
@@ -414,14 +423,14 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">$\rho$</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(\rho\)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">material&#8217;s density</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">$kg.m^{-3}$</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(kg.m^{-3}\)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">C<sub>p</sub></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">thermal capacity</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">$J.K^{-1}$</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">STEM:[J.K^{-1}]</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">r</p></td>
@@ -436,7 +445,7 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">k</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">thermal conductivity</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">$W.m^{-1} .K^{-1}$</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(W.m^{-1} .K^{-1}\)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">U</p></td>
@@ -444,19 +453,19 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">V</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">$\sigma$</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(\sigma\)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">electrical conductivity</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">$S.m^{-1}$</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(S.m^{-1}\)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">h</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">heat transfer coefficient</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">$W.m^{-2} .K^{-1}$</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(W.m^{-2} .K^{-1}\)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>A</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">magnetic potential</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">$V.s.m^{-1}$</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(V.s.m^{-1}\)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>B</strong></p></td>
@@ -466,7 +475,7 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>H</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">magnetic field</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">$A.m^{-1}$</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(A.m^{-1}\)</p></td>
 </tr>
 </tbody>
 </table>
@@ -477,7 +486,7 @@
 <table>
 <tr>
 <td class="hdlist1">
-$f$
+\(f\)
 </td>
 <td class="hdlist2">
 <p>function</p>
@@ -485,7 +494,7 @@ $f$
 </tr>
 <tr>
 <td class="hdlist1">
-$\textbf{f}$
+\(\textbf{f}\)
 </td>
 <td class="hdlist2">
 <p>vector of functions</p>
@@ -500,7 +509,7 @@ $\textbf{f}$
 <table>
 <tr>
 <td class="hdlist1">
-$\nabla f$
+\(\nabla f\)
 </td>
 <td class="hdlist2">
 <p>gradient of f</p>
@@ -508,7 +517,7 @@ $\nabla f$
 </tr>
 <tr>
 <td class="hdlist1">
-$\nabla.\textbf{ f }$
+\(\nabla.\textbf{ f }\)
 </td>
 <td class="hdlist2">
 <p>divergence of <strong>f</strong></p>
@@ -516,7 +525,7 @@ $\nabla.\textbf{ f }$
 </tr>
 <tr>
 <td class="hdlist1">
-$\nabla \times \textbf{ f }$
+\(\nabla \times \textbf{ f }\)
 </td>
 <td class="hdlist2">
 <p>curl of <strong>f</strong></p>
@@ -524,34 +533,34 @@ $\nabla \times \textbf{ f }$
 </tr>
 <tr>
 <td class="hdlist1">
-$L_{2}(\Omega)$
+\(L_{2}(\Omega)\)
 </td>
 <td class="hdlist2">
-<p>$\{f  \mid \int f^{2} &lt; \infty\}$  Lagrangian</p>
+<p>\(\{f  \mid \int f^{2} &lt; \infty\}\)  Lagrangian</p>
 </td>
 </tr>
 <tr>
 <td class="hdlist1">
-$H_{1}(\Omega)$
+\(H_{1}(\Omega)\)
 </td>
 <td class="hdlist2">
-<p>$\{f \in L_{2}(\Omega) \mid \nabla f \in [L_{2}(\Omega)]^{d}\}$  Hilbert space</p>
+<p>\(\{f \in L_{2}(\Omega) \mid \nabla f \in \[L_{2}(\Omega)]^{d}\}\)  Hilbert space</p>
 </td>
 </tr>
 <tr>
 <td class="hdlist1">
-$H_{div}(\Omega)$
+\(H_{div}(\Omega)\)
 </td>
 <td class="hdlist2">
-<p>$\{\textbf{f}\in [L^{2} (\Omega\cup\Omega_{c})]^{d}| \nabla.\textbf{f}\in L^{2}(\Omega\cup\Omega_{c})\}$ Divergence space</p>
+<p>\(\{\textbf{f}\in \[L^{2} (\Omega\cup\Omega_{c})]^{d}| \nabla.\textbf{f}\in L^{2}(\Omega\cup\Omega_{c})\}\) Divergence space</p>
 </td>
 </tr>
 <tr>
 <td class="hdlist1">
-$H_{curl}(\Omega)$
+\(H_{curl}(\Omega)\)
 </td>
 <td class="hdlist2">
-<p>$\{\textbf{f}\in [L^{2} (\Omega\cup\Omega_{c})]^{d}| \nabla\times\textbf{f}\in [L^{2} (\Omega\cup\Omega_{c})]^{d}\}$ Rotational space</p>
+<p>\(\{\textbf{f}\in \[L^{2} (\Omega\cup\Omega_{c})]^{d}| \nabla\times\textbf{f}\in \[L^{2} (\Omega\cup\Omega_{c})]^{d}\}\) Rotational space</p>
 </td>
 </tr>
 </table>

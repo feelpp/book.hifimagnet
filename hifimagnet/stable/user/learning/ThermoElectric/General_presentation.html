@@ -5,12 +5,15 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Untitled :: HiFiMagnet Documentation</title>
     <link rel="canonical" href="https://book.hifimagnet.cemosis.fr/hifimagnet/stable/user/learning/ThermoElectric/General_presentation.html">
-    <meta name="generator" content="Antora 2.3.3">
+    <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../../../_/css/site.css">
     <link rel="icon" href="../../../../../_/img/favicon.ico" type="image/x-icon">    
     <script>!function(l,p){if(l.protocol!==p&&l.host=="docs.antora.org"){l.protocol=p}else if(/\.gitlab\.io$/.test(l.host)){l.replace(p+"//docs.antora.org"+l.pathname.substr(l.pathname.indexOf("/",1))+l.search+l.hash)}}(location,"https:")</script>
 
     <link rel="stylesheet" type="text/css" href="/_/css/style.css">
+
+
+
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-65761593-2"></script>
     <script>function gtag(){dataLayer.push(arguments)};window.dataLayer=window.dataLayer||[];gtag('js',new Date());gtag('config','UA-65761593-2')</script>
@@ -149,6 +152,12 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../magnettools/Bmap.html">Magnetic Field Map</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../magnettools/Inductances.html">Self/Mutual</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../magnettools/Fmap.html">Net Forces</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../magnettools/Transient.html">Transient Analysis</a>
@@ -409,8 +418,9 @@
 feelpp_hfm_thermoelectric_model_3D_V1T1_N1 --config-file "name_of_your_file.cfg"</pre>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_material"><a class="anchor" href="#_material"></a>1. Material</h4>
+<div class="sect1">
+<h2 id="_material"><a class="anchor" href="#_material"></a>1. Material</h2>
+<div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 1. Correspondence between parameters and symbols in JSon files</caption>
 <colgroup>
@@ -425,11 +435,11 @@ feelpp_hfm_thermoelectric_model_3D_V1T1_N1 --config-file "name_of_your_file.cfg"
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">$\alpha$</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(\alpha\)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">alpha</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">$\sigma_{0}$ / $\sigma$</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(\sigma_{0}\) / \(\sigma\)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">sigma0 / sigma</p></td>
 </tr>
 <tr>
@@ -570,8 +580,10 @@ verbosity=2</pre>
 <p>We can define the current I using the Ohm&#8217;s law, defining the voltage ine the <code>json</code> file.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_condition"><a class="anchor" href="#_condition"></a>2. Condition</h4>
+</div>
+<div class="sect1">
+<h2 id="_condition"><a class="anchor" href="#_condition"></a>2. Condition</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>There are three type of conditions :</p>
 </div>
@@ -657,6 +669,7 @@ For those where there is no conditions, set an homogeneous Neumann condition (<c
 </td>
 </tr>
 </table>
+</div>
 </div>
 </div>
 </article>

@@ -3,15 +3,17 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>HiFiMagnet Salome Plugin :: HiFiMagnet Documentation</title>
+    <title>Untitled :: HiFiMagnet Documentation</title>
     <link rel="canonical" href="https://book.hifimagnet.cemosis.fr/hifimagnet/stable/cad/index.html">
-    <meta name="keywords" content="Feel++, partial differential equations, finite element method,">
-    <meta name="generator" content="Antora 2.3.3">
+    <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../_/img/favicon.ico" type="image/x-icon">    
     <script>!function(l,p){if(l.protocol!==p&&l.host=="docs.antora.org"){l.protocol=p}else if(/\.gitlab\.io$/.test(l.host)){l.replace(p+"//docs.antora.org"+l.pathname.substr(l.pathname.indexOf("/",1))+l.search+l.hash)}}(location,"https:")</script>
 
     <link rel="stylesheet" type="text/css" href="/_/css/style.css">
+
+
+
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-65761593-2"></script>
     <script>function gtag(){dataLayer.push(arguments)};window.dataLayer=window.dataLayer||[];gtag('js',new Date());gtag('config','UA-65761593-2')</script>
@@ -150,6 +152,12 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../magnettools/Bmap.html">Magnetic Field Map</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../magnettools/Inductances.html">Self/Mutual</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../magnettools/Fmap.html">Net Forces</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../magnettools/Transient.html">Transient Analysis</a>
@@ -402,8 +410,8 @@
   </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">HiFiMagnet Salome Plugin</h1>
-<div id="preamble">
+<div class="sect1">
+<h2 id="salome_plugin"><a class="anchor" href="#salome_plugin"></a>1. HiFiMagnet Salome Plugin</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Welcome to HiFiMagnet Salome Plugin documentation!</p>
@@ -423,7 +431,9 @@ provides some references.
 </div>
 </div>
 </div>
-<h1 id="introduction" class="sect0"><a class="anchor" href="#introduction"></a>Introduction</h1>
+<div class="sect1">
+<h2 id="introduction"><a class="anchor" href="#introduction"></a>2. Introduction</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>The HiFiMagnet Salome Plugin allows to easily:</p>
 </div>
@@ -492,7 +502,11 @@ supporting OpenGL 4.5.</p>
 </tr>
 </table>
 </div>
-<h1 id="quickstart" class="sect0"><a class="anchor" href="#quickstart"></a>Quick Starts</h1>
+</div>
+</div>
+<div class="sect1">
+<h2 id="quickstart"><a class="anchor" href="#quickstart"></a>3. Quick Starts</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>This document will illustrate how to simply use HiFiMagnet Salome plugin
 and give examples for most common operations.</p>
@@ -500,9 +514,8 @@ and give examples for most common operations.</p>
 <div class="paragraph">
 <p>Custom installation, eg. for native installation, is detailed in the <a href="../dev/index.html#install_salome" class="page">dev section</a>.</p>
 </div>
-<div class="sect1">
-<h2 id="matrix"><a class="anchor" href="#matrix"></a>1. Salome plugin matrix</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="matrix"><a class="anchor" href="#matrix"></a>3.1. Salome plugin matrix</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 25%;">
@@ -550,20 +563,16 @@ and give examples for most common operations.</p>
 </tbody>
 </table>
 </div>
-</div>
-<div class="sect1">
-<h2 id="qs_getting"><a class="anchor" href="#qs_getting"></a>2. Getting HiFiMagnet Salome plugin</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="qs_getting"><a class="anchor" href="#qs_getting"></a>3.2. Getting HiFiMagnet Salome plugin</h3>
 <div class="paragraph">
 <p>They are several way to use HiFiMagnet Salome plugin. The easiest way
 is to use container, either Docker based or Singularity based. <strong>If your system support
 singularity containers we recommend to use them instead of Docker ones</strong>.</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="qs_reference"><a class="anchor" href="#qs_reference"></a>3. Running HiFiMagnet Salome plugin</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="qs_reference"><a class="anchor" href="#qs_reference"></a>3.3. Running HiFiMagnet Salome plugin</h3>
 <div class="paragraph">
 <p>HiFiMagnet Salome plugin can be run either in <strong>GUI</strong> or <strong>TUI</strong> mode.
 <strong>TUI</strong> stands for Terminal User Interface.</p>
@@ -585,8 +594,8 @@ In peculiar <code>[&#8230;&#8203;]</code> denotes optional argument.
 </tr>
 </table>
 </div>
-<div class="sect2">
-<h3 id="_from_singularity_container"><a class="anchor" href="#_from_singularity_container"></a>3.1. from Singularity container</h3>
+<div class="sect3">
+<h4 id="_from_singularity_container"><a class="anchor" href="#_from_singularity_container"></a>3.3.1. from Singularity container</h4>
 <div class="paragraph">
 <p>Assuming we use <code>salome.simg</code> singularity image:</p>
 </div>
@@ -625,8 +634,8 @@ to check your graphic video card on Debian/Ubuntu you may use <code>inxi -G</cod
 </table>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_from_docker_container"><a class="anchor" href="#_from_docker_container"></a>3.2. from Docker container</h3>
+<div class="sect3">
+<h4 id="_from_docker_container"><a class="anchor" href="#_from_docker_container"></a>3.3.2. from Docker container</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">xhost local:root
@@ -712,8 +721,8 @@ on your internet connection.</p>
 </table>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_main_commands"><a class="anchor" href="#_main_commands"></a>3.3. Main commands</h3>
+<div class="sect3">
+<h4 id="_main_commands"><a class="anchor" href="#_main_commands"></a>3.3.3. Main commands</h4>
 <div class="paragraph">
 <p>We will omit the part of the command related to the use of Singularity or Docker to only give
 the Salome command. If you plan to run these commands from a Singularity or Docker image,
@@ -758,7 +767,10 @@ be described in the <a href="#data">data structure section</a>.</p>
 </div>
 </div>
 </div>
-<h1 id="data" class="sect0"><a class="anchor" href="#data"></a>Data Structure</h1>
+</div>
+<div class="sect1">
+<h2 id="data"><a class="anchor" href="#data"></a>4. Data Structure</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>An insert consists in a set of:</p>
 </div>
@@ -778,9 +790,8 @@ be described in the <a href="#data">data structure section</a>.</p>
 <div class="paragraph">
 <p>Each structure is defined as a <code>yaml</code> file.</p>
 </div>
-<div class="sect1">
-<h2 id="_helix_structure"><a class="anchor" href="#_helix_structure"></a>1. helix structure</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_helix_structure"><a class="anchor" href="#_helix_structure"></a>4.1. helix structure</h3>
 <div class="paragraph">
 <p>An helix is actually a cylindrical tube which exhibit a single or double helical cut made by EDM.
 The path of the helical cut is provided in a separate file <code>*_cut_salome.dat</code>.</p>
@@ -851,8 +862,8 @@ shape: !&lt;Shape&gt;, <i class="conum" data-value="9"></i><b>(9)</b>
 <img src="_images/ex_CAD_H.png" alt="A longitudinally cooled helix">
 </div>
 </div>
-<div class="sect2">
-<h3 id="_axi_structure"><a class="anchor" href="#_axi_structure"></a>1.1. <code>axi</code> structure</h3>
+<div class="sect3">
+<h4 id="_axi_structure"><a class="anchor" href="#_axi_structure"></a>4.1.1. <code>axi</code> structure</h4>
 <div class="paragraph">
 <p>The <code>axi</code> structure defines the helical cut along with the file <code>*_cut_salome.dat</code></p>
 </div>
@@ -891,8 +902,8 @@ shape: !&lt;Shape&gt;, <i class="conum" data-value="9"></i><b>(9)</b>
 <p>The helical path consists in a set of \(i\) helices with a pitch \(p_i\) and a number of turns \(n_i\)</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_m3d_structure"><a class="anchor" href="#_m3d_structure"></a>1.2. <code>m3d</code> structure</h3>
+<div class="sect3">
+<h4 id="_m3d_structure"><a class="anchor" href="#_m3d_structure"></a>4.1.2. <code>m3d</code> structure</h4>
 <div id="helix_m3d" class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">m3d: !&lt;Model3D&gt;
@@ -918,8 +929,8 @@ shape: !&lt;Shape&gt;, <i class="conum" data-value="9"></i><b>(9)</b>
 </table>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_shape_structure"><a class="anchor" href="#_shape_structure"></a>1.3. <code>shape</code> structure</h3>
+<div class="sect3">
+<h4 id="_shape_structure"><a class="anchor" href="#_shape_structure"></a>4.1.3. <code>shape</code> structure</h4>
 <div id="helix_shape" class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">shape: !&lt;Shape&gt;
@@ -974,8 +985,8 @@ shape: !&lt;Shape&gt;, <i class="conum" data-value="9"></i><b>(9)</b>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_helical_cut_structure"><a class="anchor" href="#_helical_cut_structure"></a>1.4. <code>helical cut</code> structure</h3>
+<div class="sect3">
+<h4 id="_helical_cut_structure"><a class="anchor" href="#_helical_cut_structure"></a>4.1.4. <code>helical cut</code> structure</h4>
 <div class="paragraph">
 <p>The geometry of the <code>helical cut</code> is computed using MagnetTools. It provides
 the coordinates of the cut in developed form which will be mapped onto the outer cylinder boundary of an helix.</p>
@@ -1012,10 +1023,8 @@ the coordinates of the cut in developed form which will be mapped onto the outer
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_ring"><a class="anchor" href="#_ring"></a>2. Ring</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_ring"><a class="anchor" href="#_ring"></a>4.2. Ring</h3>
 <div class="paragraph">
 <p>A ring ensure the electrical and mechanical connection between 2 consecutive helices.
 It is a cylinder eventually with \(n\) cylindrical slots, disposed at regular angular interval \(angle\) in it to ensure a proper cooling of the connected helices.</p>
@@ -1062,12 +1071,10 @@ angle: 46</code></pre>
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_currentleads"><a class="anchor" href="#_currentleads"></a>3. CurrentLeads</h2>
-<div class="sectionbody">
 <div class="sect2">
-<h3 id="_inner_lead"><a class="anchor" href="#_inner_lead"></a>3.1. Inner Lead</h3>
+<h3 id="_currentleads"><a class="anchor" href="#_currentleads"></a>4.3. CurrentLeads</h3>
+<div class="sect3">
+<h4 id="_inner_lead"><a class="anchor" href="#_inner_lead"></a>4.3.1. Inner Lead</h4>
 <div id="inner" class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">!&lt;InnerCurrentLead&gt;
@@ -1084,8 +1091,8 @@ r: [19.3, 24.2]</code></pre>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_outer_lead"><a class="anchor" href="#_outer_lead"></a>3.2. Outer Lead</h3>
+<div class="sect3">
+<h4 id="_outer_lead"><a class="anchor" href="#_outer_lead"></a>4.3.2. Outer Lead</h4>
 <div id="outer" class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">!&lt;OuterCurrentLead&gt;
@@ -1103,10 +1110,8 @@ r: [19.3, 24.2]</code></pre>
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_insert"><a class="anchor" href="#_insert"></a>4. insert</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_insert"><a class="anchor" href="#_insert"></a>4.4. insert</h3>
 <div id="insert" class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">!&lt;Insert&gt;
@@ -1163,10 +1168,8 @@ RAngles:, <i class="conum" data-value="8"></i><b>(8)</b></code></pre>
 </table>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_mesh"><a class="anchor" href="#_mesh"></a>5. mesh</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_mesh"><a class="anchor" href="#_mesh"></a>4.5. mesh</h3>
 <div class="paragraph">
 <p>The mesh is generated from the command line when the option <code>--mesh</code> is passed to salome.
 The first time the mesh is generated, a file , namely <code>Insert_meshdata.yaml</code> where <code>Insert.yaml</code> is
@@ -1339,10 +1342,8 @@ The smaller this distance is, the closer the mesh is to the exact surface (only 
 </table>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_advanced_mesh_options"><a class="anchor" href="#_advanced_mesh_options"></a>6. advanced mesh options</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_advanced_mesh_options"><a class="anchor" href="#_advanced_mesh_options"></a>4.6. advanced mesh options</h3>
 <div class="paragraph">
 <p>The mesh can customized using the yaml cgf file presented above. There are also some options to reduce the number of surfacic meshes that will be latter use to apply boundary conditions:</p>
 </div>
@@ -1370,7 +1371,10 @@ The smaller this distance is, the closer the mesh is to the exact surface (only 
 </div>
 </div>
 </div>
-<h1 id="usage" class="sect0"><a class="anchor" href="#usage"></a>Using Salome</h1>
+</div>
+<div class="sect1">
+<h2 id="usage"><a class="anchor" href="#usage"></a>5. Using Salome</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Salome is an open-source generic platform for Pre- and Post-Processing for numerical simulation.
 Its key features are:</p>
@@ -1436,9 +1440,8 @@ you may found then here:</p>
 </tr>
 </table>
 </div>
-<div class="sect1">
-<h2 id="_basic_examples"><a class="anchor" href="#_basic_examples"></a>1. Basic examples</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_basic_examples"><a class="anchor" href="#_basic_examples"></a>5.1. Basic examples</h3>
 <div class="paragraph">
 <p>In the following examples we assume that you have pulled a singularity image from a Sregistry service
 for Salome and  HiFiMagnet. For sake of simplicity the images are been named:</p>
@@ -1456,8 +1459,8 @@ for Salome and  HiFiMagnet. For sake of simplicity the images are been named:</p
 <div class="paragraph">
 <p>You shall adapt the scripts to the actual names of the images or rename the images (see <a href="#rename_sing_image">above</a>)</p>
 </div>
-<div class="sect2">
-<h3 id="_check_meshgems_installation"><a class="anchor" href="#_check_meshgems_installation"></a>1.1. Check MeshGems installation</h3>
+<div class="sect3">
+<h4 id="_check_meshgems_installation"><a class="anchor" href="#_check_meshgems_installation"></a>5.1.1. Check MeshGems installation</h4>
 <div class="paragraph">
 <p>Assuming that your home directory contains a <code>Salome</code> directory with the python script <code>ghs3d_demo.py</code>.
 You can test your installation by running:</p>
@@ -1483,8 +1486,8 @@ You can test your installation by running:</p>
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_a_simple_med_mesh_in_tui_mode"><a class="anchor" href="#_a_simple_med_mesh_in_tui_mode"></a>1.2. A simple <code>med</code> mesh in <code>TUI</code> mode</h3>
+<div class="sect3">
+<h4 id="_a_simple_med_mesh_in_tui_mode"><a class="anchor" href="#_a_simple_med_mesh_in_tui_mode"></a>5.1.2. A simple <code>med</code> mesh in <code>TUI</code> mode</h4>
 <div class="paragraph">
 <p>Assuming that your home directory contains a <code>Salome</code> directory with the python script <code>testcube_mesh.py</code>.
 You can test your installation by running:</p>
@@ -1524,8 +1527,8 @@ by Feel++. You can convert a <code>med</code> mesh into a gmsh mesh (<code>msh</
 </table>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_create_a_simple_object_in_gui_mode"><a class="anchor" href="#_create_a_simple_object_in_gui_mode"></a>1.3. Create a simple object in <code>GUI</code> mode</h3>
+<div class="sect3">
+<h4 id="_create_a_simple_object_in_gui_mode"><a class="anchor" href="#_create_a_simple_object_in_gui_mode"></a>5.1.3. Create a simple object in <code>GUI</code> mode</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1569,8 +1572,8 @@ To reload the study: <code>salome study.hdf</code> or load the study from main <
 <p>A video tutorial for creating and using python script is available <a href="https://youtu.be/0pmq8GjBONg">here</a>.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_loading_a_cad_in_gui_mode"><a class="anchor" href="#_loading_a_cad_in_gui_mode"></a>1.4. Loading a CAD in <code>GUI</code> mode</h3>
+<div class="sect3">
+<h4 id="_loading_a_cad_in_gui_mode"><a class="anchor" href="#_loading_a_cad_in_gui_mode"></a>5.1.4. Loading a CAD in <code>GUI</code> mode</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1604,8 +1607,8 @@ To reload the study: <code>salome study.hdf</code> or load the study from main <
 <p>This is very handy for defining CAD region (aka <code>Groups</code>) that will be latter used for Boundary Conditions.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_create_a_simple_mesh_in_gui_mode"><a class="anchor" href="#_create_a_simple_mesh_in_gui_mode"></a>1.5. Create a simple mesh in <code>GUI</code> mode</h3>
+<div class="sect3">
+<h4 id="_create_a_simple_mesh_in_gui_mode"><a class="anchor" href="#_create_a_simple_mesh_in_gui_mode"></a>5.1.5. Create a simple mesh in <code>GUI</code> mode</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1628,6 +1631,7 @@ To reload the study: <code>salome study.hdf</code> or load the study from main <
 <p><a href="https://youtu.be/iPwi8eRsZ2g">MeshGems</a>.</p>
 </li>
 </ul>
+</div>
 </div>
 </div>
 </div>

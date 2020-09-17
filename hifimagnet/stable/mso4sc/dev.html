@@ -3,14 +3,17 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>DevUser role :: HiFiMagnet Documentation</title>
+    <title>Untitled :: HiFiMagnet Documentation</title>
     <link rel="canonical" href="https://book.hifimagnet.cemosis.fr/hifimagnet/stable/mso4sc/dev.html">
-    <meta name="generator" content="Antora 2.3.3">
+    <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../_/img/favicon.ico" type="image/x-icon">    
     <script>!function(l,p){if(l.protocol!==p&&l.host=="docs.antora.org"){l.protocol=p}else if(/\.gitlab\.io$/.test(l.host)){l.replace(p+"//docs.antora.org"+l.pathname.substr(l.pathname.indexOf("/",1))+l.search+l.hash)}}(location,"https:")</script>
 
     <link rel="stylesheet" type="text/css" href="/_/css/style.css">
+
+
+
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-65761593-2"></script>
     <script>function gtag(){dataLayer.push(arguments)};window.dataLayer=window.dataLayer||[];gtag('js',new Date());gtag('config','UA-65761593-2')</script>
@@ -149,6 +152,12 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../magnettools/Bmap.html">Magnetic Field Map</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../magnettools/Inductances.html">Self/Mutual</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../magnettools/Fmap.html">Net Forces</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../magnettools/Transient.html">Transient Analysis</a>
@@ -392,17 +401,20 @@
 <button class="nav-toggle"></button>
   <a href="../index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
-  <ul>
-    <li><a href="../index.html">HiFiMagnet Documentation</a></li>
-    <li><a href="dev.html"><strong>DevUser</strong> role</a></li>
-  </ul>
 </nav>
   <div class="edit-this-page"><a href="https://github.com/feelpp/book.hifimagnet/edit/master/docs/docs/modules/mso4sc/pages/dev.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <article class="doc">
-<h1 class="page"><strong>DevUser</strong> role</h1>
-<h1 id="_becoming_devuser" class="sect0"><a class="anchor" href="#_becoming_devuser"></a>Becoming <strong>DevUser</strong></h1>
+<div class="sect1">
+<h2 id="devuser"><a class="anchor" href="#devuser"></a>1. <strong>DevUser</strong> role</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_becoming_devuser"><a class="anchor" href="#_becoming_devuser"></a>2. Becoming <strong>DevUser</strong></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Once registered in the portal, you  are a <strong>EndUser</strong>.
 To be granted <strong>DevUser</strong> rights, just email to Portal Admins (actually Victor or Javi).</p>
@@ -423,7 +435,8 @@ To be granted <strong>DevUser</strong> rights, just email to Portal Admins (actu
 </li>
 </ul>
 </div>
-<h1 id="registerapp" class="sect0"><a class="anchor" href="#registerapp"></a>Register an HiFiMagnet application</h1>
+<div class="sect2">
+<h3 id="registerapp"><a class="anchor" href="#registerapp"></a>2.1. Register an HiFiMagnet application</h3>
 <div class="paragraph">
 <p>There is actually two routes to register an app:</p>
 </div>
@@ -460,9 +473,9 @@ your only choice is to <strong>RemoveApp</strong>.</p>
 </tr>
 </table>
 </div>
-<div class="sect1">
-<h2 id="free_app"><a class="anchor" href="#free_app"></a>1. For all users</h2>
-<div class="sectionbody">
+</div>
+<div class="sect2">
+<h3 id="free_app"><a class="anchor" href="#free_app"></a>2.2. For all users</h3>
 <div class="imageblock">
 <div class="content">
 <img src="_images/PortalMSO4SC_RegisterApp.png" alt="*Experiments* menu for *DevUser*">
@@ -540,10 +553,8 @@ see <a href="https://github.com/MSO4SC/resources/blob/staging/blueprint/feelpp/h
 </table>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="marketplace"><a class="anchor" href="#marketplace"></a>2. In the <strong>Marketplace</strong></h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="marketplace"><a class="anchor" href="#marketplace"></a>2.3. In the <strong>Marketplace</strong></h3>
 <div class="paragraph">
 <p>To register an application you need to be <strong>DevUSer</strong>
 The process is split into several part:</p>
@@ -592,10 +603,8 @@ The process is split into several part:</p>
 </ul>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="removeapp"><a class="anchor" href="#removeapp"></a>3. Remove an app</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="removeapp"><a class="anchor" href="#removeapp"></a>2.4. Remove an app</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -614,7 +623,10 @@ The process is split into several part:</p>
 </div>
 </div>
 </div>
-<h1 id="validorder" class="sect0"><a class="anchor" href="#validorder"></a>Validate an HiFiMagnet application purchase order</h1>
+</div>
+<div class="sect1">
+<h2 id="validorder"><a class="anchor" href="#validorder"></a>3. Validate an HiFiMagnet application purchase order</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Once the app has been registered in the <strong>Marketplace</strong> (actually it means that an offering has been defined) you will be <strong>owner</strong> of this app. Any <strong>EndUser</strong> may purchase your app.
 To check if you have any order:</p>
@@ -690,7 +702,11 @@ and cannot be performed from the portal.</p>
 </tr>
 </table>
 </div>
-<h1 id="sregistry_add_to_team" class="sect0"><a class="anchor" href="#sregistry_add_to_team"></a>Adding an <strong>EndUser</strong> to Sregistry team</h1>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sregistry_add_to_team"><a class="anchor" href="#sregistry_add_to_team"></a>4. Adding an <strong>EndUser</strong> to Sregistry team</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>For app like HiFiMagnet apps that require an private singularity image, you must grant <strong>EndUser</strong> access to the Sregistry HiFiMagnet team.
 To do so follow these instructions:</p>
@@ -763,7 +779,11 @@ that are nor part of <strong>owners</strong> nor <strong>contributors</strong>.<
 <div class="paragraph">
 <p>The previously selected user shall not be shown in the appropriate list according to your choice.</p>
 </div>
-<h1 id="sregistry_add_to_collection" class="sect0"><a class="anchor" href="#sregistry_add_to_collection"></a>Adding an new image into Sregistry HiFiMagnet collection</h1>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sregistry_add_to_collection"><a class="anchor" href="#sregistry_add_to_collection"></a>5. Adding an new image into Sregistry HiFiMagnet collection</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>To upload <code>salome-8.4.0.simg</code> newest image on Sregistry HiFiMagnet collection
 from your local machine you can type the following commands:</p>
@@ -793,6 +813,8 @@ sregistry push --name hifimagnet/salome --tag 8.4.0 salome-8.4.0.simg</code></pr
 </td>
 </tr>
 </table>
+</div>
+</div>
 </div>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">

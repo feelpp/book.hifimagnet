@@ -3,15 +3,17 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>HiFiMagnet user manual :: HiFiMagnet Documentation</title>
+    <title>Untitled :: HiFiMagnet Documentation</title>
     <link rel="canonical" href="https://book.hifimagnet.cemosis.fr/hifimagnet/stable/user/index.html">
-    <meta name="keywords" content="Feel++, partial differential equations, finite element method,">
-    <meta name="generator" content="Antora 2.3.3">
+    <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../_/img/favicon.ico" type="image/x-icon">    
     <script>!function(l,p){if(l.protocol!==p&&l.host=="docs.antora.org"){l.protocol=p}else if(/\.gitlab\.io$/.test(l.host)){l.replace(p+"//docs.antora.org"+l.pathname.substr(l.pathname.indexOf("/",1))+l.search+l.hash)}}(location,"https:")</script>
 
     <link rel="stylesheet" type="text/css" href="/_/css/style.css">
+
+
+
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-65761593-2"></script>
     <script>function gtag(){dataLayer.push(arguments)};window.dataLayer=window.dataLayer||[];gtag('js',new Date());gtag('config','UA-65761593-2')</script>
@@ -150,6 +152,12 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../magnettools/Bmap.html">Magnetic Field Map</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../magnettools/Inductances.html">Self/Mutual</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../magnettools/Fmap.html">Net Forces</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../magnettools/Transient.html">Transient Analysis</a>
@@ -402,8 +410,8 @@
   </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">HiFiMagnet user manual</h1>
-<div id="preamble">
+<div class="sect1">
+<h2 id="user_manual"><a class="anchor" href="#user_manual"></a>1. HiFiMagnet user manual</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Welcome to HiFiMagnet manual documentation!</p>
@@ -450,10 +458,11 @@ It consists in a set of tools including:</p>
 </div>
 </div>
 </div>
-<h1 id="quickstart" class="sect0"><a class="anchor" href="#quickstart"></a>Quick Starts</h1>
 <div class="sect1">
-<h2 id="matrix"><a class="anchor" href="#matrix"></a>1. HiFiMagnet plugin matrix</h2>
+<h2 id="quickstart"><a class="anchor" href="#quickstart"></a>2. Quick Starts</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="matrix"><a class="anchor" href="#matrix"></a>2.1. HiFiMagnet plugin matrix</h3>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">A For 3D static analysis:</caption>
 <colgroup>
@@ -543,21 +552,17 @@ It consists in a set of tools including:</p>
 </tbody>
 </table>
 </div>
-</div>
-<div class="sect1">
-<h2 id="qs_installation"><a class="anchor" href="#qs_installation"></a>2. Getting HiFiMagnet</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="qs_installation"><a class="anchor" href="#qs_installation"></a>2.2. Getting HiFiMagnet</h3>
 <div class="paragraph">
 <p>Using HiFiMagnet inside container, either Docker or Singularity based,
 is the recommended and fastest way. If your system support singularity containers we recommend to use them instead of Docker ones.</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="qs_usage"><a class="anchor" href="#qs_usage"></a>3. Running HiFiMagnet</h2>
-<div class="sectionbody">
 <div class="sect2">
-<h3 id="_from_singularity_container"><a class="anchor" href="#_from_singularity_container"></a>3.1. from Singularity container</h3>
+<h3 id="qs_usage"><a class="anchor" href="#qs_usage"></a>2.3. Running HiFiMagnet</h3>
+<div class="sect3">
+<h4 id="_from_singularity_container"><a class="anchor" href="#_from_singularity_container"></a>2.3.1. from Singularity container</h4>
 <div class="paragraph">
 <p>Assuming we use <code>hifimagnet.simg</code> singularity image:</p>
 </div>
@@ -571,8 +576,8 @@ is the recommended and fastest way. If your system support singularity container
 to specify what calculations are performed. The configuration files are fully described in this <a href="#data">section</a></p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_from_docker_container"><a class="anchor" href="#_from_docker_container"></a>3.2. from Docker container</h3>
+<div class="sect3">
+<h4 id="_from_docker_container"><a class="anchor" href="#_from_docker_container"></a>2.3.2. from Docker container</h4>
 <div class="paragraph">
 <p>Start the Docker container <code>feelpp/hifimagnet</code> as follows</p>
 </div>
@@ -582,8 +587,8 @@ to specify what calculations are performed. The configuration files are fully de
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_from_command_line"><a class="anchor" href="#_from_command_line"></a>3.3. from command line</h3>
+<div class="sect3">
+<h4 id="_from_command_line"><a class="anchor" href="#_from_command_line"></a>2.3.3. from command line</h4>
 <div class="paragraph">
 <p>To perform a 3D fully coupled multi-physics simulation:</p>
 </div>
@@ -595,7 +600,10 @@ to specify what calculations are performed. The configuration files are fully de
 </div>
 </div>
 </div>
-<h1 id="usage" class="sect0"><a class="anchor" href="#usage"></a>Using HiFiMagnet</h1>
+</div>
+<div class="sect1">
+<h2 id="usage"><a class="anchor" href="#usage"></a>3. Using HiFiMagnet</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>As stated in introduction HiFiMagnet per se provides tools for High Field Magnets simulation.
 More precisely we can model:</p>
@@ -644,9 +652,8 @@ More precisely we can model:</p>
 The data settings consist in writting json files for each physical model involved,
 providing connection between CAD/Mesh entities to respectively Material and Boundary conditions.</p>
 </div>
-<div class="sect1">
-<h2 id="data"><a class="anchor" href="#data"></a>1. Data structure</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="data"><a class="anchor" href="#data"></a>3.1. Data structure</h3>
 <div class="paragraph">
 <p>HiFiMagnet simulations parameters are defined througth configuration file <code>.cfg</code>
 and <code>json</code> files defining the model per physic and eventually some other <code>json</code> files
@@ -656,8 +663,8 @@ for the physical properties of the materials.</p>
 <p>The data structure follows Feel++ style and convention.
 In this section we will give details about these different files.</p>
 </div>
-<div class="sect2">
-<h3 id="_config_files"><a class="anchor" href="#_config_files"></a>1.1. Config Files</h3>
+<div class="sect3">
+<h4 id="_config_files"><a class="anchor" href="#_config_files"></a>3.1.1. Config Files</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-cfg hljs" data-lang="cfg">dim=3
@@ -797,11 +804,11 @@ steady=true</code></pre>
 </tr>
 <tr>
 <td><i class="conum" data-value="7"></i><b>7</b></td>
-<td>magnetostatic model</td>
+<td>specific to HiFiMagnet</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="8"></i><b>8</b></td>
-<td>specific to HiFiMagnet</td>
+<td>magnetostatic model</td>
 </tr>
 </table>
 </div>
@@ -910,8 +917,8 @@ Bitter magnets and/or Supraconductor Magnets.</p>
 </table>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_physic_model_files"><a class="anchor" href="#_physic_model_files"></a>1.2. Physic Model files</h3>
+<div class="sect3">
+<h4 id="_physic_model_files"><a class="anchor" href="#_physic_model_files"></a>3.1.2. Physic Model files</h4>
 <div class="paragraph">
 <p>The Physic Model files are <code>json</code> files that contain informations about:</p>
 </div>
@@ -928,8 +935,8 @@ Bitter magnets and/or Supraconductor Magnets.</p>
 </li>
 </ul>
 </div>
-<div class="sect3">
-<h4 id="_thermoelectric_model_file"><a class="anchor" href="#_thermoelectric_model_file"></a>1.2.1. ThermoElectric Model file</h4>
+<div class="sect4">
+<h5 id="_thermoelectric_model_file"><a class="anchor" href="#_thermoelectric_model_file"></a>ThermoElectric Model file</h5>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-cfg hljs" data-lang="cfg">{
@@ -992,8 +999,8 @@ Bitter magnets and/or Supraconductor Magnets.</p>
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_magnetostatics_model_file"><a class="anchor" href="#_magnetostatics_model_file"></a>1.2.2. Magnetostatics Model file</h4>
+<div class="sect4">
+<h5 id="_magnetostatics_model_file"><a class="anchor" href="#_magnetostatics_model_file"></a>Magnetostatics Model file</h5>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-cfg hljs" data-lang="cfg">{
@@ -1056,8 +1063,8 @@ Bitter magnets and/or Supraconductor Magnets.</p>
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_elasticity_model_file"><a class="anchor" href="#_elasticity_model_file"></a>1.2.3. Elasticity Model file</h4>
+<div class="sect4">
+<h5 id="_elasticity_model_file"><a class="anchor" href="#_elasticity_model_file"></a>Elasticity Model file</h5>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-cfg hljs" data-lang="cfg">{
@@ -1127,8 +1134,8 @@ Bitter magnets and/or Supraconductor Magnets.</p>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_materials_file"><a class="anchor" href="#_materials_file"></a>1.3. Materials file</h3>
+<div class="sect3">
+<h4 id="_materials_file"><a class="anchor" href="#_materials_file"></a>3.1.3. Materials file</h4>
 <div class="paragraph">
 <p>Physical properties of the material are defined in a <code>json</code> file
 for each material. The properties are given in SI units.</p>
@@ -1227,12 +1234,10 @@ defining properties for material &lt;1&gt; :</p>
 </table>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="workflow"><a class="anchor" href="#workflow"></a>2. Workflow</h2>
-<div class="sectionbody">
 <div class="sect2">
-<h3 id="_using_magnettools_to_define_design"><a class="anchor" href="#_using_magnettools_to_define_design"></a>2.1. Using MagnetTools to define Design</h3>
+<h3 id="workflow"><a class="anchor" href="#workflow"></a>3.2. Workflow</h3>
+<div class="sect3">
+<h4 id="_using_magnettools_to_define_design"><a class="anchor" href="#_using_magnettools_to_define_design"></a>3.2.1. Using MagnetTools to define Design</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1244,8 +1249,8 @@ defining properties for material &lt;1&gt; :</p>
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_using_hifimagnet_salome_plugin_to_create_cad_and_generate_meshes"><a class="anchor" href="#_using_hifimagnet_salome_plugin_to_create_cad_and_generate_meshes"></a>2.2. Using HiFiMagnet Salome Plugin to create CAD and generate meshes</h3>
+<div class="sect3">
+<h4 id="_using_hifimagnet_salome_plugin_to_create_cad_and_generate_meshes"><a class="anchor" href="#_using_hifimagnet_salome_plugin_to_create_cad_and_generate_meshes"></a>3.2.2. Using HiFiMagnet Salome Plugin to create CAD and generate meshes</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1266,8 +1271,8 @@ defining properties for material &lt;1&gt; :</p>
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_prepare_the_mesh_for_hpc"><a class="anchor" href="#_prepare_the_mesh_for_hpc"></a>2.3. Prepare the mesh for HPC</h3>
+<div class="sect3">
+<h4 id="_prepare_the_mesh_for_hpc"><a class="anchor" href="#_prepare_the_mesh_for_hpc"></a>3.2.3. Prepare the mesh for HPC</h4>
 <div class="paragraph">
 <p>The mesh created with HiFiMagnet Salome is in <code>med</code> format.
 Depending on the version of Feel++ used this format may not be supported.
@@ -1313,23 +1318,21 @@ Use <code>--gmsh.scale=0.001</code> to rescale the mesh.</p>
 </table>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_define_cfg_model_and_materials_files"><a class="anchor" href="#_define_cfg_model_and_materials_files"></a>2.4. Define Cfg, Model and Materials files</h3>
+<div class="sect3">
+<h4 id="_define_cfg_model_and_materials_files"><a class="anchor" href="#_define_cfg_model_and_materials_files"></a>3.2.4. Define Cfg, Model and Materials files</h4>
 
 </div>
-<div class="sect2">
-<h3 id="_running_3d_simulations"><a class="anchor" href="#_running_3d_simulations"></a>2.5. Running 3D simulations</h3>
+<div class="sect3">
+<h4 id="_running_3d_simulations"><a class="anchor" href="#_running_3d_simulations"></a>3.2.5. Running 3D simulations</h4>
 
 </div>
-<div class="sect2">
-<h3 id="_postprocessing_results"><a class="anchor" href="#_postprocessing_results"></a>2.6. Postprocessing results</h3>
+<div class="sect3">
+<h4 id="_postprocessing_results"><a class="anchor" href="#_postprocessing_results"></a>3.2.6. Postprocessing results</h4>
 
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="examples"><a class="anchor" href="#examples"></a>3. Examples</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="examples"><a class="anchor" href="#examples"></a>3.3. Examples</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1339,6 +1342,7 @@ Use <code>--gmsh.scale=0.001</code> to rescale the mesh.</p>
 <p><a href="../benchmarks/HL-31/README.html" class="page">HL-31</a></p>
 </li>
 </ul>
+</div>
 </div>
 </div>
 </div>

@@ -5,12 +5,16 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Installation :: HiFiMagnet Documentation</title>
     <link rel="canonical" href="https://book.hifimagnet.cemosis.fr/hifimagnet/stable/install/index.html">
-    <meta name="generator" content="Antora 2.3.3">
+    <meta name="keywords" content="Feel++, partial differential equations, finite element method,">
+    <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../_/img/favicon.ico" type="image/x-icon">    
     <script>!function(l,p){if(l.protocol!==p&&l.host=="docs.antora.org"){l.protocol=p}else if(/\.gitlab\.io$/.test(l.host)){l.replace(p+"//docs.antora.org"+l.pathname.substr(l.pathname.indexOf("/",1))+l.search+l.hash)}}(location,"https:")</script>
 
     <link rel="stylesheet" type="text/css" href="/_/css/style.css">
+
+
+
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-65761593-2"></script>
     <script>function gtag(){dataLayer.push(arguments)};window.dataLayer=window.dataLayer||[];gtag('js',new Date());gtag('config','UA-65761593-2')</script>
@@ -149,6 +153,12 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../magnettools/Bmap.html">Magnetic Field Map</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../magnettools/Inductances.html">Self/Mutual</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../magnettools/Fmap.html">Net Forces</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../magnettools/Transient.html">Transient Analysis</a>
@@ -405,9 +415,6 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Unresolved include directive in modules/install/pages/index.adoc - include::partial$/mso4sc-uri.adoc[]</p>
-</div>
-<div class="paragraph">
 <p>Welcome to HiFiMagnet installation documentation!</p>
 </div>
 <div class="paragraph">
@@ -563,13 +570,13 @@ you&#8217;d move to the <a href="../dev/index.html" class="page">developper sect
 <h2 id="debian"><a class="anchor" href="#debian"></a>3. Debian/Ubuntu platform</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>On Debian/Ubuntu system you can install HiFiMagnet toolchain from the local {lncmi} packages repository.
+<p>On Debian/Ubuntu system you can install HiFiMagnet toolchain from the local Lncmi packages repository.
 To do so:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>you need to have access to the {lncmi} repository</p>
+<p>you need to have access to the Lncmi repository</p>
 </li>
 <li>
 <p>add a <code>lncmi.lst</code> into your <code>/etc/apt/sources.list.d</code> directory:</p>
@@ -632,7 +639,7 @@ sudo apt install hifimagnet</code></pre>
 </table>
 <div class="paragraph">
 <p>This procedure requires that you have root access on your system
-and that you have access to the Debian/Ubuntu {lncmi} repository.</p>
+and that you have access to the Debian/Ubuntu Lncmi repository.</p>
 </div>
 </td>
 </tr>
@@ -733,7 +740,7 @@ sregistry pull --name hifimagnet-v108.simg hifimagnet/hifimagnet:v0.108</code></
 </div>
 </div>
 <div class="sect3">
-<h4 id="_from_lncmi"><a class="anchor" href="#_from_lncmi"></a>5.2.3. from {lncmi}</h4>
+<h4 id="_from_lncmi"><a class="anchor" href="#_from_lncmi"></a>5.2.3. from Lncmi</h4>
 
 </div>
 <div class="sect3">

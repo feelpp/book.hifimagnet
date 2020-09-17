@@ -5,12 +5,15 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Untitled :: HiFiMagnet Documentation</title>
     <link rel="canonical" href="https://book.hifimagnet.cemosis.fr/hifimagnet/stable/user/modeling/Magnetostatic_equations.html">
-    <meta name="generator" content="Antora 2.3.3">
+    <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="icon" href="../../../../_/img/favicon.ico" type="image/x-icon">    
     <script>!function(l,p){if(l.protocol!==p&&l.host=="docs.antora.org"){l.protocol=p}else if(/\.gitlab\.io$/.test(l.host)){l.replace(p+"//docs.antora.org"+l.pathname.substr(l.pathname.indexOf("/",1))+l.search+l.hash)}}(location,"https:")</script>
 
     <link rel="stylesheet" type="text/css" href="/_/css/style.css">
+
+
+
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-65761593-2"></script>
     <script>function gtag(){dataLayer.push(arguments)};window.dataLayer=window.dataLayer||[];gtag('js',new Date());gtag('config','UA-65761593-2')</script>
@@ -149,6 +152,12 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../magnettools/Bmap.html">Magnetic Field Map</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../magnettools/Inductances.html">Self/Mutual</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../magnettools/Fmap.html">Net Forces</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../magnettools/Transient.html">Transient Analysis</a>
@@ -402,47 +411,47 @@
 <div class="paragraph">
 <p>First of all, we start with two of the four Maxwell&#8217;s equations :</p>
 </div>
-<div class="paragraph">
-<p>\[
-    \left\{ \begin{array}{cc}
+<div class="stemblock">
+<div class="content">
+\[    \left\{ \begin{array}{cc}
       \nabla\times\textbf{H}=\textbf{j}\\
-      \nabla.\textbf{B}=0 \end{array} \right.
-\]</p>
+      \nabla.\textbf{B}=0 \end{array} \right.\]
+</div>
 </div>
 <div class="paragraph">
-<p>We also can link the magnetic induction (<strong>B</strong>) and the magnetic field (<strong>H</strong>) using the permeability ($\mu$) as :</p>
+<p>We also can link the magnetic induction (<strong>B</strong>) and the magnetic field (<strong>H</strong>) using the permeability (\(\mu\)) as :</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\textbf{B}=\mu\textbf{H}\]
+</div>
 </div>
 <div class="paragraph">
-<p>\[
-\textbf{B}=\mu\textbf{H}
-\]</p>
-</div>
-<div class="paragraph">
-<p>with $\mu=\mu_{r}\mu_{0}$</p>
+<p>with \(\mu=\mu_{r}\mu_{0}\)</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>$\mu_{r}$ being the permeability specific to the material</p>
+<p>\(\mu_{r}\) being the permeability specific to the material</p>
 </li>
 <li>
-<p>$\mu_{0}$ being the vacuum permeability</p>
+<p>\(\mu_{0}\) being the vacuum permeability</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>From the differential operators, we know that $\nabla.\nabla\times\textbf{A}=0$    $\forall$ <strong>A</strong>.</p>
+<p>From the differential operators, we know that \(\nabla.\nabla\times\textbf{A}=0\)    \(\forall\) <strong>A</strong>.</p>
 </div>
 <div class="paragraph">
-<p>Thus, since $\nabla.\textbf{B}=0$ there exists <strong>A</strong> such as $\textbf{B}=\nabla\times \textbf{A}$</p>
+<p>Thus, since \(\nabla.\textbf{B}=0\) there exists <strong>A</strong> such as \(\textbf{B}=\nabla\times \textbf{A}\)</p>
 </div>
 <div class="paragraph">
 <p>Finally, we can write :</p>
 </div>
-<div class="paragraph">
-<p>\[
-\nabla\times\left(\frac{1}{\mu}\nabla\times\textbf{A}\right)=\textbf{j}
-\]</p>
+<div class="stemblock">
+<div class="content">
+\[\nabla\times\left(\frac{1}{\mu}\nabla\times\textbf{A}\right)=\textbf{j}\]
+</div>
 </div>
 </div>
 <div class="sect3">
@@ -453,33 +462,33 @@
 <div class="paragraph">
 <p>In our case, the variational formulation consists in resolve :</p>
 </div>
-<div class="paragraph">
-<p>\[
-\int_{\Omega\cup\Omega_{c}}\frac{1}{\mu}\textbf{A}.\nabla\times\varphi+\int_{\partial\Omega_{c}}\frac{1}{\mu}\left(\nabla\times\textbf{A}\times\textbf{n}\right).\varphi=\int_{\Omega}\textbf{j}.\varphi
-\]</p>
+<div class="stemblock">
+<div class="content">
+\[\int_{\Omega\cup\Omega_{c}}\frac{1}{\mu}\textbf{A}.\nabla\times\varphi+\int_{\partial\Omega_{c}}\frac{1}{\mu}\left(\nabla\times\textbf{A}\times\textbf{n}\right).\varphi=\int_{\Omega}\textbf{j}.\varphi\]
+</div>
 </div>
 <div class="paragraph">
-<p>With $\Omega$ being the volume of our geometry and $\Omega_{c}$ the volume inside (for example the air).
-$\textbf{A}\in\{\textbf{v}\in L^{2}(\Omega\cup\Omega_{c}); \nabla\times\textbf{v}\in L^{2}(\Omega\cup\Omega_{c})\}$
+<p>With $\Omega$ being the volume of our geometry and \(\Omega_{c}\) the volume inside (for example the air).
+\(\textbf{A}\in\{\textbf{v}\in L^{2}(\Omega\cup\Omega_{c}); \nabla\times\textbf{v}\in L^{2}(\Omega\cup\Omega_{c})\}\)
 corresponding of H<sub>curl</sub> .</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_boundary_conditions"><a class="anchor" href="#_boundary_conditions"></a>3. Boundary conditions</h4>
 <div class="paragraph">
-<p>The current density is located in some finite region in space, actually $\Omega$, this involves considering <strong>B</strong> as zero at infinity.
+<p>The current density is located in some finite region in space, actually \(\Omega\), this involves considering <strong>B</strong> as zero at infinity.
 But, with the Finite Element Method,we discretize the domain so we impose the domain to be of finite dimension.
-In fact, this domain is composed by $\Omega$ (the conductor) and a box inside, $\Omega_{c}$, whose boundaries model the infinity.
+In fact, this domain is composed by \(\Omega\) (the conductor) and a box inside, \(\Omega_{c}\), whose boundaries model the infinity.
 The size of this box can be set manually or be calculated for more precision and validity.
 The boundary condition is expressed with the magnetic potential (<strong>A</strong>) like this :</p>
 </div>
-<div class="paragraph">
-<p>\[
-\textbf{A}\times\textbf{n}=0\, on\, \partial\Omega_{c}
-\]</p>
+<div class="stemblock">
+<div class="content">
+\[\textbf{A}\times\textbf{n}=0\, on\, \partial\Omega_{c}\]
+</div>
 </div>
 <div class="paragraph">
-<p>Our materials allow us to only consider the vacuum permeability, so $\mu=\mu_{0}=4\pi.10^{-7} kg.m.A^{-2} .s^{-2}$.</p>
+<p>Our materials allow us to only consider the vacuum permeability, so \(\mu=\mu_{0}=4\pi.10^{-7} kg.m.A^{-2} .s^{-2}\).</p>
 </div>
 <div class="admonitionblock note">
 <table>

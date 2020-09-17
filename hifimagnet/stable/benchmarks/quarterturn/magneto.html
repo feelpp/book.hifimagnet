@@ -5,12 +5,15 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>QuarterTurn :: HiFiMagnet Documentation</title>
     <link rel="canonical" href="https://book.hifimagnet.cemosis.fr/hifimagnet/stable/benchmarks/quarterturn/magneto.html">
-    <meta name="generator" content="Antora 2.3.3">
+    <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="icon" href="../../../../_/img/favicon.ico" type="image/x-icon">    
     <script>!function(l,p){if(l.protocol!==p&&l.host=="docs.antora.org"){l.protocol=p}else if(/\.gitlab\.io$/.test(l.host)){l.replace(p+"//docs.antora.org"+l.pathname.substr(l.pathname.indexOf("/",1))+l.search+l.hash)}}(location,"https:")</script>
 
     <link rel="stylesheet" type="text/css" href="/_/css/style.css">
+
+
+
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-65761593-2"></script>
     <script>function gtag(){dataLayer.push(arguments)};window.dataLayer=window.dataLayer||[];gtag('js',new Date());gtag('config','UA-65761593-2')</script>
@@ -149,6 +152,12 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../magnettools/Bmap.html">Magnetic Field Map</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../magnettools/Inductances.html">Self/Mutual</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../magnettools/Fmap.html">Net Forces</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../magnettools/Transient.html">Transient Analysis</a>
@@ -460,9 +469,17 @@ The geometry also contains an external domain which is an approximation of \(\ma
 </table>
 <div class="paragraph">
 <p>The current density \(\mathbf{j}\), in \(A/m^2\)can be viewed as an input parameter, or given by the thermoelectric model.<br>
-The boundary conditions are given below:
-- \(\mathbf{A} = \mathbf{0}\) at the infinity
-- \(\mathbf{A} \times \mathbf{n} = 0 \) on symetry plane</p>
+The boundary conditions are given below:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>\(\mathbf{A} = \mathbf{0}\) at the infinity</p>
+</li>
+<li>
+<p>\(\mathbf{A} \times \mathbf{n} = 0 \) on symetry plane</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -471,7 +488,7 @@ The boundary conditions are given below:
 <div class="sectionbody">
 <div class="paragraph">
 <p>For simple conductor geometry, analytical expressions of the magnetic field along the Z-Axis may be found in physics textbooks.
-The expression of the magnetic field in \(\mathbb{R}^3\) is more difficult to derive but may be found in several papers, like \cite{Jackson99}.<br>
+The expression of the magnetic field in \(\mathbb{R}^3\) is more difficult to derive but may be found in several papers, like <a href="#Jackson99">[Jackson99]</a>.<br>
 As a classical result, we consider only the magnetic field along the Z-Axis, which analytical expression is given bellow:</p>
 </div>
 <div class="stemblock">

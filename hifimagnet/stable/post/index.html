@@ -6,12 +6,15 @@
     <title>HiFiMagnet PostProcessing documentation :: HiFiMagnet Documentation</title>
     <link rel="canonical" href="https://book.hifimagnet.cemosis.fr/hifimagnet/stable/post/index.html">
     <meta name="keywords" content="Feel++, partial differential equations, finite element method,">
-    <meta name="generator" content="Antora 2.3.3">
+    <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../_/img/favicon.ico" type="image/x-icon">    
     <script>!function(l,p){if(l.protocol!==p&&l.host=="docs.antora.org"){l.protocol=p}else if(/\.gitlab\.io$/.test(l.host)){l.replace(p+"//docs.antora.org"+l.pathname.substr(l.pathname.indexOf("/",1))+l.search+l.hash)}}(location,"https:")</script>
 
     <link rel="stylesheet" type="text/css" href="/_/css/style.css">
+
+
+
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-65761593-2"></script>
     <script>function gtag(){dataLayer.push(arguments)};window.dataLayer=window.dataLayer||[];gtag('js',new Date());gtag('config','UA-65761593-2')</script>
@@ -150,6 +153,12 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../magnettools/Bmap.html">Magnetic Field Map</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../magnettools/Inductances.html">Self/Mutual</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../magnettools/Fmap.html">Net Forces</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../magnettools/Transient.html">Transient Analysis</a>
@@ -428,9 +437,11 @@ to use the  <a href="http://portal.mso4sc.eu/visualization/"><strong>Visualizati
 </div>
 </div>
 </div>
-<h1 id="paraview" class="sect0"><a class="anchor" href="#paraview"></a>Using ParaView</h1>
+<div class="sect1">
+<h2 id="paraview"><a class="anchor" href="#paraview"></a>1. Using ParaView</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="paraview_on_remotedesktop"><a class="anchor" href="#paraview_on_remotedesktop"></a>.1. On Remote desktop</h3>
+<h3 id="paraview_on_remotedesktop"><a class="anchor" href="#paraview_on_remotedesktop"></a>1.1. On Remote desktop</h3>
 <div class="paragraph">
 <p>In the Cesga remote desktop to get ParaView running:</p>
 </div>
@@ -448,9 +459,13 @@ to use the  <a href="http://portal.mso4sc.eu/visualization/"><strong>Visualizati
 </ul>
 </div>
 </div>
-<h1 id="ensight" class="sect0"><a class="anchor" href="#ensight"></a>Using EnSight</h1>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ensight"><a class="anchor" href="#ensight"></a>2. Using EnSight</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="ensight_on_remotedesktop"><a class="anchor" href="#ensight_on_remotedesktop"></a>.1. On Remote desktop</h3>
+<h3 id="ensight_on_remotedesktop"><a class="anchor" href="#ensight_on_remotedesktop"></a>2.1. On Remote desktop</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -559,6 +574,8 @@ singularity exec --nv \
   $SREGISTRY_STORAGE/singularity_images/ensight-10.2.3c.simg \
   vglrun ensight102
 fi</code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>
