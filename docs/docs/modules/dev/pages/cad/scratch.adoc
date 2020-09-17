@@ -7,7 +7,7 @@
 mkdir -p $HOME/Salome_Packages
 ----
 
-* Prepare the archives directory in `SALOME-${VERSION}/ARCHIVES`
+* Prepare the archives directory in `+SALOME-${VERSION}/ARCHIVES+`
 that contains the sources tarballs of the pre-requisites
 
 * Check or create a new application in `PROJECT/applications`,

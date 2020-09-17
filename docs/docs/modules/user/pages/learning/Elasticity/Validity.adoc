@@ -8,15 +8,17 @@ We admit that there is only a radial expansion.
 
 Taking back the equations in the link:/math.adoc[Maths for Hifimagnet], we consider :
 
-\[
+[stem]
+++++
 div\sigma+\textbf{j}\times\textbf{b}=0
-\]
+++++
 
 With the conditions set in the previous section, we have :
 
-\[
+[stem]
+++++
 -\sigma_{\theta}+\frac{\partial}{\partial r}(r\sigma_{r})=-rj_{\theta}b_{z}
-\]
+++++
 
 ===== Parameters
 
@@ -27,29 +29,29 @@ In our case (a coil of copper), we choose the parameters like this :
 |===
 ^|Name ^|Description ^|Range ^|Nominal Value ^|Unit
 
-|$E$
+|stem:[E]
 |Young modulus
-^|$[124.10^{9} ;128.10^{9}]$
-^|$128.10^{9}$
-|$Pa=kg.m^{-1} .s^{-2}$
+^|stem:[[124.10^{9} ;128.10^{9}]]
+^|stem:[128.10^{9}]
+|stem:[Pa=kg.m^{-1} .s^{-2}]
 
-|$\nu$
+|stem:[\nu]
 |Poisson's ratio
 ^|0.33
 ^|0.33
 |-
 
-|$\alpha_{T}$
+|stem:[\alpha_{T}]
 |linear dilatation coefficient
-^|$[16,6.10^{-6} ;18.10^{-6}]$
-^|$18.10^{-6}$
-|$K^{-1}$
+^|stem:[[16,6.10^{-6} ;18.10^{-6}]]
+^|stem:[18.10^{-6}]
+|stem:[K^{-1}]
 
-|$\rho$
+|stem:[\rho]
 |density
-^|$[8920;8960]$
-^|$8950$
-|$kg.m^{-3}$
+^|stem:[[8920;8960]]
+^|stem:[8950]
+|stem:[kg.m^{-3}]
 |===
 
 ===== Results

@@ -5,4 +5,4 @@
 *** xref:Transient.adoc[Transient simulation]
 *** xref:Infrastructure.adoc[Computing Infrastructure]
 
-# *** xref:M9_2019_02.adoc[ThermoElectric]
+// *** xref:M9_2019_02.adoc[ThermoElectric]

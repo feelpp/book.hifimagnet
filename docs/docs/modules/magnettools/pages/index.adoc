@@ -3,7 +3,7 @@ include::{partialsdir}/header-uri.adoc[]
 include::{partialsdir}/mso4sc-uri.adoc[]
 
 [[magnettools_manual]]
-= {magnettools} user manual
+== {magnettools} user manual
 :toc: macro
 :icons: font
 
@@ -31,10 +31,10 @@ In {magnettools}, magnets are defined as a set of:
 All magnets are torus of rectangular cross sections.
 
 [[quickstart]]
-= Quick Starts
+== Quick Starts
 
 [[matrix]]
-== {magnettools} matrix
+=== {magnettools} matrix
 
 [caption=]
 .A Tools availability
@@ -65,15 +65,15 @@ All magnets are torus of rectangular cross sections.
 |===
 
 [[qs_installation]]
-== Getting {magnettools}
+=== Getting {magnettools}
 
 Using {magnettools} inside container, either Docker or Singularity based,
 is the recommended and fastest way. If your system support singularity containers
 we recommend to use them instead of Docker ones.
 
 [[qs_reference]]
-== Running {magnettools}
-=== from Singularity container
+=== Running {magnettools}
+==== from Singularity container
 
 Assuming we use `hifimagnet.simg` singularity image:
 
@@ -86,7 +86,7 @@ singularity exec [--nv] \
   B_Map ...
 ----
 
-=== from Docker container
+==== from Docker container
 
 [source,sh]
 ----
@@ -99,7 +99,7 @@ docker run -ti --rm -e DISPLAY \
 ----
 
 [[usage]]
-= Using {magnettools}
+== Using {magnettools}
 
 include::DataStructure.adoc[leveloffset=+1]
 include::Bmap.adoc[leveloffset=+1]

@@ -19,7 +19,7 @@ We impose Neumann conditions on all boundary of the solenoid, except for the top
 The analytical solution of an infinite solenoid differs from this case because of the geometry used.
 We will then only compare the radial displacement at stem:[z=0], to be as far as possible from the top and bottom of the solenoid.
 
-An analytical solution can be found in \cite{Wilson87} or \cite{Montgomery69}, and interested readers can find more details in them.
+An analytical solution can be found in <<Wilson87>> or <<Montgomery69>>, and interested readers can find more details in them.
 The idea to find the analytical solution is to express our quantities in cylindrical coordinates and use the fact that the only non null component of the current density is its angular component stem:[j_\theta]. We can find the radial component stem:[u_r] of stem:[\mathbf{u}] as solution of:
 [stem]
 ++++

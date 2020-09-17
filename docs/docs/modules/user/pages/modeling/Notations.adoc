@@ -3,13 +3,13 @@
 |===
 ^|Notation ^|Quantity ^|Unit
 
-|$\rho$
+|stem:[\rho]
 |material's density
-|$kg.m^{-3}$
+|stem:[kg.m^{-3}]
 
 |C~p~
 |thermal capacity
-|$J.K^{-1}$
+|STEM:[J.K^{-1}]
 
 |r
 |radius
@@ -21,23 +21,23 @@
 
 |k
 |thermal conductivity
-|$W.m^{-1} .K^{-1}$
+|stem:[W.m^{-1} .K^{-1}]
 
 |U
 |electrical potential
 |V
 
-|$\sigma$
+|stem:[\sigma]
 |electrical conductivity
-|$S.m^{-1}$
+|stem:[S.m^{-1}]
 
 |h
 |heat transfer coefficient
-|$W.m^{-2} .K^{-1}$
+|stem:[W.m^{-2} .K^{-1}]
 
 |*A*
 |magnetic potential
-|$V.s.m^{-1}$
+|stem:[V.s.m^{-1}]
 
 |*B*
 |magnetic induction
@@ -45,23 +45,23 @@
 
 |*H*
 |magnetic field
-|$A.m^{-1}$
+|stem:[A.m^{-1}]
 
 |===
 
 === Conventions
 
 [horizontal]
-$f$:: function
-$\textbf{f}$:: vector of functions
+stem:[f]:: function
+stem:[\textbf{f}]:: vector of functions
 
 === Functions
 
 [horizontal]
-$\nabla f$:: gradient of f
-$\nabla.\textbf{ f }$:: divergence of *f*
-$\nabla \times \textbf{ f }$:: curl of *f*
-$L_{2}(\Omega)$:: $\{f  \mid \int f^{2} < \infty\}$  Lagrangian
-$H_{1}(\Omega)$:: $\{f \in L_{2}(\Omega) \mid \nabla f \in [L_{2}(\Omega)]^{d}\}$  Hilbert space
-$H_{div}(\Omega)$:: $\{\textbf{f}\in [L^{2} (\Omega\cup\Omega_{c})]^{d}| \nabla.\textbf{f}\in L^{2}(\Omega\cup\Omega_{c})\}$ Divergence space
-$H_{curl}(\Omega)$:: $\{\textbf{f}\in [L^{2} (\Omega\cup\Omega_{c})]^{d}| \nabla\times\textbf{f}\in [L^{2} (\Omega\cup\Omega_{c})]^{d}\}$ Rotational space
+stem:[\nabla f]:: gradient of f
+stem:[\nabla.\textbf{ f }]:: divergence of *f*
+stem:[\nabla \times \textbf{ f }]:: curl of *f*
+stem:[L_{2}(\Omega)]:: stem:[\{f  \mid \int f^{2} < \infty\}]  Lagrangian
+stem:[H_{1}(\Omega)]:: stem:[\{f \in L_{2}(\Omega) \mid \nabla f \in \[L_{2}(\Omega)\]^{d}\}]  Hilbert space
+stem:[H_{div}(\Omega)]:: stem:[\{\textbf{f}\in \[L^{2} (\Omega\cup\Omega_{c})\]^{d}| \nabla.\textbf{f}\in L^{2}(\Omega\cup\Omega_{c})\}] Divergence space
+stem:[H_{curl}(\Omega)]:: stem:[\{\textbf{f}\in \[L^{2} (\Omega\cup\Omega_{c})\]^{d}| \nabla\times\textbf{f}\in \[L^{2} (\Omega\cup\Omega_{c})\]^{d}\}] Rotational space

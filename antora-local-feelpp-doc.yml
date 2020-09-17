@@ -5,7 +5,7 @@ site:
 content:
   sources:
   - url: ./
-    branches: master
+    branches: fixes
     start_path: docs/docs
 #  - url: ../book.feelpp.org
 #    branches: master
@@ -35,5 +35,14 @@ asciidoc:
     girder: Girder
     fiware: Fiware
     cesga: Cesga
+    hemotumpp: Hemotum++
+    mso4sc: MSO4SC
+    branch: develop
+    lncmi: Lncmi
+    getdp: GetDP
+    dahu: dahu
+    atlas: atlas
+    alsacalcul: alsacalcul
+    docker: Docker
   extensions:
     - ./lib/remote-include-processor

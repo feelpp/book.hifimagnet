@@ -16,7 +16,7 @@ The Remote Desktop feature requires some xref:mso4sc:index.adoc#setup_post[speci
 ====
 
 [[paraview]]
-= Using {paraview}
+== Using {paraview}
 
 [[paraview_on_remotedesktop]]
 === On Remote desktop
@@ -28,12 +28,12 @@ In the {cesga} remote desktop to get {paraview} running:
 * run `paraview`
 
 [[ensight]]
-= Using {ensight}
+== Using {ensight}
 
 [[ensight_on_remotedesktop]]
 === On Remote desktop
 
-* copy {ensight} licence file on your account in the Visu resource in `${LICDIR}` directory
+* copy {ensight} licence file on your account in the Visu resource in `+${LICDIR}+` directory
 * pull {ensight} {hifimagnet} image from {sregistry}
 
 [source,sh]

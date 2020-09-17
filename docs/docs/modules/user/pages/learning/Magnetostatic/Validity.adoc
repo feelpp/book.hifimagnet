@@ -5,51 +5,56 @@ This torus is modeled with a file `.geo`, which name the volume of the torus (`o
 .Model of the torus with the 3D box
 image::/images/learning/magnetostatic/torus3D_box3D.png[torus3D with the box3D,700,400,align="center"]
 
-===== Equations
+== Equations
 
 We use the Biot \& Savart's law to prove the validity.
-First, we need to set the conditions to use this law, $\Omega_{cond}\cap\Omega_{mgn}=\emptyset$,
-with $\Omega_{cond}$ the conductor in which the current is passing and
-$\Omega_{mgn}$ the domain in which we want to know the magnetic field.
+First, we need to set the conditions to use this law, stem:[\Omega_{cond}\cap\Omega_{mgn}=\emptyset],
+with stem:[\Omega_{cond}] the conductor in which the current is passing and
+stem:[\Omega_{mgn}] the domain in which we want to know the magnetic field.
 With this, using the magnetostatic equation, we can write the magnetic potential *A* as
 
-\[
+[stem]
+++++
 \nabla^{2}\textbf{A}=-\mu\textbf{j}
-\]
+++++
 
 The general solution of this equation is :
 
-\[
+[stem]
+++++
 A(\textbf{r})=-\mu\int_{\Omega_{cond}}G(\textbf{r},\textbf{r'})\textbf{j}(\textbf{r'})
-\]
+++++
 
-with $G(\textbf{r},\textbf{r'})$ the Green's function defined as :
+with stem:[G(\textbf{r},\textbf{r'})] the Green's function defined as :
 
-\[
+[stem]
+++++
 G(\textbf{r},\textbf{r'})=\frac{-1}{4\pi}\frac{1}{|\textbf{r}-\textbf{r'}|}
-\]
+++++
 
-with $\textbf{r}\in\Omega_{mgn}$ and $\textbf{r'}\in\Omega_{cond}$
+with stem:[\textbf{r}\in\Omega_{mgn}] and stem:[\textbf{r'}\in\Omega_{cond}]
 
 Then we rewrite the expression of the magnetic potential *A* :
 
-\[
+[stem]
+++++
 A(\textbf{r})=\frac{\mu_{0}}{4\pi}\int_{\Omega_{cond}}\frac{\textbf{j}(\textbf{r'})}{|\textbf{r}-\textbf{r'}|} d\textbf{r'}\;\;\;\;\;\;\;\textbf{r}\in\Omega_{mgn}
-\]
+++++
 
 As *B* is defined as the curl of *A*, we can write the so called Biot \& Savart's law :
 
-\[
+[stem]
+++++
 \textbf{B}(\textbf{r})=\frac{\mu_{0}}{4\pi}\int_{\Omega_{cond}}\frac{\textbf{j}(\textbf{r'})\times(\textbf{r}-\textbf{r'})}{|\textbf{r}-\textbf{r'}|^{3}} d\textbf{r'}\;\;\;\;\;\;\;\textbf{r}\in\Omega_{mgn}
-\]
+++++
 
-===== Parameters
+== Parameters
 
 We use here the same parameters as in the ThermoElectric section for the .json file.
 We select the biter-intensity (shown in <<example.cfg>>)
 We also need a file `.d` to define the characteristics of the conductors.
 
-===== Results
+== Results
 
 On the next figure, the current is represented by the white arrow in the torus, the color of the torus corresponding to the potential.
 The box3D (the sphere inside the torus) is represented with the magnetic induction's vector (*B*).
@@ -62,7 +67,7 @@ image::/images/learning/magnetostatic/potential_A.png[magnetic potential A,700,4
 We can see that the magnetic potential (*A*) is in the same way that the current in the torus.
 The scale and the direction of the magnetic field (*B*) are coherent.
 
-===== Code
+== Code
 
 For the modelisation of the the torus and his box inside, we create the geometry with this file `.geo`
 

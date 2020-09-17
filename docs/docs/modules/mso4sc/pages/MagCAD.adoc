@@ -22,7 +22,7 @@ Use *MagCAD* to create CAD geometry and mesh for High Field Magnets
 
 [IMPORTANT]
 ====
-Check that the directory containing the {meshgems} license is listed in `hpc_volumes` list: eg `${HOME}/MeshGems:/opt/DISTENE/DLim:ro`.
+Check that the directory containing the {meshgems} license is listed in `hpc_volumes` list: eg `+${HOME}/MeshGems:/opt/DISTENE/DLim:ro+`.
 
 ====
 

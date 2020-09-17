@@ -73,7 +73,6 @@ and providing a 18.8 tesla magnetic field:
 Coils 1 to 7 correspond to the PolyHelix insert (one per couple of helices);
 Coils 15 and 16 to the Bitters.
 
-
 Data specific to each "tranche" is appended with the tranche index.
 
 stem:[dPm1] denote the pressure drop from HP and BP side on tranche 1
