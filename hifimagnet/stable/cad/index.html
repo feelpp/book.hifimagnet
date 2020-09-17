@@ -628,7 +628,16 @@ For other graphic video card, use <code>mesa_salome</code> instead of <code>salo
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-to check your graphic video card on Debian/Ubuntu you may use <code>inxi -G</code>.
+<div class="ulist">
+<ul>
+<li>
+<p>To check your graphic video card on Debian/Ubuntu you may use <code>inxi -G</code>.</p>
+</li>
+<li>
+<p>You may use a relative or absolute path for the image <code>salome.simg</code>.</p>
+</li>
+</ul>
+</div>
 </td>
 </tr>
 </table>
@@ -657,6 +666,18 @@ docker run -ti --rm -e DISPLAY \
 <p><code>$STORE/DISTENE/DLim</code> is the directory containing a valid <code>dlim8.key</code> license file.</p>
 </li>
 </ul>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+You have to be a member of <strong>feelpp team</strong> in dockerhub to have access to the docker image.
+</td>
+</tr>
+</table>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -737,13 +758,16 @@ if you want to use the GUI mode).</p>
 be described in the <a href="#data">data structure section</a>.</p>
 </div>
 <div id="insert-cad" class="listingblock">
-<div class="title">Generation of an Insert with an air box in TUI mode</div>
+<div class="title">Generation of an Insert CAD with eventually an air box in TUI mode</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">salome [-m GEOM,SMESH,HIFIMAGNET] [-t -b] \
    $HIFIMAGNET/HIFIMAGNET_Cmd.py \
-   args:--cfg=Insert-H1H4-Leads-2t.yaml[,--air[,--infty_Rratio=2,--infty_ZRatio=1.5],--mesh]</code></pre>
+   args:--cfg=Insert-H1H4-Leads-2t.yaml[,--air,--infty_Rratio=2,--infty_ZRatio=1.5][,--mesh]</code></pre>
 </div>
 </div>
+<button class="btn" data-clipboard-target="#insert-cad">
+Copy command line to clipboard
+</button>
 <div class="paragraph">
 <p><code>$HIFIMAGNET</code> is the install directory of HiFiMagnet Salome plugin, eg <code>/opt/SALOME-9.5.0-UB18.04/INSTALL/HIFIMAGNET/bin/salome</code>.</p>
 </div>
@@ -759,7 +783,37 @@ be described in the <a href="#data">data structure section</a>.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<code>Insert-H1H4-Leads-2t.yaml</code> can be found in <code>/usr/local/share/salome/H1H4</code> in  singularity images.
+<div class="ulist">
+<ul>
+<li>
+<p>An example <code>Insert-H1H4-Leads-2t.yaml</code> can be found in <code>/usr/local/share/salome/H1H4</code> in  singularity images.</p>
+</li>
+<li>
+<p>If you are using containers, the shell command above is to be executed within the container. The container shall
+be launched from the directory that holds the <code>yaml</code> file you will use in the shell command.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Building CAD for an insert may require a long long time and a large amount of RAM.
+Thus it is adviced to run the CAD generation within a <code>screen</code> session on an appropriate machine
+(eg. Lncmi servers for Lncmi user).</p>
+</div>
+<div class="paragraph">
+<p>Moreover, it is also adviced to run first the CAD generation for the insert, then add the air and finally mesh.
+Avoid trying to build CAD and Mesh at once.</p>
+</div>
 </td>
 </tr>
 </table>
@@ -794,26 +848,30 @@ be described in the <a href="#data">data structure section</a>.</p>
 <h3 id="_helix_structure"><a class="anchor" href="#_helix_structure"></a>4.1. helix structure</h3>
 <div class="paragraph">
 <p>An helix is actually a cylindrical tube which exhibit a single or double helical cut made by EDM.
-The path of the helical cut is provided in a separate file <code>*_cut_salome.dat</code>.</p>
+The path of the helical cut is provided in a separate file: <code>*_cut_salome.dat</code> if no shapes are added
+to the helical cut, or  <code>*_cut_with_shapes_salome.dat</code> otherwise.
+The <code>*_cut[_with_shapes]_salome.dat</code> file are generated from the optimized geofile <code>.d</code>
+describing the axisymetrical geometry using <code>opt2cad</code> and eventually <code>add_shape</code>.
+See <a href="../magnettools/Optimization.html#cadcam" class="page">here</a> for details.</p>
 </div>
 <div id="helix" class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">!&lt;Helix&gt;
-name: HL-31_H1, <i class="conum" data-value="1"></i><b>(1)</b>
-dble: true, <i class="conum" data-value="2"></i><b>(2)</b>
-odd: true, <i class="conum" data-value="3"></i><b>(3)</b>
-r:, <i class="conum" data-value="4"></i><b>(4)</b>
+name: HL-31_H1 <i class="conum" data-value="1"></i><b>(1)</b>
+dble: true <i class="conum" data-value="2"></i><b>(2)</b>
+odd: true <i class="conum" data-value="3"></i><b>(3)</b>
+r: <i class="conum" data-value="4"></i><b>(4)</b>
   - 19.3
   - 24.2
-z:, <i class="conum" data-value="5"></i><b>(5)</b>
+z: <i class="conum" data-value="5"></i><b>(5)</b>
   - -226
   - 108
-cutwidth: 0.22, <i class="conum" data-value="6"></i><b>(6)</b>
-axi: !&lt;ModelAxi&gt;, <i class="conum" data-value="7"></i><b>(7)</b>
+cutwidth: 0.22 <i class="conum" data-value="6"></i><b>(6)</b>
+axi: !&lt;ModelAxi&gt; <i class="conum" data-value="7"></i><b>(7)</b>
   ...
-m3d: !&lt;Model3D&gt;, <i class="conum" data-value="8"></i><b>(8)</b>
+m3d: !&lt;Model3D&gt; <i class="conum" data-value="8"></i><b>(8)</b>
   ...
-shape: !&lt;Shape&gt;, <i class="conum" data-value="9"></i><b>(9)</b>
+shape: !&lt;Shape&gt; <i class="conum" data-value="9"></i><b>(9)</b>
   ...</code></pre>
 </div>
 </div>
@@ -821,7 +879,7 @@ shape: !&lt;Shape&gt;, <i class="conum" data-value="9"></i><b>(9)</b>
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>name of the CAD to be created (it corresponds to the name in the Lncmi Bureau d&#8217;Etudes nomemclature).</td>
+<td>name of the CAD to be created (must begin with an "H").</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
@@ -845,15 +903,15 @@ shape: !&lt;Shape&gt;, <i class="conum" data-value="9"></i><b>(9)</b>
 </tr>
 <tr>
 <td><i class="conum" data-value="7"></i><b>7</b></td>
-<td>the corresponding axi model.</td>
+<td>the corresponding <a href="#helix_axi">axi model section</a>.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="8"></i><b>8</b></td>
-<td>the &#8230;&#8203;&#8230;&#8203;&#8230;&#8203;&#8230;&#8203;  3d model.</td>
+<td>the &#8230;&#8203;&#8230;&#8203;&#8230;&#8203;&#8230;&#8203;  <a href="#helix_m3d">3d model section</a>.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="9"></i><b>9</b></td>
-<td>definition of the shape added along the helical path</td>
+<td>definition of the <a href="#helix_shape">shape</a> added along the helical path</td>
 </tr>
 </table>
 </div>
@@ -870,11 +928,11 @@ shape: !&lt;Shape&gt;, <i class="conum" data-value="9"></i><b>(9)</b>
 <div id="helix_axi" class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">axi: !&lt;ModelAxi&gt;
-  name: "HL-31.d", <i class="conum" data-value="1"></i><b>(1)</b>
-  h: 86.51, <i class="conum" data-value="2"></i><b>(2)</b>
-  pitch:, <i class="conum" data-value="3"></i><b>(3)</b>
+  name: "HL-31.d" <i class="conum" data-value="1"></i><b>(1)</b>
+  h: 86.51 <i class="conum" data-value="2"></i><b>(2)</b>
+  pitch: <i class="conum" data-value="3"></i><b>(3)</b>
     - 17.302
-  turns:, <i class="conum" data-value="4"></i><b>(4)</b>
+  turns: <i class="conum" data-value="4"></i><b>(4)</b>
     - 10</code></pre>
 </div>
 </div>
@@ -907,9 +965,9 @@ shape: !&lt;Shape&gt;, <i class="conum" data-value="9"></i><b>(9)</b>
 <div id="helix_m3d" class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">m3d: !&lt;Model3D&gt;
-  cad: "HL-31-202MC", <i class="conum" data-value="1"></i><b>(1)</b>
-  with_shapes: false, <i class="conum" data-value="2"></i><b>(2)</b>
-  with_channels: false, <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
+  cad: "HL-31-202MC" <i class="conum" data-value="1"></i><b>(1)</b>
+  with_shapes: false <i class="conum" data-value="2"></i><b>(2)</b>
+  with_channels: false <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -934,35 +992,35 @@ shape: !&lt;Shape&gt;, <i class="conum" data-value="9"></i><b>(9)</b>
 <div id="helix_shape" class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">shape: !&lt;Shape&gt;
-  name:, <i class="conum" data-value="1"></i><b>(1)</b>
-  profile: "", <i class="conum" data-value="2"></i><b>(2)</b>
-  length: 0, <i class="conum" data-value="3"></i><b>(3)</b>
-  angle: 0, <i class="conum" data-value="4"></i><b>(4)</b>
-  onturns: 0, <i class="conum" data-value="5"></i><b>(5)</b>
-  position: ABOVE, <i class="conum" data-value="6"></i><b>(6)</b></code></pre>
+  name: <i class="conum" data-value="1"></i><b>(1)</b>
+  profile: "" <i class="conum" data-value="2"></i><b>(2)</b>
+  length: 0 <i class="conum" data-value="3"></i><b>(3)</b>
+  angle: [0] <i class="conum" data-value="4"></i><b>(4)</b>
+  onturns: 0 <i class="conum" data-value="5"></i><b>(5)</b>
+  position: ABOVE <i class="conum" data-value="6"></i><b>(6)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>name of the shape to be added (actually it&#8217;s the name of the shape file description without extension )</td>
+<td>name of the shape to be added</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>name of CAD profile (this name comes from the Bureau d&#8217;Etudes nomemclature to keep track of the CADs)</td>
+<td>name of CAD profile (Actually the name of the shape file description without extension aka <code>.dat</code>; the name is build as <code>Shape_CADID</code> where <code>CADID</code> comes from the Bureau d&#8217;Etudes nomemclature to keep track of the CADs; )</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>angular length of the shape in <strong>degree</strong></td>
+<td>list of angular length of the shape in <strong>degree</strong></td>
 </tr>
 <tr>
 <td><i class="conum" data-value="4"></i><b>4</b></td>
-<td>angular shift between 2 consecutive shapes (optionnal)</td>
+<td>list of angular shift between 2 consecutive shapes (optionnal)</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="5"></i><b>5</b></td>
-<td>specify on wich turns the shape are disposed</td>
+<td>list of turn number on which the shape are disposed</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="6"></i><b>6</b></td>
@@ -983,6 +1041,22 @@ shape: !&lt;Shape&gt;, <i class="conum" data-value="9"></i><b>(9)</b>
 ...
  3.75	0</code></pre>
 </div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Data in this section are just given for the records. They are not used for building the helical cut of the attached <strong>helix</strong>.
+In future versions, it is planned to use these data to eventually build the helical cut if needed. So please kind the data
+synced with the actual configuration.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect3">
@@ -1032,11 +1106,11 @@ It is a cylinder eventually with \(n\) cylindrical slots, disposed at regular an
 <div id="ring" class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">!&lt;Ring&gt;
-name: Ring-H1H2, <i class="conum" data-value="1"></i><b>(1)</b>
-BPside: true, <i class="conum" data-value="2"></i><b>(2)</b>
-r: [19.3, 24.2, 25.1, 30.7], <i class="conum" data-value="3"></i><b>(3)</b>
-z: [0, 20], <i class="conum" data-value="4"></i><b>(4)</b>
-fillets: false, <i class="conum" data-value="5"></i><b>(5)</b>
+name: Ring-H1H2 <i class="conum" data-value="1"></i><b>(1)</b>
+BPside: true <i class="conum" data-value="2"></i><b>(2)</b>
+r: [19.3, 24.2, 25.1, 30.7] <i class="conum" data-value="3"></i><b>(3)</b>
+z: [0, 20] <i class="conum" data-value="4"></i><b>(4)</b>
+fillets: false <i class="conum" data-value="5"></i><b>(5)</b>
 n: 6
 angle: 46</code></pre>
 </div>
@@ -1045,7 +1119,7 @@ angle: 46</code></pre>
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>name of the CAD to be created (it corresponds to the name in the Lncmi Bureau d&#8217;Etudes nomemclature).</td>
+<td>name of the CAD to be created (must begin with "R")</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
@@ -1075,15 +1149,50 @@ angle: 46</code></pre>
 <h3 id="_currentleads"><a class="anchor" href="#_currentleads"></a>4.3. CurrentLeads</h3>
 <div class="sect3">
 <h4 id="_inner_lead"><a class="anchor" href="#_inner_lead"></a>4.3.1. Inner Lead</h4>
+<div class="paragraph">
+<p>In general, the inner current lead is made of a cylinder in which \(n_holes\) rectangular windows
+are cut. If the dimensions of the first helix and the inner lead do not match, there is an additional
+part to make the connection between the current lead and the helix. For sake of simplicity, this part
+, refered as <strong>support</strong>, has been "incorporated" into the lead.</p>
+</div>
 <div id="inner" class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">!&lt;InnerCurrentLead&gt;
-fillet: 0
-f: 480.0
-foles: [123, 12, 90, 60, 45, 3]
-name: Inner
-r: [19.3, 24.2]</code></pre>
+name: Inner <i class="conum" data-value="1"></i><b>(1)</b>
+r: [19.3, 24.2] <i class="conum" data-value="2"></i><b>(2)</b>
+h: 480.0 <i class="conum" data-value="3"></i><b>(3)</b>
+fillet: 0 <i class="conum" data-value="4"></i><b>(4)</b>
+holes: [123, 12, 90, 60, 45, 3] <i class="conum" data-value="5"></i><b>(5)</b>
+support: [] <i class="conum" data-value="6"></i><b>(6)</b></code></pre>
 </div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>name of the CAD to be created (must begin with an "I")</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>list of radius (inner, outer)</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>height of the current lead</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>indicator for building fillet (0 for false, 1 for true)</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>characteristic for fixing holes ([H_Holes, Shift_from_Top, Angle_Zero, Angle, Angular_Position, \(n_holes\)])</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td>characteristic for the support ([R2, DZ])</td>
+</tr>
+</table>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1093,25 +1202,71 @@ r: [19.3, 24.2]</code></pre>
 </div>
 <div class="sect3">
 <h4 id="_outer_lead"><a class="anchor" href="#_outer_lead"></a>4.3.2. Outer Lead</h4>
+<div class="paragraph">
+<p>Outer current lead consists in an assembly of an connection ring and 2 sets of 3 bars
+with rectangular cross-section \(dx \times dy\). The support correspond to the small part that make the
+connection between the ring and the bars. The support is made of 6 parallelepiped disposed at regular angular
+interval \(d\alpha\)</p>
+</div>
 <div id="outer" class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">!&lt;OuterCurrentLead&gt;
-bar: [4, 9, 5, 501]
-h: 10
-support: [10, 5, 40, 45]
-name: Outer
-r: [19.3, 24.2]</code></pre>
+name: Outer <i class="conum" data-value="1"></i><b>(1)</b>
+r: [19.3, 24.2] <i class="conum" data-value="2"></i><b>(2)</b>
+h: 10 <i class="conum" data-value="3"></i><b>(3)</b>
+support: [10, 5, 40, 45] <i class="conum" data-value="4"></i><b>(4)</b>
+bar: [4, 9, 5, 501] <i class="conum" data-value="5"></i><b>(5)</b></code></pre>
 </div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>name of the CAD to be created (must begin with an "O")</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>list of radius (inner, outer)</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>height of the current lead</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>characteristic of the support (DX0, DZ, \(d\alpha\), \(\alpha_0\) the angular shift)</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>characteristic of the bar (R, \(dx\), \(dy\), \(L\) the length of the bar)</td>
+</tr>
+</table>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="_images/ex_CAD_Outer.png" alt="A outer current lead composed of 6 bars">
 </div>
 </div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>There are some requirements on the total length of the inner and outer current lead.
+Indeed, when the CAD for the insert we arbitrary requires that the bottom of the inner and outer lead
+have the same <code>z</code> coordinates.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_insert"><a class="anchor" href="#_insert"></a>4.4. insert</h3>
+<h3 id="_insert"><a class="anchor" href="#_insert"></a>4.4. Insert</h3>
 <div id="insert" class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">!&lt;Insert&gt;
