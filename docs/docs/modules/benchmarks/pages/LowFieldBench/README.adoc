@@ -7,7 +7,7 @@ In this test case, we consider a polyhelix magnet consisting of 2 helices operat
 The simulations are compared with experimental results, more precisely with magnetic field measurements
 with a 3D hall probe in the zone of interest for researchers.
 
-include::BancMesure/setup_lowres.jpg[Experimental Setup for Low field Measurements on a Workbench]
+image::BancMesure/setup_lowres.jpg[Experimental Setup for Low field Measurements on a Workbench]
 
 The magnetic field produced  will be computed on a zone of interest namely a cylinder along the helicesZ-Axis.
 

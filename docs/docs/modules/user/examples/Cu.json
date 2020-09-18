@@ -4,8 +4,8 @@
     "k0":"330", 
     "T0":"293", 
     "alpha":"3.4e-3", <2>
-    "sigma":"sigma0/(1+alpha*(T-T0)):sigma0:alpha:T:T0", <3>
-    "k":"k0*T/((1+alpha*(T-T0))*T0):k0:T:alpha:T0", <4>
+    "sigma":"sigma0/(1+alpha*(heat_T-T0)):sigma0:alpha:heat_T:T0", <3>
+    "k":"k0*heat_T/((1+alpha*(heat_T-T0))*T0):k0:heat_T:alpha:T0", <4>
     "E":"120.e+9", <5>
     "nu":"0.35", <6>
     "alphaT":"18e-6", <7>

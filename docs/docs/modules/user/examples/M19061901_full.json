@@ -1,0 +1,1129 @@
+{
+    "Name": "CoupledCart",
+    "ShortName":"MSC",
+    "Models":
+    {
+	"use-model-name":1,
+	"solid":
+	{
+	    "equations":"Elasticity"
+	},
+        "maxwell":
+        {
+	    "equations":"magnetostatic-cart"
+	}
+    },
+    "Parameters":
+    {
+	"T0":"293.",
+
+	"U0":"-482.411",	
+	"Tin":"293.15", 
+	"h":"85870.2", 
+	"dTw":"24.23", 
+	"Tw":"306.746", 
+
+	"h0":"64829.6", 
+	"h1":"90129.3", 
+	"h2":"89584", 
+	"h3":"89616.6", 
+	"h4":"88666.8", 
+	"h5":"87717.2", 
+	"h6":"87566.8", 
+	"h7":"87590.9", 
+	"h8":"87212.9", 
+	"h9":"86608.8", 
+	"h10":"86074.8", 
+	"h11":"85217.4", 
+	"h12":"84521.4", 
+	"h13":"83007.5", 
+	"h14":"111987", 
+
+	"dTw0":"8.174", 
+	"dTw1":"38.142", 
+	"dTw2":"36.724", 
+	"dTw3":"36.808", 
+	"dTw4":"34.35", 
+	"dTw5":"31.906", 
+	"dTw6":"31.52", 
+	"dTw7":"31.582", 
+	"dTw8":"30.614", 
+	"dTw9":"29.07", 
+	"dTw10":"27.712", 
+	"dTw11":"25.538", 
+	"dTw12":"23.782", 
+	"dTw13":"19.986", 
+	"dTw14":"29.246", 
+
+	"Zmin0":"-200.e-3",
+	"Zmin1":"-200.e-3",
+	"Zmin2":"-200.e-3",
+	"Zmin3":"-200.e-3",
+	"Zmin4":"-200.e-3",
+	"Zmin5":"-200.e-3",
+	"Zmin6":"-200.e-3",
+	"Zmin7":"-200.e-3",
+	"Zmin8":"-200.e-3",
+	"Zmin9":"-200.e-3",
+	"Zmin10":"-200.e-3",
+	"Zmin11":"-200.e-3",
+	"Zmin12":"-200.e-3",
+	"Zmin13":"-200.e-3",
+	"Zmin14":"-200.e-3",
+	
+	"Zmax0":"200.e-3",
+	"Zmax1":"200.e-3",
+	"Zmax2":"200.e-3",
+	"Zmax3":"200.e-3",
+	"Zmax4":"200.e-3",
+	"Zmax5":"200.e-3",
+	"Zmax6":"200.e-3",
+	"Zmax7":"200.e-3",
+	"Zmax8":"200.e-3",
+	"Zmax9":"200.e-3",
+	"Zmax10":"200.e-3",
+	"Zmax11":"200.e-3",
+	"Zmax12":"200.e-3",
+	"Zmax13":"200.e-3",
+	"Zmax14":"200.e-3",
+
+	"Dh0":"0.0046",
+	"Dh1":"0.0018",
+	"Dh2":"0.0018",
+	"Dh3":"0.0018",
+	"Dh4":"0.0018",
+	"Dh5":"0.0018",
+	"Dh6":"0.0018",
+	"Dh7":"0.0018",
+	"Dh8":"0.0018",
+	"Dh9":"0.0018",
+	"Dh10":"0.0018",
+	"Dh11":"0.0018",
+	"Dh12":"0.0018",
+	"Dh13":"0.0018",
+	"Dh14":"0.0005",
+	
+	"Sh0":"262.292e-6",	
+	"Sh1":"139.392e-6",	
+	"Sh2":"176.149e-6",	
+	"Sh3":"217.995e-6",	
+	"Sh4":"264.365e-6",	
+	"Sh5":"315.259e-6",	
+	"Sh6":"373.504e-6",	
+	"Sh7":"439.1e-6",	
+	"Sh8":"511.483e-6",	
+	"Sh9":"590.085e-6",	
+	"Sh10":"674.908e-6",	
+	"Sh11":"765.952e-6",	
+	"Sh12":"863.215e-6",	
+	"Sh13":"961.045e-6",	
+	"Sh14":"292.364e-6"	
+	
+    },
+    "Materials":
+    {
+	"H1":
+	{
+	    "markers":"H1_Cu",
+	    "physics":["heat","electric","solid","maxwell"],
+	    "alpha":"3.6e-3",
+	    "sigma0":"52.4e+6",
+	    "k0":"380",
+	    "sigma":"sigma0/(1+alpha*(heat_T-T0)):sigma0:alpha:heat_T:T0",
+	    "k":"k0*heat_T/((1+alpha*(heat_T-T0))*T0):k0:heat_T:alpha:T0",
+	    "E":"117e+9",
+	    "nu":"0.33",
+	    "alphaT":"18e-6",
+	    "rho":"9e+3",
+            "mu_mag": "1"
+	},
+	"H2":
+        {
+	    "markers":"H2_Cu",
+	    "physics":["heat","electric","solid","maxwell"],
+	    "alpha":"3.6e-3",
+	    "sigma0":"53.3e+6",
+	    "k0":"380",
+	    "sigma":"sigma0/(1+alpha*(heat_T-T0)):sigma0:alpha:heat_T:T0",
+	    "k":"k0*heat_T/((1+alpha*(heat_T-T0))*T0):k0:heat_T:alpha:T0",
+	    "E":"117e+9",
+	    "nu":"0.33",
+	    "alphaT":"18e-6",
+	    "rho":"9e+3",
+            "mu_mag": "1"
+        },
+	"H3":
+        {
+	    "markers":"H3_Cu",
+	    "physics":["heat","electric","solid","maxwell"],
+	    "alpha":"3.6e-3",
+	    "sigma0":"52.6e+6",
+	    "k0":"380",
+	    "sigma":"sigma0/(1+alpha*(heat_T-T0)):sigma0:alpha:heat_T:T0",
+	    "k":"k0*heat_T/((1+alpha*(heat_T-T0))*T0):k0:heat_T:alpha:T0",
+	    "E":"117e+9",
+	    "nu":"0.33",
+	    "alphaT":"18e-6",
+	    "rho":"9e+3",
+            "mu_mag": "1"
+        },
+	"H4":
+        {
+	    "markers":"H4_Cu",
+	    "physics":["heat","electric","solid","maxwell"],
+	    "alpha":"3.6e-3",
+	    "sigma0":"52.8e+6",
+	    "k0":"380",
+	    "sigma":"sigma0/(1+alpha*(heat_T-T0)):sigma0:alpha:heat_T:T0",
+	    "k":"k0*heat_T/((1+alpha*(heat_T-T0))*T0):k0:heat_T:alpha:T0",
+	    "E":"117e+9",
+	    "nu":"0.33",
+	    "alphaT":"18e-6",
+	    "rho":"9e+3",
+            "mu_mag": "1"
+        },
+	"H5":
+        {
+	    "markers":"H5_Cu",
+	    "physics":["heat","electric","solid","maxwell"],
+	    "alpha":"3.6e-3",
+	    "sigma0":"53.1e+6",
+	    "k0":"380",
+	    "sigma":"sigma0/(1+alpha*(heat_T-T0)):sigma0:alpha:heat_T:T0",
+	    "k":"k0*heat_T/((1+alpha*(heat_T-T0))*T0):k0:heat_T:alpha:T0",
+	    "E":"117e+9",
+	    "nu":"0.33",
+	    "alphaT":"18e-6",
+	    "rho":"9e+3",
+            "mu_mag": "1"
+        },
+        "H6":
+        {
+	    "markers":"H6_Cu",
+	    "physics":["heat","electric","solid","maxwell"],
+	    "alpha":"3.6e-3",
+	    "sigma0":"53.2e+6",
+	    "k0":"380",
+	    "sigma":"sigma0/(1+alpha*(heat_T-T0)):sigma0:alpha:heat_T:T0",
+	    "k":"k0*heat_T/((1+alpha*(heat_T-T0))*T0):k0:heat_T:alpha:T0",
+	    "E":"117e+9",
+	    "nu":"0.33",
+	    "alphaT":"18e-6",
+	    "rho":"9e+3",
+            "mu_mag": "1"
+        },
+        "H7":
+        {
+	    "markers":"H7_Cu",
+	    "physics":["heat","electric","solid","maxwell"],
+	    "alpha":"3.6e-3",
+	    "sigma0":"53.1e+6",
+	    "k0":"380",
+	    "sigma":"sigma0/(1+alpha*(heat_T-T0)):sigma0:alpha:heat_T:T0",
+	    "k":"k0*heat_T/((1+alpha*(heat_T-T0))*T0):k0:heat_T:alpha:T0",
+	    "E":"117e+9",
+	    "nu":"0.33",
+	    "alphaT":"18e-6",
+	    "rho":"9e+3",
+            "mu_mag": "1"
+        },
+        "H8":
+        {
+	    "markers":"H8_Cu",
+	    "physics":["heat","electric","solid","maxwell"],
+	    "alpha":"3.6e-3",
+	    "sigma0":"51.9e+6",
+	    "k0":"380",
+	    "sigma":"sigma0/(1+alpha*(heat_T-T0)):sigma0:alpha:heat_T:T0",
+	    "k":"k0*heat_T/((1+alpha*(heat_T-T0))*T0):k0:heat_T:alpha:T0",
+	    "E":"117e+9",
+	    "nu":"0.33",
+	    "alphaT":"18e-6",
+	    "rho":"9e+3",
+            "mu_mag": "1"
+        },
+        "H9":
+        {
+	    "markers":"H9_Cu",
+	    "physics":["heat","electric","solid","maxwell"],
+	    "alpha":"3.6e-3",
+	    "sigma0":"53.7e+6",
+	    "k0":"380",
+	    "sigma":"sigma0/(1+alpha*(heat_T-T0)):sigma0:alpha:heat_T:T0",
+	    "k":"k0*heat_T/((1+alpha*(heat_T-T0))*T0):k0:heat_T:alpha:T0",
+	    "E":"117e+9",
+	    "nu":"0.33",
+	    "alphaT":"18e-6",
+	    "rho":"9e+3",
+            "mu_mag": "1"
+        },
+	"H10":
+        {
+	    "markers":"H10_Cu",
+	    "physics":["heat","electric","solid","maxwell"],
+	    "alpha":"3.6e-3",
+	    "sigma0":"53.3e+6",
+	    "k0":"380",
+	    "sigma":"sigma0/(1+alpha*(heat_T-T0)):sigma0:alpha:heat_T:T0",
+	    "k":"k0*heat_T/((1+alpha*(heat_T-T0))*T0):k0:heat_T:alpha:T0",
+	    "E":"117e+9",
+	    "nu":"0.33",
+	    "alphaT":"18e-6",
+	    "rho":"9e+3",
+            "mu_mag": "1"
+        },
+        "H11":
+        {
+	    "markers":"H11_Cu",
+	    "physics":["heat","electric","solid","maxwell"],
+	    "alpha":"3.6e-3",
+	    "sigma0":"53.8e+6",
+	    "k0":"380",
+	    "sigma":"sigma0/(1+alpha*(heat_T-T0)):sigma0:alpha:heat_T:T0",
+	    "k":"k0*heat_T/((1+alpha*(heat_T-T0))*T0):k0:heat_T:alpha:T0",
+	    "E":"117e+9",
+	    "nu":"0.33",
+	    "alphaT":"18e-6",
+	    "rho":"9e+3",
+            "mu_mag": "1"
+        },
+        "H12":
+        {
+	    "markers":"H12_Cu",
+	    "physics":["heat","electric","solid","maxwell"],
+	    "alpha":"3.6e-3",
+	    "sigma0":"53.2e+6",
+	    "k0":"380",
+	    "sigma":"sigma0/(1+alpha*(heat_T-T0)):sigma0:alpha:heat_T:T0",
+	    "k":"k0*heat_T/((1+alpha*(heat_T-T0))*T0):k0:heat_T:alpha:T0",
+	    "E":"117e+9",
+	    "nu":"0.33",
+	    "alphaT":"18e-6",
+	    "rho":"9e+3",
+            "mu_mag": "1"
+        },
+	"H13":
+	{
+	    "markers":"H13_Cu",
+	    "physics":["heat","electric","solid","maxwell"],
+	    "alpha":"3.4e-3",
+	    "sigma0":"46.5e+6",
+	    "k0":"380",
+	    "sigma":"sigma0/(1+alpha*(heat_T-T0)):sigma0:alpha:heat_T:T0",
+	    "k":"k0*heat_T/((1+alpha*(heat_T-T0))*T0):k0:heat_T:alpha:T0",
+	    "E":"117e+9",
+	    "nu":"0.33",
+	    "alphaT":"18e-6",
+	    "rho":"9e+3",
+            "mu_mag": "1"
+	},
+ 	"H14":
+        {
+	    "markers":"H14_Cu",
+	    "physics":["heat","electric","solid","maxwell"],
+	    "alpha":"3.4e-3",
+	    "sigma0":"50.25e+6",
+	    "k0":"380",
+	    "sigma":"sigma0/(1+alpha*(heat_T-T0)):sigma0:alpha:heat_T:T0",
+	    "k":"k0*heat_T/((1+alpha*(heat_T-T0))*T0):k0:heat_T:alpha:T0",
+	    "E":"117e+9",
+	    "nu":"0.33",
+	    "alphaT":"18e-6",
+	    "rho":"9e+3",
+            "mu_mag": "1"
+        },
+	"R1":
+        {
+	    "markers":"R1",
+	    "physics":["heat","electric","solid","maxwell"],
+	    "alpha":"3.4e-3",
+	    "sigma0":"41e+6",
+	    "k0":"320",
+	    "sigma":"sigma0/(1+alpha*(heat_T-T0)):sigma0:alpha:heat_T:T0",
+	    "k":"k0*heat_T/((1+alpha*(heat_T-T0))*T0):k0:heat_T:alpha:T0",
+	    "E":"131e+9",
+	    "nu":"0.3",
+	    "alphaT":"17e-6",
+	    "rho":"9e+3",
+            "mu_mag": "1"
+        },
+	"R2":
+        {
+	    "markers":"R2",
+	    "physics":["heat","electric","solid","maxwell"],
+	    "alpha":"3.4e-3",
+	    "sigma0":"41e+6",
+	    "k0":"320",
+	    "sigma":"sigma0/(1+alpha*(heat_T-T0)):sigma0:alpha:heat_T:T0",
+	    "k":"k0*heat_T/((1+alpha*(heat_T-T0))*T0):k0:heat_T:alpha:T0",
+	    "E":"131e+9",
+	    "nu":"0.3",
+	    "alphaT":"17e-6",
+	    "rho":"9e+3",
+            "mu_mag": "1"
+        },
+	"R3":
+        {
+	    "markers":"R3",
+	    "physics":["heat","electric","solid","maxwell"],
+	    "alpha":"3.4e-3",
+	    "sigma0":"50e+6",
+	    "k0":"320",
+	    "sigma":"sigma0/(1+alpha*(heat_T-T0)):sigma0:alpha:heat_T:T0",
+	    "k":"k0*heat_T/((1+alpha*(heat_T-T0))*T0):k0:heat_T:alpha:T0",
+	    "E":"131e+9",
+	    "nu":"0.3",
+	    "alphaT":"17e-6",
+	    "rho":"9e+3",
+            "mu_mag": "1"
+        },
+	"R4":
+        {
+	    "markers":"R4",
+	    "physics":["heat","electric","solid","maxwell"],
+	    "alpha":"3.4e-3",
+	    "sigma0":"50e+6",
+	    "k0":"320",
+	    "sigma":"sigma0/(1+alpha*(heat_T-T0)):sigma0:alpha:heat_T:T0",
+	    "k":"k0*heat_T/((1+alpha*(heat_T-T0))*T0):k0:heat_T:alpha:T0",
+	    "E":"131e+9",
+	    "nu":"0.3",
+	    "alphaT":"17e-6",
+	    "rho":"9e+3",
+            "mu_mag": "1"
+        },
+	"R5":
+        {
+	    "markers":"R5",
+	    "physics":["heat","electric","solid","maxwell"],
+	    "alpha":"3.4e-3",
+	    "sigma0":"50e+6",
+	    "k0":"320",
+	    "sigma":"sigma0/(1+alpha*(heat_T-T0)):sigma0:alpha:heat_T:T0",
+	    "k":"k0*heat_T/((1+alpha*(heat_T-T0))*T0):k0:heat_T:alpha:T0",
+	    "E":"131e+9",
+	    "nu":"0.3",
+	    "alphaT":"17e-6",
+	    "rho":"9e+3",
+            "mu_mag": "1"
+        },
+	"R6":
+        {
+	    "markers":"R6",
+	    "physics":["heat","electric","solid","maxwell"],
+	    "alpha":"3.4e-3",
+	    "sigma0":"50e+6",
+	    "k0":"320",
+	    "sigma":"sigma0/(1+alpha*(heat_T-T0)):sigma0:alpha:heat_T:T0",
+	    "k":"k0*heat_T/((1+alpha*(heat_T-T0))*T0):k0:heat_T:alpha:T0",
+	    "E":"131e+9",
+	    "nu":"0.3",
+	    "alphaT":"17e-6",
+	    "rho":"9e+3",
+            "mu_mag": "1"
+        },
+	"R7":
+        {
+	    "markers":"R7",
+	    "physics":["heat","electric","solid","maxwell"],
+	    "alpha":"3.4e-3",
+	    "sigma0":"50e+6",
+	    "k0":"320",
+	    "sigma":"sigma0/(1+alpha*(heat_T-T0)):sigma0:alpha:heat_T:T0",
+	    "k":"k0*heat_T/((1+alpha*(heat_T-T0))*T0):k0:heat_T:alpha:T0",
+	    "E":"131e+9",
+	    "nu":"0.3",
+	    "alphaT":"17e-6",
+	    "rho":"9e+3",
+            "mu_mag": "1"
+        },
+	"R8":
+        {
+	    "markers":"R8",
+	    "physics":["heat","electric","solid","maxwell"],
+	    "alpha":"3.4e-3",
+	    "sigma0":"50e+6",
+	    "k0":"320",
+	    "sigma":"sigma0/(1+alpha*(heat_T-T0)):sigma0:alpha:heat_T:T0",
+	    "k":"k0*heat_T/((1+alpha*(heat_T-T0))*T0):k0:heat_T:alpha:T0",
+	    "E":"131e+9",
+	    "nu":"0.3",
+	    "alphaT":"17e-6",
+	    "rho":"9e+3",
+            "mu_mag": "1"
+        },
+	"R9":
+        {
+	    "markers":"R9",
+	    "physics": ["heat","electric","solid","maxwell"],
+	    "alpha":"3.4e-3",
+	    "sigma0":"50e+6",
+	    "k0":"320",
+	    "sigma":"sigma0/(1+alpha*(heat_T-T0)):sigma0:alpha:heat_T:T0",
+	    "k":"k0*heat_T/((1+alpha*(heat_T-T0))*T0):k0:heat_T:alpha:T0",
+	    "E":"131e+9",
+	    "nu":"0.3",
+	    "alphaT":"17e-6",
+	    "rho":"9e+3",
+            "mu_mag": "1"
+        },
+	"R10":
+        {
+	    "markers":"R10",
+	    "physics":["heat","electric","solid","maxwell"],
+	    "alpha":"3.4e-3",
+	    "sigma0":"50e+6",
+	    "k0":"320",
+	    "sigma":"sigma0/(1+alpha*(heat_T-T0)):sigma0:alpha:heat_T:T0",
+	    "k":"k0*heat_T/((1+alpha*(heat_T-T0))*T0):k0:heat_T:alpha:T0",
+	    "E":"131e+9",
+	    "nu":"0.3",
+	    "alphaT":"17e-6",
+	    "rho":"9e+3",
+            "mu_mag": "1"
+        },
+	"R11":
+        {
+	    "markers":"R11",
+	    "physics":["heat","electric","solid","maxwell"],
+	    "alpha":"3.4e-3",
+	    "sigma0":"50e+6",
+	    "k0":"320",
+	    "sigma":"sigma0/(1+alpha*(heat_T-T0)):sigma0:alpha:heat_T:T0",
+	    "k":"k0*heat_T/((1+alpha*(heat_T-T0))*T0):k0:heat_T:alpha:T0",
+	    "E":"131e+9",
+	    "nu":"0.3",
+	    "alphaT":"17e-6",
+	    "rho":"9e+3",
+            "mu_mag": "1"
+        },
+	"R12":
+        {
+	    "markers":"R12",
+	    "physics":["heat","electric","solid","maxwell"],
+	    "alpha":"3.4e-3",
+	    "sigma0":"50e+6",
+	    "k0":"320",
+	    "sigma":"sigma0/(1+alpha*(heat_T-T0)):sigma0:alpha:heat_T:T0",
+	    "k":"k0*heat_T/((1+alpha*(heat_T-T0))*T0):k0:heat_T:alpha:T0",
+	    "E":"131e+9",
+	    "nu":"0.3",
+	    "alphaT":"17e-6",
+	    "rho":"9e+3",
+            "mu_mag": "1"
+        },
+	"R13":
+	{
+	    "markers":"R13",
+	    "physics":["heat","electric","solid","maxwell"],
+	    "alpha":"3.4e-3",
+	    "sigma0":"50e+6",
+	    "k0":"320",
+	    "sigma":"sigma0/(1+alpha*(heat_T-T0)):sigma0:alpha:heat_T:T0",
+	    "k":"k0*heat_T/((1+alpha*(heat_T-T0))*T0):k0:heat_T:alpha:T0",
+	    "E":"131e+9",
+	    "nu":"0.3",
+	    "alphaT":"17e-6",
+	    "rho":"9e+3",
+            "mu_mag": "1"
+	},
+	"iL1":
+        {
+	    "markers":"iL1",
+	    "physics":["heat","electric","solid","maxwell"],
+	    "alpha":"3.4e-3",
+	    "sigma0":"58.0e+6",
+	    "k0":"390",
+	    "sigma":"sigma0/(1+alpha*(heat_T-T0)):sigma0:alpha:heat_T:T0",
+	    "k":"k0*heat_T/((1+alpha*(heat_T-T0))*T0):k0:heat_T:alpha:T0",
+	    "E":"131e+9",
+	    "nu":"0.3",
+	    "alphaT":"17e-6",
+	    "rho":"9e+3",
+            "mu_mag": "1"
+        },
+	"oL2":
+        {
+	    "markers":"oLead",
+	    "physics": ["heat","electric","solid","maxwell"],
+	    "alpha":"3.4e-3",
+	    "sigma0":"58.0e+6",
+	    "k0":"390",
+	    "sigma":"sigma0/(1+alpha*(heat_T-T0)):sigma0:alpha:heat_T:T0",
+	    "k":"k0*heat_T/((1+alpha*(heat_T-T0))*T0):k0:heat_T:alpha:T0",
+	    "E":"131e+9",
+	    "nu":"0.3",
+	    "alphaT":"17e-6",
+	    "rho":"9e+3",
+            "mu_mag": "1"
+        },
+	"Isolant1":
+	{
+	    "markers":"H1_Isolant",
+	    "physics":["heat","solid","maxwell"],
+            "sigma":"0",
+	    "k":"1.2",
+	    "E":"2.1e9",
+	    "nu":"0.21",
+	    "alphaT":"9e-6",
+	    "rho":"2e+3",
+            "mu_mag": "1"
+	},
+	"Isolant2":
+	{
+	    "markers":"H2_Isolant",
+	    "physics":["heat","solid","maxwell"],
+            "sigma":"0",
+	    "k":"1.2",
+	    "E":"2.1e9",
+	    "nu":"0.21",
+	    "alphaT":"9e-6",
+	    "rho":"2e+3",
+            "mu_mag": "1"
+	},
+	"Isolant3":
+	{
+	    "markers":"H3_Isolant",
+	    "physics": ["heat","solid","maxwell"],
+            "sigma":"0",
+	    "k":"1.2",
+	    "E":"2.1e9",
+	    "nu":"0.21",
+	    "alphaT":"9e-6",
+	    "rho":"2e+3",
+            "mu_mag": "1"
+	},
+	"Isolant4":
+	{
+	    "markers":"H4_Isolant",
+	    "physics":["heat","solid","maxwell"],
+            "sigma":"0",
+	    "k":"1.2",
+	    "E":"2.1e9",
+	    "nu":"0.21",
+	    "alphaT":"9e-6",
+	    "rho":"2e+3",
+            "mu_mag": "1"
+	},
+	"Isolant5":
+	{
+	    "markers":"H5_Isolant",
+	    "physics":["heat","solid","maxwell"],
+            "sigma":"0",
+	    "k":"1.2",
+	    "E":"2.1e9",
+	    "nu":"0.21",
+	    "alphaT":"9e-6",
+	    "rho":"2e+3",
+            "mu_mag": "1"
+	},
+	"Isolant6":
+	{
+	    "markers":"H6_Isolant",
+	    "physics":["heat","solid","maxwell"],
+            "sigma":"0",
+	    "k":"1.2",
+	    "E":"2.1e9",
+	    "nu":"0.21",
+	    "alphaT":"9e-6",
+	    "rho":"2e+3",
+            "mu_mag": "1"
+	},
+	"Isolant7":
+	{
+	    "markers":"H7_Isolant",
+	    "physics":["heat","solid","maxwell"],
+            "sigma":"0",
+	    "k":"1.2",
+	    "E":"2.1e9",
+	    "nu":"0.21",
+	    "alphaT":"9e-6",
+	    "rho":"2e+3",
+            "mu_mag": "1"
+	},
+	"Isolant8":
+	{
+	    "markers":"H8_Isolant",
+	    "physics":["heat","solid","maxwell"],
+            "sigma":"0",
+	    "k":"1.2",
+	    "E":"2.1e9",
+	    "nu":"0.21",
+	    "alphaT":"9e-6",
+	    "rho":"2e+3",
+            "mu_mag": "1"
+	},
+	"Isolant9":
+	{
+	    "markers":"H9_Isolant",
+	    "physics":["heat","solid","maxwell"],
+            "sigma":"0",
+	    "k":"1.2",
+	    "E":"2.1e9",
+	    "nu":"0.21",
+	    "alphaT":"9e-6",
+	    "rho":"2e+3",
+            "mu_mag": "1"
+	},
+	"Isolant10":
+	{
+	    "markers":"H10_Isolant",
+	    "physics":["heat","solid","maxwell"],
+            "sigma":"0",
+	    "k":"1.2",
+	    "E":"2.1e9",
+	    "nu":"0.21",
+	    "alphaT":"9e-6",
+	    "rho":"2e+3",
+            "mu_mag": "1"
+	},
+	"Isolant11":
+	{
+	    "markers":"H11_Isolant",
+	    "physics":["heat","solid","maxwell"],
+            "sigma":"0",
+	    "k":"1.2",
+	    "E":"2.1e9",
+	    "nu":"0.21",
+	    "alphaT":"9e-6",
+	    "rho":"2e+3",
+            "mu_mag": "1"
+	},
+	"Isolant12":
+	{
+	    "markers":"H12_Isolant",
+	    "physics":["heat","solid","maxwell"],
+            "sigma":"0",
+	    "k":"1.2",
+	    "E":"2.1e9",
+	    "nu":"0.21",
+	    "alphaT":"9e-6",
+	    "rho":"2e+3",
+            "mu_mag": "1"
+	},
+	"Isolant13":
+	{
+	    "markers":"H13_Isolant",
+	    "physics":["heat","solid","maxwell"],
+            "sigma":"0",
+	    "k":"1.2",
+	    "E":"2.1e9",
+	    "nu":"0.21",
+	    "alphaT":"9e-6",
+	    "rho":"2e+3",
+            "mu_mag": "1"
+	},
+	"Isolant14":
+	{
+	    "markers":"H14_Isolant",
+	    "physics":["heat","solid","maxwell"],
+            "sigma":"0",
+	    "k":"1.2",
+	    "E":"2.1e9",
+	    "nu":"0.21",
+	    "alphaT":"9e-6",
+	    "rho":"2e+3",
+            "mu_mag": "1"
+	},
+        "biotbox":
+        {
+            "markers":"BiotBox",
+	    "physics":["biot"],
+            "mu_mag": "1"
+        },
+        "Air":
+        {
+            "markers":"Air",
+	    "physics":["maxwell"],
+            "mu_mag": "1"
+        }
+    },
+    "BoundaryConditions":
+    {
+	"electric-potential":
+	{
+            "Dirichlet":
+            {
+		"Inner1_LV0":
+		{
+                    "expr":"U0:U0"
+		},
+		"OuterL2_LV0":
+		{
+                    "expr":"0."
+		}
+            }
+	},
+	"temperature":
+	{
+            "Robin":
+            {
+		"OuterL2_CooledSurfaces":
+		{
+                    "expr1":"h14:h14",
+                    "expr2":"Tin:Tin"
+		},
+		"Channel0":
+		{
+                    "expr1":"h0:h0",
+                    "expr2":"Tin+dTw0/2.:Tin:dTw0"
+		},
+		"Channel1":
+                {
+                    "expr1":"h1:h1",
+                    "expr2":"Tin+dTw1/2.:Tin:dTw1"
+                },
+		"Channel2":
+                {
+                    "expr1":"h2:h2",
+                    "expr2":"Tin+dTw2/2.:Tin:dTw2"
+                },
+		"Channel3":
+                {
+                    "expr1":"h3:h3",
+                    "expr2":"Tin+dTw3/2.:Tin:dTw3"
+                },
+		"Channel4":
+                {
+                    "expr1":"h4:h4",
+                    "expr2":"Tin+dTw4/2.:Tin:dTw4"
+                },
+		"Channel5":
+                {
+                    "expr1":"h5:h5",
+                    "expr2":"Tin+dTw5/2.:Tin:dTw5"
+                },
+		"Channel6":
+                {
+                    "expr1":"h6:h6",
+                    "expr2":"Tin+dTw6/2.:Tin:dTw6"
+                },
+		"Channel7":
+                {
+                    "expr1":"h7:h7",
+                    "expr2":"Tin+dTw7/2.:Tin:dTw7"
+                },
+		"Channel8":
+                {
+                    "expr1":"h8:h8",
+                    "expr2":"Tin+dTw8/2.:Tin:dTw8"
+                },
+		"Channel9":
+                {
+                    "expr1":"h9:h9",
+                    "expr2":"Tin+dTw9/2.:Tin:dTw9"
+                },
+		"Channel10":
+                {
+                    "expr1":"h10:h10",
+                    "expr2":"Tin+dTw10/2.:Tin:dTw10"
+                },
+		"Channel11":
+                {
+                    "expr1":"h11:h11",
+                    "expr2":"Tin+dTw11/2.:Tin:dTw11"
+                },
+		"Channel12":
+                {
+                    "expr1":"h12:h12",
+                    "expr2":"Tin+dTw12/2.:Tin:dTw12"
+                },
+		"Channel13":
+                {
+                    "expr1":"h13:h13",
+                    "expr2":"Tin+dTw13/2.:Tin:dTw13"
+                },
+		"Channel14":
+                {
+                    "expr1":"h14:h14",
+                    "expr2":"Tin+dTw14/2.:Tin:dTw14"
+                },
+		"Inner1_R0n":
+                {
+                    "expr1":"h0:h0",
+                    "expr2":"Tin:Tin"
+                },
+		"Inner1_R1n":
+                {
+                    "expr1":"h1:h1",
+                    "expr2":"Tin:Tin"
+                },
+		"OuterL2_R0n":
+                {
+                    "expr1":"h13:h13",
+                    "expr2":"Tin:Tin"
+                },
+		"OuterL2_R1n":
+                {
+                    "expr1":"h14:h14",
+                    "expr2":"Tin:Tin"
+                }
+            }
+	},
+        "magnetic_potential":
+        {
+            "Dirichlet_Biot":
+            {
+                "A1_InfR1": {}
+            },
+            "DirichletY":
+            {
+                "Inner1_LV0": { "expr":"0:x:y:z" },
+                "Outer2_LV0": { "expr":"0:x:y:z" },
+                "A1_InfV00": { "expr":"0:x:y:z" },
+                "A1_InfV01": { "expr":"0:x:y:z" },
+                "A1_InfV1": { "expr":"0:x:y:z" }
+            },
+            "DirichletX":
+            {
+                "Inner1_LV0": { "expr":"0:x:y:z" },
+                "Outer2_LV0": { "expr":"0:x:y:z" },
+                "A1_InfV00": { "expr":"0:x:y:z" },
+                "A1_InfV01": { "expr":"0:x:y:z" },
+                "A1_InfV1": { "expr":"0:x:y:z" }
+            }
+        },
+	"displacement":
+	{
+            "Dirichlet":
+            {
+		"Inner1_LV0": { "expr":"{0,0,0}" },
+		"OuterL2_LV0": { "expr":"{0,0,0}" },
+		"Inner1_FixingHoles": { "expr":"{0,0,0}" }
+	    }		
+	},
+        "displacement_z":
+        {
+            "Dirichlet":
+            {
+                "R1_BP": { "expr":"0" },
+                "R3_BP": { "expr":"0" },
+                "R5_BP": { "expr":"0" },
+                "R7_BP": { "expr":"0" },
+                "R11_BP": { "expr":"0" },
+                "R13_BP": { "expr":"0" },
+
+                "R2_HP": { "expr":"0" },
+                "R9_BP": { "expr":"0" },
+                "R4_HP": { "expr":"0" },
+                "R6_HP": { "expr":"0" },
+                "R8_HP": { "expr":"0" },
+		"R10_HP": { "expr":"0" },
+                "R12_HP": { "expr":"0" }
+            }
+	}
+    },
+    "PostProcess":
+    {
+        "use-model-name":1,
+	"maxwell":
+	{
+	    "Exports":
+	    {
+		"fields":["magneticPotential","magneticField"]
+	    }
+	},
+        "solid":
+	{
+            "Exports":
+            {
+		"fields":["displacement","Von-Mises","tresca","principal-stresses","material-properties"]
+	    }
+	},
+        "thermo-electric":
+	{
+            "Exports":
+            {
+		"fields":["heat.temperature","electric.electric-potential","electric.current-density"]
+	    }
+	},
+        "electric":
+	{
+	    "Save":
+	    {
+		"Fields":
+		{
+		    "names":["electric-potential"]
+		}
+	    },
+	    "Measures":
+	    {
+		"Points":
+		{
+		    "%1_1%":
+		    {
+			"coord":"%1_2%",
+			"fields":"electric-potential",
+			"index1": [ ["V0", "{-21.75e-3,0.e-3,-421.15e-3}"],
+                		    ["V1","{-4.3e-3,  27.16e-3, 128.e-3}"],
+		                    ["V2","{0.e-3,34.e-3,-128.e-3}"],
+		                    ["V3","{-6.62e-3, 41.83e-3, 145.e-3}"],
+		                    ["V4","{0.e-3,50.e-3,-145.e-3}"],
+		                    ["V5","{-27.37e-3, 53.68e-3, 161.e-3}"],
+		                    ["V6","{0.e-3,70.e-3,-161.e-3}"],
+		                    ["V7","{-58.37e-3, 58.37e-3, 177.e-3}"],
+		                    ["V8","{0.e-3,96.5e-3,-177.e-3}"],
+		                    ["V9","{-89.8e-3, 65.24e-3, 188.e-3}"],
+		                    ["V10","{0.e-3,126.e-3,-188.e-3}"],
+		                    ["V11","{-122.35e-3, 74.98e-3, 199.e-3}"],
+		                    ["V12","{-12.55e-3,159.51e-3,-199.e-3}"],
+		                    ["V13","{-150.49e-3, 92.22e-3, 210.e-3}"],
+		                    ["V14","{-40.62e-3,169.19e-3,-200.e-3}"]
+				  ]
+		    }
+		},
+		"Statistics":
+		{
+		    "Intensity0":
+		    {
+			"type":"integrate",
+			"expr":"-electric_iL1_sigma*electric_dnP:electric_iL1_sigma:electric_dnP",
+			"markers":"Inner1_LV0"
+		    },
+		    "Intensity1":
+		    {
+			"type":"integrate",
+			"expr":"-electric_oL2_sigma*electric_dnP:electric_oL2_sigma:electric_dnP",
+			"markers":"OuterL2_LV0"
+		    },
+                    "Power_%1_1%":
+                    {
+                        "type":"integrate",
+                        "expr":"electric_%1_1%_sigma*(electric_dxP^2+electric_dyP^2+electric_dzP^2):electric_%1_1%_sigma:electric_dxP:electric_dyP:electric_dzP",
+                        "markers":"%1_2%",
+			"index1":[ ["H1", "H1_Cu"],
+				   ["H2", "H2_Cu"],
+				   ["H3", "H3_Cu"],
+				   ["H4", "H4_Cu"],
+				   ["H5", "H5_Cu"],
+				   ["H6", "H6_Cu"],
+				   ["H7", "H7_Cu"],
+				   ["H8", "H8_Cu"],
+				   ["H9", "H9_Cu"],
+				   ["H10", "H10_Cu"],
+				   ["H11", "H11_Cu"],
+				   ["H12", "H12_Cu"],
+				   ["H13", "H13_Cu"],
+				   ["H14", "H14_Cu"],
+				   ["R1", "R1"],
+				   ["R2", "R2"],
+				   ["R3", "R3"],
+				   ["R4", "R4"],
+				   ["R5", "R5"],
+				   ["R6", "R6"],
+				   ["R7", "R7"],
+				   ["R8", "R8"],
+				   ["R9", "R9"],
+				   ["R10", "R10"],
+				   ["R11", "R11"],
+				   ["R12", "R12"],
+				   ["R13", "R13"]
+                                 ]
+                    }
+		}
+	    }
+	},
+	"heat":
+	{
+	    "Save":
+	    {
+		"Fields":
+		{
+		    "names":["temperature"]
+		}
+	    },
+	    "Measures":
+	    {
+		"Points":
+		{
+		    "%1_1%":
+		    {
+			"coord":"%1_2%",
+			"fields":"temperature",
+			"index1": [ ["T0", "{-3.554e-3,-33.8174e-3,-118e-3}"],
+                		    ["T1","{-5.4752e-3,34.5691e-3,135e-3}"]
+				  ]
+		    }
+		},
+		"Statistics":
+		{
+		    "MeanT": 
+		    {
+			"type":["min","max","mean"], 
+			"field":"temperature" 
+		    },
+		    "MeanT_%1_1%":
+		    {
+			"type":["min","max","mean"], 
+			"field":"temperature",
+			"markers":["%1_2%","%1_3%","%1_4%"],
+			"index1":[ ["Couple1", "H1_Cu", "R1", "H2_Cu" ],
+				   ["Couple2", "H3_Cu", "R3", "H4_Cu" ],
+				   ["Couple3", "H5_Cu", "R5", "H6_Cu" ],
+				   ["Couple4", "H7_Cu", "R7", "H8_Cu" ],
+				   ["Couple5", "H9_Cu", "R9", "H10_Cu" ],
+				   ["Couple6", "H11_Cu", "R11", "H12_Cu" ],
+				   ["Couple7", "H13_Cu", "R13", "H14_Cu" ]
+				 ]
+		    },
+		    "MeanT_%1_1%":
+		    {
+			"type":["min","max","mean"], 
+			"field":"temperature",
+			"markers":"%1_2%",
+			"index1":[ ["H1", "H1_Cu"],
+				   ["H2", "H2_Cu"],
+				   ["H3", "H3_Cu"],
+				   ["H4", "H4_Cu"],
+				   ["H5", "H5_Cu"],
+				   ["H6", "H6_Cu"],
+				   ["H7", "H7_Cu"],
+				   ["H8", "H8_Cu"],
+				   ["H9", "H9_Cu"],
+				   ["H10", "H10_Cu"],
+				   ["H11", "H11_Cu"],
+				   ["H12", "H12_Cu"],
+				   ["H13", "H13_Cu"],
+				   ["H14", "H14_Cu"],
+				   ["R1", "R1"],
+				   ["R2", "R2"],
+				   ["R3", "R3"],
+				   ["R4", "R4"],
+				   ["R5", "R5"],
+				   ["R6", "R6"],
+				   ["R7", "R7"],
+				   ["R8", "R8"],
+				   ["R9", "R9"],
+				   ["R10", "R10"],
+				   ["R11", "R11"],
+				   ["R12", "R12"],
+				   ["R13", "R13"]
+				 ] 
+		    },
+		    "Flux_%1_1%":
+		    {
+			"type":"integrate",
+			"expr":"%1_2%*(heat_T-(%1_3%+%1_4%/2.)):heat_T:%1_2%:%1_3%:%1_4%",
+			"markers":"%1_1%",
+			"index1":[ ["Channel0", "h0", "Tin", "dTw0"],
+				   ["Channel1", "h1", "Tin", "dTw1"],
+				   ["Channel2", "h2", "Tin", "dTw2"],
+				   ["Channel3", "h3", "Tin", "dTw3"],
+				   ["Channel4", "h4", "Tin", "dTw4"],
+				   ["Channel5", "h5", "Tin", "dTw5"],
+				   ["Channel6", "h6", "Tin", "dTw6"],
+				   ["Channel7", "h7", "Tin", "dTw7"],
+				   ["Channel8", "h8", "Tin", "dTw8"],
+				   ["Channel9", "h9", "Tin", "dTw9"],
+				   ["Channel10", "h10", "Tin", "dTw10"],
+				   ["Channel11", "h11", "Tin", "dTw11"],
+				   ["Channel12", "h12", "Tin", "dTw12"],
+				   ["Channel13", "h13", "Tin", "dTw13"],
+				   ["Channel14", "h14", "Tin", "dTw14"]
+				 ]
+		    }
+		}
+	    }
+	}
+    }
+}

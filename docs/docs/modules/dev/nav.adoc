@@ -2,7 +2,7 @@
 *** xref:magnettools.adoc#install_magnettools[{magnettools}]
 *** xref:salome.adoc#install_salome[{salome} plugin]
 *** xref:hifimagnet.adoc#install_hifimagnet[{hifimagnet}]
-# *** xref:mso4sc.adoc#mso4sc-dev[MSO4SC Portal]
+// *** xref:mso4sc.adoc#mso4sc-dev[MSO4SC Portal]
 *** xref:crb.adoc[CRB apps]
 **** xref:thermoelectric-nl.adoc[ThermoElectric]
 **** xref:parameter-id.adoc[Parameter Identification]

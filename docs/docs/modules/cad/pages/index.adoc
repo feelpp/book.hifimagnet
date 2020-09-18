@@ -91,7 +91,7 @@ Assuming we use `salome.simg` singularity image:
 [source,sh]
 ----
 singularity exec [--nv] \
-  -H $HOME:/home/$USER \
+  [-H $HOME:/home/$USER] \
   -B $STORE/DISTENE/DLim:/opt/DISTENE/DLim:ro \
   salome.simg \
   salome -w1 [-t -b] ...
@@ -101,10 +101,23 @@ where:
 
 * `$STORE/DISTENE/DLim` is the directory on the host containing a valid `dlim8.key` license file.
 You need to adapt this to your configuration.
-NOTE: the `--nv` flag is mandatory to run in GUI mode and is only supported by nvidia drivers.
-For other graphic video card, use `mesa_salome` instead of `salome`
 
-TIP: to check your graphic video card on Debian/Ubuntu you may use `inxi -G`.
+[NOTE]
+====
+
+* the `--nv` flag is mandatory to run in GUI mode and is only supported by nvidia drivers.
+For other graphic video card, use `mesa_salome` instead of `salome`
+* On {lncmi} server option `-H $HOME:/home/$USER` may be dropped
+
+====
+
+[TIP]
+====
+
+* To check your graphic video card on Debian/Ubuntu you may use `inxi -G`.
+* You may use a relative or absolute path for the image `salome.simg`.
+
+====
 
 ==== from Docker container
 
@@ -123,6 +136,8 @@ docker run -ti --rm -e DISPLAY \
 where:
 
 * `$STORE/DISTENE/DLim` is the directory containing a valid `dlim8.key` license file.
+
+IMPORTANT: You have to be a member of *feelpp team* in dockerhub to have access to the docker image.
 
 [TIP]
 ====
@@ -170,19 +185,40 @@ be described in the <<data, data structure section>>.
 
 [[insert-cad]]
 [source,sh]
-.Generation of an Insert with an air box in TUI mode
+.Generation of an Insert CAD with eventually an air box in TUI mode
 ----
 salome [-m GEOM,SMESH,HIFIMAGNET] [-t -b] \
    $HIFIMAGNET/HIFIMAGNET_Cmd.py \
-   args:--cfg=Insert-H1H4-Leads-2t.yaml[,--air[,--infty_Rratio=2,--infty_ZRatio=1.5],--mesh]
+   args:--cfg=Insert-H1H4-Leads-2t.yaml[,--air,--infty_Rratio=2,--infty_ZRatio=1.5][,--mesh]
 ----
+++++
+<button class="btn" data-clipboard-target="#insert-cad">
+Copy command line to clipboard
+</button>
+++++
 
 `$HIFIMAGNET` is the install directory of {hifimagnet} {salome} plugin, eg `/opt/SALOME-9.5.0-UB18.04/INSTALL/HIFIMAGNET/bin/salome`.
 
 image::ex_CAD_Insert_Air.png[A 4 helix insert with sourring air (in transparent red)]
 
-NOTE: `Insert-H1H4-Leads-2t.yaml` can be found in `/usr/local/share/salome/H1H4` in  singularity images.
+[NOTE]
+====
 
+* An example `Insert-H1H4-Leads-2t.yaml` can be found in `/usr/local/share/salome/H1H4` in  singularity images.
+* If you are using containers, the shell command above is to be executed within the container. The container shall
+be launched from the directory that holds the `yaml` file you will use in the shell command.
+
+====
+
+[TIP]
+====
+Building CAD for an insert may require a long long time and a large amount of RAM.
+Thus it is adviced to run the CAD generation within a `screen` session on an appropriate machine
+(eg. {lncmi} servers for {lncmi} user).
+
+Moreover, it is also adviced to run first the CAD generation for the insert, then add the air and finally mesh.
+Avoid trying to build CAD and Mesh at once.
+====
 
 [[data]]
 == Data Structure
@@ -196,26 +232,40 @@ and eventually an inner and an outer currentLead.
 
 Each structure is defined as a `yaml` file.
 
+[NOTE]
+====
+The `yaml` files for helices are generated from the insert optimized geometry `insert.d` by running `opt2yml`.
+Similarily, the helical cut files are obtained by running `opt2cad`. Please refer to xref:magnettools:Optimization.adoc#cadcam[here] for details.
+
+The generated files still need some user intervention to be complete - namely dimension of the cylnder tube
+has to be added manually. Check with the Bureau d'etudes for these dimensions
+
+As for Rings and CurrentLeads, the files must be generated manually.
+====
 
 === helix structure
 
 An helix is actually a cylindrical tube which exhibit a single or double helical cut made by EDM.
-The path of the helical cut is provided in a separate file `*_cut_salome.dat`.
+The path of the helical cut is provided in a separate file: `*_cut_salome.dat` if no shapes are added
+to the helical cut, or  `*_cut_with_shapes_salome.dat` otherwise.
+The `*_cut[_with_shapes]_salome.dat` file are generated from the optimized geofile `.d`
+describing the axisymetrical geometry using `opt2cad` and eventually `add_shape`.
+See xref:magnettools:Optimization.adoc#cadcam[here] for details. 
 
 [[helix]]
 [source,yml]
 ----
 include::{examplesdir}/H_struct.yaml[]
 ----
-<1> name of the CAD to be created (it corresponds to the name in the {lncmi} Bureau d'Etudes nomemclature).
+<1> name of the CAD to be created (must begin with an "H").
 <2> specify if the helix is single or double (ie. helical cut).
 <3> specify if the helix is odd or even (the helical cut patch orientation changes from one helix to the other).
 <4> the radial dimension in *mm*.
 <5> the axial dimension in *mm*.
 <6> the width of the helical cut.
-<7> the corresponding axi model.
-<8> the ............  3d model.
-<9> definition of the shape added along the helical path
+<7> the corresponding <<helix_axi, axi model section>>.
+<8> the ............  <<helix_m3d, 3d model section>>.
+<9> definition of the <<helix_shape, shape>> added along the helical path
 
 image::ex_CAD_H.png[A longitudinally cooled helix]
 
@@ -253,11 +303,11 @@ include::{examplesdir}/H_m3d.yaml[]
 ----
 include::{examplesdir}/H_shape.yaml[]
 ----
-<1> name of the shape to be added (actually it's the name of the shape file description without extension )
-<2> name of CAD profile (this name comes from the Bureau d'Etudes nomemclature to keep track of the CADs) 
-<3> angular length of the shape in *degree*
-<4> angular shift between 2 consecutive shapes (optionnal)
-<5> specify on wich turns the shape are disposed
+<1> name of the shape to be added
+<2> name of CAD profile (Actually the name of the shape file description without extension aka `.dat`; the name is build as `Shape_CADID` where `CADID` comes from the Bureau d'Etudes nomemclature to keep track of the CADs; ) 
+<3> list of angular length of the shape in *degree*
+<4> list of angular shift between 2 consecutive shapes (optionnal)
+<5> list of turn number on which the shape are disposed
 <6> orientation of the shape (values valid are ...)
 
 The shape file description is a simple `.dat` file that defines the number of points of the shape and theirs coordinates in a local cartesian frame:
@@ -267,6 +317,13 @@ The shape file description is a simple `.dat` file that defines the number of po
 ----
 include::{examplesdir}/Shape.dat[]
 ----
+
+[NOTE]
+====
+Data in this section are just given for the records. They are not used for building the helical cut of the attached *helix*.
+In future versions, it is planned to use these data to eventually build the helical cut if needed. So please kind the data
+synced with the actual configuration.
+====
 
 ==== `helical cut` structure
 
@@ -291,7 +348,8 @@ It is a cylinder eventually with stem:[n] cylindrical slots, disposed at regular
 ----
 include::{examplesdir}/R.yaml[]
 ----
-<1> name of the CAD to be created (it corresponds to the name in the {lncmi} Bureau d'Etudes nomemclature).
+<1> name of the CAD to be created (must begin with "R")
+// (it corresponds to the name in the {lncmi} Bureau d'Etudes nomemclature).
 <2> specifiy the position of the ring: either on Low pressure (eg `BPside=true`) or High Pressure side (eg `BPside=false`)
 <3> the radial dimension in *mm*.
 <4> the axial dimension in *mm*.
@@ -303,25 +361,53 @@ image::ex_CAD_R.png[A connection ring]
 
 ==== Inner Lead
 
+In general, the inner current lead is made of a cylinder in which stem:[n_holes] rectangular windows
+are cut. If the dimensions of the first helix and the inner lead do not match, there is an additional
+part to make the connection between the current lead and the helix. For sake of simplicity, this part
+, refered as *support*, has been "incorporated" into the lead.
+
 [[inner]]
 [source,yml]
 ----
 include::{examplesdir}/inner.yaml[]
 ----
+<1> name of the CAD to be created (must begin with an "I")
+<2> list of radius (inner, outer)
+<3> height of the current lead
+<4> indicator for building fillet (0 for false, 1 for true)
+<5> characteristic for fixing holes ([H_Holes, Shift_from_Top, Angle_Zero, Angle, Angular_Position, stem:[n_holes]])
+<6> characteristic for the support ([R2, DZ])
 
 image::ex_CAD_Inner.png[An inner current lead]
 
 ==== Outer Lead
+
+Outer current lead consists in an assembly of an connection ring and 2 sets of 3 bars
+with rectangular cross-section stem:[dx \times dy]. The support correspond to the small part that make the
+connection between the ring and the bars. The support is made of 6 parallelepiped disposed at regular angular
+interval stem:[d\alpha]
 
 [[outer]]
 [source,yml]
 ----
 include::{examplesdir}/outer.yaml[]
 ----
+<1> name of the CAD to be created (must begin with an "O")
+<2> list of radius (inner, outer)
+<3> height of the current lead
+<4> characteristic of the support (DX0, DZ, stem:[d\alpha], stem:[\alpha_0] the angular shift)
+<5> characteristic of the bar (R, stem:[dx], stem:[dy], stem:[L] the length of the bar)
 
 image::ex_CAD_Outer.png[A outer current lead composed of 6 bars]
 
-=== insert
+[IMPORTANT]
+====
+There are some requirements on the total length of the inner and outer current lead.
+Indeed, when the CAD for the insert we arbitrary requires that the bottom of the inner and outer lead
+have the same `z` coordinates.
+====
+
+=== Insert
 
 [[insert]]
 [source,yml]
@@ -337,7 +423,8 @@ include::{examplesdir}/Insert.yaml[]
 <7> angular orientation of helices (optionnal)
 <8> angular orientation of rings (optionnal)
 
-=== mesh
+
+=== Mesh
 
 The mesh is generated from the command line when the option `--mesh` is passed to salome.
 The first time the mesh is generated, a file , namely `Insert_meshdata.yaml` where `Insert.yaml` is
@@ -390,7 +477,7 @@ The smaller this distance is, the closer the mesh is to the exact surface (only 
 ====
 
  
-=== advanced mesh options
+=== Advanced mesh options
 
 The mesh can customized using the yaml cgf file presented above. There are also some options to reduce the number of surfacic meshes that will be latter use to apply boundary conditions:
 
@@ -403,142 +490,21 @@ and there is also an `--coarse` option to generate a quite coarse mesh.
 
 These options are available in the main command line:
 
-[[usage]]
-== Using {salome}
+[[setup]]
+== Generate Templates setup for {hifimagnet} simulations
+
+Add `-setup` option to the command line to generate template files required
+for the setup of {hifimagnet} simulations.
+
+[[checking]]
+== Using {salome} for Checking and/or Debugging
 
 {salome} is an open-source generic platform for Pre- and Post-Processing for numerical simulation.
-Its key features are:
+More details can be found in xref:appendix:salome.adoc#usage[basis {salome} usage].
 
-* Supports interoperability between CAD modeling and computation software (CAD-CAE link).
-* Provides access to all functionalities via the integrated Python console.
+To view:
 
-This latter feature is especially convenient. You can easily build a CAD model and save all
-the performed operations within a python script. This script may be later run either in TUI (eg. batch) or GUI mode.
-For instance, to create a cube and mesh it:
+* the generated CAD, just follow instructions in this xref:appendix:salome.adoc#salome_viewcad[section],
+* the generate mesh, just follow instructions in this xref:appendix:salome.adoc#salome_viewmesh[section],
 
-[source,bash]
-----
-salome [-t] testcube_mesh.py
-----
-
-`-t` option is used to switch to the TUI (eg. command line) mode.  
-
-
-For detailed use of {salome}, see:
-
-* http://salome-platform.org/user-section/documentation/current-release/current-release-gui[SALOME 9.5.0 Documentation]
-* http://salome-platform.org/user-section/salome-tutorials/copy_of_salome-tutorial[Tutorial]
-
-[NOTE]
-====
-If the test python scripts are not available in your {docker} or {singularity} images
-you may found then here:
-
-* link:examples/testcube_mesh.py[`testcube_mesh.py`] 
-* link:examples/ghs3d_demo.py[`ghs3d_demo.py`]
-====
-
-=== Basic examples
-
-In the following examples we assume that you have pulled a singularity image from a {sregistry} service
-for {salome} and  {hifimagnet}. For sake of simplicity the images are been named:
-
-* `salome.simg`
-* `hifimagnet.simg`
-
-You shall adapt the scripts to the actual names of the images or rename the images (see <<rename_sing_image, above>>)
-
-
-==== Check {meshgems} installation
-
-Assuming that your home directory contains a `Salome` directory with the python script `ghs3d_demo.py`.
-You can test your installation by running:
-
-[source,bash]
-----
-singularity exec \
-  -H $HOME:/home/$USER \
-  --pwd /home/$USER/Salome \
-  -B $STORE/DISTENE/DLim:/opt/DISTENE/DLim:ro \
-  salome.simg \
-  salome -t ghs3d_demo.py
-----
-
-where:
-
-* `$STORE/DISTENE/DLim` is the directory containing a valid `dlim8.key` license file.
-
-==== A simple `med` mesh in `TUI` mode
-
-Assuming that your home directory contains a `Salome` directory with the python script `testcube_mesh.py`.
-You can test your installation by running:
-
-[source,bash]
-----
-singularity exec \
-  -H $HOME:/home/$USER \
-  --pwd /home/$USER/Salome \
-  -B $STORE/DISTENE/DLim:/opt/DISTENE/DLim:ro \
-  salome.simg \
-  salome -t testcube_mesh.py
-----
-
-[TIP]
-====
-The default mesh format generated by {salome} is `med`. This mesh format may not be supported
-by {feelpp}. You can convert a `med` mesh into a gmsh mesh (`msh`):
-
-[source,bash]
-----
-singularity exec \
-  -H $HOME:/home/$USER \
-  --pwd /home/$USER/Salome \
-   hifimagnet.simg \
-   gmsh -0 -bin testcube.med -o testcube.msh
-----
-====
-
-==== Create a simple object in `GUI` mode
-
-* start `salome`
-* activate the *Geometry* module by clicking on the proper icon or selecting it in the dropdown menu
-* create a simple object
-* extract the boundary of the object ...
-* rename the boundary ...
-* select the geometry to save and export in your favorite CAD format
-
-You can also:
-
-* dump the history to a python script `script.py`
-* save the study 
-
-To replay the python script: `salome script.py`
-To reload the study: `salome study.hdf` or load the study from main *File* menu
-
-A video tutorial for creating and using python script is available https://youtu.be/0pmq8GjBONg[here].
-
-==== Loading a CAD in `GUI` mode
-
-* start `salome`
-* activate the *Geometry* module by clicking on the proper icon or selecting it in the dropdown menu
-* import the geometry using the File/Import menu
-* select the proper format
-
-We recommend to use whever possible the `XAO` file format that provides:
-
-* a CAD file in `BREP`,
-* a json file containing extra informations on `Groups`.
-
-This is very handy for defining CAD region (aka `Groups`) that will be latter used for Boundary Conditions.
-
-==== Create a simple mesh in `GUI` mode
-
-* start `salome`
-* activate the *Mesh* module by clicking on the proper icon or selecting it in the dropdown menu
-
-Click on the links bellow to see a live demo for creating a mesh with:
-
-* https://youtu.be/dqf4wNHFF-o[{netgen}].
-* https://youtu.be/iPwi8eRsZ2g[{meshgems}].
-
-
+To debug: **to be done**

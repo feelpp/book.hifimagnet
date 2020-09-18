@@ -28,11 +28,13 @@ It consists in a set of tools including:
 === {hifimagnet} plugin matrix
 
 [caption=]
-.A For 3D static analysis:
+.For 3D static analysis:
 [cols="4*"]
 |===
 | Native         | Docker Container          | Singularity Container  | Note
-| Ubuntu 20.04   |                           |                        | On Windows 10 requires MobaXterm for *GUI* mode
+| hifimagnet     |                           |                        | On Debian/Ubuntu {lncmi} repository
+|                |                           |                        | Recommanded dist: Ubuntu 20.04                
+|                |                           |                        | On Windows 10 requires MobaXterm for *GUI* mode
 |                | feelpp/feelpp::v0.108     |                        | For CG and/or HDG thermo-electric models only
 |                | feelpp/hifimagnet:v0.108  |                        | 
 |                |                           | hifimagnet-v0.108.sif  | for singularity 3.2 and later
@@ -40,11 +42,11 @@ It consists in a set of tools including:
 |===
 
 [caption=]
-.B For transient analysis:
+.For transient analysis:
 [cols="4*"]
 |===
 | Native         | Docker Container          | Singularity Container  | Note
-| Ubuntu 20.04   |                           |                        | On Windows 10 requires MobaXterm for *GUI* mode
+| NA             |                           |                        | 
 |                | feelpp/hifimagnet:mqs     |                        | 
 |                |                           | hifimagnet-mqs.sif     | for singularity 3.2 and later
 |                |                           | hifimagnet-mqs.simg    | for singularity 2.6
@@ -97,19 +99,46 @@ feelpp_hfm_coupledmodel_3DP1N1 --config coupled_3D_P1_N1_singular_cvg.cfg
 As stated in introduction {hifimagnet} per se provides tools for High Field Magnets simulation.
 More precisely we can model:
 
-* thermo-electric behavior,
-* magnetic field produced:
-** everywhere
-** only in a zone of interest from a user perspective
-* mechanical behavior accounting for:
-** an axisymetrical estimation of the magnetic field
-** the magnetic field produced
-** thermal dilation
-* fully coupled behavior
+.CG Models (*** to be completed ***):
+|===
+| Model/Behavior  | Executable | Features/Comments
+| thermo-electric |            |
+| Magnetostatic   |            | everywhere
+|                 |            | only in a zone of interest from a user perspective
+| Mechanics (CSM) |            |
+| Fully-Coupled   |            | Lorentz forces computed from an axisymetrical estimation of the magnetic field
+|                 |            | 3D Lorentz forces
+|                 |            | account for thermal dilation
+| Transient       |            | no CSM, do not account for deformation
+|===
+
+
+.DG Models (*** to do ***):
+|===
+| Model/Behavior  | Executable | Features/Comments
+|===
+
+.CRB Models (*** to do ***:
+|===
+| Model/Behavior  | Executable | Features/Comments
+|===
+
 
 The kind of calculation performed is specified in a configuration `cfg` file.
 The data settings consist in writting json files for each physical model involved,
 providing connection between CAD/Mesh entities to respectively Material and Boundary conditions.
+
+[NOTE]
+====
+In xref:cad#setup[{salome} {hifimagnet} plugin] section, we have shown how to generate templates for the `cfg` and `json` files.
+====
+
+[[mesh]]
+=== Mesh for {hifimagnet}
+
+* generate mesh with {salome} {hifimagnet} plugin
+* convert med to msh format
+* eventually partition mesh
 
 [[data]]
 === Data structure
@@ -123,39 +152,42 @@ In this section we will give details about these different files.
 
 ==== Config Files
 
+The main configuration file is a `cfg` file (actually an *ini* file).
+It contains all information about the mesh, the models involved etc
+All information is stored in a `[section]` except for a few main parameters.
+An exemple for a full coupled model is given below:
+
 [source,cfg]
 ----
-include::{examplesdir}/coupled_3D_P1_N1_singular_cvg.cfg[]
+include::{examplesdir}/M19061901-full-main.cfg[]
 ----
-<1> name of the geometry or mesh
-<2> gmsh options: scale (optional, the default is *meter*), mesh size
-<3> list of conductor and insulator volumes
-<4> flag to control calculations
-<5> thermo-electric model
-<6> elasticity model
-<7> specific to {hifimagnet}
-<8> magnetostatic model
+<1> directory: 
+<2> case.discretization:
+<3> model-file:
+<4> compute options
+<5> `[gmsh]` section
+<6> `[thermo-electric]` section
+<7> `[magnetic_field-bmap]` section
+<8> `[biot_savart]` section
+<9> `[magnetostatic]` section
+<10> `[elasticity]` section
 
-The first lines define the geometry or mesh to consider:
+===== `[gmsh]` section
+
+[source,cfg]
+----
+include::{examplesdir}/M19061901-full.cfg[lines=9..11]
+----
 
 * name of the geometry or mesh
 * gmsh options: scale (optional, the default is *meter*), mesh size
-* list of conductor and insulator volumes
 
-The next section give setup the calculations to be ran:
+===== `[thermo-electric]` section
 
-
-This is followed by section dedicated to specific physics.
-In this example we have:
-
-* thermo-electric model
-* elasticity model
-* magnetostatic model
-
-Each of this physic section contains:
-
-* name of the `json` file holding the complete description of the model (see bellow),
-* setup of the solver: eg `[electro]` and [`thermal`] for thermo-electric model
+[source,cfg]
+----
+include::{examplesdir}/M19061901-full.cfg[lines=21..51]
+----
 
 Solver are specific to each physical model.
 However in general, the default solver is a direct solver.
@@ -168,18 +200,61 @@ A typical iterative solver is defined as follow:
 * `ksp-maxit`: maximum iterations allowed to reach convergence,
 * `ksp-use-initial-guess-nonzero`: enable to start with a non null initial guess solution.
 
+
+===== `[magnetostatic]` section
+
+[source,cfg]
+----
+include::{examplesdir}/M19061901-full.cfg[lines=68..81]
+----
+
+===== `[biot_savart]` section
+
+[source,cfg]
+----
+include::{examplesdir}/M19061901-full.cfg[lines=64..66]
+----
+
+===== `[magnetic_field-bmap]` section
+
+[source,cfg]
+----
+include::{examplesdir}/M19061901-full.cfg[lines=56..62]
+----
+
 Section `magnetic_field-bmap` is specific to {hifimagnet}. It enables to define
 data needed to compute the "ideal" magnetic field provided by a magnet
-using xref:xref:magnettools:Bmap.adoc#bmap[]:
+using xref:xref:magnettools:Bmap.adoc#bmap[B_Map]:
 
 * the `.d` cfg file describing the Axisymetrical model of the magnet
 * the values for the input currents in each subsets of the magnet
+
 
 [NOTE]
 ====
 A magnet is composed of PolyHelices insert and eventually some external magnets either
 Bitter magnets and/or Supraconductor Magnets. 
 ====
+
+===== `[elasticity]` section
+
+[source,cfg]
+----
+include::{examplesdir}/M19061901-full.cfg[lines=84..96]
+----
+
+// This is followed by section dedicated to specific physics.
+// In this example we have:
+
+// * thermo-electric model
+// * elasticity model
+// * magnetostatic model
+
+// Each of this physic section contains:
+
+// * name of the `json` file holding the complete description of the model (see bellow),
+// * setup of the solver: eg `[electro]` and [`thermal`] for thermo-electric model
+
 
 ==== Physic Model files
 
@@ -189,33 +264,74 @@ The Physic Model files are `json` files that contain informations about:
 * Boundary Conditions
 * Post-Processing quantities
 
-===== ThermoElectric Model file
 
-[source,cfg]
+[source,json]
 ----
-include::{examplesdir}/quarter-torus3D-therm.json[]
-----
-
-===== Magnetostatics Model file
-
-[source,cfg]
-----
-include::{examplesdir}/quarter-torus3D-mag.json[]
+include::{examplesdir}/M19061901-full-main.json[]
 ----
 
-===== Elasticity Model file
+==== Models section
 
-[source,cfg]
+[source,json]
 ----
-include::{examplesdir}/quarter-torus3D-elasticity.json[]
+include::{examplesdir}/M19061901-full-main.json[lines=2..15]
 ----
+
+==== Parameters
+
+[source,json]
+----
+include::{examplesdir}/M19061901-full-main.json[lines=16..26]
+----
+
+==== Materials
+
+[source,json]
+----
+include::{examplesdir}/M19061901-full-main.json[lines=27..45]
+----
+
+==== BoundaryConditions
+
+[source,json]
+----
+include::{examplesdir}/M19061901-full-main.json[lines=75..117]
+----
+
+==== PostProcess
+
+[source,json]
+----
+include::{examplesdir}/M19061901-full-main.json[lines=118..249]
+----
+
+// ===== ThermoElectric Model file
+
+// [source,json]
+// ----
+// include::{examplesdir}/quarter-torus3D-therm.json[]
+// ----
+
+// ===== Magnetostatics Model file
+
+// [source,json]
+// ----
+// include::{examplesdir}/quarter-torus3D-mag.json[]
+// ----
+
+// ===== Elasticity Model file
+
+// [source,json]
+// ----
+// include::{examplesdir}/quarter-torus3D-elasticity.json[]
+// ----
 
 ==== Materials file
 
-Physical properties of the material are defined in a `json` file
+Physical properties of the material may be defined in a separate `json` file
 for each material. The properties are given in SI units.
 
-[source,cfg]
+[source,json]
 ----
 include::{examplesdir}/Cu.json[]
 ----
@@ -236,7 +352,7 @@ defining properties for material <1> :
 ^| <9> stem:[\mu]      ^| magnetic permeability              ^|stem:[V.s.A^{-1}.m^{-1}]  |
 |===
 
-workflow?
+// workflow?
 
 [[examples]]
 === Examples

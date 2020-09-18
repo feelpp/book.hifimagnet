@@ -1,4 +1,5 @@
 include::{partialsdir}/header-macros.adoc[]
+include::{partialsdir}/mso4sc-uri.adoc[]
 
 [[create_app]]
 = Creating an App in MSO Portal

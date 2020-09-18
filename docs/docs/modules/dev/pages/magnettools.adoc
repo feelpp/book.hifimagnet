@@ -1,7 +1,7 @@
 [[install_magnettools]]
 = {magnettools}
 
-=== Prerequis
+== Prerequis
 
 {magnettools} relies on the following software : 
 
@@ -12,5 +12,5 @@
 ** `yamlcpp`, `json-spirit`
 ** `nag` (only required for Optimization)
 
-=== From scratch
+== From scratch
 

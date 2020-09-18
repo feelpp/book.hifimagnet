@@ -7,3 +7,9 @@ include::{partialsdir}/mso4sc-uri.adoc[]
 
 In this tutorial, we demonstrate the standard use of {salome}
 to create a insert CAD and generate a mesh with {meshgems}.
+
+* Starting from a `.d` file
+* Generating CAD/CAM files
+* Generating CAD/Mesh with {salome} {hifimagnet} plugin
+
+

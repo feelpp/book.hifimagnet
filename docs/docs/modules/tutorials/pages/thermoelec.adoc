@@ -3,9 +3,9 @@
 
 
 In this tutorial, we will model a round wire carrying a given current.
+The geometry has been introduced xref:geometry.adoc[here].
 
-The wire will be designed in `Salome` as a cylinder.
-We will distinct:
+We recall the following definitions:
 
 * the plane circles (V0 and V1) on which will be applied some electric potential
 * the cylindrical surface (Bord) on which we will apply some cooling boundary conditions.
@@ -16,23 +16,15 @@ distribution and the temperature field.
 
 == Data
 
-The cylinder is defined by its radius stem:[R], its heigth stem:[H].
-The cylinder symetry axis is stem:[Oz].
 
-.Geometrical Data
-|=========================================================
-| R [ stem:[m] ] | H [ stem:[m] ]
-| 8.e-3 | 16.e-3
-|=========================================================
-
-.Input Data
+.Electrical Boundary Conditions
 |=========================================================
 | Boundary | stem:[V]
 | V0 | 0
 | V1 | 0.05
 |=========================================================
 
-.Input Data
+.Thermic Boundary Conditions
 |=========================================================
 | Boundary | stem:[h] [ stem:[K/W/m^2] ]| stem:[T_w] [ stem:[K] ]
 | Bord | 8.e+4 | 293
@@ -45,6 +37,7 @@ The cylinder symetry axis is stem:[Oz].
 * Basic knowledge of unix commands,
 * `Nvidia` Graphic video card,
 * `singularity`
+* Geometry
 
 == Setup study
 
@@ -57,38 +50,6 @@ The cylinder symetry axis is stem:[Oz].
 [source,bash]
 ----
 export STORAGE=/home/singularity
-----
-
-== Create Geometry and a Mesh
-
-* Start Salome using singularity container:
-
-[source,bash]
-----
-singularity exec --nv -B /opt/DISTENE:/opt/DISTENE:ro \
-  ${STORAGE}/salome-hifimagnet:9.5.0.simg salome
-----
-
-* Select the `GEOM` module
-* Create a cylinder
-* Explode the faces of the cylinder
-* Rename the faces
-* Mark the cylinder object as selected
-
-* Switch to the `SMESH` module
-* Create a Mesh
-* Create 2D Mesh hypothesis with `MG-CADSurf`
-* Create 3D Mesh hypothesis with `MG-Tetra`
-* Compute the mesh
-* Create Groups from geometry
-* Export the mesh in `MED` format
-
-
-* Convert `MED` mesh to `GMSH` format mesh:
-
-[source,bash]
-----
-gmsh -3 -bin cylindre.med -o cylindre.msh
 ----
 
 

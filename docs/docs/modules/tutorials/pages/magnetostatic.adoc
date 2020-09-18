@@ -3,14 +3,13 @@
 :stem: latexmath
 
 In this tutorial, we will model the magnetic field created by a round wire carrying a given current.
-The geometry will be splitted into 2 parts:
+The geometry has been introduced "xref:geometry.adoc[here].
+The current density stem:[\mathbf j] has been computed using the xref:geometry.adoc[Thermo-Electric] model.
 
 * the wire, represented by a cylinder,
 * the air region also represented by a cylinder.
 
-The geometry will be designed in `Salome`.
-
-We will distinct:
+We recall the definitions:
 
 * the plane circles (V0 and V1) on which will be applied some electric potential
 * the cylindrical surface (Bord) on which we will apply some cooling boundary conditions.
@@ -21,35 +20,8 @@ and for the air:
 * the cylindrical surface of the air region (Inf) on which we will apply infinity boundary condition for the magnetostatic problem.
 
 
-The thermoelectric model will be used to model the electrical potential
-distribution, the temperature field and the current distribution stem:[\mathbf j].
-
-Once stem:[\mathbf j] known, we can compute the magnetic field.
-
 == Data
 
-The "wire" cylinder is defined by its radius stem:[R], its heigth stem:[H].
-The "air" cylinder is defined by its outer radius stem:[R_{inf}] and its inner radius stem:[R], its heigth stem:[H].
-The cylinders symetry axis are stem:[Oz].
-
-.Geometrical Data
-|=========================================================
-| stem:[R_{inf}] [ stem:[m] ] | R [ stem:[m] ] | H [ stem:[m] ]
-| 32e-3 | 8.e-3 | 16.e-3
-|=========================================================
-
-.Input Data
-|=========================================================
-| Boundary | stem:[V]
-| V0 | 0
-| V1 | 0.05
-|=========================================================
-
-.Cooling Input Data
-|=========================================================
-| Boundary | stem:[h] [ stem:[K/W/m^2] ]| stem:[T_w] [ stem:[K] ]
-| Bord | 8.e+4 | 293
-|=========================================================
 
 .Magnetostatic Boundary conditions
 |=========================================================
@@ -81,38 +53,6 @@ The cylinders symetry axis are stem:[Oz].
 export STORAGE=/home/singularity
 ----
 
-== Create Geometry and a Mesh
-
-* Start Salome using singularity container:
-
-[source,bash]
-----
-singularity exec --nv -B /opt/DISTENE:/opt/DISTENE:ro \
-  ${STORAGE}/hifimagnet-salome:8.5.0.simg salome
-----
-
-* Select the `GEOM` module
-* Create a cylinder for the wire
-* Explode the faces of the cylinder
-* Rename the faces
-* Mark the cylinder object as selected
-* Create a cylinder for the air
-
-* Switch to the `SMESH` module
-* Create a Mesh
-* Create 2D Mesh hypothesis with `MG-CADSurf`
-* Create 3D Mesh hypothesis with `MG-Tetra`
-* Compute the mesh
-* Create Groups from geometry
-* Export the mesh in `MED` format
-
-
-* Convert `MED` mesh to `GMSH` format mesh:
-
-[source,bash]
-----
-gmsh -3 -bin cylindre.med -o cylindre.msh
-----
 
 
 == Prepare Cfg and Json files
@@ -125,7 +65,6 @@ and finally 2 `json` files for the material properties (respectively for the wir
 We will use and eventually modify the files used in the previous tutorial
 for the thermoelectric model.
 
-In a first step, we consider the linear thermoelectric problem.
 
 === `cfg` file definition
 
@@ -182,78 +121,6 @@ ksp-use-initial-guess-nonzero=1
 
 ----
 
-=== `json` model for Thermoelectric model
-
-For the thermoelectric model we use the same `thermoelec.json` as in the previous tutorial.
-
-[source, json, highlight=6]
-----
-{
-    "Name": "CoupledCart",
-    "ShortName":"MSC",
-    "Models":
-    {
-        "equations": "coupled-cart"
-    },
-    "Materials":
-    {
-        "Cylinder_1":
-        {
-            "name":"Copper",
-            "filename":"$cfgdir/Cu.json"
-        }
-    },
-    "BoundaryConditions":
-    {
-        "potential":
-        {
-            "Dirichlet":
-            {
-                "V0":
-                {
-                    "expr1":"0.",
-		    "expr2":"Cylinder_1"
-                },
-                "V1":
-                {
-                    "expr1":"0.05",
-		    "expr2":"Cylinder_1"
-                }
-            }
-        },
-        "temperature":
-        {
-            "Robin":
-            {
-                "R":
-                {
-                    "expr1":"80000",
-                    "expr2":"293"
-                }
-            }
-        }
-    },
-    "PostProcess":
-    {
-        "Exports":
-        {
-            "fields": ["temperature","potential","joules","current"]
-        }
-    }
-}
-----
-
-[TIP]
-====
-Do not forget to verify that the `json` file are correct.
-To do so use for instance:
-
-[source, bash, highlight=6]
-----
-jsonlint-php thermoelec.json
-----
-
-====
 
 
 === `json` model for Magnetostatic
@@ -344,8 +211,8 @@ jsonlint-php thermoelec.json
 
 === `json` files for material physical properties
 
-In the case, we need to have one `json` material properties file per domain
-or material. In each file we also have to define the relative magnetic permeabilty stem:[\mu].
+In the case, we need to add the definition of the relative magnetic permeabilty stem:[\mu].
+to the material used before:
 
 [source, json]
 ----
@@ -360,6 +227,8 @@ or material. In each file we also have to define the relative magnetic permeabil
     "mu_mag": "1"
 }
 ----
+
+and add a file for the air:
 
 [source, json]
 ----

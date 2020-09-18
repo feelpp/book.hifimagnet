@@ -1,3 +1,7 @@
+= Magnets Monitoring and Control
+:page-partial:
+:page-plotly: true
+
 [[monitoring]]
 == Magnets Monitoring
 
@@ -29,7 +33,7 @@ a value of stem:[B_z(0)] on a console which, in turn, send an order to power sup
 current stem:[I=\frac{B_z(0)}{f}]. During this operation, the monitoring system receive data from
 the voltage taps stem:[U_i], water temperatures probes (stem:[Ti, To]) and flow rate stem:[Q] sensor.
 
-[[NOTE]]
+[NOTE]
 ====
 
 [source,data]
@@ -59,6 +63,7 @@ Coil  I(A)      U(V)   P(kW)   R0(mOhms)  dR0(%)  T(C)
 16    15992.52	53.88  861.70  3.23        0.78  21.89
 ----
 
+
 In this example, the magnet consists in 2 "tranches" operating at 9h57
 and providing a 18.8 tesla magnetic field:
 
@@ -68,10 +73,9 @@ and providing a 18.8 tesla magnetic field:
 Coils 1 to 7 correspond to the PolyHelix insert (one per couple of helices);
 Coils 15 and 16 to the Bitters.
 
-
 Data specific to each "tranche" is appended with the tranche index.
 
-stem:[dPm] denote the pressure drop from HP and BP side
+stem:[dPm1] denote the pressure drop from HP and BP side on tranche 1
 where HP, BP stand respectively for High and Low ("Basse" in french) Pressure.
 
 stem:[T_i] denote the estimated mean temperature in Coil stem:[i].
