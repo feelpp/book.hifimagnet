@@ -1,2 +1,4 @@
 [[commissionning]]
 = Simulation of a Magnet Commissioning
+
+* Add notes from https://github.com/feelpp/hifimagnet.cases/tree/v0.108/Commissioning/Readme.md[Readme]

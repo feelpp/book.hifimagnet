@@ -195,3 +195,8 @@ As a consequence the heat exchange coefficient  stem:[h] per cooling channels wi
 ++++
 
 ====
+
+
+* ToDo:
+** Add note on http://147.173.83.216/site/sba/pages/index.php[Control/Command website]
+** Add note on txt files (with a demo)

@@ -1,2 +1,4 @@
 [[transient]]
 = Modeling Magnet during transient
+
+see http://docs.cemosis.fr/mqs/latest/index.html[MQS project]

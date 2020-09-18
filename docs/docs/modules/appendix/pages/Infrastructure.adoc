@@ -71,9 +71,13 @@ CAUTION: When connecting to the serveur, *Do not forget* to add `-Y` ssh option 
 
 ==== Run {hifimagnet}
 
-TIP: As {hifimagnet} apps can run for a while, you are adviced to use `screen`. That is: 1st start `screen` then run the app within `screen`.
-Then you can detach the `screen` process with Ctrl-A Ctrl-D. To latter re-attach the `screen` process, run `screen -ls` to get the screen-idyour screen session
-and re-attached it with `screen -rd screen-id`.
+TIP: As {hifimagnet} apps can run for a while, you are adviced to use `screen`. That is:
+
+* 1st start `screen` then run the app within `screen`.
+* Then you can detach the `screen` process with Ctrl-A Ctrl-D.
+* To latter re-attach the `screen` process, run
+** `screen -ls` to get the screen-idyour screen session
+** and re-attached it with `screen -rd screen-id`.
 
 Running {hifimagnet} on {lncmi} server relies on `singularity`.
 Depending on the server, `singularity` version is different. Please check which version is installed before running any singularity command.
@@ -84,15 +88,97 @@ Use either `scp` or `rsync` over `ssh`.
 
 == Gricad
 
-* {dahu}
+https://gricad.univ-grenoble-alpes.fr/[Gricad] is the Grenoble MesoCentre for HPC.
+https://gricad-doc.univ-grenoble-alpes.fr/hpc/description/#dahu-plateforme-hpcda[{dahu}] is the platform to be used for HPC.
 
 === connect
+
+To connect to {dahu}, you need to get an account on https://perseus.univ-grenoble-alpes.fr/[Perseus].
+Follow the instructions on this https://gricad-doc.univ-grenoble-alpes.fr/services/[page] to proceed.
+
+Once you've got a Perseus account, you still have to be registered as a user of the pr-hifimagnet project.
+Contact your administrator <christophe.trophime@lncmi.cnrs.fr> to be registered as a member of this project.
+
+To setup your `ssh` access to {dahu}, proceed as follow:
+
+* setup your `ssh` config:
+
+Add the following lines to your `$HOME/.ssh/config`
+
+[source,sh]
+----
+Host access-rr-ciment
+   #LogLevel DEBUG3
+   Hostname access-rr-ciment.imag.fr
+   ProxyCommand nc -q0 %h %p
+Host *.ciment
+  User username <1>
+  ProxyCommand ssh username@access-rr-ciment "nc -w 60 `basename %h .ciment` %p"
+Host dahu
+  User username
+  ProxyCommand ssh username@access-rr-ciment.imag.fr "nc dahu %p"
+----
+with <1> your actual *username* on Perseus.
+
+* test your connection to {dahu}:
+
+[source,sh]
+----
+ssh -Y dahu
+----
+
+* setup key authentification: *to be done*
+
 === run {hifimagnet} in parallel
 === submit {hifimagnet} jobs
+
+To submit jobs on {dahu}, you need to use the {oar} scheduler.
+To do so, you need to create an {oar} script like that:
+
+[source,oar]
+----
+include::{examplesdir}/M19061901_full.oar[]
+----
+
+To submit the job, just type:
+
+[source,sh]
+----
+oarsub -S ./test.oar
+----
+
+To check the status of your job:
+
+[source,sh]
+----
+oarstat -u usename
+----
+
+Upon job completion, you will receive an email from {dahu} on the email
+adress you have defined in the {oar} script.
+
+[NOTE]
+====
+For best performance, the job shall be create on {bettik} - namely in
+the mounted directory `/bettik/username`. All the files mentionned
+in the {oar} script must exist. In peculiar the mesh, `cfg` and `json` files.
+
+The results will be exported to `/bettik/username` as defined in the {oar} script
+and `cfg` file.
+====
+
 === retreive/send data
+
+In this paragraph, we explain how to send data to {dahu}
+and how to recover simulation results from {dahu}
+
+Use either `scp` or `rsync` over `ssh`.
+For large files, you must use `rsync` over `ssh`.
 
 == Cemosis
 
-* {Atlas}
-* {AlsaCalcul}
+http://www.cemosis.fr/[Cemosis] is hosted by the Institute of Advanced Mathematical Research (IRMA).
+
+* http://docs.feelpp.org/feelpp/infra/atlas.html[{Atlas}]
+* http://docs.feelpp.org/feelpp/infra/alsacalcul.html[{AlsaCalcul}]
 
