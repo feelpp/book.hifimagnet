@@ -8,6 +8,7 @@ nav:
 - modules/cad/nav.adoc
 - modules/user/nav.adoc
 - modules/post/nav.adoc
+- modules/workflow/nav.adoc
 - modules/benchmarks/nav.adoc
 # - modules/mso4sc/nav.adoc
 - modules/tutorials/nav.adoc

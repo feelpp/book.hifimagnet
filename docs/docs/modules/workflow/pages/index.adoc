@@ -1,0 +1,55 @@
+[[workflow]]
+== Workflow
+:toc: macro
+include::{partialsdir}/header-macros.adoc[]
+include::{partialsdir}/header-uri.adoc[]
+include::{partialsdir}/mso4sc-uri.adoc[]
+=== Using {magnettools} to define Design
+
+* create optimized axi geometry
+* run `opt2yml` to create the cfg files for {hifimagnet} {salome} Plugin
+
+=== Using {hifimagnet} {salome} Plugin to create CAD and generate meshes
+
+* fill in the missing data into {salome} yaml cfg files
+* run the CAD generation
+* eventually add `Air`
+* mesh
+* improve the mesh
+
+=== Prepare the mesh for HPC
+
+The mesh created with {hifimagnet} {salome} is in `med` format.
+Depending on the version of {feelpp} used this format may not be supported.
+So before running any simulation you have to convert the mesh to `gmsh V2` format:
+
+[source,sh]
+----
+gmsh -bin -0 mesh.med -o mesh.msh
+----
+
+Then you have eventually to partition the mesh to use it on HPC:
+
+[source,sh]
+----
+feelpp_mesh_partitioner [--msh.scale=0.001] --ifile mesh.msh -ofile mesh-np4 --part 4 --nochdir
+----
+
+where `part` denotes the number of processors (4 in our example) you want to use.
+The option `--msh.scale=0.001` enables to rescale the mesh file.
+
+This will create new files `mesh-np4.json` and `mesh-np4.h5` ready for running.
+
+[NOTE]
+=====
+{hifimagnet} {salome} CAD geometries are defined in `mm`.
+The mesh file generated is also in `mm`. 
+
+As a consequence, **do not forget to rescale the mesh** before running simulation.
+Use `--gmsh.scale=0.001` to rescale the mesh.
+=====
+
+=== Define Cfg, Model and Materials files
+=== Running 3D simulations
+=== Postprocessing results
+
