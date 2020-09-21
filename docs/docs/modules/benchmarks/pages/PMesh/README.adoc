@@ -13,10 +13,10 @@ To run this example on MSO4SC portal see this xref:mso4sc:MagMesh.adoc[section].
 
 [source,sh]
 ----
-feelpp_mesh_partitioner --gmsh.scale=0.001 --ifile HL-31_H1.msh [--ofile HL-31_H1_p32] --part 32
+feelpp_mesh_partitioner --mesh.scale=0.001 --ifile HL-31_H1.msh [--ofile HL-31_H1_p32] --part 32
 ----
 
-The option `--gmsh.scale=0.001` enables to force the use of **meter** for the partitionned mesh.
+The option `--mesh.scale=0.001` enables to force the use of **meter** for the partitionned mesh.
 
 == Data files
 

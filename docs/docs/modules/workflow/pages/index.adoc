@@ -46,7 +46,7 @@ This will create new files `mesh-np4.json` and `mesh-np4.h5` ready for running.
 The mesh file generated is also in `mm`. 
 
 As a consequence, **do not forget to rescale the mesh** before running simulation.
-Use `--gmsh.scale=0.001` to rescale the mesh.
+Use `--mesh.scale=0.001` to rescale the mesh.
 =====
 
 === Define Cfg, Model and Materials files

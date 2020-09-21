@@ -1,35 +1,32 @@
-= A longitudinaly cooled helix
+= A longitudinaly cooled helix with HDG method
 include::{partialsdir}/header-macros.adoc[]
 include::{partialsdir}/header-uri.adoc[]
 include::{partialsdir}/mso4sc-uri.adoc[]
 
-In this test case we will simulate a longitudinaly cooled helix.
+In this test case we will simulate a longitudinaly cooled helix
+with the HDG method.
 We consider only the thermoelectric behaviour of the helix.
 
 // update see: http://docs.feelpp.org/cases/0.108/thermoelectric/electromagnet/README.html
 == Running the case
 
-You have 2 choices:
-
-* either use {hifimagnet} apps:
-
-[[command-line-linear]]
+[[command-line-nl-hdgtoolbox]]
 [source,sh]
 ----
-mpirun -np 32 feelpp_hfm_coupledcartmodel_3DP1N1 --config-file H1_p_nonlinear.cfg
+mpirun -np 32 feelpp_toolbox_hdg_thermoelectric --config-file  HL-31_H1.cfg
 ----
 
-* or use {feelpp} thermoelectric toolbox:
+If you use the IBC feature to set the total current:
 
-[[command-line-nl-toolbox]]
+[[command-line-nl-ibc]]
 [source,sh]
 ----
-mpirun -np 32 feelpp_hfm_thermoelectric --config-file H1-toolbox_nonlinear.cfg
+mpirun -np 32 feelpp_toolbox_hdg_thermoelectric --config-file  HL-31_H1.cfg
 ----
 
 [NOTE]
 ====
-The thermolelectric toolbox example is more in detailed in the link:http://docs.feelpp.org/cases/0.108/thermoelectric/electromagnet/README.html[toolbox documentation].
+The thermolelectric HDG method is detailed in this link:https://docs.feelpp.org/math/hdg/index.html[section].
 ====
 
 // To run this example on MSO4SC portal see this xref:mso4sc:MagThel.adoc[section].
@@ -48,7 +45,9 @@ gmsh -0 -bin HL-31_H1.med -o HL-31_H1.msh
 
 [IMPORTANT]
 ====
-The resulting mesh is in **mm**
+The resulting mesh is in **mm**.
+For convergence sake, HDG method requires the mesh to be left in *mm*.
+As a consequence, remember that the physical properties of materials shall be scaled to "*mm*".
 ====
 
 === Partitionning the mesh:
@@ -58,10 +57,22 @@ The resulting mesh is in **mm**
 feelpp_mesh_partitioner --ifile HL-31_H1.msh [--ofile HL-31_H1_p32] --part 32
 ----
 
+[IMPORTANT]
+====
+For calculation with IBC, it is mandatory to use the following command to properly partion the mesh:
+
+[source,sh]
+----
+feelpp_mesh_partitioner --ifile HL-31_H1[_shapes].med --ofile HL-31_H1_p  --part 32 --sc.ibc_partitioning=true --sc.ibc_partitioning.marker=<marker>
+----
+where `<marker>` is the marker of the Surface marker where we apply the IBC.
+
+====
+
 == Data files
 
-The data files may be retreived from this https://github.com/feelpp/hifimagnet.cases/tree/v0.108/HL-31_H1[repository].
-The mesh files are stored in collection hifimanget/cases/v0.108/HL-31_H1 collection on {uri-girder}[Unistra Girder] 
+The data files may be retreived from this https://github.com/feelpp/hifimagnet.cases/tree/v0.108/HL-31_H1-HDG[repository].
+The mesh files are stored in collection hifimanget/cases/v0.108/HL-31_H1-HDG collection on {uri-girder}[Unistra Girder] 
 
 // The data files may be retreived from {uri-msoportal-ckan-www}[*Data Catalogue*].
 // See the dataset *A test helix* in {lncmi} collection.
@@ -70,15 +81,14 @@ The mesh files are stored in collection hifimanget/cases/v0.108/HL-31_H1 collect
 
 === Mesh file
 
-* HL-31_H1.med
-* HL-31_H1.msh
-* HL-31_H1_p32.json, HL-31_H1_p32.h5  
+* HL-31_H1-woglue.msh
+* HL-31_H1-woglue.med
+* HL-31_H1-woglue_p.json, HL-31_H1-woglue_p.j.h5  
 
 === Simulation cfg file
 
-* H1_p_nonlinear.cfg for {hifimagnet} app with Newton solver,
-* H1_p_nonlinear-picard.cfg for {hifimagnet} app with Picard solver,
-* H1-toolbox_nonlinear.cfg for {feelpp} thermoelectric toolbox with Newton solver.
+* HL-31_H1.cfg,
+* HL-31_H1_ibc.cfg with IBC.
 
 === Model files
 

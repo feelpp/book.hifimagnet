@@ -1,3 +1,4 @@
+:uri-singularity: https://sylabs.io/singularity/
 :uri-org: https://github.com/feelpp
 :uri-repo: {uri-org}/hifimagnet
 :uri-www: http://www.hifimagnet.org

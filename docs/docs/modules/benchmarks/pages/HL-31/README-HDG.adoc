@@ -1,4 +1,4 @@
-= Full Insert 3D Model
+= 3D Insert Thermoelectric Model with HDG method
 include::{partialsdir}/header-macros.adoc[]
 include::{partialsdir}/header-uri.adoc[]
 include::{partialsdir}/mso4sc-uri.adoc[]
@@ -17,8 +17,7 @@ Otherwise you can directly skip these sections.
 
 [source,sh]
 ----
-salome -t $HIFIMAGNET/HIFIMAGNET_Cmd.py args:--cfg=HL-31.yaml
-salome -t $HIFIMAGNET/HIFIMAGNET_Cmd.py args:--cfg=HL-31.yaml,--air
+salome -t $HIFIMAGNET/HIFIMAGNET_Cmd.py args:--cfg=HL-31.yaml,--hideIsolant
 ----
 
 [WARNING]
@@ -31,7 +30,7 @@ For a 14 Helices insert it takes at least 4 days...
 
 [source,sh]
 ----
-salome -t $HIFIMAGNET//HIFIMAGNET_Cmd.py args:--insert=HL-31.yaml,--air,--mesh,--groupCoolingChannels
+salome -t $HIFIMAGNET//HIFIMAGNET_Cmd.py args:--insert=HL-31.yaml,--mesh,--groupCoolingChannels
 ----
 
 === Partitionning the mesh:
@@ -39,14 +38,14 @@ salome -t $HIFIMAGNET//HIFIMAGNET_Cmd.py args:--insert=HL-31.yaml,--air,--mesh,-
 [source,sh]
 ----
 gmsh -0 -bin HL-31.med -o HL-31.msh
-feelpp_mesh_partitioner --mesh.scale=0.001 --ifile HL-31.msh [--ofile HL-31_p32] --part 32  --nochdir
+feelpp_mesh_partitioner --mesh.scale=0.001 --ifile HL-31.msh [--ofile HL-31_p32] --part 32 --sc.ibc_partitioning=true --sc.ibc_partitioning.marker=<marker> --nochdir
 ----
 
 === Running the model (here couplecartmodel):
 
 [source,sh]
 ----
-mpirun -np 32 feelpp_hfm_coupledcartmodel_3DP1N1 --config-file M19061901-thermobox-bmap.cfg
+mpirun -np 32 feelpp_toolbox_hdg_thermoelectric --config-file HL-31-ibc.cfg
 ----
 
 [NOTE]
@@ -57,8 +56,8 @@ See notes in xref::appendix.adoc[Appendix] section.
 
 == Data files
 
-The data files may be retreived from this https://github.com/feelpp/hifimagnet.cases/tree/v0.108/HL-31[repository].
-The mesh files are stored in collection hifimanget/cases/v0.108/HL-31 collection on {uri-girder}[Unistra Girder] 
+The data files may be retreived from this https://github.com/feelpp/hifimagnet.cases/tree/v0.108/HL-31-HDG[repository].
+The mesh files are stored in collection hifimanget/cases/v0.108/HL-31-HDG collection on {uri-girder}[Unistra Girder] 
 
 === Geometry files
 
@@ -78,14 +77,12 @@ Definition of the helical cut per helix:
 
 === Simulation cfg file
 
-* M19061901-thermobox-bmap.cfg
-* M19061901-thermobox-biot.cfg
-* M19061901-thermobox-full.cfg
+* HL-31_H1_ibc.cfg
 
 === Model files
 
-* M19061901_coupled.json
-* M19061901_full.json
+* electro_ibc.json
+* thermal.json
 
 == Outputs
 

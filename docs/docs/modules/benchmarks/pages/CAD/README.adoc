@@ -38,7 +38,7 @@ salome -t -b -m GEOM,SMESH,HIFIMAGNET $HIFIMAGNET/HIFIMAGNET_Cmd.py args:--cfg=I
 The mesh may be converted into an another format using `gmsh` compiled with proper `med` support
 [source,sh]
 ----
-gmsh -3 -bin HL-31-H1H4-Leads-2t[_withAir].med -o HL-31-H1H4-Leads-2t[_withAir].msh
+gmsh -0 -bin HL-31-H1H4-Leads-2t[_withAir].med -o HL-31-H1H4-Leads-2t[_withAir].msh
 ----
 
 [IMPORTANT]

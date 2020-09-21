@@ -357,6 +357,7 @@ defining properties for material <1> :
 [[examples]]
 === Examples
 
-* xref:benchmarks:HL/README.adoc[HL] 
+* xref:benchmarks:HL/README.adoc[HL]
+// http://docs.feelpp.org/cases/0.108/thermoelectric/electromagnet/README.html
 * xref:benchmarks:HL-31/README.adoc[HL-31]
 

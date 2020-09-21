@@ -25,12 +25,14 @@ Welcome to {hifimagnet} Examples and Benchmarks documentation!
 === Helix Magnet
 
 * xref:HL/README.adoc[A longitudinally cooled Helix] 
+* xref:HL/README-HDG.adoc[A longitudinally cooled Helix with HDG] 
 * xref:HR/README.adoc[A radially cooled Helix] 
 
 === Insert
 
 * xref:H1H4/README.adoc[An insert with 4 helices]
 * xref:HL-31/README.adoc[An realistic insert]
+* xref:HL-31/README-HDG.adoc[An realistic insert with HDG]
 
 === Other Magnetic structures
 
