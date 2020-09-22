@@ -15,30 +15,38 @@ needed when building the [singlauraty} image.
 * pull an image
 * run the image
 
+[source,bash]
+----
+singularity pull docker://godlovedc/lolcow
+singularity run lolcow_latest.sif
+----
+
+
 == Basic usage
 
-Running a shell:
+.Running a shell:
 [source,bash]
 ----
 singularity shell image.sif
 ----
 
-Executing a program:
+.Executing a program:
 [source,bash]
 ----
-singularity exec image.sif ...
+singularity exec image.sif program
 ----
 
-List apps defined in an image:
+.List apps defined in an image:
 [source,bash]
 ----
-singularity image.sif ...
+singularity  inspect —list-apps image.sif
+singularity exec image.sif ls /scif/apps
 ----
 
-Running an app:
+.Running an app:
 [source,bash]
 ----
-singularity image.sif ...
+singularity run --app appname image.sif [options]
 ----
 
 == Running parallel jobs in {singularity}

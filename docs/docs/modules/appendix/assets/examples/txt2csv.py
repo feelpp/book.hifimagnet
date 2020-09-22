@@ -103,6 +103,7 @@ if 'Ucoil15' in keys:
 
 # Get Name of columns
 keys = df.columns.values.tolist()
+dkeys={keys[i]: keys[i] for i in range(0, len(lst))} 
 
 if args.plot_vs_time:
     ax = plt.gca()
