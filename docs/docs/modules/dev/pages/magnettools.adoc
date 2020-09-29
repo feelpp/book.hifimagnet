@@ -5,12 +5,86 @@
 
 {magnettools} relies on the following software : 
 
-** `popt`,
-** `gsl`, `freesteam`,
-** `spherepack, expokit`,
-** `sundials`,
-** `yamlcpp`, `json-spirit`
-** `nag` (only required for Optimization)
+* link:http://freesteam.sourceforge.net[`freesteam`]
+* `gsl`
+* link:https://www-pequan.lip6.fr/cadna/[`cadna`]
+* `boost-gnuplotiostream`
+* link:http://www.fadbad.com/fadbad.html[`fadbad++`]
+* link:http://www.maths.uq.edu.au/expokit[`expokit`]
+* `spherepack`
+* `eigen3`
+* `sundials`
+* `popt`,
+* `yamlcpp`
+* `json-spirit`
+* `nag` (only required for Optimization)
 
-== From scratch
+== Container Installation
+
+== Install from {lncmi} Debian/Ubuntu repository
+
+{magnettools} is packaged for main Debian/Ubuntu distribution.
+The package is stored in {lncmi} Debian/Ubuntu repository only
+accessible to {lncmi} member.
+
+To install {salome} on your linux box:
+
+* install the debian-keyring package
+
+[source,bash]
+----
+sudo apt update
+sudo apt install debian-keyring
+----
+
+On Ubuntu:
+
+[source,bash]
+----
+sudo cp /usr/share/keyrings/debian-maintainers.gpg /etc/apt/trusted.gpg.d/
+----
+
+* add lncmi.list to /etc/apt/sources.list.d
+
+[source,bash]
+----
+sudo echo "deb http://euler/~trophime/debian/ $(lsb_release -cs) main" > /etc/apt/sources.list.d/lncmi.list
+----
+
+* run the following commands:
+
+[source,bash]
+----
+sudo apt update
+sudo apt install magnettools
+----
+
+== Build From scratch
+
+* clone link:https://github.com/feelpp/magnettools[{magnettools} gitub repository],
+* use `cmake` to build {magnettools}
+
+=== Using CMake
+
+- configure CMake, use the environment or cmake variables `<DEPS>_DIR` to help CMake find the dependencies (if you do not have write access to the default install prefix of cmake, you need to specify a custom prefix using `-DCMAKE_INSTALL_PREFIX`)
+- if some required dependencies are not found, you will have to compile them using `make install-deps`
+- once all the required dependencies are found, you can use `make`
+
+[source,bash]
+----
+cmake ~/github/magnettools/ \
+ -DCMAKE_VERBOSE_MAKEFILE=ON \
+ -DCMAKE_BUILD_TYPE=Release \
+ -DMAGNETTOOLS_PYTHON_VERSION=3 \
+ -DPYTHON_EXECUTABLE=/usr/bin/python3 \
+ -DCMAKE_INSTALL_PREFIX=/home/LNCMI-G/trophime/Modelisation_Linux/
+make -j4
+make install
+----
+
+// === Using autotools
+
+// - First update your `configure` script by typing `./autogen.sh`
+// - Then in a separate directory run `PATH_TO_MagnetTools/configure` to generate the necessary Makefiles.
+// - Finally compile the applications you are interested in.
 

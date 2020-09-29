@@ -12,7 +12,7 @@ include::{partialsdir}/header-uri.adoc[]
 
 == Introduction
 
-image::{imagesdir}/M9_10_03_2k17.png[Temperature and Magnetic Field profile during experiment]
+image:M9_10_03_2k17.png[Temperature and Magnetic Field profile during experiment]
 
 In this example we will try to reproduce the behaviour of an 14 Helices insert
 operated on March 2017 during a *Plateau* . More precisely, we will compare:
@@ -131,7 +131,7 @@ As a consequence, `U4` actually record the voltage drop between `U2` and `U4`.
 
 // python ~/MSO4SC/hifimagnet-msoapps/Examples/HL-31-v105/V_cmp.py --input_file V_cmp.dat --title="I = 22148 A"
 
-image::{imagesdir}/M9_10_03_2k17_Vprobes.png[Relative error for Voltage taps for each simulation.]
+image:M9_10_03_2k17_Vprobes.png[Relative error for Voltage taps for each simulation.]
 
 
 == Temperature probes

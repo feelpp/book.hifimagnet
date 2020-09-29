@@ -189,7 +189,7 @@ be described in the <<data, data structure section>>.
 ----
 salome [-m GEOM,SMESH,HIFIMAGNET] [-t -b] \
    $HIFIMAGNET/HIFIMAGNET_Cmd.py \
-   args:--cfg=Insert-H1H4-Leads-2t.yaml[,--air,--infty_Rratio=2,--infty_ZRatio=1.5][,--mesh]
+   args:--cfg=Insert-H1H4-Leads-2t.yaml[,--air,--infty_Rratio=2,--infty_ZRatio=1.5][,--mesh,--groupIsolant,--groupCoolingChannels,--groupLeads]
 ----
 ++++
 <button class="btn" data-clipboard-target="#insert-cad">

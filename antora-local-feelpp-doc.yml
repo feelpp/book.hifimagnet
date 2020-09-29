@@ -1,6 +1,6 @@
 site:
   title: HiFiMagnet Documentation
-  # url: /antora/build
+  url: https://localhost
   start_page: hifimagnet::index.adoc
 content:
   sources:

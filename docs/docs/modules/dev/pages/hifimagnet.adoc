@@ -1,13 +1,65 @@
 [[install_hifimagnet]]
 = {hifimagnet}
+:toc: macro
+include::{partialsdir}/header-macros.adoc[]
+include::{partialsdir}/header-uri.adoc[]
+include::{partialsdir}/mso4sc-uri.adoc[]
 
 include::hifimagnet/PREREQUISITES.adoc[leveloffset=+1]
 
 == Using containers
 
-include::hifimagnet/docker.adoc[leveloffset=+1]
-include::hifimagnet/singularity.adoc[leveloffset=+1]
+include::hifimagnet/docker.adoc[leveloffset=+2]
+include::hifimagnet/singularity.adoc[leveloffset=+2]
+
+== Using containers
+
+== From {lncmi} Debian/Ubuntu package repository
+
+//include::hifimagnet/from-scratch.adoc[leveloffset=+1]
 
 == From scratch
 
-//include::hifimagnet/from-scratch.adoc[leveloffset=+1]
+=== {feelpp} already installed
+
+* clone {hifimagnet} github repository
+
+
+=== {feelpp} not installed
+
+* clone {feelpp} github repository
+
+[source,bash]
+----
+cd feelpp/research
+----
+
+* clone {hifimagnet} github repository
+
+[source,bash]
+----
+cmake $DEBUG $FEELPP_DIR \
+ -DCMAKE_CXX_COMPILER:FILEPATH=/usr/bin/clang++-9 \
+ -DCMAKE_C_COMPILER:FILEPATH=/usr/bin/clang-9 \
+ -DCMAKE_fortran_COMPILER:FILEPATH=/usr/bin/gfortran \
+ -DCMAKE_VERBOSE_MAKEFILE=ON \
+ -DCMAKE_BUILD_TYPE=Release \
+ -DFEELPP_PYTHON_VERSION=3 \
+ -DPYTHON_EXECUTABLE:FILEPATH=/usr/bin/python3 \
+ -DPYTHON_INCLUDE_DIR:PATH=/usr/include/python3.7 \
+ -DPYTHON_LIBRARY:PATH=/usr/lib/python3.7/config-x86_64-linux-gnu/libpython3.7.so \
+ -DFEELPP_ENABLE_SYSTEM_EIGEN3:BOOL=ON \
+ -DHDF5_INCLUDE_DIRS=/usr/include/hdf5/openmpi \
+ -DHDF5_LIBRARY_DIRS=/usr/lib/x86_64-linux-gnu/hdf5/openmpi \
+ -DHDF5_PREFER_PARALLEL:BOOL=ON \
+ -DFEELPP_ENABLE_PYTHON:BOOL=ON \
+ -DCMAKE_EXE_LINKER_FLAGS:STRING="-Wl,--no-as-needed -lm -lrt" \
+ -DFEELPP_ENABLE_IPOPT=OFF \
+ -DFEELPP_ENABLE_TOOLBOXES=ON \
+ -DFEELPP_ENABLE_MOR=ON \
+ -DFEELPP_ENABLE_RESEARCH_HIFIMAGNET=ON \
+ -DHIFIMAGNET_ENABLE_MAGNETTOOLS=ON \
+ -DHIFIMAGNET_ENABLE_TESTS=ON
+----
+
+with `DEBUG` ... and `FEELPP_DIR` ...
