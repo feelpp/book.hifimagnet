@@ -84,7 +84,8 @@ stem:[T_i] denote the estimated mean temperature in Coil stem:[i].
 See bellow for more details.
 ====
 
-Actual data from an magnet in operation may be retreive from the link:http://147.173.83.216/site/sba/pages/index.php[control/command monitoring system].
+Actual data from an magnet in operation may be retreive from the link:http://147.173.83.216/site/sba/pages/index.php[control/command monitoring system]
+at an acquisition rate of 1 Hz.
 This site, ony accesible to registered {lncmi} user, provides
 data recorded during a magnet run. To access a magnet run:
 
@@ -124,7 +125,7 @@ The `txt` file may be converted to a `csv` file using link:{attachmentsdir}/txt2
 	}];
 
 	Plotly.newPlot('myCVSDiv', traces,
-		       {title: 'B Field vs Time'});
+		       {title: 'B Field vs Time'}, {responsive: true});
     };
     makeplot();
 
@@ -132,6 +133,8 @@ The `txt` file may be converted to a `csv` file using link:{attachmentsdir}/txt2
   </script>
 ++++
 
+There are also files with an higher acquisation rate available. They may be used as refrence for transient analysis.
+Data from these `tdms` file can be retreived using  link:{attachmentsdir}/[`nptdms-ex.py`] script.
 
 [[control]]
 == Magnets Control

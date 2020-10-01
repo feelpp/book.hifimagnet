@@ -37,8 +37,8 @@ It consists in a set of tools including:
 |                |                           |                        | On Windows 10 requires MobaXterm for *GUI* mode
 |                | feelpp/feelpp::v0.108     |                        | For CG and/or HDG thermo-electric models only
 |                | feelpp/hifimagnet:v0.108  |                        | 
-|                |                           | hifimagnet-v0.108.sif  | for singularity 3.2 and later
-|                |                           | hifimagnet-v0.108.simg | for singularity 2.6
+|                |                           | hifimagnet-thermobox-P2_9.3.3-v0.108.sif  | for singularity 3.2 and later
+|                |                           | hifimagnet-thermobox-P2_9.3.3-v0.108.simg | for singularity 2.6
 |===
 
 [caption=]
@@ -99,6 +99,14 @@ feelpp_hfm_coupledmodel_3DP1N1 --config coupled_3D_P1_N1_singular_cvg.cfg
 As stated in introduction {hifimagnet} per se provides tools for High Field Magnets simulation.
 More precisely we can model:
 
+.Prepare mesh
+|===
+|        | `docker` | `singularity`
+| `gmsh` |          | gmsh-4.6.0.simg
+| `feelpp_mesh_partitioner` | | hifimagnet-thermobox-P2_9.3.3-v0.108.simg
+|===
+
+
 .CG Models (*** to be completed ***):
 |===
 | Model/Behavior  | Executable | Features/Comments
@@ -113,7 +121,7 @@ More precisely we can model:
 |===
 
 
-.DG Models (*** to do ***):
+.HDG Models (*** to do ***):
 |===
 | Model/Behavior  | Executable | Features/Comments
 |===
@@ -136,19 +144,50 @@ In xref:cad#setup[{salome} {hifimagnet} plugin] section, we have shown how to ge
 [[mesh]]
 === Mesh for {hifimagnet}
 
-* generate mesh with {salome} {hifimagnet} plugin
+* generate mesh with {salome} {hifimagnet} plugin (see xref:cad:index.adoc#create_mesh[here])
 * convert med to msh format
-* eventually partition mesh
+
+[source,bash]
+----
+gmsh -0 -bin HL-31.med -o HL-31.msh
+----
+
+* eventually partition mesh (mandatory if you plan to run {hifimagnet} in parallel
+
+[source,bash]
+----
+feelpp_mesh_partitioner --mesh.scale=0.001 --ifile HL-31.msh [--ofile HL-31_p32] --part 32  --nochdir
+----
+
+[NOTE]
+====
+The number of partition *must* correspond to the number of jobs that you plan to use for running
+the app. For instance:
+
+[source,bash]
+----
+mpirun -np 32 ...
+----
+
+====
+
 
 [[data]]
 === Data structure
 
 {hifimagnet} simulations parameters are defined througth configuration file `.cfg`
 and `json` files defining the model per physic and eventually some other `json` files
-for the physical properties of the materials. 
+for the physical properties of the materials. Template `cfg` and `json` file may
+be generated with {hifimagnet} {salome} plugin (see xref:cad:index.adoc#setup[here]).
 
 The data structure follows {feelpp} style and convention.
 In this section we will give details about these different files.
+
+[NOTE]
+====
+For more infos on `cfg` and `json` files see link:http://docs.feelpp.org/toolboxes/0.108/parametrized-simulation-using-cfg-files.html[cfg doc].
+http://docs.feelpp.org/toolboxes/0.108/modeling-analysis-using-json-files.html[json doc] in {feelpp} docs.
+====
 
 ==== Config Files
 
@@ -161,9 +200,10 @@ An exemple for a full coupled model is given below:
 ----
 include::{examplesdir}/M19061901-full-main.cfg[]
 ----
-<1> directory: 
-<2> case.discretization:
-<3> model-file:
+<1> directory: name of the directory where results will be stored. This path is
+relative to the default directory defined by `FEELPP_REPOSITORY` (by default `$HOME/feel`)
+<2> case.discretization: keyword to select Finite Element. For CG, use P1 for standard P1 element.
+<3> model-file: name of the json model file
 <4> compute options
 <5> `[gmsh]` section
 <6> `[thermo-electric]` section
@@ -179,8 +219,9 @@ include::{examplesdir}/M19061901-full-main.cfg[]
 include::{examplesdir}/M19061901-full.cfg[lines=9..11]
 ----
 
-* name of the geometry or mesh
-* gmsh options: scale (optional, the default is *meter*), mesh size
+* filename: name of the geometry or mesh
+* partition: boolean to instruct code to perform mesh partionning (1) or not (0)  
+// * gmsh options: scale (optional, the default is *meter*), mesh size
 
 ===== `[thermo-electric]` section
 
@@ -361,3 +402,4 @@ defining properties for material <1> :
 // http://docs.feelpp.org/cases/0.108/thermoelectric/electromagnet/README.html
 * xref:benchmarks:HL-31/README.adoc[HL-31]
 
+// add HDG examples

@@ -2,3 +2,13 @@
 = Simulation of a Magnet Commissioning
 
 * Add notes from https://github.com/feelpp/hifimagnet.cases/tree/v0.108/Commissioning/Readme.md[Readme]
+* Scripts may be found in this https://github.com/feelpp/hifimagnet.cases/tree/v0.108/Commisioning[github repository]
+
+[IMPORTANT]
+====
+As a rule of the thumb, a mesh of 1 Go would mean to use 2 T Ram for fully coupled simulations.
+Consequently, simulations have to be run on an appropriate machine:
+
+* up to 1T Ram, you may use xref:Infrastructure#lab_servers[{lncmi} ressources],
+* above, you have to go for xref:Infrastructure#meso_ressources[Gricad ressources]
+====

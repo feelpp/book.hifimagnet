@@ -439,6 +439,7 @@ with stem:[r_H] the outer radius of the antepenultiemen helix.
  
 ====
 
+[[create_mesh]]
 === Mesh
 
 The mesh is generated from the command line when the option `--mesh` is passed to salome.
@@ -511,7 +512,7 @@ For HDG models, as the insulators are not considered in the simulation so far, w
 [[setup]]
 == Generate Templates setup for {hifimagnet} simulations
 
-Add `-setup` option to the command line to generate template files required
+Add `--setup` option to the command line to generate template files required
 for the setup of {hifimagnet} simulations.
 
 [source,sh]
