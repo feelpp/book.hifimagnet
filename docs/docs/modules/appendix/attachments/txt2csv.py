@@ -1,8 +1,9 @@
 from __future__ import unicode_literals
 import numpy as np
 import matplotlib
+# print("matplotlib=", matplotlib.rcParams.keys())
 matplotlib.rcParams['text.usetex'] = True
-matplotlib.rcParams['text.latex.unicode'] = True
+# matplotlib.rcParams['text.latex.unicode'] = True key not available
 import matplotlib.pyplot as plt
 
 import pandas as pd
@@ -44,7 +45,7 @@ parser.add_argument("--missing", help="detect eventually missong probes", action
 parser.add_argument("--nhelices", help="specify number of helices", type=int, default=14)
 parser.add_argument("--check", help="returns True if active voltage taps==nhelices", action='store_true')
 args = parser.parse_args()
-
+    
 sep=str(",")
 skiprows=0
 input_file = args.input_file
