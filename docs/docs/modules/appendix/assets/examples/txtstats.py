@@ -10,12 +10,12 @@ df = pd.read_csv(input_file, sep='\s+', engine='python', skiprows=1)
 
 # Get Name of columns
 keys = df.columns.values.tolist()
-#print "keys=", len(keys)
+#print ("keys=", len(keys))
 
 # Drop empty columns
 df = df.loc[:, (df != 0.0).any(axis=0)]
 keys = df.columns.values.tolist()
-print "keys=", len(keys)
+print ("keys=", len(keys))
 
 print( "=== Correlation ===")
 correlation = df.corr(method="pearson", min_periods=10)

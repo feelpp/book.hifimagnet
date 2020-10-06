@@ -19,15 +19,15 @@ df = pd.read_csv(input_file, sep=',\s+', engine='python')
 # Get Name of columns
 keys = df.columns.values.tolist()
 if args.list:
-    print "Valid keys are: ", keys
+    print( "Valid keys are: ", keys )
 
 if args.keys:
     ukeys = args.keys.split(";")
     for ukey in ukeys:
         if ukey in keys:
-            print df[ukey].values.tolist()
+            print( df[ukey].values.tolist() )
         else:
-            print "Unknow key: %s" % ukey
-            print "Valid keys are: ", keys
+            print( "Unknow key: %s" % ukey )
+            print( "Valid keys are: ", keys )
             exit(1)
 

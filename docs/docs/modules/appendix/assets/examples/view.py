@@ -379,8 +379,8 @@ def distribution(field, num_bins, save_dist):
 
     xy,xyquery =  call_iso_loop(num_bins, min_value,increment,new_parts,total_vol)
     # Make histogram from the xy array of values.
-    print "="*25
-    print "Bar, Min,   Max,   Fraction of Total"
+    print ("="*25)
+    print ("Bar, Min,   Max,   Fraction of Total")
     for i in range(num_bins):
         print ("%i, %5.2f, %5.2f, %7.6f" % (xy[i][0], xy[i][1], xy[i][2], xy[i][3]) )
 	#

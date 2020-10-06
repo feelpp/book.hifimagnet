@@ -23,7 +23,7 @@ df = pd.read_csv(input_file, sep='\s+', engine='python', skiprows=1)
 
 # Get Name of columns
 keys = df.columns.values.tolist()
-#print "keys=", len(keys)
+#print ("keys=", len(keys))
 
 # Drop empty columns
 df = df.loc[:, (df != 0.0).any(axis=0)]
@@ -96,9 +96,9 @@ del df['ndiff']
 del df['diff']
 del df['regime']
 
-# Add (tsb-teb)/((Tout-Tin1+Tin2)/2.)
-df["ratio"] = df.apply(lambda row: (row.Tout - (row.Tin1+row.Tin2)/2.)/(row.tsb-row.teb), axis=1)
-print("mean<ratio>=", df["ratio"].mean(), "std=", df["ratio"].std())
+# # Add (tsb-teb)/((Tout-Tin1+Tin2)/2.)
+# df["ratio"] = df.apply(lambda row: (row.Tout - (row.Tin1+row.Tin2)/2.)/(row.tsb-row.teb), axis=1)
+# print("mean<ratio>=", df["ratio"].mean(), "std=", df["ratio"].std())
 
 # Get keys
 keys = df.columns.values.tolist()
@@ -113,7 +113,7 @@ for i,key in enumerate(keys):
 # Create plot
 
 xdata="t"
-ydata="ratio"
+ydata="Tin1"
 
 xindex=df.columns.get_loc(xdata)
 yindex=df.columns.get_loc(ydata)

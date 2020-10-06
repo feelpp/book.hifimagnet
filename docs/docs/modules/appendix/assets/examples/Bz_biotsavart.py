@@ -94,7 +94,7 @@ def main(argv):
 
     x = 0
     y = 0
-    # print "r=%d, t=%d, x=%g, y=%g, t_exp=%d"%(r, i, x, y, angle_exp[i] )
+    # print ("r=%d, t=%d, x=%g, y=%g, t_exp=%d"%(r, i, x, y, angle_exp[i] ))
         
     ensight.curve.select_default()
     ensight.part.select_all()
@@ -155,7 +155,7 @@ def main(argv):
         B_Map_input.close();
         
         # system call to B_Map
-        print "Running: B_Map --interactive %s.d < Bmap.in > B_Map.log 2>&1 " % axicfg
+        print( "Running: B_Map --interactive %s.d < Bmap.in > B_Map.log 2>&1 " % axicfg )
         os.system(r"B_Map --interactive %s.d < Bmap.in > B_Map.log 2>&1 " % axicfg)
         
         # rename output
@@ -165,7 +165,7 @@ def main(argv):
     import numpy as np
     import io
     import matplotlib.pyplot as plt
-    print "Export to MatPlotlib"
+    print( "Export to MatPlotlib" )
 
     fig = plt.figure()
     ax1 = fig.add_subplot(111)
@@ -178,7 +178,7 @@ def main(argv):
         try:
             ana = np.genfromtxt("%s_Field_Map_bz.dat" % axicfg )
         except:
-            print "Failed loading ana data %s_Field_Map_bz.dat" % axicfg
+            print( "Failed loading ana data %s_Field_Map_bz.dat" % axicfg)
             pass
         z = ana[:,1]
         bz = ana[:,3]

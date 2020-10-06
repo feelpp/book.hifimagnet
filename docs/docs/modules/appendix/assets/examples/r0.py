@@ -94,7 +94,7 @@ for key in keys:
 if not alpha0:
     if isinstance(args.alpha20, float):
         alpha0=[args.alpha20/(1-args.alpha20*20.) for i in range(ntaps)]
-        print alpha0
+        print (alpha0)
     elif isinstance(args.alpha20, list):
         if len(args.alpha20) != ntaps:
             print ("alpha20: should have %d values only %d provided" % (ntaps, len(args.alpha20)) )
