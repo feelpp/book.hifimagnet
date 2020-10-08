@@ -327,49 +327,34 @@ include::{examplesdir}/M19061901-full-main.json[lines=16..26]
 
 ==== Materials
 
+Materials may be defined directly in the main `json` file as in
+this example:
+
 [source,json]
 ----
 include::{examplesdir}/M19061901-full-main.json[lines=27..45]
 ----
 
-==== BoundaryConditions
+Note that for insulator material, you do not need to define
+all entries. In the following exemple, `Isolant1` is only
+considered in `heat` model; that is to say that the temperature
+field will be computed in the domain attached to the markers `H1_Isolant`. 
 
 [source,json]
 ----
-include::{examplesdir}/M19061901-full-main.json[lines=75..117]
+"Isolant1":
+{
+  "markers":"H1_Isolant",
+  "physics":"heat",
+  "sigma":"0",
+  "k":"1.2"
+}
 ----
 
-==== PostProcess
 
-[source,json]
-----
-include::{examplesdir}/M19061901-full-main.json[lines=118..249]
-----
+===== Materials file
 
-// ===== ThermoElectric Model file
-
-// [source,json]
-// ----
-// include::{examplesdir}/quarter-torus3D-therm.json[]
-// ----
-
-// ===== Magnetostatics Model file
-
-// [source,json]
-// ----
-// include::{examplesdir}/quarter-torus3D-mag.json[]
-// ----
-
-// ===== Elasticity Model file
-
-// [source,json]
-// ----
-// include::{examplesdir}/quarter-torus3D-elasticity.json[]
-// ----
-
-==== Materials file
-
-Physical properties of the material may be defined in a separate `json` file
+Physical properties of the material may also be defined in a separate `json` file
 for each material. The properties are given in SI units.
 
 [source,json]
@@ -392,6 +377,43 @@ defining properties for material <1> :
 ^| <8> stem:[\rho]     ^| material's density                 ^|stem:[kg.m^{-3}]          |
 ^| <9> stem:[\mu]      ^| magnetic permeability              ^|stem:[V.s.A^{-1}.m^{-1}]  |
 |===
+
+
+==== BoundaryConditions
+
+[source,json]
+----
+include::{examplesdir}/M19061901-full-main.json[lines=75..117]
+----
+
+
+// ===== ThermoElectric Model file
+
+// [source,json]
+// ----
+// include::{examplesdir}/quarter-torus3D-therm.json[]
+// ----
+
+// ===== Magnetostatics Model file
+
+// [source,json]
+// ----
+// include::{examplesdir}/quarter-torus3D-mag.json[]
+// ----
+
+// ===== Elasticity Model file
+
+// [source,json]
+// ----
+// include::{examplesdir}/quarter-torus3D-elasticity.json[]
+// ----
+
+==== PostProcess
+
+[source,json]
+----
+include::{examplesdir}/M19061901-full-main.json[lines=118..249]
+----
 
 // workflow?
 
