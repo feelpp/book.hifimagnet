@@ -7,56 +7,119 @@ include::{partialsdir}/mso4sc-uri.adoc[]
 
 Welcome to {hifimagnet} processing documentation!
 
-[IMPORTANT]
+== Directory structure
+
+The simulations results are stored in the directory defined by
+the `directory` key in the cfg file. This path is relative to
+the directory `feel` defined in your environment or by default.
+
+
+[NOTE]
 ====
-{mso4sc} Portal user shall read xref:mso4sc:user.adoc#enduser[*EndUser*] guide before trying
-to use the  {uri-msoportal-visu-www}[*Visualization*] Remote Desktop.
+The `FEELPP_REPOSITORY` environment variable define
+the default value for `feel` directory.
 
-The Remote Desktop feature requires some xref:mso4sc:index.adoc#setup_post[specific settings].
+When running {hifimagnet} or {feelpp} apps on premise,
+ `FEELPP_REPOSITORY` points to `$HOME/feel` if not explicitly specified.
+
+When using container, `FEELPP_REPOSITORY` is set to `/feel` in
+the container. When running the container, you actually mount
+a user defined directory as the `/feel` directory in the container
+using for instance `-B $PWD:/feel` in {singularity}.
 ====
 
-[[paraview]]
-== Using {paraview}
+.Structure of `feel` directory
+[source,sh]
+----
+include::{examplesdir}/feel-dir-struc.txt[]
+----
 
-[[paraview_on_remotedesktop]]
-=== On Remote desktop
+The results, per se, are stored in the `np_32` directory.
+The name changes according to the number of cores you have used for running your simulations.
+The content of this directory depends on the xref:user:index.adoc#PostProcessJson[`PostProcess` section] in the json model file.
+Generally this directory will hold:
 
-In the {cesga} remote desktop to get {paraview} running:
+* some `csv` files,
+* some `physic.save` directories that contain solution for `physic` in hdf5 format,
+* some `physic.exports` directories that contain files for visualization for each `physic`
 
-* open a terminal,
-* type: `module load gcc/6.4.0 openmpi/2.1.1 paraview/5.4.0`
-* run `paraview`
+In addition you can find files for logging what has been done during the simulation
+and some journal files to access some statistics about your simulation.
+
+
+[[csv]]
+== Viewing `csv` files
+
+`csv` files contains the data corresponding to `Measures` data.
+These files may be read using any csv apps.
+
+[NOTE]
+====
+using matplotlib and pandas
+====
 
 [[ensight]]
 == Using {ensight}
 
+`physic.export` directory contain files for visualization. The native format for this file is `Ensight  Gold`.
+
+
+[[ensight_on_premise]]
+=== On Premise
+
+* type `ensight202`
+
+[[ensight_remote]]
+=== Remote rendering
+
+For large simulation, we advise you to use ensight remote rendering mode,
+even if you can connect via `ssh -Y` to the server where the results are stored.
+Of course, this requires that {ensight} is installed on you machine and on the server.
+
+[NOTE]
+====
+{ensight} is not installed on Gricad machine. You need to download your results data
+for visualization.
+====
+
+To start remote rendering, on Linux just type:
+
+[source,sh]
+----
+[~trophime/Ansys_exec/ansys_inc/v202/CEI/bin/]ceistart202
+----
+
+on windows:
+
+[source,bat]
+----
+["C:\Program Files\Ansys Inc\v202\CEI\bin"\]ceistart202
+----
+
+* Check the `Remote Server` menu,
+* Enter the name of `Remote computer` to be used
+* Uncheck the `ssh Tunnel` options
+* Click on `Launch`
+
+After some seconds (or minutes) depending on your connection, you will get the main {ensight} window.
+
+image:Ensight-main.png[Ensight main window]
+
+Finaly, click on `Cancel` and proceed to load your data.
+
 [[ensight_on_remotedesktop]]
 === On Remote desktop
 
-* copy {ensight} licence file on your account in the Visu resource in `+${LICDIR}+` directory
-* pull {ensight} {hifimagnet} image from {sregistry}
 
-[source,sh]
-----
-export SREGISTRY_CLIENT=registry
-export SREGISTRY_CLIENT_SECRETS=$HOME/.sregistry
-export SREGISTRY_STORAGE=$LUSTRE/singularity_images
-module load singularity
-singularity run -B /mnt shub://sregistry.srv.cesga.es/mso4sc/sregistry --quiet pull hifimagnet/ensight:10.2.3c
-----
+[[paraview]]
+== Using {paraview}
 
-* run `ensight102`
+[[paraview_on_premise]]
+=== On Premise
 
-[source,sh]
-----
-module load singularity
-singularity run --nv -B ${LICDIR}:/opt/licenses:ro --app ensight ${SREGISTRY_STORAGE}/ensight-10.2.3c.simg  
-----
+* type `paraview`
 
-Alternatively you can also use `run_ensight.sh`
+[[paraview_on_remotedesktop]]
+=== On Remote desktop
 
-[source,sh]
-.A script to run {ensight} smoothly 
-----
-include::{examplesdir}/run_ensight.sh[]
-----
+

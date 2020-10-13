@@ -69,7 +69,7 @@ Assuming we use `hifimagnet.simg` singularity image:
 
 [source,sh]
 ----
-singularity run -it -v $HOME/feel:/feel hifimagnet.simg feelpp_hfm_coupledmodel_3DP1N1 --config coupled_3D_P1_N1_singular_cvg.cfg
+singularity run -it -v $HOME/feel:/feel hifimagnet.simg feelpp_hfm_coupledmodel_3DP1N1 --config-file coupled_3D_P1_N1_singular_cvg.cfg
 ----
 
 The `coupled_3D_P1_N1_singular_cvg.cfg` configuration file holds all the information
@@ -81,7 +81,7 @@ Start the Docker container `feelpp/hifimagnet` as follows
 
 [source,sh]
 ----
-docker run -it -v $HOME/feel:/feel feelpp/hifimagnet feelpp_hfm_coupledmodel_3DP1N1 --config coupled_3D_P1_N1_singular_cvg.cfg
+docker run -it -v $HOME/feel:/feel feelpp/hifimagnet feelpp_hfm_coupledmodel_3DP1N1 --config-file coupled_3D_P1_N1_singular_cvg.cfg
 ----
 
 ==== from command line
@@ -90,7 +90,7 @@ To perform a 3D fully coupled multi-physics simulation:
 
 [source,sh]
 ----
-feelpp_hfm_coupledmodel_3DP1N1 --config coupled_3D_P1_N1_singular_cvg.cfg
+feelpp_hfm_coupledmodel_3DP1N1 --config-file coupled_3D_P1_N1_singular_cvg.cfg
 ----
 
 [[usage]]
@@ -162,12 +162,20 @@ feelpp_mesh_partitioner --mesh.scale=0.001 --ifile HL-31.msh [--ofile HL-31_p32]
 [NOTE]
 ====
 The number of partition *must* correspond to the number of jobs that you plan to use for running
-the app. For instance:
+the app. For instance to run with {singularity} :
 
 [source,bash]
 ----
-mpirun -np 32 ...
+mpirun -np 32 singularity exec -B $PWD/feel:/feel image.sif feelpp_hfm_coupledmodel_3DP1N1 --config-file ...
 ----
+
+On SMB machine (eg. stokes {lncmi} server) you can use instead:
+
+[source,bash]
+----
+singularity exec -B $PWD/feel:/feel image.sif mpirun -np 32 feelpp_hfm_coupledmodel_3DP1N1 --config-file ...
+----
+
 
 ====
 
@@ -408,6 +416,7 @@ include::{examplesdir}/M19061901-full-main.json[lines=75..117]
 // include::{examplesdir}/quarter-torus3D-elasticity.json[]
 // ----
 
+[[PostProcessJson]]
 ==== PostProcess
 
 [source,json]
