@@ -106,6 +106,63 @@ After some seconds (or minutes) depending on your connection, you will get the m
 image:Ensight-main.png[Ensight main window]
 
 Finaly, click on `Cancel` and proceed to load your data.
+From the top menu `File`:
+
+* click on `Open`
+* navigate to your data `Export` directory
+* Select the `case` file
+
+In the left part of {ensight} windows, you shall see the details of the loaded parts for your `case`
+
+image:Ensight-loaddata.png[Loading a thermoelectric simulation]
+
+Now you can select your `case` in the part view and move you data in the main visualization frame with mouse buttons.
+
+image:Ensight-loaddata1.png[Loading a thermoelectric simulation]
+
+[NOTE]
+====
+By default, the geometry will be displayed as wireframes.
+To change this default, once you have slected your parts you have to switch to `3D full model`.
+This may be done by clicking on the "cube" icon.
+====
+
+To view the temperature field in the magnet:
+
+* right click on the selected part
+* 
+
+image:Ensight-displaydata.png[Display temperature field]
+
+
+Now we will remove 1/4th of the insert to have a better view of the temperature distribution.
+To do so:
+
+* select all the parts,
+* click on the cissors icon
+
+This will bring up a new window:
+
+image:Ensight-removebox.png[Remove part of the insert]
+
+* check box and outside from the slidding menus
+* check `advanced`
+* define the geometry of the box
+* finaly click on `create with selected part` at the button of newly create windows
+
+image:Ensight-displaydata-detail.png[Define box geometry]
+
+You shall see something like that:
+
+image:Ensight-displaydata-detailres.png[Display detailed temperature distribution]
+
+
+TODO
+
+* plot on line
+* save image
+* notes on {hifimagnet} toolbox
+* notes on python interface
 
 [[ensight_on_remotedesktop]]
 === On Remote desktop
