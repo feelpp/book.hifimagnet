@@ -125,7 +125,12 @@ image:Ensight-loaddata1.png[Loading a thermoelectric simulation]
 By default, the geometry will be displayed as wireframes.
 To change this default, once you have slected your parts you have to switch to `3D full model`.
 This may be done by clicking on the "cube" icon.
+
+image:Ensight_cube-button.png[Define view mode]
+
 ====
+
+==== Viewing a field
 
 To view the temperature field in the magnet:
 
@@ -139,7 +144,7 @@ Now we will remove 1/4th of the insert to have a better view of the temperature 
 To do so:
 
 * select all the parts,
-* click on the cissors icon
+* click on the scissors icon
 
 This will bring up a new window:
 
@@ -157,15 +162,109 @@ You shall see something like that:
 image:Ensight-displaydata-detailres.png[Display detailed temperature distribution]
 
 
+==== Plotting field profiles
+
+To view the temperature field distribution along a line, proceed as follows:
+
+* click on "Query" icon image:Ensight_plotbutton.png[]
+
+* select type of query and a field to plot:
+
+image:Ensight_queryplot.png[Query tools]
+
+* click on Tool location to secify the position of the lines
+
+image:Ensight_linetool.png[Plot over line tool]
+
+Finaly you shall get a plot that will be displayed in the main windows.
+
+image:Ensight_T_profile.png[View Temperature profile on Ox axis]
+
+
+==== Exporting query data
+
+To export query data for use in an external software:
+
+* Select the `Plot/Queries` tab in the bottom left part of ensight window,
+* Select the query you want to export
+* Right click on the selected query to show an optional menu
+* Select `Data`
+* Select the format for the export
+
+image:Ensight_exportdata.png[Export query data]
+
+==== Save image
+
+To save ensight window in an image, just use:
+
+* From the main menu: `File/export/image`
+
+A window will pop up. Fill the empty field to actually save the image.
+
+image:Ensight_saveimage.png[Export an image]
+
+==== Using Ensight {hifimagnet} toolbox
+
+For sake of use, a number of extensions has been developped to perform
+more easily certain operations while processing {hifimagnet} simulations
+results. These tools are group in a toolbox.
+
+To access the toolbox, click on the toolbox icon image:Ensight-toolboxicon.png[] :
+
+* click on the + button in front of HiFiMagnet to have the list of existing extension,
+* click on the extension you would like to run
+
+A window will pop up for most of the extensions.
+
+image:Ensight_toolbox.png[Ensight toolbox]
+
+Fill the parameters requested, then click on `OK`.
+
+image:Ensight_toolbox_ox.png[{hifimagnet} Plot over X dialog menu]
+
+Detailled list of extensions:
+
+* plots extensions:
+** `Over Ox`: profile of a field along an line on Ox axis,
+** `Over Oy`: profile of a field along an line on Oy axis,
+** `Over Oz`: profile of a field along an line on Oz axis,
+** `Over Theta`: profile of a field along a circle at a given `z` altitude.
+
+* statistics extensions:
+** `pdf graph`: display an histogramme of the fraction of volume per iso-value of a field,
+** `statistics`: display statistic by domains (aka markers)
+
 TODO
 
-* plot on line
-* save image
-* notes on {hifimagnet} toolbox
-* notes on python interface
+* `One Case`:
+* `Compare two cases`:
 
-[[ensight_on_remotedesktop]]
-=== On Remote desktop
+* `Define Units`:
+
+==== Using Ensight python interface
+
+It is also very convenient in Ensight to run some python script in background to extract/generate some data
+for a given case without having to really "open" Ensight. To do so, you can use something like that:
+
+[source,sh]
+----
+ensight102 [-batch] -p my_script.py -pyargv my_script_arguments -endpyargv -batch`
+----
+
+The `-batch` option force ensight to work in batch mode (ie. without any user intervention and without the need to open ensgiht).
+
+As an example:
+
+[source,sh]
+----
+ensight102 -X [-batch] -p probe_voltage.py -pyargv -i test/hdg-ibc/HL-31/P1/np_32/hdg.poisson.electro.exports/Export.case -o I25kA_dittus_perH.dat -endpyargv
+----
+
+This will extract computed voltage at given points from `Export.case`.
+
+
+// [[ensight_on_remotedesktop]]
+// === On Remote desktop
 
 
 [[paraview]]
@@ -176,7 +275,7 @@ TODO
 
 * type `paraview`
 
-[[paraview_on_remotedesktop]]
-=== On Remote desktop
+// [[paraview_on_remotedesktop]]
+// === On Remote desktop
 
 
