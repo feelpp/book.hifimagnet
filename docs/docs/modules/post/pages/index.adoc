@@ -275,6 +275,21 @@ This will extract computed voltage at given points from `Export.case`.
 
 * type `paraview`
 
+see this [https://www.mn.uio.no/astro/english/services/it/help/visualization/paraview/paraviewtutorial-5.6.0.pdf](tuto)
+
+TODO
+
+==== run client/server
+
+==== create a macro
+
+* Check (https://www.paraview.org/Wiki/ParaView_and_Python)[Paraview wiki].
+* Check this [https://forgeanalytics.io/blog/creating-a-python-trace-in-paraview/](page) to create Trace.
+
+==== create a vtkjs scene
+
+See this [https://github.com/Kitware/vtk-js/blob/master/Utilities/ParaView/export-scene-macro.py](python script).
+
 // [[paraview_on_remotedesktop]]
 // === On Remote desktop
 
