@@ -238,12 +238,19 @@
     <a class="nav-link" href="../post/index.html#post_manual">Post-Processing</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../post/index.html#paraview">Paraview</a>
-  </li>
-  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../post/index.html#ensight">Ensight</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../post/index.html#paraview">Paraview</a>
+  </li>
 </ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../workflow/index.html#workflow">Workflow</a>
   </li>
 </ul>
   </li>
@@ -340,6 +347,21 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../dev/hifimagnet.html#install_hifimagnet">HiFiMagnet</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../dev/crb.html">CRB apps</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../dev/thermoelectric-nl.html">ThermoElectric</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../dev/parameter-id.html">Parameter Identification</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../dev/opt-geo.html">Geometrical Optimization</a>
+  </li>
+</ul>
+  </li>
 </ul>
   </li>
 </ul>
@@ -367,6 +389,12 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../appendix/salome.html">Using Salome</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/salome.html">Using Singularity</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/salome.html">Using screen</a>
   </li>
 </ul>
   </li>
@@ -517,13 +545,13 @@ It consists in a set of tools including:</p>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">hifimagnet-v0.108.sif</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hifimagnet-thermobox-P2_9.3.3-v0.108.sif</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">for singularity 3.2 and later</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">hifimagnet-v0.108.simg</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hifimagnet-thermobox-P2_9.3.3-v0.108.simg</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">for singularity 2.6</p></td>
 </tr>
 </tbody>
@@ -586,7 +614,7 @@ is the recommended and fastest way. If your system support singularity container
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">singularity run -it -v $HOME/feel:/feel hifimagnet.simg feelpp_hfm_coupledmodel_3DP1N1 --config coupled_3D_P1_N1_singular_cvg.cfg</code></pre>
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">singularity run -it -v $HOME/feel:/feel hifimagnet.simg feelpp_hfm_coupledmodel_3DP1N1 --config-file coupled_3D_P1_N1_singular_cvg.cfg</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -601,7 +629,7 @@ to specify what calculations are performed. The configuration files are fully de
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">docker run -it -v $HOME/feel:/feel feelpp/hifimagnet feelpp_hfm_coupledmodel_3DP1N1 --config coupled_3D_P1_N1_singular_cvg.cfg</code></pre>
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">docker run -it -v $HOME/feel:/feel feelpp/hifimagnet feelpp_hfm_coupledmodel_3DP1N1 --config-file coupled_3D_P1_N1_singular_cvg.cfg</code></pre>
 </div>
 </div>
 </div>
@@ -612,7 +640,7 @@ to specify what calculations are performed. The configuration files are fully de
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">feelpp_hfm_coupledmodel_3DP1N1 --config coupled_3D_P1_N1_singular_cvg.cfg</code></pre>
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">feelpp_hfm_coupledmodel_3DP1N1 --config-file coupled_3D_P1_N1_singular_cvg.cfg</code></pre>
 </div>
 </div>
 </div>
@@ -627,7 +655,32 @@ to specify what calculations are performed. The configuration files are fully de
 More precisely we can model:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1. CG Models (<strong>* to be completed </strong>*):</caption>
+<caption class="title">Table 1. Prepare mesh</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>docker</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>singularity</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>gmsh</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gmsh-4.6.0.simg</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>feelpp_mesh_partitioner</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hifimagnet-thermobox-P2_9.3.3-v0.108.simg</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. CG Models (<strong>* to be completed </strong>*):</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -682,7 +735,7 @@ More precisely we can model:</p>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 2. DG Models (<strong>* to do </strong>*):</caption>
+<caption class="title">Table 3. HDG Models (<strong>* to do </strong>*):</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -697,7 +750,7 @@ More precisely we can model:</p>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 3. CRB Models (<strong>* to do </strong>*:</caption>
+<caption class="title">Table 4. CRB Models (<strong>* to do </strong>*:</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -735,15 +788,57 @@ providing connection between CAD/Mesh entities to respectively Material and Boun
 <div class="ulist">
 <ul>
 <li>
-<p>generate mesh with Salome HiFiMagnet plugin</p>
+<p>generate mesh with Salome HiFiMagnet plugin (see <a href="../cad/index.html#create_mesh" class="page">here</a>)</p>
 </li>
 <li>
 <p>convert med to msh format</p>
 </li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">gmsh -0 -bin HL-31.med -o HL-31.msh</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
 <li>
-<p>eventually partition mesh</p>
+<p>eventually partition mesh (mandatory if you plan to run HiFiMagnet in parallel</p>
 </li>
 </ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">feelpp_mesh_partitioner --mesh.scale=0.001 --ifile HL-31.msh [--ofile HL-31_p32] --part 32  --nochdir</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The number of partition <strong>must</strong> correspond to the number of jobs that you plan to use for running
+the app. For instance to run with Singularity :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mpirun -np 32 singularity exec -B $PWD/feel:/feel image.sif feelpp_hfm_coupledmodel_3DP1N1 --config-file ...</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>On SMB machine (eg. stokes Lncmi server) you can use instead:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">singularity exec -B $PWD/feel:/feel image.sif mpirun -np 32 feelpp_hfm_coupledmodel_3DP1N1 --config-file ...</code></pre>
+</div>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
@@ -751,11 +846,27 @@ providing connection between CAD/Mesh entities to respectively Material and Boun
 <div class="paragraph">
 <p>HiFiMagnet simulations parameters are defined througth configuration file <code>.cfg</code>
 and <code>json</code> files defining the model per physic and eventually some other <code>json</code> files
-for the physical properties of the materials.</p>
+for the physical properties of the materials. Template <code>cfg</code> and <code>json</code> file may
+be generated with HiFiMagnet Salome plugin (see <a href="../cad/index.html#setup" class="page">here</a>).</p>
 </div>
 <div class="paragraph">
 <p>The data structure follows Feel++ style and convention.
 In this section we will give details about these different files.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>For more infos on <code>cfg</code> and <code>json</code> files see <a href="http://docs.feelpp.org/toolboxes/0.108/parametrized-simulation-using-cfg-files.html">cfg doc</a>.
+<a href="http://docs.feelpp.org/toolboxes/0.108/modeling-analysis-using-json-files.html">json doc</a> in Feel++ docs.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="sect3">
 <h4 id="_config_files"><a class="anchor" href="#_config_files"></a>3.2.1. Config Files</h4>
@@ -811,15 +922,16 @@ filename=$cfgdir/M19061901_full.json
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>directory:</td>
+<td>directory: name of the directory where results will be stored. This path is
+relative to the default directory defined by <code>FEELPP_REPOSITORY</code> (by default <code>$HOME/feel</code>)</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>case.discretization:</td>
+<td>case.discretization: keyword to select Finite Element. For CG, use P1 for standard P1 element.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>model-file:</td>
+<td>model-file: name of the json model file</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="4"></i><b>4</b></td>
@@ -863,10 +975,10 @@ partition=0</code></pre>
 <div class="ulist">
 <ul>
 <li>
-<p>name of the geometry or mesh</p>
+<p>filename: name of the geometry or mesh</p>
 </li>
 <li>
-<p>gmsh options: scale (optional, the default is <strong>meter</strong>), mesh size</p>
+<p>partition: boolean to instruct code to perform mesh partionning (1) or not (0)</p>
 </li>
 </ul>
 </div>
@@ -1344,6 +1456,10 @@ error-if-solver-not-converged=1</code></pre>
 </div>
 <div class="sect3">
 <h4 id="_materials"><a class="anchor" href="#_materials"></a>3.2.5. Materials</h4>
+<div class="paragraph">
+<p>Materials may be defined directly in the main <code>json</code> file as in
+this example:</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">    "Materials":
@@ -1366,6 +1482,122 @@ error-if-solver-not-converged=1</code></pre>
 	"H2":
         {</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>Note that for insulator material, you do not need to define
+all entries. In the following exemple, <code>Isolant1</code> is only
+considered in <code>heat</code> model; that is to say that the temperature
+field will be computed in the domain attached to the markers <code>H1_Isolant</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">"Isolant1":
+{
+  "markers":"H1_Isolant",
+  "physics":"heat",
+  "sigma":"0",
+  "k":"1.2"
+}</code></pre>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_materials_file"><a class="anchor" href="#_materials_file"></a>Materials file</h5>
+<div class="paragraph">
+<p>Physical properties of the material may also be defined in a separate <code>json</code> file
+for each material. The properties are given in SI units.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+    "name":"Cu", <i class="conum" data-value="1"></i><b>(1)</b>
+    "sigma0":"50.e+6",
+    "k0":"330",
+    "T0":"293",
+    "alpha":"3.4e-3", <i class="conum" data-value="2"></i><b>(2)</b>
+    "sigma":"sigma0/(1+alpha*(heat_T-T0)):sigma0:alpha:heat_T:T0", <i class="conum" data-value="3"></i><b>(3)</b>
+    "k":"k0*heat_T/((1+alpha*(heat_T-T0))*T0):k0:heat_T:alpha:T0", <i class="conum" data-value="4"></i><b>(4)</b>
+    "E":"120.e+9", <i class="conum" data-value="5"></i><b>(5)</b>
+    "nu":"0.35", <i class="conum" data-value="6"></i><b>(6)</b>
+    "alphaT":"18e-6", <i class="conum" data-value="7"></i><b>(7)</b>
+    "rho":"8.96e+3", <i class="conum" data-value="8"></i><b>(8)</b>
+    "mu":"1" <i class="conum" data-value="9"></i><b>(9)</b>
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In the table bellow, you will find the correspondance between an entrie in the <code>json</code> file
+defining properties for material &lt;1&gt; :</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Notation</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Quantity</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Unit</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Note</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&lt;2&gt; \(\alpha\)</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">thermal resistivity coefficient</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&lt;3&gt; \(\sigma\)</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">electrical conductivity</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">\(S.m^{-1}\)</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">an expression of \(T\)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">(references values,indiced with a \(_0\), at \(T_0\))</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&lt;4&gt; \(k\)</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">thermal conductivity</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">\(W.m^{-1} .K^{-1}\)</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">same</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&lt;5&gt; \(Y\)</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Young modulus</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">\(Pa\)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&lt;6&gt; \(\nu\)</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Poisson ratio</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&lt;7&gt; \(\alpha_T\)</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">thermal expansion coefficient</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">\(K^{-1}\)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&lt;8&gt; \(\rho\)</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">material&#8217;s density</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">\(kg.m^{-3}\)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&lt;9&gt; \(\mu\)</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">magnetic permeability</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">\(V.s.A^{-1}.m^{-1}\)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect3">
@@ -1419,7 +1651,7 @@ error-if-solver-not-converged=1</code></pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_postprocess"><a class="anchor" href="#_postprocess"></a>3.2.7. PostProcess</h4>
+<h4 id="PostProcessJson"><a class="anchor" href="#PostProcessJson"></a>3.2.7. PostProcess</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">    "PostProcess":
@@ -1557,205 +1789,9 @@ error-if-solver-not-converged=1</code></pre>
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_materials_file"><a class="anchor" href="#_materials_file"></a>3.2.8. Materials file</h4>
-<div class="paragraph">
-<p>Physical properties of the material may be defined in a separate <code>json</code> file
-for each material. The properties are given in SI units.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
-    "name":"Cu", <i class="conum" data-value="1"></i><b>(1)</b>
-    "sigma0":"50.e+6",
-    "k0":"330",
-    "T0":"293",
-    "alpha":"3.4e-3", <i class="conum" data-value="2"></i><b>(2)</b>
-    "sigma":"sigma0/(1+alpha*(heat_T-T0)):sigma0:alpha:heat_T:T0", <i class="conum" data-value="3"></i><b>(3)</b>
-    "k":"k0*heat_T/((1+alpha*(heat_T-T0))*T0):k0:heat_T:alpha:T0", <i class="conum" data-value="4"></i><b>(4)</b>
-    "E":"120.e+9", <i class="conum" data-value="5"></i><b>(5)</b>
-    "nu":"0.35", <i class="conum" data-value="6"></i><b>(6)</b>
-    "alphaT":"18e-6", <i class="conum" data-value="7"></i><b>(7)</b>
-    "rho":"8.96e+3", <i class="conum" data-value="8"></i><b>(8)</b>
-    "mu":"1" <i class="conum" data-value="9"></i><b>(9)</b>
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>In the table bellow, you will find the correspondance between an entrie in the <code>json</code> file
-defining properties for material &lt;1&gt; :</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Notation</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Quantity</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Unit</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Note</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock">&lt;2&gt; \(\alpha\)</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">thermal resistivity coefficient</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">-</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock">&lt;3&gt; \(\sigma\)</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">electrical conductivity</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">\(S.m^{-1}\)</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">an expression of \(T\)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">(references values,indiced with a \(_0\), at \(T_0\))</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock">&lt;4&gt; \(k\)</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">thermal conductivity</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">\(W.m^{-1} .K^{-1}\)</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">same</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock">&lt;5&gt; \(Y\)</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Young modulus</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">\(Pa\)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock">&lt;6&gt; \(\nu\)</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Poisson ratio</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">-</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock">&lt;7&gt; \(\alpha_T\)</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">thermal expansion coefficient</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">\(K^{-1}\)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock">&lt;8&gt; \(\rho\)</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">material&#8217;s density</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">\(kg.m^{-3}\)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock">&lt;9&gt; \(\mu\)</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">magnetic permeability</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">\(V.s.A^{-1}.m^{-1}\)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
-</div>
 </div>
 <div class="sect2">
-<h3 id="workflow"><a class="anchor" href="#workflow"></a>3.3. Workflow</h3>
-<div class="sect3">
-<h4 id="_using_magnettools_to_define_design"><a class="anchor" href="#_using_magnettools_to_define_design"></a>3.3.1. Using MagnetTools to define Design</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>create optimized axi geometry</p>
-</li>
-<li>
-<p>run <code>opt2yml</code> to create the cfg files for HiFiMagnet Salome Plugin</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_using_hifimagnet_salome_plugin_to_create_cad_and_generate_meshes"><a class="anchor" href="#_using_hifimagnet_salome_plugin_to_create_cad_and_generate_meshes"></a>3.3.2. Using HiFiMagnet Salome Plugin to create CAD and generate meshes</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>fill in the missing data into Salome yaml cfg files</p>
-</li>
-<li>
-<p>run the CAD generation</p>
-</li>
-<li>
-<p>eventually add <code>Air</code></p>
-</li>
-<li>
-<p>mesh</p>
-</li>
-<li>
-<p>improve the mesh</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_prepare_the_mesh_for_hpc"><a class="anchor" href="#_prepare_the_mesh_for_hpc"></a>3.3.3. Prepare the mesh for HPC</h4>
-<div class="paragraph">
-<p>The mesh created with HiFiMagnet Salome is in <code>med</code> format.
-Depending on the version of Feel++ used this format may not be supported.
-So before running any simulation you have to convert the mesh to <code>gmsh V2</code> format:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">gmsh -bin -0 mesh.med -o mesh.msh</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Then you have eventually to partition the mesh to use it on HPC:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">feelpp_mesh_partitioner [--msh.scale=0.001] --ifile mesh.msh -ofile mesh-np4 --part 4 --nochdir</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>where <code>part</code> denotes the number of processors (4 in our example) you want to use.
-The option <code>--msh.scale=0.001</code> enables to rescale the mesh file.</p>
-</div>
-<div class="paragraph">
-<p>This will create new files <code>mesh-np4.json</code> and <code>mesh-np4.h5</code> ready for running.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>HiFiMagnet Salome CAD geometries are defined in <code>mm</code>.
-The mesh file generated is also in <code>mm</code>.</p>
-</div>
-<div class="paragraph">
-<p>As a consequence, <strong>do not forget to rescale the mesh</strong> before running simulation.
-Use <code>--gmsh.scale=0.001</code> to rescale the mesh.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_define_cfg_model_and_materials_files"><a class="anchor" href="#_define_cfg_model_and_materials_files"></a>3.3.4. Define Cfg, Model and Materials files</h4>
-
-</div>
-<div class="sect3">
-<h4 id="_running_3d_simulations"><a class="anchor" href="#_running_3d_simulations"></a>3.3.5. Running 3D simulations</h4>
-
-</div>
-<div class="sect3">
-<h4 id="_postprocessing_results"><a class="anchor" href="#_postprocessing_results"></a>3.3.6. Postprocessing results</h4>
-
-</div>
-</div>
-<div class="sect2">
-<h3 id="examples"><a class="anchor" href="#examples"></a>3.4. Examples</h3>
+<h3 id="examples"><a class="anchor" href="#examples"></a>3.3. Examples</h3>
 <div class="ulist">
 <ul>
 <li>

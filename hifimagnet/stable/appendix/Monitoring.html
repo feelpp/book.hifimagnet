@@ -252,12 +252,19 @@
     <a class="nav-link" href="../post/index.html#post_manual">Post-Processing</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../post/index.html#paraview">Paraview</a>
-  </li>
-  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../post/index.html#ensight">Ensight</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../post/index.html#paraview">Paraview</a>
+  </li>
 </ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../workflow/index.html#workflow">Workflow</a>
   </li>
 </ul>
   </li>
@@ -354,6 +361,21 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../dev/hifimagnet.html#install_hifimagnet">HiFiMagnet</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../dev/crb.html">CRB apps</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../dev/thermoelectric-nl.html">ThermoElectric</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../dev/parameter-id.html">Parameter Identification</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../dev/opt-geo.html">Geometrical Optimization</a>
+  </li>
+</ul>
+  </li>
 </ul>
   </li>
 </ul>
@@ -381,6 +403,12 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="salome.html">Using Salome</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="salome.html">Using Singularity</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="salome.html">Using screen</a>
   </li>
 </ul>
   </li>
@@ -439,14 +467,17 @@
 <p>In this paragraph we present the main principle of the magnet monitoring.</p>
 </div>
 <div class="paragraph">
-<p>As previously present, High Field Magnets are electromagnets made of copper alloys tubes
-- connected into series be so-called ring - powered with up to 31 kA to deliver up to 37 tesla.
-To dissipate the electric powered the magnet are cooled by a water forced flow (up to 140 l:m³
-with a pressure drop of 25 bars). Therefore the magnets are actually set into a housing.</p>
+<p><span class="image"><img src="_images/hydraulics.png" alt="Schematic Magnet cooling system"></span></p>
 </div>
 <div class="paragraph">
-<p>Such environment (water and high pressure) make it difficult to instrument the magnets.
-The only available measures come from:</p>
+<p>High Field Magnets are electromagnets made of copper alloys tubes
+- connected into series be so-called ring - powered with up to 31 kA to deliver up to 37 tesla.
+To dissipate the electric powered the magnet are cooled by a water forced flow (up to 140 l:m³
+with a pressure drop of 25 bars). Therefore the magnets are actually set into a housing.
+Such environment (water and high pressure) make it difficult to instrument the magnets.</p>
+</div>
+<div class="paragraph">
+<p>The only available measures come from:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -552,6 +583,123 @@ See bellow for more details.</p>
 </td>
 </tr>
 </table>
+</div>
+<div class="paragraph">
+<p>Actual data from an magnet in operation may be retreive from the <a href="http://147.173.83.216/site/sba/pages/index.php">control/command monitoring system</a>
+at an acquisition rate of 1 Hz.
+This site, ony accesible to registered {lncmi} user, provides
+data recorded during a magnet run. To access a magnet run:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Go to the menu <strong>Courbes/Fichier Aimants</strong>.</p>
+</li>
+<li>
+<p>Select a file <code>txt</code> from a site (eg M9).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You can then explore the magnet data and download the file for latter use by clicking on <strong>Télécharger txt</strong>.
+The <code>txt</code> file may be converted to a <code>csv</code> file using <a href="_attachments/txt2cvs.py"><code>txt2cvs.py</code></a>. An example can be found <a href="_attachments/M9_2019.06.20-14_36_30.csv">here</a>.</p>
+</div>
+<div class="showcase__section" id="bubble">
+  <div class="spacer --small"></div>
+  <div id="bubbleplots">
+    <div class="bubbleplot" data-num="0">
+      <div class="plot" id="plotdiv"></div>
+      <div class="control-row">
+        YField: <select class="ydata">
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+
+   <script>
+Plotly.d3.csv("https://localhost/hifimagnet/stable/appendix/_attachments/M9_2019.06.20-14_36_30.csv", function(err, rows){
+
+
+    console.log("enter plotly script");
+    console.log("data:");
+
+    var currentYear = [], currentGdp = [];
+    var headernames = Object.keys(rows[0]);
+    console.log("headnames:", headernames);
+
+    // console.log(rows);
+    for (var i=0; i<rows.length; i++) {
+        row = rows[i];
+	currentYear.push( row['Time'] );
+	//console.log("row", i, "data=", row)
+    }
+    console.log("Time:");
+    console.log(currentYear);
+
+    var listofY = ['Field', 'Icoil1', 'Ucoil1', 'Tin1', 'Tout']; //Plotly.d3.d3.keys(rows[0]);
+    console.log(listofY);
+
+
+    function getYData(chosenY) {
+        console.log(getYData);
+    	currentGdp = [];
+        for (var i=0; i<rows.length; i++) {
+    	    row = rows[i];
+	    currentGdp.push( row[chosenY] );
+    	}
+	console.log(currentGdp);
+    };
+
+    // Default Country Data
+    setBubblePlot('Field');
+
+    function setBubblePlot(chosenY) {
+	getYData(chosenY);
+
+	var trace1 = {
+	    x: currentYear,
+	    y: currentGdp,
+	    mode: 'lines',
+	    marker: {
+		size: 12,
+		opacity: 0.5
+	    }
+	};
+
+	var data = [trace1];
+
+	var layout = {
+	    title: chosenY + ' vs Time'
+	};
+
+	Plotly.newPlot('plotdiv', data, layout, {showSendToCloud: true});
+    };
+
+    var innerContainer = document.querySelector('[data-num="0"'),
+	plotEl = innerContainer.querySelector('.plot'),
+	YSelector = innerContainer.querySelector('.ydata');
+
+    function assignOptions(textArray, selector) {
+	for (var i = 0; i < textArray.length;  i++) {
+	    var currentOption = document.createElement('option');
+	    currentOption.text = textArray[i];
+	    selector.appendChild(currentOption);
+	}
+    }
+
+    assignOptions(listofY, YSelector);
+
+    function updateYdata(){
+	setBubblePlot(YSelector.value);
+    }
+
+    YSelector.addEventListener('change', updateYdata, false);
+});
+   </script>
+<div class="paragraph">
+<p>There are also files with an higher acquisation rate available. They may be used as refrence for transient analysis.
+Data from these <code>tdms</code> file can be retreived using  <a href="_attachments/"><code>nptdms-ex.py</code></a> script.</p>
 </div>
 </div>
 </div>
@@ -689,6 +837,23 @@ As a consequence the heat exchange coefficient  \(h\) per cooling channels will 
 </td>
 </tr>
 </table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ToDo:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Add note on <a href="http://147.173.83.216/site/sba/pages/index.php">Control/Command website</a></p>
+</li>
+<li>
+<p>Add note on txt files (with a demo)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 </div>
 </div>

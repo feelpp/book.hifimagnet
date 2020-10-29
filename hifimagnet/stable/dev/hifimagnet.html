@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>HiFiMagnet :: HiFiMagnet Documentation</title>
     <link rel="canonical" href="https://book.hifimagnet.cemosis.fr/hifimagnet/stable/dev/hifimagnet.html">
+    <meta name="keywords" content="Feel++, partial differential equations, finite element method,">
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../_/img/favicon.ico" type="image/x-icon">    
@@ -238,12 +239,19 @@
     <a class="nav-link" href="../post/index.html#post_manual">Post-Processing</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../post/index.html#paraview">Paraview</a>
-  </li>
-  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../post/index.html#ensight">Ensight</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../post/index.html#paraview">Paraview</a>
+  </li>
 </ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../workflow/index.html#workflow">Workflow</a>
   </li>
 </ul>
   </li>
@@ -340,6 +348,21 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="#install_hifimagnet">HiFiMagnet</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="crb.html">CRB apps</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="thermoelectric-nl.html">ThermoElectric</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="parameter-id.html">Parameter Identification</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="opt-geo.html">Geometrical Optimization</a>
+  </li>
+</ul>
+  </li>
 </ul>
   </li>
 </ul>
@@ -367,6 +390,12 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../appendix/salome.html">Using Salome</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/salome.html">Using Singularity</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/salome.html">Using screen</a>
   </li>
 </ul>
   </li>
@@ -427,6 +456,9 @@
 <p>MagnetTools: for Optimization and Analytical calc.</p>
 </li>
 <li>
+<p>gmsh: for converting Mesh format</p>
+</li>
+<li>
 <p>Feel++: for Numerical Axi and 3D Modeling</p>
 <div class="ulist">
 <ul>
@@ -439,15 +471,6 @@
 </ul>
 </div>
 </li>
-<li>
-<p>Salome: for GUI/TUI CAD and Meshing features</p>
-</li>
-<li>
-<p>gmsh: for converting Mesh format</p>
-</li>
-<li>
-<p>MeshGems: for Meshing features</p>
-</li>
 </ul>
 </div>
 </div>
@@ -455,38 +478,92 @@
 <div class="sect1">
 <h2 id="_using_containers"><a class="anchor" href="#_using_containers"></a>2. Using containers</h2>
 <div class="sectionbody">
-
-</div>
-</div>
-<div class="sect1">
-<h2 id="_docker"><a class="anchor" href="#_docker"></a>3. Docker</h2>
-<div class="sectionbody">
 <div class="sect2">
-<h3 id="_feel_containers"><a class="anchor" href="#_feel_containers"></a>3.1. Feel++ Containers</h3>
+<h3 id="_docker"><a class="anchor" href="#_docker"></a>2.1. Docker</h3>
 
 </div>
 <div class="sect2">
-<h3 id="_hifimagnet_containers"><a class="anchor" href="#_hifimagnet_containers"></a>3.2. HiFiMagnet Containers</h3>
-
-</div>
-<div class="sect2">
-<h3 id="_singularity"><a class="anchor" href="#_singularity"></a>3.3. Singularity</h3>
-
-</div>
-<div class="sect2">
-<h3 id="_feel_containers_2"><a class="anchor" href="#_feel_containers_2"></a>3.4. Feel++ Containers</h3>
-
-</div>
-<div class="sect2">
-<h3 id="_hifimagnet_containers_2"><a class="anchor" href="#_hifimagnet_containers_2"></a>3.5. HiFiMagnet Containers</h3>
+<h3 id="_singularity"><a class="anchor" href="#_singularity"></a>2.2. Singularity</h3>
 
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_from_scratch"><a class="anchor" href="#_from_scratch"></a>4. From scratch</h2>
+<h2 id="_using_containers_2"><a class="anchor" href="#_using_containers_2"></a>3. Using containers</h2>
 <div class="sectionbody">
 
+</div>
+</div>
+<div class="sect1">
+<h2 id="_from_lncmi_debianubuntu_package_repository"><a class="anchor" href="#_from_lncmi_debianubuntu_package_repository"></a>4. From Lncmi Debian/Ubuntu package repository</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_from_scratch"><a class="anchor" href="#_from_scratch"></a>5. From scratch</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_feel_already_installed"><a class="anchor" href="#_feel_already_installed"></a>5.1. Feel++ already installed</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>clone HiFiMagnet github repository</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_feel_not_installed"><a class="anchor" href="#_feel_not_installed"></a>5.2. Feel++ not installed</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>clone Feel++ github repository</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd feelpp/research</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>clone HiFiMagnet github repository</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cmake $DEBUG $FEELPP_DIR \
+ -DCMAKE_CXX_COMPILER:FILEPATH=/usr/bin/clang++-9 \
+ -DCMAKE_C_COMPILER:FILEPATH=/usr/bin/clang-9 \
+ -DCMAKE_fortran_COMPILER:FILEPATH=/usr/bin/gfortran \
+ -DCMAKE_VERBOSE_MAKEFILE=ON \
+ -DCMAKE_BUILD_TYPE=Release \
+ -DFEELPP_PYTHON_VERSION=3 \
+ -DPYTHON_EXECUTABLE:FILEPATH=/usr/bin/python3 \
+ -DPYTHON_INCLUDE_DIR:PATH=/usr/include/python3.7 \
+ -DPYTHON_LIBRARY:PATH=/usr/lib/python3.7/config-x86_64-linux-gnu/libpython3.7.so \
+ -DFEELPP_ENABLE_SYSTEM_EIGEN3:BOOL=ON \
+ -DHDF5_INCLUDE_DIRS=/usr/include/hdf5/openmpi \
+ -DHDF5_LIBRARY_DIRS=/usr/lib/x86_64-linux-gnu/hdf5/openmpi \
+ -DHDF5_PREFER_PARALLEL:BOOL=ON \
+ -DFEELPP_ENABLE_PYTHON:BOOL=ON \
+ -DCMAKE_EXE_LINKER_FLAGS:STRING="-Wl,--no-as-needed -lm -lrt" \
+ -DFEELPP_ENABLE_IPOPT=OFF \
+ -DFEELPP_ENABLE_TOOLBOXES=ON \
+ -DFEELPP_ENABLE_MOR=ON \
+ -DFEELPP_ENABLE_RESEARCH_HIFIMAGNET=ON \
+ -DHIFIMAGNET_ENABLE_MAGNETTOOLS=ON \
+ -DHIFIMAGNET_ENABLE_TESTS=ON</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>with <code>DEBUG</code> &#8230;&#8203; and <code>FEELPP_DIR</code> &#8230;&#8203;</p>
+</div>
+</div>
 </div>
 </div>
 </article>

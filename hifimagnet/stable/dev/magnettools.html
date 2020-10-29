@@ -238,12 +238,19 @@
     <a class="nav-link" href="../post/index.html#post_manual">Post-Processing</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../post/index.html#paraview">Paraview</a>
-  </li>
-  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../post/index.html#ensight">Ensight</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../post/index.html#paraview">Paraview</a>
+  </li>
 </ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../workflow/index.html#workflow">Workflow</a>
   </li>
 </ul>
   </li>
@@ -340,6 +347,21 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="hifimagnet.html#install_hifimagnet">HiFiMagnet</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="crb.html">CRB apps</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="thermoelectric-nl.html">ThermoElectric</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="parameter-id.html">Parameter Identification</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="opt-geo.html">Geometrical Optimization</a>
+  </li>
+</ul>
+  </li>
 </ul>
   </li>
 </ul>
@@ -367,6 +389,12 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../appendix/salome.html">Using Salome</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/salome.html">Using Singularity</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/salome.html">Using screen</a>
   </li>
 </ul>
   </li>
@@ -427,19 +455,40 @@
 <div class="ulist">
 <ul>
 <li>
+<p><a href="http://freesteam.sourceforge.net"><code>freesteam</code></a></p>
+</li>
+<li>
+<p><code>gsl</code></p>
+</li>
+<li>
+<p><a href="https://www-pequan.lip6.fr/cadna/"><code>cadna</code></a></p>
+</li>
+<li>
+<p><code>boost-gnuplotiostream</code></p>
+</li>
+<li>
+<p><a href="http://www.fadbad.com/fadbad.html"><code>fadbad++</code></a></p>
+</li>
+<li>
+<p><a href="http://www.maths.uq.edu.au/expokit"><code>expokit</code></a></p>
+</li>
+<li>
+<p><code>spherepack</code></p>
+</li>
+<li>
+<p><code>eigen3</code></p>
+</li>
+<li>
+<p><code>sundials</code></p>
+</li>
+<li>
 <p><code>popt</code>,</p>
 </li>
 <li>
-<p><code>gsl</code>, <code>freesteam</code>,</p>
+<p><code>yamlcpp</code></p>
 </li>
 <li>
-<p><code>spherepack, expokit</code>,</p>
-</li>
-<li>
-<p><code>sundials</code>,</p>
-</li>
-<li>
-<p><code>yamlcpp</code>, <code>json-spirit</code></p>
+<p><code>json-spirit</code></p>
 </li>
 <li>
 <p><code>nag</code> (only required for Optimization)</p>
@@ -449,9 +498,111 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_from_scratch"><a class="anchor" href="#_from_scratch"></a>2. From scratch</h2>
+<h2 id="_container_installation"><a class="anchor" href="#_container_installation"></a>2. Container Installation</h2>
 <div class="sectionbody">
 
+</div>
+</div>
+<div class="sect1">
+<h2 id="_install_from_lncmi_debianubuntu_repository"><a class="anchor" href="#_install_from_lncmi_debianubuntu_repository"></a>3. Install from {lncmi} Debian/Ubuntu repository</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>MagnetTools is packaged for main Debian/Ubuntu distribution.
+The package is stored in {lncmi} Debian/Ubuntu repository only
+accessible to {lncmi} member.</p>
+</div>
+<div class="paragraph">
+<p>To install Salome on your linux box:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>install the debian-keyring package</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo apt update
+sudo apt install debian-keyring</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>On Ubuntu:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo cp /usr/share/keyrings/debian-maintainers.gpg /etc/apt/trusted.gpg.d/</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>add lncmi.list to /etc/apt/sources.list.d</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo echo "deb http://euler/~trophime/debian/ $(lsb_release -cs) main" &gt; /etc/apt/sources.list.d/lncmi.list</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>run the following commands:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo apt update
+sudo apt install magnettools</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_build_from_scratch"><a class="anchor" href="#_build_from_scratch"></a>4. Build From scratch</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>clone <a href="https://github.com/feelpp/magnettools">MagnetTools gitub repository</a>,</p>
+</li>
+<li>
+<p>use <code>cmake</code> to build MagnetTools</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_using_cmake"><a class="anchor" href="#_using_cmake"></a>4.1. Using CMake</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>configure CMake, use the environment or cmake variables <code>&lt;DEPS&gt;_DIR</code> to help CMake find the dependencies (if you do not have write access to the default install prefix of cmake, you need to specify a custom prefix using <code>-DCMAKE_INSTALL_PREFIX</code>)</p>
+</li>
+<li>
+<p>if some required dependencies are not found, you will have to compile them using <code>make install-deps</code></p>
+</li>
+<li>
+<p>once all the required dependencies are found, you can use <code>make</code></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cmake ~/github/magnettools/ \
+ -DCMAKE_VERBOSE_MAKEFILE=ON \
+ -DCMAKE_BUILD_TYPE=Release \
+ -DMAGNETTOOLS_PYTHON_VERSION=3 \
+ -DPYTHON_EXECUTABLE=/usr/bin/python3 \
+ -DCMAKE_INSTALL_PREFIX=/home/LNCMI-G/trophime/Modelisation_Linux/
+make -j4
+make install</code></pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 </article>

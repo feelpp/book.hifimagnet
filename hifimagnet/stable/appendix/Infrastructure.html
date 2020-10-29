@@ -239,12 +239,19 @@
     <a class="nav-link" href="../post/index.html#post_manual">Post-Processing</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../post/index.html#paraview">Paraview</a>
-  </li>
-  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../post/index.html#ensight">Ensight</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../post/index.html#paraview">Paraview</a>
+  </li>
 </ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../workflow/index.html#workflow">Workflow</a>
   </li>
 </ul>
   </li>
@@ -341,6 +348,21 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../dev/hifimagnet.html#install_hifimagnet">HiFiMagnet</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../dev/crb.html">CRB apps</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../dev/thermoelectric-nl.html">ThermoElectric</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../dev/parameter-id.html">Parameter Identification</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../dev/opt-geo.html">Geometrical Optimization</a>
+  </li>
+</ul>
+  </li>
 </ul>
   </li>
 </ul>
@@ -368,6 +390,12 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="salome.html">Using Salome</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="salome.html">Using Singularity</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="salome.html">Using screen</a>
   </li>
 </ul>
   </li>
@@ -460,7 +488,7 @@ Here we describe in more details how to:</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_lncmi"><a class="anchor" href="#_lncmi"></a>1. Lncmi</h2>
+<h2 id="lab_ressources"><a class="anchor" href="#lab_ressources"></a>1. Lncmi</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>To use Lncmi ressources you need a Lncmi account.
@@ -526,7 +554,7 @@ Finally to run applications in grapic mode, you will need MobaXterm.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_servers"><a class="anchor" href="#_servers"></a>1.2. servers</h3>
+<h3 id="lab_servers"><a class="anchor" href="#lab_servers"></a>1.2. servers</h3>
 <div class="paragraph">
 <p>On Lncmi servers, we recommend to use singularity containers images which shall be
 store on <code>/home/singularity</code> directory. Depending on the server singularity version,
@@ -573,16 +601,66 @@ When connecting to the serveur, <strong>Do not forget</strong> to add <code>-Y</
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-As HiFiMagnet apps can run for a while, you are adviced to use <code>screen</code>. That is: 1st start <code>screen</code> then run the app within <code>screen</code>.
-Then you can detach the <code>screen</code> process with Ctrl-A Ctrl-D. To latter re-attach the <code>screen</code> process, run <code>screen -ls</code> to get the screen-idyour screen session
-and re-attached it with <code>screen -rd screen-id</code>.
+<div class="paragraph">
+<p>As HiFiMagnet apps can run for a while, you are adviced to use <a href="screen.html" class="page"><code>screen</code></a>.
+That is:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>1st start <code>screen</code> then run the app within <code>screen</code>.</p>
+</li>
+<li>
+<p>Then you can detach the <code>screen</code> process with Ctrl-A Ctrl-D.</p>
+</li>
+<li>
+<p>To latter re-attach the <code>screen</code> process, run</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>screen -ls</code> to get the screen-idyour screen session</p>
+</li>
+<li>
+<p>and re-attached it with <code>screen -rd screen-id</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Running HiFiMagnet on Lncmi server relies on <code>singularity</code>.
+<p>Running HiFiMagnet on Lncmi server relies on <a href="singularity.html" class="page"><code>singularity</code></a>.
 Depending on the server, <code>singularity</code> version is different. Please check which version is installed before running any singularity command.</p>
+</div>
+<div class="paragraph">
+<p>To run HiFiMagnet in parallel on stokes, you have to proceed as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">singularity exec image.sif mpirun -np jobs ...</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where <code>jobs</code> corresponds to the number of core you plan to use,
+and <code>image.sif</code> to the <code>singularity</code> image you use.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>On stokes, <code>jobs</code> is limited to 32.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect3">
@@ -595,43 +673,258 @@ Depending on the server, <code>singularity</code> version is different. Please c
 </div>
 </div>
 <div class="sect1">
-<h2 id="_gricad"><a class="anchor" href="#_gricad"></a>2. Gricad</h2>
+<h2 id="meso_ressources"><a class="anchor" href="#meso_ressources"></a>2. Gricad</h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>{dahu}</p>
-</li>
-</ul>
+<div class="paragraph">
+<p><a href="https://gricad.univ-grenoble-alpes.fr/">Gricad</a> is the Grenoble MesoCentre for HPC.
+<a href="https://gricad-doc.univ-grenoble-alpes.fr/hpc/description/#dahu-plateforme-hpcda">{dahu}</a> is the platform to be used for HPC.</p>
 </div>
 <div class="sect2">
 <h3 id="_connect_2"><a class="anchor" href="#_connect_2"></a>2.1. connect</h3>
-
+<div class="paragraph">
+<p>To connect to {dahu}, you need to get an account on <a href="https://perseus.univ-grenoble-alpes.fr/">Perseus</a>.
+Follow the instructions on this <a href="https://gricad-doc.univ-grenoble-alpes.fr/services/">page</a> to proceed.</p>
+</div>
+<div class="paragraph">
+<p>Once you&#8217;ve got a Perseus account, you still have to be registered as a user of the pr-hifimagnet project.
+Contact your administrator &lt;<a href="mailto:christophe.trophime@lncmi.cnrs.fr">christophe.trophime@lncmi.cnrs.fr</a>&gt; to be registered as a member of this project.</p>
+</div>
+<div class="paragraph">
+<p>To setup your <code>ssh</code> access to {dahu}, proceed as follow:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>setup your <code>ssh</code> config:</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Add the following lines to your <code>$HOME/.ssh/config</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">Host access-rr-ciment
+   #LogLevel DEBUG3
+   Hostname access-rr-ciment.imag.fr
+   ProxyCommand nc -q0 %h %p
+Host *.ciment
+  User username <i class="conum" data-value="1"></i><b>(1)</b>
+  ProxyCommand ssh username@access-rr-ciment "nc -w 60 `basename %h .ciment` %p"
+Host dahu
+  User username
+  ProxyCommand ssh username@access-rr-ciment.imag.fr "nc dahu %p"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>with &lt;1&gt; your actual <strong>username</strong> on Perseus.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>test your connection to {dahu}:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">ssh -Y dahu</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>setup key authentification: <strong>to be done</strong></p>
+</li>
+</ul>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_run_hifimagnet_in_parallel"><a class="anchor" href="#_run_hifimagnet_in_parallel"></a>2.2. run HiFiMagnet in parallel</h3>
-
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Please read the <a href="https://ciment.ujf-grenoble.fr/wiki/index.php/Dahu_quickstart">dahu documentation</a> before proceed.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>only run interactive simu on small problem to check everything is ok</p>
+</li>
+<li>
+<p>can only use XXXX</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To start an interactive session on 2 nodes:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">oarsub -I -l /nodes=2 --project hifimagnet</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#8230;&#8203;</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_submit_hifimagnet_jobs"><a class="anchor" href="#_submit_hifimagnet_jobs"></a>2.3. submit HiFiMagnet jobs</h3>
+<div class="paragraph">
+<p>To submit jobs on {dahu}, you need to use the Oar scheduler.
+To do so, you need to create an Oar script like that:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-oar hljs" data-lang="oar">#!/bin/bash
+#OAR -n HL-31 <i class="conum" data-value="1"></i><b>(1)</b>
+#OAR -l /nodes=14,walltime=8:00:00 <i class="conum" data-value="2"></i><b>(2)</b>
+#OAR -O HL-31_%jobid%.out <i class="conum" data-value="3"></i><b>(3)</b>
+#OAR -E HL-31_%jobid%.err
+#OAR --project hifimagnet <i class="conum" data-value="4"></i><b>(4)</b>
+#OAR --notify mail:youremailadress <i class="conum" data-value="5"></i><b>(5)</b>
 
+# Setup environment <i class="conum" data-value="6"></i><b>(6)</b>
+source /applis/site/nix.sh
+export NIX_PATH="nixpkgs=$HOME/.nix-defexpr/channels/nixpkgs"
+nix-env --switch-profile $NIX_USER_PROFILE_DIR/nur-openmpi4
+echo "Load nix-env:" $(nix-env -q)
+
+echo "Singularity:" $(which singularity)
+SVERSION=$(singularity --version)
+echo "Singularity Version:" ${SVERSION}
+
+nbcores=$(cat $OAR_NODE_FILE|wc -l)
+nbnodes=$(cat $OAR_NODE_FILE|sort|uniq|wc -l)
+njobs=$(cat $OAR_FILE_NODES | wc -l)
+
+echo "nbcores=" $nbcores
+echo "nbnodes=" $nbnodes
+echo "np=" $njobs
+echo "OAR_WORKDIR=" ${OAR_WORKDIR}
+
+# Exec env (TODO param SVERSION)
+IMGS_DIR=/bettik/$USER/singularity <i class="conum" data-value="7"></i><b>(7)</b>
+HIFIMAGNET=${IMGS_DIR}/hifimagnet-thermobox-debianpack.sif <i class="conum" data-value="8"></i><b>(8)</b>
+if [ ! -f $HIFIMAGNET ]; then
+	echo "Cannot find ${HIFIMAGNET}"
+fi
+
+# Sim setup <i class="conum" data-value="9"></i><b>(9)</b>
+SIMDIR=/bettik/$USER/HL-31
+CFG=M19061901-full.cfg
+LOG=M19061901-full.log
+if [ ! -f $CFG ]; then
+	echo "Cannot find ${CFG}"
+fi
+
+OUTDIR=${SIMDIR}/full
+mkdir -p ${OUTDIR}
+echo "create ${OUTDIR}"
+
+# Check if mesh is correctly partitionned: aka nparts==njobs
+
+# Run the program <i class="conum" data-value="9"></i><b>(9)</b>
+mpirun -np ${njobs} \
+       -machinefile $OAR_NODEFILE \
+       -mca plm_rsh_agent "oarsh" -mca btl_openib_allow_ib true \
+       --prefix $HOME/.nix-profile \
+     singularity exec -H ${OAR_WORKDIR} -B $OUTDIR:/feel $HIFIMAGNET \
+       feelpp_hfm_coupledcartmodel_3DP1N1 --config-file ${CFG}</code></pre>
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>As a rule of the thumb, a mesh of 1 Go would mean to use 2 T Ram for fully coupled simulations.
+Thus you will have to adapt the number of nodes you request on dahu for your needs.
+On dahu a node contains n cores. Each core has xxx Ram.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>To submit the job, from the directory holding the <code>oar</code> script just type:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">oarsub -S ./M19061901_full.oar</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To check the status of your job:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">oarstat -u usename</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Upon job completion, you will receive an email from {dahu} on the email
+adress you have defined in the Oar script.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>For best performance, the job shall be create on bettik - namely in
+the mounted directory <code>/bettik/username</code>. All the files mentionned
+in the Oar script must exist. In peculiar the mesh, <code>cfg</code> and <code>json</code> files.</p>
+</div>
+<div class="paragraph">
+<p>The results will be exported to <code>/bettik/username</code> as defined in the Oar script
+and <code>cfg</code> file.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_retreivesend_data_2"><a class="anchor" href="#_retreivesend_data_2"></a>2.4. retreive/send data</h3>
-
+<div class="paragraph">
+<p>In this paragraph, we explain how to send data to {dahu}
+and how to recover simulation results from {dahu}</p>
+</div>
+<div class="paragraph">
+<p>Use either <code>scp</code> or <code>rsync</code> over <code>ssh</code>.
+For large files, you must use <code>rsync</code> over <code>ssh</code>.</p>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_cemosis"><a class="anchor" href="#_cemosis"></a>3. Cemosis</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p><a href="http://www.cemosis.fr/">Cemosis</a> is hosted by the Institute of Advanced Mathematical Research (IRMA).</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>{Atlas}</p>
+<p><a href="http://docs.feelpp.org/feelpp/infra/atlas.html">{Atlas}</a></p>
 </li>
 <li>
-<p>{AlsaCalcul}</p>
+<p><a href="http://docs.feelpp.org/feelpp/infra/alsacalcul.html">{AlsaCalcul}</a></p>
 </li>
 </ul>
 </div>

@@ -239,12 +239,19 @@
     <a class="nav-link" href="../../post/index.html#post_manual">Post-Processing</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../post/index.html#paraview">Paraview</a>
-  </li>
-  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../post/index.html#ensight">Ensight</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../post/index.html#paraview">Paraview</a>
+  </li>
 </ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../workflow/index.html#workflow">Workflow</a>
   </li>
 </ul>
   </li>
@@ -341,6 +348,21 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../dev/hifimagnet.html#install_hifimagnet">HiFiMagnet</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../dev/crb.html">CRB apps</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../dev/thermoelectric-nl.html">ThermoElectric</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../dev/parameter-id.html">Parameter Identification</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../dev/opt-geo.html">Geometrical Optimization</a>
+  </li>
+</ul>
+  </li>
 </ul>
   </li>
 </ul>
@@ -368,6 +390,12 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../appendix/salome.html">Using Salome</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../appendix/salome.html">Using Singularity</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../appendix/salome.html">Using screen</a>
   </li>
 </ul>
   </li>
@@ -421,20 +449,54 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>In this test case we will simulate a longitudinaly cooled helix.</p>
+<p>In this test case we will simulate a longitudinaly cooled helix.
+We consider only the thermoelectric behaviour of the helix.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_running_the_case"><a class="anchor" href="#_running_the_case"></a>1. Running the case</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>You have 2 choices:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>either use HiFiMagnet apps:</p>
+</li>
+</ul>
+</div>
 <div id="command-line-linear" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">mpirun -np 32 feelpp_hfm_thermoelectric --config-file HL-31_H1_boomeramg.cfg</code></pre>
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">mpirun -np 32 feelpp_hfm_coupledcartmodel_3DP1N1 --config-file H1_p_nonlinear.cfg</code></pre>
 </div>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p>or use Feel++ thermoelectric toolbox:</p>
+</li>
+</ul>
+</div>
+<div id="command-line-nl-toolbox" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">mpirun -np 32 feelpp_hfm_thermoelectric --config-file H1-toolbox_nonlinear.cfg</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
 <div class="paragraph">
-<p>To run this example on MSO4SC portal see this <a href="../../mso4sc/MagThel.html" class="page">section</a>.</p>
+<p>The thermolelectric toolbox example is more in detailed in the <a href="http://docs.feelpp.org/cases/0.108/thermoelectric/electromagnet/README.html">toolbox documentation</a>.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>If you want to change the number of procs used, you need to create a proper
@@ -447,7 +509,7 @@ partition mesh. See the next sections for a detailed guide.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">gmsh -3 -bin HL-31_H1.med -o HL-31_H1.msh</code></pre>
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">gmsh -0 -bin HL-31_H1.med -o HL-31_H1.msh</code></pre>
 </div>
 </div>
 <div class="admonitionblock important">
@@ -469,11 +531,8 @@ partition mesh. See the next sections for a detailed guide.</p>
 <h3 id="_partitionning_the_mesh"><a class="anchor" href="#_partitionning_the_mesh"></a>1.2. Partitionning the mesh:</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">feelpp_mesh_partitioner --gmsh.scale=0.001 --ifile HL-31_H1.msh [--ofile HL-31_H1_p32] --part 32</code></pre>
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">feelpp_mesh_partitioner --ifile HL-31_H1.msh [--ofile HL-31_H1_p32] --part 32</code></pre>
 </div>
-</div>
-<div class="paragraph">
-<p>The option <code>--gmsh.scale=0.001</code> enables to force the use of <strong>meter</strong> for the partitionned mesh.</p>
 </div>
 </div>
 </div>
@@ -482,11 +541,8 @@ partition mesh. See the next sections for a detailed guide.</p>
 <h2 id="_data_files"><a class="anchor" href="#_data_files"></a>2. Data files</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The data files may be retreived from <a href="http://portal.mso4sc.eu/datacatalogue/"><strong>Data Catalogue</strong></a>.
-See the dataset <strong>A test helix</strong> in Lncmi collection.</p>
-</div>
-<div class="paragraph">
-<p>The gzipped archive tarball <a href="http://193.144.35.147:5000/dataset/hl-test/resource/ff0f4f04-45c9-4507-b98a-ee789c8bde95"><code>HL-31_H1-v0.105.tgz</code></a> contains all the files needed.</p>
+<p>The data files may be retreived from this <a href="https://github.com/feelpp/hifimagnet.cases/tree/v0.108/HL-31_H1">repository</a>.
+The mesh files are stored in collection hifimanget/cases/v0.108/HL-31_H1 collection on <a href="https://girder.math.unistra.fr/">Unistra Girder</a></p>
 </div>
 <div class="sect2">
 <h3 id="_mesh_file"><a class="anchor" href="#_mesh_file"></a>2.1. Mesh file</h3>
@@ -509,7 +565,13 @@ See the dataset <strong>A test helix</strong> in Lncmi collection.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>HL-31_H1_boomeramg.cfg</p>
+<p>H1_p_nonlinear.cfg for HiFiMagnet app with Newton solver,</p>
+</li>
+<li>
+<p>H1_p_nonlinear-picard.cfg for HiFiMagnet app with Picard solver,</p>
+</li>
+<li>
+<p>H1-toolbox_nonlinear.cfg for Feel++ thermoelectric toolbox with Newton solver.</p>
 </li>
 </ul>
 </div>
@@ -519,15 +581,34 @@ See the dataset <strong>A test helix</strong> in Lncmi collection.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>HL-31_H1_thermoelec.json</p>
+<p>HL-31_H1_nonlinear.json</p>
 </li>
 </ul>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_materials_files"><a class="anchor" href="#_materials_files"></a>2.4. Materials files</h3>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
 <div class="paragraph">
-<p>Materials are stored in a dedicated repository Materials</p>
+<p>The data are given to be consistant with the mesh in <strong>mm</strong>.
+If you ever want to use a mesh in <strong>m</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Change the physical values,</p>
+</li>
+<li>
+<p>Change the Cooling Boundary Conditions values,</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -597,6 +678,13 @@ See the dataset <strong>A test helix</strong> in Lncmi collection.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">max of Temperature Field</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">400.781</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\(K\)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(I\)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">current</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">28.771 (-28.768)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(kA\)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>

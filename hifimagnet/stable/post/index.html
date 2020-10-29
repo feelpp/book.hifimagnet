@@ -239,12 +239,19 @@
     <a class="nav-link" href="#post_manual">Post-Processing</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#paraview">Paraview</a>
-  </li>
-  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="#ensight">Ensight</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#paraview">Paraview</a>
+  </li>
 </ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../workflow/index.html#workflow">Workflow</a>
   </li>
 </ul>
   </li>
@@ -341,6 +348,21 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../dev/hifimagnet.html#install_hifimagnet">HiFiMagnet</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../dev/crb.html">CRB apps</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../dev/thermoelectric-nl.html">ThermoElectric</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../dev/parameter-id.html">Parameter Identification</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../dev/opt-geo.html">Geometrical Optimization</a>
+  </li>
+</ul>
+  </li>
 </ul>
   </li>
 </ul>
@@ -368,6 +390,12 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../appendix/salome.html">Using Salome</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/salome.html">Using Singularity</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/salome.html">Using screen</a>
   </li>
 </ul>
   </li>
@@ -423,19 +451,128 @@
 <div class="paragraph">
 <p>Welcome to HiFiMagnet processing documentation!</p>
 </div>
-<div class="admonitionblock important">
+</div>
+</div>
+<div class="sect1">
+<h2 id="_directory_structure"><a class="anchor" href="#_directory_structure"></a>1. Directory structure</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The simulations results are stored in the directory defined by
+the <code>directory</code> key in the cfg file. This path is relative to
+the directory <code>feel</code> defined in your environment or by default.</p>
+</div>
+<div class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-important" title="Important"></i>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>MSO4SC Portal user shall read <a href="../mso4sc/user.html#enduser" class="page"><strong>EndUser</strong></a> guide before trying
-to use the  <a href="http://portal.mso4sc.eu/visualization/"><strong>Visualization</strong></a> Remote Desktop.</p>
+<p>The <code>FEELPP_REPOSITORY</code> environment variable define
+the default value for <code>feel</code> directory.</p>
 </div>
 <div class="paragraph">
-<p>The Remote Desktop feature requires some <a href="../mso4sc/index.html#setup_post" class="page">specific settings</a>.</p>
+<p>When running HiFiMagnet or Feel++ apps on premise,
+ <code>FEELPP_REPOSITORY</code> points to <code>$HOME/feel</code> if not explicitly specified.</p>
+</div>
+<div class="paragraph">
+<p>When using container, <code>FEELPP_REPOSITORY</code> is set to <code>/feel</code> in
+the container. When running the container, you actually mount
+a user defined directory as the <code>/feel</code> directory in the container
+using for instance <code>-B $PWD:/feel</code> in Singularity.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">Structure of <code>feel</code> directory</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">.
+├── exprs
+│   ├── ginacExprDefaultFileName0
+│   ├── ginacExprDefaultFileName0.desc
+│   ├── ginacExprDefaultFileName0.so
+│   ├── ...
+└── np_32
+    ├── coupled-model_3D_P1_N1.json
+    ├── exports
+    │   └── ensightgold
+    │       └── coupledModel
+    │           ├── coupledModel-32.sos
+    │           ├── coupledModel.case
+    │           ├── coupledModel.current_density.vec.0001
+    │           ├── coupledModel.electric_field.vec.0001
+    │           ├── coupledModel.electric_potential.scl.0001
+    │           ├── coupledModel.geo.0001
+    │           ├── coupledModel-paraview-32.sos
+    │           ├── coupledModel.temperature.scl.0001
+    │           └── coupledModel.timeset
+    ├── journal.json
+    ├── logs
+    │   ├── feelpp_hfm_coupledmodel_3DP1N1.ERROR -&gt; feelpp_hfm_coupledmodel_3DP1N1.stokes.jay.log.ERROR.20201009-145255.63595
+    │   ├── feelpp_hfm_coupledmodel_3DP1N1.INFO -&gt; feelpp_hfm_coupledmodel_3DP1N1.stokes.jay.log.INFO.20201009-151629.68921
+    │   ├── ...
+    ├── thermo-electric.electric.measures.csv
+    ├── thermo-electric.electric.save
+    │   └── electric-potential.h5
+    ├── thermo-electric.exports
+    │   ├── Export-32.sos
+    │   ├── Export.case
+    │   ├── Export.geo
+    │   ├── Export-paraview-32.sos
+    │   ├── Export.thermo-electric.electric.current-density.vec.0001
+    │   ├── Export.thermo-electric.electric.electric-potential.scl.0001
+    │   ├── Export.thermo-electric.heat.temperature.scl.0001
+    │   └── Export.timeset
+    ├── thermo-electric.heat.measures.csv
+    ├── thermo-electric.heat.save
+    │   └── temperature.h5
+    └── thermo-electric.toolbox-info.txt</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The results, per se, are stored in the <code>np_32</code> directory.
+The name changes according to the number of cores you have used for running your simulations.
+The content of this directory depends on the <a href="../user/index.html#PostProcessJson" class="page"><code>PostProcess</code> section</a> in the json model file.
+Generally this directory will hold:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>some <code>csv</code> files,</p>
+</li>
+<li>
+<p>some <code>physic.save</code> directories that contain solution for <code>physic</code> in hdf5 format,</p>
+</li>
+<li>
+<p>some <code>physic.exports</code> directories that contain files for visualization for each <code>physic</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In addition you can find files for logging what has been done during the simulation
+and some journal files to access some statistics about your simulation.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="csv"><a class="anchor" href="#csv"></a>2. Viewing <code>csv</code> files</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><code>csv</code> files contains the data corresponding to <code>Measures</code> data.
+These files may be read using any csv apps.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>using matplotlib and pandas</p>
 </div>
 </td>
 </tr>
@@ -444,142 +581,429 @@ to use the  <a href="http://portal.mso4sc.eu/visualization/"><strong>Visualizati
 </div>
 </div>
 <div class="sect1">
-<h2 id="paraview"><a class="anchor" href="#paraview"></a>1. Using ParaView</h2>
+<h2 id="ensight"><a class="anchor" href="#ensight"></a>3. Using EnSight</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="paraview_on_remotedesktop"><a class="anchor" href="#paraview_on_remotedesktop"></a>1.1. On Remote desktop</h3>
 <div class="paragraph">
-<p>In the Cesga remote desktop to get ParaView running:</p>
+<p><code>physic.export</code> directory contain files for visualization. The native format for this file is <code>Ensight  Gold</code>.</p>
+</div>
+<div class="sect2">
+<h3 id="ensight_on_premise"><a class="anchor" href="#ensight_on_premise"></a>3.1. On Premise</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>type <code>ensight202</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ensight_remote"><a class="anchor" href="#ensight_remote"></a>3.2. Remote rendering</h3>
+<div class="paragraph">
+<p>For large simulation, we advise you to use ensight remote rendering mode,
+even if you can connect via <code>ssh -Y</code> to the server where the results are stored.
+Of course, this requires that EnSight is installed on you machine and on the server.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>EnSight is not installed on Gricad machine. You need to download your results data
+for visualization.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>To start remote rendering, on Linux just type:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">[~trophime/Ansys_exec/ansys_inc/v202/CEI/bin/]ceistart202</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>on windows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bat hljs" data-lang="bat">["C:\Program Files\Ansys Inc\v202\CEI\bin"\]ceistart202</code></pre>
+</div>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>open a terminal,</p>
+<p>Check the <code>Remote Server</code> menu,</p>
 </li>
 <li>
-<p>type: <code>module load gcc/6.4.0 openmpi/2.1.1 paraview/5.4.0</code></p>
+<p>Enter the name of <code>Remote computer</code> to be used</p>
 </li>
 <li>
-<p>run <code>paraview</code></p>
+<p>Uncheck the <code>ssh Tunnel</code> options</p>
+</li>
+<li>
+<p>Click on <code>Launch</code></p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>After some seconds (or minutes) depending on your connection, you will get the main EnSight window.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="_images/Ensight-main.png" alt="Ensight main window"></span></p>
+</div>
+<div class="paragraph">
+<p>Finaly, click on <code>Cancel</code> and proceed to load your data.
+From the top menu <code>File</code>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>click on <code>Open</code></p>
+</li>
+<li>
+<p>navigate to your data <code>Export</code> directory</p>
+</li>
+<li>
+<p>Select the <code>case</code> file</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In the left part of EnSight windows, you shall see the details of the loaded parts for your <code>case</code></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="_images/Ensight-loaddata.png" alt="Loading a thermoelectric simulation"></span></p>
+</div>
+<div class="paragraph">
+<p>Now you can select your <code>case</code> in the part view and move you data in the main visualization frame with mouse buttons.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="_images/Ensight-loaddata1.png" alt="Loading a thermoelectric simulation"></span></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>By default, the geometry will be displayed as wireframes.
+To change this default, once you have slected your parts you have to switch to <code>3D full model</code>.
+This may be done by clicking on the "cube" icon.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="_images/Ensight_cube-button.png" alt="Define view mode"></span></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_viewing_a_field"><a class="anchor" href="#_viewing_a_field"></a>3.2.1. Viewing a field</h4>
+<div class="paragraph">
+<p>To view the temperature field in the magnet:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>right click on the selected part
+*</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="_images/Ensight-displaydata.png" alt="Display temperature field"></span></p>
+</div>
+<div class="paragraph">
+<p>Now we will remove 1/4th of the insert to have a better view of the temperature distribution.
+To do so:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>select all the parts,</p>
+</li>
+<li>
+<p>click on the scissors icon</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This will bring up a new window:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="_images/Ensight-removebox.png" alt="Remove part of the insert"></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>check box and outside from the slidding menus</p>
+</li>
+<li>
+<p>check <code>advanced</code></p>
+</li>
+<li>
+<p>define the geometry of the box</p>
+</li>
+<li>
+<p>finaly click on <code>create with selected part</code> at the button of newly create windows</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="_images/Ensight-displaydata-detail.png" alt="Define box geometry"></span></p>
+</div>
+<div class="paragraph">
+<p>You shall see something like that:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="_images/Ensight-displaydata-detailres.png" alt="Display detailed temperature distribution"></span></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_plotting_field_profiles"><a class="anchor" href="#_plotting_field_profiles"></a>3.2.2. Plotting field profiles</h4>
+<div class="paragraph">
+<p>To view the temperature field distribution along a line, proceed as follows:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>click on "Query" icon <span class="image"><img src="_images/Ensight_plotbutton.png" alt="Ensight plotbutton"></span></p>
+</li>
+<li>
+<p>select type of query and a field to plot:</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="_images/Ensight_queryplot.png" alt="Query tools"></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>click on Tool location to secify the position of the lines</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="_images/Ensight_linetool.png" alt="Plot over line tool"></span></p>
+</div>
+<div class="paragraph">
+<p>Finaly you shall get a plot that will be displayed in the main windows.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="_images/Ensight_T_profile.png" alt="View Temperature profile on Ox axis"></span></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_exporting_query_data"><a class="anchor" href="#_exporting_query_data"></a>3.2.3. Exporting query data</h4>
+<div class="paragraph">
+<p>To export query data for use in an external software:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Select the <code>Plot/Queries</code> tab in the bottom left part of ensight window,</p>
+</li>
+<li>
+<p>Select the query you want to export</p>
+</li>
+<li>
+<p>Right click on the selected query to show an optional menu</p>
+</li>
+<li>
+<p>Select <code>Data</code></p>
+</li>
+<li>
+<p>Select the format for the export</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="_images/Ensight_exportdata.png" alt="Export query data"></span></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_save_image"><a class="anchor" href="#_save_image"></a>3.2.4. Save image</h4>
+<div class="paragraph">
+<p>To save ensight window in an image, just use:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>From the main menu: <code>File/export/image</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>A window will pop up. Fill the empty field to actually save the image.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="_images/Ensight_saveimage.png" alt="Export an image"></span></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_using_ensight_hifimagnet_toolbox"><a class="anchor" href="#_using_ensight_hifimagnet_toolbox"></a>3.2.5. Using Ensight HiFiMagnet toolbox</h4>
+<div class="paragraph">
+<p>For sake of use, a number of extensions has been developped to perform
+more easily certain operations while processing HiFiMagnet simulations
+results. These tools are group in a toolbox.</p>
+</div>
+<div class="paragraph">
+<p>To access the toolbox, click on the toolbox icon <span class="image"><img src="_images/Ensight-toolboxicon.png" alt="Ensight toolboxicon"></span> :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>click on the + button in front of HiFiMagnet to have the list of existing extension,</p>
+</li>
+<li>
+<p>click on the extension you would like to run</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>A window will pop up for most of the extensions.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="_images/Ensight_toolbox.png" alt="Ensight toolbox"></span></p>
+</div>
+<div class="paragraph">
+<p>Fill the parameters requested, then click on <code>OK</code>.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="_images/Ensight_toolbox_ox.png" alt="HiFiMagnet Plot over X dialog menu"></span></p>
+</div>
+<div class="paragraph">
+<p>Detailled list of extensions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>plots extensions:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Over Ox</code>: profile of a field along an line on Ox axis,</p>
+</li>
+<li>
+<p><code>Over Oy</code>: profile of a field along an line on Oy axis,</p>
+</li>
+<li>
+<p><code>Over Oz</code>: profile of a field along an line on Oz axis,</p>
+</li>
+<li>
+<p><code>Over Theta</code>: profile of a field along a circle at a given <code>z</code> altitude.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>statistics extensions:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>pdf graph</code>: display an histogramme of the fraction of volume per iso-value of a field,</p>
+</li>
+<li>
+<p><code>statistics</code>: display statistic by domains (aka markers)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>TODO</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>One Case</code>:</p>
+</li>
+<li>
+<p><code>Compare two cases</code>:</p>
+</li>
+<li>
+<p><code>Define Units</code>:</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_using_ensight_python_interface"><a class="anchor" href="#_using_ensight_python_interface"></a>3.2.6. Using Ensight python interface</h4>
+<div class="paragraph">
+<p>It is also very convenient in Ensight to run some python script in background to extract/generate some data
+for a given case without having to really "open" Ensight. To do so, you can use something like that:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">ensight102 [-batch] -p my_script.py -pyargv my_script_arguments -endpyargv -batch`</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>-batch</code> option force ensight to work in batch mode (ie. without any user intervention and without the need to open ensgiht).</p>
+</div>
+<div class="paragraph">
+<p>As an example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">ensight102 -X [-batch] -p probe_voltage.py -pyargv -i test/hdg-ibc/HL-31/P1/np_32/hdg.poisson.electro.exports/Export.case -o I25kA_dittus_perH.dat -endpyargv</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This will extract computed voltage at given points from <code>Export.case</code>.</p>
+</div>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="ensight"><a class="anchor" href="#ensight"></a>2. Using EnSight</h2>
+<h2 id="paraview"><a class="anchor" href="#paraview"></a>4. Using ParaView</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="ensight_on_remotedesktop"><a class="anchor" href="#ensight_on_remotedesktop"></a>2.1. On Remote desktop</h3>
+<h3 id="paraview_on_premise"><a class="anchor" href="#paraview_on_premise"></a>4.1. On Premise</h3>
 <div class="ulist">
 <ul>
 <li>
-<p>copy EnSight licence file on your account in the Visu resource in <code>${LICDIR}</code> directory</p>
-</li>
-<li>
-<p>pull EnSight HiFiMagnet image from Sregistry</p>
+<p>type <code>paraview</code></p>
 </li>
 </ul>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">export SREGISTRY_CLIENT=registry
-export SREGISTRY_CLIENT_SECRETS=$HOME/.sregistry
-export SREGISTRY_STORAGE=$LUSTRE/singularity_images
-module load singularity
-singularity run -B /mnt shub://sregistry.srv.cesga.es/mso4sc/sregistry --quiet pull hifimagnet/ensight:10.2.3c</code></pre>
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>run <code>ensight102</code></p>
-</li>
-</ul>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">module load singularity
-singularity run --nv -B ${LICDIR}:/opt/licenses:ro --app ensight ${SREGISTRY_STORAGE}/ensight-10.2.3c.simg</code></pre>
-</div>
 </div>
 <div class="paragraph">
-<p>Alternatively you can also use <code>run_ensight.sh</code></p>
+<p>see this [<a href="https://www.mn.uio.no/astro/english/services/it/help/visualization/paraview/paraviewtutorial-5.6.0.pdf" class="bare">www.mn.uio.no/astro/english/services/it/help/visualization/paraview/paraviewtutorial-5.6.0.pdf</a>](tuto)</p>
 </div>
-<div class="listingblock">
-<div class="title">A script to run EnSight smoothly</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">#!/bin/bash
+<div class="paragraph">
+<p>TODO</p>
+</div>
+<div class="sect3">
+<h4 id="_run_clientserver"><a class="anchor" href="#_run_clientserver"></a>4.1.1. run client/server</h4>
 
-module load singularity
-
-usage(){
-   echo ""
-   echo "Description:"
-   echo "               Run Ensight within Singularity image"
-   echo ""
-   echo "Usage:"
-   echo "               script.sh [ &lt;option&gt; ] ... ]"
-   echo ""
-   echo "Options:"
-   echo ""
-   echo "-t             Activate Ensight Batch mode"
-   echo "-s             Specify python script to be used (only valid when TUI is on)"
-   echo "-a             Specifiy parameters of the python script (only valid in combination with -s, optional)"
-   echo "-l             Specifiy directory holding license file"
-   echo "-d             Activate debug mode"
-   echo ""
-   exit 1
-}
-
-DEBUG=0
-
-#########################################################
-## parse parameters
-##########################################################
-while getopts "hts:a:l:d" option ; do
-   case $option in
-       h ) usage ;;
-       t ) TUI=1 ;;
-       s ) SCRIPT=$OPTARG ;;
-       a ) SCRIPT_ARGS=$OPTARG ;;
-       l ) KEYDIR=$OPTARG ;;
-       d ) DEBUG=1 ;;
-       ? ) usage ;;
-   esac
-done
-# shift to have the good number of other args
-shift $((OPTIND - 1))
-
-# Optionally set VERSION and others if none is defined.
-: ${TUI=0}
-: ${SCRIPT=""}
-: ${SCRIPT_ARGS=""}
-: ${KEYDIR=$STORE/Ensight}
-
-if [ ! -z ${SREGISTRY_STORAGE} ]; then
-    echo "SREGISTRY_STORAGE not defined"
-    echo "please setup SREGISTRY_STORAGE to point to your local sregistry repository"
-    echo "ex: export SREGISTRY_STORAGE=$LUSTRE/singularity_images"
-    exit 1
-fi
-
-if [ $TUI = "1" ]; then
-    if [ -z $SCRIPT ]; then
-	echo "Trying to run Ensiight in BATCH in TUI mode without a script"
-	echo "you need to define either a ensight or python script"
-	usage
-    fi
-else
-singularity exec --nv \
-  -H ${HOME}:/home/$USER \
-  -B /scratch \
-  -B /mnt \
-  -B $KEYDIR:/opt/licenses \
-  $SREGISTRY_STORAGE/singularity_images/ensight-10.2.3c.simg \
-  vglrun ensight102
-fi</code></pre>
+</div>
+<div class="sect3">
+<h4 id="_create_a_macro"><a class="anchor" href="#_create_a_macro"></a>4.1.2. create a macro</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Check (<a href="https://www.paraview.org/Wiki/ParaView_and_Python)">Paraview wiki</a>.</p>
+</li>
+<li>
+<p>Check this [<a href="https://forgeanalytics.io/blog/creating-a-python-trace-in-paraview/" class="bare">forgeanalytics.io/blog/creating-a-python-trace-in-paraview/</a>](page) to create Trace.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_create_a_vtkjs_scene"><a class="anchor" href="#_create_a_vtkjs_scene"></a>4.1.3. create a vtkjs scene</h4>
+<div class="paragraph">
+<p>See this [<a href="https://github.com/Kitware/vtk-js/blob/master/Utilities/ParaView/export-scene-macro.py" class="bare">github.com/Kitware/vtk-js/blob/master/Utilities/ParaView/export-scene-macro.py</a>](python script).</p>
 </div>
 </div>
 </div>

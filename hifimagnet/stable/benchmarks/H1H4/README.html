@@ -239,12 +239,19 @@
     <a class="nav-link" href="../../post/index.html#post_manual">Post-Processing</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../post/index.html#paraview">Paraview</a>
-  </li>
-  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../post/index.html#ensight">Ensight</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../post/index.html#paraview">Paraview</a>
+  </li>
 </ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../workflow/index.html#workflow">Workflow</a>
   </li>
 </ul>
   </li>
@@ -341,6 +348,21 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../dev/hifimagnet.html#install_hifimagnet">HiFiMagnet</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../dev/crb.html">CRB apps</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../dev/thermoelectric-nl.html">ThermoElectric</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../dev/parameter-id.html">Parameter Identification</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../dev/opt-geo.html">Geometrical Optimization</a>
+  </li>
+</ul>
+  </li>
 </ul>
   </li>
 </ul>
@@ -368,6 +390,12 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../appendix/salome.html">Using Salome</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../appendix/salome.html">Using Singularity</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../appendix/salome.html">Using screen</a>
   </li>
 </ul>
   </li>
@@ -448,7 +476,7 @@ Otherwise you can directly skip these sections.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">gmsh -3 -bin HL-31-H1H2H3H4-Leads_air.med -o HL-31-H1H2H3H4-Leads-air.msh</code></pre>
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">gmsh -0 -bin HL-31-H1H2H3H4-Leads_air.med -o HL-31-H1H2H3H4-Leads-air.msh</code></pre>
 </div>
 </div>
 <div class="admonitionblock important">
@@ -470,11 +498,11 @@ Otherwise you can directly skip these sections.</p>
 <h3 id="_partitionning_the_mesh"><a class="anchor" href="#_partitionning_the_mesh"></a>1.2. Partitionning the mesh:</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">feelpp_mesh_partitioner --gmsh.scale=0.001 --ifile HL-31-H1H4-Leads-air.msh [--ofile H1H4_p144] --part 144</code></pre>
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">feelpp_mesh_partitioner --mesh.scale=0.001 --ifile HL-31-H1H4-Leads-air.msh [--ofile H1H4_p144] --part 144</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>The option <code>--gmsh.scale=0.001</code> enables to force the use of <strong>meter</strong> for the partitionned mesh.</p>
+<p>The option <code>--mesh.scale=0.001</code> enables to force the use of <strong>meter</strong> for the partitionned mesh.</p>
 </div>
 </div>
 </div>
@@ -483,11 +511,8 @@ Otherwise you can directly skip these sections.</p>
 <h2 id="_data_files"><a class="anchor" href="#_data_files"></a>2. Data files</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The data files may be retreived from <a href="http://portal.mso4sc.eu/datacatalogue/"><strong>Data Catalogue</strong></a>.
-See the dataset <strong>A 4 Helices insert</strong> in Lncmi collection.</p>
-</div>
-<div class="paragraph">
-<p>The gzipped archive tarball <a href="http://193.144.35.147:5000/dataset/insert-test/resource/8d78d359-e3eb-4189-bcba-f748dd406166"><code>H1H4-cart.tar.gz</code></a> contains all the files needed.</p>
+<p>The data files may be retreived from this <a href="https://github.com/feelpp/hifimagnet.cases/tree/v0.108/H1H4-cart">repository</a>.
+The mesh files are stored in collection hifimanget/cases/v0.108/HL-31 collection on <a href="https://girder.math.unistra.fr/">Unistra Girder</a></p>
 </div>
 <div class="sect2">
 <h3 id="_mesh_files"><a class="anchor" href="#_mesh_files"></a>2.1. Mesh files</h3>
@@ -507,7 +532,7 @@ See the dataset <strong>A 4 Helices insert</strong> in Lncmi collection.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>H1H4_cart.cfg</p>
+<p>H1H4-thermobox.cfg</p>
 </li>
 </ul>
 </div>
@@ -517,7 +542,7 @@ See the dataset <strong>A 4 Helices insert</strong> in Lncmi collection.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>H1H4_thermoelec.json</p>
+<p>H1H4_thermoelecbox.json</p>
 </li>
 <li>
 <p>H1H4_magcart.json</p>

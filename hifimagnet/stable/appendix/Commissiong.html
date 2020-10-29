@@ -238,12 +238,19 @@
     <a class="nav-link" href="../post/index.html#post_manual">Post-Processing</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../post/index.html#paraview">Paraview</a>
-  </li>
-  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../post/index.html#ensight">Ensight</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../post/index.html#paraview">Paraview</a>
+  </li>
 </ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../workflow/index.html#workflow">Workflow</a>
   </li>
 </ul>
   </li>
@@ -340,6 +347,21 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../dev/hifimagnet.html#install_hifimagnet">HiFiMagnet</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../dev/crb.html">CRB apps</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../dev/thermoelectric-nl.html">ThermoElectric</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../dev/parameter-id.html">Parameter Identification</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../dev/opt-geo.html">Geometrical Optimization</a>
+  </li>
+</ul>
+  </li>
 </ul>
   </li>
 </ul>
@@ -367,6 +389,12 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="salome.html">Using Salome</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="salome.html">Using Singularity</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="salome.html">Using screen</a>
   </li>
 </ul>
   </li>
@@ -418,7 +446,41 @@
   <div class="content">
 <article class="doc">
 <h1 class="page">Simulation of a Magnet Commissioning</h1>
-
+<div class="ulist">
+<ul>
+<li>
+<p>Add notes from <a href="https://github.com/feelpp/hifimagnet.cases/tree/v0.108/Commissioning/Readme.md">Readme</a></p>
+</li>
+<li>
+<p>Scripts may be found in this <a href="https://github.com/feelpp/hifimagnet.cases/tree/v0.108/Commisioning">github repository</a></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>As a rule of the thumb, a mesh of 1 Go would mean to use 2 T Ram for fully coupled simulations.
+Consequently, simulations have to be run on an appropriate machine:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>up to 1T Ram, you may use <a href="Infrastructure.html#lab_servers" class="page">{lncmi} ressources</a>,</p>
+</li>
+<li>
+<p>above, you have to go for <a href="Infrastructure.html#meso_ressources" class="page">Gricad ressources</a></p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
