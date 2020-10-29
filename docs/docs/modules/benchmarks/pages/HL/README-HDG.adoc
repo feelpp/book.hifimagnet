@@ -1,0 +1,126 @@
+= A longitudinaly cooled helix with HDG method
+include::{partialsdir}/header-macros.adoc[]
+include::{partialsdir}/header-uri.adoc[]
+include::{partialsdir}/mso4sc-uri.adoc[]
+
+In this test case we will simulate a longitudinaly cooled helix
+with the HDG method.
+We consider only the thermoelectric behaviour of the helix.
+
+// update see: http://docs.feelpp.org/cases/0.108/thermoelectric/electromagnet/README.html
+== Running the case
+
+[[command-line-nl-hdgtoolbox]]
+[source,sh]
+----
+mpirun -np 32 feelpp_toolbox_hdg_thermoelectric --config-file  HL-31_H1.cfg
+----
+
+If you use the IBC feature to set the total current:
+
+[[command-line-nl-ibc]]
+[source,sh]
+----
+mpirun -np 32 feelpp_toolbox_hdg_thermoelectric --config-file  HL-31_H1.cfg
+----
+
+[NOTE]
+====
+The thermolelectric HDG method is detailed in this link:https://docs.feelpp.org/math/hdg/index.html[section].
+====
+
+// To run this example on MSO4SC portal see this xref:mso4sc:MagThel.adoc[section].
+
+If you want to change the number of procs used, you need to create a proper
+partition mesh. See the next sections for a detailed guide.
+
+=== Convert the mesh
+
+The mesh may be converted into an another format using `gmsh` compiled with proper `med` support
+
+[source,sh]
+----
+gmsh -0 -bin HL-31_H1.med -o HL-31_H1.msh
+----
+
+[IMPORTANT]
+====
+The resulting mesh is in **mm**.
+For convergence sake, HDG method requires the mesh to be left in *mm*.
+As a consequence, remember that the physical properties of materials shall be scaled to "*mm*".
+====
+
+=== Partitionning the mesh:
+
+[source,sh]
+----
+feelpp_mesh_partitioner --ifile HL-31_H1.msh [--ofile HL-31_H1_p32] --part 32
+----
+
+[IMPORTANT]
+====
+For calculation with IBC, it is mandatory to use the following command to properly partion the mesh:
+
+[source,sh]
+----
+feelpp_mesh_partitioner --ifile HL-31_H1[_shapes].med --ofile HL-31_H1_p  --part 32 --sc.ibc_partitioning=true --sc.ibc_partitioning.marker=<marker>
+----
+where `<marker>` is the marker of the Surface marker where we apply the IBC.
+
+====
+
+== Data files
+
+The data files may be retreived from this https://github.com/feelpp/hifimagnet.cases/tree/v0.108/HL-31_H1-HDG[repository].
+The mesh files are stored in collection hifimanget/cases/v0.108/HL-31_H1-HDG collection on {uri-girder}[Unistra Girder] 
+
+// The data files may be retreived from {uri-msoportal-ckan-www}[*Data Catalogue*].
+// See the dataset *A test helix* in {lncmi} collection.
+
+// The gzipped archive tarball {uri-ckan-data}/dataset/hl-test/resource/ff0f4f04-45c9-4507-b98a-ee789c8bde95[`HL-31_H1-v0.105.tgz`] contains all the files needed.
+
+=== Mesh file
+
+* HL-31_H1-woglue.msh
+* HL-31_H1-woglue.med
+* HL-31_H1-woglue_p.json, HL-31_H1-woglue_p.j.h5  
+
+=== Simulation cfg file
+
+* HL-31_H1.cfg,
+* HL-31_H1_ibc.cfg with IBC.
+
+=== Model files
+
+* HL-31_H1_nonlinear.json
+
+[IMPORTANT]
+====
+The data are given to be consistant with the mesh in **mm**.
+If you ever want to use a mesh in *m*:
+
+* Change the physical values,
+* Change the Cooling Boundary Conditions values,
+
+====
+
+== Input parameters
+
+[options="header"]
+|===
+| Name | Description | Value | Unit |
+| stem:[V_D] | electrical potential | 9 | stem:[V] |
+|===
+
+== Outputs
+
+[options="header"]
+|===
+| Name          | Description              | Value   | Unit     |
+| stem:[min(T)] | min of Temperature Field | 293.32  | stem:[K] |
+| stem:[max(T)] | max of Temperature Field | 400.781 | stem:[K] |
+| stem:[I]      | current                  | 28.771 (-28.768) | stem:[kA] |
+|===
+
+
+

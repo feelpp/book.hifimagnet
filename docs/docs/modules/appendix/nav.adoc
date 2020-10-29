@@ -6,5 +6,7 @@
 
 *** xref:Infrastructure.adoc[Computing Infrastructure]
 *** xref:salome.adoc[Using Salome]
+*** xref:salome.adoc[Using {singularity}]
+*** xref:salome.adoc[Using screen]
 
 // *** xref:M9_2019_02.adoc[ThermoElectric]

@@ -7,12 +7,14 @@
 
 In this paragraph we present the main principle of the magnet monitoring.
 
-As previously present, High Field Magnets are electromagnets made of copper alloys tubes
+image:hydraulics.png[Schematic Magnet cooling system]
+
+High Field Magnets are electromagnets made of copper alloys tubes
 - connected into series be so-called ring - powered with up to 31 kA to deliver up to 37 tesla.
 To dissipate the electric powered the magnet are cooled by a water forced flow (up to 140 l:m³
 with a pressure drop of 25 bars). Therefore the magnets are actually set into a housing.
-
 Such environment (water and high pressure) make it difficult to instrument the magnets.
+
 The only available measures come from:
 
 * voltage taps on the connection ring between consecutive tube,
@@ -81,6 +83,155 @@ where HP, BP stand respectively for High and Low ("Basse" in french) Pressure.
 stem:[T_i] denote the estimated mean temperature in Coil stem:[i].
 See bellow for more details.
 ====
+
+Actual data from an magnet in operation may be retreive from the link:http://147.173.83.216/site/sba/pages/index.php[control/command monitoring system]
+at an acquisition rate of 1 Hz.
+This site, ony accesible to registered {lncmi} user, provides
+data recorded during a magnet run. To access a magnet run:
+
+* Go to the menu *Courbes/Fichier Aimants*.
+* Select a file `txt` from a site (eg M9).
+
+You can then explore the magnet data and download the file for latter use by clicking on *Télécharger txt*.
+The `txt` file may be converted to a `csv` file using link:{attachmentsdir}/txt2cvs.py[`txt2cvs.py`]. An example can be found link:{attachmentsdir}/M9_2019.06.20-14_36_30.csv[here].
+
+// Working example
+// ++++
+// <div id="myCVSDiv" style="width: 480px; height: 400px;"><!-- Plotly chart will be drawn inside this DIV --></div>
+//   <script> 
+//     function makeplot() {
+// 	Plotly.d3.csv("https://localhost/hifimagnet/stable/appendix/_attachments/M9_2019.06.20-14_36_30.csv", function(data){ processData(data) } );
+
+//     };
+
+//     function processData(allRows) {
+
+// 	console.log(allRows);
+// 	var x = [], y = [], standard_deviation = [];
+
+// 	for (var i=0; i<allRows.length; i++) {
+// 	    row = allRows[i];
+// 	    x.push( row['Time'] );
+// 	    y.push( row['Field'] );
+// 	}
+// 	console.log( 'X',x, 'Y',y, 'SD',standard_deviation );
+// 	makePlotly( x, y, standard_deviation );
+//     }
+
+//     function makePlotly( x, y, standard_deviation ){
+// 	var plotDiv = document.getElementById("plot");
+// 	var traces = [{
+// 	    x: x,
+// 	    y: y
+// 	}];
+
+// 	Plotly.newPlot('myCVSDiv', traces,
+// 		       {title: 'B Field vs Time'}, {responsive: true});
+//     };
+//     makeplot();
+
+
+//   </script>
+// ++++
+
+++++
+<div class="showcase__section" id="bubble">
+  <div class="spacer --small"></div>
+  <div id="bubbleplots">
+    <div class="bubbleplot" data-num="0">
+      <div class="plot" id="plotdiv"></div>
+      <div class="control-row">
+        YField: <select class="ydata">
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+
+   <script> 
+Plotly.d3.csv("https://localhost/hifimagnet/stable/appendix/_attachments/M9_2019.06.20-14_36_30.csv", function(err, rows){
+	      
+
+    console.log("enter plotly script");
+    console.log("data:");
+
+    var currentYear = [], currentGdp = [];
+    var headernames = Object.keys(rows[0]);
+    console.log("headnames:", headernames);
+
+    // console.log(rows);
+    for (var i=0; i<rows.length; i++) {
+        row = rows[i];
+	currentYear.push( row['Time'] );
+	//console.log("row", i, "data=", row)
+    }
+    console.log("Time:");
+    console.log(currentYear);
+    
+    var listofY = ['Field', 'Icoil1', 'Ucoil1', 'Tin1', 'Tout']; //Plotly.d3.d3.keys(rows[0]);
+    console.log(listofY);
+
+    
+    function getYData(chosenY) {
+        console.log(getYData);
+    	currentGdp = [];
+        for (var i=0; i<rows.length; i++) {
+    	    row = rows[i];
+	    currentGdp.push( row[chosenY] );
+    	}
+	console.log(currentGdp);
+    };
+
+    // Default Country Data
+    setBubblePlot('Field');
+    
+    function setBubblePlot(chosenY) {
+	getYData(chosenY);  
+
+	var trace1 = {
+	    x: currentYear,
+	    y: currentGdp,
+	    mode: 'lines',
+	    marker: {
+		size: 12, 
+		opacity: 0.5
+	    }
+	};
+
+	var data = [trace1];
+
+	var layout = {
+	    title: chosenY + ' vs Time'
+	};
+
+	Plotly.newPlot('plotdiv', data, layout, {showSendToCloud: true});
+    };
+    
+    var innerContainer = document.querySelector('[data-num="0"'),
+	plotEl = innerContainer.querySelector('.plot'),
+	YSelector = innerContainer.querySelector('.ydata');
+
+    function assignOptions(textArray, selector) {
+	for (var i = 0; i < textArray.length;  i++) {
+	    var currentOption = document.createElement('option');
+	    currentOption.text = textArray[i];
+	    selector.appendChild(currentOption);
+	}
+    }
+
+    assignOptions(listofY, YSelector);
+
+    function updateYdata(){
+	setBubblePlot(YSelector.value);
+    }
+    
+    YSelector.addEventListener('change', updateYdata, false);
+});
+   </script>
+++++
+
+There are also files with an higher acquisation rate available. They may be used as refrence for transient analysis.
+Data from these `tdms` file can be retreived using  link:{attachmentsdir}/[`nptdms-ex.py`] script.
 
 [[control]]
 == Magnets Control
@@ -195,3 +346,8 @@ As a consequence the heat exchange coefficient  stem:[h] per cooling channels wi
 ++++
 
 ====
+
+
+* ToDo:
+** Add note on http://147.173.83.216/site/sba/pages/index.php[Control/Command website]
+** Add note on txt files (with a demo)

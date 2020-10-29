@@ -1,0 +1,70 @@
+[[usage]]
+= Using {singularity}
+:toc: macro
+include::{partialsdir}/header-macros.adoc[]
+include::{partialsdir}/header-uri.adoc[]
+include::{partialsdir}/mso4sc-uri.adoc[]
+
+link:{uri-singularity}[{singularity}] is a program that enables to build
+containers for HPC systems. In contrast to {docker}, user does not need
+to be *root* to use {singularity} containers or images. *rrot* user is only
+needed when building the [singlauraty} image.
+
+== Testing {singularity}
+
+* pull an image
+* run the image
+
+[source,bash]
+----
+singularity pull docker://godlovedc/lolcow
+singularity run lolcow_latest.sif
+----
+
+
+== Basic usage
+
+.Running a shell:
+[source,bash]
+----
+singularity shell image.sif
+----
+
+.Executing a program:
+[source,bash]
+----
+singularity exec image.sif program
+----
+
+.List apps defined in an image:
+[source,bash]
+----
+singularity  inspect —list-apps image.sif
+singularity exec image.sif ls /scif/apps
+----
+
+.Running an app:
+[source,bash]
+----
+singularity run --app appname image.sif [options]
+----
+
+== Running parallel jobs in {singularity}
+
+[source,bash]
+----
+singularity exec image.sif mpirun -np n ...
+----
+
+[IMPORTANT]
+====
+
+* On *SMP* machine
+
+[source,bash]
+----
+mpirun -np n singularity exec image.sif ...
+----
+
+====
+

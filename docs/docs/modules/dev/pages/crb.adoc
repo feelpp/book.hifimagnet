@@ -1,0 +1,9 @@
+== CRB apps
+
+There is three main applications using the Reduced Basis method for {hifimagnet}:
+
+- xref:thermoelectric-nl.adoc[feelpp_mor_thermoelectric-nonlinear-app]
+- xref:parameter-id.adoc[feelpp_mor_parameter-id-app]
+- xref:opt-geo.adoc[feelpp_mor_biotsavart-electric-alpha-app]
+
+

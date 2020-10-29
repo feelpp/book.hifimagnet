@@ -1,12 +1,11 @@
 = PREREQUISITES
 
 * {magnetTools}: for Optimization and Analytical calc. 
+* gmsh: for converting Mesh format
 * {feelpp}: for Numerical Axi and 3D Modeling
 
 ** toolbox: CSM
 ** RB framework
 
-* {salome}: for GUI/TUI CAD and Meshing features
-
-* gmsh: for converting Mesh format
-* {meshgems}: for Meshing features
+// * {salome}: for GUI/TUI CAD and Meshing features
+// * {meshgems}: for Meshing features

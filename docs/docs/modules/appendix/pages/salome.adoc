@@ -33,8 +33,8 @@ For detailed use of {salome}, see:
 If the test python scripts are not available in your {docker} or {singularity} images
 you may found then here:
 
-* link:examples/testcube_mesh.py[`testcube_mesh.py`] 
-* link:examples/ghs3d_demo.py[`ghs3d_demo.py`]
+* link:{attachmentsdir}/salome/testcube_mesh.py[`testcube_mesh.py`] 
+* link:{attachmentsdir}/salome/ghs3d_demo.py[`ghs3d_demo.py`]
 ====
 
 == Basic examples

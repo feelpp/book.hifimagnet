@@ -23,7 +23,7 @@ df = pd.read_csv(input_file, sep='\s+', engine='python')
 
 # Get Name of columns
 keys = df.columns.values.tolist()
-# print "keys=", keys, len(keys)
+# print ("keys=", keys, len(keys))
 
 if not args.bp:
     dx = df[['Ucoil1','Ucoil2','Ucoil3','Ucoil4','Ucoil5','Ucoil6','Ucoil7']].plot(kind='bar', title=title, figsize=(15, 10), legend=True, fontsize=12, rot=0)

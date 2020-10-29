@@ -1,0 +1,50 @@
+[[usage]]
+= Using screen
+:toc: macro
+include::{partialsdir}/header-macros.adoc[]
+include::{partialsdir}/header-uri.adoc[]
+include::{partialsdir}/mso4sc-uri.adoc[]
+
+GNU Screen is a Terminal multiplexer program that allows managing several Terminal sessions from with the single window.
+
+Screen Features:
+
+* Keep programs and scripts running even when the network get disrupted.
+* Detach and reattach to a Terminal session from various sites.
+* Carry out a long-running program without keeping an active shell session.
+* Allows to share the session with other users
+* Splitting the Terminal window horizontally and vertically
+* Offers a wide range of shortcut keys
+
+== Launch Screen
+
+[source,bash]
+----
+screen [-S session_name]
+----
+
+Type Ctrl-A and ?, all the commands will be listed on the screen.
+
+[source,bash]
+----
+screen -ls
+----
+
+== Detach session
+
+[source,bash]
+----
+Ctrl+A  –d
+----
+
+== Reattach session
+
+[source,bash]
+----
+screen –r screen_ID/screen_name
+----
+
+== References
+
+* link:https://doc.ubuntu-fr.org/screen[screen tutorial]
+link:https://linuxhint.com/tmux_vs_screen[tmux vs screen] 

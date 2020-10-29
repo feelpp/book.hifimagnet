@@ -20,17 +20,17 @@ input_file = args.input_file
 # Import Dataset
 df = pd.read_csv(input_file, sep='\s+', engine='python', skiprows=[1])
 keys = df.columns.values.tolist()
-#print "keys=", len(keys)
+#print ("keys=", len(keys))
 
-# print df['potential']
+# print (df['potential'])
 # df['U'] = df['potential'] - df['potential'][0]
-# print df['U']
+# print (df['U'])
 
 # Import Exp Data
 exp = pd.read_csv(args.exp_file, sep='\s+', engine='python', skiprows=1)
 keys = exp.columns.values.tolist()
-# print keys
-# print exp['Ucoil1']
+# print (keys)
+# print (exp['Ucoil1'])
 
 index_max = 8
 if args.bp:
@@ -43,25 +43,25 @@ for i in range(1,index_max):
     numkey = "U%d" % i
     Uprobes.append("Ucoil%d" % i)
     exp[numkey] = exp.apply(lambda row: df['potential'][i] - df['potential'][i-1], axis=1)
-    # print numkey, (df['potential'][i] - df['potential'][i-1])
+    # print (numkey, (df['potential'][i] - df['potential'][i-1]))
     output += "%s " % str(df['potential'][i] - df['potential'][i-1])
     header += "%s[V]\t" % numkey
-print header
-print output
+print (header)
+print (output)
 
 if args.plot:    
     ax = plt.gca()
     # loop over key
     for key in Uprobes:
         numkey = key.replace("coil",'')
-        #print key, numkey
+        #print (key, numkey)
         if key in keys:
             exp.plot(x='Time', y=key, ax=ax)
             color = ax.get_lines()[-1].get_color() 
-            # print "color=", color
+            # print ("color=", color)
             exp.plot(x='Time', y=numkey, style="^", markevery=800, color=color, ax=ax) #
         else:
-            print "unknown key: %s" % args.plot_vs_time
-            print "valid keys: ", keys
+            print( "unknown key: %s" % args.plot_vs_time )
+            print( "valid keys: ", keys )
             exit(1)
     plt.show()

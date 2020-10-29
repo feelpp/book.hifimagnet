@@ -189,7 +189,7 @@ be described in the <<data, data structure section>>.
 ----
 salome [-m GEOM,SMESH,HIFIMAGNET] [-t -b] \
    $HIFIMAGNET/HIFIMAGNET_Cmd.py \
-   args:--cfg=Insert-H1H4-Leads-2t.yaml[,--air,--infty_Rratio=2,--infty_ZRatio=1.5][,--mesh]
+   args:--cfg=Insert-H1H4-Leads-2t.yaml[,--air,--infty_Rratio=2,--infty_ZRatio=1.5][,--mesh,--groupIsolant,--groupCoolingChannels,--groupLeads]
 ----
 ++++
 <button class="btn" data-clipboard-target="#insert-cad">
@@ -423,7 +423,23 @@ include::{examplesdir}/Insert.yaml[]
 <7> angular orientation of helices (optionnal)
 <8> angular orientation of rings (optionnal)
 
+[NOTE]
+====
+The radius of the external tube <5> may not correspond to the real radius of the part.
+Indeed, this part is in general not a simple cylinder. To model the cooling of this
+part, we compute the assiocated *hydraulic diameter* stem:[d_h] as the ratio of the
+section of the last cooling chanel over the wetted perimeter. The radius of the equivalent
+external tube is then set to:
 
+[stem]
++++++
+r_{outer} = r_H + d_h/2.
++++++
+with stem:[r_H] the outer radius of the antepenultiemen helix.
+ 
+====
+
+[[create_mesh]]
 === Mesh
 
 The mesh is generated from the command line when the option `--mesh` is passed to salome.
@@ -481,20 +497,34 @@ The smaller this distance is, the closer the mesh is to the exact surface (only 
 
 The mesh can customized using the yaml cgf file presented above. There are also some options to reduce the number of surfacic meshes that will be latter use to apply boundary conditions:
 
-* `--hideIsolant`:
-* `--groupIsolant`:
-* `--groupCoolingChannels`: 
-* `--groupLeads`:
+* `--hideIsolant`: to discard non-electric conducting domains (aka glue or insulators),
+* `--groupIsolant`: to group glue or insulators per helix as one domain,
+* `--groupCoolingChannels`: to group Cooled surfaces per cooling channels,
+* `--groupLeads`: to group the domains for currentleads into a single domain for inner and and a single domain for outer lead.
 
-and there is also an `--coarse` option to generate a quite coarse mesh.
+A `--coarse` option may be used to generate a quite coarse mesh.
 
-These options are available in the main command line:
+These options are available in the main command line.
+
+For most simulations, we use `--groupIsolant`, `--groupCoolingChannels` and `--groupLeads`.
+For HDG models, as the insulators are not considered in the simulation so far, we add  `--hideIsolant` to ignore the non-electric conducting domains.
 
 [[setup]]
 == Generate Templates setup for {hifimagnet} simulations
 
-Add `-setup` option to the command line to generate template files required
+Add `--setup` option to the command line to generate template files required
 for the setup of {hifimagnet} simulations.
+
+[source,sh]
+.Generation of template `cfg` and `json` files
+----
+salome [-m GEOM,SMESH,HIFIMAGNET] [-t -b] \
+   $HIFIMAGNET/HIFIMAGNET_Cmd.py \
+   args:--cfg=Insert-H1H4-Leads-2t.yaml[,--air,--infty_Rratio=2,--infty_ZRatio=1.5],--setup
+----
+
+// Add comment on "cooling=","correlation=","friction="
+// TODO add option for HDG simulation
 
 [[checking]]
 == Using {salome} for Checking and/or Debugging

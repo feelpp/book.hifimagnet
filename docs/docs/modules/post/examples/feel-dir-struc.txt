@@ -1,0 +1,41 @@
+.
+├── exprs
+│   ├── ginacExprDefaultFileName0
+│   ├── ginacExprDefaultFileName0.desc
+│   ├── ginacExprDefaultFileName0.so
+│   ├── ...
+└── np_32
+    ├── coupled-model_3D_P1_N1.json
+    ├── exports
+    │   └── ensightgold
+    │       └── coupledModel
+    │           ├── coupledModel-32.sos
+    │           ├── coupledModel.case
+    │           ├── coupledModel.current_density.vec.0001
+    │           ├── coupledModel.electric_field.vec.0001
+    │           ├── coupledModel.electric_potential.scl.0001
+    │           ├── coupledModel.geo.0001
+    │           ├── coupledModel-paraview-32.sos
+    │           ├── coupledModel.temperature.scl.0001
+    │           └── coupledModel.timeset
+    ├── journal.json
+    ├── logs
+    │   ├── feelpp_hfm_coupledmodel_3DP1N1.ERROR -> feelpp_hfm_coupledmodel_3DP1N1.stokes.jay.log.ERROR.20201009-145255.63595
+    │   ├── feelpp_hfm_coupledmodel_3DP1N1.INFO -> feelpp_hfm_coupledmodel_3DP1N1.stokes.jay.log.INFO.20201009-151629.68921
+    │   ├── ...
+    ├── thermo-electric.electric.measures.csv
+    ├── thermo-electric.electric.save
+    │   └── electric-potential.h5
+    ├── thermo-electric.exports
+    │   ├── Export-32.sos
+    │   ├── Export.case
+    │   ├── Export.geo
+    │   ├── Export-paraview-32.sos
+    │   ├── Export.thermo-electric.electric.current-density.vec.0001
+    │   ├── Export.thermo-electric.electric.electric-potential.scl.0001
+    │   ├── Export.thermo-electric.heat.temperature.scl.0001
+    │   └── Export.timeset
+    ├── thermo-electric.heat.measures.csv
+    ├── thermo-electric.heat.save
+    │   └── temperature.h5
+    └── thermo-electric.toolbox-info.txt

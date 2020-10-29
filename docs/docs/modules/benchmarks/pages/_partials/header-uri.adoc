@@ -1,4 +1,5 @@
 :uri-org: https://github.com/feelpp
+:uri-girder: https://girder.math.unistra.fr/
 :uri-repo: {uri-org}/hifimagnet
 :uri-www: http://www.hifimagnet.org
 :uri-project: http://book.hifimagnet.org/

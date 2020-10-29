@@ -25,7 +25,7 @@ The mesh may be converted into an another format using `gmsh` compiled with prop
 
 [source,sh]
 ----
-gmsh -3 -bin HL-31-H1H2H3H4-Leads_air.med -o HL-31-H1H2H3H4-Leads-air.msh
+gmsh -0 -bin HL-31-H1H2H3H4-Leads_air.med -o HL-31-H1H2H3H4-Leads-air.msh
 ----
 
 [IMPORTANT]
@@ -37,17 +37,20 @@ The resulting mesh is in **mm**
 
 [source,sh]
 ----
-feelpp_mesh_partitioner --gmsh.scale=0.001 --ifile HL-31-H1H4-Leads-air.msh [--ofile H1H4_p144] --part 144
+feelpp_mesh_partitioner --mesh.scale=0.001 --ifile HL-31-H1H4-Leads-air.msh [--ofile H1H4_p144] --part 144
 ----
 
-The option `--gmsh.scale=0.001` enables to force the use of **meter** for the partitionned mesh.
+The option `--mesh.scale=0.001` enables to force the use of **meter** for the partitionned mesh.
 
 == Data files
 
-The data files may be retreived from {uri-msoportal-ckan-www}[*Data Catalogue*].
-See the dataset *A 4 Helices insert* in {lncmi} collection.
+The data files may be retreived from this https://github.com/feelpp/hifimagnet.cases/tree/v0.108/H1H4-cart[repository].
+The mesh files are stored in collection hifimanget/cases/v0.108/HL-31 collection on {uri-girder}[Unistra Girder] 
 
-The gzipped archive tarball {uri-ckan-data}/dataset/insert-test/resource/8d78d359-e3eb-4189-bcba-f748dd406166[`H1H4-cart.tar.gz`] contains all the files needed.
+// The data files may be retreived from {uri-msoportal-ckan-www}[*Data Catalogue*].
+// See the dataset *A 4 Helices insert* in {lncmi} collection.
+
+// The gzipped archive tarball {uri-ckan-data}/dataset/insert-test/resource/8d78d359-e3eb-4189-bcba-f748dd406166[`H1H4-cart.tar.gz`] contains all the files needed.
 
 === Mesh files
 
@@ -56,11 +59,11 @@ The gzipped archive tarball {uri-ckan-data}/dataset/insert-test/resource/8d78d35
 
 === Simulation cfg file
 
-* H1H4_cart.cfg
+* H1H4-thermobox.cfg
 
 === Model files
 
-* H1H4_thermoelec.json
+* H1H4_thermoelecbox.json
 * H1H4_magcart.json
 // * H1H4_elasticity.json
 

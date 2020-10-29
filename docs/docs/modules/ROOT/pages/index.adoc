@@ -90,7 +90,6 @@ More details about installing the tools may also be found in this xref:install:i
 
 * define an axisymetrical magnet design with xref:magnettools:index.adoc#magnettools_manual[{magnettools}], a in-house software for Axi configuration,
 * create the 3D geometry of the magnet from axisymetrical design with xref:cad:index.adoc#salome_plugin[{hifimagnet} {salome} plugin],
-* simulate the 3D behaviour of of the magnet with xref:user:index.adoc#user_manual[{hifimagnet}].
 * simulate the 3D behaviour of the magnet with xref:user:index.adoc#user_manual[{hifimagnet}].
 
 The reader is encouraged to read the manuals in the next section starting with the  xref:model:index.adoc[Model manual]

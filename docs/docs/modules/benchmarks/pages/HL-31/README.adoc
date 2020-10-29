@@ -11,7 +11,7 @@ As the CAD generation is time consuming, the mesh is provided but will eventuall
 However if you ever want to rebuild the CAD and Mesh you will find detailled instructions bellow.
 Otherwise you can directly skip these sections.
 
-To run this example on MSO4SC portal see this section.
+// To run this example on MSO4SC portal see this section.
 
 === Create the geometry:
 
@@ -31,25 +31,34 @@ For a 14 Helices insert it takes at least 4 days...
 
 [source,sh]
 ----
-salome -t $HIFIMAGNET//HIFIMAGNET_Cmd.py args:--insert=HL-31.yaml,--air,--mesh[,--groupCoolingChannels]
+salome -t $HIFIMAGNET//HIFIMAGNET_Cmd.py args:--insert=HL-31.yaml,--air,--mesh,--groupCoolingChannels
 ----
 
 === Partitionning the mesh:
 
 [source,sh]
 ----
-gmsh -3 -bin HL-31.med -o HL-31.msh
-feelpp_mesh_partitioner --ifile HL-31.msh [--ofile HL-31_p32] --part 32  --nochdir
+gmsh -0 -bin HL-31.med -o HL-31.msh
+feelpp_mesh_partitioner --mesh.scale=0.001 --ifile HL-31.msh [--ofile HL-31_p32] --part 32  --nochdir
 ----
 
 === Running the model (here couplecartmodel):
 
 [source,sh]
 ----
-mpirun -np 32 feelpp_hfm_coupledcartmodel_3DP1N1 --config-file HL-31.cfg
+mpirun -np 32 feelpp_hfm_coupledcartmodel_3DP1N1 --config-file M19061901-thermobox-bmap.cfg
 ----
 
+[NOTE]
+====
+The fully coupled problem can only be run so far on Gricad since it requires about 2T Ram.
+See notes in xref::appendix.adoc[Appendix] section.
+====
+
 == Data files
+
+The data files may be retreived from this https://github.com/feelpp/hifimagnet.cases/tree/v0.108/HL-31[repository].
+The mesh files are stored in collection hifimanget/cases/v0.108/HL-31 collection on {uri-girder}[Unistra Girder] 
 
 === Geometry files
 
@@ -69,32 +78,16 @@ Definition of the helical cut per helix:
 
 === Simulation cfg file
 
-* HL-31.cfg
+* M19061901-thermobox-bmap.cfg
+* M19061901-thermobox-biot.cfg
+* M19061901-thermobox-full.cfg
 
 === Model files
 
-* HL-31_thermoelec.json
-* HL-31_magcart.json
-* HL-31_elasticity.json
-
-=== Materials files
-
-Materials are stored in a dedicated repository Materials
+* M19061901_coupled.json
+* M19061901_full.json
 
 == Outputs
 
 * some metrics
-
-== Notes
-
-the executables must be in the path or should be prefixed with appropriate directories.
-
-For instance on Lncmi server:
-```
-FEELPP_MESH_APPS_DIR=$FEELPP_BUILD_DIR/applications/mesh/
-HIFIMAGNET_APPS_DIR=~/feelpp_build/new_Json/research/hifimagnet/applications
-HIFIMAGNET=/opt/SALOME-8.3.0-DB9.5/INSTALL/HIFIMAGNET/bin/salome
-```
-
-The coupledcart model is in ```$HIFIMAGNET_APPS_DIR/CoupledCartModel/```
 

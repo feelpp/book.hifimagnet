@@ -4,16 +4,35 @@ include::{partialsdir}/header-uri.adoc[]
 include::{partialsdir}/mso4sc-uri.adoc[]
 
 In this test case we will simulate a longitudinaly cooled helix.
+We consider only the thermoelectric behaviour of the helix.
 
+// update see: http://docs.feelpp.org/cases/0.108/thermoelectric/electromagnet/README.html
 == Running the case
+
+You have 2 choices:
+
+* either use {hifimagnet} apps:
 
 [[command-line-linear]]
 [source,sh]
 ----
-mpirun -np 32 feelpp_hfm_thermoelectric --config-file HL-31_H1_boomeramg.cfg
+mpirun -np 32 feelpp_hfm_coupledcartmodel_3DP1N1 --config-file H1_p_nonlinear.cfg
 ----
 
-To run this example on MSO4SC portal see this xref:mso4sc:MagThel.adoc[section].
+* or use {feelpp} thermoelectric toolbox:
+
+[[command-line-nl-toolbox]]
+[source,sh]
+----
+mpirun -np 32 feelpp_hfm_thermoelectric --config-file H1-toolbox_nonlinear.cfg
+----
+
+[NOTE]
+====
+The thermolelectric toolbox example is more in detailed in the link:http://docs.feelpp.org/cases/0.108/thermoelectric/electromagnet/README.html[toolbox documentation].
+====
+
+// To run this example on MSO4SC portal see this xref:mso4sc:MagThel.adoc[section].
 
 If you want to change the number of procs used, you need to create a proper
 partition mesh. See the next sections for a detailed guide.
@@ -24,7 +43,7 @@ The mesh may be converted into an another format using `gmsh` compiled with prop
 
 [source,sh]
 ----
-gmsh -3 -bin HL-31_H1.med -o HL-31_H1.msh
+gmsh -0 -bin HL-31_H1.med -o HL-31_H1.msh
 ----
 
 [IMPORTANT]
@@ -36,17 +55,18 @@ The resulting mesh is in **mm**
 
 [source,sh]
 ----
-feelpp_mesh_partitioner --gmsh.scale=0.001 --ifile HL-31_H1.msh [--ofile HL-31_H1_p32] --part 32
+feelpp_mesh_partitioner --ifile HL-31_H1.msh [--ofile HL-31_H1_p32] --part 32
 ----
-
-The option `--gmsh.scale=0.001` enables to force the use of **meter** for the partitionned mesh.
 
 == Data files
 
-The data files may be retreived from {uri-msoportal-ckan-www}[*Data Catalogue*].
-See the dataset *A test helix* in {lncmi} collection.
+The data files may be retreived from this https://github.com/feelpp/hifimagnet.cases/tree/v0.108/HL-31_H1[repository].
+The mesh files are stored in collection hifimanget/cases/v0.108/HL-31_H1 collection on {uri-girder}[Unistra Girder] 
 
-The gzipped archive tarball {uri-ckan-data}/dataset/hl-test/resource/ff0f4f04-45c9-4507-b98a-ee789c8bde95[`HL-31_H1-v0.105.tgz`] contains all the files needed.
+// The data files may be retreived from {uri-msoportal-ckan-www}[*Data Catalogue*].
+// See the dataset *A test helix* in {lncmi} collection.
+
+// The gzipped archive tarball {uri-ckan-data}/dataset/hl-test/resource/ff0f4f04-45c9-4507-b98a-ee789c8bde95[`HL-31_H1-v0.105.tgz`] contains all the files needed.
 
 === Mesh file
 
@@ -56,16 +76,23 @@ The gzipped archive tarball {uri-ckan-data}/dataset/hl-test/resource/ff0f4f04-45
 
 === Simulation cfg file
 
-* HL-31_H1_boomeramg.cfg
+* H1_p_nonlinear.cfg for {hifimagnet} app with Newton solver,
+* H1_p_nonlinear-picard.cfg for {hifimagnet} app with Picard solver,
+* H1-toolbox_nonlinear.cfg for {feelpp} thermoelectric toolbox with Newton solver.
 
 === Model files
 
-* HL-31_H1_thermoelec.json
+* HL-31_H1_nonlinear.json
 
-=== Materials files
+[IMPORTANT]
+====
+The data are given to be consistant with the mesh in **mm**.
+If you ever want to use a mesh in *m*:
 
-Materials are stored in a dedicated repository Materials
+* Change the physical values,
+* Change the Cooling Boundary Conditions values,
 
+====
 
 == Input parameters
 
@@ -82,6 +109,7 @@ Materials are stored in a dedicated repository Materials
 | Name          | Description              | Value   | Unit     |
 | stem:[min(T)] | min of Temperature Field | 293.32  | stem:[K] |
 | stem:[max(T)] | max of Temperature Field | 400.781 | stem:[K] |
+| stem:[I]      | current                  | 28.771 (-28.768) | stem:[kA] |
 |===
 
 

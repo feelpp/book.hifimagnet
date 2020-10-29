@@ -16,6 +16,8 @@
 :feelppdb: $HOME/feel
 :crbdb: crbdb
 :docker: Docker
+:oar: Oar
+:bettik: bettik
 :toto: Toto
 :cpp: C++
 :y: icon:check[role="green"]

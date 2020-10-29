@@ -73,7 +73,7 @@ The final system of EDP to be solved is:
 
 [stem]
 ++++
-\nabla \cdot \left( \sigma ( -\nabla V + \mathbf{u} \times (\nabla \times \mathbf{A}) - \frac{\partial \mathbf{A}}{\partial t} \right) = 0 \qquad \text{in} \,  \Omega.
+\nabla \cdot \left( \sigma ( -\nabla V + \mathbf{u} \times (\nabla \times \mathbf{A}) - \frac{\partial \mathbf{A}}{\partial t}) \right) = 0 \qquad \text{in} \,  \Omega.
 ++++
 
 ==== Magnetostatic
@@ -87,13 +87,13 @@ The steady state regime will be given by:
 
 [stem]
 ++++
-\nabla \cdot \left( \sigma ( -\nabla V + \mathbf{u} \times (\nabla \times \mathbf{A}) \right) = 0 \qquad \text{in} \, \Omega.
+\nabla \cdot \left( - \sigma \nabla V ) \right) = 0 \qquad \text{in} \, \Omega.
 ++++
 
 The boundary conditions are of 2 types:
 
-* stem:[\mathbf{A} = \mathbf{0]], Homogeneous Dirichlet for mimicking condition at infinity,
-* stem:[\mathbf{A} \cross \mathbf{n} = 0] on symetry plane and on boundaries of input/output current leads. 
+* stem:[\mathbf{A} = \mathbf{0}], Homogeneous Dirichlet for mimicking condition at infinity,
+* stem:[\mathbf{A} \times \mathbf{n} = \mathbf{0}] on symetry plane and on boundaries of input/output current leads. 
 
 ==== Biot-Savart law
 

@@ -37,8 +37,8 @@ It consists in a set of tools including:
 |                |                           |                        | On Windows 10 requires MobaXterm for *GUI* mode
 |                | feelpp/feelpp::v0.108     |                        | For CG and/or HDG thermo-electric models only
 |                | feelpp/hifimagnet:v0.108  |                        | 
-|                |                           | hifimagnet-v0.108.sif  | for singularity 3.2 and later
-|                |                           | hifimagnet-v0.108.simg | for singularity 2.6
+|                |                           | hifimagnet-thermobox-P2_9.3.3-v0.108.sif  | for singularity 3.2 and later
+|                |                           | hifimagnet-thermobox-P2_9.3.3-v0.108.simg | for singularity 2.6
 |===
 
 [caption=]
@@ -69,7 +69,7 @@ Assuming we use `hifimagnet.simg` singularity image:
 
 [source,sh]
 ----
-singularity run -it -v $HOME/feel:/feel hifimagnet.simg feelpp_hfm_coupledmodel_3DP1N1 --config coupled_3D_P1_N1_singular_cvg.cfg
+singularity run -it -v $HOME/feel:/feel hifimagnet.simg feelpp_hfm_coupledmodel_3DP1N1 --config-file coupled_3D_P1_N1_singular_cvg.cfg
 ----
 
 The `coupled_3D_P1_N1_singular_cvg.cfg` configuration file holds all the information
@@ -81,7 +81,7 @@ Start the Docker container `feelpp/hifimagnet` as follows
 
 [source,sh]
 ----
-docker run -it -v $HOME/feel:/feel feelpp/hifimagnet feelpp_hfm_coupledmodel_3DP1N1 --config coupled_3D_P1_N1_singular_cvg.cfg
+docker run -it -v $HOME/feel:/feel feelpp/hifimagnet feelpp_hfm_coupledmodel_3DP1N1 --config-file coupled_3D_P1_N1_singular_cvg.cfg
 ----
 
 ==== from command line
@@ -90,7 +90,7 @@ To perform a 3D fully coupled multi-physics simulation:
 
 [source,sh]
 ----
-feelpp_hfm_coupledmodel_3DP1N1 --config coupled_3D_P1_N1_singular_cvg.cfg
+feelpp_hfm_coupledmodel_3DP1N1 --config-file coupled_3D_P1_N1_singular_cvg.cfg
 ----
 
 [[usage]]
@@ -98,6 +98,14 @@ feelpp_hfm_coupledmodel_3DP1N1 --config coupled_3D_P1_N1_singular_cvg.cfg
 
 As stated in introduction {hifimagnet} per se provides tools for High Field Magnets simulation.
 More precisely we can model:
+
+.Prepare mesh
+|===
+|        | `docker` | `singularity`
+| `gmsh` |          | gmsh-4.6.0.simg
+| `feelpp_mesh_partitioner` | | hifimagnet-thermobox-P2_9.3.3-v0.108.simg
+|===
+
 
 .CG Models (*** to be completed ***):
 |===
@@ -113,7 +121,7 @@ More precisely we can model:
 |===
 
 
-.DG Models (*** to do ***):
+.HDG Models (*** to do ***):
 |===
 | Model/Behavior  | Executable | Features/Comments
 |===
@@ -136,19 +144,58 @@ In xref:cad#setup[{salome} {hifimagnet} plugin] section, we have shown how to ge
 [[mesh]]
 === Mesh for {hifimagnet}
 
-* generate mesh with {salome} {hifimagnet} plugin
+* generate mesh with {salome} {hifimagnet} plugin (see xref:cad:index.adoc#create_mesh[here])
 * convert med to msh format
-* eventually partition mesh
+
+[source,bash]
+----
+gmsh -0 -bin HL-31.med -o HL-31.msh
+----
+
+* eventually partition mesh (mandatory if you plan to run {hifimagnet} in parallel
+
+[source,bash]
+----
+feelpp_mesh_partitioner --mesh.scale=0.001 --ifile HL-31.msh [--ofile HL-31_p32] --part 32  --nochdir
+----
+
+[NOTE]
+====
+The number of partition *must* correspond to the number of jobs that you plan to use for running
+the app. For instance to run with {singularity} :
+
+[source,bash]
+----
+mpirun -np 32 singularity exec -B $PWD/feel:/feel image.sif feelpp_hfm_coupledmodel_3DP1N1 --config-file ...
+----
+
+On SMB machine (eg. stokes {lncmi} server) you can use instead:
+
+[source,bash]
+----
+singularity exec -B $PWD/feel:/feel image.sif mpirun -np 32 feelpp_hfm_coupledmodel_3DP1N1 --config-file ...
+----
+
+
+====
+
 
 [[data]]
 === Data structure
 
 {hifimagnet} simulations parameters are defined througth configuration file `.cfg`
 and `json` files defining the model per physic and eventually some other `json` files
-for the physical properties of the materials. 
+for the physical properties of the materials. Template `cfg` and `json` file may
+be generated with {hifimagnet} {salome} plugin (see xref:cad:index.adoc#setup[here]).
 
 The data structure follows {feelpp} style and convention.
 In this section we will give details about these different files.
+
+[NOTE]
+====
+For more infos on `cfg` and `json` files see link:http://docs.feelpp.org/toolboxes/0.108/parametrized-simulation-using-cfg-files.html[cfg doc].
+http://docs.feelpp.org/toolboxes/0.108/modeling-analysis-using-json-files.html[json doc] in {feelpp} docs.
+====
 
 ==== Config Files
 
@@ -161,9 +208,10 @@ An exemple for a full coupled model is given below:
 ----
 include::{examplesdir}/M19061901-full-main.cfg[]
 ----
-<1> directory: 
-<2> case.discretization:
-<3> model-file:
+<1> directory: name of the directory where results will be stored. This path is
+relative to the default directory defined by `FEELPP_REPOSITORY` (by default `$HOME/feel`)
+<2> case.discretization: keyword to select Finite Element. For CG, use P1 for standard P1 element.
+<3> model-file: name of the json model file
 <4> compute options
 <5> `[gmsh]` section
 <6> `[thermo-electric]` section
@@ -179,8 +227,9 @@ include::{examplesdir}/M19061901-full-main.cfg[]
 include::{examplesdir}/M19061901-full.cfg[lines=9..11]
 ----
 
-* name of the geometry or mesh
-* gmsh options: scale (optional, the default is *meter*), mesh size
+* filename: name of the geometry or mesh
+* partition: boolean to instruct code to perform mesh partionning (1) or not (0)  
+// * gmsh options: scale (optional, the default is *meter*), mesh size
 
 ===== `[thermo-electric]` section
 
@@ -286,49 +335,34 @@ include::{examplesdir}/M19061901-full-main.json[lines=16..26]
 
 ==== Materials
 
+Materials may be defined directly in the main `json` file as in
+this example:
+
 [source,json]
 ----
 include::{examplesdir}/M19061901-full-main.json[lines=27..45]
 ----
 
-==== BoundaryConditions
+Note that for insulator material, you do not need to define
+all entries. In the following exemple, `Isolant1` is only
+considered in `heat` model; that is to say that the temperature
+field will be computed in the domain attached to the markers `H1_Isolant`. 
 
 [source,json]
 ----
-include::{examplesdir}/M19061901-full-main.json[lines=75..117]
+"Isolant1":
+{
+  "markers":"H1_Isolant",
+  "physics":"heat",
+  "sigma":"0",
+  "k":"1.2"
+}
 ----
 
-==== PostProcess
 
-[source,json]
-----
-include::{examplesdir}/M19061901-full-main.json[lines=118..249]
-----
+===== Materials file
 
-// ===== ThermoElectric Model file
-
-// [source,json]
-// ----
-// include::{examplesdir}/quarter-torus3D-therm.json[]
-// ----
-
-// ===== Magnetostatics Model file
-
-// [source,json]
-// ----
-// include::{examplesdir}/quarter-torus3D-mag.json[]
-// ----
-
-// ===== Elasticity Model file
-
-// [source,json]
-// ----
-// include::{examplesdir}/quarter-torus3D-elasticity.json[]
-// ----
-
-==== Materials file
-
-Physical properties of the material may be defined in a separate `json` file
+Physical properties of the material may also be defined in a separate `json` file
 for each material. The properties are given in SI units.
 
 [source,json]
@@ -352,60 +386,51 @@ defining properties for material <1> :
 ^| <9> stem:[\mu]      ^| magnetic permeability              ^|stem:[V.s.A^{-1}.m^{-1}]  |
 |===
 
-[[workflow]]
-=== Workflow
-==== Using {magnettools} to define Design
 
-* create optimized axi geometry
-* run `opt2yml` to create the cfg files for {hifimagnet} {salome} Plugin
+==== BoundaryConditions
 
-==== Using {hifimagnet} {salome} Plugin to create CAD and generate meshes
-
-* fill in the missing data into {salome} yaml cfg files
-* run the CAD generation
-* eventually add `Air`
-* mesh
-* improve the mesh
-
-==== Prepare the mesh for HPC
-
-The mesh created with {hifimagnet} {salome} is in `med` format.
-Depending on the version of {feelpp} used this format may not be supported.
-So before running any simulation you have to convert the mesh to `gmsh V2` format:
-
-[source,sh]
+[source,json]
 ----
-gmsh -bin -0 mesh.med -o mesh.msh
+include::{examplesdir}/M19061901-full-main.json[lines=75..117]
 ----
 
-Then you have eventually to partition the mesh to use it on HPC:
 
-[source,sh]
+// ===== ThermoElectric Model file
+
+// [source,json]
+// ----
+// include::{examplesdir}/quarter-torus3D-therm.json[]
+// ----
+
+// ===== Magnetostatics Model file
+
+// [source,json]
+// ----
+// include::{examplesdir}/quarter-torus3D-mag.json[]
+// ----
+
+// ===== Elasticity Model file
+
+// [source,json]
+// ----
+// include::{examplesdir}/quarter-torus3D-elasticity.json[]
+// ----
+
+[[PostProcessJson]]
+==== PostProcess
+
+[source,json]
 ----
-feelpp_mesh_partitioner [--msh.scale=0.001] --ifile mesh.msh -ofile mesh-np4 --part 4 --nochdir
+include::{examplesdir}/M19061901-full-main.json[lines=118..249]
 ----
 
-where `part` denotes the number of processors (4 in our example) you want to use.
-The option `--msh.scale=0.001` enables to rescale the mesh file.
-
-This will create new files `mesh-np4.json` and `mesh-np4.h5` ready for running.
-
-[NOTE]
-=====
-{hifimagnet} {salome} CAD geometries are defined in `mm`.
-The mesh file generated is also in `mm`. 
-
-As a consequence, **do not forget to rescale the mesh** before running simulation.
-Use `--gmsh.scale=0.001` to rescale the mesh.
-=====
-
-==== Define Cfg, Model and Materials files
-==== Running 3D simulations
-==== Postprocessing results
+// workflow?
 
 [[examples]]
 === Examples
 
-* xref:benchmarks:HL/README.adoc[HL] 
+* xref:benchmarks:HL/README.adoc[HL]
+// http://docs.feelpp.org/cases/0.108/thermoelectric/electromagnet/README.html
 * xref:benchmarks:HL-31/README.adoc[HL-31]
 
+// add HDG examples

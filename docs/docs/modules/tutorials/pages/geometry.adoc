@@ -84,6 +84,6 @@ singularity exec --nv -B /opt/DISTENE:/opt/DISTENE:ro \
 
 [source,bash]
 ----
-gmsh -3 -bin cylindre.med -o cylindre.msh
+gmsh -0 -bin cylindre.med -o cylindre.msh
 ----
 
