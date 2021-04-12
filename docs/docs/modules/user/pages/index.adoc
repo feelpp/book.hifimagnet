@@ -138,7 +138,7 @@ providing connection between CAD/Mesh entities to respectively Material and Boun
 
 [NOTE]
 ====
-In xref:cad#setup[{salome} {hifimagnet} plugin] section, we have shown how to generate templates for the `cfg` and `json` files.
+In xref:cad:index.adoc#setup[{salome} {hifimagnet} plugin] section, we have shown how to generate templates for the `cfg` and `json` files.
 ====
 
 [[mesh]]
