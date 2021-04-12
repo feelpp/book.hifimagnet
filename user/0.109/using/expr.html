@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Using Feel++ :: HiFiMagnet Documentation</title>
+    <title>Feel++ expressions :: HiFiMagnet Documentation</title>
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../_/img/favicon.ico" type="image/x-icon">    
@@ -173,7 +173,7 @@
   </li>
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="index.html">Using Feel++</a>
 <ul class="nav-list">
@@ -398,101 +398,233 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Feel++ User Manual</a></li>
-    <li><a href="index.html">Using Feel++</a></li>
+    <li><a href="expr.html">Feel++ expressions</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/feelpp/book.feelpp.org/edit/master/docs/user/modules/using/pages/index.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/feelpp/book.feelpp.org/edit/master/docs/user/modules/using/pages/expr.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Using Feel++</h1>
-<div id="preamble">
+<h1 class="page">Feel++ expressions</h1>
+<div class="sect1">
+<h2 id="_mathematical_functions"><a class="anchor" href="#_mathematical_functions"></a>1. Mathematical functions</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>Feel++ comes with applications and tools.</p>
+<div class="sect2">
+<h3 id="_ceil"><a class="anchor" href="#_ceil"></a>1.1. ceil</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p><code>ceil(v)</code> computes the smallest integer value not less than arg.</p>
+</dd>
+<dt class="hdlist1">Keyword</dt>
+<dd>
+<p><code>ceil</code></p>
+</dd>
+</dl>
 </div>
-<div class="paragraph">
-<p>We discuss in this chapter how to use them, we start with some explanations of using Feel++ in container systems</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">auto e = expr("ceil(u):u");</code></pre>
 </div>
-<div class="ulist checklist">
-<ul class="checklist">
-<li>
-<p><i class="fa fa-check-square-o"></i> <a href="docker.html" class="page">Docker</a> for the cloud and isolated systems</p>
-</li>
-<li>
-<p><i class="fa fa-check-square-o"></i> <a href="singularity.html" class="page">Singularity</a> for HPC systems, clusters and supecomputers</p>
-</li>
-</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_floor"><a class="anchor" href="#_floor"></a>1.2. floor</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p><code>floor(v)</code> computes the largest integer value not greater than arg.</p>
+</dd>
+<dt class="hdlist1">Keyword</dt>
+<dd>
+<p><code>floor</code></p>
+</dd>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">auto e = expr("floor(u):u");</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_fract"><a class="anchor" href="#_fract"></a>1.3. fract</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p><code>fract(v)</code>  compute the fractional part of the argument. This is calculated as \(v - floor(v)\).</p>
+</dd>
+<dt class="hdlist1">Keyword</dt>
+<dd>
+<p><code>fract</code></p>
+</dd>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">auto e = expr("fract(u):u");</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_clamp"><a class="anchor" href="#_clamp"></a>1.4. clamp</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p><code>clamp(v,lo,hi)</code> If v compares less than lo, returns lo; otherwise if hi compares less than v, returns hi; otherwise returns v.</p>
+</dd>
+<dt class="hdlist1">Keyword</dt>
+<dd>
+<p><code>clamp</code></p>
+</dd>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">auto e = expr("clamp(u,0,1):u");</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_modulo"><a class="anchor" href="#_modulo"></a>1.5. Modulo</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p><code>mod(x,y)</code> compute the modulo operation: it returns the remainder or signed remainder of the division \(x/y\).</p>
+</dd>
+<dt class="hdlist1">Keyword</dt>
+<dd>
+<p><code>mod</code></p>
+</dd>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">auto e = expr("mod(u,v):u:v");
+e.setParameterValues( { { "u", 2 }, { "v", 1 }} );
+CHECK( std::abs( e.evaluate()(0,0) ) &lt; 1e-12 ) &lt;&lt; "Error in modulo";
+e.setParameterValues( { { "u", 3 }, { "v", 6 }} );
+CHECK( std::abs( e.evaluate()(0,0) - 3) &lt; 1e-12 ) &lt;&lt; "Error in modulo";
+e.setParameterValues( { { "u", 6.1 }, { "v", 3 }} );
+CHECK( std::abs( e.evaluate()(0,0) - 0.1) &lt; 1e-12 ) &lt;&lt; "Error in modulo";
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sign"><a class="anchor" href="#_sign"></a>1.6. sign</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p><code>sign(v)</code> returns 1 if v positive, -1 if negative, 0 if v is zero. This is calculated as \((0 &lt; v)- (v &lt; 0)\).</p>
+</dd>
+<dt class="hdlist1">Keyword</dt>
+<dd>
+<p><code>sign</code></p>
+</dd>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">auto e = expr("sign(u):u");</code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_using_feel_tools"><a class="anchor" href="#_using_feel_tools"></a>1. Using Feel++ tools</h2>
+<h2 id="_mappings"><a class="anchor" href="#_mappings"></a>2. Mappings</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_mapabcd"><a class="anchor" href="#_mapabcd"></a>2.1. mapabcd</h3>
 <div class="paragraph">
-<p>Feel++ provides tools to manipulate data structures and Functional Mockup Unit(FMU) using the Functional Mockup Interface(FMI).
-It allows to prepare them for numerical experiments or provide them for analysis before and after the experiments</p>
+<p><code>mapabcd</code> is the function \(f\) that allows to map \([a,b]\) to \([c,d]\), it is defines as follows</p>
 </div>
-<div class="ulist checklist">
-<ul class="checklist">
-<li>
-<p><i class="fa fa-check-square-o"></i> <a href="tools/remotedata.html" class="page">Remote data handling</a></p>
-</li>
-<li>
-<p><i class="fa fa-check-square-o"></i> <a href="tools/mesh_partitioner.html" class="page">Mesh Partitioning</a></p>
-</li>
-<li>
-<p><i class="fa fa-check-square-o"></i> <a href="tools/mesh_exporter.html" class="page">Mesh Exporter</a></p>
-</li>
-<li>
-<p><i class="fa fa-check-square-o"></i> <a href="tools/fmu.html" class="page">FMI FMU</a></p>
-</li>
-</ul>
+<div class="stemblock">
+<div class="content">
+\[f(t) = c + \left(\frac{d-c}{b-a}\right)(t-a)\]
+</div>
+</div>
+<div class="paragraph">
+<p>with \(f(a)=c\) and \(f(b)=d\).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">auto e = expr("mapabcd(t,1,2,-1,1):t");
+e.setParameterValues( { { "t", 1 } } );
+CHECK( std::abs(e.evaluate()(0,0)- (-1)) &lt; 1e-12 ) &lt;&lt; "Invalid mapping";
+e.setParameterValues( { { "t", 2 } } );
+CHECK( std::abs( e.evaluate()(0,0)- 1 ) &lt; 1e-12 ) &lt;&lt; "Invalid mapping";
+e.setParameterValues( { { "t", 1.5 } } );
+CHECK( std::abs( e.evaluate()(0,0) ) &lt; 1e-12 ) &lt;&lt; "Invalid mapping";</code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_using_feel_toolboxes"><a class="anchor" href="#_using_feel_toolboxes"></a>2. Using Feel++ toolboxes</h2>
+<h2 id="_step_functions"><a class="anchor" href="#_step_functions"></a>3. Step functions</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>Feel++ provides mono and multi physics toolboxes.</p>
+<div class="sect2">
+<h3 id="_step1"><a class="anchor" href="#_step1"></a>3.1. step1</h3>
+
 </div>
-<div class="ulist checklist">
-<ul class="checklist">
-<li>
-<p><i class="fa fa-check-square-o"></i> <a href="toolboxes/fluid.html" class="page">Computational Fluid Mechanics Toolbox</a></p>
-</li>
-<li>
-<p><i class="fa fa-check-square-o"></i> <a href="toolboxes/solid.html" class="page">Computational Solid Mechanics Toolbox</a></p>
-</li>
-<li>
-<p><i class="fa fa-check-square-o"></i> <a href="toolboxes/fsi.html" class="page">Fluid Structure Interaction Toolbox</a></p>
-</li>
-<li>
-<p><i class="fa fa-check-square-o"></i> <a href="toolboxes/heat.html" class="page">Heat Transfer Toolbox</a></p>
-</li>
-<li>
-<p><i class="fa fa-check-square-o"></i> <a href="toolboxes/heatfluid.html" class="page">Heat Transfer and Fluid Toolbox</a></p>
-</li>
-<li>
-<p><i class="fa fa-check-square-o"></i> <a href="toolboxes/electric.html" class="page">Electric Toolbox</a></p>
-</li>
-<li>
-<p><i class="fa fa-check-square-o"></i> <a href="toolboxes/thermoelectric.html" class="page">Thermo-Electric Toolbox</a></p>
-</li>
-<li>
-<p><i class="fa fa-check-square-o"></i> <a href="toolboxes/hdg_poisson.html" class="page">HDG Poisson Toolbox</a></p>
-</li>
-<li>
-<p><i class="fa fa-check-square-o"></i> <a href="toolboxes/hdg_elasticity.html" class="page">HDG Elasticity Toolbox</a></p>
-</li>
-<li>
-<p><i class="fa fa-check-square-o"></i> <a href="toolboxes/hdg_coupledpoisson.html" class="page">HDG Coupled Poisson Toolbox</a></p>
-</li>
-</ul>
+<div class="sect2">
+<h3 id="_smoothstep"><a class="anchor" href="#_smoothstep"></a>3.2. smoothstep</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p><code>smoothstep(u,lo,hi)</code> is  calculated as follows:</p>
+</dd>
+</dl>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\mbox{smoothstep}(x,lo,hi)=\left\{\begin{array}{ll}lo &amp; x \leq lo \\ 3 x^{2}-2 x^{3} &amp; lo \leq x \leq hi \\ hi &amp; hi \leq x\end{array}\right.\]
+</div>
+</div>
+<div class="paragraph">
+<p><code>smoothstep</code> uses the <code>clamp</code> function</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Keyword</dt>
+<dd>
+<p><code>smoothstep</code></p>
+</dd>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">"expr":"smoothstep(u,lo,hi):u:lo:hi"</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_triangle"><a class="anchor" href="#_triangle"></a>3.3. triangle</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_rectangle"><a class="anchor" href="#_rectangle"></a>3.4. rectangle</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_pulse"><a class="anchor" href="#_pulse"></a>3.5. pulse</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_sinwave"><a class="anchor" href="#_sinwave"></a>3.6. sinwave</h3>
+
 </div>
 </div>
 </div>
