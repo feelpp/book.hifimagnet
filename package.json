@@ -1,6 +1,7 @@
 {
   "description": "Antora Builder",
   "scripts": {
+    "check": "node_modules/.bin/antora -v",
     "clean-build": "npm run clean-install;npm run build",
     "clean-install": "rm -rf node_modules/ .cache/;npm i --cache=.cache/npm",
     "build:local": "node_modules/.bin/antora --stacktrace --fetch antora-local-feelpp-doc.yml",
