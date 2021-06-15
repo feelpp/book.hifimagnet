@@ -24,7 +24,7 @@ jobs:
     - name: Build
       run: node_modules/.bin/antora  --stacktrace generate --fetch antora-github-feelpp-doc.yml     
     - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@3.5.9
+      uses: JamesIves/github-pages-deploy-action@4.1.4
       with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages # The branch the action should deploy to.
