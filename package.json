@@ -1,0 +1,19 @@
+{
+  "description": "Antora Builder",
+  "scripts": {
+    "clean-build": "npm run clean-install;npm run build",
+    "clean-install": "rm -rf node_modules/ .cache/;npm i --cache=.cache/npm",
+    "build:local": "node_modules/.bin/antora --stacktrace --fetch antora-local-feelpp-doc.yml",
+    "build": "node_modules/.bin/antora --stacktrace --fetch antora-github-feelpp-doc.yml ",
+    "preview:build": "node_modules/.bin/antora --stacktrace --fetch antora-local-feelpp-doc.yml ; node-srv -p 8010 build/site"
+  },
+  "devDependencies": {
+    "@antora/cli": "^2.3.4",
+    "@antora/site-generator-default": "^2.3.4",
+    "@djencks/asciidoctor-template": "^0.0.3",
+    "@feelpp/asciidoctor-remote-include-processor": "^0.0.6",
+    "asciidoctor-emoji": "^0.2.2",
+    "asciidoctor-kroki": "^0.12.0",
+    "node-srv": "^3.0.3"
+  }
+}

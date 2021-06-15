@@ -22,7 +22,6 @@ Gemfile.lock
 *~
 *.*~
 *.lock
-package.json
 package.json.*
 node_modules
 build
