@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Fluid :: HiFiMagnet Documentation</title>
-    <link rel="canonical" href="https://book.hifimagnet.cemosis.fr/user/0.109/python/pyfeelpptoolboxes/fluid.html">
+    <title>Untitled :: HiFiMagnet Documentation</title>
+    <link rel="canonical" href="https://book.hifimagnet.cemosis.fr/user/0.109/python/pyfeelppmor/petscDouble.html">
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="icon" href="../../../../_/img/favicon.ico" type="image/x-icon">    
@@ -317,31 +317,31 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="index.html">{pyfeelpptb}</a>
+    <a class="nav-link" href="../pyfeelpptoolboxes/index.html">{pyfeelpptb}</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="heat.html">Heat Transfer</a>
+    <a class="nav-link" href="../pyfeelpptoolboxes/heat.html">Heat Transfer</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="electric.html">Electrostatic</a>
-  </li>
-  <li class="nav-item is-current-page" data-depth="3">
-    <a class="nav-link" href="fluid.html">Fluid Mechanics</a>
+    <a class="nav-link" href="../pyfeelpptoolboxes/electric.html">Electrostatic</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="solid.html">Solid Mechanics</a>
+    <a class="nav-link" href="../pyfeelpptoolboxes/fluid.html">Fluid Mechanics</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../pyfeelpptoolboxes/solid.html">Solid Mechanics</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../pyfeelppmor/index.html">{pyfeelppmor}</a>
+    <a class="nav-link" href="index.html">{pyfeelppmor}</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../pyfeelppmor/parameters.html">Parameters</a>
+    <a class="nav-link" href="parameters.html">Parameters</a>
   </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../pyfeelppmor/petscDouble.html">PETSc vector and matrix</a>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="petscDouble.html">PETSc vector and matrix</a>
   </li>
 </ul>
   </li>
@@ -412,50 +412,116 @@
   <ul>
     <li><a href="../../index.html">Feel++ User Manual</a></li>
     <li><a href="../index.html">Using Feel++ in Python</a></li>
-    <li><a href="index.html">{pyfeelpptb}</a></li>
-    <li><a href="fluid.html">Fluid Mechanics</a></li>
+    <li><a href="index.html">{pyfeelppmor}</a></li>
+    <li><a href="petscDouble.html">PETSc vector and matrix</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/feelpp/book.feelpp.org/edit/master/docs/user/modules/python/pages/pyfeelpptoolboxes/fluid.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/feelpp/book.feelpp.org/edit/master/docs/user/modules/python/pages/pyfeelppmor/petscDouble.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Fluid</h1>
-<div class="listingblock">
-<div class="title">Fluid</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">import core
-import mesh
-import sys,time
-from modelcore import *
-
-e=core.Environment(sys.argv,opts=toolboxes_options("fluid"))
-
-import discr
-import exporter
-import ts
-from fluid import *
-
-f=Fluid_P2P1G1("fluid")
-f.init()
-f.printAndSaveInfo()
-if f.isStationary():
-    f.solve()
-    f.exportResults()
-else:
-    if not f.doRestart():
-        f.exportResults( f.timeInitial() )
-    while not f.timeStepBase().isFinished():
-        if f.worldComm().isMasterRank():
-            print("============================================================\n")
-            print("time simulation: ", f.time(), "s \n")
-            print("============================================================\n")
-        f.solve()
-        f.exportResults()
-        f.updateTimeStep()</code></pre>
+<div class="sect1">
+<h2 id="_vector_petsc_double"><a class="anchor" href="#_vector_petsc_double"></a>1. Vector PETSc Double</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Class <code>VectorPetscDouble</code> (<code>feelpp._alg.VectorPetscDouble</code>)</p>
+</div>
+<div class="sect2">
+<h3 id="_methods"><a class="anchor" href="#_methods"></a>1.1. Methods</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><code><em>init</em>(*args, **kwargs)</code> : Overloaded function.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code><em>init</em>()</code>. The vector created is empty.</p>
+</li>
+<li>
+<p><code><em>init</em>(arg0: int, arg1: feelpp._core.WorldComm)</code>. The vector created has a size <code>arg0</code>.</p>
+</li>
+<li>
+<p><code><em>init</em>(arg0: int, arg1: int, arg2: feelpp._core.WorldComm)</code>. The vector created has a global size <code>arg0</code>, and a local size <code>arg1</code>.</p>
+</li>
+<li>
+<p><code><em>init</em>(arg0: feelpp._alg.DataMap, arg1: bool)</code></p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><code>clear()</code> : clear PETSc vector</p>
+</li>
+<li>
+<p><code>size()</code> &#8594; <code>int</code> : return  PETSc Vector size</p>
+</li>
+<li>
+<p><code>vec()</code> &#8594; <code>vec</code> : return a PETSc Vector that can be manipulated with funciton of the module <a href="https://pypi.org/project/petsc4py/">petsc4py</a>. The functions of this class can be found on the <a href="https://www.mcs.anl.gov/petsc/petsc4py-current/docs/apiref/petsc4py.PETSc.Vec-class.html">documentation of PETSc4py</a>.</p>
+</li>
+<li>
+<p><code>zero()</code> : zero PETSc vector</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_matrix_petsc_double"><a class="anchor" href="#_matrix_petsc_double"></a>2. Matrix PETSc Double</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Class <code>MatrixPetscDouble</code> (<code>feelpp._alg.MatrixPetscDouble</code>). The methods of this class are similar to the previous class, the apply on matrices insted of vectors.</p>
+</div>
+<div class="sect2">
+<h3 id="_methods_2"><a class="anchor" href="#_methods_2"></a>2.1. Methods</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><code><em>init</em>(*args, **kwargs)</code> : Overloaded function.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code><em>init</em>(arg0: feelpp._core.WorldComm)</code></p>
+</li>
+<li>
+<p><code><em>init</em>(arg0: feelpp._alg.DataMap, arg1: feelpp._alg.DataMap)</code></p>
+</li>
+<li>
+<p><code><em>init</em>(arg1: feelpp._alg.DataMap, arg2: feelpp._core.WorldComm)</code></p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><code>clear()</code> : clear PETSc matrix</p>
+</li>
+<li>
+<p><code>mat(&#8230;&#8203;)</code> &#8594; <code>mat</code> : return a PETSc sparse matrix. See <a href="https://www.mcs.anl.gov/petsc/petsc4py-current/docs/apiref/petsc4py.PETSc.Mat-class.html">the documentation</a>.</p>
+</li>
+<li>
+<p><code>rowStart()</code> &#8594; <code>int</code> : return PETSc Matrix row start. This method is usefull is the matrix is shared with many processors, as the following.</p>
+</li>
+<li>
+<p><code>rowStop()</code> &#8594; <code>int</code> : return  PETSc Matrix row stop</p>
+</li>
+<li>
+<p><code>size1()</code> &#8594; <code>int</code> : return  PETSc Matrix row size</p>
+</li>
+<li>
+<p><code>size2()</code> &#8594; <code>int</code> : return  PETSc Matrix column size</p>
+</li>
+<li>
+<p><code>shape()</code> &#8594; <code>Tuple[int,int]</code> : return PETSc Matrix shape (<code>(row size, column size)</code>)</p>
+</li>
+<li>
+<p><code>zero()</code> : zero PETSc matrix</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 </article>
