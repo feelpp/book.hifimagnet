@@ -149,7 +149,7 @@ The `txt` file may be converted to a `csv` file using link:{attachmentsdir}/txt2
 </div>
 
    <script> 
-Plotly.d3.csv("https://localhost/hifimagnet/stable/appendix/_attachments/M9_2019.06.20-14_36_30.csv", function(err, rows){
+Plotly.d3.csv("https://github.com/feelpp/book.hifimagnet/raw/master/docs/docs/modules/appendix/attachments/M9_2019.06.20-14_36_30.csv", function(err, rows){
 	      
 
     console.log("enter plotly script");
